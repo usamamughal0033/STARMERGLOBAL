@@ -1,0 +1,118 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Search â€” Starmer Global</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>tailwind.config={theme:{extend:{colors:{primary:'#1A3A5C',accent:'#2E7CC6','text-main':'#334155'},fontFamily:{sans:['Inter','system-ui','sans-serif']}}}}</script>
+  <link rel="stylesheet" href="css/style.css"/>
+</head>
+<body data-page="search" class="font-sans text-text-main bg-white">
+
+  <nav id="site-nav" class="fixed top-0 left-0 right-0 z-50 bg-white border-b border-slate-200">
+    <div class="max-w-7xl mx-auto px-6 flex items-center justify-between h-16">
+      <a href="index.html" class="flex items-center gap-2.5 font-extrabold text-primary text-base shrink-0">
+        <svg class="w-8 h-8" viewBox="0 0 32 32" fill="none"><circle cx="16" cy="16" r="14" stroke="#2E7CC6" stroke-width="1.5" fill="none" opacity="0.3"/><circle cx="16" cy="16" r="10" stroke="#2E7CC6" stroke-width="1.5" fill="none" opacity="0.5"/><circle cx="16" cy="16" r="6" stroke="#1A3A5C" stroke-width="2" fill="none"/><circle cx="16" cy="16" r="2.5" fill="#1A3A5C"/></svg>
+        Starmer Global
+      </a>
+      <ul class="hidden lg:flex items-center gap-1">
+        <li class="nav-dropdown-wrap">
+          <button class="flex items-center gap-1 px-3 py-2 text-sm font-medium text-slate-600 hover:text-accent rounded-lg hover:bg-slate-50">Products <svg class="w-3.5 h-3.5 opacity-60" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></button>
+          <div class="nav-dropdown" style="min-width:240px">
+            <a href="catalog.html?category=hard-candy">Hard Candy Production</a>
+            <a href="catalog.html?category=lollipop">Lollipop Production</a>
+            <a href="catalog.html?category=chew-toffee">Chew &amp; Toffee Production</a>
+            <a href="catalog.html?category=bubble-gum">Bubble Gum Production</a>
+            <a href="catalog.html?category=pharma">Pharma Production</a>
+          </div>
+        </li>
+        <li class="nav-dropdown-wrap">
+          <button class="flex items-center gap-1 px-3 py-2 text-sm font-medium text-slate-600 hover:text-accent rounded-lg hover:bg-slate-50">Lines <svg class="w-3.5 h-3.5 opacity-60" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></button>
+          <div class="nav-mega"><div class="nav-mega-inner" id="lines-mega-inner"></div></div>
+        </li>
+        <li class="nav-dropdown-wrap">
+          <button class="flex items-center gap-1 px-3 py-2 text-sm font-medium text-slate-600 hover:text-accent rounded-lg hover:bg-slate-50">Machines <svg class="w-3.5 h-3.5 opacity-60" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></button>
+          <div class="nav-dropdown" id="machines-dropdown-inner" style="min-width:240px"></div>
+        </li>
+        <li class="nav-dropdown-wrap">
+          <button class="flex items-center gap-1 px-3 py-2 text-sm font-medium text-slate-600 hover:text-accent rounded-lg hover:bg-slate-50">Dies &amp; Parts <svg class="w-3.5 h-3.5 opacity-60" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></button>
+          <div class="nav-dropdown" id="dies-dropdown-inner" style="min-width:240px"></div>
+        </li>
+      </ul>
+      <div class="flex items-center gap-3">
+        <a href="quote.html" class="relative flex items-center gap-2 bg-primary text-white text-sm font-semibold px-4 py-2 rounded-lg hover:bg-accent transition-colors">
+          Quote
+          <span data-rfq-badge class="absolute -top-1.5 -right-1.5 bg-red-500 text-white text-xs w-5 h-5 rounded-full flex items-center justify-center font-bold" style="opacity:0">0</span>
+        </a>
+        <button id="nav-toggle" class="lg:hidden p-1.5 rounded-lg hover:bg-slate-100">
+          <svg class="w-5 h-5 text-slate-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+        </button>
+      </div>
+    </div>
+    <div id="mobile-menu" class="flex-col px-6 pb-4 bg-white border-t border-slate-100 gap-1">
+      <a href="catalog.html" class="block py-2.5 text-sm font-semibold text-slate-700 border-b border-slate-100">Browse</a>
+      <div id="mobile-cat-links"></div>
+      <a href="quote.html" class="block py-2.5 text-sm font-medium text-slate-600">Request Quote</a>
+    </div>
+  </nav>
+
+  <main class="pt-20 pb-20 max-w-7xl mx-auto px-6">
+
+    <!-- Big search bar -->
+    <div class="py-12 text-center">
+      <h1 class="text-3xl font-extrabold text-primary mb-6">Search All Equipment</h1>
+      <div class="flex gap-3 max-w-2xl mx-auto">
+        <input id="page-search-input" type="text" placeholder="Search by name, part number, machine type, material..."
+          class="flex-1 text-base border-2 border-slate-200 rounded-xl px-5 py-3 focus:outline-none focus:border-accent bg-white shadow-sm"
+          autocomplete="off"/>
+        <button id="page-search-btn"
+          class="bg-primary text-white font-semibold px-6 py-3 rounded-xl hover:bg-accent transition-colors flex items-center gap-2 shrink-0">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+          Search
+        </button>
+      </div>
+      <p class="text-slate-400 text-sm mt-3">Try: "vacuum cooker", "HC-L001", "lollipop mold", "die pillow"</p>
+    </div>
+
+    <!-- Results header -->
+    <div id="search-results-header" class="flex items-center justify-between mb-6">
+      <div>
+        <span id="search-count" class="font-semibold text-slate-700"></span>
+        <span class="text-slate-400 text-sm"> for </span>
+        <span id="search-query-label" class="font-semibold text-accent"></span>
+      </div>
+    </div>
+
+    <!-- Empty state -->
+    <div id="search-empty" class="hidden text-center py-16">
+      <svg class="w-16 h-16 text-slate-300 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+      <p class="text-slate-500 font-semibold mb-1">No results found</p>
+      <p class="text-slate-400 text-sm">Try a different keyword or browse by category.</p>
+      <a href="catalog.html" class="mt-6 inline-block bg-primary text-white font-semibold px-6 py-2.5 rounded-xl hover:bg-accent transition-colors text-sm">Browse Catalog</a>
+    </div>
+
+    <!-- Results grid -->
+    <div id="search-results-grid" class="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5"></div>
+
+  </main>
+
+  <footer class="bg-slate-900 text-slate-400 py-10">
+    <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-4 text-sm">
+      <p>&copy; <span id="footer-year"></span> Starmer Global. All rights reserved.</p>
+      <div class="flex gap-6">
+        <a href="catalog.html" class="hover:text-white transition-colors">Browse</a>
+        <a href="dies.html" class="hover:text-white transition-colors">Dies &amp; Parts</a>
+        <a href="quote.html" class="hover:text-white transition-colors">Request Quote</a>
+      </div>
+    </div>
+  </footer>
+
+  <div id="toast" aria-live="polite"><span></span></div>
+  <script src="js/catalog-data.js"></script>
+  <script src="js/bundle.js"></script>
+</body>
+</html>
+

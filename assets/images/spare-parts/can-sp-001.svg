@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" width="400" height="300">
+  <rect width="400" height="300" fill="#0F766E"/>
+  <!-- Two forming rollers side by side -->
+  <ellipse cx="145" cy="140" rx="80" ry="80" fill="rgba(255,255,255,0.12)"/>
+  <ellipse cx="255" cy="140" rx="80" ry="80" fill="rgba(255,255,255,0.12)"/>
+  <ellipse cx="145" cy="140" rx="60" ry="60" fill="rgba(255,255,255,0.18)"/>
+  <ellipse cx="255" cy="140" rx="60" ry="60" fill="rgba(255,255,255,0.18)"/>
+  <!-- Engraved cavities on rollers (pillow shapes) -->
+  <ellipse cx="125" cy="118" rx="12" ry="8" fill="rgba(255,255,255,0.35)"/>
+  <ellipse cx="165" cy="118" rx="12" ry="8" fill="rgba(255,255,255,0.35)"/>
+  <ellipse cx="125" cy="140" rx="12" ry="8" fill="rgba(255,255,255,0.35)"/>
+  <ellipse cx="165" cy="140" rx="12" ry="8" fill="rgba(255,255,255,0.35)"/>
+  <ellipse cx="125" cy="162" rx="12" ry="8" fill="rgba(255,255,255,0.35)"/>
+  <ellipse cx="165" cy="162" rx="12" ry="8" fill="rgba(255,255,255,0.35)"/>
+  <ellipse cx="235" cy="118" rx="12" ry="8" fill="rgba(255,255,255,0.35)"/>
+  <ellipse cx="275" cy="118" rx="12" ry="8" fill="rgba(255,255,255,0.35)"/>
+  <ellipse cx="235" cy="140" rx="12" ry="8" fill="rgba(255,255,255,0.35)"/>
+  <ellipse cx="275" cy="140" rx="12" ry="8" fill="rgba(255,255,255,0.35)"/>
+  <ellipse cx="235" cy="162" rx="12" ry="8" fill="rgba(255,255,255,0.35)"/>
+  <ellipse cx="275" cy="162" rx="12" ry="8" fill="rgba(255,255,255,0.35)"/>
+  <rect x="110" y="228" width="180" height="26" rx="5" fill="rgba(0,0,0,0.3)"/>
+  <text x="200" y="246" font-family="'Courier New',monospace" font-size="11" font-weight="700" fill="rgba(255,255,255,0.9)" text-anchor="middle">CEQ-SP-CAN-001</text>
+</svg>

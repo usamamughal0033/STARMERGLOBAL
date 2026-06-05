@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" width="400" height="300">
+  <rect width="400" height="300" fill="#1E3A8A"/>
+  <rect x="20" y="160" width="360" height="16" rx="4" fill="rgba(255,255,255,0.12)"/>
+  <rect x="35" y="95" width="90" height="72" rx="8" fill="rgba(255,255,255,0.18)"/>
+  <rect x="50" y="110" width="60" height="28" rx="4" fill="rgba(255,255,255,0.25)"/>
+  <rect x="155" y="78" width="115" height="90" rx="8" fill="rgba(255,255,255,0.18)"/>
+  <circle cx="213" cy="113" r="22" fill="rgba(255,255,255,0.22)"/>
+  <circle cx="213" cy="113" r="10" fill="rgba(255,255,255,0.35)"/>
+  <rect x="300" y="110" width="65" height="58" rx="8" fill="rgba(255,255,255,0.15)"/>
+  <circle cx="60"  cy="176" r="11" fill="rgba(255,255,255,0.25)"/>
+  <circle cx="210" cy="176" r="11" fill="rgba(255,255,255,0.25)"/>
+  <circle cx="340" cy="176" r="11" fill="rgba(255,255,255,0.25)"/>
+  <text x="80"  y="90"  font-family="monospace" font-size="8" fill="rgba(255,255,255,0.5)" text-anchor="middle">COOKER</text>
+  <text x="213" y="73"  font-family="monospace" font-size="8" fill="rgba(255,255,255,0.5)" text-anchor="middle">DEPOSITOR</text>
+  <text x="332" y="106" font-family="monospace" font-size="8" fill="rgba(255,255,255,0.5)" text-anchor="middle">WRAP</text>
+  <rect x="110" y="228" width="180" height="26" rx="5" fill="rgba(0,0,0,0.3)"/>
+  <text x="200" y="246" font-family="'Courier New',monospace" font-size="11" font-weight="700" fill="rgba(255,255,255,0.9)" text-anchor="middle">CEQ-PL-LOL-001</text>
+</svg>

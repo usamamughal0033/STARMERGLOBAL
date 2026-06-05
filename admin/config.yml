@@ -1,0 +1,91 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: assets/images/uploads
+public_folder: /assets/images/uploads
+
+# The catalog.json is managed as a single file collection
+# Editors use structured forms to add/edit lines, machines and dies.
+
+collections:
+  - name: "catalog"
+    label: "Product Catalog"
+    files:
+      - name: "catalog"
+        label: "Full Catalog (Lines, Machines, Dies)"
+        file: "data/catalog.json"
+        fields:
+          - label: "Categories"
+            name: "categories"
+            widget: "list"
+            summary: "{{fields.label}}"
+            fields:
+              - { label: "Category ID", name: "id", widget: "string", hint: "e.g. hard-candy (no spaces, lowercase)" }
+              - { label: "Label", name: "label", widget: "string", hint: "e.g. Hard Candy Production" }
+              - { label: "Slug", name: "slug", widget: "string" }
+              - { label: "Primary Color (hex)", name: "color", widget: "color", default: "#1A3A5C" }
+              - { label: "Accent Color (hex)", name: "accentColor", widget: "color", default: "#2E7CC6" }
+              - { label: "Description", name: "description", widget: "text" }
+              - label: "Production Lines"
+                name: "lines"
+                widget: "list"
+                summary: "{{fields.lineNumber}} — {{fields.name}}"
+                fields:
+                  - { label: "Line ID", name: "id", widget: "string", hint: "e.g. HC-L-001" }
+                  - { label: "Line Number", name: "lineNumber", widget: "string", hint: "e.g. HC-L-001" }
+                  - { label: "Line Name", name: "name", widget: "string", hint: "e.g. Candy 200 kg/hr Complete Line" }
+                  - { label: "Production Rate", name: "productionRate", widget: "string", hint: "e.g. 200 kg/hr" }
+                  - { label: "Description", name: "description", widget: "text" }
+                  - { label: "Line Image", name: "image", widget: "image", required: false, allow_multiple: false }
+                  - label: "Machines"
+                    name: "machines"
+                    widget: "list"
+                    summary: "{{fields.machineNumber}} — {{fields.name}}"
+                    fields:
+                      - { label: "Machine ID", name: "id", widget: "string", hint: "e.g. HC-L001-M01" }
+                      - { label: "Machine Number", name: "machineNumber", widget: "string" }
+                      - { label: "Order in Line", name: "orderInLine", widget: "number", default: 1 }
+                      - { label: "Machine Name", name: "name", widget: "string" }
+                      - { label: "Function (short)", name: "function", widget: "string", hint: "One-line description shown on the pipeline card" }
+                      - { label: "Full Description", name: "description", widget: "text", required: false }
+                      - { label: "Machine Image", name: "image", widget: "image", required: false }
+                      - label: "Technical Specifications"
+                        name: "specs"
+                        widget: "object"
+                        required: false
+                        fields:
+                          - { label: "Throughput", name: "throughput", widget: "string", required: false }
+                          - { label: "Power Consumption", name: "powerConsumption", widget: "string", required: false }
+                          - { label: "Dimensions (L×W×H)", name: "dimensions", widget: "string", required: false }
+                          - { label: "Weight", name: "weight", widget: "string", required: false }
+                          - { label: "Contact Material", name: "materialContact", widget: "string", required: false }
+                          - { label: "Operating Temperature", name: "operatingTemp", widget: "string", required: false }
+                          - { label: "Control System", name: "controlSystem", widget: "string", required: false }
+                          - { label: "Certifications", name: "certifications", widget: "string", required: false }
+                          - { label: "Custom Spec 1 (key)", name: "customKey1", widget: "string", required: false }
+                          - { label: "Custom Spec 1 (value)", name: "customVal1", widget: "string", required: false }
+                          - { label: "Custom Spec 2 (key)", name: "customKey2", widget: "string", required: false }
+                          - { label: "Custom Spec 2 (value)", name: "customVal2", widget: "string", required: false }
+                      - label: "Dies & Spare Parts"
+                        name: "diesAndParts"
+                        widget: "list"
+                        required: false
+                        summary: "{{fields.partNumber}} — {{fields.name}}"
+                        fields:
+                          - { label: "Part ID", name: "id", widget: "string", hint: "e.g. HC-L001-M01-D01" }
+                          - { label: "Part / Die Number", name: "partNumber", widget: "string" }
+                          - { label: "Type", name: "type", widget: "select", options: ["die", "part"], default: "die" }
+                          - { label: "Name", name: "name", widget: "string" }
+                          - { label: "Description", name: "description", widget: "text", required: false }
+                          - { label: "Image", name: "image", widget: "image", required: false }
+                          - label: "Specifications"
+                            name: "specs"
+                            widget: "object"
+                            required: false
+                            fields:
+                              - { label: "Spec 1 Key", name: "spec1Key", widget: "string", required: false }
+                              - { label: "Spec 1 Value", name: "spec1Val", widget: "string", required: false }
+                              - { label: "Spec 2 Key", name: "spec2Key", widget: "string", required: false }
+                              - { label: "Spec 2 Value", name: "spec2Val", widget: "string", required: false }
+                              - { label: "Compatible Machine", name: "compatibleMachine", widget: "string", required: false }

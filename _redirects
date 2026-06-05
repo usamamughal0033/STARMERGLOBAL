@@ -1,0 +1,3 @@
+# Netlify redirects
+# Redirect any path without an extension to itself (SPA-style fallback not needed here, but keeps admin working)
+/admin/* /admin/index.html 200

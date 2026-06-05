@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" width="400" height="300">
+  <rect width="400" height="300" fill="#1E3A8A"/>
+  <!-- Drive belt representation -->
+  <rect x="60"  y="120" width="280" height="50" rx="6" fill="rgba(255,255,255,0.1)"/>
+  <!-- Belt top and bottom runs with teeth -->
+  <rect x="68"  y="126" width="264" height="14" rx="3" fill="rgba(255,255,255,0.3)"/>
+  <rect x="68"  y="150" width="264" height="14" rx="3" fill="rgba(255,255,255,0.3)"/>
+  <!-- Belt teeth top -->
+  <rect x="80"  y="118" width="8" height="8" rx="1" fill="rgba(255,255,255,0.4)"/>
+  <rect x="98"  y="118" width="8" height="8" rx="1" fill="rgba(255,255,255,0.4)"/>
+  <rect x="116" y="118" width="8" height="8" rx="1" fill="rgba(255,255,255,0.4)"/>
+  <rect x="134" y="118" width="8" height="8" rx="1" fill="rgba(255,255,255,0.4)"/>
+  <rect x="152" y="118" width="8" height="8" rx="1" fill="rgba(255,255,255,0.4)"/>
+  <rect x="170" y="118" width="8" height="8" rx="1" fill="rgba(255,255,255,0.4)"/>
+  <rect x="188" y="118" width="8" height="8" rx="1" fill="rgba(255,255,255,0.4)"/>
+  <rect x="206" y="118" width="8" height="8" rx="1" fill="rgba(255,255,255,0.4)"/>
+  <rect x="224" y="118" width="8" height="8" rx="1" fill="rgba(255,255,255,0.4)"/>
+  <rect x="242" y="118" width="8" height="8" rx="1" fill="rgba(255,255,255,0.4)"/>
+  <rect x="260" y="118" width="8" height="8" rx="1" fill="rgba(255,255,255,0.4)"/>
+  <rect x="278" y="118" width="8" height="8" rx="1" fill="rgba(255,255,255,0.4)"/>
+  <rect x="296" y="118" width="8" height="8" rx="1" fill="rgba(255,255,255,0.4)"/>
+  <!-- Drive sprockets -->
+  <circle cx="68"  cy="145" r="24" fill="rgba(255,255,255,0.2)"/>
+  <circle cx="332" cy="145" r="24" fill="rgba(255,255,255,0.2)"/>
+  <circle cx="68"  cy="145" r="12" fill="rgba(255,255,255,0.32)"/>
+  <circle cx="332" cy="145" r="12" fill="rgba(255,255,255,0.32)"/>
+  <rect x="110" y="228" width="180" height="26" rx="5" fill="rgba(0,0,0,0.3)"/>
+  <text x="200" y="246" font-family="'Courier New',monospace" font-size="11" font-weight="700" fill="rgba(255,255,255,0.9)" text-anchor="middle">CEQ-SP-LOL-002</text>
+</svg>

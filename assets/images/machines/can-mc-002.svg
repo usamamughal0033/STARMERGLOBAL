@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" width="400" height="300">
+  <rect width="400" height="300" fill="#0F766E"/>
+  <rect x="80" y="80" width="240" height="130" rx="10" fill="rgba(255,255,255,0.12)"/>
+  <!-- Two forming rollers -->
+  <ellipse cx="160" cy="145" rx="55" ry="40" fill="rgba(255,255,255,0.2)"/>
+  <ellipse cx="240" cy="145" rx="55" ry="40" fill="rgba(255,255,255,0.2)"/>
+  <ellipse cx="160" cy="145" rx="35" ry="25" fill="rgba(255,255,255,0.28)"/>
+  <ellipse cx="240" cy="145" rx="35" ry="25" fill="rgba(255,255,255,0.28)"/>
+  <rect x="90"  y="90" width="220" height="16" rx="4" fill="rgba(255,255,255,0.15)"/>
+  <!-- Candy rope feed -->
+  <rect x="30"  y="140" width="60" height="12" rx="4" fill="rgba(255,255,255,0.25)"/>
+  <!-- Output conveyor -->
+  <rect x="310" y="140" width="60" height="12" rx="4" fill="rgba(255,255,255,0.25)"/>
+  <rect x="90"  y="200" width="220" height="12" rx="4" fill="rgba(255,255,255,0.12)"/>
+  <rect x="110" y="228" width="180" height="26" rx="5" fill="rgba(0,0,0,0.3)"/>
+  <text x="200" y="246" font-family="'Courier New',monospace" font-size="11" font-weight="700" fill="rgba(255,255,255,0.9)" text-anchor="middle">CEQ-MC-CAN-002</text>
+</svg>
