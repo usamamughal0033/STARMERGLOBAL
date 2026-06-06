@@ -1,4 +1,4 @@
-// ── Cart ─────────────────────────────────────────────────────────────────────
+﻿// ── Cart ─────────────────────────────────────────────────────────────────────
 const CART_KEY = 'sg-rfq-cart';
 
 function _readCart() {
@@ -312,22 +312,33 @@ const CAT_VISUAL = {
       <ellipse cx="26" cy="40" rx="10" ry="5" fill="rgba(255,255,255,0.18)"/>
     </svg>`
   }
+
+const CAT_IMG = {
+  'hard-candy':  'https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?auto=format&fit=crop&w=600&h=280&q=80',
+  'lollipop':    'https://images.unsplash.com/photo-1582554998897-e6e04e98ff4c?auto=format&fit=crop&w=600&h=280&q=80',
+  'chew-toffee': 'https://images.unsplash.com/photo-1553279768-865429fa0078?auto=format&fit=crop&w=600&h=280&q=80',
+  'bubble-gum':  'https://images.unsplash.com/photo-1587324716891-0b54f10bef52?auto=format&fit=crop&w=600&h=280&q=80',
+  'pharma':      'https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?auto=format&fit=crop&w=600&h=280&q=80',
 };
 
 function buildHomeCategoryCard(cat) {
   const lineCount = cat.lines.length;
   const machineCount = cat.lines.reduce((sum, l) => sum + l.machines.length, 0);
   const vis = CAT_VISUAL[cat.id] || { rate: 'Custom', tagline: '', bg: `linear-gradient(135deg,${cat.color},${cat.color}cc)`, icon: '' };
+  const imgSrc = CAT_IMG[cat.id] || '';
   return `
     <article class="category-card rounded-2xl overflow-hidden border border-slate-100 shadow-sm bg-white flex flex-col">
-      <div class="cat-card-header relative h-44 flex items-center justify-center p-6" style="background:${vis.bg}">
-        <div class="w-20 h-20 opacity-90">${vis.icon}</div>
-        <div class="absolute top-4 right-4 bg-black/20 text-white text-xs font-bold px-3 py-1.5 rounded-full border border-white/25">
-          ${vis.rate}
+      <div class="cat-card-header relative h-44 overflow-hidden bg-slate-800">
+        ${imgSrc ? `<img src="${imgSrc}" alt="${cat.label}" class="cat-card-img absolute inset-0 w-full h-full object-cover" onerror="this.style.display='none';this.nextElementSibling.style.opacity='1'"/>` : ''}
+        <div class="absolute inset-0 transition-opacity" style="background:${vis.bg};opacity:${imgSrc ? '0.65' : '1'}"></div>
+        <div class="absolute inset-0 flex flex-col justify-between p-5">
+          <div class="flex justify-end">
+            <span class="bg-black/30 backdrop-blur-sm text-white text-xs font-bold px-3 py-1.5 rounded-full border border-white/25">${vis.rate}</span>
+          </div>
+          <div class="text-white/90 text-xs font-semibold uppercase tracking-widest drop-shadow">${vis.tagline}</div>
         </div>
       </div>
       <div class="p-6 flex flex-col flex-1">
-        <span class="text-xs font-semibold text-slate-400 uppercase tracking-widest mb-1">${vis.tagline}</span>
         <h3 class="text-xl font-bold mb-2" style="color:${cat.color}">${cat.label}</h3>
         <p class="text-slate-500 text-sm mb-4 leading-relaxed flex-1">${cat.description}</p>
         <div class="flex gap-5 text-xs text-slate-400 mb-5 pt-3 border-t border-slate-100">
@@ -340,7 +351,7 @@ function buildHomeCategoryCard(cat) {
             <strong class="text-slate-600">${machineCount}+</strong> Machines
           </span>
         </div>
-        <a href="catalog.html?category=${cat.id}" class="cat-card-cta flex items-center justify-center gap-2 text-sm font-bold py-2.5 rounded-xl transition-all" style="background:${cat.color}18;color:${cat.color}">
+        <a href="catalog.html?category=${cat.id}" class="cat-card-cta flex items-center justify-center gap-2 text-sm font-bold py-3 rounded-xl transition-all" style="background:${cat.color}18;color:${cat.color}">
           Explore Equipment
           <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"/></svg>
         </a>
@@ -356,44 +367,187 @@ function initCandyCanvas() {
 
   function resize() {
     const p = canvas.parentElement;
-    W = canvas.width = p ? p.offsetWidth : window.innerWidth;
+    W = canvas.width  = p ? p.offsetWidth  : window.innerWidth;
     H = canvas.height = p ? p.offsetHeight : window.innerHeight;
   }
   resize();
   window.addEventListener('resize', resize, { passive: true });
 
-  const COLORS = ['#FF6B9D','#FFB347','#6EE7A0','#7DD3FC','#FCA5A5','#FDE68A','#A5F3FC','#DDD6FE','#FBCFE8','#FED7AA'];
+  // [base, highlight, shadow]
+  const PALETTES = [
+    ['#FF4E7C','#FFB3C8','#A80038'],
+    ['#FF8C00','#FFCC80','#AD5500'],
+    ['#FFD700','#FFF4A0','#A08800'],
+    ['#3ECF6E','#A0F0C0','#1A7842'],
+    ['#3B9EF5','#A0D4FF','#1A60B8'],
+    ['#B44FE5','#DDAAFF','#7200B8'],
+    ['#FF5757','#FFA8A8','#B80000'],
+    ['#00C0A0','#80EEE0','#006B60'],
+  ];
 
-  function makeParticle(randomY) {
-    const types = ['circle','lollipop','wrapped','pill'];
+  function makeParticle(rndY) {
+    const pIdx  = Math.floor(Math.random() * PALETTES.length);
+    const p2Idx = (pIdx + Math.floor(2 + Math.random() * 3)) % PALETTES.length;
+    const depth = 0.3 + Math.random() * 0.7;
+    const baseS = 9 + Math.random() * 14;
+    const types = ['ball','lollipop','wrapped','pill','gummy'];
     return {
       x: Math.random() * (W || 1200),
-      y: randomY ? Math.random() * (H || 800) : -60 - Math.random() * 200,
-      size: 7 + Math.random() * 11,
-      vy: 0.5 + Math.random() * 1.3,
-      vx: (Math.random() - 0.5) * 0.5,
-      rot: Math.random() * Math.PI * 2,
-      vr: (Math.random() - 0.5) * 0.022,
-      color: COLORS[Math.floor(Math.random() * COLORS.length)],
-      type: types[Math.floor(Math.random() * types.length)],
-      alpha: 0.65 + Math.random() * 0.28
+      y: rndY ? Math.random() * (H || 800) : -80 - Math.random() * 300,
+      size:  baseS * (0.45 + depth * 0.55),
+      vy:    (0.3 + Math.random() * 0.85) * (0.4 + depth * 0.6),
+      vx:    (Math.random() - 0.5) * 0.38,
+      rot:   Math.random() * Math.PI * 2,
+      vr:    (Math.random() - 0.5) * 0.018,
+      pal:   PALETTES[pIdx],
+      pal2:  PALETTES[p2Idx],
+      type:  types[Math.floor(Math.random() * types.length)],
+      alpha: 0.28 + depth * 0.55,
+      depth,
     };
   }
 
-  const particles = Array.from({ length: 65 }, () => makeParticle(true));
+  const particles = Array.from({ length: 68 }, () => makeParticle(true));
 
-  function drawRR(cx, cy, w, h, r) {
+  // ── individual shape drawers ────────────────────────────────────────────
+
+  function drawBall(s, pal) {
+    const g = ctx.createRadialGradient(-s*0.3, -s*0.35, s*0.06, 0, 0, s);
+    g.addColorStop(0,    pal[1]);
+    g.addColorStop(0.42, pal[0]);
+    g.addColorStop(1,    pal[2]);
     ctx.beginPath();
-    ctx.moveTo(cx - w/2 + r, cy - h/2);
-    ctx.lineTo(cx + w/2 - r, cy - h/2);
-    ctx.quadraticCurveTo(cx + w/2, cy - h/2, cx + w/2, cy - h/2 + r);
-    ctx.lineTo(cx + w/2, cy + h/2 - r);
-    ctx.quadraticCurveTo(cx + w/2, cy + h/2, cx + w/2 - r, cy + h/2);
-    ctx.lineTo(cx - w/2 + r, cy + h/2);
-    ctx.quadraticCurveTo(cx - w/2, cy + h/2, cx - w/2, cy + h/2 - r);
-    ctx.lineTo(cx - w/2, cy - h/2 + r);
-    ctx.quadraticCurveTo(cx - w/2, cy - h/2, cx - w/2 + r, cy - h/2);
+    ctx.arc(0, 0, s, 0, Math.PI * 2);
+    ctx.fillStyle = g;
+    ctx.fill();
+    // specular highlight
+    const sp = ctx.createRadialGradient(-s*0.3, -s*0.34, 0, -s*0.28, -s*0.32, s*0.34);
+    sp.addColorStop(0, 'rgba(255,255,255,0.92)');
+    sp.addColorStop(0.45, 'rgba(255,255,255,0.28)');
+    sp.addColorStop(1, 'rgba(255,255,255,0)');
+    ctx.beginPath();
+    ctx.arc(0, 0, s, 0, Math.PI * 2);
+    ctx.fillStyle = sp;
+    ctx.fill();
+  }
+
+  function drawLollipop(s, pal) {
+    // stick
+    const sg = ctx.createLinearGradient(0, s*0.8, 0, s*3.2);
+    sg.addColorStop(0, 'rgba(220,200,160,0.9)');
+    sg.addColorStop(1, 'rgba(180,155,110,0.7)');
+    ctx.strokeStyle = sg;
+    ctx.lineWidth = s * 0.22;
+    ctx.lineCap = 'round';
+    ctx.beginPath();
+    ctx.moveTo(0, s * 0.82);
+    ctx.lineTo(s * 0.18, s * 3.2);
+    ctx.stroke();
+    // head
+    drawBall(s, pal);
+    // swirl stripe
+    ctx.strokeStyle = 'rgba(255,255,255,0.55)';
+    ctx.lineWidth = s * 0.16;
+    ctx.lineCap = 'round';
+    ctx.beginPath();
+    ctx.arc(0, 0, s * 0.62, -Math.PI * 0.75, Math.PI * 0.25);
+    ctx.stroke();
+  }
+
+  function drawWrapped(s, pal) {
+    const w = s * 2.4, h = s * 1.02, r = h * 0.48;
+    // foil body gradient
+    const bg = ctx.createLinearGradient(-w*0.4, -h*0.5, w*0.4, h*0.5);
+    bg.addColorStop(0,    pal[1]);
+    bg.addColorStop(0.35, pal[0]);
+    bg.addColorStop(0.72, pal[2]);
+    bg.addColorStop(1,    pal[0]);
+    ctx.beginPath();
+    ctx.moveTo(-w/2 + r, -h/2);
+    ctx.lineTo( w/2 - r, -h/2);
+    ctx.quadraticCurveTo(w/2, -h/2, w/2, -h/2 + r);
+    ctx.lineTo(w/2, h/2 - r);
+    ctx.quadraticCurveTo(w/2, h/2, w/2 - r, h/2);
+    ctx.lineTo(-w/2 + r, h/2);
+    ctx.quadraticCurveTo(-w/2, h/2, -w/2, h/2 - r);
+    ctx.lineTo(-w/2, -h/2 + r);
+    ctx.quadraticCurveTo(-w/2, -h/2, -w/2 + r, -h/2);
     ctx.closePath();
+    ctx.fillStyle = bg;
+    ctx.fill();
+    // shine line
+    ctx.strokeStyle = 'rgba(255,255,255,0.55)';
+    ctx.lineWidth = h * 0.13;
+    ctx.lineCap = 'round';
+    ctx.beginPath();
+    ctx.moveTo(-w*0.28, -h*0.19);
+    ctx.lineTo( w*0.28, -h*0.19);
+    ctx.stroke();
+    // twisted ends
+    const e1 = ctx.createRadialGradient(-w*0.5, 0, 0, -w*0.5, 0, s*0.58);
+    e1.addColorStop(0, pal[1]); e1.addColorStop(1, pal[2]);
+    ctx.beginPath();
+    ctx.ellipse(-w/2, 0, s*0.3, h/2 + s*0.08, 0, 0, Math.PI*2);
+    ctx.fillStyle = e1; ctx.fill();
+    const e2 = ctx.createRadialGradient(w*0.5, 0, 0, w*0.5, 0, s*0.58);
+    e2.addColorStop(0, pal[1]); e2.addColorStop(1, pal[2]);
+    ctx.beginPath();
+    ctx.ellipse(w/2, 0, s*0.3, h/2 + s*0.08, 0, 0, Math.PI*2);
+    ctx.fillStyle = e2; ctx.fill();
+  }
+
+  function drawPill(s, pal, pal2) {
+    const w = s*2.1, h = s*0.92, r = h/2;
+    // left half
+    const gl = ctx.createRadialGradient(-w*0.2, -h*0.28, 0, -w*0.22, 0, w*0.52);
+    gl.addColorStop(0, pal[1]); gl.addColorStop(0.5, pal[0]); gl.addColorStop(1, pal[2]);
+    ctx.beginPath();
+    ctx.arc(-w/2 + r, 0, r, Math.PI/2, 3*Math.PI/2);
+    ctx.lineTo(0, -h/2); ctx.lineTo(0, h/2); ctx.closePath();
+    ctx.fillStyle = gl; ctx.fill();
+    // right half (contrasting colour)
+    const gr = ctx.createRadialGradient(w*0.2, -h*0.28, 0, w*0.22, 0, w*0.52);
+    gr.addColorStop(0, pal2[1]); gr.addColorStop(0.5, pal2[0]); gr.addColorStop(1, pal2[2]);
+    ctx.beginPath();
+    ctx.arc(w/2 - r, 0, r, -Math.PI/2, Math.PI/2);
+    ctx.lineTo(0, h/2); ctx.lineTo(0, -h/2); ctx.closePath();
+    ctx.fillStyle = gr; ctx.fill();
+    // dividing line
+    ctx.strokeStyle = 'rgba(255,255,255,0.55)';
+    ctx.lineWidth = 1.5;
+    ctx.beginPath();
+    ctx.moveTo(0, -h/2 + 2); ctx.lineTo(0, h/2 - 2); ctx.stroke();
+    // specular
+    const sp = ctx.createRadialGradient(-w*0.15, -h*0.26, 0, -w*0.1, -h*0.1, h*0.48);
+    sp.addColorStop(0, 'rgba(255,255,255,0.8)');
+    sp.addColorStop(1, 'rgba(255,255,255,0)');
+    ctx.beginPath();
+    ctx.arc(-w/2 + r, 0, r, Math.PI/2, 3*Math.PI/2);
+    ctx.lineTo(w/2 - r, -h/2);
+    ctx.arc(w/2 - r, 0, r, -Math.PI/2, Math.PI/2);
+    ctx.closePath();
+    ctx.fillStyle = sp; ctx.fill();
+  }
+
+  function drawGummy(s, pal) {
+    // translucent bean / gummy-bear silhouette
+    const g = ctx.createRadialGradient(-s*0.22, -s*0.3, s*0.06, 0, 0, s*1.1);
+    g.addColorStop(0,    pal[1] + 'ee');
+    g.addColorStop(0.4,  pal[0] + 'cc');
+    g.addColorStop(1,    pal[2] + '88');
+    ctx.beginPath();
+    ctx.moveTo(0, -s);
+    ctx.bezierCurveTo(s*0.82, -s*0.82, s*1.02, 0, s*0.72, s*0.72);
+    ctx.bezierCurveTo(s*0.32, s*1.12, -s*0.32, s*1.12, -s*0.72, s*0.72);
+    ctx.bezierCurveTo(-s*1.02, 0, -s*0.82, -s*0.82, 0, -s);
+    ctx.fillStyle = g; ctx.fill();
+    // translucent sheen
+    const sh = ctx.createRadialGradient(-s*0.25, -s*0.32, 0, -s*0.2, -s*0.28, s*0.48);
+    sh.addColorStop(0, 'rgba(255,255,255,0.78)');
+    sh.addColorStop(1, 'rgba(255,255,255,0)');
+    ctx.beginPath();
+    ctx.ellipse(-s*0.2, -s*0.28, s*0.34, s*0.24, -0.3, 0, Math.PI*2);
+    ctx.fillStyle = sh; ctx.fill();
   }
 
   function drawParticle(p) {
@@ -401,50 +555,16 @@ function initCandyCanvas() {
     ctx.translate(p.x, p.y);
     ctx.rotate(p.rot);
     ctx.globalAlpha = p.alpha;
-    ctx.shadowColor = 'rgba(0,0,0,0.18)';
-    ctx.shadowBlur = 7;
-    ctx.shadowOffsetX = 2;
-    ctx.shadowOffsetY = 3;
-    ctx.fillStyle = p.color;
-    ctx.strokeStyle = 'rgba(80,80,120,0.1)';
-    ctx.lineWidth = 1.2;
+    ctx.shadowColor    = 'rgba(0,0,0,0.22)';
+    ctx.shadowBlur     = p.size * 0.85;
+    ctx.shadowOffsetX  = p.size * 0.18;
+    ctx.shadowOffsetY  = p.size * 0.26;
     const s = p.size;
-
-    if (p.type === 'circle') {
-      ctx.beginPath(); ctx.arc(0, 0, s, 0, Math.PI * 2); ctx.fill(); ctx.stroke();
-      ctx.shadowBlur = 0; ctx.shadowOffsetX = 0; ctx.shadowOffsetY = 0;
-      ctx.globalAlpha = p.alpha * 0.65;
-      ctx.fillStyle = 'rgba(255,255,255,0.9)';
-      ctx.beginPath(); ctx.arc(-s * 0.28, -s * 0.28, s * 0.3, 0, Math.PI * 2); ctx.fill();
-    } else if (p.type === 'lollipop') {
-      ctx.shadowBlur = 3;
-      ctx.strokeStyle = 'rgba(160,160,180,0.55)'; ctx.lineWidth = 2.5;
-      ctx.beginPath(); ctx.moveTo(0, s * 0.8); ctx.lineTo(0, s * 2.8); ctx.stroke();
-      ctx.fillStyle = p.color; ctx.strokeStyle = 'rgba(80,80,120,0.1)'; ctx.lineWidth = 1.2;
-      ctx.shadowBlur = 7; ctx.shadowOffsetX = 2; ctx.shadowOffsetY = 3;
-      ctx.beginPath(); ctx.arc(0, 0, s, 0, Math.PI * 2); ctx.fill(); ctx.stroke();
-      ctx.shadowBlur = 0; ctx.shadowOffsetX = 0; ctx.shadowOffsetY = 0;
-      ctx.globalAlpha = p.alpha * 0.6;
-      ctx.fillStyle = 'rgba(255,255,255,0.9)';
-      ctx.beginPath(); ctx.arc(-s * 0.28, -s * 0.28, s * 0.28, 0, Math.PI * 2); ctx.fill();
-    } else if (p.type === 'wrapped') {
-      const w = s * 2.2, h = s * 0.9, r = Math.min(h / 2, 5);
-      drawRR(0, 0, w, h, r); ctx.fill(); ctx.stroke();
-      ctx.shadowBlur = 0; ctx.shadowOffsetX = 0; ctx.shadowOffsetY = 0;
-      ctx.fillStyle = 'rgba(255,255,255,0.7)';
-      ctx.beginPath(); ctx.ellipse(-w/2, 0, s * 0.2, h / 2, 0, 0, Math.PI * 2); ctx.fill();
-      ctx.beginPath(); ctx.ellipse(w/2, 0, s * 0.2, h / 2, 0, 0, Math.PI * 2); ctx.fill();
-    } else {
-      const w = s * 2, h = s * 0.85, r = h / 2;
-      ctx.beginPath();
-      ctx.arc(-w/2 + r, 0, r, Math.PI / 2, 3 * Math.PI / 2);
-      ctx.lineTo(w/2 - r, -h/2);
-      ctx.arc(w/2 - r, 0, r, -Math.PI / 2, Math.PI / 2);
-      ctx.closePath(); ctx.fill(); ctx.stroke();
-      ctx.shadowBlur = 0; ctx.shadowOffsetX = 0; ctx.shadowOffsetY = 0;
-      ctx.strokeStyle = 'rgba(255,255,255,0.7)'; ctx.lineWidth = 1;
-      ctx.beginPath(); ctx.moveTo(0, -h/2); ctx.lineTo(0, h/2); ctx.stroke();
-    }
+    if      (p.type === 'ball')     drawBall(s, p.pal);
+    else if (p.type === 'lollipop') drawLollipop(s, p.pal);
+    else if (p.type === 'wrapped')  drawWrapped(s, p.pal);
+    else if (p.type === 'pill')     drawPill(s, p.pal, p.pal2);
+    else                            drawGummy(s, p.pal);
     ctx.restore();
   }
 
@@ -452,11 +572,12 @@ function initCandyCanvas() {
     ctx.clearRect(0, 0, W, H);
     for (const p of particles) {
       p.y += p.vy; p.x += p.vx; p.rot += p.vr;
-      if (p.y > H + 60) { p.y = -60; p.x = Math.random() * W; }
-      if (p.x < -60) p.x = W + 60;
-      if (p.x > W + 60) p.x = -60;
-      drawParticle(p);
+      if (p.y > H + 90) { p.y = -90; p.x = Math.random() * W; }
+      if (p.x < -90) p.x = W + 90;
+      if (p.x > W + 90) p.x = -90;
     }
+    // depth sort: back particles first
+    particles.slice().sort((a,b) => a.depth - b.depth).forEach(drawParticle);
     requestAnimationFrame(animate);
   }
   animate();

@@ -165,17 +165,25 @@
 
 /* ── Category cards (home page) ──────────────────────────────────────────── */
 .category-card {
-  transition: transform var(--transition-slow), box-shadow var(--transition-slow);
+  transition: transform 280ms cubic-bezier(0.34,1.56,0.64,1), box-shadow 280ms ease, border-color 200ms ease;
 }
 .category-card:hover {
-  transform: translateY(-7px);
-  box-shadow: 0 20px 48px rgba(0,0,0,0.13);
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 24px 56px rgba(0,0,0,0.14), 0 0 0 2px rgba(46,124,198,0.18);
+  border-color: rgba(46,124,198,0.25) !important;
+}
+.cat-card-img {
+  transition: transform 420ms ease;
+}
+.category-card:hover .cat-card-img {
+  transform: scale(1.07);
 }
 .cat-card-cta {
-  transition: all var(--transition-base);
+  transition: all 200ms ease;
 }
 .category-card:hover .cat-card-cta {
-  filter: brightness(1.08);
+  filter: brightness(1.1);
+  letter-spacing: 0.01em;
 }
 
 /* ── Stats counter ───────────────────────────────────────────────────────── */
@@ -323,11 +331,11 @@
 .specs-table { width: 100%; border-collapse: collapse; }
 .specs-table tr { border-bottom: 1px solid #f1f5f9; }
 .specs-table th {
-  text-align: left; padding: 12px 16px 12px 0;
+  text-align: left; padding: 12px 16px;
   font-size: 13px; font-weight: 600; color: #64748b;
   width: 44%; vertical-align: top; line-height: 1.45;
 }
-.specs-table td { padding: 12px 0 12px 16px; font-size: 13px; color: #1e293b; line-height: 1.45; }
+.specs-table td { padding: 12px 16px; font-size: 13px; color: #1e293b; line-height: 1.45; }
 
 /* ── Product card ────────────────────────────────────────────────────────── */
 .product-card {
