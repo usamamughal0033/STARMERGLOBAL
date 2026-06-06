@@ -312,6 +312,7 @@ const CAT_VISUAL = {
       <ellipse cx="26" cy="40" rx="10" ry="5" fill="rgba(255,255,255,0.18)"/>
     </svg>`
   }
+};
 
 const CAT_IMG = {
   'hard-candy':  'https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?auto=format&fit=crop&w=600&h=280&q=80',
