@@ -233,6 +233,7 @@ function renderSearchDropdown(results, dropdown) {
 
 // ── Home ──────────────────────────────────────────────────────────────────────
 function initHomePage(catalog) {
+  initCandyCanvas();
   const statsSection = document.getElementById('stats');
   if (statsSection) {
     const observer = new IntersectionObserver(entries => {
@@ -247,24 +248,208 @@ function initHomePage(catalog) {
   if (catsGrid) catsGrid.innerHTML = getCategories(catalog).map(cat => buildHomeCategoryCard(cat)).join('');
 }
 
+const CAT_VISUAL = {
+  'hard-candy': {
+    rate: '200 – 1,200 kg/hr',
+    tagline: 'Deposited, Stamped & Drop-Rolled',
+    bg: 'linear-gradient(135deg,#F59E0B 0%,#DC2626 100%)',
+    icon: `<svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="40" cy="40" r="26" fill="rgba(255,255,255,0.18)" stroke="rgba(255,255,255,0.5)" stroke-width="2"/>
+      <circle cx="40" cy="40" r="17" fill="rgba(255,255,255,0.12)" stroke="rgba(255,255,255,0.35)" stroke-width="1.5"/>
+      <path d="M24 28 Q40 33 56 28" stroke="rgba(255,255,255,0.6)" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+      <path d="M21 38 Q40 44 59 38" stroke="rgba(255,255,255,0.6)" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+      <path d="M21 48 Q40 54 59 48" stroke="rgba(255,255,255,0.6)" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+      <circle cx="32" cy="30" r="5" fill="rgba(255,255,255,0.32)"/>
+    </svg>`
+  },
+  'lollipop': {
+    rate: '100 – 600 kg/hr',
+    tagline: 'Stick, Flat & Novelty Shapes',
+    bg: 'linear-gradient(135deg,#EC4899 0%,#7C3AED 100%)',
+    icon: `<svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <line x1="40" y1="72" x2="40" y2="52" stroke="rgba(255,255,255,0.7)" stroke-width="3.5" stroke-linecap="round"/>
+      <circle cx="40" cy="35" r="22" fill="rgba(255,255,255,0.18)" stroke="rgba(255,255,255,0.5)" stroke-width="2"/>
+      <path d="M40 15 Q56 22 56 35 Q56 48 40 52 Q24 48 24 35 Q24 22 40 15" stroke="rgba(255,255,255,0.42)" stroke-width="2" fill="none"/>
+      <circle cx="33" cy="27" r="5" fill="rgba(255,255,255,0.38)"/>
+    </svg>`
+  },
+  'chew-toffee': {
+    rate: '200 – 800 kg/hr',
+    tagline: 'Chew, Toffee & Caramel Lines',
+    bg: 'linear-gradient(135deg,#10B981 0%,#0369A1 100%)',
+    icon: `<svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <rect x="14" y="29" width="52" height="22" rx="9" fill="rgba(255,255,255,0.18)" stroke="rgba(255,255,255,0.5)" stroke-width="2"/>
+      <ellipse cx="14" cy="40" rx="7" ry="11" fill="rgba(255,255,255,0.28)" stroke="rgba(255,255,255,0.4)" stroke-width="1.5"/>
+      <ellipse cx="66" cy="40" rx="7" ry="11" fill="rgba(255,255,255,0.28)" stroke="rgba(255,255,255,0.4)" stroke-width="1.5"/>
+      <line x1="40" y1="29" x2="40" y2="51" stroke="rgba(255,255,255,0.38)" stroke-width="1.5"/>
+      <rect x="22" y="33" width="14" height="8" rx="3" fill="rgba(255,255,255,0.22)"/>
+    </svg>`
+  },
+  'bubble-gum': {
+    rate: '100 – 500 kg/hr',
+    tagline: 'Gum Ball, Stick & Coated Gum',
+    bg: 'linear-gradient(135deg,#8B5CF6 0%,#DB2777 100%)',
+    icon: `<svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="40" cy="44" r="16" fill="rgba(255,255,255,0.22)" stroke="rgba(255,255,255,0.5)" stroke-width="2"/>
+      <circle cx="18" cy="44" r="10" fill="rgba(255,255,255,0.16)" stroke="rgba(255,255,255,0.38)" stroke-width="1.5"/>
+      <circle cx="62" cy="44" r="10" fill="rgba(255,255,255,0.16)" stroke="rgba(255,255,255,0.38)" stroke-width="1.5"/>
+      <circle cx="29" cy="21" r="9" fill="rgba(255,255,255,0.15)" stroke="rgba(255,255,255,0.35)" stroke-width="1.5"/>
+      <circle cx="51" cy="21" r="9" fill="rgba(255,255,255,0.15)" stroke="rgba(255,255,255,0.35)" stroke-width="1.5"/>
+      <circle cx="34" cy="37" r="4" fill="rgba(255,255,255,0.42)"/>
+    </svg>`
+  },
+  'pharma': {
+    rate: '50K – 500K tabs/hr',
+    tagline: 'cGMP Pharmaceutical Lines',
+    bg: 'linear-gradient(135deg,#3B82F6 0%,#1E40AF 100%)',
+    icon: `<svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <rect x="8" y="31" width="64" height="18" rx="9" fill="rgba(255,255,255,0.18)" stroke="rgba(255,255,255,0.5)" stroke-width="2"/>
+      <line x1="40" y1="31" x2="40" y2="49" stroke="rgba(255,255,255,0.5)" stroke-width="1.5"/>
+      <rect x="10" y="55" width="22" height="8" rx="4" fill="rgba(255,255,255,0.18)" stroke="rgba(255,255,255,0.35)" stroke-width="1"/>
+      <rect x="48" y="55" width="22" height="8" rx="4" fill="rgba(255,255,255,0.18)" stroke="rgba(255,255,255,0.35)" stroke-width="1"/>
+      <line x1="36" y1="17" x2="36" y2="27" stroke="rgba(255,255,255,0.65)" stroke-width="2.5" stroke-linecap="round"/>
+      <line x1="31" y1="22" x2="41" y2="22" stroke="rgba(255,255,255,0.65)" stroke-width="2.5" stroke-linecap="round"/>
+      <ellipse cx="26" cy="40" rx="10" ry="5" fill="rgba(255,255,255,0.18)"/>
+    </svg>`
+  }
+};
+
 function buildHomeCategoryCard(cat) {
   const lineCount = cat.lines.length;
   const machineCount = cat.lines.reduce((sum, l) => sum + l.machines.length, 0);
-  return `<article class="category-card border border-slate-200 rounded-2xl p-7 bg-white">
-    <div class="w-14 h-14 rounded-2xl flex items-center justify-center mb-5" style="background:${cat.color}22">
-      <svg class="w-7 h-7" viewBox="0 0 24 24" fill="none" stroke="${cat.color}" stroke-width="1.8"><rect x="2" y="7" width="20" height="13" rx="2"/><path d="M16 7V5a2 2 0 00-4 0v2M8 7V5a2 2 0 014 0v2"/><circle cx="12" cy="13" r="2"/></svg>
-    </div>
-    <h3 class="text-lg font-bold mb-2" style="color:${cat.color}">${cat.label}</h3>
-    <p class="text-slate-500 text-sm mb-4 leading-relaxed">${cat.description}</p>
-    <div class="flex gap-4 text-xs text-slate-400 mb-5">
-      <span><strong class="text-slate-600">${lineCount}</strong> Lines</span>
-      <span><strong class="text-slate-600">${machineCount}+</strong> Machines</span>
-    </div>
-    <a href="catalog.html?category=${cat.id}" class="inline-flex items-center gap-1 text-sm font-semibold hover:gap-2 transition-all" style="color:${cat.color}">
-      Explore Equipment
-      <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
-    </a>
-  </article>`;
+  const vis = CAT_VISUAL[cat.id] || { rate: 'Custom', tagline: '', bg: `linear-gradient(135deg,${cat.color},${cat.color}cc)`, icon: '' };
+  return `
+    <article class="category-card rounded-2xl overflow-hidden border border-slate-100 shadow-sm bg-white flex flex-col">
+      <div class="cat-card-header relative h-44 flex items-center justify-center p-6" style="background:${vis.bg}">
+        <div class="w-20 h-20 opacity-90">${vis.icon}</div>
+        <div class="absolute top-4 right-4 bg-black/20 text-white text-xs font-bold px-3 py-1.5 rounded-full border border-white/25">
+          ${vis.rate}
+        </div>
+      </div>
+      <div class="p-6 flex flex-col flex-1">
+        <span class="text-xs font-semibold text-slate-400 uppercase tracking-widest mb-1">${vis.tagline}</span>
+        <h3 class="text-xl font-bold mb-2" style="color:${cat.color}">${cat.label}</h3>
+        <p class="text-slate-500 text-sm mb-4 leading-relaxed flex-1">${cat.description}</p>
+        <div class="flex gap-5 text-xs text-slate-400 mb-5 pt-3 border-t border-slate-100">
+          <span class="flex items-center gap-1.5">
+            <svg class="w-3.5 h-3.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 3H5a2 2 0 00-2 2v4m6-6h10a2 2 0 012 2v4M9 3v18m0 0h10a2 2 0 002-2V9M9 21H5a2 2 0 01-2-2V9m0 0h18"/></svg>
+            <strong class="text-slate-600">${lineCount}</strong> Lines
+          </span>
+          <span class="flex items-center gap-1.5">
+            <svg class="w-3.5 h-3.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/><circle cx="12" cy="12" r="3"/></svg>
+            <strong class="text-slate-600">${machineCount}+</strong> Machines
+          </span>
+        </div>
+        <a href="catalog.html?category=${cat.id}" class="cat-card-cta flex items-center justify-center gap-2 text-sm font-bold py-2.5 rounded-xl transition-all" style="background:${cat.color}18;color:${cat.color}">
+          Explore Equipment
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+    </article>`;
+}
+
+function initCandyCanvas() {
+  const canvas = document.getElementById('candy-canvas');
+  if (!canvas) return;
+  const ctx = canvas.getContext('2d');
+  let W, H;
+
+  function resize() {
+    const p = canvas.parentElement;
+    W = canvas.width = p ? p.offsetWidth : window.innerWidth;
+    H = canvas.height = p ? p.offsetHeight : window.innerHeight;
+  }
+  resize();
+  window.addEventListener('resize', resize, { passive: true });
+
+  const COLORS = ['#FF6B9D','#FFB347','#6EE7A0','#7DD3FC','#FCA5A5','#FDE68A','#A5F3FC','#DDD6FE','#FBCFE8','#FED7AA'];
+
+  function makeParticle(randomY) {
+    const types = ['circle','lollipop','wrapped','pill'];
+    return {
+      x: Math.random() * (W || 1200),
+      y: randomY ? Math.random() * (H || 800) : -60 - Math.random() * 200,
+      size: 7 + Math.random() * 11,
+      vy: 0.5 + Math.random() * 1.3,
+      vx: (Math.random() - 0.5) * 0.5,
+      rot: Math.random() * Math.PI * 2,
+      vr: (Math.random() - 0.5) * 0.022,
+      color: COLORS[Math.floor(Math.random() * COLORS.length)],
+      type: types[Math.floor(Math.random() * types.length)],
+      alpha: 0.2 + Math.random() * 0.35
+    };
+  }
+
+  const particles = Array.from({ length: 65 }, () => makeParticle(true));
+
+  function drawRR(cx, cy, w, h, r) {
+    ctx.beginPath();
+    ctx.moveTo(cx - w/2 + r, cy - h/2);
+    ctx.lineTo(cx + w/2 - r, cy - h/2);
+    ctx.quadraticCurveTo(cx + w/2, cy - h/2, cx + w/2, cy - h/2 + r);
+    ctx.lineTo(cx + w/2, cy + h/2 - r);
+    ctx.quadraticCurveTo(cx + w/2, cy + h/2, cx + w/2 - r, cy + h/2);
+    ctx.lineTo(cx - w/2 + r, cy + h/2);
+    ctx.quadraticCurveTo(cx - w/2, cy + h/2, cx - w/2, cy + h/2 - r);
+    ctx.lineTo(cx - w/2, cy - h/2 + r);
+    ctx.quadraticCurveTo(cx - w/2, cy - h/2, cx - w/2 + r, cy - h/2);
+    ctx.closePath();
+  }
+
+  function drawParticle(p) {
+    ctx.save();
+    ctx.translate(p.x, p.y);
+    ctx.rotate(p.rot);
+    ctx.globalAlpha = p.alpha;
+    ctx.fillStyle = p.color;
+    ctx.strokeStyle = 'rgba(255,255,255,0.28)';
+    ctx.lineWidth = 1.5;
+    const s = p.size;
+
+    if (p.type === 'circle') {
+      ctx.beginPath(); ctx.arc(0, 0, s, 0, Math.PI * 2); ctx.fill(); ctx.stroke();
+      ctx.globalAlpha = p.alpha * 0.5;
+      ctx.fillStyle = 'rgba(255,255,255,0.6)';
+      ctx.beginPath(); ctx.arc(-s * 0.28, -s * 0.28, s * 0.3, 0, Math.PI * 2); ctx.fill();
+    } else if (p.type === 'lollipop') {
+      ctx.strokeStyle = 'rgba(255,255,255,0.42)'; ctx.lineWidth = 2.5;
+      ctx.beginPath(); ctx.moveTo(0, s * 0.8); ctx.lineTo(0, s * 2.8); ctx.stroke();
+      ctx.fillStyle = p.color; ctx.strokeStyle = 'rgba(255,255,255,0.28)'; ctx.lineWidth = 1.5;
+      ctx.beginPath(); ctx.arc(0, 0, s, 0, Math.PI * 2); ctx.fill(); ctx.stroke();
+      ctx.globalAlpha = p.alpha * 0.48;
+      ctx.fillStyle = 'rgba(255,255,255,0.55)';
+      ctx.beginPath(); ctx.arc(-s * 0.28, -s * 0.28, s * 0.28, 0, Math.PI * 2); ctx.fill();
+    } else if (p.type === 'wrapped') {
+      const w = s * 2.2, h = s * 0.9, r = Math.min(h / 2, 5);
+      drawRR(0, 0, w, h, r); ctx.fill(); ctx.stroke();
+      ctx.fillStyle = 'rgba(255,255,255,0.22)';
+      ctx.beginPath(); ctx.ellipse(-w/2, 0, s * 0.2, h / 2, 0, 0, Math.PI * 2); ctx.fill();
+      ctx.beginPath(); ctx.ellipse(w/2, 0, s * 0.2, h / 2, 0, 0, Math.PI * 2); ctx.fill();
+    } else {
+      const w = s * 2, h = s * 0.85, r = h / 2;
+      ctx.beginPath();
+      ctx.arc(-w/2 + r, 0, r, Math.PI / 2, 3 * Math.PI / 2);
+      ctx.lineTo(w/2 - r, -h/2);
+      ctx.arc(w/2 - r, 0, r, -Math.PI / 2, Math.PI / 2);
+      ctx.closePath(); ctx.fill(); ctx.stroke();
+      ctx.strokeStyle = 'rgba(255,255,255,0.42)'; ctx.lineWidth = 1;
+      ctx.beginPath(); ctx.moveTo(0, -h/2); ctx.lineTo(0, h/2); ctx.stroke();
+    }
+    ctx.restore();
+  }
+
+  function animate() {
+    ctx.clearRect(0, 0, W, H);
+    for (const p of particles) {
+      p.y += p.vy; p.x += p.vx; p.rot += p.vr;
+      if (p.y > H + 60) { p.y = -60; p.x = Math.random() * W; }
+      if (p.x < -60) p.x = W + 60;
+      if (p.x > W + 60) p.x = -60;
+      drawParticle(p);
+    }
+    requestAnimationFrame(animate);
+  }
+  animate();
 }
 
 function countUp(el, target, duration) {

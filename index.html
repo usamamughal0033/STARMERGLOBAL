@@ -143,83 +143,51 @@
   </nav>
 
   <!-- â”€â”€ Hero â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ -->
-  <section class="min-h-[92vh] flex items-center bg-gradient-to-br from-white via-blue-50/30 to-white pt-16">
-    <div class="max-w-7xl mx-auto px-6 py-20 grid lg:grid-cols-2 gap-16 items-center w-full">
-      <div>
-        <span class="inline-flex items-center gap-2 bg-blue-50 text-accent text-xs font-semibold px-3 py-1.5 rounded-full mb-6 uppercase tracking-wide">
-          <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
-          CE Certified Â· ISO 9001:2015
+  <!-- ── Hero ────────────────────────────────────────────────────────────────── -->
+  <section id="hero" class="hero-section relative flex items-center pt-16 overflow-hidden">
+    <canvas id="candy-canvas" class="absolute inset-0"></canvas>
+    <div class="absolute inset-0 hero-overlay"></div>
+    <div class="relative z-10 max-w-7xl mx-auto px-6 py-28 w-full">
+      <div class="max-w-3xl">
+        <span class="inline-flex items-center gap-2 bg-white/10 text-white/90 text-xs font-semibold px-4 py-2 rounded-full mb-8 uppercase tracking-widest border border-white/20">
+          <svg class="w-3.5 h-3.5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+          CE Certified &middot; ISO 9001:2015
         </span>
-        <h1 class="text-5xl font-extrabold text-primary leading-tight mb-6">
-          Complete Lines.<br/>Precision Machines.
+        <h1 class="text-5xl lg:text-7xl font-extrabold text-white leading-tight mb-6">
+          Complete Lines.<br/>
+          <span class="hero-gradient-text">Precision Machines.</span>
         </h1>
-        <p class="text-slate-500 text-lg leading-relaxed mb-10 max-w-lg">
-          Starmer Global manufactures production equipment for hard candy, lollipop, chew, toffee, bubble gum and pharma. Complete lines, individual machines, dies and spare parts â€” all under one roof.
+        <p class="text-white/70 text-xl leading-relaxed mb-10 max-w-2xl">
+          Starmer Global manufactures production equipment for hard candy, lollipop, chew, toffee, bubble gum and pharma. Complete lines, individual machines, dies and spare parts &mdash; all under one roof.
         </p>
-        <div class="flex flex-wrap gap-4">
-          <a href="catalog.html" class="bg-primary text-white font-semibold px-7 py-3.5 rounded-xl hover:bg-accent transition-colors shadow-sm">
+        <div class="flex flex-wrap gap-4 mb-14">
+          <a href="catalog.html" class="bg-white text-primary font-bold px-8 py-4 rounded-xl hover:bg-blue-50 transition-colors shadow-lg text-base flex items-center gap-2">
             Browse Equipment
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"/></svg>
           </a>
-          <a href="quote.html" class="border-2 border-primary text-primary font-semibold px-7 py-3.5 rounded-xl hover:bg-primary hover:text-white transition-colors">
+          <a href="quote.html" class="border-2 border-white/30 text-white font-semibold px-8 py-4 rounded-xl hover:bg-white/10 transition-colors text-base">
             Request Quote
           </a>
         </div>
-        <div class="flex items-center gap-6 mt-10">
-          <div class="flex -space-x-2">
-            <div class="w-8 h-8 rounded-full bg-blue-200 border-2 border-white flex items-center justify-center text-xs font-bold text-blue-800">A</div>
-            <div class="w-8 h-8 rounded-full bg-teal-200 border-2 border-white flex items-center justify-center text-xs font-bold text-teal-800">B</div>
-            <div class="w-8 h-8 rounded-full bg-purple-200 border-2 border-white flex items-center justify-center text-xs font-bold text-purple-800">C</div>
+        <div class="flex flex-wrap gap-8 pt-8 border-t border-white/10">
+          <div>
+            <div class="text-3xl font-extrabold text-white">500<span class="text-blue-300">+</span></div>
+            <div class="text-white/50 text-sm mt-1">Clients Worldwide</div>
           </div>
-          <p class="text-sm text-slate-500"><span class="font-semibold text-slate-700">500+</span> manufacturers worldwide</p>
-        </div>
-      </div>
-
-      <!-- Hero illustration -->
-      <div class="hidden lg:flex items-center justify-center">
-        <div class="relative w-full max-w-lg">
-          <div class="absolute inset-0 bg-blue-50 rounded-3xl rotate-2"></div>
-          <div class="relative bg-white rounded-3xl shadow-xl p-8 border border-slate-100">
-            <svg viewBox="0 0 420 300" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full">
-              <!-- Production line illustration -->
-              <rect x="20" y="178" width="380" height="14" rx="4" fill="#E2E8F0"/>
-              <!-- Machine 1 â€“ cooker -->
-              <rect x="28" y="112" width="82" height="74" rx="8" fill="#1A3A5C" opacity="0.9"/>
-              <rect x="40" y="124" width="58" height="32" rx="4" fill="#2E7CC6" opacity="0.6"/>
-              <circle cx="69" cy="174" r="9" fill="#60A5FA"/>
-              <text x="69" y="108" font-family="monospace" font-size="8" fill="#1A3A5C" text-anchor="middle" font-weight="700">COOKER</text>
-              <!-- Conveyor 1 -->
-              <rect x="112" y="162" width="72" height="26" rx="4" fill="#F1F5F9"/>
-              <circle cx="126" cy="189" r="8" fill="#CBD5E1"/>
-              <circle cx="170" cy="189" r="8" fill="#CBD5E1"/>
-              <!-- Machine 2 â€“ former -->
-              <rect x="186" y="96" width="100" height="90" rx="8" fill="#1A3A5C" opacity="0.85"/>
-              <circle cx="236" cy="130" r="24" fill="#2E7CC6" opacity="0.45"/>
-              <circle cx="236" cy="130" r="13" fill="#60A5FA" opacity="0.7"/>
-              <rect x="202" y="158" width="68" height="12" rx="3" fill="#93C5FD" opacity="0.5"/>
-              <text x="236" y="90" font-family="monospace" font-size="8" fill="#1A3A5C" text-anchor="middle" font-weight="700">FORMER</text>
-              <!-- Conveyor 2 -->
-              <rect x="288" y="162" width="60" height="26" rx="4" fill="#F1F5F9"/>
-              <circle cx="300" cy="189" r="8" fill="#CBD5E1"/>
-              <circle cx="336" cy="189" r="8" fill="#CBD5E1"/>
-              <!-- Machine 3 â€“ wrapper -->
-              <rect x="350" y="124" width="48" height="62" rx="6" fill="#0D6B5E" opacity="0.9"/>
-              <rect x="358" y="134" width="32" height="18" rx="3" fill="#14B8A6" opacity="0.6"/>
-              <text x="374" y="120" font-family="monospace" font-size="7" fill="#0D6B5E" text-anchor="middle" font-weight="700">WRAPPER</text>
-              <!-- Arrows -->
-              <path d="M114 169 L110 175 L118 175Z" fill="#94A3B8"/>
-              <path d="M290 169 L286 175 L294 175Z" fill="#94A3B8"/>
-              <!-- Labels -->
-              <text x="210" y="248" font-family="Inter,sans-serif" font-size="10" fill="#94A3B8" text-anchor="middle">Complete Production Line â€” Starmer Global</text>
-              <!-- Cert badges -->
-              <rect x="20" y="262" width="36" height="18" rx="4" fill="#EFF6FF"/>
-              <text x="38" y="275" font-family="monospace" font-size="7.5" fill="#1D4ED8" text-anchor="middle" font-weight="700">CE</text>
-              <rect x="62" y="262" width="36" height="18" rx="4" fill="#F0FDF4"/>
-              <text x="80" y="275" font-family="monospace" font-size="7" fill="#166534" text-anchor="middle" font-weight="700">FDA</text>
-              <rect x="104" y="262" width="62" height="18" rx="4" fill="#FEF3C7"/>
-              <text x="135" y="275" font-family="monospace" font-size="7" fill="#92400E" text-anchor="middle" font-weight="700">ISO 9001</text>
-              <rect x="172" y="262" width="56" height="18" rx="4" fill="#FDF4FF"/>
-              <text x="200" y="275" font-family="monospace" font-size="7" fill="#6B21A8" text-anchor="middle" font-weight="700">cGMP</text>
-            </svg>
+          <div class="w-px bg-white/15 self-stretch"></div>
+          <div>
+            <div class="text-3xl font-extrabold text-white">21</div>
+            <div class="text-white/50 text-sm mt-1">Line Types</div>
+          </div>
+          <div class="w-px bg-white/15 self-stretch"></div>
+          <div>
+            <div class="text-3xl font-extrabold text-white">35<span class="text-blue-300">+</span></div>
+            <div class="text-white/50 text-sm mt-1">Countries Served</div>
+          </div>
+          <div class="w-px bg-white/15 self-stretch"></div>
+          <div>
+            <div class="text-3xl font-extrabold text-white">20<span class="text-blue-300">+</span></div>
+            <div class="text-white/50 text-sm mt-1">Years Expertise</div>
           </div>
         </div>
       </div>
@@ -428,7 +396,7 @@
 
     <div class="max-w-7xl mx-auto px-6 mt-12 pt-8 border-t border-slate-800 flex flex-col md:flex-row justify-between items-center gap-4 text-sm">
       <p>&copy; <span id="footer-year"></span> Starmer Global. All rights reserved.</p>
-      <p class="text-slate-600">CE Certified Â· ISO 9001:2015 Â· FDA Compliant</p>
+      <p class="text-slate-600">CE Certified · ISO 9001:2015 · FDA Compliant</p>
     </div>
   </footer>
 

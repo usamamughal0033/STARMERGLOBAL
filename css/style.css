@@ -137,13 +137,46 @@
 .result-name { font-size: 13px; font-weight: 600; color: #1e293b; }
 .result-cat { font-size: 11px; color: #94a3b8; }
 
+/* ── Hero section ────────────────────────────────────────────────────────── */
+.hero-section {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #0A1628 0%, #0F2847 35%, #1A3A5C 65%, #0D2035 100%);
+}
+
+#candy-canvas {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  pointer-events: none;
+}
+
+.hero-overlay {
+  background: linear-gradient(135deg,
+    rgba(10,22,40,0.52) 0%,
+    rgba(15,40,71,0.32) 50%,
+    rgba(26,58,92,0.18) 100%);
+}
+
+.hero-gradient-text {
+  background: linear-gradient(90deg, #60A5FA, #38BDF8, #A5F3FC);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
 /* ── Category cards (home page) ──────────────────────────────────────────── */
 .category-card {
   transition: transform var(--transition-slow), box-shadow var(--transition-slow);
 }
 .category-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 12px 32px rgba(0,0,0,0.10);
+  transform: translateY(-7px);
+  box-shadow: 0 20px 48px rgba(0,0,0,0.13);
+}
+.cat-card-cta {
+  transition: all var(--transition-base);
+}
+.category-card:hover .cat-card-cta {
+  filter: brightness(1.08);
 }
 
 /* ── Stats counter ───────────────────────────────────────────────────────── */
