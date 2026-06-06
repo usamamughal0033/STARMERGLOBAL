@@ -140,7 +140,7 @@
 /* ── Hero section ────────────────────────────────────────────────────────── */
 .hero-section {
   min-height: 100vh;
-  background: linear-gradient(135deg, #0A1628 0%, #0F2847 35%, #1A3A5C 65%, #0D2035 100%);
+  background: linear-gradient(135deg, #F0F7FF 0%, #EBF4FF 40%, #F5F9FF 70%, #FAFCFF 100%);
 }
 
 #candy-canvas {
@@ -152,13 +152,12 @@
 
 .hero-overlay {
   background: linear-gradient(135deg,
-    rgba(10,22,40,0.52) 0%,
-    rgba(15,40,71,0.32) 50%,
-    rgba(26,58,92,0.18) 100%);
+    rgba(240,247,255,0.12) 0%,
+    rgba(235,244,255,0.06) 100%);
 }
 
 .hero-gradient-text {
-  background: linear-gradient(90deg, #60A5FA, #38BDF8, #A5F3FC);
+  background: linear-gradient(90deg, #1A3A5C 0%, #2E7CC6 55%, #0EA5E9 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -185,6 +184,28 @@
 .stat-item:nth-child(2) { transition-delay: 0.1s; }
 .stat-item:nth-child(3) { transition-delay: 0.2s; }
 .stat-item:nth-child(4) { transition-delay: 0.3s; }
+
+/* ── Line banner (line detail page) ─────────────────────────────────────── */
+.line-banner-wrap {
+  border-radius: 20px;
+  overflow: hidden;
+  position: relative;
+  height: 200px;
+  margin-bottom: 32px;
+}
+
+/* ── Line overview specs ─────────────────────────────────────────────────── */
+.line-spec-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 16px;
+  font-size: 13px;
+  border-bottom: 1px solid #f1f5f9;
+}
+.line-spec-row:last-child { border-bottom: none; }
+.line-spec-label { color: #64748b; font-weight: 500; }
+.line-spec-value { color: #1e293b; font-weight: 700; text-align: right; }
 
 /* ── Step finder (catalog page) ──────────────────────────────────────────── */
 .step-indicator { display: flex; align-items: center; margin-bottom: 28px; }
@@ -221,6 +242,37 @@
 }
 .rate-btn:hover { border-color: var(--accent); color: var(--accent); background: #eff6ff; }
 .rate-btn.selected { border-color: var(--accent); background: #eff6ff; color: var(--accent); }
+
+/* Rich line-select cards (Step 2 in catalog) */
+.rate-btn.line-card-rich {
+  padding: 0;
+  text-align: left;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  border-radius: 16px;
+  border-width: 2px;
+  transition: transform 220ms ease, box-shadow 220ms ease, border-color 150ms ease;
+}
+.rate-btn.line-card-rich:hover {
+  transform: translateY(-5px) scale(1.01);
+  box-shadow: 0 14px 36px rgba(46,124,198,0.18);
+  background: #fff;
+}
+.rate-btn.line-card-rich.selected {
+  background: #fff;
+  box-shadow: 0 0 0 4px rgba(46,124,198,0.14);
+}
+.line-card-accent {
+  height: 56px;
+  display: flex;
+  align-items: center;
+  padding: 0 16px;
+  gap: 10px;
+}
+.line-card-body {
+  padding: 12px 14px 14px;
+}
 
 /* ── Line pipeline ───────────────────────────────────────────────────────── */
 .pipeline-scroll { overflow-x: auto; padding-bottom: 16px; -webkit-overflow-scrolling: touch; }
@@ -271,19 +323,28 @@
 .specs-table { width: 100%; border-collapse: collapse; }
 .specs-table tr { border-bottom: 1px solid #f1f5f9; }
 .specs-table th {
-  text-align: left; padding: 10px 12px 10px 0;
+  text-align: left; padding: 12px 16px 12px 0;
   font-size: 13px; font-weight: 600; color: #64748b;
-  width: 42%; vertical-align: top;
+  width: 44%; vertical-align: top; line-height: 1.45;
 }
-.specs-table td { padding: 10px 0 10px 8px; font-size: 13px; color: #1e293b; }
+.specs-table td { padding: 12px 0 12px 16px; font-size: 13px; color: #1e293b; line-height: 1.45; }
 
 /* ── Product card ────────────────────────────────────────────────────────── */
 .product-card {
-  transition: box-shadow var(--transition-slow), transform var(--transition-slow);
+  transition: box-shadow 240ms ease, transform 240ms ease;
 }
 .product-card:hover {
-  box-shadow: 0 8px 28px rgba(0,0,0,0.10);
-  transform: translateY(-3px);
+  box-shadow: 0 14px 40px rgba(0,0,0,0.13);
+  transform: translateY(-6px) scale(1.01);
+}
+
+/* Pipeline machine card hover popup */
+.pipeline-machine-card {
+  transition: border-color 200ms ease, box-shadow 200ms ease, transform 200ms ease !important;
+}
+.pipeline-machine-card:hover {
+  transform: translateY(-4px) !important;
+  box-shadow: 0 10px 28px rgba(46,124,198,0.16) !important;
 }
 
 /* ── Part type badge ─────────────────────────────────────────────────────── */

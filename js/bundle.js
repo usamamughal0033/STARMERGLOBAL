@@ -376,7 +376,7 @@ function initCandyCanvas() {
       vr: (Math.random() - 0.5) * 0.022,
       color: COLORS[Math.floor(Math.random() * COLORS.length)],
       type: types[Math.floor(Math.random() * types.length)],
-      alpha: 0.2 + Math.random() * 0.35
+      alpha: 0.65 + Math.random() * 0.28
     };
   }
 
@@ -401,28 +401,37 @@ function initCandyCanvas() {
     ctx.translate(p.x, p.y);
     ctx.rotate(p.rot);
     ctx.globalAlpha = p.alpha;
+    ctx.shadowColor = 'rgba(0,0,0,0.18)';
+    ctx.shadowBlur = 7;
+    ctx.shadowOffsetX = 2;
+    ctx.shadowOffsetY = 3;
     ctx.fillStyle = p.color;
-    ctx.strokeStyle = 'rgba(255,255,255,0.28)';
-    ctx.lineWidth = 1.5;
+    ctx.strokeStyle = 'rgba(80,80,120,0.1)';
+    ctx.lineWidth = 1.2;
     const s = p.size;
 
     if (p.type === 'circle') {
       ctx.beginPath(); ctx.arc(0, 0, s, 0, Math.PI * 2); ctx.fill(); ctx.stroke();
-      ctx.globalAlpha = p.alpha * 0.5;
-      ctx.fillStyle = 'rgba(255,255,255,0.6)';
+      ctx.shadowBlur = 0; ctx.shadowOffsetX = 0; ctx.shadowOffsetY = 0;
+      ctx.globalAlpha = p.alpha * 0.65;
+      ctx.fillStyle = 'rgba(255,255,255,0.9)';
       ctx.beginPath(); ctx.arc(-s * 0.28, -s * 0.28, s * 0.3, 0, Math.PI * 2); ctx.fill();
     } else if (p.type === 'lollipop') {
-      ctx.strokeStyle = 'rgba(255,255,255,0.42)'; ctx.lineWidth = 2.5;
+      ctx.shadowBlur = 3;
+      ctx.strokeStyle = 'rgba(160,160,180,0.55)'; ctx.lineWidth = 2.5;
       ctx.beginPath(); ctx.moveTo(0, s * 0.8); ctx.lineTo(0, s * 2.8); ctx.stroke();
-      ctx.fillStyle = p.color; ctx.strokeStyle = 'rgba(255,255,255,0.28)'; ctx.lineWidth = 1.5;
+      ctx.fillStyle = p.color; ctx.strokeStyle = 'rgba(80,80,120,0.1)'; ctx.lineWidth = 1.2;
+      ctx.shadowBlur = 7; ctx.shadowOffsetX = 2; ctx.shadowOffsetY = 3;
       ctx.beginPath(); ctx.arc(0, 0, s, 0, Math.PI * 2); ctx.fill(); ctx.stroke();
-      ctx.globalAlpha = p.alpha * 0.48;
-      ctx.fillStyle = 'rgba(255,255,255,0.55)';
+      ctx.shadowBlur = 0; ctx.shadowOffsetX = 0; ctx.shadowOffsetY = 0;
+      ctx.globalAlpha = p.alpha * 0.6;
+      ctx.fillStyle = 'rgba(255,255,255,0.9)';
       ctx.beginPath(); ctx.arc(-s * 0.28, -s * 0.28, s * 0.28, 0, Math.PI * 2); ctx.fill();
     } else if (p.type === 'wrapped') {
       const w = s * 2.2, h = s * 0.9, r = Math.min(h / 2, 5);
       drawRR(0, 0, w, h, r); ctx.fill(); ctx.stroke();
-      ctx.fillStyle = 'rgba(255,255,255,0.22)';
+      ctx.shadowBlur = 0; ctx.shadowOffsetX = 0; ctx.shadowOffsetY = 0;
+      ctx.fillStyle = 'rgba(255,255,255,0.7)';
       ctx.beginPath(); ctx.ellipse(-w/2, 0, s * 0.2, h / 2, 0, 0, Math.PI * 2); ctx.fill();
       ctx.beginPath(); ctx.ellipse(w/2, 0, s * 0.2, h / 2, 0, 0, Math.PI * 2); ctx.fill();
     } else {
@@ -432,7 +441,8 @@ function initCandyCanvas() {
       ctx.lineTo(w/2 - r, -h/2);
       ctx.arc(w/2 - r, 0, r, -Math.PI / 2, Math.PI / 2);
       ctx.closePath(); ctx.fill(); ctx.stroke();
-      ctx.strokeStyle = 'rgba(255,255,255,0.42)'; ctx.lineWidth = 1;
+      ctx.shadowBlur = 0; ctx.shadowOffsetX = 0; ctx.shadowOffsetY = 0;
+      ctx.strokeStyle = 'rgba(255,255,255,0.7)'; ctx.lineWidth = 1;
       ctx.beginPath(); ctx.moveTo(0, -h/2); ctx.lineTo(0, h/2); ctx.stroke();
     }
     ctx.restore();
@@ -496,10 +506,25 @@ function initCatalogPage(catalog) {
   function buildStep2(cat) {
     const lineGrid = document.getElementById('line-select-grid');
     if (!lineGrid) return;
+    const vis = CAT_VISUAL[cat.id];
+    const bg = vis?.bg || `linear-gradient(135deg,${cat.color},${cat.color}cc)`;
     lineGrid.innerHTML = cat.lines.map(l => `
-      <button class="rate-btn" data-line-id="${l.id}">
-        <div class="text-base">${l.name}</div>
-        <div class="text-xs text-slate-400 mt-1">${l.productionRate}</div>
+      <button class="rate-btn line-card-rich" data-line-id="${l.id}">
+        <div class="line-card-accent" style="background:${bg}">
+          <svg class="w-7 h-7 opacity-70" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.8" stroke-linecap="round">
+            <circle cx="12" cy="12" r="9" opacity="0.5"/>
+            <path d="M12 7v5l3.5 2"/>
+          </svg>
+          <span class="text-white/80 text-xs font-bold tracking-wide">${l.productionRate || 'Custom'}</span>
+        </div>
+        <div class="line-card-body">
+          <div class="font-mono text-xs text-blue-600 font-bold mb-0.5">${l.lineNumber || ''}</div>
+          <div class="font-bold text-slate-800 text-sm leading-snug mb-1">${l.name}</div>
+          <div class="flex items-center gap-1 text-xs text-slate-400">
+            <svg class="w-3 h-3 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+            ${l.machines?.length || 0} machines in line
+          </div>
+        </div>
       </button>`).join('');
     lineGrid.querySelectorAll('.rate-btn').forEach(btn => {
       btn.addEventListener('click', () => {
@@ -616,6 +641,64 @@ function initLinePage(catalog) {
   setEl('line-name', line.name);
   setEl('line-rate', line.productionRate ? `Production Rate: ${line.productionRate}` : '');
   setEl('line-description', line.description);
+
+  // Banner
+  const bannerEl = document.getElementById('line-banner');
+  if (bannerEl) {
+    const vis = CAT_VISUAL[line.categoryId];
+    const bgGrad = vis?.bg || `linear-gradient(135deg,${cat?.color || '#1A3A5C'},#0D2035)`;
+    const mCount = line.machines?.length || 0;
+    const machineShapes = Array.from({ length: Math.min(mCount, 7) }, (_, i) => {
+      const x = 80 + i * 148, y = 55 + (i % 2) * 22;
+      return `<rect x="${x}" y="${y}" width="78" height="68" rx="8" fill="white" opacity="0.14"/>
+              <rect x="${x+14}" y="${y+14}" width="50" height="20" rx="4" fill="white" opacity="0.1"/>
+              ${i < 6 ? `<path d="M${x+78+20} 138 L${x+78+8} 132 L${x+78+8} 144Z" fill="white" opacity="0.22"/>` : ''}`;
+    }).join('');
+    bannerEl.innerHTML = `
+      <div class="line-banner-wrap" style="background:${bgGrad}">
+        <svg class="absolute inset-0 w-full h-full opacity-60 pointer-events-none" viewBox="0 0 1100 200" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+          <rect x="0" y="160" width="1100" height="6" rx="3" fill="white" opacity="0.18"/>
+          ${machineShapes}
+        </svg>
+        <div class="absolute inset-0 flex flex-col justify-center px-10 py-6">
+          <div class="text-white/55 text-xs font-mono font-bold mb-2 tracking-widest uppercase">${line.lineNumber || ''} &nbsp;&middot;&nbsp; ${cat?.label || ''}</div>
+          <h2 class="text-white text-2xl lg:text-3xl font-extrabold mb-2 leading-tight">${line.name}</h2>
+          ${line.productionRate ? `<div class="inline-flex items-center gap-2 text-white/80 text-sm font-semibold"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>${line.productionRate}</div>` : ''}
+        </div>
+      </div>`;
+  }
+
+  // Overview + key specs
+  const overviewEl = document.getElementById('line-overview');
+  if (overviewEl) {
+    overviewEl.classList.remove('hidden');
+    const mCount = line.machines?.length || 0;
+    const estMin = Math.round(mCount * 3.5);
+    const estMax = Math.round(mCount * 5.5);
+    const overviewText = (line.description ? line.description + ' ' : '') +
+      `The ${line.name} is built to CE and ISO 9001:2015 standards, engineered for reliable continuous production at ${line.productionRate || 'your specified rate'}.`;
+    const specs = [
+      { label: 'Production Rate', value: line.productionRate || 'Custom' },
+      { label: 'Machines in Line', value: `${mCount} machines` },
+      { label: 'Est. Floor Space', value: `${estMin} – ${estMax} m²` },
+      { label: 'Power Supply', value: '380V / 3Ph / 50Hz' },
+      { label: 'Certifications', value: 'CE · ISO 9001 · FDA' },
+    ];
+    overviewEl.innerHTML = `
+      <div class="grid lg:grid-cols-3 gap-8">
+        <div class="lg:col-span-2">
+          <h2 class="text-lg font-bold text-primary mb-3">About This Line</h2>
+          <p class="text-slate-600 leading-relaxed text-sm">${overviewText}</p>
+        </div>
+        <div>
+          <h2 class="text-lg font-bold text-primary mb-3">Key Specifications</h2>
+          <div class="bg-white border border-slate-200 rounded-xl overflow-hidden shadow-sm">
+            ${specs.map(s => `<div class="line-spec-row"><span class="line-spec-label">${s.label}</span><span class="line-spec-value">${s.value}</span></div>`).join('')}
+          </div>
+        </div>
+      </div>`;
+  }
+
   document.getElementById('add-line-btn')?.addEventListener('click', () => {
     getMachinesByLine(catalog, line.id).forEach(m => {
       addToCart({ id: m.id, partNumber: m.machineNumber, name: m.name, quantity: 1, selectedVoltage: 'To be confirmed', selectedFinish: 'Standard', lineId: line.id });
