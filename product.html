@@ -73,10 +73,13 @@
 
   <!-- Product detail -->
   <div id="product-detail-wrapper" class="hidden">
-    <main class="pt-20 pb-20 max-w-7xl mx-auto px-6">
+    <!-- Machine hero banner (filled by JS) -->
+    <div id="product-hero-banner" class="hidden"></div>
+
+    <main class="pt-8 pb-20 max-w-7xl mx-auto px-6">
 
       <!-- Breadcrumb -->
-      <nav class="flex items-center gap-2 text-sm text-slate-400 mb-8 flex-wrap">
+      <nav class="flex items-center gap-2 text-sm text-slate-400 mb-6 flex-wrap">
         <a href="index.html" class="hover:text-accent transition-colors">Home</a>
         <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
         <a id="bc-cat-link" href="catalog.html" class="hover:text-accent transition-colors"><span id="bc-category"></span></a>
@@ -89,14 +92,14 @@
       <div class="grid lg:grid-cols-2 gap-12 items-start">
         <!-- Left: image (sticky on desktop) -->
         <div class="lg:sticky lg:top-24">
-          <div id="product-image-container" class="rounded-2xl overflow-hidden bg-slate-100 aspect-[4/3]">
+          <div id="product-image-container" class="rounded-2xl overflow-hidden bg-slate-900 aspect-[4/3] shadow-xl ring-1 ring-slate-200">
             <div class="skeleton w-full h-full"></div>
           </div>
-          <!-- Trust badges -->
+          <!-- Quick info chips -->
           <div class="flex gap-2 mt-4 flex-wrap">
+            <span id="chip-part-num" class="text-xs font-mono bg-slate-100 text-slate-600 px-3 py-1.5 rounded-lg font-bold"></span>
             <span class="text-xs bg-blue-50 text-blue-700 px-3 py-1.5 rounded-lg font-semibold">CE Certified</span>
             <span class="text-xs bg-green-50 text-green-700 px-3 py-1.5 rounded-lg font-semibold">FDA Compliant</span>
-            <span class="text-xs bg-amber-50 text-amber-700 px-3 py-1.5 rounded-lg font-semibold">ISO 9001:2015</span>
           </div>
         </div>
 
@@ -108,13 +111,13 @@
           </div>
 
           <h1 id="detail-name" class="text-2xl font-extrabold text-primary mb-2 leading-tight"></h1>
-          <p id="detail-function" class="text-accent font-medium text-sm mb-4"></p>
-          <p id="detail-description" class="text-slate-500 leading-relaxed mb-8"></p>
+          <p id="detail-function" class="text-accent font-semibold text-sm mb-4"></p>
+          <p id="detail-description" class="text-slate-500 leading-relaxed mb-8 text-sm"></p>
 
           <!-- Specs table -->
           <div class="mb-8">
-            <h2 class="text-base font-bold text-slate-700 mb-4">Technical Specifications</h2>
-            <div class="rounded-xl border border-slate-200 overflow-hidden">
+            <h2 class="text-sm font-bold text-slate-500 uppercase tracking-widest mb-3">Technical Specifications</h2>
+            <div class="rounded-xl border border-slate-200 overflow-hidden shadow-sm">
               <table class="specs-table">
                 <tbody id="specs-table">
                   <!-- populated by JS -->
@@ -125,16 +128,19 @@
           </div>
 
           <!-- Add to quote -->
-          <div class="bg-slate-50 rounded-2xl border border-slate-200 p-6">
-            <h3 class="font-bold text-slate-700 mb-2">Request a Quote</h3>
+          <div class="rounded-2xl border border-primary/20 p-6" style="background:linear-gradient(135deg,#f0f6ff 0%,#e8f2ff 100%)">
+            <div class="flex items-center gap-3 mb-2">
+              <svg class="w-5 h-5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/></svg>
+              <h3 class="font-bold text-primary">Request a Quote</h3>
+            </div>
             <p class="text-sm text-slate-500 mb-4">Add this item to your quote list. Our team will respond within 24 hours with pricing and availability.</p>
             <div class="flex gap-3 flex-wrap">
               <button id="add-to-quote-btn"
-                class="bg-primary text-white font-semibold px-6 py-2.5 rounded-xl hover:bg-accent transition-colors text-sm flex items-center gap-2">
+                class="bg-primary text-white font-semibold px-6 py-2.5 rounded-xl hover:bg-accent transition-colors text-sm flex items-center gap-2 shadow-md">
                 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
                 Add to Quote
               </button>
-              <a href="quote.html" class="border border-slate-300 text-slate-600 font-semibold px-5 py-2.5 rounded-xl hover:bg-slate-100 transition-colors text-sm">
+              <a href="quote.html" class="border border-slate-300 text-slate-600 font-semibold px-5 py-2.5 rounded-xl hover:bg-white transition-colors text-sm">
                 View Quote List
               </a>
             </div>

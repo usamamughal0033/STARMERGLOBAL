@@ -296,12 +296,12 @@ function initHomePage(catalog) {
   document.querySelectorAll('[data-reveal]').forEach(el => revealObs.observe(el));
 }
 
-// ── Category real photos ──────────────────────────────────────────────────
+// ── Category real photos (using confirmed-working industrial IDs from machine pool) ──
 const CAT_IMAGES = {
-  'hard-candy':  'https://images.unsplash.com/photo-1560461396-8f9e3f6b3c47?w=640&auto=format&q=82',
-  'lollipop':    'https://images.unsplash.com/photo-1621263764928-df1444c5e859?w=640&auto=format&q=82',
-  'chew-toffee': 'https://images.unsplash.com/photo-1596803244535-925769b35d5b?w=640&auto=format&q=82',
-  'bubble-gum':  'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=640&auto=format&q=82',
+  'hard-candy':  'https://images.unsplash.com/photo-1565514928093-9ea92a2ae1c7?w=640&auto=format&q=82',
+  'lollipop':    'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=640&auto=format&q=82',
+  'chew-toffee': 'https://images.unsplash.com/photo-1517154421773-0529f29ea451?w=640&auto=format&q=82',
+  'bubble-gum':  'https://images.unsplash.com/photo-1536328526067-a5e6d4d99c34?w=640&auto=format&q=82',
   'pharma':      'https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=640&auto=format&q=82',
 };
 
@@ -378,7 +378,7 @@ function buildHomeCategoryCard(cat) {
   const imgUrl = CAT_IMAGES[cat.id] || '';
   return `
     <article class="home-cat-photo-card category-card">
-      ${imgUrl ? `<img class="hc-bg" src="${imgUrl}" alt="${cat.label}" loading="lazy"/>` : ''}
+      ${imgUrl ? `<img class="hc-bg" src="${imgUrl}" alt="" loading="lazy" onerror="this.style.opacity='0'"/>` : ''}
       <div class="hc-overlay" style="background:linear-gradient(155deg,${cat.color}e8 0%,${cat.color}99 50%,rgba(0,0,0,0.55) 100%)"></div>
       <div class="hc-content">
         <div style="font-size:0.68rem;font-weight:700;text-transform:uppercase;letter-spacing:0.12em;color:rgba(255,255,255,0.55);margin-bottom:6px">${vis.tagline || ''}</div>
@@ -540,7 +540,7 @@ function initCatalogPage(catalog) {
     catGrid.innerHTML = getCategories(catalog).map(cat => `
       <button class="cat-photo-btn" data-cat-id="${cat.id}">
         <div class="cat-photo-btn-inner">
-          <img src="${CAT_IMAGES[cat.id] || ''}" alt="${cat.label}" loading="lazy"/>
+          <img src="${CAT_IMAGES[cat.id] || ''}" alt="" loading="lazy" onerror="this.style.opacity='0'"/>
           <div class="cat-photo-btn-overlay"></div>
           <div class="cat-photo-btn-label">
             <h4>${cat.label}</h4>
@@ -710,16 +710,20 @@ function initLinePage(catalog) {
               <rect x="${x+14}" y="${y+14}" width="50" height="20" rx="4" fill="white" opacity="0.1"/>
               ${i < 6 ? `<path d="M${x+78+20} 138 L${x+78+8} 132 L${x+78+8} 144Z" fill="white" opacity="0.22"/>` : ''}`;
     }).join('');
+    const bannerBgImg = 'https://images.unsplash.com/photo-1565514928093-9ea92a2ae1c7?w=1400&auto=format&q=70';
     bannerEl.innerHTML = `
       <div class="line-banner-wrap" style="background:${bgGrad}">
-        <svg class="absolute inset-0 w-full h-full opacity-60 pointer-events-none" viewBox="0 0 1100 200" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
-          <rect x="0" y="160" width="1100" height="6" rx="3" fill="white" opacity="0.18"/>
-          ${machineShapes}
-        </svg>
-        <div class="absolute inset-0 flex flex-col justify-center px-10 py-6">
-          <div class="text-white/55 text-xs font-mono font-bold mb-2 tracking-widest uppercase">${line.lineNumber || ''} &nbsp;&middot;&nbsp; ${cat?.label || ''}</div>
-          <h2 class="text-white text-2xl lg:text-3xl font-extrabold mb-2 leading-tight">${line.name}</h2>
-          ${line.productionRate ? `<div class="inline-flex items-center gap-2 text-white/80 text-sm font-semibold"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>${line.productionRate}</div>` : ''}
+        <img src="${bannerBgImg}" alt="" loading="lazy" onerror="this.style.display='none'"
+          style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0.18;"/>
+        <div style="position:absolute;inset:0;background:linear-gradient(135deg,rgba(0,0,0,0.35) 0%,transparent 60%);"></div>
+        <div style="position:absolute;inset:0;display:flex;flex-direction:column;justify-content:center;padding:2rem 2.5rem;">
+          <div style="color:rgba(255,255,255,0.55);font-size:0.7rem;font-family:monospace;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;margin-bottom:0.6rem;">${line.lineNumber || ''} &nbsp;&middot;&nbsp; ${cat?.label || ''}</div>
+          <h2 style="color:#fff;font-size:clamp(1.4rem,3vw,2rem);font-weight:800;margin:0 0 0.6rem;line-height:1.2;">${line.name}</h2>
+          <div style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-top:0.75rem;">
+            ${line.productionRate ? `<span style="display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,0.12);backdrop-filter:blur(6px);border:1px solid rgba(255,255,255,0.2);color:rgba(255,255,255,0.9);font-size:0.75rem;font-weight:600;padding:0.35rem 0.8rem;border-radius:99px;"><svg style="width:14px;height:14px" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>${line.productionRate}</span>` : ''}
+            <span style="display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,0.12);backdrop-filter:blur(6px);border:1px solid rgba(255,255,255,0.2);color:rgba(255,255,255,0.9);font-size:0.75rem;font-weight:600;padding:0.35rem 0.8rem;border-radius:99px;">⚙ ${mCount} Machines</span>
+            <span style="display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,0.12);backdrop-filter:blur(6px);border:1px solid rgba(255,255,255,0.2);color:rgba(255,255,255,0.9);font-size:0.75rem;font-weight:600;padding:0.35rem 0.8rem;border-radius:99px;">✓ CE · ISO 9001 · FDA</span>
+          </div>
         </div>
       </div>`;
   }
@@ -807,6 +811,31 @@ function initProductPage(catalog) {
   notFound?.classList.add('hidden'); wrapper?.classList.remove('hidden');
   const cat = getCategoryById(catalog, item.categoryId);
   document.title = `${item.name} — Starmer Global`;
+
+  // Hero banner
+  const heroBanner = document.getElementById('product-hero-banner');
+  if (heroBanner) {
+    const vis = CAT_VISUAL[item.categoryId];
+    const bgGrad = vis?.bg || `linear-gradient(135deg,#1A3A5C 0%,#2E7CC6 100%)`;
+    const bgImg = CAT_IMAGES[item.categoryId] || '';
+    heroBanner.classList.remove('hidden');
+    heroBanner.innerHTML = `
+      <div style="background:${bgGrad};padding:5.5rem 0 2rem;position:relative;overflow:hidden;">
+        ${bgImg ? `<img src="${bgImg}" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0.12;" loading="lazy" onerror="this.style.display='none'"/>` : ''}
+        <div style="position:absolute;inset:0;background:linear-gradient(to right,rgba(0,0,0,0.3) 0%,transparent 70%);"></div>
+        <div class="max-w-7xl mx-auto px-6" style="position:relative;">
+          <div style="color:rgba(255,255,255,0.5);font-size:0.68rem;font-family:monospace;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;margin-bottom:0.5rem;">${machine ? machine.machineNumber : (diePart?.partNumber || '')} &nbsp;&middot;&nbsp; ${cat?.label || ''}</div>
+          <h1 style="color:#fff;font-size:clamp(1.6rem,3.5vw,2.2rem);font-weight:800;margin:0 0 0.4rem;line-height:1.2;">${item.name}</h1>
+          <p style="color:rgba(255,255,255,0.65);font-size:0.85rem;margin:0;">${machine ? machine.function : (diePart ? `Type: ${diePart.type}` : '')}</p>
+          <div style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-top:1rem;">
+            <span style="background:rgba(255,255,255,0.12);backdrop-filter:blur(6px);border:1px solid rgba(255,255,255,0.2);color:rgba(255,255,255,0.9);font-size:0.7rem;font-weight:600;padding:0.3rem 0.75rem;border-radius:99px;">✓ CE Certified</span>
+            <span style="background:rgba(255,255,255,0.12);backdrop-filter:blur(6px);border:1px solid rgba(255,255,255,0.2);color:rgba(255,255,255,0.9);font-size:0.7rem;font-weight:600;padding:0.3rem 0.75rem;border-radius:99px;">✓ FDA Compliant</span>
+            <span style="background:rgba(255,255,255,0.12);backdrop-filter:blur(6px);border:1px solid rgba(255,255,255,0.2);color:rgba(255,255,255,0.9);font-size:0.7rem;font-weight:600;padding:0.3rem 0.75rem;border-radius:99px;">ISO 9001:2015</span>
+          </div>
+        </div>
+      </div>`;
+  }
+
   setEl('bc-category', cat?.label || '');
   setAttr('bc-cat-link', 'href', `catalog.html?category=${item.categoryId}`);
   if (machine) {
@@ -821,7 +850,9 @@ function initProductPage(catalog) {
     const src = getImageSrc(item.image, cat?.color, machine?.machineNumber || diePart?.partNumber, t);
     imgContainer.innerHTML = `<img src="${src}" alt="${item.name}" class="w-full h-full object-cover rounded-2xl"/>`;
   }
-  setEl('detail-part-number', machine ? machine.machineNumber : diePart?.partNumber);
+  const pNum = machine ? machine.machineNumber : diePart?.partNumber;
+  setEl('detail-part-number', pNum);
+  setEl('chip-part-num', pNum);
   setEl('detail-name', item.name);
   setEl('detail-function', machine ? machine.function : (diePart ? `Type: ${diePart.type}` : ''));
   setEl('detail-description', item.description);
