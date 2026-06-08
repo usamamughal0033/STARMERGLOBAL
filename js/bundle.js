@@ -110,22 +110,38 @@ function scoreItem(q, fields) {
   return s;
 }
 
+// ── Image pools (real industrial photos from Unsplash) ────────────────────
+const MACHINE_IMG_POOL = [
+  'https://images.unsplash.com/photo-1565514928093-9ea92a2ae1c7?w=520&auto=format&q=78',
+  'https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=520&auto=format&q=78',
+  'https://images.unsplash.com/photo-1581092160607-ee22621dd758?w=520&auto=format&q=78',
+  'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=520&auto=format&q=78',
+  'https://images.unsplash.com/photo-1517154421773-0529f29ea451?w=520&auto=format&q=78',
+  'https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=520&auto=format&q=78',
+  'https://images.unsplash.com/photo-1536328526067-a5e6d4d99c34?w=520&auto=format&q=78',
+  'https://images.unsplash.com/photo-1611532736597-de2d4265fba3?w=520&auto=format&q=78',
+  'https://images.unsplash.com/photo-1518770660439-4636190af475?w=520&auto=format&q=78',
+  'https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=520&auto=format&q=78',
+  'https://images.unsplash.com/photo-1574345143793-7b21f6f72e54?w=520&auto=format&q=78',
+  'https://images.unsplash.com/photo-1563770660941-20978e870e26?w=520&auto=format&q=78',
+];
+const DIE_PART_IMG_POOL = [
+  'https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=520&auto=format&q=78',
+  'https://images.unsplash.com/photo-1609618956069-ba5f3e0e3ca1?w=520&auto=format&q=78',
+  'https://images.unsplash.com/photo-1537462715879-360eeb61a0ad?w=520&auto=format&q=78',
+  'https://images.unsplash.com/photo-1565791380713-1756b9a05343?w=520&auto=format&q=78',
+  'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=520&auto=format&q=78',
+  'https://images.unsplash.com/photo-1616401784845-180882ba9ba8?w=520&auto=format&q=78',
+];
+function _simpleHash(str) {
+  let h = 0;
+  for (let i = 0; i < str.length; i++) h = ((h << 5) - h + str.charCodeAt(i)) | 0;
+  return Math.abs(h);
+}
 function getImageSrc(imagePath, fallbackColor, label, type) {
   if (imagePath) return imagePath;
-  return buildSVGPlaceholder(fallbackColor || '#1E3A8A', label || '', type || 'machine');
-}
-function buildSVGPlaceholder(color, label, type) {
-  const s1 = 'rgba(255,255,255,0.15)', s2 = 'rgba(255,255,255,0.22)', s3 = 'rgba(255,255,255,0.10)', tc = 'rgba(255,255,255,0.85)';
-  let shapes = '';
-  if (type === 'line') {
-    shapes = `<rect x="30" y="148" width="340" height="14" rx="4" fill="${s1}"/><rect x="45" y="90" width="80" height="66" rx="8" fill="${s2}"/><rect x="165" y="76" width="110" height="80" rx="8" fill="${s2}"/><rect x="308" y="106" width="58" height="52" rx="8" fill="${s2}"/><circle cx="75" cy="170" r="12" fill="${s3}"/><circle cx="198" cy="170" r="12" fill="${s3}"/><circle cx="328" cy="170" r="12" fill="${s3}"/>`;
-  } else if (type === 'die-part') {
-    shapes = `<rect x="100" y="78" width="200" height="140" rx="16" fill="${s2}"/><rect x="128" y="108" width="144" height="18" rx="4" fill="${s1}"/><rect x="128" y="136" width="144" height="18" rx="4" fill="${s1}"/><circle cx="308" cy="98" r="26" fill="${s3}"/>`;
-  } else {
-    shapes = `<rect x="118" y="68" width="164" height="132" rx="12" fill="${s2}"/><rect x="138" y="48" width="40" height="28" rx="4" fill="${s1}"/><rect x="218" y="48" width="40" height="28" rx="4" fill="${s1}"/><circle cx="200" cy="198" r="34" fill="${s3}"/><circle cx="200" cy="198" r="18" fill="${s2}"/>`;
-  }
-  const shortLabel = (label || '').substring(0, 22);
-  return `data:image/svg+xml,${encodeURIComponent(`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300"><rect width="400" height="300" fill="${color}"/>${shapes}<rect x="108" y="238" width="184" height="26" rx="5" fill="rgba(0,0,0,0.28)"/><text x="200" y="256" font-family="Courier New,monospace" font-size="11" font-weight="700" fill="${tc}" text-anchor="middle" letter-spacing="0.5">${shortLabel}</text></svg>`)}`;
+  const pool = type === 'die-part' ? DIE_PART_IMG_POOL : MACHINE_IMG_POOL;
+  return pool[_simpleHash(label || type || 'x') % pool.length];
 }
 
 // ── App ───────────────────────────────────────────────────────────────────────
@@ -234,6 +250,8 @@ function renderSearchDropdown(results, dropdown) {
 // ── Home ──────────────────────────────────────────────────────────────────────
 function initHomePage(catalog) {
   initCandyCanvas();
+
+  // Stats counter
   const statsSection = document.getElementById('stats');
   if (statsSection) {
     const observer = new IntersectionObserver(entries => {
@@ -244,9 +262,48 @@ function initHomePage(catalog) {
     }, { threshold: 0.3 });
     observer.observe(statsSection);
   }
+
+  // Category cards
   const catsGrid = document.getElementById('home-categories-grid');
   if (catsGrid) catsGrid.innerHTML = getCategories(catalog).map(cat => buildHomeCategoryCard(cat)).join('');
+
+  // Typing animation
+  const heroTyping = document.getElementById('hero-typing');
+  if (heroTyping) {
+    const words = ['Hard Candy Lines', 'Lollipop Systems', 'Toffee Equipment', 'Bubble Gum Lines', 'Pharma Machinery', 'Complete Turnkey Lines'];
+    let wi = 0, ci = 0, deleting = false, waiting = false;
+    function typeStep() {
+      if (waiting) { waiting = false; setTimeout(typeStep, 1800); return; }
+      const word = words[wi];
+      if (!deleting) {
+        heroTyping.textContent = word.slice(0, ci + 1);
+        ci++;
+        if (ci === word.length) { deleting = true; waiting = true; setTimeout(typeStep, 0); return; }
+      } else {
+        heroTyping.textContent = word.slice(0, ci - 1);
+        ci--;
+        if (ci === 0) { deleting = false; wi = (wi + 1) % words.length; }
+      }
+      setTimeout(typeStep, deleting ? 48 : 88);
+    }
+    typeStep();
+  }
+
+  // Scroll reveal
+  const revealObs = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('revealed'); revealObs.unobserve(e.target); } });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('[data-reveal]').forEach(el => revealObs.observe(el));
 }
+
+// ── Category real photos ──────────────────────────────────────────────────
+const CAT_IMAGES = {
+  'hard-candy':  'https://images.unsplash.com/photo-1560461396-8f9e3f6b3c47?w=640&auto=format&q=82',
+  'lollipop':    'https://images.unsplash.com/photo-1621263764928-df1444c5e859?w=640&auto=format&q=82',
+  'chew-toffee': 'https://images.unsplash.com/photo-1596803244535-925769b35d5b?w=640&auto=format&q=82',
+  'bubble-gum':  'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=640&auto=format&q=82',
+  'pharma':      'https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=640&auto=format&q=82',
+};
 
 const CAT_VISUAL = {
   'hard-candy': {
@@ -317,30 +374,24 @@ const CAT_VISUAL = {
 function buildHomeCategoryCard(cat) {
   const lineCount = cat.lines.length;
   const machineCount = cat.lines.reduce((sum, l) => sum + l.machines.length, 0);
-  const vis = CAT_VISUAL[cat.id] || { rate: 'Custom', tagline: '', bg: `linear-gradient(135deg,${cat.color},${cat.color}cc)`, icon: '' };
+  const vis = CAT_VISUAL[cat.id] || { rate: 'Custom', tagline: '' };
+  const imgUrl = CAT_IMAGES[cat.id] || '';
   return `
-    <article class="category-card rounded-2xl overflow-hidden border border-slate-100 shadow-sm bg-white flex flex-col">
-      <div class="cat-card-header relative h-44 flex items-center justify-center p-6" style="background:${vis.bg}">
-        <div class="w-20 h-20 opacity-90">${vis.icon}</div>
-        <div class="absolute top-4 right-4 bg-black/20 text-white text-xs font-bold px-3 py-1.5 rounded-full border border-white/25">
-          ${vis.rate}
+    <article class="home-cat-photo-card category-card">
+      ${imgUrl ? `<img class="hc-bg" src="${imgUrl}" alt="${cat.label}" loading="lazy"/>` : ''}
+      <div class="hc-overlay" style="background:linear-gradient(155deg,${cat.color}e8 0%,${cat.color}99 50%,rgba(0,0,0,0.55) 100%)"></div>
+      <div class="hc-content">
+        <div style="font-size:0.68rem;font-weight:700;text-transform:uppercase;letter-spacing:0.12em;color:rgba(255,255,255,0.55);margin-bottom:6px">${vis.tagline || ''}</div>
+        <h3 class="text-xl font-extrabold text-white mb-2 leading-tight">${cat.label}</h3>
+        <p class="text-sm mb-4 leading-relaxed" style="color:rgba(255,255,255,0.7);display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden">${cat.description}</p>
+        <div class="flex gap-5 mb-5" style="font-size:0.75rem;color:rgba(255,255,255,0.5)">
+          <span><strong style="color:#fff">${lineCount}</strong> Lines</span>
+          <span><strong style="color:#fff">${machineCount}+</strong> Machines</span>
+          <span style="color:rgba(255,255,255,0.4)">${vis.rate || ''}</span>
         </div>
-      </div>
-      <div class="p-6 flex flex-col flex-1">
-        <span class="text-xs font-semibold text-slate-400 uppercase tracking-widest mb-1">${vis.tagline}</span>
-        <h3 class="text-xl font-bold mb-2" style="color:${cat.color}">${cat.label}</h3>
-        <p class="text-slate-500 text-sm mb-4 leading-relaxed flex-1">${cat.description}</p>
-        <div class="flex gap-5 text-xs text-slate-400 mb-5 pt-3 border-t border-slate-100">
-          <span class="flex items-center gap-1.5">
-            <svg class="w-3.5 h-3.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 3H5a2 2 0 00-2 2v4m6-6h10a2 2 0 012 2v4M9 3v18m0 0h10a2 2 0 002-2V9M9 21H5a2 2 0 01-2-2V9m0 0h18"/></svg>
-            <strong class="text-slate-600">${lineCount}</strong> Lines
-          </span>
-          <span class="flex items-center gap-1.5">
-            <svg class="w-3.5 h-3.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/><circle cx="12" cy="12" r="3"/></svg>
-            <strong class="text-slate-600">${machineCount}+</strong> Machines
-          </span>
-        </div>
-        <a href="catalog.html?category=${cat.id}" class="cat-card-cta flex items-center justify-center gap-2 text-sm font-bold py-2.5 rounded-xl transition-all" style="background:${cat.color}18;color:${cat.color}">
+        <a href="catalog.html?category=${cat.id}"
+          class="inline-flex items-center gap-2 text-white text-sm font-bold px-5 py-2.5 rounded-xl transition-all"
+          style="background:rgba(255,255,255,0.15);border:1px solid rgba(255,255,255,0.28);backdrop-filter:blur(6px)">
           Explore Equipment
           <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"/></svg>
         </a>
@@ -487,16 +538,21 @@ function initCatalogPage(catalog) {
   const catGrid = document.getElementById('cat-select-grid');
   if (catGrid) {
     catGrid.innerHTML = getCategories(catalog).map(cat => `
-      <button class="cat-btn" data-cat-id="${cat.id}">
-        <div class="cat-icon" style="background:${cat.color}22">
-          <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="${cat.color}" stroke-width="1.8"><rect x="2" y="7" width="20" height="13" rx="2"/><path d="M16 7V5a2 2 0 00-4 0v2M8 7V5a2 2 0 014 0v2"/></svg>
+      <button class="cat-photo-btn" data-cat-id="${cat.id}">
+        <div class="cat-photo-btn-inner">
+          <img src="${CAT_IMAGES[cat.id] || ''}" alt="${cat.label}" loading="lazy"/>
+          <div class="cat-photo-btn-overlay"></div>
+          <div class="cat-photo-btn-label">
+            <h4>${cat.label}</h4>
+            <p>${cat.lines.length} production line${cat.lines.length !== 1 ? 's' : ''}</p>
+          </div>
+          <div class="cat-photo-btn-check">✓</div>
         </div>
-        <span class="text-xs font-semibold text-slate-700 leading-tight">${cat.label}</span>
       </button>`).join('');
-    catGrid.querySelectorAll('.cat-btn').forEach(btn => {
+    catGrid.querySelectorAll('.cat-photo-btn').forEach(btn => {
       btn.addEventListener('click', () => {
         selectedCategory = getCategoryById(catalog, btn.dataset.catId);
-        catGrid.querySelectorAll('.cat-btn').forEach(b => b.classList.remove('selected'));
+        catGrid.querySelectorAll('.cat-photo-btn').forEach(b => b.classList.remove('selected'));
         btn.classList.add('selected');
         showStep(2); buildStep2(selectedCategory);
       });
@@ -579,7 +635,7 @@ function initCatalogPage(catalog) {
     const cat = getCategoryById(catalog, preCategory);
     if (cat) {
       selectedCategory = cat;
-      catGrid?.querySelectorAll('.cat-btn').forEach(btn => { if (btn.dataset.catId === preCategory) btn.classList.add('selected'); });
+      catGrid?.querySelectorAll('.cat-photo-btn').forEach(btn => { if (btn.dataset.catId === preCategory) btn.classList.add('selected'); });
       showStep(2); buildStep2(cat);
     }
   }

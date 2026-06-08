@@ -157,9 +157,14 @@
           Complete Lines.<br/>
           <span class="hero-gradient-text">Precision Machines.</span>
         </h1>
-        <p class="text-slate-500 text-xl leading-relaxed mb-10 max-w-2xl">
+        <p class="text-slate-500 text-xl leading-relaxed mb-7 max-w-2xl">
           Starmer Global manufactures production equipment for hard candy, lollipop, chew, toffee, bubble gum and pharma. Complete lines, individual machines, dies and spare parts &mdash; all under one roof.
         </p>
+        <div class="hero-typing-badge mb-8">
+          <span class="hero-typing-dot"></span>
+          <span class="text-slate-500 text-sm font-medium">Now producing:</span>
+          <span id="hero-typing" class="text-primary font-bold text-sm" style="min-width:160px">Hard Candy Lines</span><span class="typing-cursor"></span>
+        </div>
         <div class="flex flex-wrap gap-4 mb-14">
           <a href="catalog.html" class="bg-white text-primary font-bold px-8 py-4 rounded-xl hover:bg-blue-50 transition-colors shadow-lg text-base flex items-center gap-2">
             Browse Equipment
@@ -290,30 +295,109 @@
         </div>
       </div>
 
-      <!-- Process timeline -->
-      <div class="bg-white rounded-2xl border border-slate-200 p-8">
-        <h3 class="text-lg font-bold text-primary mb-8 text-center">How We Work With You</h3>
-        <div class="grid md:grid-cols-4 gap-6">
-          <div class="text-center">
-            <div class="w-10 h-10 bg-primary text-white rounded-full flex items-center justify-center text-sm font-bold mx-auto mb-3">1</div>
-            <h4 class="font-semibold text-slate-700 text-sm mb-1">Submit RFQ</h4>
-            <p class="text-xs text-slate-400 leading-relaxed">Browse lines and machines, select what you need, submit a quote request online.</p>
+      <!-- Process timeline – enhanced -->
+      <div class="process-wrap">
+        <div class="process-header-area">
+          <span class="text-blue-300 text-xs font-semibold uppercase tracking-[0.2em] block mb-2">Our Process</span>
+          <h3 class="text-2xl md:text-3xl font-extrabold text-white mb-3">How We Work With You</h3>
+          <p class="text-blue-200/65 text-sm max-w-xl mx-auto leading-relaxed">
+            From initial inquiry to commissioning and beyond — a structured, transparent process built for complex industrial projects.
+          </p>
+        </div>
+        <div class="process-steps-grid">
+
+          <!-- Step 1 -->
+          <div class="process-step-card" data-reveal data-reveal-delay="1">
+            <div class="process-step-img">
+              <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=480&auto=format&q=80" alt="Submit RFQ" loading="lazy"/>
+              <div class="process-step-img-overlay"></div>
+              <div class="process-step-num-badge">1</div>
+            </div>
+            <div class="process-step-body">
+              <h4>Submit RFQ</h4>
+              <p>Browse lines and machines, select what you need, submit a quote request online.</p>
+              <ul class="process-step-details">
+                <li>
+                  <svg class="process-step-check w-3 h-3" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                  Online catalog selection
+                </li>
+                <li>
+                  <svg class="process-step-check w-3 h-3" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                  No obligation required
+                </li>
+              </ul>
+            </div>
           </div>
-          <div class="text-center">
-            <div class="w-10 h-10 bg-accent text-white rounded-full flex items-center justify-center text-sm font-bold mx-auto mb-3">2</div>
-            <h4 class="font-semibold text-slate-700 text-sm mb-1">Engineering Review</h4>
-            <p class="text-xs text-slate-400 leading-relaxed">Our engineers review your production requirements and prepare a technical proposal.</p>
+
+          <!-- Step 2 -->
+          <div class="process-step-card" data-reveal data-reveal-delay="2">
+            <div class="process-step-img">
+              <img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?w=480&auto=format&q=80" alt="Engineering Review" loading="lazy"/>
+              <div class="process-step-img-overlay"></div>
+              <div class="process-step-num-badge">2</div>
+            </div>
+            <div class="process-step-body">
+              <h4>Engineering Review</h4>
+              <p>Our engineers review your production requirements and prepare a detailed technical proposal.</p>
+              <ul class="process-step-details">
+                <li>
+                  <svg class="process-step-check w-3 h-3" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                  Technical feasibility study
+                </li>
+                <li>
+                  <svg class="process-step-check w-3 h-3" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                  Response within 24 hrs
+                </li>
+              </ul>
+            </div>
           </div>
-          <div class="text-center">
-            <div class="w-10 h-10 rounded-full flex items-center justify-center text-sm font-bold mx-auto mb-3 text-white" style="background:#0D6B5E">3</div>
-            <h4 class="font-semibold text-slate-700 text-sm mb-1">Manufacturing</h4>
-            <p class="text-xs text-slate-400 leading-relaxed">Precision manufacturing with in-process QC checks. Full factory acceptance test before shipment.</p>
+
+          <!-- Step 3 -->
+          <div class="process-step-card" data-reveal data-reveal-delay="3">
+            <div class="process-step-img">
+              <img src="https://images.unsplash.com/photo-1565514928093-9ea92a2ae1c7?w=480&auto=format&q=80" alt="Manufacturing" loading="lazy"/>
+              <div class="process-step-img-overlay"></div>
+              <div class="process-step-num-badge">3</div>
+            </div>
+            <div class="process-step-body">
+              <h4>Manufacturing</h4>
+              <p>Precision manufacturing with in-process QC checks. Full factory acceptance test before shipment.</p>
+              <ul class="process-step-details">
+                <li>
+                  <svg class="process-step-check w-3 h-3" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                  ISO 9001:2015 processes
+                </li>
+                <li>
+                  <svg class="process-step-check w-3 h-3" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                  Factory acceptance test
+                </li>
+              </ul>
+            </div>
           </div>
-          <div class="text-center">
-            <div class="w-10 h-10 bg-purple-600 text-white rounded-full flex items-center justify-center text-sm font-bold mx-auto mb-3">4</div>
-            <h4 class="font-semibold text-slate-700 text-sm mb-1">Installation &amp; Training</h4>
-            <p class="text-xs text-slate-400 leading-relaxed">On-site installation, commissioning, operator training and post-commissioning support.</p>
+
+          <!-- Step 4 -->
+          <div class="process-step-card" data-reveal data-reveal-delay="4">
+            <div class="process-step-img">
+              <img src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=480&auto=format&q=80" alt="Installation &amp; Training" loading="lazy"/>
+              <div class="process-step-img-overlay"></div>
+              <div class="process-step-num-badge">4</div>
+            </div>
+            <div class="process-step-body">
+              <h4>Installation &amp; Training</h4>
+              <p>On-site installation, commissioning, operator training and post-commissioning support.</p>
+              <ul class="process-step-details">
+                <li>
+                  <svg class="process-step-check w-3 h-3" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                  35+ countries supported
+                </li>
+                <li>
+                  <svg class="process-step-check w-3 h-3" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                  24/7 remote diagnostics
+                </li>
+              </ul>
+            </div>
           </div>
+
         </div>
       </div>
     </div>
