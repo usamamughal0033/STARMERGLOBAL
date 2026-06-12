@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Admin Panel — Starmer Global</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>tailwind.config={theme:{extend:{colors:{primary:'#1A3A5C',accent:'#2E7CC6'},fontFamily:{sans:['Inter','system-ui','sans-serif']}}}}</script>
+  <style>
+    *{box-sizing:border-box}
+    body{background:#f8fafc}
+    .animate-spin{animation:spin .8s linear infinite}
+    @keyframes spin{to{transform:rotate(360deg)}}
+    input:focus,select:focus,textarea:focus{outline:none;box-shadow:0 0 0 3px rgba(46,124,198,0.18)}
+    .form-input{width:100%;border:1.5px solid #e2e8f0;border-radius:10px;padding:0.6rem 0.85rem;font-size:0.875rem;background:#fafbfc;transition:border-color 150ms;font-family:inherit}
+    .form-input:focus{border-color:#2E7CC6;background:#fff}
+    label.field-label{display:block;font-size:0.78rem;font-weight:600;color:#475569;margin-bottom:5px}
+    .modal-card{background:#fff;border-radius:20px;box-shadow:0 24px 64px rgba(0,0,0,0.18);width:100%;max-height:90vh;overflow-y:auto}
+    ::-webkit-scrollbar{width:5px} ::-webkit-scrollbar-track{background:transparent} ::-webkit-scrollbar-thumb{background:#cbd5e1;border-radius:4px}
+  </style>
+</head>
+<body class="font-sans min-h-screen">
+
+<!-- ══ LOGIN SCREEN ══════════════════════════════════════════════════════════ -->
+<div id="login-screen" class="min-h-screen flex items-center justify-center p-4 bg-gradient-to-br from-slate-900 via-primary to-accent">
+  <div class="w-full max-w-sm">
+    <div class="text-center mb-8">
+      <div class="inline-flex items-center gap-2.5 mb-4">
+        <svg class="w-10 h-10" viewBox="0 0 32 32" fill="none">
+          <circle cx="16" cy="16" r="14" stroke="rgba(255,255,255,0.3)" stroke-width="1.5" fill="none"/>
+          <circle cx="16" cy="16" r="10" stroke="rgba(255,255,255,0.5)" stroke-width="1.5" fill="none"/>
+          <circle cx="16" cy="16" r="6"  stroke="#fff" stroke-width="2" fill="none"/>
+          <circle cx="16" cy="16" r="2.5" fill="#fff"/>
+        </svg>
+        <span class="text-white font-extrabold text-xl">Starmer Global</span>
+      </div>
+      <p class="text-white/60 text-sm font-medium">Admin Content Panel</p>
+    </div>
+
+    <div class="bg-white rounded-3xl shadow-2xl p-8">
+      <h1 class="text-lg font-bold text-primary mb-1">Sign in</h1>
+      <p class="text-slate-400 text-sm mb-7">Only authorised administrators can access this panel.</p>
+
+      <form id="login-form" autocomplete="on">
+        <div class="mb-4">
+          <label class="field-label" for="admin-email">Email address</label>
+          <input id="admin-email" type="email" required autocomplete="email"
+            placeholder="admin@starmerglobal.com" class="form-input"/>
+        </div>
+        <div class="mb-5">
+          <label class="field-label" for="admin-password">Password</label>
+          <input id="admin-password" type="password" required autocomplete="current-password"
+            placeholder="••••••••" class="form-input"/>
+        </div>
+        <div id="login-error" class="hidden text-red-600 text-sm bg-red-50 border border-red-200 rounded-xl px-4 py-2.5 mb-4"></div>
+        <button id="login-btn" type="submit"
+          class="w-full bg-primary text-white font-bold py-3 rounded-xl hover:bg-accent transition-colors text-sm shadow-md">
+          Sign In
+        </button>
+      </form>
+    </div>
+
+    <p class="text-center text-white/30 text-xs mt-6">Access restricted — do not share this URL</p>
+  </div>
+</div>
+
+<!-- ══ DASHBOARD ═════════════════════════════════════════════════════════════ -->
+<div id="dashboard" class="hidden min-h-screen">
+
+  <!-- Top nav -->
+  <header class="bg-white border-b border-slate-200 sticky top-0 z-30 shadow-sm">
+    <div class="max-w-7xl mx-auto px-6 h-14 flex items-center justify-between">
+      <div class="flex items-center gap-2 text-sm font-bold text-primary">
+        <svg class="w-7 h-7" viewBox="0 0 32 32" fill="none">
+          <circle cx="16" cy="16" r="14" stroke="#2E7CC6" stroke-width="1.5" fill="none" opacity=".3"/>
+          <circle cx="16" cy="16" r="10" stroke="#2E7CC6" stroke-width="1.5" fill="none" opacity=".5"/>
+          <circle cx="16" cy="16" r="6"  stroke="#1A3A5C" stroke-width="2" fill="none"/>
+          <circle cx="16" cy="16" r="2.5" fill="#1A3A5C"/>
+        </svg>
+        Starmer Global
+        <span class="text-slate-300 mx-1">|</span>
+        <span class="text-slate-400 font-normal">Admin Panel</span>
+      </div>
+      <div class="flex items-center gap-4">
+        <span id="admin-user-email" class="hidden sm:block text-xs text-slate-400 font-medium"></span>
+        <a href="index.html" target="_blank"
+          class="text-xs font-semibold text-slate-500 hover:text-accent transition-colors flex items-center gap-1">
+          <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+          View Site
+        </a>
+        <button id="logout-btn"
+          class="text-xs font-semibold text-slate-500 hover:text-red-600 transition-colors flex items-center gap-1.5">
+          <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"/></svg>
+          Sign Out
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="max-w-7xl mx-auto px-6 py-8">
+
+    <!-- Stats -->
+    <div id="stats-row" class="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
+      <!-- filled by JS -->
+      <div class="rounded-2xl border border-slate-200 bg-white p-5 animate-pulse h-24"></div>
+      <div class="rounded-2xl border border-slate-200 bg-white p-5 animate-pulse h-24"></div>
+      <div class="rounded-2xl border border-slate-200 bg-white p-5 animate-pulse h-24"></div>
+      <div class="rounded-2xl border border-slate-200 bg-white p-5 animate-pulse h-24"></div>
+    </div>
+
+    <!-- Notice -->
+    <div class="bg-amber-50 border border-amber-200 rounded-xl px-4 py-3 text-sm text-amber-800 font-medium mb-6 flex items-start gap-2">
+      <svg class="w-4 h-4 mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+      <span>You can <strong>add custom machines and dies/parts</strong>, or <strong>hide any existing catalog item</strong> from public view. Production lines and categories are managed by the developer.</span>
+    </div>
+
+    <!-- Tab bar -->
+    <div class="flex gap-1 p-1 bg-slate-100 rounded-xl w-fit mb-6">
+      <button class="admin-tab px-4 py-2 text-sm font-semibold text-primary bg-white rounded-lg shadow-sm transition-all" data-tab="machines">
+        ⚙ Machines
+      </button>
+      <button class="admin-tab px-4 py-2 text-sm font-medium text-slate-500 rounded-lg hover:text-slate-700 transition-all" data-tab="parts">
+        🔩 Dies &amp; Parts
+      </button>
+    </div>
+
+    <!-- ── Machines panel ─────────────────────────────────────────────────── -->
+    <div id="machines-panel">
+      <div class="flex items-start justify-between mb-4 gap-4">
+        <div>
+          <h2 class="text-lg font-bold text-primary">Machines</h2>
+          <p class="text-xs text-slate-400 mt-0.5">Add new machines to any production line, or hide/restore existing catalog machines.</p>
+        </div>
+        <button id="add-machine-btn"
+          class="shrink-0 bg-primary text-white font-semibold px-4 py-2 rounded-xl text-sm hover:bg-accent transition-colors flex items-center gap-1.5 shadow-md">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
+          Add Machine
+        </button>
+      </div>
+      <div class="bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden">
+        <div id="machines-table-wrap">
+          <div class="py-16 text-center text-slate-400 text-sm">Loading…</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── Parts panel ────────────────────────────────────────────────────── -->
+    <div id="parts-panel" class="hidden">
+      <div class="flex items-start justify-between mb-4 gap-4">
+        <div>
+          <h2 class="text-lg font-bold text-primary">Dies &amp; Spare Parts</h2>
+          <p class="text-xs text-slate-400 mt-0.5">Add new dies or spare parts to any machine, or hide/restore existing ones.</p>
+        </div>
+        <button id="add-part-btn"
+          class="shrink-0 bg-primary text-white font-semibold px-4 py-2 rounded-xl text-sm hover:bg-accent transition-colors flex items-center gap-1.5 shadow-md">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
+          Add Die / Part
+        </button>
+      </div>
+      <div class="bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden">
+        <div id="parts-table-wrap">
+          <div class="py-16 text-center text-slate-400 text-sm">Loading…</div>
+        </div>
+      </div>
+    </div>
+
+  </main>
+</div>
+
+<!-- ══ MODAL OVERLAY ═════════════════════════════════════════════════════════ -->
+<div id="modal-overlay" class="hidden fixed inset-0 bg-black/55 z-50 flex items-center justify-center p-4 backdrop-blur-sm">
+
+  <!-- ── Add Machine Modal ───────────────────────────────────────────────── -->
+  <div id="machine-modal" class="modal-card max-w-xl w-full">
+    <div class="flex items-center justify-between px-7 py-5 border-b border-slate-100">
+      <div>
+        <h2 class="text-base font-bold text-primary">Add New Machine</h2>
+        <p class="text-xs text-slate-400 mt-0.5">It will appear live on the public catalog immediately.</p>
+      </div>
+      <button id="modal-close" class="text-slate-400 hover:text-slate-700 transition-colors p-1">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+      </button>
+    </div>
+    <form id="machine-form" class="px-7 py-6 space-y-4">
+      <div class="grid sm:grid-cols-2 gap-4">
+        <div>
+          <label class="field-label" for="m-name">Machine Name <span class="text-red-500">*</span></label>
+          <input id="m-name" type="text" required placeholder="e.g. Hard Candy Depositor" class="form-input"/>
+        </div>
+        <div>
+          <label class="field-label" for="m-number">Machine Number <span class="text-red-500">*</span></label>
+          <input id="m-number" type="text" required placeholder="e.g. HC-M-010" class="form-input"/>
+        </div>
+      </div>
+      <div class="grid sm:grid-cols-2 gap-4">
+        <div>
+          <label class="field-label" for="m-category">Category <span class="text-red-500">*</span></label>
+          <select id="m-category" required class="form-input">
+            <option value="">— Select Category —</option>
+          </select>
+        </div>
+        <div>
+          <label class="field-label" for="m-line">Production Line <span class="text-red-500">*</span></label>
+          <select id="m-line" required class="form-input">
+            <option value="">— Pick category first —</option>
+          </select>
+        </div>
+      </div>
+      <div>
+        <label class="field-label" for="m-function">Function / Role</label>
+        <input id="m-function" type="text" placeholder="e.g. Deposits syrup into candy molds" class="form-input"/>
+      </div>
+      <div>
+        <label class="field-label" for="m-description">Description</label>
+        <textarea id="m-description" rows="3" placeholder="Technical description of the machine…" class="form-input resize-none"></textarea>
+      </div>
+      <div class="grid sm:grid-cols-2 gap-4">
+        <div>
+          <label class="field-label" for="m-image">Image URL</label>
+          <input id="m-image" type="url" placeholder="https://…" class="form-input"/>
+        </div>
+        <div>
+          <label class="field-label" for="m-order">Position in Line</label>
+          <input id="m-order" type="number" min="1" max="99" placeholder="e.g. 5" class="form-input"/>
+        </div>
+      </div>
+
+      <div>
+        <div class="flex items-center justify-between mb-2">
+          <label class="field-label mb-0">Technical Specifications</label>
+          <button type="button" id="machine-spec-add"
+            class="text-xs text-accent font-semibold hover:text-primary transition-colors flex items-center gap-1">
+            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
+            Add row
+          </button>
+        </div>
+        <div id="machine-specs" class="bg-slate-50 rounded-xl p-3 border border-slate-100"></div>
+      </div>
+
+      <div class="flex justify-end gap-3 pt-2 border-t border-slate-100">
+        <button type="button" onclick="closeModal()"
+          class="px-5 py-2 text-sm font-semibold text-slate-500 border border-slate-200 rounded-xl hover:bg-slate-50 transition-colors">
+          Cancel
+        </button>
+        <button id="add-machine-submit" type="submit"
+          class="px-6 py-2 text-sm font-bold bg-primary text-white rounded-xl hover:bg-accent transition-colors shadow-md">
+          Add Machine
+        </button>
+      </div>
+    </form>
+  </div>
+
+  <!-- ── Add Part Modal ─────────────────────────────────────────────────── -->
+  <div id="part-modal" class="modal-card max-w-lg w-full hidden">
+    <div class="flex items-center justify-between px-7 py-5 border-b border-slate-100">
+      <div>
+        <h2 class="text-base font-bold text-primary">Add New Die / Spare Part</h2>
+        <p class="text-xs text-slate-400 mt-0.5">Links to the selected machine and appears in its detail page.</p>
+      </div>
+      <button onclick="closeModal()" class="text-slate-400 hover:text-slate-700 transition-colors p-1">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+      </button>
+    </div>
+    <form id="part-form" class="px-7 py-6 space-y-4">
+      <div class="grid sm:grid-cols-2 gap-4">
+        <div>
+          <label class="field-label" for="p-name">Part Name <span class="text-red-500">*</span></label>
+          <input id="p-name" type="text" required placeholder="e.g. Candy Mold Set 25mm" class="form-input"/>
+        </div>
+        <div>
+          <label class="field-label" for="p-number">Part Number <span class="text-red-500">*</span></label>
+          <input id="p-number" type="text" required placeholder="e.g. HC-D-019" class="form-input"/>
+        </div>
+      </div>
+      <div class="grid sm:grid-cols-2 gap-4">
+        <div>
+          <label class="field-label" for="p-type">Type <span class="text-red-500">*</span></label>
+          <select id="p-type" required class="form-input">
+            <option value="part">Spare Part</option>
+            <option value="die">Die / Mold</option>
+          </select>
+        </div>
+        <div>
+          <label class="field-label" for="p-machine">Associated Machine</label>
+          <select id="p-machine" class="form-input">
+            <option value="">— Select Machine —</option>
+          </select>
+        </div>
+      </div>
+      <div>
+        <label class="field-label" for="p-description">Description</label>
+        <textarea id="p-description" rows="2" placeholder="Material, compatibility, usage notes…" class="form-input resize-none"></textarea>
+      </div>
+      <div>
+        <label class="field-label" for="p-image">Image URL</label>
+        <input id="p-image" type="url" placeholder="https://…" class="form-input"/>
+      </div>
+      <div>
+        <div class="flex items-center justify-between mb-2">
+          <label class="field-label mb-0">Specifications</label>
+          <button type="button" id="part-spec-add"
+            class="text-xs text-accent font-semibold hover:text-primary transition-colors flex items-center gap-1">
+            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
+            Add row
+          </button>
+        </div>
+        <div id="part-specs" class="bg-slate-50 rounded-xl p-3 border border-slate-100"></div>
+      </div>
+      <div class="flex justify-end gap-3 pt-2 border-t border-slate-100">
+        <button type="button" onclick="closeModal()"
+          class="px-5 py-2 text-sm font-semibold text-slate-500 border border-slate-200 rounded-xl hover:bg-slate-50 transition-colors">
+          Cancel
+        </button>
+        <button id="add-part-submit" type="submit"
+          class="px-6 py-2 text-sm font-bold bg-primary text-white rounded-xl hover:bg-accent transition-colors shadow-md">
+          Add Part/Die
+        </button>
+      </div>
+    </form>
+  </div>
+
+</div>
+<!-- ══ TOAST ══════════════════════════════════════════════════════════════ -->
+<div id="admin-toast" style="opacity:0" class="fixed bottom-6 right-6 z-50 px-5 py-3 rounded-xl text-sm font-semibold text-white"></div>
+
+<script src="js/catalog-data.js"></script>
+<script src="js/admin.js"></script>
+</body>
+</html>

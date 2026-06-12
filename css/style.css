@@ -702,3 +702,176 @@
   transform-origin: left;
   transition: opacity 300ms ease, transform 300ms ease;
 }
+
+/* ── Custom Quote Page ────────────────────────────────────────────────────── */
+
+/* Moving gallery marquee */
+.cq-marquee-wrap {
+  overflow: hidden;
+  position: relative;
+  padding: 0;
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%);
+  mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%);
+}
+.cq-marquee-track {
+  display: flex;
+  gap: 16px;
+  width: max-content;
+  animation: cq-scroll-left 40s linear infinite;
+}
+.cq-marquee-track:hover { animation-play-state: paused; }
+@keyframes cq-scroll-left {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+.cq-marquee-item {
+  width: 400px;
+  height: 270px;
+  border-radius: 18px;
+  overflow: hidden;
+  flex-shrink: 0;
+  position: relative;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.18);
+}
+.cq-marquee-item img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  transition: transform 600ms ease;
+}
+.cq-marquee-item:hover img { transform: scale(1.04); }
+.cq-marquee-item-label {
+  position: absolute; bottom: 0; left: 0; right: 0;
+  padding: 20px 16px 12px;
+  background: linear-gradient(to top, rgba(10,20,40,0.75) 0%, transparent 100%);
+  color: #fff;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+}
+
+/* Capability cards */
+.cq-cap-card {
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 20px;
+  padding: 2rem;
+  transition: transform 280ms ease, box-shadow 280ms ease;
+  position: relative;
+  overflow: hidden;
+}
+.cq-cap-card::before {
+  content: '';
+  position: absolute; top: 0; left: 0; right: 0; height: 4px;
+  background: linear-gradient(90deg, #1A3A5C, #2E7CC6);
+  opacity: 0;
+  transition: opacity 280ms ease;
+}
+.cq-cap-card:hover { transform: translateY(-6px); box-shadow: 0 16px 40px rgba(26,58,92,0.14); }
+.cq-cap-card:hover::before { opacity: 1; }
+.cq-cap-icon {
+  width: 56px; height: 56px;
+  border-radius: 14px;
+  display: flex; align-items: center; justify-content: center;
+  margin-bottom: 1.25rem;
+}
+
+/* Team / skill stat cards */
+.cq-team-stat {
+  background: rgba(255,255,255,0.07);
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: 18px;
+  padding: 1.75rem;
+  text-align: center;
+  backdrop-filter: blur(8px);
+  transition: transform 280ms ease, background 280ms ease;
+}
+.cq-team-stat:hover {
+  transform: translateY(-4px);
+  background: rgba(255,255,255,0.12);
+}
+.cq-team-stat-num {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: #fff;
+  line-height: 1;
+  margin-bottom: 0.4rem;
+}
+.cq-team-stat-label {
+  font-size: 0.8rem;
+  color: rgba(255,255,255,0.7);
+  font-weight: 500;
+}
+
+/* Skill bar */
+.cq-skill-bar-wrap { margin-bottom: 1rem; }
+.cq-skill-bar-label {
+  display: flex; justify-content: space-between;
+  font-size: 0.8rem; font-weight: 600; color: #fff;
+  margin-bottom: 6px;
+}
+.cq-skill-bar-track {
+  height: 8px; background: rgba(255,255,255,0.15); border-radius: 99px; overflow: hidden;
+}
+.cq-skill-bar-fill {
+  height: 100%; border-radius: 99px;
+  background: linear-gradient(90deg, #2E7CC6, #60b3f5);
+  width: 0;
+  transition: width 1.2s cubic-bezier(0.4,0,0.2,1);
+}
+
+/* Floating badge */
+.cq-float-badge {
+  display: inline-flex; align-items: center; gap: 6px;
+  background: rgba(46,124,198,0.18);
+  border: 1px solid rgba(46,124,198,0.35);
+  color: #93c5fd;
+  font-size: 11px; font-weight: 700;
+  padding: 5px 12px; border-radius: 99px;
+  text-transform: uppercase; letter-spacing: 0.06em;
+}
+
+/* Machine feature pill */
+.cq-machine-pill {
+  display: flex; align-items: center; gap: 10px;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 12px;
+  padding: 12px 16px;
+  transition: background 220ms ease;
+}
+.cq-machine-pill:hover { background: rgba(255,255,255,0.12); }
+.cq-machine-pill-dot {
+  width: 8px; height: 8px; border-radius: 50%;
+  background: #4ade80;
+  box-shadow: 0 0 8px #4ade80;
+  flex-shrink: 0;
+  animation: cq-pulse-dot 2s ease-in-out infinite;
+}
+@keyframes cq-pulse-dot {
+  0%, 100% { box-shadow: 0 0 6px #4ade80; }
+  50% { box-shadow: 0 0 14px #4ade80, 0 0 28px #4ade8066; }
+}
+
+/* Quote form in custom-quote page */
+.cq-form-wrap {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 24px;
+  padding: 2.5rem;
+}
+
+/* Reveal on scroll */
+[data-cq-reveal] {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 600ms ease, transform 600ms ease;
+}
+[data-cq-reveal].revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+[data-cq-reveal][data-cq-delay="1"] { transition-delay: 100ms; }
+[data-cq-reveal][data-cq-delay="2"] { transition-delay: 200ms; }
+[data-cq-reveal][data-cq-delay="3"] { transition-delay: 300ms; }
+[data-cq-reveal][data-cq-delay="4"] { transition-delay: 400ms; }
+[data-cq-reveal][data-cq-delay="5"] { transition-delay: 500ms; }

@@ -417,6 +417,17 @@ window.CATALOG_DATA = {
               "image": "assets/images/machines/1780700640278-1216096.jpg",
               "specs": {},
               "diesAndParts": []
+            },
+            {
+              "id": "HC-L002-M10",
+              "machineNumber": "HC-L002-M10",
+              "orderInLine": 10,
+              "name": "wer",
+              "function": "erdf",
+              "description": "dsgdfg",
+              "image": "assets/images/machines/1780953096009-1216096.jpg",
+              "specs": {},
+              "diesAndParts": []
             }
           ]
         },
@@ -700,6 +711,20 @@ window.CATALOG_DATA = {
                 "throughput": "900 pcs/min",
                 "powerConsumption": "7 kW",
                 "certifications": "CE, ISO 9001:2015"
+              },
+              "diesAndParts": []
+            },
+            {
+              "id": "HC-L004-M09",
+              "machineNumber": "HC-L004-M09",
+              "orderInLine": 9,
+              "name": "ABC",
+              "function": "",
+              "description": "",
+              "image": "assets/images/machines/1781122162249-1216096.jpg",
+              "specs": {
+                "CAPACITY": "JHSF",
+                "AJVHAD": "UKDGAFK"
               },
               "diesAndParts": []
             }

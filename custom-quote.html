@@ -1,0 +1,741 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Custom Parts Quote — Starmer Global</title>
+  <meta name="description" content="Get a custom parts quote from Starmer Global. We design and manufacture precision parts as per your drawings and technical specifications."/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: { primary: '#1A3A5C', accent: '#2E7CC6', 'text-main': '#334155' },
+          fontFamily: { sans: ['Inter','system-ui','sans-serif'] }
+        }
+      }
+    }
+  </script>
+  <link rel="stylesheet" href="css/style.css"/>
+  <!-- EmailJS -->
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <script>
+    window.EMAILJS_SERVICE_ID  = 'service_m22ycn4';
+    window.EMAILJS_TEMPLATE_ID = 'NCspnSWRE_gIEkgNzWpp4';
+    window.EMAILJS_PUBLIC_KEY  = 'DNHXOXsFQGtFeqaVK';
+    document.addEventListener('DOMContentLoaded', () => {
+      if (window.EMAILJS_PUBLIC_KEY !== 'YOUR_PUBLIC_KEY') {
+        emailjs.init({ publicKey: window.EMAILJS_PUBLIC_KEY });
+      }
+    });
+  </script>
+</head>
+<body data-page="custom-quote" class="font-sans text-text-main bg-white">
+
+  <!-- ── Navigation ──────────────────────────────────────────────────────────── -->
+  <nav id="site-nav" class="fixed top-0 left-0 right-0 z-50 bg-white border-b border-slate-200">
+    <div class="max-w-7xl mx-auto px-6 flex items-center justify-between h-16">
+      <a href="index.html" class="flex items-center gap-2.5 font-extrabold text-primary text-base shrink-0">
+        <svg class="w-8 h-8" viewBox="0 0 32 32" fill="none"><circle cx="16" cy="16" r="14" stroke="#2E7CC6" stroke-width="1.5" fill="none" opacity="0.3"/><circle cx="16" cy="16" r="10" stroke="#2E7CC6" stroke-width="1.5" fill="none" opacity="0.5"/><circle cx="16" cy="16" r="6" stroke="#1A3A5C" stroke-width="2" fill="none"/><circle cx="16" cy="16" r="2.5" fill="#1A3A5C"/></svg>
+        Starmer Global
+      </a>
+      <ul class="hidden lg:flex items-center gap-1">
+        <li class="nav-dropdown-wrap">
+          <button class="flex items-center gap-1 px-3 py-2 text-sm font-medium text-slate-600 hover:text-accent rounded-lg hover:bg-slate-50">Products <svg class="w-3.5 h-3.5 opacity-60" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></button>
+          <div class="nav-dropdown" style="min-width:240px">
+            <a href="catalog.html?category=hard-candy">Hard Candy Production</a>
+            <a href="catalog.html?category=lollipop">Lollipop Production</a>
+            <a href="catalog.html?category=chew-toffee">Chew &amp; Toffee Production</a>
+            <a href="catalog.html?category=bubble-gum">Bubble Gum Production</a>
+            <a href="catalog.html?category=pharma">Pharma Production</a>
+          </div>
+        </li>
+        <li class="nav-dropdown-wrap">
+          <button class="flex items-center gap-1 px-3 py-2 text-sm font-medium text-slate-600 hover:text-accent rounded-lg hover:bg-slate-50">Lines <svg class="w-3.5 h-3.5 opacity-60" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></button>
+          <div class="nav-mega"><div class="nav-mega-inner" id="lines-mega-inner"></div></div>
+        </li>
+        <li class="nav-dropdown-wrap">
+          <button class="flex items-center gap-1 px-3 py-2 text-sm font-medium text-slate-600 hover:text-accent rounded-lg hover:bg-slate-50">Machines <svg class="w-3.5 h-3.5 opacity-60" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></button>
+          <div class="nav-dropdown" id="machines-dropdown-inner" style="min-width:240px"></div>
+        </li>
+        <li class="nav-dropdown-wrap">
+          <button class="flex items-center gap-1 px-3 py-2 text-sm font-medium text-slate-600 hover:text-accent rounded-lg hover:bg-slate-50">Dies &amp; Parts <svg class="w-3.5 h-3.5 opacity-60" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></button>
+          <div class="nav-dropdown" id="dies-dropdown-inner" style="min-width:240px"></div>
+        </li>
+      </ul>
+      <div class="flex items-center gap-3">
+        <a href="quote.html" class="relative flex items-center gap-2 bg-primary text-white text-sm font-semibold px-4 py-2 rounded-lg hover:bg-accent transition-colors">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/></svg>
+          <span class="hidden sm:inline">Request Quote</span>
+          <span data-rfq-badge class="absolute -top-1.5 -right-1.5 bg-red-500 text-white text-xs w-5 h-5 rounded-full flex items-center justify-center font-bold" style="opacity:0">0</span>
+        </a>
+        <button id="nav-toggle" class="lg:hidden p-1.5 rounded-lg hover:bg-slate-100">
+          <svg class="w-5 h-5 text-slate-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+        </button>
+      </div>
+    </div>
+    <div id="mobile-menu" class="flex-col px-6 pb-4 bg-white border-t border-slate-100 gap-1">
+      <a href="catalog.html" class="block py-2.5 text-sm font-semibold text-slate-700 border-b border-slate-100">All Products</a>
+      <div id="mobile-cat-links"></div>
+      <a href="custom-quote.html" class="block py-2.5 text-sm font-medium text-accent border-b border-slate-100">Custom Quote</a>
+    </div>
+  </nav>
+
+  <!-- ── Hero with Moving Gallery ─────────────────────────────────────────── -->
+  <section class="pt-16 bg-gradient-to-b from-slate-900 via-primary to-slate-900 pb-0 overflow-hidden">
+
+    <!-- Text hero -->
+    <div class="max-w-7xl mx-auto px-6 pt-16 pb-12 text-center">
+      <div class="inline-flex items-center gap-2 bg-white/10 border border-white/20 text-blue-200 text-xs font-bold px-4 py-2 rounded-full mb-6 uppercase tracking-widest backdrop-blur-sm">
+        <svg class="w-3.5 h-3.5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+        Precision Manufacturing &middot; Custom Engineering
+      </div>
+      <h1 class="text-4xl md:text-6xl font-extrabold text-white leading-tight mb-5">
+        Custom Parts.<br/>
+        <span style="background:linear-gradient(135deg,#60b3f5 0%,#93c5fd 50%,#2E7CC6 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">Built to Your Drawing.</span>
+      </h1>
+      <p class="text-blue-200 text-lg max-w-2xl mx-auto leading-relaxed mb-8">
+        From a sketch to a finished part — we design, engineer and manufacture precision components to your exact specifications. Send us your drawing and we'll handle the rest.
+      </p>
+      <a href="#cq-form" class="inline-flex items-center gap-2 bg-accent text-white font-bold px-8 py-4 rounded-xl hover:bg-blue-500 transition-colors shadow-lg shadow-blue-900/40 text-base">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+        Get Custom Quote
+      </a>
+    </div>
+
+    <!-- Moving gallery -->
+    <div class="cq-marquee-wrap py-6">
+      <div class="cq-marquee-track" id="cq-track">
+        <!-- Items duplicated in JS for seamless loop -->
+        <div class="cq-marquee-item">
+          <img src="https://images.unsplash.com/photo-1565514928093-9ea92a2ae1c7?w=500&auto=format&q=80" alt="CNC Precision Machining" loading="eager"/>
+          <div class="cq-marquee-item-label">CNC Precision Machining</div>
+        </div>
+        <div class="cq-marquee-item">
+          <img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?w=500&auto=format&q=80" alt="Industrial Parts Manufacturing" loading="eager"/>
+          <div class="cq-marquee-item-label">Industrial Parts Manufacturing</div>
+        </div>
+        <div class="cq-marquee-item">
+          <img src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=500&auto=format&q=80" alt="Workshop & Tooling" loading="eager"/>
+          <div class="cq-marquee-item-label">Workshop &amp; Tooling</div>
+        </div>
+        <div class="cq-marquee-item">
+          <img src="https://images.unsplash.com/photo-1567789884554-0b844b597180?w=500&auto=format&q=80" alt="Custom Metal Parts" loading="eager"/>
+          <div class="cq-marquee-item-label">Custom Metal Parts</div>
+        </div>
+        <div class="cq-marquee-item">
+          <img src="https://images.unsplash.com/photo-1621905251918-cd1e5eaf9ad7?w=500&auto=format&q=80" alt="Precision Engineering" loading="eager"/>
+          <div class="cq-marquee-item-label">Precision Engineering</div>
+        </div>
+        <div class="cq-marquee-item">
+          <img src="https://images.unsplash.com/photo-1611532736597-de2d4265fba3?w=500&auto=format&q=80" alt="Technical Drawings & Design" loading="eager"/>
+          <div class="cq-marquee-item-label">Technical Drawings &amp; Design</div>
+        </div>
+        <!-- Duplicates for seamless loop -->
+        <div class="cq-marquee-item">
+          <img src="https://images.unsplash.com/photo-1565514928093-9ea92a2ae1c7?w=500&auto=format&q=80" alt="CNC Precision Machining" loading="lazy"/>
+          <div class="cq-marquee-item-label">CNC Precision Machining</div>
+        </div>
+        <div class="cq-marquee-item">
+          <img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?w=500&auto=format&q=80" alt="Industrial Parts Manufacturing" loading="lazy"/>
+          <div class="cq-marquee-item-label">Industrial Parts Manufacturing</div>
+        </div>
+        <div class="cq-marquee-item">
+          <img src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=500&auto=format&q=80" alt="Workshop & Tooling" loading="lazy"/>
+          <div class="cq-marquee-item-label">Workshop &amp; Tooling</div>
+        </div>
+        <div class="cq-marquee-item">
+          <img src="https://images.unsplash.com/photo-1567789884554-0b844b597180?w=500&auto=format&q=80" alt="Custom Metal Parts" loading="lazy"/>
+          <div class="cq-marquee-item-label">Custom Metal Parts</div>
+        </div>
+        <div class="cq-marquee-item">
+          <img src="https://images.unsplash.com/photo-1621905251918-cd1e5eaf9ad7?w=500&auto=format&q=80" alt="Precision Engineering" loading="lazy"/>
+          <div class="cq-marquee-item-label">Precision Engineering</div>
+        </div>
+        <div class="cq-marquee-item">
+          <img src="https://images.unsplash.com/photo-1611532736597-de2d4265fba3?w=500&auto=format&q=80" alt="Technical Drawings & Design" loading="lazy"/>
+          <div class="cq-marquee-item-label">Technical Drawings &amp; Design</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── What We Offer ─────────────────────────────────────────────────────── -->
+  <section class="py-24 bg-white">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="text-center mb-14" data-cq-reveal>
+        <span class="text-accent text-sm font-semibold uppercase tracking-widest">Our Capabilities</span>
+        <h2 class="text-3xl font-extrabold text-primary mt-3 mb-4">Everything From Drawing to Delivery</h2>
+        <p class="text-slate-500 max-w-2xl mx-auto leading-relaxed">
+          Whether you have a detailed CAD file or just a rough sketch — our engineering team takes it from concept to finished part.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-7 mb-16">
+
+        <!-- Card 1: Design -->
+        <div class="cq-cap-card" data-cq-reveal data-cq-delay="1">
+          <div class="cq-cap-icon" style="background:linear-gradient(135deg,#e0f2fe,#bfdbfe)">
+            <svg class="w-7 h-7 text-blue-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+            </svg>
+          </div>
+          <h3 class="text-lg font-bold text-primary mb-3">Design Per Your Specs</h3>
+          <p class="text-slate-500 text-sm leading-relaxed mb-4">
+            Share your technical requirements, dimensions, material specs or existing samples. Our engineers will create or refine the design and provide detailed drawings for your approval before production starts.
+          </p>
+          <ul class="space-y-2">
+            <li class="flex items-center gap-2 text-sm text-slate-600">
+              <svg class="w-4 h-4 text-accent shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+              CAD modeling (2D/3D)
+            </li>
+            <li class="flex items-center gap-2 text-sm text-slate-600">
+              <svg class="w-4 h-4 text-accent shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+              Tolerance &amp; fit analysis
+            </li>
+            <li class="flex items-center gap-2 text-sm text-slate-600">
+              <svg class="w-4 h-4 text-accent shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+              Material &amp; finish selection
+            </li>
+          </ul>
+        </div>
+
+        <!-- Card 2: Manufacturing -->
+        <div class="cq-cap-card" data-cq-reveal data-cq-delay="2">
+          <div class="cq-cap-icon" style="background:linear-gradient(135deg,#dcfce7,#bbf7d0)">
+            <svg class="w-7 h-7 text-green-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/>
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
+            </svg>
+          </div>
+          <h3 class="text-lg font-bold text-primary mb-3">Manufacturing Per Drawings</h3>
+          <p class="text-slate-500 text-sm leading-relaxed mb-4">
+            Send us your DWG, DXF, STEP, PDF or even a physical sample. Our CNC machining center, turning and milling machines produce parts to exact tolerances — from single prototypes to production runs.
+          </p>
+          <ul class="space-y-2">
+            <li class="flex items-center gap-2 text-sm text-slate-600">
+              <svg class="w-4 h-4 text-green-600 shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+              CNC turning &amp; milling
+            </li>
+            <li class="flex items-center gap-2 text-sm text-slate-600">
+              <svg class="w-4 h-4 text-green-600 shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+              Stainless steel, aluminium, tool steel
+            </li>
+            <li class="flex items-center gap-2 text-sm text-slate-600">
+              <svg class="w-4 h-4 text-green-600 shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+              DWG, DXF, STEP, PDF accepted
+            </li>
+          </ul>
+        </div>
+
+        <!-- Card 3: Technical Support -->
+        <div class="cq-cap-card" data-cq-reveal data-cq-delay="3">
+          <div class="cq-cap-icon" style="background:linear-gradient(135deg,#fef3c7,#fde68a)">
+            <svg class="w-7 h-7 text-amber-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a1.994 1.994 0 01-1.414-.586m0 0L11 14h4a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2v4l.586-.586z"/>
+            </svg>
+          </div>
+          <h3 class="text-lg font-bold text-primary mb-3">Full Technical Support</h3>
+          <p class="text-slate-500 text-sm leading-relaxed mb-4">
+            Not sure about the right material or tolerance? Our engineering team provides dedicated technical consultation — from initial concept through design validation to post-delivery support.
+          </p>
+          <ul class="space-y-2">
+            <li class="flex items-center gap-2 text-sm text-slate-600">
+              <svg class="w-4 h-4 text-amber-600 shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+              Dedicated project engineer
+            </li>
+            <li class="flex items-center gap-2 text-sm text-slate-600">
+              <svg class="w-4 h-4 text-amber-600 shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+              Material &amp; process consultation
+            </li>
+            <li class="flex items-center gap-2 text-sm text-slate-600">
+              <svg class="w-4 h-4 text-amber-600 shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+              Post-delivery inspection support
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Process strip -->
+      <div class="bg-slate-50 rounded-2xl border border-slate-200 p-8" data-cq-reveal>
+        <h3 class="text-lg font-bold text-primary mb-6 text-center">How It Works — 4 Simple Steps</h3>
+        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div class="flex flex-col items-center text-center gap-3">
+            <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center text-accent font-extrabold text-lg">1</div>
+            <div>
+              <p class="font-semibold text-primary text-sm">Send Drawing</p>
+              <p class="text-xs text-slate-500 mt-1">Upload your DWG, DXF, PDF or describe what you need</p>
+            </div>
+          </div>
+          <div class="flex flex-col items-center text-center gap-3">
+            <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center text-accent font-extrabold text-lg">2</div>
+            <div>
+              <p class="font-semibold text-primary text-sm">Engineering Review</p>
+              <p class="text-xs text-slate-500 mt-1">We analyse feasibility and respond with a quote in 24hrs</p>
+            </div>
+          </div>
+          <div class="flex flex-col items-center text-center gap-3">
+            <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center text-accent font-extrabold text-lg">3</div>
+            <div>
+              <p class="font-semibold text-primary text-sm">Precision Manufacture</p>
+              <p class="text-xs text-slate-500 mt-1">CNC machining and quality inspection to your tolerances</p>
+            </div>
+          </div>
+          <div class="flex flex-col items-center text-center gap-3">
+            <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center text-accent font-extrabold text-lg">4</div>
+            <div>
+              <p class="font-semibold text-primary text-sm">Worldwide Delivery</p>
+              <p class="text-xs text-slate-500 mt-1">Packed, inspected and shipped to 25+ countries</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Team, Experience & Machines ──────────────────────────────────────── -->
+  <section class="py-24 bg-primary relative overflow-hidden">
+    <!-- Decorative background rings -->
+    <div class="absolute inset-0 pointer-events-none" aria-hidden="true">
+      <div style="position:absolute;width:600px;height:600px;border-radius:50%;border:1px solid rgba(255,255,255,0.05);top:-100px;right:-150px;"></div>
+      <div style="position:absolute;width:400px;height:400px;border-radius:50%;border:1px solid rgba(255,255,255,0.05);top:50px;right:-50px;"></div>
+      <div style="position:absolute;width:300px;height:300px;border-radius:50%;border:1px solid rgba(255,255,255,0.05);bottom:-80px;left:-80px;"></div>
+    </div>
+
+    <div class="max-w-7xl mx-auto px-6 relative z-10">
+      <div class="text-center mb-14" data-cq-reveal>
+        <div class="cq-float-badge mx-auto mb-5">
+          <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20"><path d="M13 6a3 3 0 11-6 0 3 3 0 016 0zM18 8a2 2 0 11-4 0 2 2 0 014 0zM14 15a4 4 0 00-8 0v3h8v-3zM6 8a2 2 0 11-4 0 2 2 0 014 0zM16 18v-3a5.972 5.972 0 00-.75-2.906A3.005 3.005 0 0119 15v3h-3zM4.75 12.094A5.973 5.973 0 004 15v3H1v-3a3 3 0 013.75-2.906z"/></svg>
+          Skilled Team &amp; Latest Machinery
+        </div>
+        <h2 class="text-3xl md:text-4xl font-extrabold text-white mb-4">
+          The People &amp; Machines Behind Every Part
+        </h2>
+        <p class="text-blue-200/80 max-w-2xl mx-auto text-base leading-relaxed">
+          Decades of hands-on experience, a dedicated engineering team and a fully equipped precision manufacturing facility — all working to deliver your part on time, to spec.
+        </p>
+      </div>
+
+      <!-- Stat cards -->
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-5 mb-16">
+        <div class="cq-team-stat" data-cq-reveal data-cq-delay="1">
+          <div class="cq-team-stat-num">
+            <span class="cq-counter" data-target="60">0</span><span style="color:#60b3f5">+</span>
+          </div>
+          <div class="cq-team-stat-label">Years of Experience</div>
+        </div>
+        <div class="cq-team-stat" data-cq-reveal data-cq-delay="2">
+          <div class="cq-team-stat-num">
+            <span class="cq-counter" data-target="120">0</span><span style="color:#60b3f5">+</span>
+          </div>
+          <div class="cq-team-stat-label">Skilled Engineers &amp; Machinists</div>
+        </div>
+        <div class="cq-team-stat" data-cq-reveal data-cq-delay="3">
+          <div class="cq-team-stat-num">
+            <span class="cq-counter" data-target="5000">0</span><span style="color:#60b3f5">+</span>
+          </div>
+          <div class="cq-team-stat-label">Custom Parts Produced</div>
+        </div>
+        <div class="cq-team-stat" data-cq-reveal data-cq-delay="4">
+          <div class="cq-team-stat-num">
+            <span class="cq-counter" data-target="24">0</span><span style="color:#60b3f5">h</span>
+          </div>
+          <div class="cq-team-stat-label">Quote Response Time</div>
+        </div>
+      </div>
+
+      <!-- Two-column: skills + machines -->
+      <div class="grid lg:grid-cols-2 gap-12 items-start">
+
+        <!-- Skill bars -->
+        <div data-cq-reveal>
+          <h3 class="text-xl font-bold text-white mb-2">Our Engineering Expertise</h3>
+          <p class="text-blue-200/70 text-sm mb-8 leading-relaxed">
+            A multi-disciplined team covering mechanical design, precision machining, quality inspection and materials engineering — all under one roof.
+          </p>
+          <div id="cq-skills">
+            <div class="cq-skill-bar-wrap">
+              <div class="cq-skill-bar-label"><span>CNC Precision Machining</span><span>98%</span></div>
+              <div class="cq-skill-bar-track"><div class="cq-skill-bar-fill" data-width="98"></div></div>
+            </div>
+            <div class="cq-skill-bar-wrap">
+              <div class="cq-skill-bar-label"><span>Mechanical Design &amp; CAD</span><span>95%</span></div>
+              <div class="cq-skill-bar-track"><div class="cq-skill-bar-fill" data-width="95"></div></div>
+            </div>
+            <div class="cq-skill-bar-wrap">
+              <div class="cq-skill-bar-label"><span>Quality &amp; Dimensional Inspection</span><span>99%</span></div>
+              <div class="cq-skill-bar-track"><div class="cq-skill-bar-fill" data-width="99"></div></div>
+            </div>
+            <div class="cq-skill-bar-wrap">
+              <div class="cq-skill-bar-label"><span>Materials Engineering</span><span>90%</span></div>
+              <div class="cq-skill-bar-track"><div class="cq-skill-bar-fill" data-width="90"></div></div>
+            </div>
+            <div class="cq-skill-bar-wrap">
+              <div class="cq-skill-bar-label"><span>Reverse Engineering</span><span>92%</span></div>
+              <div class="cq-skill-bar-track"><div class="cq-skill-bar-fill" data-width="92"></div></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Machine list -->
+        <div data-cq-reveal data-cq-delay="2">
+          <h3 class="text-xl font-bold text-white mb-2">Our Manufacturing Equipment</h3>
+          <p class="text-blue-200/70 text-sm mb-8 leading-relaxed">
+            State-of-the-art CNC machining centres and precision tooling equipment — capable of tight tolerances down to ±0.005 mm.
+          </p>
+          <div class="space-y-3">
+            <div class="cq-machine-pill">
+              <div class="cq-machine-pill-dot"></div>
+              <div>
+                <p class="text-white font-semibold text-sm">Multi-Axis CNC Machining Centre</p>
+                <p class="text-blue-300/70 text-xs mt-0.5">4-axis &amp; 5-axis, tolerance ±0.005 mm</p>
+              </div>
+            </div>
+            <div class="cq-machine-pill">
+              <div class="cq-machine-pill-dot"></div>
+              <div>
+                <p class="text-white font-semibold text-sm">CNC Turning Lathes</p>
+                <p class="text-blue-300/70 text-xs mt-0.5">High-precision turning up to Ø 600 mm</p>
+              </div>
+            </div>
+            <div class="cq-machine-pill">
+              <div class="cq-machine-pill-dot"></div>
+              <div>
+                <p class="text-white font-semibold text-sm">Surface &amp; Cylindrical Grinding</p>
+                <p class="text-blue-300/70 text-xs mt-0.5">Mirror finish, Ra 0.2 µm achievable</p>
+              </div>
+            </div>
+            <div class="cq-machine-pill">
+              <div class="cq-machine-pill-dot"></div>
+              <div>
+                <p class="text-white font-semibold text-sm">CMM Coordinate Measuring</p>
+                <p class="text-blue-300/70 text-xs mt-0.5">Zeiss CMM — traceable ISO/IEC 17025 inspection</p>
+              </div>
+            </div>
+            <div class="cq-machine-pill">
+              <div class="cq-machine-pill-dot"></div>
+              <div>
+                <p class="text-white font-semibold text-sm">Wire EDM &amp; Sinker EDM</p>
+                <p class="text-blue-300/70 text-xs mt-0.5">Complex profiles &amp; hard material machining</p>
+              </div>
+            </div>
+            <div class="cq-machine-pill">
+              <div class="cq-machine-pill-dot"></div>
+              <div>
+                <p class="text-white font-semibold text-sm">Heat Treatment &amp; Surface Finishing</p>
+                <p class="text-blue-300/70 text-xs mt-0.5">Hardening, anodising, chrome plating, nitriding</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Certifications strip -->
+      <div class="flex flex-wrap justify-center gap-4 mt-16" data-cq-reveal>
+        <div class="flex items-center gap-2 bg-white/10 border border-white/20 rounded-xl px-5 py-3 backdrop-blur-sm">
+          <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+          <span class="text-white text-sm font-semibold">CE Certified</span>
+        </div>
+        <div class="flex items-center gap-2 bg-white/10 border border-white/20 rounded-xl px-5 py-3 backdrop-blur-sm">
+          <svg class="w-5 h-5 text-blue-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+          <span class="text-white text-sm font-semibold">ISO 9001:2015</span>
+        </div>
+        <div class="flex items-center gap-2 bg-white/10 border border-white/20 rounded-xl px-5 py-3 backdrop-blur-sm">
+          <svg class="w-5 h-5 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"/></svg>
+          <span class="text-white text-sm font-semibold">FDA Compliant Materials</span>
+        </div>
+        <div class="flex items-center gap-2 bg-white/10 border border-white/20 rounded-xl px-5 py-3 backdrop-blur-sm">
+          <svg class="w-5 h-5 text-purple-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064"/></svg>
+          <span class="text-white text-sm font-semibold">25+ Countries Served</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Quote Form ─────────────────────────────────────────────────────────── -->
+  <section id="cq-form" class="py-24 bg-slate-50">
+    <div class="max-w-3xl mx-auto px-6">
+
+      <div class="text-center mb-12" data-cq-reveal>
+        <span class="text-accent text-sm font-semibold uppercase tracking-widest">Get Started Today</span>
+        <h2 class="text-3xl font-extrabold text-primary mt-3 mb-4">Request Your Custom Parts Quote</h2>
+        <p class="text-slate-500 leading-relaxed">
+          Fill in your details and attach your drawing, specification or sample photo. Our team will review and respond within 24 hours.
+        </p>
+      </div>
+
+      <!-- Trust strip -->
+      <div class="grid sm:grid-cols-3 gap-4 mb-10" data-cq-reveal>
+        <div class="bg-white rounded-xl p-4 flex items-center gap-3 border border-slate-200">
+          <div class="w-9 h-9 bg-green-100 rounded-lg flex items-center justify-center shrink-0">
+            <svg class="w-5 h-5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+          </div>
+          <div>
+            <p class="text-sm font-semibold text-slate-700">No Commitment</p>
+            <p class="text-xs text-slate-400">Quote only — no obligation</p>
+          </div>
+        </div>
+        <div class="bg-white rounded-xl p-4 flex items-center gap-3 border border-slate-200">
+          <div class="w-9 h-9 bg-blue-100 rounded-lg flex items-center justify-center shrink-0">
+            <svg class="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+          </div>
+          <div>
+            <p class="text-sm font-semibold text-slate-700">24-Hour Response</p>
+            <p class="text-xs text-slate-400">Business days</p>
+          </div>
+        </div>
+        <div class="bg-white rounded-xl p-4 flex items-center gap-3 border border-slate-200">
+          <div class="w-9 h-9 bg-purple-100 rounded-lg flex items-center justify-center shrink-0">
+            <svg class="w-5 h-5 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg>
+          </div>
+          <div>
+            <p class="text-sm font-semibold text-slate-700">Confidential</p>
+            <p class="text-xs text-slate-400">Drawings kept private</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Success message -->
+      <div id="cq-success" class="hidden bg-green-50 border border-green-200 rounded-2xl p-8 text-center mb-8">
+        <svg class="w-16 h-16 text-green-500 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+        <h2 class="text-2xl font-bold text-green-800 mb-2">Quote Request Sent!</h2>
+        <p class="text-green-700 mb-6">Thank you. Our engineering team will review your requirements and respond within 24 hours.</p>
+        <a href="index.html" class="bg-primary text-white font-semibold px-6 py-3 rounded-xl hover:bg-accent transition-colors">Back to Home</a>
+      </div>
+
+      <!-- Form -->
+      <div class="cq-form-wrap" data-cq-reveal>
+        <form id="cq-rfq-form" novalidate>
+          <div class="grid sm:grid-cols-2 gap-5 mb-5">
+            <div class="form-field">
+              <label class="block text-sm font-semibold text-slate-700 mb-1.5">Company Name <span class="text-red-500">*</span></label>
+              <input name="company" type="text" placeholder="Acme Manufacturing Ltd."
+                class="w-full border border-slate-200 rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-accent bg-white"/>
+            </div>
+            <div class="form-field">
+              <label class="block text-sm font-semibold text-slate-700 mb-1.5">Contact Person <span class="text-red-500">*</span></label>
+              <input name="contact" type="text" placeholder="John Smith"
+                class="w-full border border-slate-200 rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-accent bg-white"/>
+            </div>
+            <div class="form-field">
+              <label class="block text-sm font-semibold text-slate-700 mb-1.5">Email Address <span class="text-red-500">*</span></label>
+              <input name="email" type="email" placeholder="john@yourcompany.com"
+                class="w-full border border-slate-200 rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-accent bg-white"/>
+            </div>
+            <div class="form-field">
+              <label class="block text-sm font-semibold text-slate-700 mb-1.5">Phone Number</label>
+              <input name="phone" type="tel" placeholder="+1 555 000 1234"
+                class="w-full border border-slate-200 rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-accent bg-white"/>
+            </div>
+            <div class="form-field sm:col-span-2">
+              <label class="block text-sm font-semibold text-slate-700 mb-1.5">Country <span class="text-red-500">*</span></label>
+              <input name="country" type="text" placeholder="United Kingdom"
+                class="w-full border border-slate-200 rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-accent bg-white"/>
+            </div>
+          </div>
+
+          <div class="form-field mb-5">
+            <label class="block text-sm font-semibold text-slate-700 mb-1.5">Part Description &amp; Requirements <span class="text-red-500">*</span></label>
+            <textarea name="notes" rows="5"
+              placeholder="Describe the part: material, dimensions, tolerance, quantity, surface finish, intended use (e.g., confectionery machinery), and any other requirements..."
+              class="w-full border border-slate-200 rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-accent bg-white resize-y"></textarea>
+          </div>
+
+          <!-- Attachment -->
+          <div class="form-field mb-6">
+            <label class="block text-sm font-semibold text-slate-700 mb-1.5">
+              Attach Drawing / Specification
+              <span class="text-slate-400 font-normal">(recommended)</span>
+            </label>
+            <label id="cq-attach-label" class="flex items-start gap-4 w-full border-2 border-dashed border-slate-200 rounded-xl px-5 py-5 cursor-pointer bg-white hover:border-accent hover:bg-blue-50/50 transition-colors group">
+              <div class="w-12 h-12 bg-blue-50 group-hover:bg-blue-100 rounded-xl flex items-center justify-center shrink-0 transition-colors mt-0.5">
+                <svg class="w-6 h-6 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"/>
+                </svg>
+              </div>
+              <div class="flex-1 min-w-0">
+                <p id="cq-attach-text" class="text-sm font-semibold text-slate-700">Click or drag files to upload</p>
+                <p class="text-xs text-slate-400 mt-1">DWG, DXF, STEP, PDF, JPG, PNG — up to 10 MB each</p>
+                <p class="text-xs text-blue-500 mt-2 font-medium">Tip: attaching a drawing speeds up the quoting process significantly</p>
+              </div>
+              <input id="cq-attachments" type="file" multiple accept=".pdf,.dwg,.dxf,.stp,.step,.jpg,.jpeg,.png,.xlsx,.xls,.doc,.docx" class="hidden"/>
+            </label>
+            <div id="cq-file-list" class="mt-2 space-y-1.5 hidden"></div>
+          </div>
+
+          <p id="cq-validation-msg" class="hidden text-red-600 text-sm mb-4 flex items-center gap-2">
+            <svg class="w-4 h-4 shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z" clip-rule="evenodd"/></svg>
+            <span id="cq-validation-text"></span>
+          </p>
+
+          <div class="flex flex-col sm:flex-row gap-3 items-start">
+            <button type="submit" id="cq-submit-btn"
+              class="bg-primary text-white font-bold px-8 py-3.5 rounded-xl hover:bg-accent transition-colors text-sm flex items-center gap-2 whitespace-nowrap shadow-lg shadow-primary/25">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+              Send Quote Request
+            </button>
+            <p class="text-xs text-slate-400 max-w-xs leading-relaxed">By submitting you agree that Starmer Global may contact you about your enquiry. All drawings are kept strictly confidential.</p>
+          </div>
+        </form>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ── Footer ────────────────────────────────────────────────────────────── -->
+  <footer class="bg-slate-900 text-slate-400 py-12">
+    <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6 text-sm">
+      <div class="flex items-center gap-2.5 font-extrabold text-white">
+        <svg class="w-7 h-7" viewBox="0 0 32 32" fill="none"><circle cx="16" cy="16" r="14" stroke="#2E7CC6" stroke-width="1.5" fill="none" opacity="0.4"/><circle cx="16" cy="16" r="10" stroke="#2E7CC6" stroke-width="1.5" fill="none" opacity="0.6"/><circle cx="16" cy="16" r="6" stroke="#fff" stroke-width="2" fill="none"/><circle cx="16" cy="16" r="2.5" fill="#fff"/></svg>
+        Starmer Global
+      </div>
+      <p>&copy; <span id="footer-year"></span> Starmer Global. All rights reserved.</p>
+      <div class="flex gap-6">
+        <a href="catalog.html" class="hover:text-white transition-colors">Browse Catalog</a>
+        <a href="quote.html" class="hover:text-white transition-colors">Request Quote</a>
+        <a href="index.html" class="hover:text-white transition-colors">Home</a>
+      </div>
+    </div>
+  </footer>
+
+  <div id="toast" aria-live="polite"><span></span></div>
+  <script src="js/catalog-data.js"></script>
+  <script src="js/bundle.js"></script>
+  <script>
+  (function () {
+    /* ── Attachment handler ── */
+    const input = document.getElementById('cq-attachments');
+    const text  = document.getElementById('cq-attach-text');
+    const list  = document.getElementById('cq-file-list');
+    if (input) {
+      input.addEventListener('change', () => {
+        const files = Array.from(input.files);
+        if (!files.length) { text.textContent = 'Click or drag files to upload'; list.classList.add('hidden'); return; }
+        text.textContent = files.length === 1 ? files[0].name : `${files.length} files selected`;
+        list.innerHTML = files.map(f =>
+          `<div class="flex items-center gap-2 text-xs text-slate-600 bg-blue-50 border border-blue-100 rounded-lg px-3 py-2">
+            <svg class="w-3.5 h-3.5 text-accent shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.172 7l-6.586 6.586a2 2 0 102.828 2.828l6.414-6.586a4 4 0 00-5.656-5.656l-6.415 6.585a6 6 0 108.486 8.486L20.5 13"/></svg>
+            <span class="truncate font-medium">${f.name}</span>
+            <span class="ml-auto shrink-0 text-slate-400">${(f.size/1024).toFixed(0)} KB</span>
+          </div>`
+        ).join('');
+        list.classList.remove('hidden');
+        /* Append filenames to notes for EmailJS */
+        const notes = document.querySelector('#cq-rfq-form [name="notes"]');
+        if (notes) {
+          const tag = '[Attached files: ' + files.map(f => f.name).join(', ') + ']';
+          if (!notes.value.includes('[Attached files:')) {
+            notes.value = (notes.value ? notes.value + '\n\n' : '') + tag;
+          }
+        }
+      });
+    }
+
+    /* ── Skill bars on scroll ── */
+    const skillObs = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.querySelectorAll('.cq-skill-bar-fill').forEach(bar => {
+            bar.style.width = bar.dataset.width + '%';
+          });
+          skillObs.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.3 });
+    const skillSection = document.getElementById('cq-skills');
+    if (skillSection) skillObs.observe(skillSection);
+
+    /* ── Counter animation ── */
+    function animateCounter(el, target, duration) {
+      const start = performance.now();
+      const update = (now) => {
+        const progress = Math.min((now - start) / duration, 1);
+        const eased = 1 - Math.pow(1 - progress, 3);
+        el.textContent = Math.round(eased * target).toLocaleString();
+        if (progress < 1) requestAnimationFrame(update);
+      };
+      requestAnimationFrame(update);
+    }
+    const cqCounterObs = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.querySelectorAll('.cq-counter').forEach(counter => {
+            animateCounter(counter, parseInt(counter.dataset.target), 1800);
+          });
+          cqCounterObs.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.4 });
+    document.querySelectorAll('.cq-team-stat').forEach(el => {
+      const parent = el.closest('.grid');
+      if (parent && !parent.__cqObserved) { cqCounterObs.observe(parent); parent.__cqObserved = true; }
+    });
+
+    /* ── Reveal on scroll ── */
+    const revealObs = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('revealed'); revealObs.unobserve(e.target); } });
+    }, { threshold: 0.15 });
+    document.querySelectorAll('[data-cq-reveal]').forEach(el => revealObs.observe(el));
+
+    /* ── Custom quote form submit ── */
+    const form = document.getElementById('cq-rfq-form');
+    const success = document.getElementById('cq-success');
+    const validMsg = document.getElementById('cq-validation-msg');
+    const validText = document.getElementById('cq-validation-text');
+    const submitBtn = document.getElementById('cq-submit-btn');
+
+    if (form) {
+      form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const data = Object.fromEntries(new FormData(form).entries());
+        if (!data.company?.trim()) { showErr('Company name is required.'); return; }
+        if (!data.contact?.trim()) { showErr('Contact person is required.'); return; }
+        if (!data.email?.trim() || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(data.email)) { showErr('A valid email address is required.'); return; }
+        if (!data.country?.trim()) { showErr('Country is required.'); return; }
+        if (!data.notes?.trim()) { showErr('Please describe the part or requirements.'); return; }
+
+        validMsg.classList.add('hidden');
+        submitBtn.disabled = true;
+        submitBtn.innerHTML = `<svg class="w-4 h-4 animate-spin" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z"></path></svg> Sending…`;
+
+        const params = {
+          from_company: data.company,
+          from_contact: data.contact,
+          from_email:   data.email,
+          from_phone:   data.phone || '—',
+          from_country: data.country,
+          notes:        data.notes,
+          item_list:    'Custom Parts Request',
+          date:         new Date().toLocaleDateString('en-GB', { year:'numeric', month:'long', day:'numeric' })
+        };
+
+        try {
+          if (window.EMAILJS_SERVICE_ID && window.EMAILJS_PUBLIC_KEY !== 'YOUR_PUBLIC_KEY') {
+            await emailjs.send(window.EMAILJS_SERVICE_ID, window.EMAILJS_TEMPLATE_ID, params);
+          }
+          form.style.display = 'none';
+          success.classList.remove('hidden');
+        } catch (err) {
+          submitBtn.disabled = false;
+          submitBtn.innerHTML = `<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg> Send Quote Request`;
+          showErr('Failed to send — please try again or email us directly.');
+        }
+      });
+    }
+
+    function showErr(msg) {
+      if (validText) validText.textContent = msg;
+      if (validMsg) validMsg.classList.remove('hidden');
+      validMsg?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+
+    /* Footer year */
+    const fy = document.getElementById('footer-year');
+    if (fy) fy.textContent = new Date().getFullYear();
+  })();
+  </script>
+</body>
+</html>
