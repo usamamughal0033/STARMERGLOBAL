@@ -254,6 +254,32 @@ window.CATALOG_DATA = {
                 "certifications": "CE, ISO 9001:2015"
               },
               "diesAndParts": []
+            },
+            {
+              "id": "HC-L001-M09",
+              "machineNumber": "HC-L001-M09",
+              "orderInLine": 9,
+              "name": "STEAM HANDLER",
+              "function": "STEAMS",
+              "description": "HELLO",
+              "image": "assets/images/machines/1781346833399-PHOTO-2026-06-12-11-13-50-3.jpg",
+              "specs": {
+                "HI": "HELLO"
+              },
+              "diesAndParts": []
+            },
+            {
+              "id": "HC-L001-M10",
+              "machineNumber": "HC-L001-M10",
+              "orderInLine": 10,
+              "name": "ABC",
+              "function": "DSSAJDH",
+              "description": "AJASJ",
+              "image": "assets/images/machines/1781362962719-1216096.jpg",
+              "specs": {
+                "df": "sdfh"
+              },
+              "diesAndParts": []
             }
           ]
         },
