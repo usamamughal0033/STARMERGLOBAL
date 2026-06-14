@@ -882,6 +882,119 @@ function initProductPage(catalog) {
       if (grid) grid.innerHTML = dps.map(dp => buildDiePartCard(dp, cat)).join('');
     }
   }
+
+  if (machine) buildCompareUI(catalog, machine);
+}
+
+// ── Machine comparison (same type/operation, same category, across lines) ─────
+// Two machines are the "same type" if their names map to the same canonical
+// type. Rules are ordered most-specific first so e.g. all cookers group together
+// ("Batch Type Cooker" == "Candy Continuous Cooker") while the three tank types
+// stay distinct.
+const COMPARE_TYPE_RULES = [
+  [/chain die forming|forming plant/, 'Chain Die Forming Plant'],
+  [/chain die/, 'Chain Die'],
+  [/rotary.*die|forming die/, 'Rotary Forming Die'],
+  [/cooker/, 'Cooker'],
+  [/steam generator/, 'Steam Generator'],
+  [/steam header/, 'Steam Header'],
+  [/glucose tank/, 'Glucose Tank'],
+  [/storage tank/, 'Storage Tank'],
+  [/dissolving tank/, 'Dissolving Tank'],
+  [/vacuum pump/, 'Vacuum Pump'],
+  [/cooling table/, 'Cooling Table'],
+  [/kneading/, 'Kneading Machine'],
+  [/(center|centre).*liquid|liquid.*(pump|filling)/, 'Center Filling Liquid Pump'],
+  [/(center|centre).*powder|powder.*(pump|filling)/, 'Center Filling Powder Pump'],
+  [/batch roller/, 'Batch Roller'],
+  [/rope sizer/, 'Rope Sizer'],
+  [/uniplast/, 'Uniplast Forming Machine'],
+  [/die stand/, 'Die Stand'],
+  [/cooling tunnel/, 'Cooling Tunnel'],
+  [/cooling conveyor/, 'Cooling Conveyor'],
+  [/bubble gum mixer/, 'Bubble Gum Mixer'],
+  [/bubble gum extruder/, 'Bubble Gum Extruder'],
+  [/ac unit/, 'AC Unit'],
+  [/vibrator/, 'Vibrator'],
+  [/wrapping/, 'Wrapping Machine'],
+];
+
+function machineTypeKey(name) {
+  const s = (name || '').toLowerCase()
+    .replace(/\(.*?\)/g, ' ')            // drop "(4 Stages)", "(5 Ton)" etc.
+    .replace(/\bsew[-\s]?\d+\b/g, ' ')   // drop SEW codes
+    .replace(/[^a-z0-9 ]/g, ' ')
+    .replace(/\s+/g, ' ').trim();
+  for (const [re, key] of COMPARE_TYPE_RULES) if (re.test(s)) return key;
+  return s;                              // fallback: cleaned name
+}
+
+function buildCompareUI(catalog, machine) {
+  const mount = document.getElementById('compare-mount');
+  if (!mount) return;
+  const category = getCategoryById(catalog, machine.categoryId);
+  if (!category) { mount.innerHTML = ''; return; }
+
+  const myType = machineTypeKey(machine.name);
+  const candidates = [];
+  category.lines.forEach(l => l.machines.forEach(m => {
+    if (m.id !== machine.id && machineTypeKey(m.name) === myType) {
+      candidates.push({ ...m, lineName: l.name });
+    }
+  }));
+  if (!candidates.length) { mount.innerHTML = ''; return; }
+
+  mount.innerHTML = `
+    <button id="compare-toggle" type="button"
+      class="inline-flex items-center gap-2 text-sm font-semibold text-primary border border-primary/30 bg-primary/5 px-4 py-2.5 rounded-xl hover:bg-primary hover:text-white transition-colors">
+      <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7h12m0 0l-4-4m4 4l-4 4M16 17H4m0 0l4 4m-4-4l4-4"/></svg>
+      Compare with similar machines (${candidates.length})
+    </button>
+    <div id="compare-panel" class="hidden mt-4 rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
+      <div class="flex items-center gap-2 mb-4 flex-wrap">
+        <label for="compare-select" class="text-xs font-bold text-slate-500 uppercase tracking-widest">Compare with</label>
+        <select id="compare-select" class="text-sm border border-slate-300 rounded-lg px-3 py-1.5 bg-white text-slate-700 font-medium focus:outline-none focus:ring-2 focus:ring-primary/40">
+          ${candidates.map((c, i) => `<option value="${i}">${c.name} — ${c.lineName}</option>`).join('')}
+        </select>
+      </div>
+      <div id="compare-table" class="overflow-x-auto"></div>
+      <p class="text-xs text-slate-400 mt-3">Showing ${category.label} machines of the same type. Differing values are highlighted.</p>
+    </div>`;
+
+  const toggle = document.getElementById('compare-toggle');
+  const panel = document.getElementById('compare-panel');
+  const select = document.getElementById('compare-select');
+  toggle.addEventListener('click', () => panel.classList.toggle('hidden'));
+  select.addEventListener('change', renderCompareTable);
+  renderCompareTable();
+
+  function renderCompareTable() {
+    const cand = candidates[parseInt(select.value, 10) || 0];
+    const aSpecs = machine.specs || {}, bSpecs = cand.specs || {};
+    const keys = [...new Set([...Object.keys(aSpecs), ...Object.keys(bSpecs)])];
+    const colHead = (m) => `<div class="font-bold text-primary leading-tight">${m.name}</div><div class="text-[11px] text-slate-400 font-normal">${m.lineName}${m.model ? ' · ' + m.model : ''}</div>`;
+    const rows = keys.map(k => {
+      const a = aSpecs[k] != null && aSpecs[k] !== '' ? aSpecs[k] : '—';
+      const b = bSpecs[k] != null && bSpecs[k] !== '' ? bSpecs[k] : '—';
+      const diff = String(a) !== String(b);
+      return `<tr class="${diff ? 'bg-amber-50' : 'bg-white'} border-b border-slate-100">
+        <th scope="row" class="text-left font-semibold text-slate-600 px-3 py-2 align-top whitespace-nowrap">${formatSpecKey(k)}</th>
+        <td class="px-3 py-2 text-slate-700 align-top">${a}</td>
+        <td class="px-3 py-2 text-slate-700 align-top">${b}</td>
+      </tr>`;
+    }).join('');
+    document.getElementById('compare-table').innerHTML = `
+      <table class="w-full text-sm border-collapse min-w-[480px]">
+        <thead>
+          <tr>
+            <th class="text-left text-xs font-bold text-slate-500 uppercase tracking-wide px-3 py-2 bg-slate-50 border-b border-slate-200 w-1/4">Specification</th>
+            <th class="text-left px-3 py-2 bg-blue-50/60 border-b border-slate-200 align-bottom">${colHead(machine)}</th>
+            <th class="text-left px-3 py-2 bg-slate-50 border-b border-slate-200 align-bottom">${colHead(cand)}</th>
+          </tr>
+        </thead>
+        <tbody>${rows}</tbody>
+      </table>`;
+  }
 }
 
 function buildDiePartCard(dp, cat) {

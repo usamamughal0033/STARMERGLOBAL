@@ -1,0 +1,303 @@
+# ============================================================================
+#  Complete Candy Line 200 kg/hr  -- extracted from CANDY 200 KG.pdf
+#  Handwritten + corrected (struck-out) values were used per the booklet.
+#  Images auto-link from assets/STARMER/_ready/HARD CANDY/Complete Candy line 200Kg_Hr/
+# ============================================================================
+category: HARD CANDY
+category_slug: hard-candy
+line:
+  name: Complete Candy Line 200 kg/hr
+  productionRate: 200 kg/hr
+  description: >-
+    A compact, fully integrated hard candy production line covering syrup
+    dissolving, vacuum batch cooking, cooling, kneading, rope forming and
+    pillow-pack wrapping at 200 kg/hr.
+  image: ''
+source_pdf: assets/STARMER/HARD CANDY/Complete Candy line 200Kg_Hr/CANDY 200 KG.pdf
+machines:
+- name: Glucose Tank
+  model: SEW-101
+  function: >-
+    Glucose storage tanks are engineered with specific traits to ensure hygienic,
+    stable and crystal-free storage of liquid glucose and syrups for industrial
+    applications.
+  description: >-
+    Vertical S.S 304 storage tank with coil heating on the base of the tank and
+    an externally mounted ladder.
+  image: ''
+  specs:
+    grade: S.S 304
+    sheetThickness: 5 mm upper and lower sheet
+    outerDiaSheetThickness: 3 mm
+    designType: Vertical
+    heatingSystem: Coil on the base of tank
+    ladder: Outside the tank
+    capacity: 20 ton glucose
+    dimension: 16 ft x 7 ft (H x diameter)
+- name: Steam Generator
+  model: SEW-102
+  function: >-
+    Steam generator heats water to produce high-pressure steam for heating,
+    cleaning or industrial process.
+  description: >-
+    Three-pass steam generator with Grundfos multistage feed-water pump, fully
+    automatic electric control panel, and burner with gas assembly & diesel pump.
+  image: ''
+  specs:
+    typeOfPasses: 3 pass
+    testPressure: 225 psi
+    workingPressure: 150 psi
+    tubeSize: 2" or 2½"
+    pressureShellThickness: 1/2"
+    tubeSheetThickness: 1/2"
+    insulationSheetThickness: 24 gauge
+    rockWoolThickness: 2"
+    feedWaterPump: Grundfos, multistage
+    burnerMotor: 20 hp
+    dimension: 8' x 3'5" x 3'5"
+    capacity: 600 kg/hr
+    powerLoad: 5 hp
+- name: Steam Header
+  model: SEW-103
+  function: >-
+    Steam headers are designed to collect steam from a boiler or steam generator
+    and distribute high-quality, dry steam to various user points while
+    performing several critical functions.
+  description: Cushioned cylinder header in mild steel with configurable branch pipes.
+  image: ''
+  specs:
+    materialOfHeader: M.S
+    diameter: 1 ft
+    branchPipes: 1, 2, 3, 4 (depending on system needs)
+    design: Cushioned Cylinder
+- name: Dissolving Tank
+  model: SEW-106
+  function: >-
+    The dissolving tank is an essential unit in the candy manufacturing process
+    designed for the controlled dissolution of sugar, glucose syrup, and other
+    ingredients in water to form a homogeneous sugar solution or slurry.
+  description: >-
+    Double-jacketed tank with S.S 304 body and stirrer, M.S legs, 2 hp gear-motor
+    main drive, steam gauge and safety/seat valves.
+  image: ''
+  specs:
+    capacity: 400 kg
+    construction: Double jacketed with M.S
+    body: S.S 304
+    legs: M.S
+    stirrer: S.S 304
+    gearMotorMainDrive: 2 hp
+    fittings: Steam gauge, safety valve, seat valve
+    dimension: 5'6" x 3'5" x 3'5" (H x W x L)
+    powerLoad: 2 hp
+- name: Batch Type Cooker
+  model: SEW-005
+  function: >-
+    A Batch Type Cooker (also called a batch cooker or batch vacuum cooker) is
+    used to cook and concentrate the sugar syrup to the desired final moisture
+    content and temperature, a critical step in producing high-quality candy.
+  description: >-
+    Double-jacketed batch cooker with S.S 304 pan and main body, M.S cooker frame,
+    2 hp gear-motor main drive, gauges and electric control panel.
+  image: ''
+  specs:
+    capacity: 200 kg per hour
+    gearMotorMainDrive: 2 hp
+    pan: S.S 304
+    mainBody: S.S 304
+    cookerFrame: M.S
+    construction: Double jacketed with M.S
+    controls: Electric control panel, gauges
+    dimension: 4' x 2'5" x 3'5" (H x W x L)
+    powerLoad: 2 hp
+- name: Vacuum Pump
+  model: SEW-006
+  function: >-
+    The vacuum pump is used to rapidly remove moisture (water vapour) from the
+    cooked candy mass under reduced pressure, which allows lower-temperature
+    boiling and prevents caramelization or burning of sugars.
+  description: M.S frame vacuum pump unit.
+  image: ''
+  specs:
+    rating: 7.5 hp = 1450 rpm
+    frame: M.S
+    dimension: 2 ft x 4 ft x 1 ft (H x W x L)
+    powerLoad: 7.5 hp
+- name: Cooling Tables
+  model: SEW-108
+  function: >-
+    The cooling table is a crucial post-cooking unit used for rapid cooling and
+    conditioning of the cooked sugar mass before further processing such as
+    mixing, flavoring, coloring, or forming. It ensures uniform texture and
+    workability of the batch.
+  description: >-
+    Water-cooled S.S 304 cooling table with A-frame water inlet/outlet circuit and
+    S.S 201 legs.
+  image: ''
+  specs:
+    basePlateThickness: 10 mm in S.S 304
+    materialOfPlate: Boundary wall S.S 304
+    coolingMedium: Water cooling system, A-frame for moving water inlet and outlet
+    legs: 4 Nos in S.S 201 grade
+    dimension: 3 ft x 6 ft x 2'6" (H x L x W)
+    powerLoad: None
+- name: Kneading Machine
+  model: SEW-109
+  function: >-
+    The rotary kneading machine (SEW-109) is a specialized piece of confectionery
+    equipment perfectly suited for the uniform mixing and kneading of the cooked
+    sugar mass used in producing hard-boiled candy. It guarantees uniform
+    distribution of essential ingredients including solids, acids and additives,
+    operates hygienically with stainless steel water-cooled contact parts, and
+    eliminates the need for tiresome manual mixing.
+  description: >-
+    S.S 304 roller and main plates with S.S 201 side sheets, 5 hp main drive and
+    on/off control.
+  image: ''
+  specs:
+    roller: S.S 304
+    mainDrive: 5 hp
+    steelPlate: 4 ft
+    control: On/off switch
+    sideSheets: S.S 201
+    mainPlates: S.S 304
+    dimension: 3'5" x 6" x 5'5" (H x W x L)
+    powerLoad: 5 hp
+- name: Powder Filling Pump
+  model: SEW-009
+  function: >-
+    The centre filling powder pump is a precision feeding and dosing unit designed
+    to inject or deliver dry or semi-dry powdered filling materials (such as soft
+    paste, cocoa powder, fruit powders or salt-based fillers) into the centre of a
+    candy rope during forming. It ensures consistent and uniform distribution of
+    powder filling across all pieces.
+  description: >-
+    S.S 304 powder filling pump with Teflon-covered S.S worm, M.S stand, 2 hp gear
+    motor and variable inverter for speed control.
+  image: ''
+  specs:
+    type: Centre filling powder
+    roller: S.S 304 grade
+    gearMotor: 2 hp
+    variableInverter: 2 hp (for speed control)
+    stand: M.S
+    contactPart: Teflon covering with S.S worm inside
+    powerLoad: 2 hp
+- name: Batch Roller
+  model: SEW-114
+  function: >-
+    The batch roller is a key intermediate machine in the candy, lollipop, toffee
+    and fudge production line, designed to continuously roll, shape and form the
+    cooked mass into a uniform cylindrical rope. It ensures consistent rope size
+    and proper distribution of centre filling, flavour and colour before feeding
+    into the rope sizer or forming machine.
+  description: >-
+    Horizontal 4-roller batch roller in S.S 304 food grade with SEW (Germany)
+    gear motor, up/down 1 hp drive, electric control panel and 1000 W heaters.
+  image: ''
+  specs:
+    frame: Horizontal
+    rollersQuantity: 4
+    rollersMaterial: S.S 304 food grade
+    upperBody: S.S 304 food grade
+    gearMotor: SEW brand, Germany
+    upDownDrive: 1 hp
+    heaters: 1000 watt (2 Nos)
+    capacity: 75 kg
+    length: 4.5 ft
+    dimension: 4'5" x 2'5" x 5'6" (H x W x L)   # printed value was struck out; please confirm
+    powerLoad: 4.68 hp                          # please confirm
+- name: Rope Sizer
+  model: SEW-115
+  function: >-
+    The rope sizer is a precision machine used to accurately reduce and calibrate
+    the diameter of the candy and toffee rope produced by the batch roller. It
+    ensures a uniform rope thickness suitable for feeding into the forming or
+    cutting machine, maintaining consistent candy size and weight throughout
+    production.
+  description: >-
+    Horizontal 5-stage rope sizer with S.S 304 roller pairs, brass rope guide,
+    digital inverter and SEW (Germany) gear motors; bearings used instead of
+    bushes for low maintenance.
+  image: ''
+  specs:
+    sizerModel: Horizontal, 5 stages
+    firstPair: S.S 304, 22 mm
+    secondPair: S.S 304, 22 mm
+    thirdPair: S.S 304, 20 mm
+    fourthPair: S.S 304, 20 mm
+    ropeGuide: Brass
+    inverter: Digital, new brand
+    gearMotors: SEW brand, Germany
+    heatControllers: Digital, 2 Nos
+    mainDriveGearMotor: 2 hp
+    heaters: 500 watt (4 Nos) = 2 kw
+    safety: Emergency break & switch, electric breakers
+    bearings: Used instead of bushes to reduce maintenance
+    dimension: 4.5 ft x 2.5 ft x 6 ft (H x W x L)
+    powerLoad: 4.68 hp                          # please confirm
+- name: Small Candy Plant
+  model: SEW-011
+  function: >-
+    A Small Candy Former is a forming unit designed to shape, size and cut candy
+    mass into uniform pieces under controlled mechanical and thermal conditions.
+    Its primary function within the candy production line is to convert the candy
+    rope produced after cooking and rolling into individual shaped units.
+  description: >-
+    Oil-bath geared candy former with M.S side sheets and on/off control; supports
+    powder filling. Die supplied separately.
+  image: ''
+  specs:
+    gears: Oil bath system
+    motor: 1 hp
+    sideSheets: M.S (mild steel)
+    die: Without die (supplied separately)
+    control: On/off switch
+    speed: Up to 1000 pieces/min
+    capacity: Up to 200 kg/hr
+    powerLoad: 1 hp
+- name: Small Candy Die
+  model: SEW-013
+  function: >-
+    Interchangeable forming die for the small candy plant, used to shape the candy
+    rope into the required individual candy shape and size.
+  description: ''
+  image: ''
+  specs: {}
+- name: Vibrator
+  model: SEW-120
+  function: >-
+    The vibrator helps smoothly transport candies from the cooling and forming
+    sections to packaging, preventing clumping or sticking.
+  description: >-
+    M.S frame vibrator with S.S 304 main sheet and trays, twin fans and a 1 hp
+    gear motor.
+  image: ''
+  specs:
+    frame: M.S
+    mainSheet: S.S 304
+    fans: 2 nos
+    gearMotor: 1 hp
+    trays: S.S 304, 2 nos (for removal of wastage)
+    dimension: 4 ft (width) x 8 ft (length)
+    powerLoad: 1 hp
+- name: Pillow Pack Wrapping Machine
+  model: SEW-123
+  function: >-
+    A high-performance pillow-pack wrapping machine for filled or un-filled
+    candies, bubblegums and similar items, incorporating latest precision
+    components and capable of speeds up to 800 pieces per minute. High-quality fin
+    seal and reel ensure long shelf life. A large feed disc and brushes enable
+    positive transfer of candies to the centre chain.
+  description: >-
+    Photo-electric-eye pillow wrapper with inverter, 2 H.P 3-phase and ½ H.P motors
+    and 3.2 kW heaters.
+  image: ''
+  specs:
+    output: Up to 800 pcs/min (candy); up to 500 pcs/min (bubble)
+    electricMotors: (1) 2 H.P / 3-phase, (2) ½ H.P
+    electricHeaters: 3.2 kW
+    standardEquipment: Photo-electric eye & inverter
+    dimensions: 2,335 x 900 x 1,725 mm (H x W x L)
+    weight: 750 kg
+    reel: Max outer dia 280 mm / core dia 70 mm

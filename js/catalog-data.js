@@ -6,2353 +6,3106 @@ window.CATALOG_DATA = {
       "slug": "hard-candy",
       "color": "#0D6B5E",
       "accentColor": "#14B8A6",
-      "description": "Complete production lines for hard candy in all shapes — pillow, ball, cushion, and chain die formats. Capacities from 200 to 1000 kg/hr.",
+      "description": "",
       "lines": [
         {
           "id": "HC-L-001",
           "lineNumber": "HC-L-001",
-          "name": "Candy 200 kg/hr Complete Line",
-          "productionRate": "200 kg/hr",
-          "description": "A compact, fully integrated hard candy line for small-to-medium production volumes. The line handles the complete process from sugar dissolving through to individually wrapped candies.",
-          "image": "assets/images/production-lines/LINE 1.avif",
+          "name": "Chain Die Complete Line 450 kg/hr",
+          "productionRate": "450 kg/hr",
+          "description": "A high-output hard candy line using chain-die forming, covering dissolving, continuous vacuum cooking, cooling, kneading, centre filling, rope sizing, chain-die forming and pillow-pack wrapping at 450 kg/hr.",
+          "image": null,
           "machines": [
             {
               "id": "HC-L001-M01",
               "machineNumber": "HC-L001-M01",
+              "model": "SEW-101",
               "orderInLine": 1,
-              "name": "Sugar Dissolving Tank",
-              "function": "Dissolves raw sugar, glucose and corn syrup in hot water to form a clear, homogeneous cooking syrup",
-              "description": "Jacketed stainless steel vessel with agitator and level control. Steam-heated dissolving with automatic transfer to the vacuum cooker. Capacity matched to line throughput.",
-              "image": "assets/images/machines/M1.jpg",
+              "name": "Glucose Tank",
+              "function": "Hygienic vertical storage tank for stable, crystal-free storage of liquid glucose and syrups.",
+              "description": "Vertical S.S 304 tank with base coil heating and external ladder.",
+              "image": "assets/STARMER/_ready/HARD CANDY/Chain Die Candy Line 450kg_hr_/Glucose Tank.jpg",
               "specs": {
-                "capacity": "300 L",
-                "powerConsumption": "7.5 kW",
-                "dimensions": "1,200 × 900 × 1,400 mm",
-                "weight": "480 kg",
-                "materialContact": "316L Stainless Steel, FDA 21 CFR",
-                "heatingMedium": "Steam, 0.4 MPa",
-                "controlSystem": "Level sensor + temperature controller",
-                "certifications": "CE, ISO 9001:2015"
+                "grade": "S.S 304",
+                "sheetThickness": "5 mm upper and lower sheet",
+                "outerDiaSheetThickness": "3 mm",
+                "designType": "Vertical",
+                "heatingSystem": "Coil on the base of tank (for steam circulation)",
+                "ladder": "Outside the tank",
+                "capacity": "20 ton glucose",
+                "dimension": "16 ft height x 7 ft diameter"
               },
-              "diesAndParts": []
+              "diesAndParts": [
+                {
+                  "id": "HC-L001-M01-D01",
+                  "partNumber": "HC-L001-M01-D01",
+                  "name": "Glucose Tank Die",
+                  "type": "die",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Forming die for the Glucose Tank. Details coming soon."
+                },
+                {
+                  "id": "HC-L001-M01-P01",
+                  "partNumber": "HC-L001-M01-P01",
+                  "name": "Glucose Tank Spare Part",
+                  "type": "part",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Spare part for the Glucose Tank. Details coming soon."
+                }
+              ]
             },
             {
               "id": "HC-L001-M02",
               "machineNumber": "HC-L001-M02",
+              "model": "SEW-102",
               "orderInLine": 2,
-              "name": "Vacuum Cooker",
-              "function": "Cooks syrup under vacuum to >98% dry solids without caramelization, ensuring a crystal-clear candy base",
-              "description": "Continuous falling-film evaporator followed by a high-vacuum finishing chamber. Precise Brix control via inline conductivity sensor. Fully automated steam valve modulation.",
-              "image": "assets/images/machines/M2.jpg",
+              "name": "Steam Generator",
+              "function": "Produces high-pressure steam for heating, cleaning and process use across the line.",
+              "description": "Three-pass steam generator with Grundfos multistage feed-water pump, automatic electric control panel and burner with gas assembly & diesel pump.",
+              "image": "assets/STARMER/_ready/HARD CANDY/Chain Die Candy Line 450kg_hr_/Steam Generator.jpg",
               "specs": {
-                "throughput": "220 kg/hr",
-                "powerConsumption": "18 kW",
-                "dimensions": "2,800 × 800 × 1,800 mm",
-                "weight": "980 kg",
-                "materialContact": "316L Stainless Steel, FDA 21 CFR",
-                "vacuumLevel": "−0.085 MPa",
-                "cookTemperature": "135–155 °C",
-                "controlSystem": "Siemens S7-1200 PLC + 7″ HMI",
-                "certifications": "CE, PED 2014/68/EU, ISO 9001:2015"
+                "typeOfPasses": "3 pass",
+                "testPressure": "225 psi",
+                "tubeSize": "2\" or 2½\"",
+                "feedWaterPump": "Grundfos, multistage",
+                "capacity": "450 kg/hr",
+                "dimension": "8' x 3'5\" x 3'5\"",
+                "powerLoad": "5 hp"
               },
               "diesAndParts": [
                 {
+                  "id": "HC-L001-M02-D01",
+                  "partNumber": "HC-L001-M02-D01",
+                  "name": "Steam Generator Die",
+                  "type": "die",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Forming die for the Steam Generator. Details coming soon."
+                },
+                {
                   "id": "HC-L001-M02-P01",
                   "partNumber": "HC-L001-M02-P01",
+                  "name": "Steam Generator Spare Part",
                   "type": "part",
-                  "name": "Vacuum Cooker Scraped-Surface Heating Element",
-                  "description": "Replacement scraped-surface heating element for the vacuum cooker. Food-grade PTFE wiper blades on 316L SS core.",
-                  "image": "assets/images/spare-parts/S1.jpg",
-                  "specs": {
-                    "dimensions": "800 × 120 mm",
-                    "material": "316L SS + PTFE wiper blades",
-                    "compatibleMachine": "HC-L001-M02"
-                  }
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Spare part for the Steam Generator. Details coming soon."
                 }
               ]
             },
             {
               "id": "HC-L001-M03",
               "machineNumber": "HC-L001-M03",
+              "model": "SEW-103",
               "orderInLine": 3,
-              "name": "Candy Mixing Table",
-              "function": "Incorporates color, flavor and citric acid into the hot candy mass while folding out residual air",
-              "description": "Water-cooled working slab with adjustable-speed rotating arm. Temperature-controlled surface ensures candy is workable without premature setting. Colour and flavour dosing pumps integrated.",
-              "image": "assets/images/machines/M3.jpg",
+              "name": "Steam Header",
+              "function": "Collects steam from the generator and distributes dry, high-quality steam to user points across the line.",
+              "description": "Cushioned cylinder header in mild steel with configurable branch pipes.",
+              "image": "assets/STARMER/_ready/HARD CANDY/Chain Die Candy Line 450kg_hr_/Steam Header.jpg",
               "specs": {
-                "throughput": "200 kg/hr",
-                "powerConsumption": "4 kW",
-                "dimensions": "1,600 × 900 × 950 mm",
-                "weight": "420 kg",
-                "materialContact": "316L Stainless Steel",
-                "tableSurface": "Water-cooled, 10–30 °C",
-                "controlSystem": "Temperature controller",
-                "certifications": "CE, ISO 9001:2015"
+                "materialOfHeader": "M.S",
+                "diameter": "1 ft",
+                "branchPipes": "1\", 2\", 3\", 4\" (depending on system needs)",
+                "design": "Cushioned Cylinder",
+                "connections": "5",
+                "dimension": "4 ft (dia) x 3 ft (length)",
+                "powerLoad": "None"
               },
-              "diesAndParts": []
+              "diesAndParts": [
+                {
+                  "id": "HC-L001-M03-D01",
+                  "partNumber": "HC-L001-M03-D01",
+                  "name": "Steam Header Die",
+                  "type": "die",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Forming die for the Steam Header. Details coming soon."
+                },
+                {
+                  "id": "HC-L001-M03-P01",
+                  "partNumber": "HC-L001-M03-P01",
+                  "name": "Steam Header Spare Part",
+                  "type": "part",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Spare part for the Steam Header. Details coming soon."
+                }
+              ]
             },
             {
               "id": "HC-L001-M04",
               "machineNumber": "HC-L001-M04",
+              "model": "SEW-106",
               "orderInLine": 4,
-              "name": "Batch Roller",
-              "function": "Rolls the worked candy mass into a uniform cone-shaped log ready for rope drawing",
-              "description": "Four-arm conical roller set with adjustable speed and conical angle. Produces a uniform plug for consistent rope diameter downstream. Quick-release rolls for cleaning.",
-              "image": "assets/images/machines/M4.jpg",
+              "name": "Dissolving Tank",
+              "function": "Controlled dissolution of sugar, glucose syrup and other ingredients into a homogeneous sugar solution.",
+              "description": "Double-jacketed tank, S.S 304 body and stirrer, M.S legs, 2 hp gear-motor drive, steam gauge and safety/seat valves.",
+              "image": "assets/STARMER/_ready/HARD CANDY/Chain Die Candy Line 450kg_hr_/Dissolving Tank.jpg",
               "specs": {
-                "throughput": "200 kg/hr",
-                "powerConsumption": "5.5 kW",
-                "dimensions": "1,200 × 800 × 1,200 mm",
-                "weight": "380 kg",
-                "materialContact": "304 Stainless Steel",
-                "rollCount": "4 conical rolls",
-                "controlSystem": "VFD speed control",
-                "certifications": "CE, ISO 9001:2015"
+                "capacity": "400 kg",
+                "construction": "Double jacketed with M.S",
+                "body": "S.S 304",
+                "legs": "M.S",
+                "stirrer": "S.S 304",
+                "gearMotorMainDrive": "2 hp",
+                "fittings": "Steam gauge, safety valve, seat valve",
+                "dimension": "5'6\" x 3'5\" x 3'5\"",
+                "powerLoad": "2 hp"
               },
-              "diesAndParts": []
+              "diesAndParts": [
+                {
+                  "id": "HC-L001-M04-D01",
+                  "partNumber": "HC-L001-M04-D01",
+                  "name": "Dissolving Tank Die",
+                  "type": "die",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Forming die for the Dissolving Tank. Details coming soon."
+                },
+                {
+                  "id": "HC-L001-M04-P01",
+                  "partNumber": "HC-L001-M04-P01",
+                  "name": "Dissolving Tank Spare Part",
+                  "type": "part",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Spare part for the Dissolving Tank. Details coming soon."
+                }
+              ]
             },
             {
               "id": "HC-L001-M05",
               "machineNumber": "HC-L001-M05",
+              "model": "SEW-107",
               "orderInLine": 5,
-              "name": "Rope Sizer",
-              "function": "Draws and calibrates the candy rope to a precise, consistent target diameter for accurate piece weights",
-              "description": "Multi-stage sizing head with interchangeable die plates. Servo-driven draw rollers maintain constant rope speed matched to the forming machine. Die plate changeover in under 5 minutes.",
-              "image": "assets/images/machines/M5.jpg",
+              "name": "Storage Tank",
+              "function": "Holds and maintains cooked sugar mass or syrup at controlled temperature before the forming or depositing section.",
+              "description": "Single-jacketed S.S 304 tank with stirrer, M.S legs and 1 hp drive.",
+              "image": "assets/STARMER/_ready/HARD CANDY/Chain Die Candy Line 450kg_hr_/Storage Tank.jpg",
               "specs": {
-                "throughput": "200 kg/hr",
-                "powerConsumption": "2.2 kW",
-                "dimensions": "900 × 500 × 1,100 mm",
-                "weight": "210 kg",
-                "materialContact": "316L Stainless Steel die plates",
-                "ropeDiameterRange": "10–35 mm",
-                "controlSystem": "Servo drive + digital display",
-                "certifications": "CE, ISO 9001:2015"
+                "capacity": "400 kg",
+                "construction": "Single jacketed",
+                "body": "S.S 304",
+                "legs": "M.S",
+                "stirrer": "S.S 304",
+                "gearMotorMainDrive": "1 hp",
+                "dimension": "6' x 3'6\" x 3'6\"",
+                "powerLoad": "1 hp"
               },
               "diesAndParts": [
                 {
                   "id": "HC-L001-M05-D01",
                   "partNumber": "HC-L001-M05-D01",
+                  "name": "Storage Tank Die",
                   "type": "die",
-                  "name": "Rope Sizer Die Plate — 14 mm Round",
-                  "description": "Precision-ground 316L SS die plate, 14 mm round bore, ±0.05 mm tolerance. Mirror-polished bore for clean rope release.",
-                  "image": "assets/images/spare-parts/S2.jpg",
-                  "specs": {
-                    "boreDiameter": "14 mm round",
-                    "tolerance": "±0.05 mm",
-                    "material": "316L Stainless Steel",
-                    "finish": "Mirror polish Ra ≤ 0.4 µm",
-                    "compatibleMachine": "HC-L001-M05"
-                  }
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Forming die for the Storage Tank. Details coming soon."
                 },
                 {
-                  "id": "HC-L001-M05-D02",
-                  "partNumber": "HC-L001-M05-D02",
-                  "type": "die",
-                  "name": "Rope Sizer Die Plate — 18 mm Round",
-                  "description": "Precision-ground 316L SS die plate, 18 mm round bore, ±0.05 mm tolerance.",
-                  "image": "assets/images/spare-parts/S3.jpg",
-                  "specs": {
-                    "boreDiameter": "18 mm round",
-                    "tolerance": "±0.05 mm",
-                    "material": "316L Stainless Steel",
-                    "compatibleMachine": "HC-L001-M05"
-                  }
+                  "id": "HC-L001-M05-P01",
+                  "partNumber": "HC-L001-M05-P01",
+                  "name": "Storage Tank Spare Part",
+                  "type": "part",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Spare part for the Storage Tank. Details coming soon."
                 }
               ]
             },
             {
               "id": "HC-L001-M06",
               "machineNumber": "HC-L001-M06",
+              "model": "SEW-104",
               "orderInLine": 6,
-              "name": "Drop Roller Forming Machine",
-              "function": "Cuts and shapes individual candy pieces from the calibrated rope using engraved forming rollers",
-              "description": "Synchronized pair of engraved H13 tool-steel forming rollers. Quick-release cartridge system for die changeover in under 10 minutes. Vibratory discharge conveyor separates formed pieces.",
-              "image": "assets/images/machines/M1.jpg",
+              "name": "Candy Continuous Cooker",
+              "function": "Continuous vacuum cooker that automatically produces hard-boiled candies and milk caramels with high clarity and smooth texture, minimising sugar loss at moisture below 2%.",
+              "description": "Double-jacketed S.S 304 pans and body with adjustable output, food-grade S.S 304 heat zones, steam trap and full S.S water nozzles.",
+              "image": "assets/STARMER/_ready/HARD CANDY/Chain Die Candy Line 450kg_hr_/Candy Continuous Cooker.jpg",
               "specs": {
-                "throughput": "600 pcs/min",
-                "powerConsumption": "5.5 kW",
-                "dimensions": "1,400 × 700 × 1,300 mm",
-                "weight": "480 kg",
-                "materialContact": "H13 Tool Steel, Hard Chrome Plated",
-                "rollerDiameter": "180 mm",
-                "pieceWeightRange": "2–12 g",
-                "controlSystem": "Servo controller + digital display",
-                "certifications": "CE, ISO 9001:2015"
+                "output": "450 kg/hr",
+                "pans": "S.S 304",
+                "body": "S.S 304, double jacketed",
+                "sugarPump": "2 hp, 1450 rpm",
+                "heatZones": "S.S 304 food grade",
+                "fittings": "Outer tube jacketed, steam trap, full S.S water nozzles",
+                "controls": "Electric panel with new features",
+                "dimension": "8' x 6' x 7'6\"",
+                "powerLoad": "4 hp"
               },
               "diesAndParts": [
                 {
                   "id": "HC-L001-M06-D01",
                   "partNumber": "HC-L001-M06-D01",
+                  "name": "Candy Continuous Cooker Die",
                   "type": "die",
-                  "name": "Drop Roller Die Set — Pillow Shape",
-                  "description": "H13 tool steel engraved roller pair, chrome-plated, producing standard pillow-shaped hard candy 14×10×7 mm at 5 g nominal weight.",
-                  "image": "assets/images/spare-parts/S4.jpg",
-                  "specs": {
-                    "candyShape": "Pillow",
-                    "candySize": "14 × 10 × 7 mm",
-                    "nominalWeight": "5 g",
-                    "cavities": "20 per roller pair",
-                    "material": "H13 Tool Steel, Hard Chrome",
-                    "compatibleMachine": "HC-L001-M06"
-                  }
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Forming die for the Candy Continuous Cooker. Details coming soon."
                 },
                 {
-                  "id": "HC-L001-M06-D02",
-                  "partNumber": "HC-L001-M06-D02",
-                  "type": "die",
-                  "name": "Drop Roller Die Set — Ball Shape",
-                  "description": "H13 tool steel engraved roller pair producing spherical hard candy 16 mm diameter at 4.5 g nominal weight.",
-                  "image": "assets/images/spare-parts/S5.jpg",
-                  "specs": {
-                    "candyShape": "Ball / Round",
-                    "candySize": "16 mm diameter",
-                    "nominalWeight": "4.5 g",
-                    "cavities": "18 per roller pair",
-                    "material": "H13 Tool Steel, Hard Chrome",
-                    "compatibleMachine": "HC-L001-M06"
-                  }
+                  "id": "HC-L001-M06-P01",
+                  "partNumber": "HC-L001-M06-P01",
+                  "name": "Candy Continuous Cooker Spare Part",
+                  "type": "part",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Spare part for the Candy Continuous Cooker. Details coming soon."
                 }
               ]
             },
             {
               "id": "HC-L001-M07",
               "machineNumber": "HC-L001-M07",
+              "model": "SEW-105",
               "orderInLine": 7,
-              "name": "Cooling Conveyor",
-              "function": "Cools and hardens finished candy pieces from forming temperature to packaging-ready condition",
-              "description": "Stainless steel mesh belt conveyor with forced-air cooling fans and optional chilled-water heat exchangers. Adjustable belt speed matched to line throughput.",
-              "image": "assets/images/machines/M2.jpg",
+              "name": "Vacuum Pump",
+              "function": "Rapidly removes moisture from the cooked candy mass under reduced pressure to allow low-temperature boiling and prevent caramelisation.",
+              "description": "M.S frame vacuum pump unit.",
+              "image": "assets/STARMER/_ready/HARD CANDY/Chain Die Candy Line 450kg_hr_/Vacuum Pump.jpg",
               "specs": {
-                "throughput": "200 kg/hr",
-                "powerConsumption": "3 kW",
-                "dimensions": "6,000 × 700 × 1,100 mm",
-                "weight": "520 kg",
-                "materialContact": "316L SS mesh belt",
-                "coolingMethod": "Forced air + optional chilled water",
-                "controlSystem": "VFD belt speed control",
-                "certifications": "CE, ISO 9001:2015"
+                "rating": "10 hp = 1400 rpm",
+                "frame": "M.S",
+                "dimension": "2 ft x 4 ft x 1 ft",
+                "powerLoad": "10 hp"
               },
-              "diesAndParts": []
+              "diesAndParts": [
+                {
+                  "id": "HC-L001-M07-D01",
+                  "partNumber": "HC-L001-M07-D01",
+                  "name": "Vacuum Pump Die",
+                  "type": "die",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Forming die for the Vacuum Pump. Details coming soon."
+                },
+                {
+                  "id": "HC-L001-M07-P01",
+                  "partNumber": "HC-L001-M07-P01",
+                  "name": "Vacuum Pump Spare Part",
+                  "type": "part",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Spare part for the Vacuum Pump. Details coming soon."
+                }
+              ]
             },
             {
               "id": "HC-L001-M08",
               "machineNumber": "HC-L001-M08",
+              "model": "SEW-108",
               "orderInLine": 8,
-              "name": "Individual Wrapping Machine",
-              "function": "Wraps each candy piece individually in twist or fold-wrap format at high speed",
-              "description": "Servo-driven wrapping machine accepting candies from the cooling conveyor. Interchangeable wrapping head for twist, double-twist, or fold wrap formats. Compatible with BOPP and wax paper films.",
-              "image": "assets/images/machines/M3.jpg",
+              "name": "Cooling Table",
+              "function": "Rapid cooling and conditioning of the cooked sugar mass for uniform texture and workability before forming.",
+              "description": "Water-cooled S.S 304 table with A-frame circuit and S.S 201 legs.",
+              "image": "assets/STARMER/_ready/HARD CANDY/Chain Die Candy Line 450kg_hr_/Cooling table.jpg",
               "specs": {
-                "throughput": "600 pcs/min",
-                "powerConsumption": "6 kW",
-                "dimensions": "2,400 × 900 × 1,600 mm",
-                "weight": "860 kg",
-                "wrapFormats": "Twist, Double Twist, Fold Wrap",
-                "filmCompatibility": "BOPP, Wax Paper, Cellophane",
-                "controlSystem": "Servo PLC + HMI",
-                "certifications": "CE, ISO 9001:2015"
+                "basePlateThickness": "10 mm in S.S 304",
+                "materialOfPlate": "Boundary wall S.S 304",
+                "coolingMedium": "Water cooling system, A-frame inlet/outlet",
+                "legs": "4 Nos in S.S 201 grade",
+                "dimension": "3 ft x 6 ft x 2'6\"",
+                "powerLoad": "None"
               },
-              "diesAndParts": []
+              "diesAndParts": [
+                {
+                  "id": "HC-L001-M08-D01",
+                  "partNumber": "HC-L001-M08-D01",
+                  "name": "Cooling Table Die",
+                  "type": "die",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Forming die for the Cooling Table. Details coming soon."
+                },
+                {
+                  "id": "HC-L001-M08-P01",
+                  "partNumber": "HC-L001-M08-P01",
+                  "name": "Cooling Table Spare Part",
+                  "type": "part",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Spare part for the Cooling Table. Details coming soon."
+                }
+              ]
             },
             {
               "id": "HC-L001-M09",
               "machineNumber": "HC-L001-M09",
+              "model": "SEW-109",
               "orderInLine": 9,
-              "name": "STEAM HANDLER",
-              "function": "STEAMS",
-              "description": "HELLO",
-              "image": "assets/images/machines/1781346833399-PHOTO-2026-06-12-11-13-50-3.jpg",
+              "name": "Kneading Machine",
+              "function": "Uniform mixing and kneading of the cooked sugar mass with hygienic, water-cooled stainless steel contact parts.",
+              "description": "S.S 304 roller and main plates, S.S 201 side sheets, 5 hp drive.",
+              "image": "assets/STARMER/_ready/HARD CANDY/Chain Die Candy Line 450kg_hr_/Kneading Machine.jpg",
               "specs": {
-                "HI": "HELLO"
+                "roller": "S.S 304",
+                "mainDrive": "5 hp",
+                "sideSheets": "S.S 201",
+                "mainPlates": "S.S 304",
+                "control": "On/off switch",
+                "dimension": "3'5\" x 6\" x 5'5\"",
+                "powerLoad": "5 hp"
               },
-              "diesAndParts": []
+              "diesAndParts": [
+                {
+                  "id": "HC-L001-M09-D01",
+                  "partNumber": "HC-L001-M09-D01",
+                  "name": "Kneading Machine Die",
+                  "type": "die",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Forming die for the Kneading Machine. Details coming soon."
+                },
+                {
+                  "id": "HC-L001-M09-P01",
+                  "partNumber": "HC-L001-M09-P01",
+                  "name": "Kneading Machine Spare Part",
+                  "type": "part",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Spare part for the Kneading Machine. Details coming soon."
+                }
+              ]
             },
             {
               "id": "HC-L001-M10",
               "machineNumber": "HC-L001-M10",
+              "model": "SEW-110",
               "orderInLine": 10,
-              "name": "ABC",
-              "function": "DSSAJDH",
-              "description": "AJASJ",
-              "image": "assets/images/machines/1781362962719-1216096.jpg",
+              "name": "Center Filling Liquid Pump",
+              "function": "Precision dosing system that injects liquid filling (fruit syrup, chocolate, cream or jam) into the core of the candy rope during forming.",
+              "description": "Double-jacketed S.S 304 leaf with Teflon-covered food-grade rod, flexible food-grade pipe, 2 hp drive, 1000 W heater and 2 HP inverter with recycle.",
+              "image": "assets/STARMER/_ready/HARD CANDY/Chain Die Candy Line 450kg_hr_/Liquid Filling Pump.jpg",
               "specs": {
-                "df": "sdfh"
+                "filling": "Chocolate and liquid",
+                "leaf": "S.S 304, double jacketed",
+                "rod": "S.S with Teflon covering (food grade, heat proof)",
+                "pipe": "Flexible, food grade",
+                "gearMotorMainDrive": "2 hp",
+                "stand": "M.S",
+                "heater": "1000 watt, 1 No",
+                "inverter": "2 HP (increase/decrease filling)",
+                "extra": "Co-flow system to recycle liquid/chocolate",
+                "powerLoad": "3.2 hp"
               },
-              "diesAndParts": []
+              "diesAndParts": [
+                {
+                  "id": "HC-L001-M10-D01",
+                  "partNumber": "HC-L001-M10-D01",
+                  "name": "Center Filling Liquid Pump Die",
+                  "type": "die",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Forming die for the Center Filling Liquid Pump. Details coming soon."
+                },
+                {
+                  "id": "HC-L001-M10-P01",
+                  "partNumber": "HC-L001-M10-P01",
+                  "name": "Center Filling Liquid Pump Spare Part",
+                  "type": "part",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Spare part for the Center Filling Liquid Pump. Details coming soon."
+                }
+              ]
+            },
+            {
+              "id": "HC-L001-M11",
+              "machineNumber": "HC-L001-M11",
+              "model": "SEW-111",
+              "orderInLine": 11,
+              "name": "Center Filling Powder Pump",
+              "function": "Precision feeding unit that injects dry or semi-dry powdered filling (milk, cocoa or fruit powder) into the centre of the candy rope.",
+              "description": "S.S 304 leaf with Teflon-covered S.S worm, M.S stand, 2 hp gear motor and variable inverter for speed control.",
+              "image": "assets/STARMER/_ready/HARD CANDY/Chain Die Candy Line 450kg_hr_/Powder Filling Pump.jpg",
+              "specs": {
+                "type": "Centre filling powder",
+                "leaf": "S.S 304 grade",
+                "gearMotor": "2 hp",
+                "variableInverter": "2 hp (speed control)",
+                "stand": "M.S",
+                "contactPart": "Rod with Teflon covering, S.S worm inside",
+                "powerLoad": "2 hp"
+              },
+              "diesAndParts": [
+                {
+                  "id": "HC-L001-M11-D01",
+                  "partNumber": "HC-L001-M11-D01",
+                  "name": "Center Filling Powder Pump Die",
+                  "type": "die",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Forming die for the Center Filling Powder Pump. Details coming soon."
+                },
+                {
+                  "id": "HC-L001-M11-P01",
+                  "partNumber": "HC-L001-M11-P01",
+                  "name": "Center Filling Powder Pump Spare Part",
+                  "type": "part",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Spare part for the Center Filling Powder Pump. Details coming soon."
+                }
+              ]
+            },
+            {
+              "id": "HC-L001-M12",
+              "machineNumber": "HC-L001-M12",
+              "model": "SEW-114",
+              "orderInLine": 12,
+              "name": "Batch Roller",
+              "function": "Continuously rolls and shapes the cooked mass into a uniform cylindrical rope with consistent filling, flavour and colour distribution.",
+              "description": "Horizontal 4-roller batch roller in S.S 304 food grade with SEW (Germany) gear motor, up/down drive, control panel and 1000 W heaters.",
+              "image": "assets/STARMER/_ready/HARD CANDY/Chain Die Candy Line 450kg_hr_/Batch Roller.jpg",
+              "specs": {
+                "frame": "Horizontal",
+                "rollersQuantity": "4",
+                "rollersMaterial": "S.S 304 food grade",
+                "gearMotorMainDrive": "1 hp",
+                "upDownDrive": "1 hp",
+                "heaters": "1000 watt (2 Nos)",
+                "capacity": "75 kg",
+                "length": "6.5 ft",
+                "gearMotor": "SEW brand, Germany",
+                "dimension": "4' x 2' x 3'",
+                "powerLoad": "4.68 hp"
+              },
+              "diesAndParts": [
+                {
+                  "id": "HC-L001-M12-D01",
+                  "partNumber": "HC-L001-M12-D01",
+                  "name": "Batch Roller Die",
+                  "type": "die",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Forming die for the Batch Roller. Details coming soon."
+                },
+                {
+                  "id": "HC-L001-M12-P01",
+                  "partNumber": "HC-L001-M12-P01",
+                  "name": "Batch Roller Spare Part",
+                  "type": "part",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Spare part for the Batch Roller. Details coming soon."
+                }
+              ]
+            },
+            {
+              "id": "HC-L001-M13",
+              "machineNumber": "HC-L001-M13",
+              "model": "SEW-115",
+              "orderInLine": 13,
+              "name": "Rope Sizer",
+              "function": "Accurately reduces and calibrates the candy/toffee rope diameter for uniform thickness before forming or cutting.",
+              "description": "Horizontal 4-stage rope sizer with S.S 304 roller pairs, brass rope guide, digital inverter and SEW (Germany) gear motors; bearings for low maintenance.",
+              "image": "assets/STARMER/_ready/HARD CANDY/Chain Die Candy Line 450kg_hr_/Rope Sizer.jpg",
+              "specs": {
+                "sizerModel": "Horizontal, 4 stages",
+                "pairs": "S.S 304 (22 mm x2, 20 mm x2)",
+                "ropeGuide": "Brass",
+                "inverter": "INVENT digital, 2 hp",
+                "gearMotors": "SEW brand, Germany",
+                "heatControllers": "Digital, 2 Nos",
+                "mainDriveGearMotor": "2 hp",
+                "heaters": "500 watt (4 Nos) = 2 kw",
+                "bearings": "Used instead of bushes",
+                "dimension": "4.5 ft x 2.5 ft x 6 ft",
+                "powerLoad": "4.68 hp"
+              },
+              "diesAndParts": [
+                {
+                  "id": "HC-L001-M13-D01",
+                  "partNumber": "HC-L001-M13-D01",
+                  "name": "Rope Sizer Die",
+                  "type": "die",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Forming die for the Rope Sizer. Details coming soon."
+                },
+                {
+                  "id": "HC-L001-M13-P01",
+                  "partNumber": "HC-L001-M13-P01",
+                  "name": "Rope Sizer Spare Part",
+                  "type": "part",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Spare part for the Rope Sizer. Details coming soon."
+                }
+              ]
+            },
+            {
+              "id": "HC-L001-M14",
+              "machineNumber": "HC-L001-M14",
+              "model": "SEW-112",
+              "orderInLine": 14,
+              "name": "Chain Die Forming Plant",
+              "function": "Continuous chain-die forming system that synchronises a sizing unit and die-chain to compress and cut candy/toffee into precise shapes, supporting high-filling products without leakage.",
+              "description": "M.S sizer set and top cover with multiple gear-motor drives (sizer, main, bed, spreader) and matching inverters for speed control.",
+              "image": "assets/STARMER/_ready/HARD CANDY/Chain Die Candy Line 450kg_hr_/Chain Die Forming Plant.jpg",
+              "specs": {
+                "speed": "2000 to 3500 pieces/min (depending on size & shape)",
+                "filling": "Up to 20% of product",
+                "sizerSet": "M.S",
+                "topCover": "M.S",
+                "sizerLineDrive": "Gear motor 5 hp",
+                "mainDrive": "Gear motor 3 hp",
+                "bedDrive": "Gear motor 0.5 hp",
+                "spreaderDrive": "Gear motor 0.5 hp",
+                "inverters": "5 hp, 3 hp, 0.5 hp (speed control)",
+                "powerLoad": "5 hp"
+              },
+              "diesAndParts": [
+                {
+                  "id": "HC-L001-M14-D01",
+                  "partNumber": "HC-L001-M14-D01",
+                  "name": "Chain Die Forming Plant Die",
+                  "type": "die",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Forming die for the Chain Die Forming Plant. Details coming soon."
+                },
+                {
+                  "id": "HC-L001-M14-P01",
+                  "partNumber": "HC-L001-M14-P01",
+                  "name": "Chain Die Forming Plant Spare Part",
+                  "type": "part",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Spare part for the Chain Die Forming Plant. Details coming soon."
+                }
+              ]
+            },
+            {
+              "id": "HC-L001-M15",
+              "machineNumber": "HC-L001-M15",
+              "model": "SEW-113",
+              "orderInLine": 15,
+              "name": "Chain Die",
+              "function": "Facilitates high-precision formation of candy ropes by guiding and shaping the material through calibrated die channels for uniform size and continuous flow.",
+              "description": "Precision die tooling with hardened, food-safe component materials.",
+              "image": "assets/STARMER/_ready/HARD CANDY/Chain Die Candy Line 450kg_hr_/Chain Die.jpg",
+              "specs": {
+                "frameOfDie": "Aluminium alloy",
+                "cutterBlocks": "D-2",
+                "punches": "D-2",
+                "uClamps": "Cast hardened M.S",
+                "sprockets": "Forged carbon steel",
+                "bushesBoltsPipesBearingCones": "EN19",
+                "connectingRods": "Copper + high-speed carbon steel"
+              },
+              "diesAndParts": [
+                {
+                  "id": "HC-L001-M15-D01",
+                  "partNumber": "HC-L001-M15-D01",
+                  "name": "Chain Die Die",
+                  "type": "die",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Forming die for the Chain Die. Details coming soon."
+                },
+                {
+                  "id": "HC-L001-M15-P01",
+                  "partNumber": "HC-L001-M15-P01",
+                  "name": "Chain Die Spare Part",
+                  "type": "part",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Spare part for the Chain Die. Details coming soon."
+                }
+              ]
+            },
+            {
+              "id": "HC-L001-M16",
+              "machineNumber": "HC-L001-M16",
+              "model": "SEW-121",
+              "orderInLine": 16,
+              "name": "Cooling Conveyor (Close Body)",
+              "function": "Rapidly and uniformly reduces the temperature of freshly formed candy for dimensional stability and hardness before cutting, wrapping or packaging.",
+              "description": "Close-body conveyor with S.S 304 mesh-wire steps, S.S 201 covers, thermopore insulation, S.S 304 inner skin and SEW gear motor.",
+              "image": "assets/STARMER/_ready/HARD CANDY/Chain Die Candy Line 450kg_hr_/Close body Cooling Tunnel _ 3 Stages Cooling Conveyor .jpg",
+              "specs": {
+                "length": "10 ft",
+                "width": "3 ft",
+                "stages": "1 stage",
+                "meshWire": "S.S 304 grade (3 steps)",
+                "sideSheets": "Outer and inner in S.S 304",
+                "covers": "S.S 201",
+                "insulation": "Double jacketed, thermopore; inner S.S 304 5 mm",
+                "chain": "M.S, 40 No",
+                "gearMotor": "2 hp, SEW brand",
+                "inverter": "2 HP",
+                "dimension": "3 ft x 16 ft",
+                "powerLoad": "3 hp"
+              },
+              "diesAndParts": [
+                {
+                  "id": "HC-L001-M16-D01",
+                  "partNumber": "HC-L001-M16-D01",
+                  "name": "Cooling Conveyor (Close Body) Die",
+                  "type": "die",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Forming die for the Cooling Conveyor (Close Body). Details coming soon."
+                },
+                {
+                  "id": "HC-L001-M16-P01",
+                  "partNumber": "HC-L001-M16-P01",
+                  "name": "Cooling Conveyor (Close Body) Spare Part",
+                  "type": "part",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Spare part for the Cooling Conveyor (Close Body). Details coming soon."
+                }
+              ]
+            },
+            {
+              "id": "HC-L001-M17",
+              "machineNumber": "HC-L001-M17",
+              "model": "SEW-122",
+              "orderInLine": 17,
+              "name": "AC Unit",
+              "function": "Floor-standing air-conditioning unit (5 ton / 6.5 HP) for cooling the conveyor section and accessories.",
+              "description": "Indoor unit with copper-tube evaporator and 1 HP blower; Bitzer 6.5 HP outdoor condensing unit with Copeland scroll compressor and full AC accessories.",
+              "image": "assets/STARMER/_ready/HARD CANDY/Chain Die Candy Line 450kg_hr_/Ac Unit.jpg",
+              "specs": {
+                "capacity": "5 Ton (6.5 HP)",
+                "type": "Floor standing",
+                "indoorBlower": "1 HP motor, 3 phase 440V/50Hz",
+                "expansionValve": "Emerson TCLE 6.5 HP",
+                "outdoorUnit": "Bitzer, high-density condensing coil",
+                "compressor": "Copeland scroll, 6.5 HP, 3 phase 440V/50Hz",
+                "safety": "Danfoss dual high/low-pressure switch",
+                "refrigerant": "R-22",
+                "inverter": "7.5 HP (INVT)",
+                "powerLoad": "6.5 hp"
+              },
+              "diesAndParts": [
+                {
+                  "id": "HC-L001-M17-D01",
+                  "partNumber": "HC-L001-M17-D01",
+                  "name": "AC Unit Die",
+                  "type": "die",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Forming die for the AC Unit. Details coming soon."
+                },
+                {
+                  "id": "HC-L001-M17-P01",
+                  "partNumber": "HC-L001-M17-P01",
+                  "name": "AC Unit Spare Part",
+                  "type": "part",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Spare part for the AC Unit. Details coming soon."
+                }
+              ]
+            },
+            {
+              "id": "HC-L001-M18",
+              "machineNumber": "HC-L001-M18",
+              "model": "SEW-120",
+              "orderInLine": 18,
+              "name": "Vibrator",
+              "function": "Smoothly transports candies from cooling and forming to packaging, preventing clumping or sticking.",
+              "description": "M.S frame vibrator with S.S 304 (18 gauge) main sheet and trays, twin fans, 1 hp drive.",
+              "image": "assets/STARMER/_ready/HARD CANDY/Chain Die Candy Line 450kg_hr_/Vibrator.jpg",
+              "specs": {
+                "frame": "M.S",
+                "mainSheet": "S.S 304, 18 gauge",
+                "fans": "2 nos",
+                "gearMotor": "1 hp",
+                "trays": "S.S 304, 2 nos",
+                "dimension": "4 ft (width) x 8 ft (length)",
+                "powerLoad": "1 hp"
+              },
+              "diesAndParts": [
+                {
+                  "id": "HC-L001-M18-D01",
+                  "partNumber": "HC-L001-M18-D01",
+                  "name": "Vibrator Die",
+                  "type": "die",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Forming die for the Vibrator. Details coming soon."
+                },
+                {
+                  "id": "HC-L001-M18-P01",
+                  "partNumber": "HC-L001-M18-P01",
+                  "name": "Vibrator Spare Part",
+                  "type": "part",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Spare part for the Vibrator. Details coming soon."
+                }
+              ]
+            },
+            {
+              "id": "HC-L001-M19",
+              "machineNumber": "HC-L001-M19",
+              "model": "SEW-123",
+              "orderInLine": 19,
+              "name": "Pillow Pack Wrapping Machine",
+              "function": "High-performance pillow-pack wrapper for filled or un-filled candies and bubblegums at up to 800 pieces per minute, with high-quality fin seal.",
+              "description": "Photo-electric-eye pillow wrapper with inverter, 2 H.P 3-phase and ½ H.P motors, 3.2 kW heaters.",
+              "image": "assets/STARMER/_ready/HARD CANDY/Chain Die Candy Line 450kg_hr_/Pillow pack Wrapping Machine.jpg",
+              "specs": {
+                "output": "Up to 800 pcs/min (candy); up to 500 pcs/min (bubble)",
+                "electricMotors": "(1) 2 H.P / 3-phase, (2) ½ H.P",
+                "electricHeaters": "3.2 kW",
+                "standardEquipment": "Photo-electric eye & inverter",
+                "dimensions": "2,335 x 900 x 1,725 mm",
+                "weight": "750 kg",
+                "reel": "Max outer dia 280 mm / core dia 70 mm"
+              },
+              "diesAndParts": [
+                {
+                  "id": "HC-L001-M19-D01",
+                  "partNumber": "HC-L001-M19-D01",
+                  "name": "Pillow Pack Wrapping Machine Die",
+                  "type": "die",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Forming die for the Pillow Pack Wrapping Machine. Details coming soon."
+                },
+                {
+                  "id": "HC-L001-M19-P01",
+                  "partNumber": "HC-L001-M19-P01",
+                  "name": "Pillow Pack Wrapping Machine Spare Part",
+                  "type": "part",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Spare part for the Pillow Pack Wrapping Machine. Details coming soon."
+                }
+              ]
+            },
+            {
+              "id": "HC-L001-M20",
+              "machineNumber": "HC-L001-M20",
+              "model": "SEW-116",
+              "orderInLine": 20,
+              "name": "Chain Die Stand (Reference Mold)",
+              "function": "Support stand and reference mold for the chain die assembly.",
+              "description": "M.S frame with movement wheels.",
+              "image": "assets/STARMER/_ready/HARD CANDY/Chain Die Candy Line 450kg_hr_/Chain Die Stand.jpg",
+              "specs": {
+                "frame": "M.S",
+                "wheels": "4 Nos (for movement)"
+              },
+              "diesAndParts": [
+                {
+                  "id": "HC-L001-M20-D01",
+                  "partNumber": "HC-L001-M20-D01",
+                  "name": "Chain Die Stand (Reference Mold) Die",
+                  "type": "die",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Forming die for the Chain Die Stand (Reference Mold). Details coming soon."
+                },
+                {
+                  "id": "HC-L001-M20-P01",
+                  "partNumber": "HC-L001-M20-P01",
+                  "name": "Chain Die Stand (Reference Mold) Spare Part",
+                  "type": "part",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Spare part for the Chain Die Stand (Reference Mold). Details coming soon."
+                }
+              ]
             }
           ]
         },
         {
           "id": "HC-L-002",
           "lineNumber": "HC-L-002",
-          "name": "Candy 450 kg/hr Complete Line",
-          "productionRate": "450 kg/hr",
-          "description": "Mid-range hard candy production line with continuous batch rolling and high-speed drop-roller forming. Suitable for established manufacturers scaling production.",
-          "image": "assets/images/production-lines/LINE 2.avif",
+          "name": "Complete Candy Line 1000 kg/hr",
+          "productionRate": "1000 kg/hr",
+          "description": "A high-capacity hard candy line with continuous vacuum cooking, Uniplast forming and rotary die cutting, including bubble-gum mixing/extrusion, centre filling, tunnel cooling and pillow-pack wrapping at 1000 kg/hr.",
+          "image": null,
           "machines": [
             {
               "id": "HC-L002-M01",
               "machineNumber": "HC-L002-M01",
+              "model": "SEW-201",
               "orderInLine": 1,
-              "name": "Sugar Dissolving Tank",
-              "function": "Dissolves raw sugar, glucose and corn syrup in hot water",
-              "description": "",
-              "image": "assets/images/machines/M4.jpg",
+              "name": "Glucose Tank",
+              "function": "Hygienic vertical storage tank for stable, crystal-free storage of liquid glucose and syrups.",
+              "description": "Vertical S.S 304 tank with base coil heating and external ladder.",
+              "image": "assets/STARMER/_ready/HARD CANDY/Complete Candy Line 1000kg_hr/Glucose Tank.jpg",
               "specs": {
-                "capacity": "600 L",
-                "powerConsumption": "11 kW",
-                "dimensions": "1,600 × 1,000 × 1,600 mm",
-                "weight": "680 kg",
-                "materialContact": "316L Stainless Steel",
-                "certifications": "CE, ISO 9001:2015"
+                "grade": "S.S 304",
+                "sheetThickness": "5 mm upper and lower sheet",
+                "outerDiaSheetThickness": "3 mm",
+                "designType": "Vertical",
+                "heatingSystem": "Coil on the base of tank",
+                "ladder": "Outside the tank",
+                "capacity": "20 ton glucose",
+                "dimension": "14 ft height x 7 ft diameter"
               },
-              "diesAndParts": []
+              "diesAndParts": [
+                {
+                  "id": "HC-L002-M01-D01",
+                  "partNumber": "HC-L002-M01-D01",
+                  "name": "Glucose Tank Die",
+                  "type": "die",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Forming die for the Glucose Tank. Details coming soon."
+                },
+                {
+                  "id": "HC-L002-M01-P01",
+                  "partNumber": "HC-L002-M01-P01",
+                  "name": "Glucose Tank Spare Part",
+                  "type": "part",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Spare part for the Glucose Tank. Details coming soon."
+                }
+              ]
             },
             {
               "id": "HC-L002-M02",
               "machineNumber": "HC-L002-M02",
+              "model": "SEW-202",
               "orderInLine": 2,
-              "name": "Vacuum Cooker",
-              "function": "Cooks syrup under vacuum to >98% dry solids",
-              "description": "",
-              "image": "assets/images/machines/M5.jpg",
+              "name": "Steam Generator",
+              "function": "Produces high-pressure steam for heating, cleaning and process use across the line.",
+              "description": "Three-pass steam generator with Grundfos multistage feed-water pump, automatic electric control panel and burner with gas assembly & diesel pump.",
+              "image": "assets/STARMER/_ready/HARD CANDY/Complete Candy Line 1000kg_hr/Steam Generator.jpg",
               "specs": {
-                "throughput": "500 kg/hr",
-                "powerConsumption": "28 kW",
-                "dimensions": "3,400 × 1,000 × 2,000 mm",
-                "weight": "1,400 kg",
-                "materialContact": "316L Stainless Steel",
-                "certifications": "CE, PED 2014/68/EU, ISO 9001:2015"
+                "typeOfPasses": "3 pass",
+                "testPressure": "225 psi",
+                "workingPressure": "150 psi",
+                "tubeSize": "2\" or 2½\"",
+                "pressureShellThickness": "3/8\"",
+                "insulationSheetThickness": "24 gauge",
+                "feedWaterPump": "Grundfos, multistage",
+                "burnerMotor": "8 hp",
+                "feedWaterMotor": "3 hp",
+                "capacity": "2000 kg/hr",
+                "powerLoad": "7 hp"
               },
-              "diesAndParts": []
+              "diesAndParts": [
+                {
+                  "id": "HC-L002-M02-D01",
+                  "partNumber": "HC-L002-M02-D01",
+                  "name": "Steam Generator Die",
+                  "type": "die",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Forming die for the Steam Generator. Details coming soon."
+                },
+                {
+                  "id": "HC-L002-M02-P01",
+                  "partNumber": "HC-L002-M02-P01",
+                  "name": "Steam Generator Spare Part",
+                  "type": "part",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Spare part for the Steam Generator. Details coming soon."
+                }
+              ]
             },
             {
               "id": "HC-L002-M03",
               "machineNumber": "HC-L002-M03",
+              "model": "SEW-103",
               "orderInLine": 3,
-              "name": "Candy Mixing Table",
-              "function": "Incorporates color, flavor and acid into the hot candy mass",
-              "description": "",
-              "image": "assets/images/machines/M1.jpg",
+              "name": "Steam Header",
+              "function": "Collects steam from the generator and distributes dry, high-quality steam to user points across the line.",
+              "description": "Cushioned cylinder header in mild steel with configurable branch pipes.",
+              "image": "assets/STARMER/_ready/HARD CANDY/Complete Candy Line 1000kg_hr/Steam Header.jpg",
               "specs": {
-                "throughput": "450 kg/hr",
-                "powerConsumption": "5.5 kW",
-                "dimensions": "2,000 × 1,000 × 950 mm",
-                "weight": "560 kg",
-                "materialContact": "316L Stainless Steel",
-                "certifications": "CE, ISO 9001:2015"
+                "materialOfHeader": "M.S",
+                "diameter": "1 ft",
+                "branchPipes": "1\", 2\", 3\", 4\" (depending on system needs)",
+                "design": "Cushioned Cylinder",
+                "dimension": "1 ft (dia) x 5 ft (length)",
+                "powerLoad": "None"
               },
-              "diesAndParts": []
+              "diesAndParts": [
+                {
+                  "id": "HC-L002-M03-D01",
+                  "partNumber": "HC-L002-M03-D01",
+                  "name": "Steam Header Die",
+                  "type": "die",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Forming die for the Steam Header. Details coming soon."
+                },
+                {
+                  "id": "HC-L002-M03-P01",
+                  "partNumber": "HC-L002-M03-P01",
+                  "name": "Steam Header Spare Part",
+                  "type": "part",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Spare part for the Steam Header. Details coming soon."
+                }
+              ]
             },
             {
               "id": "HC-L002-M04",
               "machineNumber": "HC-L002-M04",
+              "model": "SEW-204",
               "orderInLine": 4,
-              "name": "Batch Roller",
-              "function": "Rolls candy mass into a uniform cone for rope drawing",
-              "description": "",
-              "image": "assets/images/machines/M2.jpg",
+              "name": "Candy Continuous Vacuum Cooker",
+              "function": "Continuous vacuum cooker that automatically produces hard-boiled candies and milk caramels with high clarity and smooth texture at adjustable parameters.",
+              "description": "Double-jacketed S.S 304 pans with dosing pump, sugar pump, steam safety valves and hydraulic-tested vessel.",
+              "image": "assets/STARMER/_ready/HARD CANDY/Complete Candy Line 1000kg_hr/Candy Continuous Cooker.jpg",
               "specs": {
-                "throughput": "450 kg/hr",
-                "powerConsumption": "7.5 kW",
-                "dimensions": "1,400 × 900 × 1,300 mm",
-                "weight": "520 kg",
-                "materialContact": "304 Stainless Steel",
-                "certifications": "CE, ISO 9001:2015"
+                "output": "Up to 1000 kg/hr",
+                "drive": "2 hp",
+                "dosingPump": "3 hp (imported)",
+                "pans": "S.S 304",
+                "sugarPump": "2 hp, 1450 rpm",
+                "steamWorkingPressure": "150 (above)",
+                "steamSafetyValves": "2\" and 3\"",
+                "hydraulicTestPressure": "200 psi",
+                "controls": "Electric panel with all new features",
+                "powerLoad": "25 hp"
               },
-              "diesAndParts": []
+              "diesAndParts": [
+                {
+                  "id": "HC-L002-M04-D01",
+                  "partNumber": "HC-L002-M04-D01",
+                  "name": "Candy Continuous Vacuum Cooker Die",
+                  "type": "die",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Forming die for the Candy Continuous Vacuum Cooker. Details coming soon."
+                },
+                {
+                  "id": "HC-L002-M04-P01",
+                  "partNumber": "HC-L002-M04-P01",
+                  "name": "Candy Continuous Vacuum Cooker Spare Part",
+                  "type": "part",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Spare part for the Candy Continuous Vacuum Cooker. Details coming soon."
+                }
+              ]
             },
             {
               "id": "HC-L002-M05",
               "machineNumber": "HC-L002-M05",
+              "model": "SEW-205",
               "orderInLine": 5,
-              "name": "Rope Sizer",
-              "function": "Calibrates candy rope to precise target diameter",
-              "description": "",
-              "image": "assets/images/machines/M3.jpg",
+              "name": "Vacuum Pump",
+              "function": "Rapidly removes moisture from the cooked candy mass under reduced pressure to prevent caramelisation.",
+              "description": "M.S frame vacuum pump unit.",
+              "image": "assets/STARMER/_ready/HARD CANDY/Complete Candy Line 1000kg_hr/Vacuum Pump.jpg",
               "specs": {
-                "throughput": "450 kg/hr",
-                "powerConsumption": "3 kW",
-                "dimensions": "1,000 × 500 × 1,200 mm",
-                "weight": "260 kg",
-                "materialContact": "316L Stainless Steel",
-                "certifications": "CE, ISO 9001:2015"
+                "rating": "20 hp",
+                "frame": "M.S",
+                "dimension": "2 ft x 4 ft x 1 ft",
+                "powerLoad": "20 hp"
               },
-              "diesAndParts": []
+              "diesAndParts": [
+                {
+                  "id": "HC-L002-M05-D01",
+                  "partNumber": "HC-L002-M05-D01",
+                  "name": "Vacuum Pump Die",
+                  "type": "die",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Forming die for the Vacuum Pump. Details coming soon."
+                },
+                {
+                  "id": "HC-L002-M05-P01",
+                  "partNumber": "HC-L002-M05-P01",
+                  "name": "Vacuum Pump Spare Part",
+                  "type": "part",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Spare part for the Vacuum Pump. Details coming soon."
+                }
+              ]
             },
             {
               "id": "HC-L002-M06",
               "machineNumber": "HC-L002-M06",
+              "model": "SEW-206",
               "orderInLine": 6,
-              "name": "Drop Roller Forming Machine",
-              "function": "Cuts and shapes individual candy pieces using engraved forming rollers",
-              "description": "",
-              "image": "assets/images/machines/M4.jpg",
+              "name": "Dissolving Tank",
+              "function": "Controlled dissolution of sugar, glucose syrup and other ingredients into a homogeneous sugar solution.",
+              "description": "Double-jacketed S.S 304 tank with SEW (Germany) gear motor, steam valves and hydraulic-tested vessel.",
+              "image": "assets/STARMER/_ready/HARD CANDY/Complete Candy Line 1000kg_hr/Dissolving Tank.jpg",
               "specs": {
-                "throughput": "1,200 pcs/min",
-                "powerConsumption": "7.5 kW",
-                "dimensions": "1,600 × 800 × 1,400 mm",
-                "weight": "620 kg",
-                "materialContact": "H13 Tool Steel, Hard Chrome",
-                "certifications": "CE, ISO 9001:2015"
+                "capacity": "750 kg",
+                "construction": "Double jacketed, main body S.S 304 with M.S",
+                "body": "S.S 304",
+                "legs": "M.S",
+                "stirrer": "S.S 304",
+                "gearMotorMainDrive": "3 hp, SEW brand Germany",
+                "steamWorkingPressure": "125 psi",
+                "hydraulicTestPressure": "200 psi",
+                "steamValveInlet": "1\"",
+                "steamSafetyValve": "3\"/4\"",
+                "steamOutlet": "3\"/4\"",
+                "dimension": "2150 mm x 750 mm",
+                "powerLoad": "3 hp"
               },
-              "diesAndParts": []
+              "diesAndParts": [
+                {
+                  "id": "HC-L002-M06-D01",
+                  "partNumber": "HC-L002-M06-D01",
+                  "name": "Dissolving Tank Die",
+                  "type": "die",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Forming die for the Dissolving Tank. Details coming soon."
+                },
+                {
+                  "id": "HC-L002-M06-P01",
+                  "partNumber": "HC-L002-M06-P01",
+                  "name": "Dissolving Tank Spare Part",
+                  "type": "part",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Spare part for the Dissolving Tank. Details coming soon."
+                }
+              ]
             },
             {
               "id": "HC-L002-M07",
               "machineNumber": "HC-L002-M07",
+              "model": "SEW-207",
               "orderInLine": 7,
-              "name": "Cooling Conveyor",
-              "function": "Cools and hardens candy pieces to packaging-ready condition",
-              "description": "",
-              "image": "assets/images/machines/M5.jpg",
+              "name": "Storage Tank",
+              "function": "Holds and maintains cooked sugar mass or syrup at controlled temperature before the forming or depositing section.",
+              "description": "Single-jacketed S.S 304 tank with stirrer and 2 hp drive.",
+              "image": "assets/STARMER/_ready/HARD CANDY/Complete Candy Line 1000kg_hr/Storage Tank.jpg",
               "specs": {
-                "throughput": "450 kg/hr",
-                "powerConsumption": "4.5 kW",
-                "dimensions": "8,000 × 800 × 1,100 mm",
-                "weight": "720 kg",
-                "certifications": "CE, ISO 9001:2015"
+                "capacity": "750 kg",
+                "construction": "Single jacketed",
+                "body": "S.S 304",
+                "stirrer": "S.S 304",
+                "outletValve": "2\"",
+                "gearMotorMainDrive": "2 hp",
+                "dimension": "1250 L x 815 W mm",
+                "powerLoad": "2 hp"
               },
-              "diesAndParts": []
+              "diesAndParts": [
+                {
+                  "id": "HC-L002-M07-D01",
+                  "partNumber": "HC-L002-M07-D01",
+                  "name": "Storage Tank Die",
+                  "type": "die",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Forming die for the Storage Tank. Details coming soon."
+                },
+                {
+                  "id": "HC-L002-M07-P01",
+                  "partNumber": "HC-L002-M07-P01",
+                  "name": "Storage Tank Spare Part",
+                  "type": "part",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Spare part for the Storage Tank. Details coming soon."
+                }
+              ]
             },
             {
               "id": "HC-L002-M08",
               "machineNumber": "HC-L002-M08",
+              "model": "SEW-108",
               "orderInLine": 8,
-              "name": "Individual Wrapping Machine",
-              "function": "Wraps each candy piece in twist or fold-wrap format",
-              "description": "",
-              "image": "assets/images/machines/M1.jpg",
+              "name": "Cooling Table",
+              "function": "Rapid cooling and conditioning of the cooked sugar mass for uniform texture and workability before forming.",
+              "description": "Water-cooled S.S 304 table with A-frame circuit and S.S 201 legs.",
+              "image": "assets/STARMER/_ready/HARD CANDY/Complete Candy Line 1000kg_hr/Cooling table.jpg",
               "specs": {
-                "throughput": "1,200 pcs/min",
-                "powerConsumption": "8 kW",
-                "dimensions": "2,800 × 1,000 × 1,700 mm",
-                "weight": "1,050 kg",
-                "certifications": "CE, ISO 9001:2015"
+                "basePlateThickness": "10 mm in S.S 304",
+                "materialOfPlate": "Boundary wall S.S 304",
+                "coolingMedium": "Water cooling system, A-frame inlet/outlet",
+                "valve": "6",
+                "legs": "4 Nos in S.S 201 grade",
+                "dimension": "3 ft x 6 ft x 2'6\"",
+                "powerLoad": "None"
               },
-              "diesAndParts": []
+              "diesAndParts": [
+                {
+                  "id": "HC-L002-M08-D01",
+                  "partNumber": "HC-L002-M08-D01",
+                  "name": "Cooling Table Die",
+                  "type": "die",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Forming die for the Cooling Table. Details coming soon."
+                },
+                {
+                  "id": "HC-L002-M08-P01",
+                  "partNumber": "HC-L002-M08-P01",
+                  "name": "Cooling Table Spare Part",
+                  "type": "part",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Spare part for the Cooling Table. Details coming soon."
+                }
+              ]
             },
             {
               "id": "HC-L002-M09",
               "machineNumber": "HC-L002-M09",
+              "model": "SEW-109",
               "orderInLine": 9,
-              "name": "ABC",
-              "function": "DEF",
-              "description": "HI",
-              "image": "assets/images/machines/1780700640278-1216096.jpg",
-              "specs": {},
-              "diesAndParts": []
+              "name": "Kneading Machine",
+              "function": "Uniform mixing and kneading of the cooked sugar mass with hygienic, water-cooled stainless steel contact parts.",
+              "description": "S.S 304 roller and main plates, S.S 201 side sheets, 5 hp drive.",
+              "image": "assets/STARMER/_ready/HARD CANDY/Complete Candy Line 1000kg_hr/Kneading Machine.jpg",
+              "specs": {
+                "roller": "S.S 304",
+                "mainDrive": "5 hp",
+                "mainPlate": "4 ft, S.S 304",
+                "sideSheets": "S.S 201",
+                "control": "On/off switch",
+                "dimension": "5' x 6\" x 6'5\"",
+                "powerLoad": "5 hp"
+              },
+              "diesAndParts": [
+                {
+                  "id": "HC-L002-M09-D01",
+                  "partNumber": "HC-L002-M09-D01",
+                  "name": "Kneading Machine Die",
+                  "type": "die",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Forming die for the Kneading Machine. Details coming soon."
+                },
+                {
+                  "id": "HC-L002-M09-P01",
+                  "partNumber": "HC-L002-M09-P01",
+                  "name": "Kneading Machine Spare Part",
+                  "type": "part",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Spare part for the Kneading Machine. Details coming soon."
+                }
+              ]
             },
             {
               "id": "HC-L002-M10",
               "machineNumber": "HC-L002-M10",
+              "model": "SEW-209",
               "orderInLine": 10,
-              "name": "wer",
-              "function": "erdf",
-              "description": "dsgdfg",
-              "image": "assets/images/machines/1780953096009-1216096.jpg",
-              "specs": {},
-              "diesAndParts": []
+              "name": "Bubble Gum Mixer",
+              "function": "Blends gum base and ingredients into a homogeneous bubble-gum mass suitable for extrusion and shaping.",
+              "description": "Heavy-duty double-jacketed S.S 304 mixer with twin arms, 20 hp main drive, 8 x 6000 W heaters and a tilting discharge system.",
+              "image": "assets/STARMER/_ready/HARD CANDY/Complete Candy Line 1000kg_hr/Bubble Gum Mixer.jpg",
+              "specs": {
+                "capacity": "200 kg in 20 minutes",
+                "pan": "S.S 304, double jacketed",
+                "arms": "2, S.S 304",
+                "panCover": "S.S 304",
+                "gearMotorMainDrive": "20 hp",
+                "heaters": "8 electric heaters, 6000 watt",
+                "controls": "Electric panel with all new features",
+                "tilt": "S.S 201, tilting system",
+                "dimension": "8 ft x 5 ft x 5 ft",
+                "powerLoad": "28 hp"
+              },
+              "diesAndParts": [
+                {
+                  "id": "HC-L002-M10-D01",
+                  "partNumber": "HC-L002-M10-D01",
+                  "name": "Bubble Gum Mixer Die",
+                  "type": "die",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Forming die for the Bubble Gum Mixer. Details coming soon."
+                },
+                {
+                  "id": "HC-L002-M10-P01",
+                  "partNumber": "HC-L002-M10-P01",
+                  "name": "Bubble Gum Mixer Spare Part",
+                  "type": "part",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Spare part for the Bubble Gum Mixer. Details coming soon."
+                }
+              ]
+            },
+            {
+              "id": "HC-L002-M11",
+              "machineNumber": "HC-L002-M11",
+              "model": "SEW-211",
+              "orderInLine": 11,
+              "name": "Bubble Gum Extruder",
+              "function": "Shapes the mixed gum mass into a continuous rope of uniform thickness and density for downstream forming, cutting or rolling.",
+              "description": "Two-stage screw extruder on M.S structure with 7.5 hp drive, inverter, S.S 304 rolls and head rotary roller system, with 6000 W heaters.",
+              "image": "assets/STARMER/_ready/HARD CANDY/Complete Candy Line 1000kg_hr/Bubble Gum Extruder.jpg",
+              "specs": {
+                "type": "Screw, 2 stages",
+                "gearMainDrive": "7.5 hp",
+                "inverter": "7.5 hp",
+                "structure": "M.S",
+                "roll": "S.S 304",
+                "heaters": "Electric heaters, 6000 watt",
+                "controls": "Electric panel with all new features, rotary roller system in head",
+                "powerLoad": "18 hp"
+              },
+              "diesAndParts": [
+                {
+                  "id": "HC-L002-M11-D01",
+                  "partNumber": "HC-L002-M11-D01",
+                  "name": "Bubble Gum Extruder Die",
+                  "type": "die",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Forming die for the Bubble Gum Extruder. Details coming soon."
+                },
+                {
+                  "id": "HC-L002-M11-P01",
+                  "partNumber": "HC-L002-M11-P01",
+                  "name": "Bubble Gum Extruder Spare Part",
+                  "type": "part",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Spare part for the Bubble Gum Extruder. Details coming soon."
+                }
+              ]
+            },
+            {
+              "id": "HC-L002-M12",
+              "machineNumber": "HC-L002-M12",
+              "model": "SEW-110",
+              "orderInLine": 12,
+              "name": "Center Filling Liquid Pump",
+              "function": "Precision dosing system that injects liquid filling (fruit syrup, chocolate, cream or jam) into the core of the candy rope during forming.",
+              "description": "Double-jacketed S.S 304 leaf with Teflon-covered food-grade rod, flexible pipe, 2 hp drive, 1000 W heater and 2 HP inverter with recycle.",
+              "image": "assets/STARMER/_ready/HARD CANDY/Complete Candy Line 1000kg_hr/Liquid Filling Pump.jpg",
+              "specs": {
+                "filling": "Chocolate and liquid",
+                "leaf": "S.S 304, double jacketed",
+                "rod": "S.S with Teflon covering (food grade, heat proof)",
+                "pipe": "Flexible, food grade",
+                "gearMotorMainDrive": "2 hp",
+                "stand": "M.S",
+                "heater": "1000 watt, 1 No",
+                "inverter": "2 HP",
+                "extra": "Co-flow system to recycle liquid/chocolate",
+                "powerLoad": "3.2 hp"
+              },
+              "diesAndParts": [
+                {
+                  "id": "HC-L002-M12-D01",
+                  "partNumber": "HC-L002-M12-D01",
+                  "name": "Center Filling Liquid Pump Die",
+                  "type": "die",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Forming die for the Center Filling Liquid Pump. Details coming soon."
+                },
+                {
+                  "id": "HC-L002-M12-P01",
+                  "partNumber": "HC-L002-M12-P01",
+                  "name": "Center Filling Liquid Pump Spare Part",
+                  "type": "part",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Spare part for the Center Filling Liquid Pump. Details coming soon."
+                }
+              ]
+            },
+            {
+              "id": "HC-L002-M13",
+              "machineNumber": "HC-L002-M13",
+              "model": "SEW-116",
+              "orderInLine": 13,
+              "name": "Center Filling Powder Pump",
+              "function": "Precision feeding unit that injects dry or semi-dry powdered filling into the centre of the candy rope.",
+              "description": "S.S 304 leaf with Teflon-covered S.S worm, M.S stand, 2 hp gear motor and variable inverter for speed control.",
+              "image": "assets/STARMER/_ready/HARD CANDY/Complete Candy Line 1000kg_hr/Powder Filling Pump.jpg",
+              "specs": {
+                "type": "Centre filling powder",
+                "leaf": "S.S 304 grade",
+                "gearMotor": "2 hp",
+                "variableInverter": "2 hp (speed control)",
+                "stand": "M.S",
+                "contactPart": "Rod with Teflon covering, S.S worm inside",
+                "powerLoad": "2 hp"
+              },
+              "diesAndParts": [
+                {
+                  "id": "HC-L002-M13-D01",
+                  "partNumber": "HC-L002-M13-D01",
+                  "name": "Center Filling Powder Pump Die",
+                  "type": "die",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Forming die for the Center Filling Powder Pump. Details coming soon."
+                },
+                {
+                  "id": "HC-L002-M13-P01",
+                  "partNumber": "HC-L002-M13-P01",
+                  "name": "Center Filling Powder Pump Spare Part",
+                  "type": "part",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Spare part for the Center Filling Powder Pump. Details coming soon."
+                }
+              ]
+            },
+            {
+              "id": "HC-L002-M14",
+              "machineNumber": "HC-L002-M14",
+              "model": "SEW-214",
+              "orderInLine": 14,
+              "name": "Batch Roller",
+              "function": "Continuously rolls and shapes the cooked mass into a uniform cylindrical rope with consistent filling, flavour and colour.",
+              "description": "Horizontal 4-roller batch roller in S.S 304 food grade with SEW (Germany) gear motor, up/down drive, control panel and 1000 W heaters.",
+              "image": "assets/STARMER/_ready/HARD CANDY/Complete Candy Line 1000kg_hr/Batch Roller.jpg",
+              "specs": {
+                "frame": "Horizontal",
+                "rollersQuantity": "4",
+                "rollersMaterial": "S.S 304 food grade",
+                "gearMotorMainDrive": "2 hp",
+                "upDownDrive": "2 hp",
+                "heaters": "1000 watt (2 Nos)",
+                "capacity": "125 kg",
+                "gearMotor": "SEW brand, Germany",
+                "dimension": "5'5\" x 3' x 8'5\"",
+                "powerLoad": "5.34 hp"
+              },
+              "diesAndParts": [
+                {
+                  "id": "HC-L002-M14-D01",
+                  "partNumber": "HC-L002-M14-D01",
+                  "name": "Batch Roller Die",
+                  "type": "die",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Forming die for the Batch Roller. Details coming soon."
+                },
+                {
+                  "id": "HC-L002-M14-P01",
+                  "partNumber": "HC-L002-M14-P01",
+                  "name": "Batch Roller Spare Part",
+                  "type": "part",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Spare part for the Batch Roller. Details coming soon."
+                }
+              ]
+            },
+            {
+              "id": "HC-L002-M15",
+              "machineNumber": "HC-L002-M15",
+              "model": "SEW-215",
+              "orderInLine": 15,
+              "name": "Rope Sizer (5 Stages)",
+              "function": "Accurately reduces and calibrates the candy/toffee rope diameter through five sizing stages for uniform thickness.",
+              "description": "Horizontal 5-stage rope sizer (4 horizontal + 1 vertical) with S.S 304 roller pairs, brass rope guide, digital inverter and SEW (Germany) gear motors.",
+              "image": "assets/STARMER/_ready/HARD CANDY/Complete Candy Line 1000kg_hr/Rope Sizer.jpg",
+              "specs": {
+                "sizerModel": "Horizontal, 5 stages (4 horizontal + 1 vertical)",
+                "pairs": "S.S 304 (22 mm x4, 16 mm x1)",
+                "ropeGuide": "Brass",
+                "inverter": "INVENT digital, 3 hp",
+                "gearMotors": "SEW brand, Germany, 3 hp",
+                "heatControllers": "Digital, 2 Nos",
+                "bearings": "Used instead of bushes",
+                "dimension": "4' x 4' x 6'",
+                "powerLoad": "5.68 hp"
+              },
+              "diesAndParts": [
+                {
+                  "id": "HC-L002-M15-D01",
+                  "partNumber": "HC-L002-M15-D01",
+                  "name": "Rope Sizer (5 Stages) Die",
+                  "type": "die",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Forming die for the Rope Sizer (5 Stages). Details coming soon."
+                },
+                {
+                  "id": "HC-L002-M15-P01",
+                  "partNumber": "HC-L002-M15-P01",
+                  "name": "Rope Sizer (5 Stages) Spare Part",
+                  "type": "part",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Spare part for the Rope Sizer (5 Stages). Details coming soon."
+                }
+              ]
+            },
+            {
+              "id": "HC-L002-M16",
+              "machineNumber": "HC-L002-M16",
+              "model": "SEW-216",
+              "orderInLine": 16,
+              "name": "Uniplast Forming Machine",
+              "function": "SEW 160-C universal seamless sweet forming machine for eclairs, hard-boiled candy, caramel and gum products, running 24/7 in solid, centre-filled, liquid-filled and powder-filled types at up to 1000 kg/hr.",
+              "description": "Teflon-coated food-grade belt with D2 pressure cams, high carbon steel sizer ratio and gears, spring-loaded diamond-polished punches and 1 hp die blower.",
+              "image": "assets/STARMER/_ready/HARD CANDY/Complete Candy Line 1000kg_hr/Kneading Machine.jpg",
+              "specs": {
+                "capacity": "Up to 1000 kg/hr",
+                "speed": "4000 to 6000 pieces/min (varies with product)",
+                "netWeight": "500 kg (1000 lbs)",
+                "grossWeight": "600 kg (1500 lbs)",
+                "belt": "Teflon coated, food grade",
+                "sideSheets": "S.S 304",
+                "pressureCams": "D2 grade",
+                "sizerRatioAndGears": "High carbon steel",
+                "blower": "1 hp (die cooling)",
+                "mainDrive": "3 hp",
+                "sizeBoxDrive": "1 hp",
+                "spreaderDrive": "0.5 hp",
+                "powerLoad": "7.5 hp"
+              },
+              "diesAndParts": [
+                {
+                  "id": "HC-L002-M16-D01",
+                  "partNumber": "HC-L002-M16-D01",
+                  "name": "Uniplast Forming Machine Die",
+                  "type": "die",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Forming die for the Uniplast Forming Machine. Details coming soon."
+                },
+                {
+                  "id": "HC-L002-M16-P01",
+                  "partNumber": "HC-L002-M16-P01",
+                  "name": "Uniplast Forming Machine Spare Part",
+                  "type": "part",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Spare part for the Uniplast Forming Machine. Details coming soon."
+                }
+              ]
+            },
+            {
+              "id": "HC-L002-M17",
+              "machineNumber": "HC-L002-M17",
+              "model": "SEW-217",
+              "orderInLine": 17,
+              "name": "Rotary Die with Cutting Ring",
+              "function": "Precision rotary forming die that shapes hard-boiled, toffee, eclair and filled candies; built for durable, high-accuracy, seamless forming.",
+              "description": "EN19 high-wear cutting ring and punch (up to 55 HRC), high-speed carbon steel guide pins, cast iron die parts and brass-cast outer ring.",
+              "image": "assets/STARMER/_ready/HARD CANDY/Complete Candy Line 1000kg_hr/Rotary Die.jpg",
+              "specs": {
+                "grade": "High speed grade",
+                "cuttingRing": "EN19, high wear resistance (tooth pitch up to 2 mm)",
+                "punch": "EN19, up to 55 HRC; high quality M.S tempered",
+                "guidePins": "High speed carbon steel",
+                "dieParts": "Cast iron grade",
+                "outerRing": "Brass casting (for rope cutting)",
+                "dimension": "Dia 1.5 ft x L 2 ft"
+              },
+              "diesAndParts": [
+                {
+                  "id": "HC-L002-M17-D01",
+                  "partNumber": "HC-L002-M17-D01",
+                  "name": "Rotary Die with Cutting Ring Die",
+                  "type": "die",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Forming die for the Rotary Die with Cutting Ring. Details coming soon."
+                },
+                {
+                  "id": "HC-L002-M17-P01",
+                  "partNumber": "HC-L002-M17-P01",
+                  "name": "Rotary Die with Cutting Ring Spare Part",
+                  "type": "part",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Spare part for the Rotary Die with Cutting Ring. Details coming soon."
+                }
+              ]
+            },
+            {
+              "id": "HC-L002-M18",
+              "machineNumber": "HC-L002-M18",
+              "model": "SEW-218",
+              "orderInLine": 18,
+              "name": "Die Stand",
+              "function": "For hanging the die and for die changing during operations.",
+              "description": "M.S frame with movement wheels, casting die-cap lane and die up/down screw.",
+              "image": "assets/STARMER/_ready/HARD CANDY/Complete Candy Line 1000kg_hr/Die Stand.jpg",
+              "specs": {
+                "mainFrame": "M.S",
+                "wheels": "For movement",
+                "dieCapLane": "Casting material",
+                "screw": "For die up/down",
+                "dimension": "5.5 ft (H) x 5 ft (dia)",
+                "powerLoad": "None"
+              },
+              "diesAndParts": [
+                {
+                  "id": "HC-L002-M18-D01",
+                  "partNumber": "HC-L002-M18-D01",
+                  "name": "Die Stand Die",
+                  "type": "die",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Forming die for the Die Stand. Details coming soon."
+                },
+                {
+                  "id": "HC-L002-M18-P01",
+                  "partNumber": "HC-L002-M18-P01",
+                  "name": "Die Stand Spare Part",
+                  "type": "part",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Spare part for the Die Stand. Details coming soon."
+                }
+              ]
+            },
+            {
+              "id": "HC-L002-M19",
+              "machineNumber": "HC-L002-M19",
+              "model": "SEW-219",
+              "orderInLine": 19,
+              "name": "Cooling Tunnel (3 Stages)",
+              "function": "Compact high-capacity three-tier cooling conveyor/tunnel with individually controlled motors, variable-speed AC drives and food-grade belting for precision cooling of up to 1000 kg/hr.",
+              "description": "Three-tier horizontal conveyor with Teflon-coated mesh steps, S.S 201 covers, thermopore insulation, S.S 304 inner panel and AC-conditioned ventilation.",
+              "image": "assets/STARMER/_ready/HARD CANDY/Complete Candy Line 1000kg_hr/Close body Cooling Tunnel _ 3 Stages Cooling Conveyor .jpg",
+              "specs": {
+                "style": "Three-tier horizontal cooling conveyor",
+                "stages": "3 stages",
+                "meshSteps": "Plastic Teflon-coated (3 steps), PP food-grade material",
+                "sideSheets": "Cooler and inner side sheets in S.S 201",
+                "covers": "S.S 201",
+                "insulation": "Double jacketed with thermopore; inner panel S.S 304",
+                "controls": "Electric panel with all new features, variable-speed inverter",
+                "dimension": "20 ft x 3 ft x 8 ft",
+                "powerLoad": "6 hp"
+              },
+              "diesAndParts": [
+                {
+                  "id": "HC-L002-M19-D01",
+                  "partNumber": "HC-L002-M19-D01",
+                  "name": "Cooling Tunnel (3 Stages) Die",
+                  "type": "die",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Forming die for the Cooling Tunnel (3 Stages). Details coming soon."
+                },
+                {
+                  "id": "HC-L002-M19-P01",
+                  "partNumber": "HC-L002-M19-P01",
+                  "name": "Cooling Tunnel (3 Stages) Spare Part",
+                  "type": "part",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Spare part for the Cooling Tunnel (3 Stages). Details coming soon."
+                }
+              ]
+            },
+            {
+              "id": "HC-L002-M20",
+              "machineNumber": "HC-L002-M20",
+              "model": "SEW-220",
+              "orderInLine": 20,
+              "name": "Cooling AC Unit",
+              "function": "Roof-type air-conditioning unit (20 ton / 25 HP) for cooling the tunnel conveyor section and accessories.",
+              "description": "Indoor unit with copper-tube evaporator and 3 HP blower; Bitzer 25 HP outdoor semi-sealed condensing unit with full AC accessories and ducting.",
+              "image": "assets/STARMER/_ready/HARD CANDY/Complete Candy Line 1000kg_hr/Ac Unit.jpg",
+              "specs": {
+                "capacity": "20 Ton (25 HP)",
+                "type": "Roof type",
+                "indoorBlower": "3 HP motor, 3 phase 440V/50Hz",
+                "expansionValve": "Emerson TCLE 25 HP",
+                "outdoorUnit": "Bitzer, high-density condensing coil",
+                "compressor": "Semi-sealed Bitzer, 3 phase 440V/50Hz",
+                "safety": "Danfoss dual high/low-pressure switch",
+                "refrigerant": "R-22 (Honeywell, USA)",
+                "inverter": "22 KVA (INVT)",
+                "ducting": "GI sheet with glass-wool insulation",
+                "powerLoad": "28 hp"
+              },
+              "diesAndParts": [
+                {
+                  "id": "HC-L002-M20-D01",
+                  "partNumber": "HC-L002-M20-D01",
+                  "name": "Cooling AC Unit Die",
+                  "type": "die",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Forming die for the Cooling AC Unit. Details coming soon."
+                },
+                {
+                  "id": "HC-L002-M20-P01",
+                  "partNumber": "HC-L002-M20-P01",
+                  "name": "Cooling AC Unit Spare Part",
+                  "type": "part",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Spare part for the Cooling AC Unit. Details coming soon."
+                }
+              ]
+            },
+            {
+              "id": "HC-L002-M21",
+              "machineNumber": "HC-L002-M21",
+              "model": "SEW-120",
+              "orderInLine": 21,
+              "name": "Vibrator",
+              "function": "Smoothly transports candies from cooling and forming to packaging, preventing clumping or sticking.",
+              "description": "M.S frame vibrator with S.S 304 main sheet and trays, twin fans, 1 hp drive.",
+              "image": "assets/STARMER/_ready/HARD CANDY/Complete Candy Line 1000kg_hr/Vibrator.jpg",
+              "specs": {
+                "frame": "M.S",
+                "mainSheet": "S.S 304",
+                "fans": "2 nos",
+                "gearMotor": "1 hp",
+                "trays": "S.S 304, 2 nos",
+                "dimension": "4 ft (width) x 8 ft (length)",
+                "powerLoad": "1 hp"
+              },
+              "diesAndParts": [
+                {
+                  "id": "HC-L002-M21-D01",
+                  "partNumber": "HC-L002-M21-D01",
+                  "name": "Vibrator Die",
+                  "type": "die",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Forming die for the Vibrator. Details coming soon."
+                },
+                {
+                  "id": "HC-L002-M21-P01",
+                  "partNumber": "HC-L002-M21-P01",
+                  "name": "Vibrator Spare Part",
+                  "type": "part",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Spare part for the Vibrator. Details coming soon."
+                }
+              ]
+            },
+            {
+              "id": "HC-L002-M22",
+              "machineNumber": "HC-L002-M22",
+              "model": "SEW-123",
+              "orderInLine": 22,
+              "name": "Pillow Pack Wrapping Machine",
+              "function": "High-performance pillow-pack wrapper for filled or un-filled candies and bubblegums at up to 800 pieces per minute.",
+              "description": "Photo-electric-eye pillow wrapper with inverter, 2 H.P 3-phase and ½ H.P motors, 3.2 kW heaters.",
+              "image": "assets/STARMER/_ready/HARD CANDY/Complete Candy Line 1000kg_hr/Pillow pack Wrapping Machine.jpg",
+              "specs": {
+                "output": "Up to 800 pcs/min (candy); up to 500 pcs/min (bubble)",
+                "electricMotors": "(1) 2 H.P / 3-phase, (2) ½ H.P",
+                "electricHeaters": "3.2 kW",
+                "standardEquipment": "Photo-electric eye & inverter",
+                "dimensions": "2,335 x 900 x 1,725 mm",
+                "weight": "750 kg",
+                "reel": "Max outer dia 280 mm / core dia 70 mm"
+              },
+              "diesAndParts": [
+                {
+                  "id": "HC-L002-M22-D01",
+                  "partNumber": "HC-L002-M22-D01",
+                  "name": "Pillow Pack Wrapping Machine Die",
+                  "type": "die",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Forming die for the Pillow Pack Wrapping Machine. Details coming soon."
+                },
+                {
+                  "id": "HC-L002-M22-P01",
+                  "partNumber": "HC-L002-M22-P01",
+                  "name": "Pillow Pack Wrapping Machine Spare Part",
+                  "type": "part",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Spare part for the Pillow Pack Wrapping Machine. Details coming soon."
+                }
+              ]
             }
           ]
         },
         {
           "id": "HC-L-003",
           "lineNumber": "HC-L-003",
-          "name": "Candy 1000 kg/hr Complete Line",
-          "productionRate": "1000 kg/hr",
-          "description": "High-capacity hard candy line for large-scale manufacturers. Twin-stream depositing and dual wrapping heads maximise output with minimal footprint.",
-          "image": "assets/images/production-lines/LINE 3.jpg",
+          "name": "Complete Candy Line 200 kg/hr",
+          "productionRate": "200 kg/hr",
+          "description": "A compact, fully integrated hard candy production line covering syrup dissolving, vacuum batch cooking, cooling, kneading, rope forming and pillow-pack wrapping at 200 kg/hr.",
+          "image": null,
           "machines": [
             {
               "id": "HC-L003-M01",
               "machineNumber": "HC-L003-M01",
+              "model": "SEW-101",
               "orderInLine": 1,
-              "name": "Sugar Dissolving Tank",
-              "function": "Dissolves raw sugar and syrups at high capacity",
-              "description": "",
-              "image": "assets/images/machines/M2.jpg",
+              "name": "Glucose Tank",
+              "function": "Glucose storage tanks are engineered with specific traits to ensure hygienic, stable and crystal-free storage of liquid glucose and syrups for industrial applications.",
+              "description": "Vertical S.S 304 storage tank with coil heating on the base of the tank and an externally mounted ladder.",
+              "image": "assets/STARMER/_ready/HARD CANDY/Complete Candy line 200Kg_Hr/Glucose Tank.jpg",
               "specs": {
-                "capacity": "1,200 L",
-                "powerConsumption": "18.5 kW",
-                "dimensions": "2,000 × 1,200 × 1,800 mm",
-                "weight": "1,100 kg",
-                "certifications": "CE, ISO 9001:2015"
+                "grade": "S.S 304",
+                "sheetThickness": "5 mm upper and lower sheet",
+                "outerDiaSheetThickness": "3 mm",
+                "designType": "Vertical",
+                "heatingSystem": "Coil on the base of tank",
+                "ladder": "Outside the tank",
+                "capacity": "20 ton glucose",
+                "dimension": "16 ft x 7 ft (H x diameter)"
               },
-              "diesAndParts": []
+              "diesAndParts": [
+                {
+                  "id": "HC-L003-M01-D01",
+                  "partNumber": "HC-L003-M01-D01",
+                  "name": "Glucose Tank Die",
+                  "type": "die",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Forming die for the Glucose Tank. Details coming soon."
+                },
+                {
+                  "id": "HC-L003-M01-P01",
+                  "partNumber": "HC-L003-M01-P01",
+                  "name": "Glucose Tank Spare Part",
+                  "type": "part",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Spare part for the Glucose Tank. Details coming soon."
+                }
+              ]
             },
             {
               "id": "HC-L003-M02",
               "machineNumber": "HC-L003-M02",
+              "model": "SEW-102",
               "orderInLine": 2,
-              "name": "Continuous Vacuum Cooker",
-              "function": "Cooks syrup to >98% dry solids in continuous flow",
-              "description": "",
-              "image": "assets/images/machines/M3.jpg",
+              "name": "Steam Generator",
+              "function": "Steam generator heats water to produce high-pressure steam for heating, cleaning or industrial process.",
+              "description": "Three-pass steam generator with Grundfos multistage feed-water pump, fully automatic electric control panel, and burner with gas assembly & diesel pump.",
+              "image": "assets/STARMER/_ready/HARD CANDY/Complete Candy line 200Kg_Hr/Steam Generator.jpg",
               "specs": {
-                "throughput": "1,100 kg/hr",
-                "powerConsumption": "55 kW",
-                "dimensions": "5,000 × 1,200 × 2,200 mm",
-                "weight": "2,800 kg",
-                "certifications": "CE, PED 2014/68/EU, ISO 9001:2015"
+                "typeOfPasses": "3 pass",
+                "testPressure": "225 psi",
+                "workingPressure": "150 psi",
+                "tubeSize": "2\" or 2½\"",
+                "pressureShellThickness": "1/2\"",
+                "tubeSheetThickness": "1/2\"",
+                "insulationSheetThickness": "24 gauge",
+                "rockWoolThickness": "2\"",
+                "feedWaterPump": "Grundfos, multistage",
+                "burnerMotor": "20 hp",
+                "dimension": "8' x 3'5\" x 3'5\"",
+                "capacity": "600 kg/hr",
+                "powerLoad": "5 hp"
               },
-              "diesAndParts": []
+              "diesAndParts": [
+                {
+                  "id": "HC-L003-M02-D01",
+                  "partNumber": "HC-L003-M02-D01",
+                  "name": "Steam Generator Die",
+                  "type": "die",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Forming die for the Steam Generator. Details coming soon."
+                },
+                {
+                  "id": "HC-L003-M02-P01",
+                  "partNumber": "HC-L003-M02-P01",
+                  "name": "Steam Generator Spare Part",
+                  "type": "part",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Spare part for the Steam Generator. Details coming soon."
+                }
+              ]
             },
             {
               "id": "HC-L003-M03",
               "machineNumber": "HC-L003-M03",
+              "model": "SEW-103",
               "orderInLine": 3,
-              "name": "Candy Mixing Table (Twin)",
-              "function": "Twin mixing arms for high-capacity color and flavor incorporation",
-              "description": "",
-              "image": "assets/images/machines/M4.jpg",
+              "name": "Steam Header",
+              "function": "Steam headers are designed to collect steam from a boiler or steam generator and distribute high-quality, dry steam to various user points while performing several critical functions.",
+              "description": "Cushioned cylinder header in mild steel with configurable branch pipes.",
+              "image": "assets/STARMER/_ready/HARD CANDY/Complete Candy line 200Kg_Hr/Steam Header.jpg",
               "specs": {
-                "throughput": "1,000 kg/hr",
-                "powerConsumption": "9 kW",
-                "certifications": "CE, ISO 9001:2015"
+                "materialOfHeader": "M.S",
+                "diameter": "1 ft",
+                "branchPipes": "1, 2, 3, 4 (depending on system needs)",
+                "design": "Cushioned Cylinder"
               },
-              "diesAndParts": []
+              "diesAndParts": [
+                {
+                  "id": "HC-L003-M03-D01",
+                  "partNumber": "HC-L003-M03-D01",
+                  "name": "Steam Header Die",
+                  "type": "die",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Forming die for the Steam Header. Details coming soon."
+                },
+                {
+                  "id": "HC-L003-M03-P01",
+                  "partNumber": "HC-L003-M03-P01",
+                  "name": "Steam Header Spare Part",
+                  "type": "part",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Spare part for the Steam Header. Details coming soon."
+                }
+              ]
             },
             {
               "id": "HC-L003-M04",
               "machineNumber": "HC-L003-M04",
+              "model": "SEW-106",
               "orderInLine": 4,
-              "name": "Batch Roller (Heavy Duty)",
-              "function": "Heavy-duty roller forming large candy logs for dual-stream production",
-              "description": "",
-              "image": "assets/images/machines/M5.jpg",
+              "name": "Dissolving Tank",
+              "function": "The dissolving tank is an essential unit in the candy manufacturing process designed for the controlled dissolution of sugar, glucose syrup, and other ingredients in water to form a homogeneous sugar solution or slurry.",
+              "description": "Double-jacketed tank with S.S 304 body and stirrer, M.S legs, 2 hp gear-motor main drive, steam gauge and safety/seat valves.",
+              "image": "assets/STARMER/_ready/HARD CANDY/Complete Candy line 200Kg_Hr/Dissolving Tank.jpg",
               "specs": {
-                "throughput": "1,000 kg/hr",
-                "powerConsumption": "15 kW",
-                "certifications": "CE, ISO 9001:2015"
+                "capacity": "400 kg",
+                "construction": "Double jacketed with M.S",
+                "body": "S.S 304",
+                "legs": "M.S",
+                "stirrer": "S.S 304",
+                "gearMotorMainDrive": "2 hp",
+                "fittings": "Steam gauge, safety valve, seat valve",
+                "dimension": "5'6\" x 3'5\" x 3'5\" (H x W x L)",
+                "powerLoad": "2 hp"
               },
-              "diesAndParts": []
+              "diesAndParts": [
+                {
+                  "id": "HC-L003-M04-D01",
+                  "partNumber": "HC-L003-M04-D01",
+                  "name": "Dissolving Tank Die",
+                  "type": "die",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Forming die for the Dissolving Tank. Details coming soon."
+                },
+                {
+                  "id": "HC-L003-M04-P01",
+                  "partNumber": "HC-L003-M04-P01",
+                  "name": "Dissolving Tank Spare Part",
+                  "type": "part",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Spare part for the Dissolving Tank. Details coming soon."
+                }
+              ]
             },
             {
               "id": "HC-L003-M05",
               "machineNumber": "HC-L003-M05",
+              "model": "SEW-005",
               "orderInLine": 5,
-              "name": "Rope Sizer (Dual Head)",
-              "function": "Dual-head rope sizer calibrating two parallel ropes simultaneously",
-              "description": "",
-              "image": "assets/images/machines/M1.jpg",
+              "name": "Batch Type Cooker",
+              "function": "A Batch Type Cooker (also called a batch cooker or batch vacuum cooker) is used to cook and concentrate the sugar syrup to the desired final moisture content and temperature, a critical step in producing high-quality candy.",
+              "description": "Double-jacketed batch cooker with S.S 304 pan and main body, M.S cooker frame, 2 hp gear-motor main drive, gauges and electric control panel.",
+              "image": "assets/STARMER/_ready/HARD CANDY/Complete Candy line 200Kg_Hr/Batch Type Cooker.jpg",
               "specs": {
-                "throughput": "1,000 kg/hr",
-                "powerConsumption": "5.5 kW",
-                "certifications": "CE, ISO 9001:2015"
+                "capacity": "200 kg per hour",
+                "gearMotorMainDrive": "2 hp",
+                "pan": "S.S 304",
+                "mainBody": "S.S 304",
+                "cookerFrame": "M.S",
+                "construction": "Double jacketed with M.S",
+                "controls": "Electric control panel, gauges",
+                "dimension": "4' x 2'5\" x 3'5\" (H x W x L)",
+                "powerLoad": "2 hp"
               },
-              "diesAndParts": []
+              "diesAndParts": [
+                {
+                  "id": "HC-L003-M05-D01",
+                  "partNumber": "HC-L003-M05-D01",
+                  "name": "Batch Type Cooker Die",
+                  "type": "die",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Forming die for the Batch Type Cooker. Details coming soon."
+                },
+                {
+                  "id": "HC-L003-M05-P01",
+                  "partNumber": "HC-L003-M05-P01",
+                  "name": "Batch Type Cooker Spare Part",
+                  "type": "part",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Spare part for the Batch Type Cooker. Details coming soon."
+                }
+              ]
             },
             {
               "id": "HC-L003-M06",
               "machineNumber": "HC-L003-M06",
+              "model": "SEW-006",
               "orderInLine": 6,
-              "name": "Drop Roller Forming Machine (HD)",
-              "function": "High-speed forming up to 2,500 pcs/min across dual streams",
-              "description": "",
-              "image": "assets/images/machines/M2.jpg",
+              "name": "Vacuum Pump",
+              "function": "The vacuum pump is used to rapidly remove moisture (water vapour) from the cooked candy mass under reduced pressure, which allows lower-temperature boiling and prevents caramelization or burning of sugars.",
+              "description": "M.S frame vacuum pump unit.",
+              "image": "assets/STARMER/_ready/HARD CANDY/Complete Candy line 200Kg_Hr/Vacuum Pump.jpg",
               "specs": {
-                "throughput": "2,500 pcs/min",
-                "powerConsumption": "15 kW",
-                "certifications": "CE, ISO 9001:2015"
+                "rating": "7.5 hp = 1450 rpm",
+                "frame": "M.S",
+                "dimension": "2 ft x 4 ft x 1 ft (H x W x L)",
+                "powerLoad": "7.5 hp"
               },
-              "diesAndParts": []
+              "diesAndParts": [
+                {
+                  "id": "HC-L003-M06-D01",
+                  "partNumber": "HC-L003-M06-D01",
+                  "name": "Vacuum Pump Die",
+                  "type": "die",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Forming die for the Vacuum Pump. Details coming soon."
+                },
+                {
+                  "id": "HC-L003-M06-P01",
+                  "partNumber": "HC-L003-M06-P01",
+                  "name": "Vacuum Pump Spare Part",
+                  "type": "part",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Spare part for the Vacuum Pump. Details coming soon."
+                }
+              ]
             },
             {
               "id": "HC-L003-M07",
               "machineNumber": "HC-L003-M07",
+              "model": "SEW-108",
               "orderInLine": 7,
-              "name": "Cooling Conveyor (Extended)",
-              "function": "Extended 12 m cooling conveyor for high-capacity throughput",
-              "description": "",
-              "image": "assets/images/machines/M3.jpg",
+              "name": "Cooling Tables",
+              "function": "The cooling table is a crucial post-cooking unit used for rapid cooling and conditioning of the cooked sugar mass before further processing such as mixing, flavoring, coloring, or forming. It ensures uniform texture and workability of the batch.",
+              "description": "Water-cooled S.S 304 cooling table with A-frame water inlet/outlet circuit and S.S 201 legs.",
+              "image": "assets/STARMER/_ready/HARD CANDY/Complete Candy line 200Kg_Hr/Cooling Table.jpg",
               "specs": {
-                "throughput": "1,000 kg/hr",
-                "powerConsumption": "7.5 kW",
-                "dimensions": "12,000 × 900 × 1,100 mm",
-                "certifications": "CE, ISO 9001:2015"
+                "basePlateThickness": "10 mm in S.S 304",
+                "materialOfPlate": "Boundary wall S.S 304",
+                "coolingMedium": "Water cooling system, A-frame for moving water inlet and outlet",
+                "legs": "4 Nos in S.S 201 grade",
+                "dimension": "3 ft x 6 ft x 2'6\" (H x L x W)",
+                "powerLoad": "None"
               },
-              "diesAndParts": []
+              "diesAndParts": [
+                {
+                  "id": "HC-L003-M07-D01",
+                  "partNumber": "HC-L003-M07-D01",
+                  "name": "Cooling Tables Die",
+                  "type": "die",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Forming die for the Cooling Tables. Details coming soon."
+                },
+                {
+                  "id": "HC-L003-M07-P01",
+                  "partNumber": "HC-L003-M07-P01",
+                  "name": "Cooling Tables Spare Part",
+                  "type": "part",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Spare part for the Cooling Tables. Details coming soon."
+                }
+              ]
             },
             {
               "id": "HC-L003-M08",
               "machineNumber": "HC-L003-M08",
+              "model": "SEW-109",
               "orderInLine": 8,
-              "name": "Wrapping Machine (Dual Head)",
-              "function": "Dual-head wrapping machine for high-speed individual candy wrapping",
-              "description": "",
-              "image": "assets/images/machines/M4.jpg",
+              "name": "Kneading Machine",
+              "function": "The rotary kneading machine (SEW-109) is a specialized piece of confectionery equipment perfectly suited for the uniform mixing and kneading of the cooked sugar mass used in producing hard-boiled candy. It guarantees uniform distribution of essential ingredients including solids, acids and additives, operates hygienically with stainless steel water-cooled contact parts, and eliminates the need for tiresome manual mixing.",
+              "description": "S.S 304 roller and main plates with S.S 201 side sheets, 5 hp main drive and on/off control.",
+              "image": "assets/STARMER/_ready/HARD CANDY/Complete Candy line 200Kg_Hr/Kneading Machine.jpg",
               "specs": {
-                "throughput": "2,500 pcs/min",
-                "powerConsumption": "15 kW",
-                "certifications": "CE, ISO 9001:2015"
+                "roller": "S.S 304",
+                "mainDrive": "5 hp",
+                "steelPlate": "4 ft",
+                "control": "On/off switch",
+                "sideSheets": "S.S 201",
+                "mainPlates": "S.S 304",
+                "dimension": "3'5\" x 6\" x 5'5\" (H x W x L)",
+                "powerLoad": "5 hp"
               },
-              "diesAndParts": []
+              "diesAndParts": [
+                {
+                  "id": "HC-L003-M08-D01",
+                  "partNumber": "HC-L003-M08-D01",
+                  "name": "Kneading Machine Die",
+                  "type": "die",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Forming die for the Kneading Machine. Details coming soon."
+                },
+                {
+                  "id": "HC-L003-M08-P01",
+                  "partNumber": "HC-L003-M08-P01",
+                  "name": "Kneading Machine Spare Part",
+                  "type": "part",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Spare part for the Kneading Machine. Details coming soon."
+                }
+              ]
+            },
+            {
+              "id": "HC-L003-M09",
+              "machineNumber": "HC-L003-M09",
+              "model": "SEW-009",
+              "orderInLine": 9,
+              "name": "Powder Filling Pump",
+              "function": "The centre filling powder pump is a precision feeding and dosing unit designed to inject or deliver dry or semi-dry powdered filling materials (such as soft paste, cocoa powder, fruit powders or salt-based fillers) into the centre of a candy rope during forming. It ensures consistent and uniform distribution of powder filling across all pieces.",
+              "description": "S.S 304 powder filling pump with Teflon-covered S.S worm, M.S stand, 2 hp gear motor and variable inverter for speed control.",
+              "image": "assets/STARMER/_ready/HARD CANDY/Complete Candy line 200Kg_Hr/Powder Filling Pump.jpg",
+              "specs": {
+                "type": "Centre filling powder",
+                "roller": "S.S 304 grade",
+                "gearMotor": "2 hp",
+                "variableInverter": "2 hp (for speed control)",
+                "stand": "M.S",
+                "contactPart": "Teflon covering with S.S worm inside",
+                "powerLoad": "2 hp"
+              },
+              "diesAndParts": [
+                {
+                  "id": "HC-L003-M09-D01",
+                  "partNumber": "HC-L003-M09-D01",
+                  "name": "Powder Filling Pump Die",
+                  "type": "die",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Forming die for the Powder Filling Pump. Details coming soon."
+                },
+                {
+                  "id": "HC-L003-M09-P01",
+                  "partNumber": "HC-L003-M09-P01",
+                  "name": "Powder Filling Pump Spare Part",
+                  "type": "part",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Spare part for the Powder Filling Pump. Details coming soon."
+                }
+              ]
+            },
+            {
+              "id": "HC-L003-M10",
+              "machineNumber": "HC-L003-M10",
+              "model": "SEW-114",
+              "orderInLine": 10,
+              "name": "Batch Roller",
+              "function": "The batch roller is a key intermediate machine in the candy, lollipop, toffee and fudge production line, designed to continuously roll, shape and form the cooked mass into a uniform cylindrical rope. It ensures consistent rope size and proper distribution of centre filling, flavour and colour before feeding into the rope sizer or forming machine.",
+              "description": "Horizontal 4-roller batch roller in S.S 304 food grade with SEW (Germany) gear motor, up/down 1 hp drive, electric control panel and 1000 W heaters.",
+              "image": "assets/STARMER/_ready/HARD CANDY/Complete Candy line 200Kg_Hr/Batch Roller.jpg",
+              "specs": {
+                "frame": "Horizontal",
+                "rollersQuantity": "4",
+                "rollersMaterial": "S.S 304 food grade",
+                "upperBody": "S.S 304 food grade",
+                "gearMotor": "SEW brand, Germany",
+                "upDownDrive": "1 hp",
+                "heaters": "1000 watt (2 Nos)",
+                "capacity": "75 kg",
+                "length": "4.5 ft",
+                "dimension": "4'5\" x 2'5\" x 5'6\" (H x W x L)",
+                "powerLoad": "4.68 hp"
+              },
+              "diesAndParts": [
+                {
+                  "id": "HC-L003-M10-D01",
+                  "partNumber": "HC-L003-M10-D01",
+                  "name": "Batch Roller Die",
+                  "type": "die",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Forming die for the Batch Roller. Details coming soon."
+                },
+                {
+                  "id": "HC-L003-M10-P01",
+                  "partNumber": "HC-L003-M10-P01",
+                  "name": "Batch Roller Spare Part",
+                  "type": "part",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Spare part for the Batch Roller. Details coming soon."
+                }
+              ]
+            },
+            {
+              "id": "HC-L003-M11",
+              "machineNumber": "HC-L003-M11",
+              "model": "SEW-115",
+              "orderInLine": 11,
+              "name": "Rope Sizer",
+              "function": "The rope sizer is a precision machine used to accurately reduce and calibrate the diameter of the candy and toffee rope produced by the batch roller. It ensures a uniform rope thickness suitable for feeding into the forming or cutting machine, maintaining consistent candy size and weight throughout production.",
+              "description": "Horizontal 5-stage rope sizer with S.S 304 roller pairs, brass rope guide, digital inverter and SEW (Germany) gear motors; bearings used instead of bushes for low maintenance.",
+              "image": "assets/STARMER/_ready/HARD CANDY/Complete Candy line 200Kg_Hr/Rope sizer.jpg",
+              "specs": {
+                "sizerModel": "Horizontal, 5 stages",
+                "firstPair": "S.S 304, 22 mm",
+                "secondPair": "S.S 304, 22 mm",
+                "thirdPair": "S.S 304, 20 mm",
+                "fourthPair": "S.S 304, 20 mm",
+                "ropeGuide": "Brass",
+                "inverter": "Digital, new brand",
+                "gearMotors": "SEW brand, Germany",
+                "heatControllers": "Digital, 2 Nos",
+                "mainDriveGearMotor": "2 hp",
+                "heaters": "500 watt (4 Nos) = 2 kw",
+                "safety": "Emergency break & switch, electric breakers",
+                "bearings": "Used instead of bushes to reduce maintenance",
+                "dimension": "4.5 ft x 2.5 ft x 6 ft (H x W x L)",
+                "powerLoad": "4.68 hp"
+              },
+              "diesAndParts": [
+                {
+                  "id": "HC-L003-M11-D01",
+                  "partNumber": "HC-L003-M11-D01",
+                  "name": "Rope Sizer Die",
+                  "type": "die",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Forming die for the Rope Sizer. Details coming soon."
+                },
+                {
+                  "id": "HC-L003-M11-P01",
+                  "partNumber": "HC-L003-M11-P01",
+                  "name": "Rope Sizer Spare Part",
+                  "type": "part",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Spare part for the Rope Sizer. Details coming soon."
+                }
+              ]
+            },
+            {
+              "id": "HC-L003-M12",
+              "machineNumber": "HC-L003-M12",
+              "model": "SEW-011",
+              "orderInLine": 12,
+              "name": "Small Candy Plant",
+              "function": "A Small Candy Former is a forming unit designed to shape, size and cut candy mass into uniform pieces under controlled mechanical and thermal conditions. Its primary function within the candy production line is to convert the candy rope produced after cooking and rolling into individual shaped units.",
+              "description": "Oil-bath geared candy former with M.S side sheets and on/off control; supports powder filling. Die supplied separately.",
+              "image": "assets/STARMER/_ready/HARD CANDY/Complete Candy line 200Kg_Hr/Small Candy Plant .jpg",
+              "specs": {
+                "gears": "Oil bath system",
+                "motor": "1 hp",
+                "sideSheets": "M.S (mild steel)",
+                "die": "Without die (supplied separately)",
+                "control": "On/off switch",
+                "speed": "Up to 1000 pieces/min",
+                "capacity": "Up to 200 kg/hr",
+                "powerLoad": "1 hp"
+              },
+              "diesAndParts": [
+                {
+                  "id": "HC-L003-M12-D01",
+                  "partNumber": "HC-L003-M12-D01",
+                  "name": "Small Candy Plant Die",
+                  "type": "die",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Forming die for the Small Candy Plant. Details coming soon."
+                },
+                {
+                  "id": "HC-L003-M12-P01",
+                  "partNumber": "HC-L003-M12-P01",
+                  "name": "Small Candy Plant Spare Part",
+                  "type": "part",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Spare part for the Small Candy Plant. Details coming soon."
+                }
+              ]
+            },
+            {
+              "id": "HC-L003-M13",
+              "machineNumber": "HC-L003-M13",
+              "model": "SEW-013",
+              "orderInLine": 13,
+              "name": "Small Candy Die",
+              "function": "Interchangeable forming die for the small candy plant, used to shape the candy rope into the required individual candy shape and size.",
+              "description": "",
+              "image": "assets/STARMER/_ready/HARD CANDY/Complete Candy line 200Kg_Hr/Small Candy Die .jpg",
+              "specs": {},
+              "diesAndParts": [
+                {
+                  "id": "HC-L003-M13-D01",
+                  "partNumber": "HC-L003-M13-D01",
+                  "name": "Small Candy Die Die",
+                  "type": "die",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Forming die for the Small Candy Die. Details coming soon."
+                },
+                {
+                  "id": "HC-L003-M13-P01",
+                  "partNumber": "HC-L003-M13-P01",
+                  "name": "Small Candy Die Spare Part",
+                  "type": "part",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Spare part for the Small Candy Die. Details coming soon."
+                }
+              ]
+            },
+            {
+              "id": "HC-L003-M14",
+              "machineNumber": "HC-L003-M14",
+              "model": "SEW-120",
+              "orderInLine": 14,
+              "name": "Vibrator",
+              "function": "The vibrator helps smoothly transport candies from the cooling and forming sections to packaging, preventing clumping or sticking.",
+              "description": "M.S frame vibrator with S.S 304 main sheet and trays, twin fans and a 1 hp gear motor.",
+              "image": "assets/STARMER/_ready/HARD CANDY/Complete Candy line 200Kg_Hr/Vibrator.jpg",
+              "specs": {
+                "frame": "M.S",
+                "mainSheet": "S.S 304",
+                "fans": "2 nos",
+                "gearMotor": "1 hp",
+                "trays": "S.S 304, 2 nos (for removal of wastage)",
+                "dimension": "4 ft (width) x 8 ft (length)",
+                "powerLoad": "1 hp"
+              },
+              "diesAndParts": [
+                {
+                  "id": "HC-L003-M14-D01",
+                  "partNumber": "HC-L003-M14-D01",
+                  "name": "Vibrator Die",
+                  "type": "die",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Forming die for the Vibrator. Details coming soon."
+                },
+                {
+                  "id": "HC-L003-M14-P01",
+                  "partNumber": "HC-L003-M14-P01",
+                  "name": "Vibrator Spare Part",
+                  "type": "part",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Spare part for the Vibrator. Details coming soon."
+                }
+              ]
+            },
+            {
+              "id": "HC-L003-M15",
+              "machineNumber": "HC-L003-M15",
+              "model": "SEW-123",
+              "orderInLine": 15,
+              "name": "Pillow Pack Wrapping Machine",
+              "function": "A high-performance pillow-pack wrapping machine for filled or un-filled candies, bubblegums and similar items, incorporating latest precision components and capable of speeds up to 800 pieces per minute. High-quality fin seal and reel ensure long shelf life. A large feed disc and brushes enable positive transfer of candies to the centre chain.",
+              "description": "Photo-electric-eye pillow wrapper with inverter, 2 H.P 3-phase and ½ H.P motors and 3.2 kW heaters.",
+              "image": "assets/STARMER/_ready/HARD CANDY/Complete Candy line 200Kg_Hr/Pillow Pack Wrapping Machine.jpg",
+              "specs": {
+                "output": "Up to 800 pcs/min (candy); up to 500 pcs/min (bubble)",
+                "electricMotors": "(1) 2 H.P / 3-phase, (2) ½ H.P",
+                "electricHeaters": "3.2 kW",
+                "standardEquipment": "Photo-electric eye & inverter",
+                "dimensions": "2,335 x 900 x 1,725 mm (H x W x L)",
+                "weight": "750 kg",
+                "reel": "Max outer dia 280 mm / core dia 70 mm"
+              },
+              "diesAndParts": [
+                {
+                  "id": "HC-L003-M15-D01",
+                  "partNumber": "HC-L003-M15-D01",
+                  "name": "Pillow Pack Wrapping Machine Die",
+                  "type": "die",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Forming die for the Pillow Pack Wrapping Machine. Details coming soon."
+                },
+                {
+                  "id": "HC-L003-M15-P01",
+                  "partNumber": "HC-L003-M15-P01",
+                  "name": "Pillow Pack Wrapping Machine Spare Part",
+                  "type": "part",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Spare part for the Pillow Pack Wrapping Machine. Details coming soon."
+                }
+              ]
             }
           ]
         },
         {
           "id": "HC-L-004",
           "lineNumber": "HC-L-004",
-          "name": "Candy Chain Die 450 kg/hr Complete Line",
+          "name": "Complete Candy Line 450 kg/hr",
           "productionRate": "450 kg/hr",
-          "description": "Chain die forming technology for complex candy shapes. The chain die method produces filled and multi-colour candies not achievable with drop rollers.",
-          "image": "assets/images/production-lines/LINE 4.avif",
+          "description": "A complete hard candy line with continuous vacuum cooking, Uniplast forming and rotary die cutting, bubble-gum mixing/extrusion, centre filling, open and close-body cooling and pillow-pack wrapping at 450 kg/hr.",
+          "image": null,
           "machines": [
             {
               "id": "HC-L004-M01",
               "machineNumber": "HC-L004-M01",
+              "model": "SEW-101",
               "orderInLine": 1,
-              "name": "Sugar Dissolving Tank",
-              "function": "Dissolves raw sugar and syrups at medium-high capacity",
-              "description": "",
-              "image": "assets/images/machines/M5.jpg",
+              "name": "Glucose Tank",
+              "function": "Hygienic vertical storage tank for stable, crystal-free storage of liquid glucose and syrups.",
+              "description": "Vertical S.S 304 tank with base coil heating and external ladder.",
+              "image": "assets/STARMER/_ready/HARD CANDY/Complete Candy line 450Kg_Hr/Glucose Tank.jpg",
               "specs": {
-                "capacity": "600 L",
-                "powerConsumption": "11 kW",
-                "certifications": "CE, ISO 9001:2015"
+                "grade": "S.S 304",
+                "sheetThickness": "5 mm upper and lower sheet",
+                "outerDiaSheetThickness": "3 mm",
+                "designType": "Vertical",
+                "heatingSystem": "Coil on the base of tank (for steam circulation)",
+                "ladder": "Outside the tank",
+                "capacity": "20 ton glucose",
+                "dimension": "16 ft height x 7 ft diameter"
               },
-              "diesAndParts": []
+              "diesAndParts": [
+                {
+                  "id": "HC-L004-M01-D01",
+                  "partNumber": "HC-L004-M01-D01",
+                  "name": "Glucose Tank Die",
+                  "type": "die",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Forming die for the Glucose Tank. Details coming soon."
+                },
+                {
+                  "id": "HC-L004-M01-P01",
+                  "partNumber": "HC-L004-M01-P01",
+                  "name": "Glucose Tank Spare Part",
+                  "type": "part",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Spare part for the Glucose Tank. Details coming soon."
+                }
+              ]
             },
             {
               "id": "HC-L004-M02",
               "machineNumber": "HC-L004-M02",
+              "model": "SEW-102",
               "orderInLine": 2,
-              "name": "Vacuum Cooker",
-              "function": "Cooks syrup under vacuum to precise dry solids",
-              "description": "",
-              "image": "assets/images/machines/M1.jpg",
+              "name": "Steam Generator",
+              "function": "Produces high-pressure steam for heating, cleaning and process use across the line.",
+              "description": "Three-pass steam generator with Grundfos multistage feed-water pump, automatic electric control panel and burner with gas assembly & diesel pump.",
+              "image": "assets/STARMER/_ready/HARD CANDY/Complete Candy line 450Kg_Hr/Steam Generator.jpg",
               "specs": {
-                "throughput": "500 kg/hr",
-                "powerConsumption": "28 kW",
-                "certifications": "CE, PED 2014/68/EU, ISO 9001:2015"
+                "typeOfPasses": "3 pass",
+                "testPressure": "225 psi",
+                "workingPressure": "150 psi",
+                "tubeSize": "2\" or 2½\"",
+                "pressureShellThickness": "3/8\"",
+                "insulationSheetThickness": "24 gauge",
+                "feedWaterPump": "Grundfos, multistage",
+                "feedWaterMotor": "3 hp",
+                "capacity": "1000 kg/hr",
+                "dimension": "8' x 3'5\" x 3'5\"",
+                "powerLoad": "7 hp"
               },
-              "diesAndParts": []
+              "diesAndParts": [
+                {
+                  "id": "HC-L004-M02-D01",
+                  "partNumber": "HC-L004-M02-D01",
+                  "name": "Steam Generator Die",
+                  "type": "die",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Forming die for the Steam Generator. Details coming soon."
+                },
+                {
+                  "id": "HC-L004-M02-P01",
+                  "partNumber": "HC-L004-M02-P01",
+                  "name": "Steam Generator Spare Part",
+                  "type": "part",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Spare part for the Steam Generator. Details coming soon."
+                }
+              ]
             },
             {
               "id": "HC-L004-M03",
               "machineNumber": "HC-L004-M03",
+              "model": "SEW-103",
               "orderInLine": 3,
-              "name": "Candy Mixing Table",
-              "function": "Incorporates color, flavor and acid into the hot candy mass",
-              "description": "",
-              "image": "assets/images/machines/M2.jpg",
+              "name": "Steam Header",
+              "function": "Collects steam from the generator and distributes dry, high-quality steam to user points across the line.",
+              "description": "Cushioned cylinder header in mild steel with configurable branch pipes.",
+              "image": "assets/STARMER/_ready/HARD CANDY/Complete Candy line 450Kg_Hr/Steam Header.jpg",
               "specs": {
-                "throughput": "450 kg/hr",
-                "powerConsumption": "5.5 kW",
-                "certifications": "CE, ISO 9001:2015"
+                "materialOfHeader": "M.S",
+                "diameter": "1 ft",
+                "branchPipes": "1\", 2\", 3\", 4\" (depending on system needs)",
+                "design": "Cushioned Cylinder",
+                "connections": "5",
+                "dimension": "1 ft (dia) x 3 ft (length)",
+                "powerLoad": "None"
               },
-              "diesAndParts": []
+              "diesAndParts": [
+                {
+                  "id": "HC-L004-M03-D01",
+                  "partNumber": "HC-L004-M03-D01",
+                  "name": "Steam Header Die",
+                  "type": "die",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Forming die for the Steam Header. Details coming soon."
+                },
+                {
+                  "id": "HC-L004-M03-P01",
+                  "partNumber": "HC-L004-M03-P01",
+                  "name": "Steam Header Spare Part",
+                  "type": "part",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Spare part for the Steam Header. Details coming soon."
+                }
+              ]
             },
             {
               "id": "HC-L004-M04",
               "machineNumber": "HC-L004-M04",
+              "model": "SEW-104",
               "orderInLine": 4,
-              "name": "Batch Roller",
-              "function": "Rolls candy mass into a uniform log",
-              "description": "",
-              "image": "assets/images/machines/M3.jpg",
+              "name": "Candy Continuous Vacuum Cooker",
+              "function": "Continuous vacuum cooker that automatically produces hard-boiled candies and milk caramels with high clarity and smooth texture at adjustable parameters.",
+              "description": "Double-jacketed S.S 304 pans and body with sugar pump, steam trap and full S.S water nozzles.",
+              "image": "assets/STARMER/_ready/HARD CANDY/Complete Candy line 450Kg_Hr/Candy Continuous Cooker.jpg",
               "specs": {
-                "throughput": "450 kg/hr",
-                "powerConsumption": "7.5 kW",
-                "certifications": "CE, ISO 9001:2015"
+                "output": "450 kg/hr",
+                "drive": "2 hp",
+                "pans": "S.S 304",
+                "body": "S.S 304, double jacketed",
+                "sugarPump": "2 hp, 1450 rpm",
+                "dosingPump": "3 hp (imported)",
+                "fittings": "Outer tube jacketed, steam trap, full S.S water nozzles",
+                "controls": "Electric panel with all new features",
+                "dimension": "8.5 ft x 6 ft x 7 ft",
+                "powerLoad": "4 hp"
               },
-              "diesAndParts": []
+              "diesAndParts": [
+                {
+                  "id": "HC-L004-M04-D01",
+                  "partNumber": "HC-L004-M04-D01",
+                  "name": "Candy Continuous Vacuum Cooker Die",
+                  "type": "die",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Forming die for the Candy Continuous Vacuum Cooker. Details coming soon."
+                },
+                {
+                  "id": "HC-L004-M04-P01",
+                  "partNumber": "HC-L004-M04-P01",
+                  "name": "Candy Continuous Vacuum Cooker Spare Part",
+                  "type": "part",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Spare part for the Candy Continuous Vacuum Cooker. Details coming soon."
+                }
+              ]
             },
             {
               "id": "HC-L004-M05",
               "machineNumber": "HC-L004-M05",
+              "model": "SEW-105",
               "orderInLine": 5,
-              "name": "Rope Sizer",
-              "function": "Calibrates candy rope to precise diameter for chain die entry",
-              "description": "",
-              "image": "assets/images/machines/M4.jpg",
+              "name": "Vacuum Pump",
+              "function": "Rapidly removes moisture from the cooked candy mass under reduced pressure to prevent caramelisation.",
+              "description": "M.S frame vacuum pump unit.",
+              "image": "assets/STARMER/_ready/HARD CANDY/Complete Candy line 450Kg_Hr/Vacuum Pump.jpg",
               "specs": {
-                "throughput": "450 kg/hr",
-                "powerConsumption": "3 kW",
-                "certifications": "CE, ISO 9001:2015"
+                "rating": "7.5 hp = 1450 rpm",
+                "frame": "M.S",
+                "dimension": "2 ft x 4 ft x 1 ft",
+                "powerLoad": "10 hp"
               },
-              "diesAndParts": []
+              "diesAndParts": [
+                {
+                  "id": "HC-L004-M05-D01",
+                  "partNumber": "HC-L004-M05-D01",
+                  "name": "Vacuum Pump Die",
+                  "type": "die",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Forming die for the Vacuum Pump. Details coming soon."
+                },
+                {
+                  "id": "HC-L004-M05-P01",
+                  "partNumber": "HC-L004-M05-P01",
+                  "name": "Vacuum Pump Spare Part",
+                  "type": "part",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Spare part for the Vacuum Pump. Details coming soon."
+                }
+              ]
             },
             {
               "id": "HC-L004-M06",
               "machineNumber": "HC-L004-M06",
+              "model": "SEW-106",
               "orderInLine": 6,
-              "name": "Chain Die Forming Machine",
-              "function": "Forms complex candy shapes using interlocking chain die molds — enables filled and multi-layer candies",
-              "description": "Synchronized chain die mold system that encloses the candy rope in interlocking molds, allowing complex shapes, filled centres, and embossed logos. Die chain changeover in 30 minutes.",
-              "image": "assets/images/machines/M5.jpg",
+              "name": "Dissolving Tank",
+              "function": "Controlled dissolution of sugar, glucose syrup and other ingredients into a homogeneous sugar solution.",
+              "description": "Double-jacketed S.S 304 tank with stirrer, M.S legs, 2 hp drive, steam gauge and safety/seat valves.",
+              "image": "assets/STARMER/_ready/HARD CANDY/Complete Candy line 450Kg_Hr/Dissolving Tank.jpg",
               "specs": {
-                "throughput": "900 pcs/min",
-                "powerConsumption": "11 kW",
-                "dimensions": "2,200 × 900 × 1,600 mm",
-                "weight": "1,100 kg",
-                "materialContact": "H13 Tool Steel, Hard Chrome",
-                "chainLength": "2,400 mm",
-                "certifications": "CE, ISO 9001:2015"
+                "capacity": "400 kg",
+                "construction": "Double jacketed with M.S",
+                "body": "S.S 304",
+                "legs": "M.S",
+                "stirrer": "S.S 304",
+                "gearMotorMainDrive": "2 hp",
+                "fittings": "Steam gauge, safety valve, seat valve",
+                "dimension": "5'6\" x 3'5\" x 3'5\"",
+                "powerLoad": "2 hp"
               },
               "diesAndParts": [
                 {
                   "id": "HC-L004-M06-D01",
                   "partNumber": "HC-L004-M06-D01",
+                  "name": "Dissolving Tank Die",
                   "type": "die",
-                  "name": "Chain Die Set — Oval Shape",
-                  "description": "Complete chain die set producing oval hard candy 22×14×9 mm. 40-link chain with interchangeable mold inserts.",
-                  "image": "assets/images/spare-parts/S1.jpg",
-                  "specs": {
-                    "candyShape": "Oval",
-                    "candySize": "22 × 14 × 9 mm",
-                    "chainLinks": "40",
-                    "material": "H13 Tool Steel",
-                    "compatibleMachine": "HC-L004-M06"
-                  }
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Forming die for the Dissolving Tank. Details coming soon."
+                },
+                {
+                  "id": "HC-L004-M06-P01",
+                  "partNumber": "HC-L004-M06-P01",
+                  "name": "Dissolving Tank Spare Part",
+                  "type": "part",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Spare part for the Dissolving Tank. Details coming soon."
                 }
               ]
             },
             {
               "id": "HC-L004-M07",
               "machineNumber": "HC-L004-M07",
+              "model": "SEW-107",
               "orderInLine": 7,
-              "name": "Cooling Conveyor",
-              "function": "Cools chain die formed candies to packaging temperature",
-              "description": "",
-              "image": "assets/images/machines/M1.jpg",
+              "name": "Storage Tank",
+              "function": "Holds and maintains cooked sugar mass or syrup at controlled temperature before the forming or depositing section.",
+              "description": "Single-jacketed S.S 304 tank with stirrer, M.S legs and 1 hp drive.",
+              "image": "assets/STARMER/_ready/HARD CANDY/Complete Candy line 450Kg_Hr/Storage Tank.jpg",
               "specs": {
-                "throughput": "450 kg/hr",
-                "powerConsumption": "4.5 kW",
-                "certifications": "CE, ISO 9001:2015"
+                "capacity": "400 kg",
+                "construction": "Single jacketed",
+                "body": "S.S 304",
+                "legs": "M.S",
+                "stirrer": "S.S 304",
+                "gearMotorMainDrive": "1 hp",
+                "dimension": "6' x 3'6\" x 3'6\"",
+                "powerLoad": "1 hp"
               },
-              "diesAndParts": []
+              "diesAndParts": [
+                {
+                  "id": "HC-L004-M07-D01",
+                  "partNumber": "HC-L004-M07-D01",
+                  "name": "Storage Tank Die",
+                  "type": "die",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Forming die for the Storage Tank. Details coming soon."
+                },
+                {
+                  "id": "HC-L004-M07-P01",
+                  "partNumber": "HC-L004-M07-P01",
+                  "name": "Storage Tank Spare Part",
+                  "type": "part",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Spare part for the Storage Tank. Details coming soon."
+                }
+              ]
             },
             {
               "id": "HC-L004-M08",
               "machineNumber": "HC-L004-M08",
+              "model": "SEW-108",
               "orderInLine": 8,
-              "name": "Individual Wrapping Machine",
-              "function": "Wraps complex-shaped candies in twist or fold format",
-              "description": "",
-              "image": "assets/images/machines/M2.jpg",
+              "name": "Cooling Table",
+              "function": "Rapid cooling and conditioning of the cooked sugar mass for uniform texture and workability before forming.",
+              "description": "Water-cooled S.S 304 table with A-frame circuit and S.S 201 legs.",
+              "image": "assets/STARMER/_ready/HARD CANDY/Complete Candy line 450Kg_Hr/Cooling table.jpg",
               "specs": {
-                "throughput": "900 pcs/min",
-                "powerConsumption": "7 kW",
-                "certifications": "CE, ISO 9001:2015"
+                "basePlateThickness": "10 mm in S.S 304",
+                "materialOfPlate": "Boundary wall S.S 304",
+                "coolingMedium": "Water cooling system, A-frame inlet/outlet",
+                "legs": "4 Nos in S.S 201 grade",
+                "dimension": "3 ft x 6 ft x 2'6\"",
+                "powerLoad": "None"
               },
-              "diesAndParts": []
+              "diesAndParts": [
+                {
+                  "id": "HC-L004-M08-D01",
+                  "partNumber": "HC-L004-M08-D01",
+                  "name": "Cooling Table Die",
+                  "type": "die",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Forming die for the Cooling Table. Details coming soon."
+                },
+                {
+                  "id": "HC-L004-M08-P01",
+                  "partNumber": "HC-L004-M08-P01",
+                  "name": "Cooling Table Spare Part",
+                  "type": "part",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Spare part for the Cooling Table. Details coming soon."
+                }
+              ]
             },
             {
               "id": "HC-L004-M09",
               "machineNumber": "HC-L004-M09",
+              "model": "SEW-109",
               "orderInLine": 9,
-              "name": "ABC",
-              "function": "",
-              "description": "",
-              "image": "assets/images/machines/1781122162249-1216096.jpg",
+              "name": "Kneading Machine",
+              "function": "Uniform mixing and kneading of the cooked sugar mass with hygienic, water-cooled stainless steel contact parts.",
+              "description": "S.S 304 roller and main plates, S.S 201 side sheets, 5 hp drive.",
+              "image": "assets/STARMER/_ready/HARD CANDY/Complete Candy line 450Kg_Hr/Kneading Machine.jpg",
               "specs": {
-                "CAPACITY": "JHSF",
-                "AJVHAD": "UKDGAFK"
-              },
-              "diesAndParts": []
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "lollipop",
-      "label": "Lollipop Production",
-      "slug": "lollipop",
-      "color": "#1E3A8A",
-      "accentColor": "#3B82F6",
-      "description": "Full lollipop production lines from syrup cooking through stick insertion, cooling and wrapping. Round, ball and flat lollipop formats in capacities from 200 to 450 kg/hr.",
-      "lines": [
-        {
-          "id": "LP-L-001",
-          "lineNumber": "LP-L-001",
-          "name": "Lollipop 200 kg/hr Complete Line",
-          "productionRate": "200 kg/hr",
-          "description": "Compact end-to-end lollipop line handling syrup cooking, depositing, stick insertion, cooling and individual wrapping at 200 kg/hr output.",
-          "image": "assets/images/production-lines/LINE 5.avif",
-          "machines": [
-            {
-              "id": "LP-L001-M01",
-              "machineNumber": "LP-L001-M01",
-              "orderInLine": 1,
-              "name": "Sugar Dissolving Tank",
-              "function": "Dissolves sugar and glucose into a clear cooking syrup",
-              "description": "",
-              "image": "assets/images/machines/M3.jpg",
-              "specs": {
-                "capacity": "300 L",
-                "powerConsumption": "7.5 kW",
-                "certifications": "CE, ISO 9001:2015"
-              },
-              "diesAndParts": []
-            },
-            {
-              "id": "LP-L001-M02",
-              "machineNumber": "LP-L001-M02",
-              "orderInLine": 2,
-              "name": "Vacuum Cooker",
-              "function": "Cooks lollipop syrup under vacuum to crystal-clear high-Brix mass",
-              "description": "",
-              "image": "assets/images/machines/M4.jpg",
-              "specs": {
-                "throughput": "220 kg/hr",
-                "powerConsumption": "18 kW",
-                "vacuumLevel": "−0.085 MPa",
-                "certifications": "CE, PED 2014/68/EU, ISO 9001:2015"
-              },
-              "diesAndParts": []
-            },
-            {
-              "id": "LP-L001-M03",
-              "machineNumber": "LP-L001-M03",
-              "orderInLine": 3,
-              "name": "Candy Mixing Table",
-              "function": "Adds color, flavor and citric acid to the hot lollipop mass",
-              "description": "",
-              "image": "assets/images/machines/M5.jpg",
-              "specs": {
-                "throughput": "200 kg/hr",
-                "powerConsumption": "4 kW",
-                "certifications": "CE, ISO 9001:2015"
-              },
-              "diesAndParts": []
-            },
-            {
-              "id": "LP-L001-M04",
-              "machineNumber": "LP-L001-M04",
-              "orderInLine": 4,
-              "name": "Lollipop Forming Machine",
-              "function": "Deposits metered syrup into rotating mold inserts to form the lollipop head",
-              "description": "24-station rotary mold table with servo-synchronized piston depositor. Quick-change silicone mold inserts for multiple shapes. Pre-cooling plates on mold table prevent stick drift.",
-              "image": "assets/images/machines/M1.jpg",
-              "specs": {
-                "throughput": "600 pcs/min",
-                "powerConsumption": "9 kW",
-                "dimensions": "2,200 × 1,200 × 1,700 mm",
-                "weight": "1,100 kg",
-                "moldStations": "24",
-                "lollipopSizeRange": "20–55 mm diameter",
-                "certifications": "CE, FDA, ISO 9001:2015"
+                "roller": "S.S 304",
+                "mainDrive": "5 hp",
+                "mainPlate": "4 ft, S.S 304",
+                "sideSheets": "S.S 201",
+                "control": "On/off switch",
+                "dimension": "4' x 6' x 6'",
+                "powerLoad": "5 hp"
               },
               "diesAndParts": [
                 {
-                  "id": "LP-L001-M04-D01",
-                  "partNumber": "LP-L001-M04-D01",
+                  "id": "HC-L004-M09-D01",
+                  "partNumber": "HC-L004-M09-D01",
+                  "name": "Kneading Machine Die",
                   "type": "die",
-                  "name": "Silicone Mold Insert Set — Round Classic 40 mm",
-                  "description": "Set of 24 platinum-cured LSR mold inserts for 40 mm round classic lollipop profile. FDA and EU 10/2011 compliant.",
-                  "image": "assets/images/spare-parts/S2.jpg",
-                  "specs": {
-                    "lollipopShape": "Round Classic",
-                    "lollipopDiameter": "40 mm",
-                    "insertCount": "24 per set",
-                    "material": "Platinum-cured LSR",
-                    "certifications": "FDA 21 CFR 177.2600, EU 10/2011",
-                    "compatibleMachine": "LP-L001-M04"
-                  }
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Forming die for the Kneading Machine. Details coming soon."
                 },
                 {
-                  "id": "LP-L001-M04-D02",
-                  "partNumber": "LP-L001-M04-D02",
-                  "type": "die",
-                  "name": "Silicone Mold Insert Set — Star Shape 45 mm",
-                  "description": "Set of 24 LSR mold inserts producing 5-point star lollipop, 45 mm overall diameter.",
-                  "image": "assets/images/spare-parts/S3.jpg",
-                  "specs": {
-                    "lollipopShape": "Star (5-point)",
-                    "lollipopDiameter": "45 mm",
-                    "insertCount": "24 per set",
-                    "material": "Platinum-cured LSR",
-                    "compatibleMachine": "LP-L001-M04"
-                  }
+                  "id": "HC-L004-M09-P01",
+                  "partNumber": "HC-L004-M09-P01",
+                  "name": "Kneading Machine Spare Part",
+                  "type": "part",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Spare part for the Kneading Machine. Details coming soon."
                 }
               ]
             },
             {
-              "id": "LP-L001-M05",
-              "machineNumber": "LP-L001-M05",
-              "orderInLine": 5,
-              "name": "Stick Inserter",
-              "function": "Automatically inserts paper or plastic sticks into partially cooled lollipop heads with precise alignment",
-              "description": "Pneumatic stick insertion with servo-controlled feed. Accepts 75–120 mm paper or plastic sticks. Stick orientation and insertion depth adjustable without tools.",
-              "image": "assets/images/machines/M2.jpg",
+              "id": "HC-L004-M10",
+              "machineNumber": "HC-L004-M10",
+              "model": "SEW-110",
+              "orderInLine": 10,
+              "name": "Center Filling Liquid Pump",
+              "function": "Precision dosing system that injects liquid filling (fruit syrup, chocolate, cream or jam) into the core of the candy rope during forming.",
+              "description": "Double-jacketed S.S 304 leaf with Teflon-covered food-grade rod, flexible pipe, 2 hp drive, 1000 W heater and 2 HP inverter with recycle.",
+              "image": "assets/STARMER/_ready/HARD CANDY/Complete Candy line 450Kg_Hr/Liquid Filling Pump.jpg",
               "specs": {
-                "throughput": "600 pcs/min",
-                "powerConsumption": "2.2 kW",
-                "stickDiameter": "3–5 mm",
-                "stickLength": "75–120 mm",
-                "stickMaterial": "Paper or plastic",
-                "certifications": "CE, ISO 9001:2015"
-              },
-              "diesAndParts": []
-            },
-            {
-              "id": "LP-L001-M06",
-              "machineNumber": "LP-L001-M06",
-              "orderInLine": 6,
-              "name": "Cooling Conveyor",
-              "function": "Cools lollipops on sticks to firm, packaging-ready condition",
-              "description": "",
-              "image": "assets/images/machines/M3.jpg",
-              "specs": {
-                "throughput": "200 kg/hr",
-                "powerConsumption": "3 kW",
-                "dimensions": "5,000 × 700 × 1,100 mm",
-                "certifications": "CE, ISO 9001:2015"
-              },
-              "diesAndParts": []
-            },
-            {
-              "id": "LP-L001-M07",
-              "machineNumber": "LP-L001-M07",
-              "orderInLine": 7,
-              "name": "Lollipop Wrapping Machine",
-              "function": "Individually wraps each lollipop in twist or bag-style format",
-              "description": "",
-              "image": "assets/images/machines/M4.jpg",
-              "specs": {
-                "throughput": "600 pcs/min",
-                "powerConsumption": "5.5 kW",
-                "wrapFormats": "Twist, Bag, Envelope",
-                "certifications": "CE, ISO 9001:2015"
-              },
-              "diesAndParts": []
-            }
-          ]
-        },
-        {
-          "id": "LP-L-002",
-          "lineNumber": "LP-L-002",
-          "name": "Lollipop 450 kg/hr Complete Line",
-          "productionRate": "450 kg/hr",
-          "description": "Higher-capacity lollipop line with 48-station rotary depositor and dual wrapping heads for medium-to-large scale production.",
-          "image": "assets/images/production-lines/LINE 1.avif",
-          "machines": [
-            {
-              "id": "LP-L002-M01",
-              "machineNumber": "LP-L002-M01",
-              "orderInLine": 1,
-              "name": "Sugar Dissolving Tank",
-              "function": "Dissolves sugar and glucose at high capacity",
-              "description": "",
-              "image": "assets/images/machines/M5.jpg",
-              "specs": {
-                "capacity": "600 L",
-                "powerConsumption": "11 kW",
-                "certifications": "CE, ISO 9001:2015"
-              },
-              "diesAndParts": []
-            },
-            {
-              "id": "LP-L002-M02",
-              "machineNumber": "LP-L002-M02",
-              "orderInLine": 2,
-              "name": "Vacuum Cooker",
-              "function": "Cooks lollipop syrup under vacuum at higher throughput",
-              "description": "",
-              "image": "assets/images/machines/M1.jpg",
-              "specs": {
-                "throughput": "500 kg/hr",
-                "powerConsumption": "28 kW",
-                "certifications": "CE, PED 2014/68/EU, ISO 9001:2015"
-              },
-              "diesAndParts": []
-            },
-            {
-              "id": "LP-L002-M03",
-              "machineNumber": "LP-L002-M03",
-              "orderInLine": 3,
-              "name": "Candy Mixing Table",
-              "function": "Adds color, flavor and acid to lollipop mass at 450 kg/hr",
-              "description": "",
-              "image": "assets/images/machines/M2.jpg",
-              "specs": {
-                "throughput": "450 kg/hr",
-                "powerConsumption": "5.5 kW",
-                "certifications": "CE, ISO 9001:2015"
-              },
-              "diesAndParts": []
-            },
-            {
-              "id": "LP-L002-M04",
-              "machineNumber": "LP-L002-M04",
-              "orderInLine": 4,
-              "name": "Lollipop Forming Machine (48-Station)",
-              "function": "48-station rotary depositor for high-speed lollipop head forming",
-              "description": "",
-              "image": "assets/images/machines/M3.jpg",
-              "specs": {
-                "throughput": "1,200 pcs/min",
-                "powerConsumption": "15 kW",
-                "moldStations": "48",
-                "certifications": "CE, FDA, ISO 9001:2015"
-              },
-              "diesAndParts": []
-            },
-            {
-              "id": "LP-L002-M05",
-              "machineNumber": "LP-L002-M05",
-              "orderInLine": 5,
-              "name": "Stick Inserter (High Speed)",
-              "function": "High-speed stick insertion at 1,200 pcs/min",
-              "description": "",
-              "image": "assets/images/machines/M4.jpg",
-              "specs": {
-                "throughput": "1,200 pcs/min",
-                "powerConsumption": "3 kW",
-                "certifications": "CE, ISO 9001:2015"
-              },
-              "diesAndParts": []
-            },
-            {
-              "id": "LP-L002-M06",
-              "machineNumber": "LP-L002-M06",
-              "orderInLine": 6,
-              "name": "Cooling Conveyor",
-              "function": "Cools lollipops to firm packaging-ready condition",
-              "description": "",
-              "image": "assets/images/machines/M5.jpg",
-              "specs": {
-                "throughput": "450 kg/hr",
-                "powerConsumption": "4.5 kW",
-                "certifications": "CE, ISO 9001:2015"
-              },
-              "diesAndParts": []
-            },
-            {
-              "id": "LP-L002-M07",
-              "machineNumber": "LP-L002-M07",
-              "orderInLine": 7,
-              "name": "Lollipop Wrapping Machine (Dual Head)",
-              "function": "Dual-head lollipop wrapping at 1,200 pcs/min",
-              "description": "",
-              "image": "assets/images/machines/M1.jpg",
-              "specs": {
-                "throughput": "1,200 pcs/min",
-                "powerConsumption": "9 kW",
-                "certifications": "CE, ISO 9001:2015"
-              },
-              "diesAndParts": []
-            }
-          ]
-        },
-        {
-          "id": "LP-L-003",
-          "lineNumber": "LP-L-003",
-          "name": "Flat Lollipop Complete Line",
-          "productionRate": "Capacity per mold set",
-          "description": "Flat lollipop production using flat open-mold depositing. Produces novelty flat lollipops in any 2D shape — animals, letters, logos and more.",
-          "image": "assets/images/production-lines/LINE 2.avif",
-          "machines": [
-            {
-              "id": "LP-L003-M01",
-              "machineNumber": "LP-L003-M01",
-              "orderInLine": 1,
-              "name": "Sugar Dissolving Tank",
-              "function": "Dissolves sugar and glucose for flat lollipop production",
-              "description": "",
-              "image": "assets/images/machines/M2.jpg",
-              "specs": {
-                "capacity": "300 L",
-                "certifications": "CE, ISO 9001:2015"
-              },
-              "diesAndParts": []
-            },
-            {
-              "id": "LP-L003-M02",
-              "machineNumber": "LP-L003-M02",
-              "orderInLine": 2,
-              "name": "Vacuum Cooker",
-              "function": "Cooks syrup under vacuum for clear flat lollipops",
-              "description": "",
-              "image": "assets/images/machines/M3.jpg",
-              "specs": {
-                "throughput": "220 kg/hr",
-                "certifications": "CE, PED 2014/68/EU, ISO 9001:2015"
-              },
-              "diesAndParts": []
-            },
-            {
-              "id": "LP-L003-M03",
-              "machineNumber": "LP-L003-M03",
-              "orderInLine": 3,
-              "name": "Candy Mixing Table",
-              "function": "Adds color, flavor and acid to the mass",
-              "description": "",
-              "image": "assets/images/machines/M4.jpg",
-              "specs": {
-                "throughput": "200 kg/hr",
-                "certifications": "CE, ISO 9001:2015"
-              },
-              "diesAndParts": []
-            },
-            {
-              "id": "LP-L003-M04",
-              "machineNumber": "LP-L003-M04",
-              "orderInLine": 4,
-              "name": "Flat Lollipop Depositor",
-              "function": "Deposits candy mass into flat open molds on a conveyor belt to form 2D shaped lollipops",
-              "description": "Linear depositor with quick-change flat mold plates. Sticks are laid onto the molds before depositing. Suitable for novelty shapes, logo lollipops and promotional items.",
-              "image": "assets/images/machines/M5.jpg",
-              "specs": {
-                "throughput": "300 pcs/min",
-                "powerConsumption": "7 kW",
-                "dimensions": "1,800 × 1,000 × 1,500 mm",
-                "moldChangeover": "< 20 minutes",
-                "certifications": "CE, FDA, ISO 9001:2015"
+                "filling": "Chocolate and liquid",
+                "leaf": "S.S 304, double jacketed",
+                "rod": "S.S with Teflon covering (food grade, heat proof)",
+                "pipe": "Flexible, food grade",
+                "gearMotorMainDrive": "2 hp",
+                "stand": "M.S",
+                "heater": "1000 watt, 1 No",
+                "inverter": "2 HP",
+                "extra": "Co-flow system to recycle liquid/chocolate",
+                "powerLoad": "3.34 hp"
               },
               "diesAndParts": [
                 {
-                  "id": "LP-L003-M04-D01",
-                  "partNumber": "LP-L003-M04-D01",
+                  "id": "HC-L004-M10-D01",
+                  "partNumber": "HC-L004-M10-D01",
+                  "name": "Center Filling Liquid Pump Die",
                   "type": "die",
-                  "name": "Flat Mold Plate Set — Round 60 mm",
-                  "description": "Flat mold plate set for 60 mm round flat lollipops. Aluminum alloy with food-safe anodized coating.",
-                  "image": "assets/images/spare-parts/S4.jpg",
-                  "specs": {
-                    "lollipopShape": "Round Flat",
-                    "diameter": "60 mm",
-                    "thickness": "8 mm",
-                    "material": "Anodized Aluminum",
-                    "compatibleMachine": "LP-L003-M04"
-                  }
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Forming die for the Center Filling Liquid Pump. Details coming soon."
+                },
+                {
+                  "id": "HC-L004-M10-P01",
+                  "partNumber": "HC-L004-M10-P01",
+                  "name": "Center Filling Liquid Pump Spare Part",
+                  "type": "part",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Spare part for the Center Filling Liquid Pump. Details coming soon."
                 }
               ]
             },
             {
-              "id": "LP-L003-M05",
-              "machineNumber": "LP-L003-M05",
-              "orderInLine": 5,
-              "name": "Cooling Tunnel",
-              "function": "Cools flat lollipops in molds before demolding",
-              "description": "",
-              "image": "assets/images/machines/M1.jpg",
+              "id": "HC-L004-M11",
+              "machineNumber": "HC-L004-M11",
+              "model": "SEW-111",
+              "orderInLine": 11,
+              "name": "Center Filling Powder Pump",
+              "function": "Precision feeding unit that injects dry or semi-dry powdered filling into the centre of the candy rope.",
+              "description": "S.S 304 leaf with Teflon-covered S.S worm, M.S stand, 2 hp gear motor and variable inverter for speed control.",
+              "image": "assets/STARMER/_ready/HARD CANDY/Complete Candy line 450Kg_Hr/Powder Filling Pump.jpg",
               "specs": {
-                "throughput": "300 pcs/min",
-                "certifications": "CE, ISO 9001:2015"
+                "type": "Centre filling powder",
+                "leaf": "S.S 304 grade",
+                "gearMotor": "2 hp",
+                "variableInverter": "2 hp (speed control)",
+                "stand": "M.S",
+                "contactPart": "Rod with Teflon covering, S.S worm inside",
+                "powerLoad": "2 hp"
               },
-              "diesAndParts": []
+              "diesAndParts": [
+                {
+                  "id": "HC-L004-M11-D01",
+                  "partNumber": "HC-L004-M11-D01",
+                  "name": "Center Filling Powder Pump Die",
+                  "type": "die",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Forming die for the Center Filling Powder Pump. Details coming soon."
+                },
+                {
+                  "id": "HC-L004-M11-P01",
+                  "partNumber": "HC-L004-M11-P01",
+                  "name": "Center Filling Powder Pump Spare Part",
+                  "type": "part",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Spare part for the Center Filling Powder Pump. Details coming soon."
+                }
+              ]
             },
             {
-              "id": "LP-L003-M06",
-              "machineNumber": "LP-L003-M06",
-              "orderInLine": 6,
-              "name": "Demolding & Stick Unit",
-              "function": "Demolds cooled lollipops and checks stick alignment",
-              "description": "",
-              "image": "assets/images/machines/M2.jpg",
+              "id": "HC-L004-M12",
+              "machineNumber": "HC-L004-M12",
+              "model": "SEW-112",
+              "orderInLine": 12,
+              "name": "Bubble Gum Mixer",
+              "function": "Blends gum base and ingredients into a homogeneous bubble-gum mass suitable for extrusion and shaping.",
+              "description": "Heavy-duty double-jacketed S.S 304 mixer with twin arms, 20 hp main drive, 6000 W heaters and a tilting discharge system.",
+              "image": "assets/STARMER/_ready/HARD CANDY/Complete Candy line 450Kg_Hr/Bubble Gum Mixer.jpg",
               "specs": {
-                "throughput": "300 pcs/min",
-                "certifications": "CE, ISO 9001:2015"
+                "capacity": "100 kg in 20 minutes",
+                "pan": "S.S 304, double jacketed",
+                "arms": "2, S.S 304",
+                "panCover": "S.S 304",
+                "gearMotorMainDrive": "20 hp",
+                "structure": "Heavy duty M.S",
+                "heaters": "Electric heaters, 6000 watt",
+                "sideSheets": "S.S 304",
+                "tilt": "S.S 201, tilting system",
+                "controls": "Electric panel with all new features",
+                "dimension": "6' x 4' x 4'",
+                "powerLoad": "28 hp"
               },
-              "diesAndParts": []
+              "diesAndParts": [
+                {
+                  "id": "HC-L004-M12-D01",
+                  "partNumber": "HC-L004-M12-D01",
+                  "name": "Bubble Gum Mixer Die",
+                  "type": "die",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Forming die for the Bubble Gum Mixer. Details coming soon."
+                },
+                {
+                  "id": "HC-L004-M12-P01",
+                  "partNumber": "HC-L004-M12-P01",
+                  "name": "Bubble Gum Mixer Spare Part",
+                  "type": "part",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Spare part for the Bubble Gum Mixer. Details coming soon."
+                }
+              ]
             },
             {
-              "id": "LP-L003-M07",
-              "machineNumber": "LP-L003-M07",
-              "orderInLine": 7,
-              "name": "Flat Lollipop Wrapping Machine",
-              "function": "Wraps flat lollipops in cellophane or BOPP film",
-              "description": "",
-              "image": "assets/images/machines/M3.jpg",
+              "id": "HC-L004-M13",
+              "machineNumber": "HC-L004-M13",
+              "model": "SEW-113",
+              "orderInLine": 13,
+              "name": "Bubble Gum Extruder",
+              "function": "Shapes the mixed gum mass into a continuous rope of uniform thickness and density for downstream forming.",
+              "description": "Screw extruder on M.S structure with 7.5 hp drive, 10 hp inverter, S.S 304 roll and head helping-roller system.",
+              "image": "assets/STARMER/_ready/HARD CANDY/Complete Candy line 450Kg_Hr/Bubble Gum Extruder.jpg",
               "specs": {
-                "throughput": "300 pcs/min",
-                "certifications": "CE, ISO 9001:2015"
+                "type": "1 rope, 2 worms",
+                "gearMotorDrive": "7.5 hp",
+                "inverter": "10 hp",
+                "structure": "M.S",
+                "roll": "S.S 304",
+                "heaters": "Electric heaters",
+                "controls": "Electric panel with all new features, helping roller system in head",
+                "powerLoad": "18 hp"
               },
-              "diesAndParts": []
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "chew-toffee",
-      "label": "Chew & Toffee Production",
-      "slug": "chew-toffee",
-      "color": "#7C3AED",
-      "accentColor": "#A78BFA",
-      "description": "Complete lines for chew sticks, fudge, toffee, cut & twist chews and novelty formats. Includes chain die, cut & twist, and continuous forming technologies.",
-      "lines": [
-        {
-          "id": "CT-L-001",
-          "lineNumber": "CT-L-001",
-          "name": "Chew Stick Lollipop Complete Line",
-          "productionRate": "Per output format",
-          "description": "Produces chewy stick lollipops combining an aerated chew body with a paper or plastic stick. End-to-end from cooking through wrapping.",
-          "image": "assets/images/production-lines/LINE 3.jpg",
-          "machines": [
-            {
-              "id": "CT-L001-M01",
-              "machineNumber": "CT-L001-M01",
-              "orderInLine": 1,
-              "name": "Chew Base Cooker",
-              "function": "Cooks glucose, sugar and dairy ingredients to form the chew base",
-              "description": "",
-              "image": "assets/images/machines/M4.jpg",
-              "specs": {
-                "certifications": "CE, ISO 9001:2015"
-              },
-              "diesAndParts": []
+              "diesAndParts": [
+                {
+                  "id": "HC-L004-M13-D01",
+                  "partNumber": "HC-L004-M13-D01",
+                  "name": "Bubble Gum Extruder Die",
+                  "type": "die",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Forming die for the Bubble Gum Extruder. Details coming soon."
+                },
+                {
+                  "id": "HC-L004-M13-P01",
+                  "partNumber": "HC-L004-M13-P01",
+                  "name": "Bubble Gum Extruder Spare Part",
+                  "type": "part",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Spare part for the Bubble Gum Extruder. Details coming soon."
+                }
+              ]
             },
             {
-              "id": "CT-L001-M02",
-              "machineNumber": "CT-L001-M02",
-              "orderInLine": 2,
-              "name": "Pulling / Kneading Machine",
-              "function": "Aerates and works the hot chew base to develop texture and opacity",
-              "description": "",
-              "image": "assets/images/machines/M5.jpg",
+              "id": "HC-L004-M14",
+              "machineNumber": "HC-L004-M14",
+              "model": "SEW-114",
+              "orderInLine": 14,
+              "name": "Batch Roller",
+              "function": "Continuously rolls and shapes the cooked mass into a uniform cylindrical rope with consistent filling, flavour and colour.",
+              "description": "Horizontal 4-roller batch roller in S.S 304 food grade with SEW (Germany) gear motor, up/down drive, control panel and 1000 W heaters.",
+              "image": "assets/STARMER/_ready/HARD CANDY/Complete Candy line 450Kg_Hr/Batch Roller.jpg",
               "specs": {
-                "certifications": "CE, ISO 9001:2015"
+                "frame": "Horizontal",
+                "rollersQuantity": "4",
+                "rollersMaterial": "S.S 304 food grade",
+                "gearMotorMainDrive": "2 hp",
+                "upDownDrive": "2 hp",
+                "heaters": "1000 watt (2 Nos)",
+                "capacity": "75 kg",
+                "length": "6.5 ft",
+                "gearMotor": "SEW brand, Germany",
+                "dimension": "4' x 2' x 3'",
+                "powerLoad": "4.68 hp"
               },
-              "diesAndParts": []
+              "diesAndParts": [
+                {
+                  "id": "HC-L004-M14-D01",
+                  "partNumber": "HC-L004-M14-D01",
+                  "name": "Batch Roller Die",
+                  "type": "die",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Forming die for the Batch Roller. Details coming soon."
+                },
+                {
+                  "id": "HC-L004-M14-P01",
+                  "partNumber": "HC-L004-M14-P01",
+                  "name": "Batch Roller Spare Part",
+                  "type": "part",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Spare part for the Batch Roller. Details coming soon."
+                }
+              ]
             },
             {
-              "id": "CT-L001-M03",
-              "machineNumber": "CT-L001-M03",
-              "orderInLine": 3,
-              "name": "Chew Extruder",
-              "function": "Extrudes the aerated chew mass into uniform sticks of target diameter",
-              "description": "",
-              "image": "assets/images/machines/M1.jpg",
+              "id": "HC-L004-M15",
+              "machineNumber": "HC-L004-M15",
+              "model": "SEW-115",
+              "orderInLine": 15,
+              "name": "Rope Sizer (4 Stages)",
+              "function": "Accurately reduces and calibrates the candy/toffee rope diameter through four sizing stages for uniform thickness.",
+              "description": "Horizontal 4-stage rope sizer with S.S 304 roller pairs, brass rope guide, digital inverter and SEW (Germany) gear motors; bearings for low maintenance.",
+              "image": "assets/STARMER/_ready/HARD CANDY/Complete Candy line 450Kg_Hr/Rope Sizer.jpg",
               "specs": {
-                "certifications": "CE, ISO 9001:2015"
+                "sizerModel": "Horizontal, 4 stages",
+                "pairs": "S.S 304 (22 mm x2, 20 mm x2)",
+                "ropeGuide": "Brass",
+                "inverter": "INVENT digital, 2 hp",
+                "gearMotors": "SEW brand, Germany",
+                "heatControllers": "Digital, 2 Nos",
+                "mainDriveGearMotor": "2 hp",
+                "heaters": "500 watt (4 Nos) = 2 kw",
+                "bearings": "Used instead of bushes",
+                "dimension": "4.5 ft x 2.5 ft x 6 ft",
+                "powerLoad": "4.68 hp"
               },
-              "diesAndParts": []
+              "diesAndParts": [
+                {
+                  "id": "HC-L004-M15-D01",
+                  "partNumber": "HC-L004-M15-D01",
+                  "name": "Rope Sizer (4 Stages) Die",
+                  "type": "die",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Forming die for the Rope Sizer (4 Stages). Details coming soon."
+                },
+                {
+                  "id": "HC-L004-M15-P01",
+                  "partNumber": "HC-L004-M15-P01",
+                  "name": "Rope Sizer (4 Stages) Spare Part",
+                  "type": "part",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Spare part for the Rope Sizer (4 Stages). Details coming soon."
+                }
+              ]
             },
             {
-              "id": "CT-L001-M04",
-              "machineNumber": "CT-L001-M04",
-              "orderInLine": 4,
-              "name": "Cutting Machine",
-              "function": "Cuts continuous chew rope into individual stick-lollipop lengths",
-              "description": "",
-              "image": "assets/images/machines/M2.jpg",
+              "id": "HC-L004-M16",
+              "machineNumber": "HC-L004-M16",
+              "model": "SEW-116",
+              "orderInLine": 16,
+              "name": "Uniplast Forming Machine",
+              "function": "Continuous forming machine for seamless sweets with or without centre filling; forms hard-boiled, liquid/powder-filled candies, toffees, chewy candies and bubble gum with high dough thickness.",
+              "description": "High-carbon-steel forged gears and bearing-steel CAMS with 5 hp drive and INVENT inverter; adjustable filling up to ~34%.",
+              "image": "assets/STARMER/_ready/HARD CANDY/Complete Candy line 450Kg_Hr/Kneading Machine.jpg",
               "specs": {
-                "certifications": "CE, ISO 9001:2015"
+                "mainDriveMotor": "5 hp",
+                "inverter": "5 hp (INVENT brand)",
+                "cams": "Bearing steel grade",
+                "gears": "High carbon steel, forged",
+                "speed": "1600 to 2000 pieces/min (depending on size)",
+                "filling": "Up to ~34% of candy",
+                "controls": "Electric panel with all new features",
+                "dimension": "6.5 ft x 4.5 ft x 8 ft",
+                "powerLoad": "5 hp"
               },
-              "diesAndParts": []
+              "diesAndParts": [
+                {
+                  "id": "HC-L004-M16-D01",
+                  "partNumber": "HC-L004-M16-D01",
+                  "name": "Uniplast Forming Machine Die",
+                  "type": "die",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Forming die for the Uniplast Forming Machine. Details coming soon."
+                },
+                {
+                  "id": "HC-L004-M16-P01",
+                  "partNumber": "HC-L004-M16-P01",
+                  "name": "Uniplast Forming Machine Spare Part",
+                  "type": "part",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Spare part for the Uniplast Forming Machine. Details coming soon."
+                }
+              ]
             },
             {
-              "id": "CT-L001-M05",
-              "machineNumber": "CT-L001-M05",
-              "orderInLine": 5,
-              "name": "Stick Inserter",
-              "function": "Inserts sticks into the cut chew portions",
-              "description": "",
-              "image": "assets/images/machines/M3.jpg",
+              "id": "HC-L004-M17",
+              "machineNumber": "HC-L004-M17",
+              "model": "SEW-117",
+              "orderInLine": 17,
+              "name": "Rotary Forming Die with Cutting Rings",
+              "function": "Precision rotary forming die that shapes hard-boiled, toffee, eclair and filled candies; built for durable, high-accuracy, seamless forming.",
+              "description": "EN19 high-wear cutting ring and punch (up to 55 HRC), cast iron die parts and brass-cast outer ring.",
+              "image": "assets/STARMER/_ready/HARD CANDY/Complete Candy line 450Kg_Hr/Rotary Die.jpg",
               "specs": {
-                "certifications": "CE, ISO 9001:2015"
+                "grade": "Standard grade",
+                "cuttingRing": "EN19, high wear resistance (tooth pitch up to 2 mm)",
+                "punch": "EN19, up to 55 HRC; high quality M.S tempered",
+                "dieParts": "Cast iron grade",
+                "outerRing": "Brass casting (for rope cutting)",
+                "dimension": "18\" x 18\" x 5\"",
+                "powerLoad": "None"
               },
-              "diesAndParts": []
+              "diesAndParts": [
+                {
+                  "id": "HC-L004-M17-D01",
+                  "partNumber": "HC-L004-M17-D01",
+                  "name": "Rotary Forming Die with Cutting Rings Die",
+                  "type": "die",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Forming die for the Rotary Forming Die with Cutting Rings. Details coming soon."
+                },
+                {
+                  "id": "HC-L004-M17-P01",
+                  "partNumber": "HC-L004-M17-P01",
+                  "name": "Rotary Forming Die with Cutting Rings Spare Part",
+                  "type": "part",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Spare part for the Rotary Forming Die with Cutting Rings. Details coming soon."
+                }
+              ]
             },
             {
-              "id": "CT-L001-M06",
-              "machineNumber": "CT-L001-M06",
-              "orderInLine": 6,
+              "id": "HC-L004-M18",
+              "machineNumber": "HC-L004-M18",
+              "model": "SEW-118",
+              "orderInLine": 18,
+              "name": "Die Stand",
+              "function": "Makes die changing and fitting easier and more efficient.",
+              "description": "M.S frame with movement wheels, casting die-cap lane and die up/down screw.",
+              "image": "assets/STARMER/_ready/HARD CANDY/Complete Candy line 450Kg_Hr/Die Stand.jpg",
+              "specs": {
+                "mainFrame": "M.S",
+                "wheels": "For movement",
+                "dieCapLane": "Casting material",
+                "screw": "For die up/down",
+                "dimension": "5.5 ft (H) x 5 ft (L)",
+                "powerLoad": "None"
+              },
+              "diesAndParts": [
+                {
+                  "id": "HC-L004-M18-D01",
+                  "partNumber": "HC-L004-M18-D01",
+                  "name": "Die Stand Die",
+                  "type": "die",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Forming die for the Die Stand. Details coming soon."
+                },
+                {
+                  "id": "HC-L004-M18-P01",
+                  "partNumber": "HC-L004-M18-P01",
+                  "name": "Die Stand Spare Part",
+                  "type": "part",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Spare part for the Die Stand. Details coming soon."
+                }
+              ]
+            },
+            {
+              "id": "HC-L004-M19",
+              "machineNumber": "HC-L004-M19",
+              "model": "SEW-119",
+              "orderInLine": 19,
+              "name": "Cooling Conveyor (Open Body)",
+              "function": "Cools and stabilises the hot candy mass after forming or rope sizing, before cutting, wrapping or packaging.",
+              "description": "18 ft open-body conveyor with 2 hp blower, Teflon belt, S.S mesh-wire steps, M.S chain/sprockets and S.S 304 rods.",
+              "image": "assets/STARMER/_ready/HARD CANDY/Complete Candy line 450Kg_Hr/Close body Cooling Tunnel _ 3 Stages Cooling Conveyor .jpg",
+              "specs": {
+                "length": "18 ft",
+                "stages": "3 stages",
+                "blower": "2 hp",
+                "firstBelt": "Teflon, 4 inch width",
+                "meshSteps": "S.S (2nd 21 inch, 3rd 26 inch width)",
+                "gearMotor": "2 hp",
+                "inverter": "2 hp (speed control)",
+                "chain": "M.S",
+                "sprockets": "M.S",
+                "rods": "S.S 304",
+                "dimension": "18 ft (length)",
+                "powerLoad": "5 hp"
+              },
+              "diesAndParts": [
+                {
+                  "id": "HC-L004-M19-D01",
+                  "partNumber": "HC-L004-M19-D01",
+                  "name": "Cooling Conveyor (Open Body) Die",
+                  "type": "die",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Forming die for the Cooling Conveyor (Open Body). Details coming soon."
+                },
+                {
+                  "id": "HC-L004-M19-P01",
+                  "partNumber": "HC-L004-M19-P01",
+                  "name": "Cooling Conveyor (Open Body) Spare Part",
+                  "type": "part",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Spare part for the Cooling Conveyor (Open Body). Details coming soon."
+                }
+              ]
+            },
+            {
+              "id": "HC-L004-M20",
+              "machineNumber": "HC-L004-M20",
+              "model": "SEW-120",
+              "orderInLine": 20,
+              "name": "Vibrator",
+              "function": "Smoothly transports candies from cooling and forming to packaging, preventing clumping or sticking.",
+              "description": "M.S frame vibrator with S.S 304 (18 gauge) main sheet and trays, twin fans, 1 hp drive.",
+              "image": "assets/STARMER/_ready/HARD CANDY/Complete Candy line 450Kg_Hr/Vibrator.jpg",
+              "specs": {
+                "frame": "M.S",
+                "mainSheet": "S.S 304, 18 gauge",
+                "fans": "2 nos",
+                "gearMotor": "1 hp",
+                "trays": "S.S 304, 2 nos",
+                "dimension": "3.5 ft x 4.5 ft x 8 ft",
+                "powerLoad": "1 hp"
+              },
+              "diesAndParts": [
+                {
+                  "id": "HC-L004-M20-D01",
+                  "partNumber": "HC-L004-M20-D01",
+                  "name": "Vibrator Die",
+                  "type": "die",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Forming die for the Vibrator. Details coming soon."
+                },
+                {
+                  "id": "HC-L004-M20-P01",
+                  "partNumber": "HC-L004-M20-P01",
+                  "name": "Vibrator Spare Part",
+                  "type": "part",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Spare part for the Vibrator. Details coming soon."
+                }
+              ]
+            },
+            {
+              "id": "HC-L004-M21",
+              "machineNumber": "HC-L004-M21",
+              "model": "SEW-121",
+              "orderInLine": 21,
+              "name": "Close Body Cooling Tunnel",
+              "function": "Rapidly and uniformly reduces the temperature of freshly formed candy for dimensional stability and hardness before cutting, wrapping or packaging.",
+              "description": "Close-body conveyor with S.S 304 mesh-wire steps, S.S 201 covers, thermopore insulation, S.S 304 inner skin and SEW gear motor.",
+              "image": "assets/STARMER/_ready/HARD CANDY/Complete Candy line 450Kg_Hr/Close body Cooling Tunnel _ 3 Stages Cooling Conveyor .jpg",
+              "specs": {
+                "length": "10 ft",
+                "width": "3 ft",
+                "stages": "3 stages",
+                "meshWire": "S.S 304 grade (3 steps)",
+                "sideSheets": "Outer and inner in S.S 304",
+                "covers": "S.S 201",
+                "insulation": "Double jacketed, thermopore; inner S.S 304 5 mm",
+                "chain": "M.S, 40 No",
+                "gearMotor": "2 hp, SEW brand",
+                "inverter": "2 hp",
+                "dimension": "3 ft x 16 ft",
+                "powerLoad": "5 hp"
+              },
+              "diesAndParts": [
+                {
+                  "id": "HC-L004-M21-D01",
+                  "partNumber": "HC-L004-M21-D01",
+                  "name": "Close Body Cooling Tunnel Die",
+                  "type": "die",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Forming die for the Close Body Cooling Tunnel. Details coming soon."
+                },
+                {
+                  "id": "HC-L004-M21-P01",
+                  "partNumber": "HC-L004-M21-P01",
+                  "name": "Close Body Cooling Tunnel Spare Part",
+                  "type": "part",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Spare part for the Close Body Cooling Tunnel. Details coming soon."
+                }
+              ]
+            },
+            {
+              "id": "HC-L004-M22",
+              "machineNumber": "HC-L004-M22",
+              "model": "SEW-122",
+              "orderInLine": 22,
+              "name": "AC Unit (5 Ton)",
+              "function": "Floor-standing air-conditioning unit (5 ton / 6.5 HP) for cooling the conveyor section and accessories.",
+              "description": "Indoor unit with copper-tube evaporator and 1 HP blower; Bitzer 6.5 HP outdoor condensing unit with Copeland scroll compressor and full AC accessories.",
+              "image": "assets/STARMER/_ready/HARD CANDY/Complete Candy line 450Kg_Hr/Ac Unit.jpg",
+              "specs": {
+                "capacity": "5 Ton (6.5 HP)",
+                "type": "Floor standing",
+                "indoorBlower": "1 HP motor, 3 phase 440V/50Hz",
+                "expansionValve": "Emerson TCLE 6.5 HP",
+                "outdoorUnit": "Bitzer, high-density condensing coil",
+                "compressor": "Copeland scroll, 6.5 HP, 3 phase 440V/50Hz",
+                "safety": "Danfoss dual high/low-pressure switch",
+                "refrigerant": "R-22",
+                "inverter": "7.5 KVA (INVT)",
+                "powerLoad": "6.5 hp"
+              },
+              "diesAndParts": [
+                {
+                  "id": "HC-L004-M22-D01",
+                  "partNumber": "HC-L004-M22-D01",
+                  "name": "AC Unit (5 Ton) Die",
+                  "type": "die",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Forming die for the AC Unit (5 Ton). Details coming soon."
+                },
+                {
+                  "id": "HC-L004-M22-P01",
+                  "partNumber": "HC-L004-M22-P01",
+                  "name": "AC Unit (5 Ton) Spare Part",
+                  "type": "part",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Spare part for the AC Unit (5 Ton). Details coming soon."
+                }
+              ]
+            },
+            {
+              "id": "HC-L004-M23",
+              "machineNumber": "HC-L004-M23",
+              "model": "SEW-123",
+              "orderInLine": 23,
               "name": "Wrapping Machine",
-              "function": "Individually wraps chew stick lollipops in twist or bag format",
-              "description": "",
-              "image": "assets/images/machines/M4.jpg",
-              "specs": {
-                "certifications": "CE, ISO 9001:2015"
-              },
-              "diesAndParts": []
-            }
-          ]
-        },
-        {
-          "id": "CT-L-002",
-          "lineNumber": "CT-L-002",
-          "name": "Fudge Complete Line",
-          "productionRate": "Per configuration",
-          "description": "Complete fudge production from cooking through depositing, cooling, cutting and packaging. Produces both crystalline and fondant-type fudge products.",
-          "image": "assets/images/production-lines/LINE 4.avif",
-          "machines": [
-            {
-              "id": "CT-L002-M01",
-              "machineNumber": "CT-L002-M01",
-              "orderInLine": 1,
-              "name": "Fudge Cooking Kettle",
-              "function": "Cooks sugar, butter, milk and glucose to target temperature and Brix",
-              "description": "",
-              "image": "assets/images/machines/M5.jpg",
-              "specs": {
-                "certifications": "CE, ISO 9001:2015"
-              },
-              "diesAndParts": []
-            },
-            {
-              "id": "CT-L002-M02",
-              "machineNumber": "CT-L002-M02",
-              "orderInLine": 2,
-              "name": "Beater / Crystallizer",
-              "function": "Beats the cooked mass to develop fine crystal structure and smooth fudge texture",
-              "description": "",
-              "image": "assets/images/machines/M1.jpg",
-              "specs": {
-                "certifications": "CE, ISO 9001:2015"
-              },
-              "diesAndParts": []
-            },
-            {
-              "id": "CT-L002-M03",
-              "machineNumber": "CT-L002-M03",
-              "orderInLine": 3,
-              "name": "Continuous Depositor",
-              "function": "Deposits fudge mass into a continuous slab or into individual molds",
-              "description": "",
-              "image": "assets/images/machines/M2.jpg",
-              "specs": {
-                "certifications": "CE, ISO 9001:2015"
-              },
-              "diesAndParts": []
-            },
-            {
-              "id": "CT-L002-M04",
-              "machineNumber": "CT-L002-M04",
-              "orderInLine": 4,
-              "name": "Cooling Tunnel",
-              "function": "Sets the fudge at precise temperature for clean cutting",
-              "description": "",
-              "image": "assets/images/machines/M3.jpg",
-              "specs": {
-                "certifications": "CE, ISO 9001:2015"
-              },
-              "diesAndParts": []
-            },
-            {
-              "id": "CT-L002-M05",
-              "machineNumber": "CT-L002-M05",
-              "orderInLine": 5,
-              "name": "Guillotine Cutting Machine",
-              "function": "Cuts fudge slab into uniform portions to target weight",
-              "description": "",
-              "image": "assets/images/machines/M4.jpg",
-              "specs": {
-                "certifications": "CE, ISO 9001:2015"
-              },
-              "diesAndParts": []
-            },
-            {
-              "id": "CT-L002-M06",
-              "machineNumber": "CT-L002-M06",
-              "orderInLine": 6,
-              "name": "Wrapping / Packaging Machine",
-              "function": "Wraps individual fudge pieces or loads into trays/boxes",
-              "description": "",
-              "image": "assets/images/machines/M5.jpg",
-              "specs": {
-                "certifications": "CE, ISO 9001:2015"
-              },
-              "diesAndParts": []
-            }
-          ]
-        },
-        {
-          "id": "CT-L-003",
-          "lineNumber": "CT-L-003",
-          "name": "Toffee 400 kg/hr Complete Line",
-          "productionRate": "400 kg/hr",
-          "description": "Medium-capacity toffee production line with continuous forming and individual wrapping. Suitable for caramel, butter toffee and chewy toffee formats.",
-          "image": "assets/images/production-lines/LINE 5.avif",
-          "machines": [
-            {
-              "id": "CT-L003-M01",
-              "machineNumber": "CT-L003-M01",
-              "orderInLine": 1,
-              "name": "Toffee Cooking Tank",
-              "function": "Cooks toffee ingredients (sugar, glucose, butter, milk) to target temperature",
-              "description": "",
-              "image": "assets/images/machines/M1.jpg",
-              "specs": {
-                "capacity": "500 L",
-                "certifications": "CE, ISO 9001:2015"
-              },
-              "diesAndParts": []
-            },
-            {
-              "id": "CT-L003-M02",
-              "machineNumber": "CT-L003-M02",
-              "orderInLine": 2,
-              "name": "Continuous Cooker",
-              "function": "Continuous-flow cooking for consistent toffee quality at high throughput",
-              "description": "",
-              "image": "assets/images/machines/M2.jpg",
-              "specs": {
-                "throughput": "450 kg/hr",
-                "certifications": "CE, ISO 9001:2015"
-              },
-              "diesAndParts": []
-            },
-            {
-              "id": "CT-L003-M03",
-              "machineNumber": "CT-L003-M03",
-              "orderInLine": 3,
-              "name": "Toffee Mixer / Aerator",
-              "function": "Blends in flavor, color and air for consistent toffee texture",
-              "description": "",
-              "image": "assets/images/machines/M3.jpg",
-              "specs": {
-                "throughput": "400 kg/hr",
-                "certifications": "CE, ISO 9001:2015"
-              },
-              "diesAndParts": []
-            },
-            {
-              "id": "CT-L003-M04",
-              "machineNumber": "CT-L003-M04",
-              "orderInLine": 4,
-              "name": "Continuous Forming Machine",
-              "function": "Forms toffee mass into a continuous slab or rope at controlled thickness",
-              "description": "",
-              "image": "assets/images/machines/M4.jpg",
-              "specs": {
-                "throughput": "400 kg/hr",
-                "certifications": "CE, ISO 9001:2015"
-              },
-              "diesAndParts": []
-            },
-            {
-              "id": "CT-L003-M05",
-              "machineNumber": "CT-L003-M05",
-              "orderInLine": 5,
-              "name": "Cooling Conveyor",
-              "function": "Cools toffee to firm, cut-ready condition",
-              "description": "",
-              "image": "assets/images/machines/M5.jpg",
-              "specs": {
-                "throughput": "400 kg/hr",
-                "certifications": "CE, ISO 9001:2015"
-              },
-              "diesAndParts": []
-            },
-            {
-              "id": "CT-L003-M06",
-              "machineNumber": "CT-L003-M06",
-              "orderInLine": 6,
-              "name": "Cutting Machine",
-              "function": "Cuts toffee slab into individual portions to precise weight",
-              "description": "",
-              "image": "assets/images/machines/M1.jpg",
-              "specs": {
-                "throughput": "400 kg/hr",
-                "certifications": "CE, ISO 9001:2015"
-              },
-              "diesAndParts": []
-            },
-            {
-              "id": "CT-L003-M07",
-              "machineNumber": "CT-L003-M07",
-              "orderInLine": 7,
-              "name": "Individual Wrapping Machine",
-              "function": "Wraps each toffee piece in twist, fold or flow-wrap format",
-              "description": "",
-              "image": "assets/images/machines/M2.jpg",
-              "specs": {
-                "throughput": "800 pcs/min",
-                "certifications": "CE, ISO 9001:2015"
-              },
-              "diesAndParts": []
-            }
-          ]
-        },
-        {
-          "id": "CT-L-004",
-          "lineNumber": "CT-L-004",
-          "name": "Toffee 800 kg/hr Complete Line",
-          "productionRate": "800 kg/hr",
-          "description": "High-capacity toffee line with twin cooking streams and dual wrapping heads for large-scale toffee manufacturing.",
-          "image": "assets/images/production-lines/LINE 1.avif",
-          "machines": [
-            {
-              "id": "CT-L004-M01",
-              "machineNumber": "CT-L004-M01",
-              "orderInLine": 1,
-              "name": "Toffee Cooking Tank (HD)",
-              "function": "High-capacity toffee cooking at dual-stream throughput",
-              "description": "",
-              "image": "assets/images/machines/M3.jpg",
-              "specs": {
-                "capacity": "1,000 L",
-                "certifications": "CE, ISO 9001:2015"
-              },
-              "diesAndParts": []
-            },
-            {
-              "id": "CT-L004-M02",
-              "machineNumber": "CT-L004-M02",
-              "orderInLine": 2,
-              "name": "Continuous Cooker (HD)",
-              "function": "Continuous-flow cooking at 900 kg/hr",
-              "description": "",
-              "image": "assets/images/machines/M4.jpg",
-              "specs": {
-                "throughput": "900 kg/hr",
-                "certifications": "CE, ISO 9001:2015"
-              },
-              "diesAndParts": []
-            },
-            {
-              "id": "CT-L004-M03",
-              "machineNumber": "CT-L004-M03",
-              "orderInLine": 3,
-              "name": "Toffee Mixer / Aerator (HD)",
-              "function": "High-capacity mixing and aerating for 800 kg/hr",
-              "description": "",
-              "image": "assets/images/machines/M5.jpg",
-              "specs": {
-                "throughput": "800 kg/hr",
-                "certifications": "CE, ISO 9001:2015"
-              },
-              "diesAndParts": []
-            },
-            {
-              "id": "CT-L004-M04",
-              "machineNumber": "CT-L004-M04",
-              "orderInLine": 4,
-              "name": "Continuous Forming Machine (HD)",
-              "function": "High-capacity toffee slab forming",
-              "description": "",
-              "image": "assets/images/machines/M1.jpg",
-              "specs": {
-                "throughput": "800 kg/hr",
-                "certifications": "CE, ISO 9001:2015"
-              },
-              "diesAndParts": []
-            },
-            {
-              "id": "CT-L004-M05",
-              "machineNumber": "CT-L004-M05",
-              "orderInLine": 5,
-              "name": "Cooling Conveyor (Extended)",
-              "function": "Extended cooling conveyor for 800 kg/hr line",
-              "description": "",
-              "image": "assets/images/machines/M2.jpg",
-              "specs": {
-                "throughput": "800 kg/hr",
-                "certifications": "CE, ISO 9001:2015"
-              },
-              "diesAndParts": []
-            },
-            {
-              "id": "CT-L004-M06",
-              "machineNumber": "CT-L004-M06",
-              "orderInLine": 6,
-              "name": "Cutting Machine (HD)",
-              "function": "High-speed cutting for 800 kg/hr throughput",
-              "description": "",
-              "image": "assets/images/machines/M3.jpg",
-              "specs": {
-                "throughput": "800 kg/hr",
-                "certifications": "CE, ISO 9001:2015"
-              },
-              "diesAndParts": []
-            },
-            {
-              "id": "CT-L004-M07",
-              "machineNumber": "CT-L004-M07",
-              "orderInLine": 7,
-              "name": "Wrapping Machine (Dual Head)",
-              "function": "Dual-head high-speed toffee wrapping",
-              "description": "",
-              "image": "assets/images/machines/M4.jpg",
-              "specs": {
-                "throughput": "1,600 pcs/min",
-                "certifications": "CE, ISO 9001:2015"
-              },
-              "diesAndParts": []
-            }
-          ]
-        },
-        {
-          "id": "CT-L-005",
-          "lineNumber": "CT-L-005",
-          "name": "Chain Die Toffee 400 kg/hr Line",
-          "productionRate": "400 kg/hr",
-          "description": "Toffee line with chain die forming for complex 3D shapes and embossed logos. Suitable for premium toffee brands requiring distinctive product shapes.",
-          "image": "assets/images/production-lines/LINE 2.avif",
-          "machines": [
-            {
-              "id": "CT-L005-M01",
-              "machineNumber": "CT-L005-M01",
-              "orderInLine": 1,
-              "name": "Toffee Cooking Tank",
-              "function": "Cooks toffee ingredients to target temperature and Brix",
-              "description": "",
-              "image": "assets/images/machines/M5.jpg",
-              "specs": {
-                "certifications": "CE, ISO 9001:2015"
-              },
-              "diesAndParts": []
-            },
-            {
-              "id": "CT-L005-M02",
-              "machineNumber": "CT-L005-M02",
-              "orderInLine": 2,
-              "name": "Continuous Cooker",
-              "function": "Continuous-flow toffee cooking",
-              "description": "",
-              "image": "assets/images/machines/M1.jpg",
-              "specs": {
-                "certifications": "CE, ISO 9001:2015"
-              },
-              "diesAndParts": []
-            },
-            {
-              "id": "CT-L005-M03",
-              "machineNumber": "CT-L005-M03",
-              "orderInLine": 3,
-              "name": "Toffee Mixer",
-              "function": "Blends flavor, color and inclusions into toffee mass",
-              "description": "",
-              "image": "assets/images/machines/M2.jpg",
-              "specs": {
-                "certifications": "CE, ISO 9001:2015"
-              },
-              "diesAndParts": []
-            },
-            {
-              "id": "CT-L005-M04",
-              "machineNumber": "CT-L005-M04",
-              "orderInLine": 4,
-              "name": "Rope Former",
-              "function": "Forms toffee mass into a rope for chain die entry",
-              "description": "",
-              "image": "assets/images/machines/M3.jpg",
-              "specs": {
-                "certifications": "CE, ISO 9001:2015"
-              },
-              "diesAndParts": []
-            },
-            {
-              "id": "CT-L005-M05",
-              "machineNumber": "CT-L005-M05",
-              "orderInLine": 5,
-              "name": "Chain Die Forming Machine",
-              "function": "Forms complex 3D toffee shapes using interlocking chain die molds",
-              "description": "",
-              "image": "assets/images/machines/M4.jpg",
-              "specs": {
-                "throughput": "700 pcs/min",
-                "certifications": "CE, ISO 9001:2015"
-              },
-              "diesAndParts": []
-            },
-            {
-              "id": "CT-L005-M06",
-              "machineNumber": "CT-L005-M06",
-              "orderInLine": 6,
-              "name": "Cooling Conveyor",
-              "function": "Cools chain die formed toffees",
-              "description": "",
-              "image": "assets/images/machines/M5.jpg",
-              "specs": {
-                "certifications": "CE, ISO 9001:2015"
-              },
-              "diesAndParts": []
-            },
-            {
-              "id": "CT-L005-M07",
-              "machineNumber": "CT-L005-M07",
-              "orderInLine": 7,
-              "name": "Wrapping Machine",
-              "function": "Wraps formed toffee pieces individually",
-              "description": "",
-              "image": "assets/images/machines/M1.jpg",
-              "specs": {
-                "certifications": "CE, ISO 9001:2015"
-              },
-              "diesAndParts": []
-            }
-          ]
-        },
-        {
-          "id": "CT-L-006",
-          "lineNumber": "CT-L-006",
-          "name": "Cut & Double Twist Chew Complete Line",
-          "productionRate": "Per output format",
-          "description": "Continuous chew production line with cut & double twist wrapping in a single integrated flow. Produces wrapped chew pieces directly without a separate wrapping step.",
-          "image": "assets/images/production-lines/LINE 3.jpg",
-          "machines": [
-            {
-              "id": "CT-L006-M01",
-              "machineNumber": "CT-L006-M01",
-              "orderInLine": 1,
-              "name": "Chew Cooking Tank",
-              "function": "Cooks chew base ingredients to precise temperature",
-              "description": "",
-              "image": "assets/images/machines/M2.jpg",
-              "specs": {
-                "certifications": "CE, ISO 9001:2015"
-              },
-              "diesAndParts": []
-            },
-            {
-              "id": "CT-L006-M02",
-              "machineNumber": "CT-L006-M02",
-              "orderInLine": 2,
-              "name": "Kneading Machine",
-              "function": "Works and aerates the chew base for consistent texture",
-              "description": "",
-              "image": "assets/images/machines/M3.jpg",
-              "specs": {
-                "certifications": "CE, ISO 9001:2015"
-              },
-              "diesAndParts": []
-            },
-            {
-              "id": "CT-L006-M03",
-              "machineNumber": "CT-L006-M03",
-              "orderInLine": 3,
-              "name": "Rope Former & Sizer",
-              "function": "Forms chew mass into a uniform rope of target diameter",
-              "description": "",
-              "image": "assets/images/machines/M4.jpg",
-              "specs": {
-                "certifications": "CE, ISO 9001:2015"
-              },
-              "diesAndParts": []
-            },
-            {
-              "id": "CT-L006-M04",
-              "machineNumber": "CT-L006-M04",
-              "orderInLine": 4,
-              "name": "Cut & Double Twist Wrapper",
-              "function": "Simultaneously cuts the chew rope and applies double-twist wrapping in a single pass",
-              "description": "Key machine of the line. Integrated cut-and-wrap mechanism eliminates a separate wrapping step. Film feed, cut, and twist operations fully synchronized by servo motor.",
-              "image": "assets/images/machines/M5.jpg",
-              "specs": {
-                "throughput": "1,000 pcs/min",
-                "wrapFormat": "Double Twist",
-                "certifications": "CE, ISO 9001:2015"
-              },
-              "diesAndParts": []
-            }
-          ]
-        },
-        {
-          "id": "CT-L-007",
-          "lineNumber": "CT-L-007",
-          "name": "Zombie Complete Line",
-          "productionRate": "Per configuration",
-          "description": "Specialty novelty confectionery line for the Zombie format — a layered aerated chew-and-candy product with distinctive appearance.",
-          "image": "assets/images/production-lines/LINE 4.avif",
-          "machines": [
-            {
-              "id": "CT-L007-M01",
-              "machineNumber": "CT-L007-M01",
-              "orderInLine": 1,
-              "name": "Cooking Tank",
-              "function": "Cooks the base confectionery mass for the Zombie format",
-              "description": "",
-              "image": "assets/images/machines/M1.jpg",
-              "specs": {
-                "certifications": "CE, ISO 9001:2015"
-              },
-              "diesAndParts": []
-            },
-            {
-              "id": "CT-L007-M02",
-              "machineNumber": "CT-L007-M02",
-              "orderInLine": 2,
-              "name": "Mixing & Pulling Table",
-              "function": "Develops aerated texture and visual layering effect",
-              "description": "",
-              "image": "assets/images/machines/M2.jpg",
-              "specs": {
-                "certifications": "CE, ISO 9001:2015"
-              },
-              "diesAndParts": []
-            },
-            {
-              "id": "CT-L007-M03",
-              "machineNumber": "CT-L007-M03",
-              "orderInLine": 3,
-              "name": "Zombie Forming Machine",
-              "function": "Forms the layered mass into the characteristic Zombie product shape",
-              "description": "",
-              "image": "assets/images/machines/M3.jpg",
-              "specs": {
-                "certifications": "CE, ISO 9001:2015"
-              },
-              "diesAndParts": []
-            },
-            {
-              "id": "CT-L007-M04",
-              "machineNumber": "CT-L007-M04",
-              "orderInLine": 4,
-              "name": "Cooling Conveyor",
-              "function": "Cools formed Zombie pieces to packaging-ready firmness",
-              "description": "",
-              "image": "assets/images/machines/M4.jpg",
-              "specs": {
-                "certifications": "CE, ISO 9001:2015"
-              },
-              "diesAndParts": []
-            },
-            {
-              "id": "CT-L007-M05",
-              "machineNumber": "CT-L007-M05",
-              "orderInLine": 5,
-              "name": "Wrapping Machine",
-              "function": "Individually wraps each Zombie piece",
-              "description": "",
-              "image": "assets/images/machines/M5.jpg",
-              "specs": {
-                "certifications": "CE, ISO 9001:2015"
-              },
-              "diesAndParts": []
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "bubble-gum",
-      "label": "Bubble Gum Production",
-      "slug": "bubble-gum",
-      "color": "#BE185D",
-      "accentColor": "#F472B6",
-      "description": "Complete bubble gum and chewing gum production lines for centre-filled, ball, Bazooka, cut & twist, and pillow-wrap formats.",
-      "lines": [
-        {
-          "id": "BG-L-001",
-          "lineNumber": "BG-L-001",
-          "name": "Centre Filled Bubble 300 kg/hr Complete Line",
-          "productionRate": "300 kg/hr",
-          "description": "Centre-filled bubble gum line producing ball or pillow gum with a liquid or paste centre. Full process from gum base mixing through coating, polishing and packaging.",
-          "image": "assets/images/production-lines/LINE 5.avif",
-          "machines": [
-            {
-              "id": "BG-L001-M01",
-              "machineNumber": "BG-L001-M01",
-              "orderInLine": 1,
-              "name": "Gum Base Mixer",
-              "function": "Blends gum base with sweeteners, softeners, flavors and colors to form working gum mass",
-              "description": "",
-              "image": "assets/images/machines/M1.jpg",
-              "specs": {
-                "capacity": "200 L",
-                "powerConsumption": "22 kW",
-                "certifications": "CE, FDA, ISO 9001:2015"
-              },
-              "diesAndParts": []
-            },
-            {
-              "id": "BG-L001-M02",
-              "machineNumber": "BG-L001-M02",
-              "orderInLine": 2,
-              "name": "Gum Calender",
-              "function": "Progressively sheets the gum mass to uniform thickness using multi-roll calender stack",
-              "description": "",
-              "image": "assets/images/machines/M2.jpg",
-              "specs": {
-                "throughput": "320 kg/hr",
-                "powerConsumption": "15 kW",
-                "certifications": "CE, FDA, ISO 9001:2015"
-              },
-              "diesAndParts": []
-            },
-            {
-              "id": "BG-L001-M03",
-              "machineNumber": "BG-L001-M03",
-              "orderInLine": 3,
-              "name": "Rope Extruder with Centre Filler",
-              "function": "Extrudes gum into a tube and injects liquid or paste filling at the centre simultaneously",
-              "description": "Co-extrusion head with separate filling pump. Filling ratio adjustable 15–35% of total piece weight. Compatible with liquid fruit fillings, chocolate paste and acid gels.",
-              "image": "assets/images/machines/M3.jpg",
-              "specs": {
-                "throughput": "300 kg/hr",
-                "fillingRatio": "15–35%",
-                "certifications": "CE, FDA, ISO 9001:2015"
-              },
-              "diesAndParts": []
-            },
-            {
-              "id": "BG-L001-M04",
-              "machineNumber": "BG-L001-M04",
-              "orderInLine": 4,
-              "name": "Ball / Pillow Former",
-              "function": "Forms the filled gum rope into ball or pillow shapes using die forming",
-              "description": "",
-              "image": "assets/images/machines/M4.jpg",
-              "specs": {
-                "throughput": "600 pcs/min",
-                "certifications": "CE, FDA, ISO 9001:2015"
-              },
-              "diesAndParts": []
-            },
-            {
-              "id": "BG-L001-M05",
-              "machineNumber": "BG-L001-M05",
-              "orderInLine": 5,
-              "name": "Sugar Coating Drum",
-              "function": "Applies sequential sugar coating layers around gum centres in rotating pan",
-              "description": "",
-              "image": "assets/images/machines/M5.jpg",
-              "specs": {
-                "capacity": "150 kg/batch",
-                "certifications": "CE, ISO 9001:2015"
-              },
-              "diesAndParts": []
-            },
-            {
-              "id": "BG-L001-M06",
-              "machineNumber": "BG-L001-M06",
-              "orderInLine": 6,
-              "name": "Polishing Pan",
-              "function": "Applies final glossy wax or shellac polish coat for product shine and shelf life",
-              "description": "",
-              "image": "assets/images/machines/M1.jpg",
-              "specs": {
-                "capacity": "150 kg/batch",
-                "certifications": "CE, ISO 9001:2015"
-              },
-              "diesAndParts": []
-            },
-            {
-              "id": "BG-L001-M07",
-              "machineNumber": "BG-L001-M07",
-              "orderInLine": 7,
-              "name": "Wrapping / Packaging Machine",
-              "function": "Counts and packs finished gum pieces into bags, pouches or flow-wrap formats",
-              "description": "",
-              "image": "assets/images/machines/M2.jpg",
-              "specs": {
-                "throughput": "600 pcs/min",
-                "certifications": "CE, ISO 9001:2015"
-              },
-              "diesAndParts": []
-            }
-          ]
-        },
-        {
-          "id": "BG-L-002",
-          "lineNumber": "BG-L-002",
-          "name": "Centre Filled Bubble 600 kg/hr Complete Line",
-          "productionRate": "600 kg/hr",
-          "description": "High-capacity centre-filled bubble gum line with dual mixing and dual coating drums for 600 kg/hr output.",
-          "image": "assets/images/production-lines/LINE 1.avif",
-          "machines": [
-            {
-              "id": "BG-L002-M01",
-              "machineNumber": "BG-L002-M01",
-              "orderInLine": 1,
-              "name": "Gum Base Mixer (Large)",
-              "function": "High-capacity gum base mixing at 650 kg/hr",
-              "description": "",
-              "image": "assets/images/machines/M3.jpg",
-              "specs": {
-                "capacity": "400 L",
-                "certifications": "CE, FDA, ISO 9001:2015"
-              },
-              "diesAndParts": []
-            },
-            {
-              "id": "BG-L002-M02",
-              "machineNumber": "BG-L002-M02",
-              "orderInLine": 2,
-              "name": "Gum Calender (HD)",
-              "function": "High-capacity multi-roll calender for 600 kg/hr",
-              "description": "",
-              "image": "assets/images/machines/M4.jpg",
-              "specs": {
-                "throughput": "650 kg/hr",
-                "certifications": "CE, FDA, ISO 9001:2015"
-              },
-              "diesAndParts": []
-            },
-            {
-              "id": "BG-L002-M03",
-              "machineNumber": "BG-L002-M03",
-              "orderInLine": 3,
-              "name": "Rope Extruder with Centre Filler (HD)",
-              "function": "High-capacity co-extrusion with centre filling at 600 kg/hr",
-              "description": "",
-              "image": "assets/images/machines/M5.jpg",
-              "specs": {
-                "throughput": "600 kg/hr",
-                "certifications": "CE, FDA, ISO 9001:2015"
-              },
-              "diesAndParts": []
-            },
-            {
-              "id": "BG-L002-M04",
-              "machineNumber": "BG-L002-M04",
-              "orderInLine": 4,
-              "name": "Ball / Pillow Former (HD)",
-              "function": "High-speed forming at 1,200 pcs/min",
-              "description": "",
-              "image": "assets/images/machines/M1.jpg",
-              "specs": {
-                "throughput": "1,200 pcs/min",
-                "certifications": "CE, ISO 9001:2015"
-              },
-              "diesAndParts": []
-            },
-            {
-              "id": "BG-L002-M05",
-              "machineNumber": "BG-L002-M05",
-              "orderInLine": 5,
-              "name": "Sugar Coating Drum (Dual)",
-              "function": "Dual coating drums for continuous high-volume sugar coating",
-              "description": "",
-              "image": "assets/images/machines/M2.jpg",
-              "specs": {
-                "capacity": "300 kg/batch",
-                "certifications": "CE, ISO 9001:2015"
-              },
-              "diesAndParts": []
-            },
-            {
-              "id": "BG-L002-M06",
-              "machineNumber": "BG-L002-M06",
-              "orderInLine": 6,
-              "name": "Polishing Pan (Dual)",
-              "function": "Dual polishing pans for high-volume final polish",
-              "description": "",
-              "image": "assets/images/machines/M3.jpg",
-              "specs": {
-                "capacity": "300 kg/batch",
-                "certifications": "CE, ISO 9001:2015"
-              },
-              "diesAndParts": []
-            },
-            {
-              "id": "BG-L002-M07",
-              "machineNumber": "BG-L002-M07",
-              "orderInLine": 7,
-              "name": "Packaging Machine (High Speed)",
-              "function": "High-speed counting and packing at 1,200 pcs/min",
-              "description": "",
-              "image": "assets/images/machines/M4.jpg",
-              "specs": {
-                "throughput": "1,200 pcs/min",
-                "certifications": "CE, ISO 9001:2015"
-              },
-              "diesAndParts": []
-            }
-          ]
-        },
-        {
-          "id": "BG-L-003",
-          "lineNumber": "BG-L-003",
-          "name": "Ball Gum Complete Line",
-          "productionRate": "Per output format",
-          "description": "Sugar-coated round ball gum production line. Produces classic gumball products in sugar or hard-coated finish.",
-          "image": "assets/images/production-lines/LINE 2.avif",
-          "machines": [
-            {
-              "id": "BG-L003-M01",
-              "machineNumber": "BG-L003-M01",
-              "orderInLine": 1,
-              "name": "Gum Base Mixer",
-              "function": "Mixes gum base with sweeteners and flavors",
-              "description": "",
-              "image": "assets/images/machines/M5.jpg",
-              "specs": {
-                "certifications": "CE, FDA, ISO 9001:2015"
-              },
-              "diesAndParts": []
-            },
-            {
-              "id": "BG-L003-M02",
-              "machineNumber": "BG-L003-M02",
-              "orderInLine": 2,
-              "name": "Ball Former / Extruder",
-              "function": "Extrudes and cuts gum into uniform ball-shaped centres",
-              "description": "",
-              "image": "assets/images/machines/M1.jpg",
-              "specs": {
-                "certifications": "CE, ISO 9001:2015"
-              },
-              "diesAndParts": []
-            },
-            {
-              "id": "BG-L003-M03",
-              "machineNumber": "BG-L003-M03",
-              "orderInLine": 3,
-              "name": "Ball Rounding Machine",
-              "function": "Rounds cut gum pieces into perfect spheres",
-              "description": "",
-              "image": "assets/images/machines/M2.jpg",
-              "specs": {
-                "certifications": "CE, ISO 9001:2015"
-              },
-              "diesAndParts": []
-            },
-            {
-              "id": "BG-L003-M04",
-              "machineNumber": "BG-L003-M04",
-              "orderInLine": 4,
-              "name": "Sugar Coating Drum",
-              "function": "Builds up sugar shell around gum ball centres in rotating pan",
-              "description": "",
-              "image": "assets/images/machines/M3.jpg",
-              "specs": {
-                "certifications": "CE, ISO 9001:2015"
-              },
-              "diesAndParts": []
-            },
-            {
-              "id": "BG-L003-M05",
-              "machineNumber": "BG-L003-M05",
-              "orderInLine": 5,
-              "name": "Polishing Pan",
-              "function": "Applies final gloss coat for shine and product protection",
-              "description": "",
-              "image": "assets/images/machines/M4.jpg",
-              "specs": {
-                "certifications": "CE, ISO 9001:2015"
-              },
-              "diesAndParts": []
-            },
-            {
-              "id": "BG-L003-M06",
-              "machineNumber": "BG-L003-M06",
-              "orderInLine": 6,
-              "name": "Packaging Machine",
-              "function": "Counts and fills gumballs into vending-ready tubes, bags or bulk containers",
-              "description": "",
-              "image": "assets/images/machines/M5.jpg",
-              "specs": {
-                "certifications": "CE, ISO 9001:2015"
-              },
-              "diesAndParts": []
-            }
-          ]
-        },
-        {
-          "id": "BG-L-004",
-          "lineNumber": "BG-L-004",
-          "name": "Bazooka Complete Line",
-          "productionRate": "Per configuration",
-          "description": "Classic Bazooka-style stick gum production using multi-roll calender, scoring and individual wrapping with comics or promotional inserts.",
-          "image": "assets/images/production-lines/LINE 3.jpg",
-          "machines": [
-            {
-              "id": "BG-L004-M01",
-              "machineNumber": "BG-L004-M01",
-              "orderInLine": 1,
-              "name": "Gum Base Mixer",
-              "function": "Mixes gum base into workable slab mass",
-              "description": "",
-              "image": "assets/images/machines/M1.jpg",
-              "specs": {
-                "certifications": "CE, FDA, ISO 9001:2015"
-              },
-              "diesAndParts": []
-            },
-            {
-              "id": "BG-L004-M02",
-              "machineNumber": "BG-L004-M02",
-              "orderInLine": 2,
-              "name": "Multi-Roll Calender",
-              "function": "Progressively reduces gum slab to target sheet thickness",
-              "description": "",
-              "image": "assets/images/machines/M2.jpg",
-              "specs": {
-                "rollerCount": "5",
-                "certifications": "CE, ISO 9001:2015"
-              },
-              "diesAndParts": []
-            },
-            {
-              "id": "BG-L004-M03",
-              "machineNumber": "BG-L004-M03",
-              "orderInLine": 3,
-              "name": "Scoring Unit",
-              "function": "Scores the gum sheet into stick-sized portions without cutting through",
-              "description": "",
-              "image": "assets/images/machines/M3.jpg",
-              "specs": {
-                "certifications": "CE, ISO 9001:2015"
-              },
-              "diesAndParts": []
-            },
-            {
-              "id": "BG-L004-M04",
-              "machineNumber": "BG-L004-M04",
-              "orderInLine": 4,
-              "name": "Cooling Conveyor",
-              "function": "Cools and firms scored gum sheet before breaking",
-              "description": "",
-              "image": "assets/images/machines/M4.jpg",
-              "specs": {
-                "certifications": "CE, ISO 9001:2015"
-              },
-              "diesAndParts": []
-            },
-            {
-              "id": "BG-L004-M05",
-              "machineNumber": "BG-L004-M05",
-              "orderInLine": 5,
-              "name": "Breaking Machine",
-              "function": "Snaps scored gum sheet into individual sticks cleanly",
-              "description": "",
-              "image": "assets/images/machines/M5.jpg",
-              "specs": {
-                "certifications": "CE, ISO 9001:2015"
-              },
-              "diesAndParts": []
-            },
-            {
-              "id": "BG-L004-M06",
-              "machineNumber": "BG-L004-M06",
-              "orderInLine": 6,
-              "name": "Bazooka Wrapping Machine",
-              "function": "Wraps each gum stick with inner wax paper and outer printed wrapper, with optional insert feeder",
-              "description": "",
-              "image": "assets/images/machines/M1.jpg",
-              "specs": {
-                "certifications": "CE, ISO 9001:2015"
-              },
-              "diesAndParts": []
-            }
-          ]
-        },
-        {
-          "id": "BG-L-005",
-          "lineNumber": "BG-L-005",
-          "name": "Cut & Double Twist Bubble Complete Line",
-          "productionRate": "Per output format",
-          "description": "Continuous gum production with integrated cut and double-twist wrapping. Produces individually wrapped gum pieces directly from rope.",
-          "image": "assets/images/production-lines/LINE 4.avif",
-          "machines": [
-            {
-              "id": "BG-L005-M01",
-              "machineNumber": "BG-L005-M01",
-              "orderInLine": 1,
-              "name": "Gum Base Mixer",
-              "function": "Blends gum base mass for cut & twist production",
-              "description": "",
-              "image": "assets/images/machines/M2.jpg",
-              "specs": {
-                "certifications": "CE, FDA, ISO 9001:2015"
-              },
-              "diesAndParts": []
-            },
-            {
-              "id": "BG-L005-M02",
-              "machineNumber": "BG-L005-M02",
-              "orderInLine": 2,
-              "name": "Calender / Extruder",
-              "function": "Forms gum into a uniform rope for cut & twist wrapping",
-              "description": "",
-              "image": "assets/images/machines/M3.jpg",
-              "specs": {
-                "certifications": "CE, ISO 9001:2015"
-              },
-              "diesAndParts": []
-            },
-            {
-              "id": "BG-L005-M03",
-              "machineNumber": "BG-L005-M03",
-              "orderInLine": 3,
-              "name": "Sizing Machine",
-              "function": "Calibrates rope to precise diameter for consistent piece weight",
-              "description": "",
-              "image": "assets/images/machines/M4.jpg",
-              "specs": {
-                "certifications": "CE, ISO 9001:2015"
-              },
-              "diesAndParts": []
-            },
-            {
-              "id": "BG-L005-M04",
-              "machineNumber": "BG-L005-M04",
-              "orderInLine": 4,
-              "name": "Cut & Double Twist Wrapper",
-              "function": "Simultaneously cuts gum rope and applies double-twist wrap in one pass",
-              "description": "",
-              "image": "assets/images/machines/M5.jpg",
-              "specs": {
-                "throughput": "1,000 pcs/min",
-                "wrapFormat": "Double Twist",
-                "certifications": "CE, ISO 9001:2015"
-              },
-              "diesAndParts": []
-            }
-          ]
-        },
-        {
-          "id": "BG-L-006",
-          "lineNumber": "BG-L-006",
-          "name": "Cut & Pillow Wrap Bubble Complete Line",
-          "productionRate": "Per output format",
-          "description": "Gum production line with pillow-wrap packaging format. Produces individually pillow-wrapped gum pieces from a continuous rope.",
-          "image": "assets/images/production-lines/LINE 5.avif",
-          "machines": [
-            {
-              "id": "BG-L006-M01",
-              "machineNumber": "BG-L006-M01",
-              "orderInLine": 1,
-              "name": "Gum Base Mixer",
-              "function": "Blends gum base mass for pillow wrap production",
-              "description": "",
-              "image": "assets/images/machines/M1.jpg",
-              "specs": {
-                "certifications": "CE, FDA, ISO 9001:2015"
-              },
-              "diesAndParts": []
-            },
-            {
-              "id": "BG-L006-M02",
-              "machineNumber": "BG-L006-M02",
-              "orderInLine": 2,
-              "name": "Calender",
-              "function": "Sheets gum mass to target thickness",
-              "description": "",
-              "image": "assets/images/machines/M2.jpg",
-              "specs": {
-                "certifications": "CE, ISO 9001:2015"
-              },
-              "diesAndParts": []
-            },
-            {
-              "id": "BG-L006-M03",
-              "machineNumber": "BG-L006-M03",
-              "orderInLine": 3,
-              "name": "Forming Machine",
-              "function": "Forms gum sheet or rope into pillow-wrap-ready pieces",
-              "description": "",
-              "image": "assets/images/machines/M3.jpg",
-              "specs": {
-                "certifications": "CE, ISO 9001:2015"
-              },
-              "diesAndParts": []
-            },
-            {
-              "id": "BG-L006-M04",
-              "machineNumber": "BG-L006-M04",
-              "orderInLine": 4,
-              "name": "Cooling Conveyor",
-              "function": "Cools gum pieces before pillow wrapping",
-              "description": "",
-              "image": "assets/images/machines/M4.jpg",
-              "specs": {
-                "certifications": "CE, ISO 9001:2015"
-              },
-              "diesAndParts": []
-            },
-            {
-              "id": "BG-L006-M05",
-              "machineNumber": "BG-L006-M05",
-              "orderInLine": 5,
-              "name": "Pillow Wrap Machine",
-              "function": "Wraps each piece in a hermetically sealed pillow-pack using flow-wrap film",
-              "description": "",
-              "image": "assets/images/machines/M5.jpg",
-              "specs": {
-                "throughput": "800 pcs/min",
-                "wrapFormat": "Pillow Wrap / Flow Wrap",
-                "certifications": "CE, ISO 9001:2015"
-              },
-              "diesAndParts": []
+              "function": "High-performance pillow-pack wrapper for filled or un-filled candies and bubblegums at up to 800 pieces per minute.",
+              "description": "Photo-electric-eye pillow wrapper with inverter, 2 H.P 3-phase and ½ H.P motors, 3.2 kW heaters.",
+              "image": "assets/STARMER/_ready/HARD CANDY/Complete Candy line 450Kg_Hr/Pillow pack Wrapping Machine.jpg",
+              "specs": {
+                "output": "Up to 800 pcs/min",
+                "electricMotors": "(1) 2 H.P / 3-phase, (2) ½ H.P",
+                "electricHeaters": "3.2 kW",
+                "standardEquipment": "Photo-electric eye & inverter",
+                "dimensions": "2,335 x 900 x 1,725 mm",
+                "weight": "750 kg",
+                "reel": "Max outer dia 280 mm / core dia 70 mm"
+              },
+              "diesAndParts": [
+                {
+                  "id": "HC-L004-M23-D01",
+                  "partNumber": "HC-L004-M23-D01",
+                  "name": "Wrapping Machine Die",
+                  "type": "die",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Forming die for the Wrapping Machine. Details coming soon."
+                },
+                {
+                  "id": "HC-L004-M23-P01",
+                  "partNumber": "HC-L004-M23-P01",
+                  "name": "Wrapping Machine Spare Part",
+                  "type": "part",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Spare part for the Wrapping Machine. Details coming soon."
+                }
+              ]
             }
           ]
         }
@@ -2360,137 +3113,805 @@ window.CATALOG_DATA = {
     },
     {
       "id": "pharma",
-      "label": "Pharma Production",
+      "label": "Pharma (Lozenges)",
       "slug": "pharma",
-      "color": "#065F46",
-      "accentColor": "#10B981",
-      "description": "GMP-compliant pharmaceutical confectionery lines for lozenges and medicated sweets. Designed for active ingredient handling with full documentation and traceability.",
+      "color": "#1E3A8A",
+      "accentColor": "#3B82F6",
+      "description": "",
       "lines": [
         {
           "id": "PH-L-001",
           "lineNumber": "PH-L-001",
-          "name": "Lozenges Complete Line",
-          "productionRate": "Per configuration",
-          "description": "Complete lozenge production line from cooking through active ingredient addition, forming, cooling and packaging. GMP-compliant design throughout. Suitable for sugar-based, sugar-free (sorbitol/isomalt) and medicated lozenges.",
-          "image": "assets/images/production-lines/LINE 1.avif",
+          "name": "Complete Pharma (Lozenges) Line 450 kg/hr",
+          "productionRate": "450 kg/hr",
+          "description": "A complete pharmaceutical lozenge production line with continuous vacuum cooking, Uniplast forming and rotary die cutting, centre filling, open and close-body cooling and high-speed wrapping at 450 kg/hr.",
+          "image": null,
           "machines": [
             {
               "id": "PH-L001-M01",
               "machineNumber": "PH-L001-M01",
+              "model": "SEW-101",
               "orderInLine": 1,
-              "name": "Sugar / Sorbitol Cooking Tank",
-              "function": "Dissolves and cooks the lozenge base (sugar, sorbitol or isomalt) to target Brix and temperature",
-              "description": "GMP-compliant jacketed cooking tank with CIP capability. Handles sugar, sorbitol, and isomalt bases. All surfaces 316L SS with documented surface finish.",
-              "image": "assets/images/machines/M1.jpg",
+              "name": "Glucose Tank",
+              "function": "Hygienic vertical storage tank for stable, crystal-free storage of liquid glucose and syrups.",
+              "description": "Vertical S.S 304 tank with base coil heating and external ladder.",
+              "image": "assets/STARMER/_ready/PHARMA/Complete Pharma ( Lozenges ) 450KG_HR/Glucose Tank.jpg",
               "specs": {
-                "capacity": "300 L",
-                "powerConsumption": "9 kW",
-                "materialContact": "316L Stainless Steel, Ra ≤ 0.8 µm",
-                "cipCompatible": "Yes — automated 3-stage CIP",
-                "certifications": "CE, cGMP, ISO 9001:2015"
+                "grade": "S.S 304",
+                "sheetThickness": "5 mm upper and lower sheet",
+                "outerDiaSheetThickness": "3 mm",
+                "designType": "Vertical",
+                "heatingSystem": "Coil on the base of tank (for steam circulation)",
+                "ladder": "Outside the tank",
+                "capacity": "20 ton Glucose",
+                "dimension": "16 ft height x 7 ft diameter",
+                "powerLoad": "None"
               },
-              "diesAndParts": []
+              "diesAndParts": [
+                {
+                  "id": "PH-L001-M01-D01",
+                  "partNumber": "PH-L001-M01-D01",
+                  "name": "Glucose Tank Die",
+                  "type": "die",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Forming die for the Glucose Tank. Details coming soon."
+                },
+                {
+                  "id": "PH-L001-M01-P01",
+                  "partNumber": "PH-L001-M01-P01",
+                  "name": "Glucose Tank Spare Part",
+                  "type": "part",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Spare part for the Glucose Tank. Details coming soon."
+                }
+              ]
             },
             {
               "id": "PH-L001-M02",
               "machineNumber": "PH-L001-M02",
+              "model": "SEW-102",
               "orderInLine": 2,
-              "name": "Continuous Cooker",
-              "function": "Continuous-flow cooking of lozenge base to precise dry solids under controlled conditions",
-              "description": "Continuous falling-film cooker with high-accuracy temperature control. Eliminates batch-to-batch variation. 21 CFR Part 11 compliant data logging available.",
-              "image": "assets/images/machines/M2.jpg",
+              "name": "Steam Generator",
+              "function": "Produces high-pressure steam for heating, cleaning and process use across the line.",
+              "description": "Three-pass steam generator with Grundfos multistage feed-water pump, automatic electric control panel and burner with gas assembly & diesel pump.",
+              "image": "assets/STARMER/_ready/PHARMA/Complete Pharma ( Lozenges ) 450KG_HR/Steam Generator.jpg",
               "specs": {
-                "throughput": "200 kg/hr",
-                "powerConsumption": "22 kW",
-                "temperatureAccuracy": "±0.5 °C",
-                "dataLogging": "21 CFR Part 11 compliant option",
-                "certifications": "CE, cGMP, PED 2014/68/EU"
+                "typeOfPasses": "3 pass",
+                "testPressure": "225 psi",
+                "workingPressure": "150 psi",
+                "tubeDia": "2\" or 2 1/2\"",
+                "tubeSheetThickness": "1/2\"",
+                "rockWoolThickness": "2\"",
+                "insulationSheetThickness": "24 gauge",
+                "feedWaterPump": "Grundfos, multistage",
+                "burnerMotor": "2 hp",
+                "feedWaterMotor": "3 hp",
+                "capacity": "1500 kg/hr",
+                "dimension": "8' x 3'5\" x 3'5\"",
+                "powerLoad": "5 hp"
               },
-              "diesAndParts": []
+              "diesAndParts": [
+                {
+                  "id": "PH-L001-M02-D01",
+                  "partNumber": "PH-L001-M02-D01",
+                  "name": "Steam Generator Die",
+                  "type": "die",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Forming die for the Steam Generator. Details coming soon."
+                },
+                {
+                  "id": "PH-L001-M02-P01",
+                  "partNumber": "PH-L001-M02-P01",
+                  "name": "Steam Generator Spare Part",
+                  "type": "part",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Spare part for the Steam Generator. Details coming soon."
+                }
+              ]
             },
             {
               "id": "PH-L001-M03",
               "machineNumber": "PH-L001-M03",
+              "model": "SEW-103",
               "orderInLine": 3,
-              "name": "Active Ingredient Mixing Table",
-              "function": "Incorporates active pharmaceutical ingredients (APIs), menthol, and flavors into the hot lozenge mass under controlled conditions",
-              "description": "Enclosed mixing table with temperature control and API dosing system. Enclosed design minimizes API exposure. Compatible with dry powders, liquid extracts, and menthol crystals. All dosing systems traceable.",
-              "image": "assets/images/machines/M3.jpg",
+              "name": "Steam Header",
+              "function": "Collects steam from the generator and distributes dry, high-quality steam to user points across the line.",
+              "description": "Cushioned cylinder header in mild steel with configurable branch pipes.",
+              "image": "assets/STARMER/_ready/PHARMA/Complete Pharma ( Lozenges ) 450KG_HR/Steam Header.jpg",
               "specs": {
-                "throughput": "200 kg/hr",
-                "powerConsumption": "4 kW",
-                "mixingDesign": "Enclosed with extraction",
-                "apiDosing": "Gravimetric dosing system",
-                "certifications": "CE, cGMP, ISO 9001:2015"
+                "materialOfHeader": "M.S",
+                "diameter": "1 ft",
+                "branchPipes": "1\", 2\", 3\", 4\" (depending on system needs)",
+                "design": "Cushioned Cylinder",
+                "connections": "5",
+                "dimension": "1 ft (dia) x 3 ft (length)",
+                "powerLoad": "None"
               },
-              "diesAndParts": []
+              "diesAndParts": [
+                {
+                  "id": "PH-L001-M03-D01",
+                  "partNumber": "PH-L001-M03-D01",
+                  "name": "Steam Header Die",
+                  "type": "die",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Forming die for the Steam Header. Details coming soon."
+                },
+                {
+                  "id": "PH-L001-M03-P01",
+                  "partNumber": "PH-L001-M03-P01",
+                  "name": "Steam Header Spare Part",
+                  "type": "part",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Spare part for the Steam Header. Details coming soon."
+                }
+              ]
             },
             {
               "id": "PH-L001-M04",
               "machineNumber": "PH-L001-M04",
+              "model": "SEW-104",
               "orderInLine": 4,
-              "name": "Lozenge Forming Machine",
-              "function": "Forms the medicated candy mass into uniform lozenge shapes using rotary depositing or die-cut forming",
-              "description": "Rotary depositor or die-cut former producing lozenges in round, square, or custom shapes. Each piece formed to ±2% weight accuracy for API dose uniformity. Quick-change mold inserts.",
-              "image": "assets/images/machines/M4.jpg",
+              "name": "Candy Continuous Vacuum Cooker",
+              "function": "Continuous vacuum cooker that automatically produces hard-boiled candies and milk caramels with high clarity and smooth texture, with adjustable parameters.",
+              "description": "Double-jacketed S.S 304 pans and body with dosing pump, sugar pump, batch auto control, steam gauge and safety valves.",
+              "image": "assets/STARMER/_ready/PHARMA/Complete Pharma ( Lozenges ) 450KG_HR/Candy Continuous Cooker.jpg",
               "specs": {
-                "throughput": "400 pcs/min",
-                "powerConsumption": "7.5 kW",
-                "weightAccuracy": "±2% per piece",
-                "moldChangeover": "< 15 minutes",
-                "certifications": "CE, cGMP, FDA, ISO 9001:2015"
+                "output": "450 kg/hr",
+                "pans": "2 nos in S.S 304 food grade",
+                "body": "S.S 304, double jacketed",
+                "dozingPump": "3 hp (imported)",
+                "sugarPump": "2 hp, 1450 rpm",
+                "controls": "Electric panel with all new features, batch auto control",
+                "fittings": "Steam gauge, safety valve, sect valve",
+                "dimension": "8.5 ft x 6 ft x 7 ft",
+                "powerLoad": "4 hp"
               },
               "diesAndParts": [
                 {
                   "id": "PH-L001-M04-D01",
                   "partNumber": "PH-L001-M04-D01",
+                  "name": "Candy Continuous Vacuum Cooker Die",
                   "type": "die",
-                  "name": "Lozenge Mold Set — Round 25 mm",
-                  "description": "cGMP-compliant mold insert set for 25 mm round lozenges. 316L SS with electropolish finish for easy cleaning and validation.",
-                  "image": "assets/images/spare-parts/S5.jpg",
-                  "specs": {
-                    "lozengeShape": "Round",
-                    "lozengeDiameter": "25 mm",
-                    "material": "316L Stainless Steel",
-                    "finish": "Electropolish Ra ≤ 0.4 µm",
-                    "certifications": "cGMP, FDA 21 CFR",
-                    "compatibleMachine": "PH-L001-M04"
-                  }
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Forming die for the Candy Continuous Vacuum Cooker. Details coming soon."
+                },
+                {
+                  "id": "PH-L001-M04-P01",
+                  "partNumber": "PH-L001-M04-P01",
+                  "name": "Candy Continuous Vacuum Cooker Spare Part",
+                  "type": "part",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Spare part for the Candy Continuous Vacuum Cooker. Details coming soon."
                 }
               ]
             },
             {
               "id": "PH-L001-M05",
               "machineNumber": "PH-L001-M05",
+              "model": "SEW-105",
               "orderInLine": 5,
-              "name": "Cooling Conveyor",
-              "function": "Cools formed lozenges under controlled conditions to packaging-ready temperature",
-              "description": "GMP-designed cooling conveyor with enclosed food-safe housing. HEPA-filtered air supply for cleanroom compatibility. Continuous temperature monitoring with 21 CFR Part 11 logging.",
-              "image": "assets/images/machines/M5.jpg",
+              "name": "Vacuum Pump",
+              "function": "Rapidly removes moisture from the cooked candy mass under reduced pressure to prevent caramelisation.",
+              "description": "M.S frame vacuum pump unit.",
+              "image": "assets/STARMER/_ready/PHARMA/Complete Pharma ( Lozenges ) 450KG_HR/Vacuum Pump.jpg",
               "specs": {
-                "throughput": "400 pcs/min",
-                "powerConsumption": "3 kW",
-                "airFiltration": "HEPA H14",
-                "temperatureControl": "±1 °C",
-                "certifications": "CE, cGMP, ISO 9001:2015"
+                "rating": "10 hp = 1450 rpm",
+                "frame": "M.S",
+                "dimension": "2 ft x 4 ft x 1 ft",
+                "powerLoad": "10 hp"
               },
-              "diesAndParts": []
+              "diesAndParts": [
+                {
+                  "id": "PH-L001-M05-D01",
+                  "partNumber": "PH-L001-M05-D01",
+                  "name": "Vacuum Pump Die",
+                  "type": "die",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Forming die for the Vacuum Pump. Details coming soon."
+                },
+                {
+                  "id": "PH-L001-M05-P01",
+                  "partNumber": "PH-L001-M05-P01",
+                  "name": "Vacuum Pump Spare Part",
+                  "type": "part",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Spare part for the Vacuum Pump. Details coming soon."
+                }
+              ]
             },
             {
               "id": "PH-L001-M06",
               "machineNumber": "PH-L001-M06",
+              "model": "SEW-106",
               "orderInLine": 6,
-              "name": "Packaging Machine",
-              "function": "Counts, blister-packs or bottle-fills finished lozenges with full batch traceability",
-              "description": "Configurable for blister packaging, tube filling or bottle counting. Integrated checkweigher and reject station. Batch and lot number printing. Suitable for OTC and Rx pharmaceutical packaging.",
-              "image": "assets/images/machines/M1.jpg",
+              "name": "Dissolving Tank",
+              "function": "Controlled dissolution of sugar, glucose syrup and other ingredients into a homogeneous sugar solution.",
+              "description": "Double-jacketed S.S 304 tank with stirrer, M.S legs, 2 hp drive, steam gauge and safety/scat valves.",
+              "image": "assets/STARMER/_ready/PHARMA/Complete Pharma ( Lozenges ) 450KG_HR/Dissolving Tank.jpg",
               "specs": {
-                "throughput": "400 pcs/min",
-                "packagingFormats": "Blister, Tube, Bottle",
-                "traceability": "Batch/Lot print & vision check",
-                "certifications": "CE, cGMP, FDA, ISO 9001:2015"
+                "capacity": "400 kg",
+                "construction": "Double jacketed with M.S",
+                "body": "S.S 304",
+                "legs": "M.S",
+                "stirrer": "S.S 304",
+                "gearMotorMainDrive": "2 hp",
+                "fittings": "Steam gauge, safety valve, scat valve",
+                "dimension": "5'6\" x 3'5\" x 3'5\"",
+                "powerLoad": "2 hp"
               },
-              "diesAndParts": []
+              "diesAndParts": [
+                {
+                  "id": "PH-L001-M06-D01",
+                  "partNumber": "PH-L001-M06-D01",
+                  "name": "Dissolving Tank Die",
+                  "type": "die",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Forming die for the Dissolving Tank. Details coming soon."
+                },
+                {
+                  "id": "PH-L001-M06-P01",
+                  "partNumber": "PH-L001-M06-P01",
+                  "name": "Dissolving Tank Spare Part",
+                  "type": "part",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Spare part for the Dissolving Tank. Details coming soon."
+                }
+              ]
+            },
+            {
+              "id": "PH-L001-M07",
+              "machineNumber": "PH-L001-M07",
+              "model": "SEW-107",
+              "orderInLine": 7,
+              "name": "Storage Tank",
+              "function": "Holds and maintains cooked sugar mass or syrup at controlled temperature before the forming or depositing section.",
+              "description": "Single-jacketed S.S 304 tank with stirrer, M.S legs and 1 hp drive.",
+              "image": "assets/STARMER/_ready/PHARMA/Complete Pharma ( Lozenges ) 450KG_HR/Storage Tank.jpg",
+              "specs": {
+                "capacity": "400 kg",
+                "construction": "Single jacketed",
+                "body": "S.S 304",
+                "legs": "M.S",
+                "stirrer": "S.S 304",
+                "gearMotorMainDrive": "1 hp",
+                "dimension": "6' x 3'6\" x 3'6\"",
+                "powerLoad": "1 hp"
+              },
+              "diesAndParts": [
+                {
+                  "id": "PH-L001-M07-D01",
+                  "partNumber": "PH-L001-M07-D01",
+                  "name": "Storage Tank Die",
+                  "type": "die",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Forming die for the Storage Tank. Details coming soon."
+                },
+                {
+                  "id": "PH-L001-M07-P01",
+                  "partNumber": "PH-L001-M07-P01",
+                  "name": "Storage Tank Spare Part",
+                  "type": "part",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Spare part for the Storage Tank. Details coming soon."
+                }
+              ]
+            },
+            {
+              "id": "PH-L001-M08",
+              "machineNumber": "PH-L001-M08",
+              "model": "SEW-108",
+              "orderInLine": 8,
+              "name": "Cooling Table",
+              "function": "Rapid cooling and conditioning of the cooked sugar mass for uniform texture and workability before forming.",
+              "description": "Water-cooled S.S 304 table with A-frame circuit and S.S 201 legs.",
+              "image": "assets/STARMER/_ready/PHARMA/Complete Pharma ( Lozenges ) 450KG_HR/Cooling table.jpg",
+              "specs": {
+                "basePlateThickness": "10 mm in S.S 304",
+                "materialOfPlate": "Boundary wall S.S 304",
+                "coolingMedium": "Water cooling system, A-frame inlet/outlet valve",
+                "legs": "4 Nos in S.S 201 grade",
+                "dimension": "3 ft x 6 ft x 2'6\"",
+                "powerLoad": "None"
+              },
+              "diesAndParts": [
+                {
+                  "id": "PH-L001-M08-D01",
+                  "partNumber": "PH-L001-M08-D01",
+                  "name": "Cooling Table Die",
+                  "type": "die",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Forming die for the Cooling Table. Details coming soon."
+                },
+                {
+                  "id": "PH-L001-M08-P01",
+                  "partNumber": "PH-L001-M08-P01",
+                  "name": "Cooling Table Spare Part",
+                  "type": "part",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Spare part for the Cooling Table. Details coming soon."
+                }
+              ]
+            },
+            {
+              "id": "PH-L001-M09",
+              "machineNumber": "PH-L001-M09",
+              "model": "SEW-109",
+              "orderInLine": 9,
+              "name": "Kneading Machine",
+              "function": "Uniform mixing and kneading of the cooked sugar mass with hygienic, water-cooled stainless steel contact parts.",
+              "description": "S.S 304 roller and main plate, S.S 201 side sheets, 5 hp drive.",
+              "image": "assets/STARMER/_ready/PHARMA/Complete Pharma ( Lozenges ) 450KG_HR/Kneading Machine.jpg",
+              "specs": {
+                "roller": "S.S 304",
+                "mainDrive": "5 hp",
+                "steelPlate": "4 ft",
+                "control": "Switch on/off",
+                "sideSheets": "S.S 201",
+                "mainPlate": "S.S 304",
+                "dimension": "5' x 5'6\" x 5'6\"",
+                "powerLoad": "5 hp"
+              },
+              "diesAndParts": [
+                {
+                  "id": "PH-L001-M09-D01",
+                  "partNumber": "PH-L001-M09-D01",
+                  "name": "Kneading Machine Die",
+                  "type": "die",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Forming die for the Kneading Machine. Details coming soon."
+                },
+                {
+                  "id": "PH-L001-M09-P01",
+                  "partNumber": "PH-L001-M09-P01",
+                  "name": "Kneading Machine Spare Part",
+                  "type": "part",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Spare part for the Kneading Machine. Details coming soon."
+                }
+              ]
+            },
+            {
+              "id": "PH-L001-M10",
+              "machineNumber": "PH-L001-M10",
+              "model": "SEW-110",
+              "orderInLine": 10,
+              "name": "Center Filling Liquid Pump",
+              "function": "Precision dosing system that injects liquid filling (fruit syrup, chocolate, cream or jam) into the core of the candy rope during forming.",
+              "description": "Double-jacketed S.S 304 leaf with Teflon-covered food-grade rod, flexible pipe, 2 hp drive, 1000 W heater and 2 HP inverter with overflow recycle.",
+              "image": "assets/STARMER/_ready/PHARMA/Complete Pharma ( Lozenges ) 450KG_HR/Liquid Filling Pump.jpg",
+              "specs": {
+                "filling": "Chocolate and liquid",
+                "leaf": "S.S 304, double jacketed",
+                "rod": "S.S with Teflon covering (food grade, heat proof)",
+                "pipe": "Flexible, food grade",
+                "gearMotorMainDrive": "2 hp",
+                "stand": "M.S",
+                "heater": "1000 watt, 1 No",
+                "inverter": "2 HP",
+                "extra": "Overflow system to recycle liquid/chocolate",
+                "powerLoad": "3.34 hp"
+              },
+              "diesAndParts": [
+                {
+                  "id": "PH-L001-M10-D01",
+                  "partNumber": "PH-L001-M10-D01",
+                  "name": "Center Filling Liquid Pump Die",
+                  "type": "die",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Forming die for the Center Filling Liquid Pump. Details coming soon."
+                },
+                {
+                  "id": "PH-L001-M10-P01",
+                  "partNumber": "PH-L001-M10-P01",
+                  "name": "Center Filling Liquid Pump Spare Part",
+                  "type": "part",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Spare part for the Center Filling Liquid Pump. Details coming soon."
+                }
+              ]
+            },
+            {
+              "id": "PH-L001-M11",
+              "machineNumber": "PH-L001-M11",
+              "model": "SEW-114",
+              "orderInLine": 11,
+              "name": "Batch Roller",
+              "function": "Continuously rolls and shapes the cooked mass into a uniform cylindrical rope with consistent filling, flavour and colour.",
+              "description": "Horizontal 4-roller batch roller in S.S 304 food grade with SEW (Germany) gear motor, up/down drive, control panel and 1000 W heaters.",
+              "image": "assets/STARMER/_ready/PHARMA/Complete Pharma ( Lozenges ) 450KG_HR/Batch Roller.jpg",
+              "specs": {
+                "frame": "Horizontal",
+                "rollersQuantity": "4",
+                "rollersMaterial": "S.S 304 food grade",
+                "upperBody": "S.S 304 food grade",
+                "bearing": "In gears",
+                "gearMotorMainDrive": "1 hp",
+                "upDownDrive": "1 hp",
+                "heaters": "1000 watt (2 Nos)",
+                "capacity": "75 kg",
+                "length": "6.5 ft",
+                "gearMotor": "SEW brand, Germany",
+                "dimension": "4'6\" x 2'2\" x 7'",
+                "powerLoad": "4.68 hp"
+              },
+              "diesAndParts": [
+                {
+                  "id": "PH-L001-M11-D01",
+                  "partNumber": "PH-L001-M11-D01",
+                  "name": "Batch Roller Die",
+                  "type": "die",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Forming die for the Batch Roller. Details coming soon."
+                },
+                {
+                  "id": "PH-L001-M11-P01",
+                  "partNumber": "PH-L001-M11-P01",
+                  "name": "Batch Roller Spare Part",
+                  "type": "part",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Spare part for the Batch Roller. Details coming soon."
+                }
+              ]
+            },
+            {
+              "id": "PH-L001-M12",
+              "machineNumber": "PH-L001-M12",
+              "model": "SEW-115",
+              "orderInLine": 12,
+              "name": "Rope Sizer (4 Stages)",
+              "function": "Accurately reduces and calibrates the candy/toffee rope diameter through four sizing stages for uniform thickness.",
+              "description": "Horizontal 4-stage rope sizer with S.S 304 roller pairs, brass rope guide, digital inverter and SEW (Germany) gear motors; bearings for low maintenance.",
+              "image": "assets/STARMER/_ready/PHARMA/Complete Pharma ( Lozenges ) 450KG_HR/Rope Sizer.jpg",
+              "specs": {
+                "sizerModel": "Horizontal, 4 stages",
+                "pairs": "S.S 304 (32 mm, 27 mm, 22 mm, 17 mm)",
+                "electricPanel": "S.S 201",
+                "sideSheets": "S.S 201",
+                "sizerPlates": "S.S 304",
+                "ropeGuide": "Brass",
+                "inverter": "INVENT digital, 2 hp",
+                "gearMotors": "SEW brand, Germany",
+                "heatControllers": "Digital, 2 Nos",
+                "mainDriveGearMotor": "2 hp",
+                "heaters": "500 watt (4 Nos) = 2 kw",
+                "bearings": "Used instead of bushes",
+                "dimension": "4.3 ft x 2.5 ft x 6 ft",
+                "powerLoad": "4.68 hp"
+              },
+              "diesAndParts": [
+                {
+                  "id": "PH-L001-M12-D01",
+                  "partNumber": "PH-L001-M12-D01",
+                  "name": "Rope Sizer (4 Stages) Die",
+                  "type": "die",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Forming die for the Rope Sizer (4 Stages). Details coming soon."
+                },
+                {
+                  "id": "PH-L001-M12-P01",
+                  "partNumber": "PH-L001-M12-P01",
+                  "name": "Rope Sizer (4 Stages) Spare Part",
+                  "type": "part",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Spare part for the Rope Sizer (4 Stages). Details coming soon."
+                }
+              ]
+            },
+            {
+              "id": "PH-L001-M13",
+              "machineNumber": "PH-L001-M13",
+              "model": "SEW-116",
+              "orderInLine": 13,
+              "name": "Uniplast Forming Machine",
+              "function": "SEW-4 continuous forming machine for seamless sweets with or without centre filling; forms hard-boiled, liquid/powder-filled candies, toffees, chewy candies, chewing gum and bubble gum with high depth thickness.",
+              "description": "High-carbon-steel forged gears with bearing-steel CAMS and S.G iron reverse cams, 5 hp drive and INVENT inverter; adjustable filling up to 12%.",
+              "image": "assets/STARMER/_ready/PHARMA/Complete Pharma ( Lozenges ) 450KG_HR/Kneading Machine.jpg",
+              "specs": {
+                "mainDrive": "5 hp motor",
+                "inverter": "5 hp (INVENT brand)",
+                "production": "Up to 450 kg/hr",
+                "cams": "Bearing steel grade",
+                "reverseCams": "S.G iron",
+                "gears": "High carbon steel, forged",
+                "outputSpeed": "2500 to 3500 pieces/min (depending on size)",
+                "filling": "Up to 12% of candy",
+                "controls": "Electric panel with all new features",
+                "dimension": "6.5 ft x 4.5 ft x 3.5 ft",
+                "powerLoad": "5 hp"
+              },
+              "diesAndParts": [
+                {
+                  "id": "PH-L001-M13-D01",
+                  "partNumber": "PH-L001-M13-D01",
+                  "name": "Uniplast Forming Machine Die",
+                  "type": "die",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Forming die for the Uniplast Forming Machine. Details coming soon."
+                },
+                {
+                  "id": "PH-L001-M13-P01",
+                  "partNumber": "PH-L001-M13-P01",
+                  "name": "Uniplast Forming Machine Spare Part",
+                  "type": "part",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Spare part for the Uniplast Forming Machine. Details coming soon."
+                }
+              ]
+            },
+            {
+              "id": "PH-L001-M14",
+              "machineNumber": "PH-L001-M14",
+              "model": "SEW-117",
+              "orderInLine": 14,
+              "name": "Rotary Forming Die with Cutting Rings",
+              "function": "Precision rotary forming die that shapes hard-boiled, toffee, eclair and filled candies; built for durable, high-accuracy, seamless forming.",
+              "description": "EN19 high-wear cutting ring (tooth pitch 2-3 mm) and 45 HRC punch, cast iron die parts and brass-cast outer ring.",
+              "image": "assets/STARMER/_ready/PHARMA/Complete Pharma ( Lozenges ) 450KG_HR/Rotary Die.jpg",
+              "specs": {
+                "cuttingRing": "EN19, high wear resistance (tooth pitch 2-3 mm)",
+                "punch": "EN19, hardness up to 45 HRC",
+                "block": "High quality M.S grade carbon steel",
+                "dieParts": "Cast iron grade",
+                "outerRing": "Brass casting (for rope cutting)",
+                "dimension": "18\" x 18\" x 5\"",
+                "powerLoad": "None"
+              },
+              "diesAndParts": [
+                {
+                  "id": "PH-L001-M14-D01",
+                  "partNumber": "PH-L001-M14-D01",
+                  "name": "Rotary Forming Die with Cutting Rings Die",
+                  "type": "die",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Forming die for the Rotary Forming Die with Cutting Rings. Details coming soon."
+                },
+                {
+                  "id": "PH-L001-M14-P01",
+                  "partNumber": "PH-L001-M14-P01",
+                  "name": "Rotary Forming Die with Cutting Rings Spare Part",
+                  "type": "part",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Spare part for the Rotary Forming Die with Cutting Rings. Details coming soon."
+                }
+              ]
+            },
+            {
+              "id": "PH-L001-M15",
+              "machineNumber": "PH-L001-M15",
+              "model": "SEW-118",
+              "orderInLine": 15,
+              "name": "Die Stand",
+              "function": "Makes die changing and fitting easier and more efficient.",
+              "description": "M.S frame with movement wheels, casting die-cap lane and die up/down screw.",
+              "image": "assets/STARMER/_ready/PHARMA/Complete Pharma ( Lozenges ) 450KG_HR/Die Stand.jpg",
+              "specs": {
+                "mainFrame": "M.S",
+                "movement": "Equipped with wheels",
+                "dieCaplene": "Casting material",
+                "adjustment": "Screw for die up/down",
+                "dimension": "5.5 ft x 5 ft",
+                "powerLoad": "None"
+              },
+              "diesAndParts": [
+                {
+                  "id": "PH-L001-M15-D01",
+                  "partNumber": "PH-L001-M15-D01",
+                  "name": "Die Stand Die",
+                  "type": "die",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Forming die for the Die Stand. Details coming soon."
+                },
+                {
+                  "id": "PH-L001-M15-P01",
+                  "partNumber": "PH-L001-M15-P01",
+                  "name": "Die Stand Spare Part",
+                  "type": "part",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Spare part for the Die Stand. Details coming soon."
+                }
+              ]
+            },
+            {
+              "id": "PH-L001-M16",
+              "machineNumber": "PH-L001-M16",
+              "model": "SEW-119",
+              "orderInLine": 16,
+              "name": "Cooling Conveyor (Open Body)",
+              "function": "Cools and stabilises the hot candy mass after forming or rope sizing, before setting, wrapping or packaging.",
+              "description": "18 ft open-body conveyor with 3 hp blower, Teflon belt, S.S 304 mesh-wire steps, M.S chain/sprockets and S.S 304 rods.",
+              "image": "assets/STARMER/_ready/PHARMA/Complete Pharma ( Lozenges ) 450KG_HR/Close body Cooling Tunnel _ 3 Stages Cooling Conveyor .jpg",
+              "specs": {
+                "length": "18 ft",
+                "steps": "3 steps",
+                "blower": "3 hp",
+                "firstBelt": "Teflon, 4 inch width",
+                "secondMesh": "S.S 304, 21 inch width",
+                "thirdMesh": "S.S 304, 28 inch width",
+                "gearMotor": "2 hp",
+                "inverter": "2 hp (speed control)",
+                "chain": "M.S",
+                "sprockets": "M.S",
+                "rods": "S.S 304",
+                "dimension": "18 ft (length)",
+                "powerLoad": "5 hp"
+              },
+              "diesAndParts": [
+                {
+                  "id": "PH-L001-M16-D01",
+                  "partNumber": "PH-L001-M16-D01",
+                  "name": "Cooling Conveyor (Open Body) Die",
+                  "type": "die",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Forming die for the Cooling Conveyor (Open Body). Details coming soon."
+                },
+                {
+                  "id": "PH-L001-M16-P01",
+                  "partNumber": "PH-L001-M16-P01",
+                  "name": "Cooling Conveyor (Open Body) Spare Part",
+                  "type": "part",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Spare part for the Cooling Conveyor (Open Body). Details coming soon."
+                }
+              ]
+            },
+            {
+              "id": "PH-L001-M17",
+              "machineNumber": "PH-L001-M17",
+              "model": "SEW-120",
+              "orderInLine": 17,
+              "name": "Vibrator",
+              "function": "Smoothly transports candies from cooling and forming to packaging, preventing clumping or sticking.",
+              "description": "M.S frame vibrator with S.S 304 (18 gauge) main sheet and trays, twin fans, 1 hp drive.",
+              "image": "assets/STARMER/_ready/PHARMA/Complete Pharma ( Lozenges ) 450KG_HR/Vibrator.jpg",
+              "specs": {
+                "frame": "M.S",
+                "mainSheet": "S.S 304, 18 gauge",
+                "fans": "2 nos",
+                "gearMotor": "1 hp",
+                "trays": "S.S 304, 2 nos",
+                "dimension": "3.5 ft x 4.5 ft x 8 ft",
+                "powerLoad": "1 hp"
+              },
+              "diesAndParts": [
+                {
+                  "id": "PH-L001-M17-D01",
+                  "partNumber": "PH-L001-M17-D01",
+                  "name": "Vibrator Die",
+                  "type": "die",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Forming die for the Vibrator. Details coming soon."
+                },
+                {
+                  "id": "PH-L001-M17-P01",
+                  "partNumber": "PH-L001-M17-P01",
+                  "name": "Vibrator Spare Part",
+                  "type": "part",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Spare part for the Vibrator. Details coming soon."
+                }
+              ]
+            },
+            {
+              "id": "PH-L001-M18",
+              "machineNumber": "PH-L001-M18",
+              "model": "SEW-121",
+              "orderInLine": 18,
+              "name": "Close Body Cooling Tunnel",
+              "function": "Rapidly and uniformly reduces the temperature of freshly formed candy for dimensional stability and hardness before cutting, wrapping or packaging.",
+              "description": "16 ft close-body tunnel with integrated 5 ton AC, S.S 304 mesh-wire steps, S.S 201 covers, thermopore insulation and SEW gear motor.",
+              "image": "assets/STARMER/_ready/PHARMA/Complete Pharma ( Lozenges ) 450KG_HR/Close body Cooling Tunnel _ 3 Stages Cooling Conveyor .jpg",
+              "specs": {
+                "length": "16 ft",
+                "width": "3 ft",
+                "cooling": "With 5 ton AC",
+                "stages": "3 stages",
+                "meshWire": "S.S 304 grade (3 steps)",
+                "sideSheets": "Outer and inner in S.S 201",
+                "covers": "S.S 201",
+                "insulation": "Double jacketed with thermopore",
+                "rods": "S.S 304, 5 mm thickness",
+                "chain": "M.S, 40 No",
+                "gearMotor": "3 hp (1 hp each, 3 nos), SEW brand",
+                "inverter": "INVENT new brand, 5 hp",
+                "dimension": "3 ft x 16 ft",
+                "powerLoad": "3 hp"
+              },
+              "diesAndParts": [
+                {
+                  "id": "PH-L001-M18-D01",
+                  "partNumber": "PH-L001-M18-D01",
+                  "name": "Close Body Cooling Tunnel Die",
+                  "type": "die",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Forming die for the Close Body Cooling Tunnel. Details coming soon."
+                },
+                {
+                  "id": "PH-L001-M18-P01",
+                  "partNumber": "PH-L001-M18-P01",
+                  "name": "Close Body Cooling Tunnel Spare Part",
+                  "type": "part",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Spare part for the Close Body Cooling Tunnel. Details coming soon."
+                }
+              ]
+            },
+            {
+              "id": "PH-L001-M19",
+              "machineNumber": "PH-L001-M19",
+              "model": "SEW-122",
+              "orderInLine": 19,
+              "name": "AC Unit (5 Ton)",
+              "function": "Floor-standing air-conditioning unit (5 ton / 6.5 HP) for cooling the conveyor section and accessories.",
+              "description": "Indoor unit with copper-tube evaporator and 1 HP blower; Bitzer 6.5 HP outdoor condensing unit with Copeland scroll compressor and full AC accessories.",
+              "image": "assets/STARMER/_ready/PHARMA/Complete Pharma ( Lozenges ) 450KG_HR/Ac Unit.jpg",
+              "specs": {
+                "capacity": "5 Ton (6.5 HP)",
+                "type": "Floor standing",
+                "indoorBlower": "1 HP motor, 3 phase 440V/50Hz",
+                "expansionValve": "Emerson TCLE 6.5 HP",
+                "outdoorUnit": "Bitzer, high-density condensing coil",
+                "compressor": "Copeland scroll, 6.5 HP, 3 phase 440V/50Hz",
+                "safety": "Danfoss dual high/low-pressure switch",
+                "refrigerant": "R-22 (Honeywell, USA)",
+                "inverter": "7.5 KVA (INVT)",
+                "panelBox": "12\" x 24\"",
+                "powerLoad": "6.5 hp"
+              },
+              "diesAndParts": [
+                {
+                  "id": "PH-L001-M19-D01",
+                  "partNumber": "PH-L001-M19-D01",
+                  "name": "AC Unit (5 Ton) Die",
+                  "type": "die",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Forming die for the AC Unit (5 Ton). Details coming soon."
+                },
+                {
+                  "id": "PH-L001-M19-P01",
+                  "partNumber": "PH-L001-M19-P01",
+                  "name": "AC Unit (5 Ton) Spare Part",
+                  "type": "part",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Spare part for the AC Unit (5 Ton). Details coming soon."
+                }
+              ]
+            },
+            {
+              "id": "PH-L001-M20",
+              "machineNumber": "PH-L001-M20",
+              "model": "SEW-123",
+              "orderInLine": 20,
+              "name": "Wrapping Machine",
+              "function": "High-speed horizontal flow wrapper that feeds, encloses, heat-seals and cuts individual candies into uniform retail-ready packs as the final packaging stage.",
+              "description": "Photo-electric-eye flow wrapper with inverter, 2 H.P 3-phase and ½ H.P motors, 3.2 kW heaters.",
+              "image": "assets/STARMER/_ready/PHARMA/Complete Pharma ( Lozenges ) 450KG_HR/Pillow pack Wrapping Machine.jpg",
+              "specs": {
+                "output": "Up to 800 packs per minute",
+                "electricMotors": "(1) 2 H.P / 3-phase, (2) ½ H.P",
+                "electricHeaters": "3.2 kW",
+                "standardEquipment": "Photo-electric eye & inverter",
+                "dimensions": "2,335 x 900 x 1,715 mm (L x W x H)",
+                "weight": "750 kg",
+                "reel": "Max outer dia 280 mm / core dia 70 mm"
+              },
+              "diesAndParts": [
+                {
+                  "id": "PH-L001-M20-D01",
+                  "partNumber": "PH-L001-M20-D01",
+                  "name": "Wrapping Machine Die",
+                  "type": "die",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Forming die for the Wrapping Machine. Details coming soon."
+                },
+                {
+                  "id": "PH-L001-M20-P01",
+                  "partNumber": "PH-L001-M20-P01",
+                  "name": "Wrapping Machine Spare Part",
+                  "type": "part",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Spare part for the Wrapping Machine. Details coming soon."
+                }
+              ]
             }
           ]
         }
