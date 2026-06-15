@@ -1,0 +1,149 @@
+# Pop Double Twist Bubble Line -- extracted from POP.pdf (clean typed booklet)
+category: BUBBLE GUM
+category_slug: bubble-gum
+line:
+  name: Pop Double Twist Bubble Line
+  productionRate: Custom
+  description: >-
+    A double-twist bubble gum production line covering sugar grinding, gum mixing
+    and heating, extrusion, single-step cooling and cut-and-double-twist wrapping.
+  image: ''
+source_pdf: assets/STARMER/BUBBLE GUM/Pop Complete line_/POP.pdf
+machines:
+- name: Sugar Grinder
+  model: SEW-701
+  function: >-
+    Converts crystal sugar into a fine uniform powder for smooth dough formation,
+    efficient blending with gum base and consistent product texture.
+  description: M.S/S.S grinder with 45-number grinding and 15 hp motor.
+  image: ''
+  specs:
+    storageCapacity: 500 kg
+    grinder: 45 Number
+    motorPower: 15 hp
+    innerBox: S.S 303
+    outerBox: M.S
+    dimension: 4 (w) x 6 (l)
+    powerLoad: 15 hp
+- name: Heating Cabinet
+  model: SEW-702
+  function: >-
+    Maintains controlled temperature to pre-soften and condition the gum mass,
+    ensuring smooth shaping, uniform elasticity and stable processing.
+  description: Double-jacketed (glass wool) cabinet with M.S outer and S.S 304 inner sheets, 5 trays.
+  image: ''
+  specs:
+    trays: 5
+    outerSheets: M.S
+    innerSheets: S.S 304
+    construction: Double jacketed with glass wool
+    heatersAndBlower: Total load 10 hp
+    dimension: 3' x 3' x 6'
+    powerLoad: 10 hp
+- name: Bubble Gum Mixer
+  model: SEW-112
+  function: >-
+    Blends all raw ingredients into a homogeneous gum base mass suitable for
+    further processing (extrusion and shaping).
+  description: >-
+    Heavy-duty double-jacketed S.S 304 mixer with Z-arm, 20 hp main drive, 6000 W
+    heaters and a 2 hp tilting discharge system.
+  image: ''
+  specs:
+    capacity: 100 kg in 20 minutes
+    pan: S.S 304, double jacketed
+    construction: Double jacketed with S.S 304
+    zArm: S.S 304
+    panCover: S.S 304
+    gearMotorMainDrive: 20 hp
+    structure: Heavy duty M.S
+    heaters: Electric heaters, 6000 watt
+    sideSheets: S.S 201
+    tilt: Tilting system, gear motor 2 hp
+    controls: Electric panel with all new features
+    dimension: 6' x 8' x 8'
+    powerLoad: 28 hp
+- name: Rest Table
+  model: SEW-804
+  function: For a temporary rest of the gum-base batch coming from the mixer.
+  description: S.S 304 base plate (10 mm) with S.S 201 legs.
+  image: ''
+  specs:
+    basePlateThickness: 10 mm in S.S 304
+    legs: 4 Nos in S.S 201
+    dimension: 3 ft x 6 ft
+    powerLoad: None
+- name: Trolly
+  model: SEW-815
+  function: >-
+    Safely transfers the hot, viscous gum-base mass from the mixer to the extruder,
+    ensuring continuous flow and preventing contamination or handling delays.
+  description: S.S 304 pan on an M.S trolly stand.
+  image: ''
+  specs:
+    use: Moving gum-base mass from mixer to extruder
+    length: 3 ft
+    width: 3 ft
+    pan: S.S 304
+    trollyStand: M.S
+    powerLoad: None
+- name: Bubble Gum Extruder
+  model: SEW-113
+  function: >-
+    Shapes the mixed gum mass into a continuous rope of uniform thickness and
+    density for downstream forming.
+  description: >-
+    Screw extruder on M.S structure with 7.5 hp drive, 10 hp inverter, S.S 304 keef
+    and head helping-roller system, with 6000 W heaters.
+  image: ''
+  specs:
+    type: 1 rope, 2 worms
+    gearMotorDrive: 7.5 hp
+    inverter: 10 hp
+    structure: M.S
+    keef: S.S 304
+    heaters: Electric heaters, 6000 watt
+    controls: Electric panel with all new features, helping roller system in keef
+    powerLoad: 18 hp
+- name: Single Step Cooling Conveyor
+  model: SEW-809
+  function: >-
+    High-performance precision cooling conveyor for a wide range of ball and
+    cylindrical pieces, retaining their original shape and quality.
+  description: >-
+    White food-grade belt on a heavy 14g M.S pipe structure with double-jacketed
+    duct, thermopore insulation, 2 hp motor and inverter.
+  image: assets/STARMER/_ready/BUBBLE GUM/Pop Complete line_/Rest Conveyor For Bubble Line.jpg
+  specs:
+    conveyor: 3 ft x 20 ft
+    function: All types of bubble gum
+    beltSize: W 2.5 ft x length 20 ft
+    beltType: White food grade
+    motorPower: 2 hp
+    inverter: 2 hp
+    structure: M.S heavy pipe 14g
+    duct: Double jacketed duct on top of conveyor
+    insulation: Insulated with thermopore
+    controls: Control panel with all new features
+    dimension: 3 ft x 20 ft
+    powerLoad: 2 hp
+- name: Cut & Double Twist Wrapping Machine
+  model: SEW-810
+  function: >-
+    Wraps individual candies quickly and neatly — takes a piece of wrapper, places
+    the candy inside, cuts the wrapper to size and twists both ends.
+  description: >-
+    Double-reel (inner & outer) double-twist wrapper with NTN (Japan) bearings,
+    HECO motor, INVENT inverter and photocell-eye control.
+  image: assets/STARMER/_ready/BUBBLE GUM/Pop Complete line_/Cut & Double Twist _ Cut & Twist.jpg
+  specs:
+    speed: 350 pieces/min (depending on size of product)
+    reel: Double reel, inner & outer
+    bearings: NTN, Japan
+    inverter: 2 HP, INVENT brand
+    gearMotor: 2 hp, 3 phase
+    motorBrand: New HECO
+    photocell: Photocell eye
+    paper: Continuous paper
+    weight: 1100 kg
+    dimensions: 1,500 x 1,500 x 2,100 mm (L x W x H)

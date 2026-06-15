@@ -1,0 +1,199 @@
+# Double Twist Chew Complete Line -- extracted from DOUBLE TWIST CHEW.pdf
+category: CHEW & TOFFEE
+category_slug: chew-toffee
+line:
+  name: Double Twist Chew Complete Line
+  productionRate: Custom
+  description: >-
+    A double-twist chew production line covering glucose storage, steam generation,
+    cooking, cooling, pulling, batch rolling, five-stage rope sizing and
+    cut-and-double-twist wrapping.
+  image: ''
+source_pdf: assets/STARMER/CHEW & TOFFEE/Double Twist Chew Complete line_/DOUBLE TWIST CHEW.pdf
+machines:
+- name: Glucose Tank
+  model: SEW-101
+  function: >-
+    Glucose storage tanks are engineered with specific traits to ensure hygienic,
+    stable and crystal-free storage of liquid glucose and syrups for industrial
+    applications.
+  description: Vertical S.S 304 storage tank with steam-circulation coil on the base and an external ladder.
+  image: ''
+  specs:
+    grade: S.S 304
+    sheetThickness: 5 mm upper and lower sheet
+    outerDiaSheetThickness: 3 mm
+    designType: Vertical
+    heatingSystem: Coil on the base of tank for steam circulation
+    ladder: Outside the tank
+    capacity: 20 ton glucose
+    dimension: 16 ft height x 7 ft diameter
+    powerLoad: 0
+- name: Steam Generator
+  model: SEW-102
+  function: >-
+    Steam generator heats water to produce high-pressure steam for heating,
+    cleaning or industrial processes.
+  description: >-
+    3-pass steam generator with multistage Grundfos feed-water pump, full auto
+    control panel and rock-wool insulation; 600 kg/hr output.
+  image: ''
+  specs:
+    typeOfPasses: 3 pass
+    testPressure: 225 psi
+    workingPressure: 150 psi
+    tubeDia: 2" or 2 1/2"
+    pressureShellThickness: 1/2"
+    tubeSheetThickness: 1/2"
+    rockWoolThickness: 1/2"
+    isolationSheetThickness: 24 gauge
+    burnerMotor: 2 hp
+    feedWaterMotor: 3 hp
+    feedWaterPump: Multistage (Grundfos)
+    capacity: 600 kg/hr
+    electricLoad: 5 hp
+    dimension: 8' x 3'5" x 3'5"
+    powerLoad: 5 hp
+- name: Steam Header
+  model: SEW-103
+  function: >-
+    Steam headers are designed to collect steam from a boiler or steam generator
+    and distribute high-quality dry steam to the various user points while
+    performing several critical functions.
+  description: M.S cushioned-cylinder steam header with multiple branch pipes.
+  image: ''
+  specs:
+    materialOfHeader: M.S
+    diameter: 1 ft
+    branchPipes: 1", 2", 3", 4" depending on system needs
+    design: Cushioned cylinder
+    connection: 5
+    dimension: Dia 1 ft x Length 3 ft
+    powerLoad: 0
+- name: Toffee Cooker
+  model: ''
+  function: >-
+    The purpose of a toffee cooker is to heat and cook sugar-based mixtures to a
+    controlled temperature so the toffee reaches the correct thickness, texture and
+    moisture level, providing uniform heating and precise temperature control for
+    consistent quality and the required hardness or chewiness.
+  description: Double-jacketed S.S 304 toffee cooker with stirrer, coil, 3 hp gear-motor drive and safety valve.
+  image: ''
+  specs:
+    capacity: 150 kg per batch after 20 to 25 mins
+    stirrer: S.S 304
+    panMaterial: S.S 304
+    pan: Double jacketed with S.S 304 (M.S optional)
+    frame: M.S (S.S 201 optional)
+    controls: Electric panel with all new features
+    drive: 3 hp gear-motor drive
+    safetyValve: Yes
+    panCover: S.S 304
+    powerLoad: 3 hp
+- name: Cooling Table
+  model: SEW-108
+  function: >-
+    The cooling table is a crucial post-cooking unit used for rapid cooling and
+    conditioning of the cooked sugar mass before further processing such as mixing,
+    flavoring, coloring or forming, ensuring uniform texture and workability.
+  description: S.S 304 cooling table with water-cooled base plate and S.S 201 legs.
+  image: ''
+  specs:
+    basePlateThickness: 10 mm in S.S 304
+    materialOfPlate: Boundary wall S.S 304
+    coolingMedium: Water; A-frame for moving water inlet/outlet valve
+    legs: 4 Nos in S.S 201 grade
+    dimension: 3 ft x 6 ft x 2'6"
+    powerLoad: 0
+- name: Pulling Machine
+  model: ''
+  function: >-
+    The purpose of a pulling machine is to stretch and fold cooked candy or toffee
+    in a controlled way to improve its texture and structure. By continuously
+    pulling the mass it incorporates air, evens out temperature and develops the
+    desired smoothness, shine and chew of the final product.
+  description: Hard-chromed 3-arm pulling machine with 10 hp main drive and S.S side sheets.
+  image: ''
+  specs:
+    capacity: 100 kg
+    mainDriveMotor: 10 hp
+    arms: Hard chromed
+    armsForContinuousPulling: 3 arms
+    sideSheets: S.S
+    controls: Electric panel for control
+    powerLoad: 10 hp
+- name: Batch Roller
+  model: ''
+  function: >-
+    The batch roller is a key intermediate machine in the candy, lollipop, toffee
+    and fudge production line, designed to continuously roll, shape and form the
+    cooked mass into a uniform cylindrical rope and ensure consistent rope size and
+    proper distribution of centre filling, flavor and color before feeding the rope
+    sizer.
+  description: >-
+    Horizontal 4-roller batch roller in S.S 304 food grade with 1 hp main and 1 hp
+    up/down drives, heaters and SEW (Germany) gear motors; 75 kg capacity.
+  image: ''
+  specs:
+    frame: Horizontal work
+    rollersQuantity: 4
+    rollersMaterial: S.S 304 food grade
+    upperBody: S.S 304 food grade
+    mainDrive: Gear motor 1 hp
+    upDownDrive: 1 hp
+    heaters: 1000 watt (2 Nos) to maximum temperature
+    capacity: 75 kg
+    length: 6.5 ft
+    gearMotor: SEW brand Germany
+    rollerCaplexe: Casting material
+    extra: Additional tray for removal of wastage
+    dimension: 4'6" x 2'2" x 7' (H x W x L)
+    powerLoad: 4.68 hp
+- name: Rope Sizer
+  model: ''
+  function: >-
+    The rope sizer is a precision machine used to accurately reduce and calibrate
+    the diameter of the candy and toffee rope produced by the batch roller,
+    ensuring a uniform rope thickness suitable for feeding the forming or cutting
+    machine and maintaining consistent size and weight throughout production.
+  description: >-
+    Horizontal 5-stage rope sizer (4 horizontal + 1 vertical) in S.S 304 with brass
+    rope guides, INVENT inverter and SEW (Germany) gear motors.
+  image: ''
+  specs:
+    model: Horizontal, 5 stages (4 horizontal + 1 vertical)
+    pair1: S.S 304, 37 mm
+    pair2: S.S 304, 32 mm
+    pair3: S.S 304, 27 mm
+    pair4: S.S 304, 22 mm
+    pair5: S.S 304, 12 mm
+    electricPanel: S.S 304
+    sideSheets: S.S 201
+    ropeGuide: Brass
+    inverter: INVENT brand, 3 hp
+    gearMotors: SEW brand Germany, 3 hp
+    heatControllers: Digital, 2 Nos
+    dimension: 6'6" x 3' x 5'6" (H x W x L)
+    powerLoad: 5.68 hp
+- name: Cut & Double Twist Chew Machine
+  model: ''
+  function: >-
+    A cut-and-double-twist wrapping machine used to wrap individual candies quickly
+    and neatly. It takes a piece of wrapper, places the candy inside, cuts the
+    wrapper to the right size and twists both ends.
+  description: >-
+    Double-reel (inner & outer) double-twist wrapper with NTN (Japan) bearings,
+    HECO motor, INVENT inverter and photocell-eye control.
+  image: ''
+  specs:
+    speed: 350 pieces/min (depending on size of product)
+    reel: Double reel, inner & outer
+    bearings: NTN, Japan
+    inverter: 2 HP, INVENT brand
+    gearMotor: 2 hp, 3 phase
+    motorBrand: New HECO
+    photocell: Photocell eye
+    paper: Continuous paper
+    weight: 1100 kg
+    dimensions: 1500 x 1500 x 2100 mm (L x W x H)
+    powerLoad: 2 hp

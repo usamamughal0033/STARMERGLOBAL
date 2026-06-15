@@ -139,7 +139,7 @@
   <!-- â”€â”€ Hero â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ -->
   <!-- ── Hero ────────────────────────────────────────────────────────────────── -->
   <section id="hero" class="hero-section relative flex items-center pt-16 overflow-hidden">
-    <video class="hero-video" autoplay muted loop playsinline preload="auto" aria-hidden="true">
+    <video id="hero-video" class="hero-video" autoplay muted playsinline preload="auto" aria-hidden="true">
       <source src="assets/videos/home-hero.mp4" type="video/mp4"/>
     </video>
     <div class="absolute inset-0 hero-overlay"></div>
@@ -529,6 +529,28 @@
         if (!user) window.netlifyIdentity.on('login', () => document.location.href = '/admin/');
       });
     }
+  </script>
+  <!-- Hero video playlist: play the clips one by one, then loop -->
+  <script>
+    (function () {
+      const v = document.getElementById('hero-video');
+      if (!v) return;
+      const playlist = [
+        'assets/videos/home-hero.mp4',
+        'assets/videos/home-hero-2.mp4',
+        'assets/videos/home-hero-3.mp4'
+      ];
+      let i = 0;
+      const src = v.querySelector('source');
+      v.addEventListener('ended', () => {
+        i = (i + 1) % playlist.length;
+        src.src = playlist[i];
+        v.load();
+        v.play().catch(() => {});
+      });
+      // Preload the next clip so the switch is seamless
+      playlist.slice(1).forEach(p => { const l = document.createElement('link'); l.rel = 'prefetch'; l.as = 'video'; l.href = p; document.head.appendChild(l); });
+    })();
   </script>
   <script src="js/bundle.js"></script>
 </body>

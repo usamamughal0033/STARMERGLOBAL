@@ -1,0 +1,328 @@
+# Eclair Toffee 400 kg/hr Complete Line -- extracted from TOFFEE 400 KG.pdf
+category: CHEW & TOFFEE
+category_slug: chew-toffee
+line:
+  name: Toffee 400kg/hr Complete Line
+  productionRate: 400 kg/hr
+  description: >-
+    A complete eclair-toffee production line rated at 400 kg/hr, covering glucose
+    storage, steam generation, cooking, cooling, pulling, liquid centre filling,
+    batch rolling, five-stage rope sizing, Uniplast forming with rotary die and die
+    stand, three-stage cooling tunnel with AC and double-twist wrapping.
+  image: ''
+source_pdf: assets/STARMER/CHEW & TOFFEE/Toffee 400kg_hr Complete line_/TOFFEE 400 KG.pdf
+machines:
+- name: Glucose Tank
+  model: SEW-101
+  function: >-
+    Glucose storage tanks are engineered with specific traits to ensure hygienic,
+    stable and crystal-free storage of liquid glucose and syrups for industrial
+    applications.
+  description: Vertical S.S 304 storage tank with steam-circulation coil on the base and an external ladder.
+  image: ''
+  specs:
+    grade: S.S 304
+    sheetThickness: 5 mm upper and lower sheet
+    outerDiaSheetThickness: 3 mm
+    designType: Vertical
+    heatingSystem: Coil on the base of tank for steam circulation
+    ladder: Outside the tank
+    capacity: 20 ton glucose
+    dimension: 16 ft height x 7 ft diameter
+    powerLoad: 0
+- name: Steam Generator
+  model: SEW-102
+  function: >-
+    Steam generator heats water to produce high-pressure steam for heating,
+    cleaning or industrial processes.
+  description: >-
+    3-pass steam generator with multistage Grundfos feed-water pump, full auto
+    control panel and rock-wool insulation; 600 kg/hr output.
+  image: ''
+  specs:
+    typeOfPasses: 3 pass
+    testPressure: 225 psi
+    workingPressure: 150 psi
+    tubeDia: 2" or 2 1/2"
+    pressureShellThickness: 1/2"
+    tubeSheetThickness: 1/2"
+    rockWoolThickness: 2"
+    isolationSheetThickness: 24 gauge
+    burnerMotor: 2 hp
+    feedWaterMotor: 3 hp
+    feedWaterPump: Multistage (Grundfos)
+    capacity: 600 kg/hr
+    electricLoad: 5 hp
+    dimension: 8' x 3'5" x 3'5"
+    powerLoad: 5 hp
+- name: Steam Header
+  model: SEW-103
+  function: >-
+    Steam headers are designed to collect steam from a boiler or steam generator
+    and distribute high-quality dry steam to the various user points while
+    performing several critical functions.
+  description: M.S cushioned-cylinder steam header with multiple branch pipes.
+  image: ''
+  specs:
+    materialOfHeader: M.S
+    diameter: 1 ft
+    branchPipes: 1", 2", 3", 4" depending on system needs
+    design: Cushioned cylinder
+    connection: 5
+    dimension: Dia 1 ft x Length 3 ft
+    powerLoad: 0
+- name: Toffee Cooker
+  model: ''
+  function: >-
+    The purpose of a toffee cooker is to heat and cook sugar-based mixtures to a
+    controlled temperature so the toffee reaches the correct thickness, texture and
+    moisture level, providing uniform heating and precise temperature control for
+    consistent quality and the required hardness or chewiness.
+  description: Double-jacketed S.S 304 toffee cooker with stirrer, coil, 3 hp gear-motor drive and safety valve.
+  image: ''
+  specs:
+    capacity: 150 kg per batch after 20 to 25 mins
+    stirrer: S.S 304
+    panMaterial: S.S 304
+    pan: Double jacketed with S.S 304 (M.S optional)
+    frame: M.S (S.S optional)
+    controls: Electric panel with new feature
+    drive: 3 hp gear-motor drive
+    safetyValve: Yes
+    panCover: S.S 304
+    powerLoad: 3 hp
+- name: Cooling Table
+  model: SEW-108
+  function: >-
+    The cooling table is a crucial post-cooking unit used for rapid cooling and
+    conditioning of the cooked sugar mass before further processing such as mixing,
+    flavoring, coloring or forming, ensuring uniform texture and workability.
+  description: S.S 304 cooling table with water-cooled base plate and S.S 201 legs.
+  image: ''
+  specs:
+    basePlateThickness: 10 mm in S.S 304
+    materialOfPlate: Boundary wall S.S 304
+    coolingMedium: Water; A-frame for moving water inlet/outlet valve
+    legs: 4 Nos in S.S 201 grade
+    dimension: 3 ft x 6 ft x 2'6" (W x L x H)
+    powerLoad: 0
+- name: Pulling Machine
+  model: ''
+  function: >-
+    The purpose of a pulling machine is to stretch and fold cooked candy or toffee
+    in a controlled way to improve its texture and structure. By continuously
+    pulling the mass it incorporates air, evens out temperature and develops the
+    desired smoothness, shine and chew of the final product.
+  description: Hard-chromed 3-arm pulling machine with 10 hp main drive and S.S 304 side sheets.
+  image: ''
+  specs:
+    capacity: 100 kg
+    mainDriveMotor: 10 hp
+    arms: Hard chromed
+    armsForContinuousPulling: 3 arms
+    sideSheets: S.S 304
+    controls: Electric panel for control
+    powerLoad: 10 hp
+- name: Liquid Filling Pump
+  model: ''
+  function: >-
+    The centre filling pump is a precision dosing system designed to inject liquid
+    filling (such as fruit syrup, chocolate, cream or jam) into the core of the
+    candy rope during the forming process, ensuring consistent filling quantity and
+    uniform distribution across all candies.
+  description: >-
+    Double-jacketed S.S 304 filling pump with Teflon-lined leef, food-grade flexible
+    pipe, 2 hp gear-motor drive, heater and 2 hp inverter with overflow recycling.
+  image: ''
+  specs:
+    filling: Chocolate and liquid
+    leef: S.S 304, double jacketed, 1.5 with Teflon food-grade heat-proof covering
+    pipe: Flexible food grade
+    controls: Electric panel with new feature
+    gearMotor: 2 hp main drive
+    stand: M.S
+    heater: 1000 watt (1 No) to moderate temperature
+    inverter: 2 hp to increase or decrease filling in product
+    overflow: System to recycle liquid/chocolate
+    powerLoad: 3.34 hp
+- name: Batch Roller
+  model: ''
+  function: >-
+    The batch roller is a key intermediate machine in the candy, lollipop, toffee
+    and fudge production line, designed to continuously roll, shape and form the
+    cooked mass into a uniform cylindrical rope and ensure consistent rope size and
+    proper distribution of centre filling, flavor and color before feeding the rope
+    sizer.
+  description: >-
+    Horizontal 4-roller batch roller in S.S 304 food grade with 1 hp main and 1 hp
+    up/down drives, heaters and SEW (Germany) gear motors; 75 kg capacity.
+  image: ''
+  specs:
+    frame: Horizontal work
+    rollersQuantity: 4
+    rollersMaterial: S.S 304 food grade
+    upperBody: S.S 304 food grade
+    mainDrive: Gear motor 1 hp
+    upDownDrive: 1 hp
+    heaters: 1000 watt (2 Nos) to maximum temperature
+    capacity: 75 kg
+    length: 6.5 ft
+    gearMotor: SEW brand Germany
+    rollerCaplexe: Casting material
+    extra: Additional tray for removal of wastage
+    dimension: 4'4" x 4' x 2'2" x 7' (W x H x L)
+    powerLoad: 4.68 hp
+- name: Rope Sizer
+  model: SEW-212
+  function: >-
+    The rope sizer is a precision machine used to accurately reduce and calibrate
+    the diameter of the candy and toffee rope produced by the batch roller,
+    ensuring a uniform rope thickness suitable for feeding the forming or cutting
+    machine and maintaining consistent size and weight throughout production.
+  description: >-
+    Horizontal 5-stage rope sizer (4 horizontal + 1 vertical) in S.S 304 with brass
+    rope guides, INVENT inverter and SEW (Germany) gear motors.
+  image: ''
+  specs:
+    model: Horizontal, 5 stages (4 horizontal + 1 vertical)
+    pair1: S.S 304, 33 mm
+    pair2: S.S 304, 32 mm
+    pair3: S.S 304, 27 mm
+    pair4: S.S 304, 22 mm
+    pair5: S.S 304, 12 mm
+    electricPanel: S.S 304
+    sideSheets: S.S 201
+    ropeGuide: Brass
+    inverter: INVENT brand, 3 hp
+    gearMotors: SEW brand Germany, 3 hp
+    heatControllers: 2 Nos
+    electricHeaters: 500 x 4, 2 kW
+    dimension: 6'6" x 3' x 5'6" (H x W x L)
+    powerLoad: 5.68 hp
+- name: Uniplast (160-A)
+  model: ''
+  function: >-
+    The Uniplast has been designed for the continuous production of seamless sweets
+    with or without centre filling using a standard die arrangement. It can be used
+    as part of a complete production plant supplied by Starmer Engineering Works or
+    integrated into an existing line. Suitable for forming hard-boiled candies,
+    centre liquid-filled, centre powder-filled, toffees, chewy toffees, chews and
+    bubble-gum products, forming seamless sweets with high depth thickness.
+  description: >-
+    Continuous forming machine with 5 hp main drive, 5 hp INVENT inverter,
+    bearing-steel cams and high-carbon-steel forged gears; up to 450 kg/hr.
+  image: ''
+  specs:
+    mainDriveMotor: 5 hp
+    inverter: 5 hp, INVENT brand
+    production: Up to 450 kg/hr  # CHECK (handwritten)
+    controls: Electric panel with all new features
+    cams: Bearing steel grade; reverse cams in 1.0 iron
+    gears: High carbon steel forged material
+    fillingPercent: Up to 12% of the candy
+    dimension: 6.3 ft x 4.5 ft x 1.5 ft (H x W x L)
+    powerLoad: 5 hp
+- name: Rotary Die
+  model: ''
+  function: >-
+    The rotary die is the heart of any candy production line in the forming
+    machine — it shapes the product and adds to its face value. Forming dies are
+    used for hard-boiled candies, toffees, eclairs, powder-filled and liquid-filled
+    candies, recognised for precision-based performance, safety and functional
+    efficiency.
+  description: >-
+    Forged-M.S cutting ring (2-3 mm pitch), grade-1045 punch (45 HRC), high-quality
+    mould, carbon-steel guide pins, cast-iron die parts and brass outer ring.
+  image: ''
+  specs:
+    cuttingRing: Forged M.S grade, cutter pitch 2-3 mm
+    punch: Grade 1045, hardness up to 45 HRC
+    mould: High quality
+    guidePins: Carbon steel grade
+    dieParts: Casting in grade cast iron
+    outerRing: Brass casting (improves rope cutting)
+    dimension: 1 ft x 1 ft x 1 ft (H x W x L)
+    powerLoad: 0
+- name: Die Stand
+  model: ''
+  function: Its main purpose is to make die changing and fitting easier and more efficient.
+  description: M.S frame die stand with movement wheels, casting-material die caplexe and up/down screw.
+  image: ''
+  specs:
+    mainFrame: M.S
+    wheels: For movement
+    dieCaplexe: Casting material
+    screw: For die up/down
+    dimension: 5.5 ft x 5 ft (H x L)
+    powerLoad: 0
+- name: AC Unit (12 Ton)
+  model: ''
+  function: >-
+    Provides 12 tons of refrigeration for the cooling tunnel/conveyor, supplying
+    chilled air to set the formed toffee.
+  description: >-
+    12-ton, 7.5 HP roof-top condensing unit with Copeland scroll compressor,
+    Danfoss controls and Emerson TCLE 7.5 HP expansion valve.
+  image: ''
+  specs:
+    capacity: 12 ton (7.5 HP), x2 roof type for cooling conveyor
+    condenser: Copper tube, size 3/8 gauge 22, distributor size 1/2 section header 7/8
+    aluminiumFins: 0.150 mm
+    compressor: Copeland scroll, 12 ton, 3-phase, 440 V, Hz 50
+    receiverCapacity: 5 litre
+    oilSeparator: In/out pipe size 7/8
+    filter: 1/2
+    suctionAccumulator: 7/8
+    expansionValve: Emerson TCLE 7.5 HP
+    refrigerant: R-22
+    outdoorBaseFrame: Channel and angle iron
+    panelBox: 12" x 24"
+    powerLoad: 7.5 HP
+- name: Cooling Tunnel 3 Stages
+  model: ''
+  function: >-
+    Its main purpose is to rapidly and uniformly reduce the temperature of freshly
+    formed candy, ensuring dimensional stability, proper hardness and a surface
+    quality suitable for wrapping and packaging.
+  description: >-
+    18 ft three-stage close-body cooling tunnel with S.S 304 mesh-wire belts,
+    thermopore-insulated double jacket and a 12-ton AC unit; SEW gear motors.
+  image: assets/STARMER/_ready/CHEW & TOFFEE/Toffee 400kg_hr Complete line_/Close body Cooling Tunnel _ 3 Stages Cooling Conveyor .jpg
+  specs:
+    length: 18 ft
+    width: 3 ft
+    stages: 3 stages with 12-ton AC
+    meshWire: S.S 304 grade (all 3 steps)
+    outerInnerSideSheets: S.S 304 grade
+    controls: Electric panel with all new features
+    inverter: INVENT brand, 5 hp  # CHECK (handwritten)
+    covers: S.S 201
+    insulation: Double jacketed, insulated with thermopore
+    rods: S.S 304, 5 mm thickness
+    chain: M.S, 60 No
+    gearMotor: 3 hp (1 hp each, 3 Nos), SEW brand
+    dimension: 18 ft x 3 ft (H x W x L)
+    powerLoad: 3 hp
+- name: Wrapping Machine
+  model: ''
+  function: >-
+    This double-twist wrapping machine is built to wrap individual candies quickly,
+    evenly and without waste. Its main purpose is to take loose candies, feed them
+    one by one, and wrap each piece tightly using single or double paper, keeping
+    the product clean and well protected. The machine aims to ensure crisp, neat
+    wraps while reducing manual handling and keeping wrapping speeds high.
+  description: >-
+    Servo-controlled double-twist wrapper with candy-settling plate, automatic
+    paper sending, photo-electric control and frequency-changing speed device.
+  image: assets/STARMER/_ready/CHEW & TOFFEE/Toffee 400kg_hr Complete line_/Cut & Double Twist _ Cut & Twist.jpg
+  specs:
+    capacity: 450 pcs/min  # CHECK (handwritten)
+    packingMaterial: Cellophane, PVC, polypropylene, stencil, composite material, etc.
+    power: 2.5 kW
+    electricalSource: 380 V, 30 Hz
+    weight: 1003 kg
+    speedOfFood: 2 to 3 ms
+    length: 11.02 mm
+    width: 12-20 mm
+    thickness: 5-20 mm
+    dimension: 1900 x 1100 x 1400 mm (L x W x H)

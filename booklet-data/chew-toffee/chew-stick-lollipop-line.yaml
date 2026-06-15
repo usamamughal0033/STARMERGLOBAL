@@ -1,0 +1,211 @@
+# Chew Stick Lollipop Line -- extracted from CHEW STICK LOLLIPOP.pdf
+# NOTE: machine list follows the booklet INDEX (the BOM) + the _ready images.
+# The PDF's cooker/pulling spec pages are leftover toffee pages with no matching
+# image, so cooker/vacuum/kneading specs are sourced from the lollipop boilerplate
+# and tagged # CHECK.
+category: CHEW & TOFFEE
+category_slug: chew-toffee
+line:
+  name: Chew Stick Lollipop Line
+  productionRate: 450 kg/hr
+  description: >-
+    A chew stick-lollipop production line covering glucose storage, steam
+    generation, continuous vacuum cooking, cooling, kneading, batch rolling,
+    five-stage rope sizing and cut-and-stick wrapping.
+  image: ''
+source_pdf: assets/STARMER/CHEW & TOFFEE/Chew Stick Lollipop Line_/CHEW STICK LOLLIPOP.pdf
+machines:
+- name: Glucose Tank
+  model: SEW-101
+  function: >-
+    Glucose storage tanks are engineered with specific traits to ensure hygienic,
+    stable and crystal-free storage of liquid glucose and syrups for industrial
+    applications.
+  description: Vertical S.S 304 storage tank with steam-circulation coil on the base and an external ladder.
+  image: ''
+  specs:
+    grade: S.S 304
+    sheetThickness: 5 mm upper and lower sheet
+    outerDiaSheetThickness: 3 mm
+    designType: Vertical
+    heatingSystem: Coil on the base of tank for steam circulation
+    ladder: Outside the tank
+    capacity: 20 ton glucose
+    dimension: 16 ft height x 7 ft diameter
+    powerLoad: 0
+- name: Steam Generator
+  model: SEW-102
+  function: >-
+    Steam generator heats water to produce high-pressure steam for heating,
+    cleaning or industrial processes.
+  description: >-
+    3-pass steam generator with multistage Grundfos feed-water pump, full auto
+    control panel and rock-wool insulation; 600 kg/hr output.
+  image: ''
+  specs:
+    typeOfPasses: 3 pass
+    testPressure: 225 psi
+    workingPressure: 150 psi
+    tubeDia: 2" or 2 1/2"
+    pressureShellThickness: 1/2"
+    tubeSheetThickness: 1/2"
+    rockWoolThickness: 1/2"
+    isolationSheetThickness: 24 gauge
+    burnerMotor: 2 hp
+    feedWaterMotor: 3 hp
+    feedWaterPump: Multistage (Grundfos)
+    capacity: 600 kg/hr
+    electricLoad: 5 hp
+    dimension: 8' x 3'5" x 3'5"
+    powerLoad: 5 hp
+- name: Steam Header
+  model: SEW-103
+  function: >-
+    Steam headers are designed to collect steam from a boiler or steam generator
+    and distribute high-quality dry steam to the various user points while
+    performing several critical functions.
+  description: M.S cushioned-cylinder steam header with multiple branch pipes.
+  image: ''
+  specs:
+    materialOfHeader: M.S
+    diameter: 1 ft
+    branchPipes: 1", 2", 3", 4" depending on system needs
+    design: Cushioned cylinder
+    connection: 5
+    dimension: Dia 1 ft x Length 3 ft
+    powerLoad: 0
+- name: Candy Continuous Cooker
+  model: SEW-104
+  function: >-
+    Continuous vacuum cooker that automatically produces hard-boiled candies with
+    high clarity and smooth texture at adjustable parameters.
+  description: >-
+    Double-jacketed S.S 304 pans and body with dosing pump, sugar pump, steam trap
+    and electric control panel.
+  image: ''
+  specs:
+    output: 450 kg/hr  # CHECK (from index; dedicated spec page absent)
+    pans: S.S 304
+    body: S.S 304, double jacketed
+    dozingPump: 3 hp (imported)
+    sugarPump: 2 hp, 1450 rpm
+    controls: Electric panel with all new features
+    fittings: Outer tube jacketed, steam trap, seat valve
+    dimension: 8.5' x 6' x 7'
+    powerLoad: 4 hp
+- name: Vacuum Pump
+  model: SEW-105
+  function: >-
+    Rapidly removes moisture from the cooked candy mass under reduced pressure to
+    prevent caramelisation.
+  description: M.S frame vacuum pump unit.
+  image: ''
+  specs:
+    rating: 7.5 hp = 1450 rpm  # CHECK (dedicated spec page absent)
+    frame: M.S
+    dimension: 2 ft x 4 ft x 1 ft
+    powerLoad: 10 hp  # CHECK
+- name: Cooling Table
+  model: SEW-108
+  function: >-
+    The cooling table is a crucial post-cooking unit used for rapid cooling and
+    conditioning of the cooked sugar mass before further processing such as mixing,
+    flavoring, coloring or forming, ensuring uniform texture and workability.
+  description: S.S 304 cooling table with water-cooled base plate and S.S 201 legs.
+  image: ''
+  specs:
+    basePlateThickness: 10 mm in S.S 304
+    materialOfPlate: Boundary wall S.S 304
+    coolingMedium: Water; A-frame for moving water inlet/outlet valve
+    legs: 4 Nos in S.S 201 grade
+    dimension: 3 ft x 6 ft x 2'6"
+    powerLoad: 0
+- name: Kneading Machine
+  model: SEW-109
+  function: >-
+    Uniform mixing and kneading of the cooked sugar mass with hygienic,
+    water-cooled stainless steel contact parts.
+  description: S.S 304 roller and main plate, S.S 201 side sheets, 5 hp drive.
+  image: ''
+  specs:
+    roller: S.S 304  # CHECK (dedicated spec page absent)
+    mainDrive: 5 hp
+    steelPlate: 4 ft
+    control: Switch on/off
+    sideSheets: S.S 201
+    mainPlate: S.S 304
+    dimension: 5' x 5'6" x 6'5"
+    powerLoad: 5 hp
+- name: Batch Roller
+  model: ''
+  function: >-
+    The batch roller is a key intermediate machine in the candy, lollipop, toffee
+    and fudge production line, designed to continuously roll, shape and form the
+    cooked mass into a uniform cylindrical rope and ensure consistent rope size and
+    proper distribution of centre filling, flavor and color before feeding the rope
+    sizer.
+  description: >-
+    Horizontal 4-roller batch roller in S.S 304 food grade with 1 hp main and 1 hp
+    up/down drives, heaters and SEW (Germany) gear motors; 75 kg capacity.
+  image: ''
+  specs:
+    frame: Horizontal work
+    rollersQuantity: 4
+    rollersMaterial: S.S 304 food grade
+    upperBody: S.S 304 food grade
+    mainDrive: Gear motor 1 hp
+    upDownDrive: 1 hp
+    heaters: 1000 watt (2 Nos) to maximum temperature
+    capacity: 75 kg
+    length: 6.5 ft
+    gearMotor: SEW brand Germany
+    rollerCaplexe: Casting material
+    extra: Additional tray for removal of wastage
+    dimension: 4'4" x 4' x 2'2" x 7' (W x H x L)
+    powerLoad: 4.68 hp
+- name: Rope Sizer
+  model: ''
+  function: >-
+    The rope sizer is a precision machine used to accurately reduce and calibrate
+    the diameter of the candy and toffee rope produced by the batch roller,
+    ensuring a uniform rope thickness suitable for feeding the forming or cutting
+    machine and maintaining consistent size and weight throughout production.
+  description: >-
+    Horizontal 5-stage rope sizer (4 horizontal + 1 vertical) in S.S 304 with brass
+    rope guides, INVENT inverter and SEW (Germany) gear motors.
+  image: ''
+  specs:
+    model: Horizontal, 5 stages (4 horizontal + 1 vertical)
+    pair1: S.S 304, 33 mm
+    pair2: S.S 304, 27 mm
+    pair3: S.S 304, 22 mm
+    pair4: S.S 304, 22 mm
+    pair5: S.S 304, 12 mm
+    electricPanel: S.S 304
+    sideSheets: S.S 201
+    ropeGuide: Brass
+    inverter: INVENT brand, 3 hp
+    gearMotors: SEW brand Germany, 3 hp
+    heatControllers: 2 Nos
+    dimension: 6'6" x 3' x 5'6" (H x W x L)
+    powerLoad: 5.68 hp
+- name: Cut & Stick Wrapping Machine
+  model: ''
+  function: >-
+    High-speed cut-and-fold stick wrapping machine for lollipops. Integrated
+    cutting and fold-wrapping deliver uniform, premium packaging, with double-reel
+    inner/outer film feeding, eye-mark photocell detection and inverter speed
+    control for tight, hygienic, export-grade wrapping.
+  description: >-
+    Cut & fold stick wrapper with double reel system, advanced photocell sensor,
+    2 HP inverter drive and 2 HP HECO main motor on a heavy-duty industrial frame.
+  image: assets/STARMER/_ready/CHEW & TOFFEE/Chew Stick Lollipop Line_/Cut & Double Twist _ Cut & Twist.jpg
+  specs:
+    output: Up to 300 pieces per minute
+    wrappingTechnology: Cut & fold
+    reelSystem: Double reel (inner & outer wrap)
+    photocell: Advanced eye-mark detection sensor
+    inverter: 2 HP inverter-controlled speed
+    mainMotor: 2 HP HECO (brand new)
+    operation: Automatic
+    structure: Heavy-duty industrial body

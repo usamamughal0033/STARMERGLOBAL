@@ -1,0 +1,348 @@
+# Lollipop Standard Speed Line 450 kg/hr -- extracted from LOLLIPOP 450 KG.pdf
+category: LOLLIPOP
+category_slug: lollipop
+line:
+  name: Lollipop Standard Speed Line 450 kg/hr
+  productionRate: 450 kg/hr
+  description: >-
+    A high-output round-lollipop line with continuous vacuum cooking, bubble-gum
+    mixing/extrusion, 5-stage rope sizing, high-speed lollipop forming, 5-stage
+    cooling with elevator and single-twist wrapping.
+  image: ''
+source_pdf: assets/STARMER/LOLLIPOP/Lollipop Standard Speed Line 450 KG _ HR_/LOLLIPOP 450 KG.pdf
+machines:
+- name: Glucose Tank
+  model: SEW-101
+  function: >-
+    Hygienic vertical storage tank for stable, crystal-free storage of liquid
+    glucose and syrups.
+  description: Vertical S.S 304 tank with base coil heating and external ladder.
+  image: ''
+  specs:
+    grade: S.S 304
+    sheetThickness: 5 mm upper and lower sheet
+    outerDiaSheetThickness: 3 mm
+    designType: Vertical
+    heatingSystem: Coil on the base of tank
+    ladder: Outside the tank
+    capacity: 20 ton glucose
+    dimension: 16 ft height x 7 ft diameter
+    powerLoad: None
+- name: Steam Generator
+  model: SEW-102
+  function: >-
+    Produces high-pressure steam for heating, cleaning and process use across the line.
+  description: >-
+    Three-pass steam generator with Grundfos multistage feed-water pump,
+    automatic electric control panel and burner with gas assembly & diesel pump.
+  image: ''
+  specs:
+    typeOfPasses: 3 pass
+    testPressure: 225 psi
+    workingPressure: 150 psi
+    tubeDia: 2" or 2½"
+    pressureShellThickness: 1/2"
+    tubeSheetThickness: 2"
+    rockWoolThickness: 2"
+    insulationSheetThickness: 24 gauge
+    feedWaterPump: Grundfos, multistage
+    motor: 2 hp
+    feedWaterMotor: 3 hp
+    capacity: 1500 kg/hr   # CHECK (handwritten)
+    electricLoad: 5 hp
+    dimension: 8' x 3'5" x 3'5"
+    powerLoad: 5 hp   # CHECK (handwritten)
+- name: Steam Header
+  model: SEW-103
+  function: >-
+    Collects steam from the generator and distributes dry, high-quality steam to
+    user points across the line.
+  description: Cushioned cylinder header in mild steel with configurable branch pipes.
+  image: ''
+  specs:
+    materialOfHeader: M.S
+    diameter: 1 ft
+    branchPipes: 1", 2", 3", 4" (depending on system needs)
+    design: Cushioned Cylinder
+    connections: 5
+    dimension: 1 ft (dia) x 3 ft (length)
+    powerLoad: None
+- name: Candy Continuous Cooker
+  model: SEW-104
+  function: >-
+    Continuous vacuum cooker that automatically produces hard-boiled candies with
+    high clarity and smooth texture at adjustable parameters.
+  description: >-
+    Double-jacketed S.S 304 pans and body with dosing pump, sugar pump, steam trap
+    and electric control panel.
+  image: ''
+  specs:
+    output: 450 kg/hr
+    pans: S.S 304
+    body: S.S 304, double jacketed
+    dozingPump: 3 hp (imported)
+    sugarPump: 2 hp, 1450 rpm
+    controls: Electric panel with all new features
+    fittings: Outer tube jacketed, steam trap, seat valve
+    dimension: 8.5' x 6' x 7'
+    powerLoad: 4 hp
+- name: Vacuum Pump
+  model: SEW-105
+  function: >-
+    Rapidly removes moisture from the cooked candy mass under reduced pressure to
+    prevent caramelisation.
+  description: M.S frame vacuum pump unit.
+  image: ''
+  specs:
+    rating: 7.5 hp = 1450 rpm
+    frame: M.S
+    dimension: 2 ft x 4 ft x 1 ft
+    powerLoad: 10 hp   # CHECK (handwritten)
+- name: Dissolving Tank
+  model: SEW-106
+  function: >-
+    Controlled dissolution of sugar, glucose syrup and other ingredients into a
+    homogeneous sugar solution.
+  description: >-
+    Double-jacketed S.S 304 tank with stirrer, M.S legs, 2 hp drive, steam gauge
+    and safety/seat valves.
+  image: ''
+  specs:
+    capacity: 400 kg
+    construction: Double jacketed with M.S
+    body: S.S 304
+    legs: M.S
+    stirrer: S.S 304
+    gearMotorMainDrive: 2 hp
+    fittings: Steam gauge, safety valve, seat valve
+    dimension: 5'6" x 3'5" x 3'5"
+    powerLoad: 2 hp
+- name: Storage Tank
+  model: SEW-107
+  function: >-
+    Holds and maintains cooked sugar mass or syrup at controlled temperature
+    before the forming or depositing section.
+  description: Single-jacketed S.S 304 tank with stirrer, M.S legs and 1 hp drive.
+  image: ''
+  specs:
+    capacity: 400 kg
+    construction: Single jacketed
+    body: S.S 304
+    legs: M.S
+    stirrer: S.S 304
+    gearMotorMainDrive: 1 hp
+    dimension: 6' x 3'6" x 3'6"
+    powerLoad: 1 hp
+- name: Cooling Table
+  model: SEW-108
+  function: >-
+    Rapid cooling and conditioning of the cooked sugar mass for uniform texture
+    and workability before forming.
+  description: Water-cooled S.S 304 table with A-frame circuit and S.S 201 legs.
+  image: ''
+  specs:
+    basePlateThickness: 10 mm in S.S 304
+    materialOfPlate: Boundary wall S.S 304
+    coolingMedium: Water cooling system, A-frame inlet/outlet
+    legs: 4 Nos in S.S 201 grade
+    dimension: 3 ft x 6 ft x 2'6"
+    powerLoad: None
+- name: Kneading Machine
+  model: SEW-109
+  function: >-
+    Uniform mixing and kneading of the cooked sugar mass with hygienic,
+    water-cooled stainless steel contact parts.
+  description: S.S 304 roller and main plate, S.S 201 side sheets, 5 hp drive.
+  image: ''
+  specs:
+    roller: S.S 304
+    mainDrive: 5 hp
+    steelPlate: 4 ft
+    control: Switch on/off
+    sideSheets: S.S 201
+    mainPlate: S.S 304
+    dimension: 5' x 5'6" x 6'5"
+    powerLoad: 5 hp
+- name: Bubble Gum Mixer
+  model: SEW-112
+  function: >-
+    Blends gum base and ingredients into a homogeneous bubble-gum mass suitable
+    for extrusion and shaping.
+  description: >-
+    Heavy-duty double-jacketed S.S 304 mixer with twin arms, 20 hp main drive,
+    6000 W heaters and a tilting discharge system.
+  image: ''
+  specs:
+    capacity: 100 kg in 20 minutes
+    pan: S.S 304, double jacketed
+    construction: Double jacketed with M.S
+    arms: 2, S.S 304
+    panCover: S.S 304
+    gearMotorMainDrive: 20 hp
+    structure: Heavy duty M.S
+    heaters: Electric heaters, 6000 watt
+    sideSheets: S.S 201
+    tilt: S.S 201, tilting system
+    controls: Electric panel with all new features
+    dimension: 6' x 8' x 8'   # CHECK (handwritten)
+    powerLoad: 28 hp   # CHECK (handwritten)
+- name: Bubble Gum Extruder
+  model: SEW-113
+  function: >-
+    Shapes the mixed gum mass into a continuous rope of uniform thickness and
+    density for downstream forming.
+  description: >-
+    Screw extruder on M.S structure with 7.5 hp drive, 10 hp inverter, S.S 304 roll
+    and head helping-roller system, with 6000 W heaters.
+  image: ''
+  specs:
+    type: 1 rope, 2 worms
+    gearMotorDrive: 7.5 hp
+    inverter: 10 hp
+    structure: M.S
+    roll: S.S 304
+    heaters: Electric heaters, 6000 watt
+    controls: Electric panel with all new features, helping roller system in head
+    powerLoad: 18 hp   # CHECK (handwritten)
+- name: Batch Roller
+  model: SEW-114
+  function: >-
+    Continuously rolls and shapes the cooked mass into a uniform cylindrical rope
+    with consistent filling, flavour and colour.
+  description: >-
+    Horizontal 4-roller batch roller in S.S 304 food grade with SEW (Germany)
+    gear motor, up/down drive, control panel and 1000 W heaters.
+  image: ''
+  specs:
+    frame: Horizontal
+    rollersQuantity: 4
+    rollersMaterial: S.S 304 food grade
+    upperBody: S.S 304 food grade
+    bearing: In gears
+    gearMotorMainDrive: 1 hp
+    upDownDrive: 1 hp
+    heaters: 1000 watt (2 Nos)
+    capacity: 75 kg
+    length: 6.5 ft
+    gearMotor: SEW brand, Germany
+    dimension: 4' x 2' x 3'   # CHECK (handwritten)
+    powerLoad: 4.68 hp   # CHECK (handwritten)
+- name: Rope Sizer (5 Stages)
+  model: SEW-212
+  function: >-
+    Accurately reduces and calibrates the candy rope diameter through five sizing
+    stages for uniform thickness before forming.
+  description: >-
+    Horizontal 5-stage rope sizer (4 horizontal + 1 vertical) with S.S 304 roller
+    pairs, brass rope guide, digital inverter and SEW (Germany) gear motors.
+  image: ''
+  specs:
+    sizerModel: Horizontal, 5 stages (4 horizontal + 1 vertical)
+    pairs: S.S 304 (32 mm, 27 mm, 22 mm, 22 mm, 17 mm)
+    electricPanel: S.S 201
+    sidePlates: S.S 304
+    ropeGuide: Brass
+    inverter: INVENT digital, 3 hp
+    gearMotors: SEW brand, Germany, 3 hp
+    heatControllers: Digital, 2 Nos
+    heaters: 500 watt (4 Nos) = 2 kw
+    bearings: Used instead of bushes
+    dimension: 4' x 2'5" x 6'   # CHECK (handwritten)
+    powerLoad: 5.68 hp   # CHECK (handwritten)
+- name: Lollipop Forming Machine (High Speed)
+  model: SEW-314
+  function: >-
+    High-speed round-lollipop forming machine that converts the continuously sized
+    sugar rope into uniform round (spherical) lollipops with a stick inserted, at
+    up to 500-600 pieces per minute.
+  description: Mechanical confectionery-shaping unit; core forming stage of the high-speed lollipop line.
+  image: assets/STARMER/_ready/LOLLIPOP/Lollipop Standard Speed Line 450 KG _ HR_/Lollipop High Speed Forming Plant.jpg
+  specs:
+    lollipopDiameter: 17 mm - 34 mm
+    speed: 500 - 600 pcs/min
+    mainPower: 3 kW
+    capacity: 500 kg/hr (based on 5-25 g spherical lollipops)
+    grossWeight: 1500 kg
+    dimension: 1,600 x 1,050 x 1,350 mm (H x W x L)
+    powerLoad: 4 kW   # CHECK (handwritten)
+- name: Lollipop High Speed Die
+  model: SEW-315
+  function: >-
+    Precision-machined high-speed forming die that shapes the candy rope into round
+    lollipop heads with continuous stick insertion.
+  description: >-
+    Forged M.S cutting ring (tooth pitch 1.5-2.5 mm), grade-1045 punch up to 45 HRC,
+    carbon-steel guide pins and cast iron die parts.
+  image: assets/STARMER/_ready/LOLLIPOP/Lollipop Standard Speed Line 450 KG _ HR_/Lollipop High Speed Die.jpg
+  specs:
+    size: 16 mm - 34 mm
+    shape: Round
+    cuttingRing: Forged M.S (tooth pitch 1.5-2.5 mm)
+    punch: Grade 1045, hardness up to 45 HRC
+    block: High quality M.S
+    guidePins: Carbon steel
+    dieParts: Cast iron grade
+    powerLoad: None
+- name: Die Stand
+  model: SEW-316
+  function: Makes die changing and fitting easier and more efficient.
+  description: M.S frame with movement wheels, casting die-caplene and die up/down screw.
+  image: ''
+  specs:
+    mainFrame: M.S
+    movement: Wheels for movement
+    dieCaplene: Casting material
+    adjustment: Screw for die up/down
+    powerLoad: None
+- name: Cooling Conveyor (5 Stages with Elevator)
+  model: SEW-317
+  function: >-
+    Five-stage round-lollipop cooling conveyor with elevator for gradual cooling,
+    hardening and smooth transfer of formed lollipops before packaging.
+  description: >-
+    Five aircross-pored 5.5 plate stages with 5 hp main drive and inverter, plus an
+    integrated elevator (1 hp drive, twin cooling fans, food-grade T-belt).
+  image: assets/STARMER/_ready/LOLLIPOP/Lollipop Standard Speed Line 450 KG _ HR_/Lollipop Close Body 5 Stages Cooling Conveyor .jpg
+  specs:
+    stages: 5 (5.5 plate with pores for aircross)
+    gearMotorMainDrive: 5 hp
+    inverter: 5 hp (speed control)
+    elevatorDrive: Gear motor 1 hp
+    elevatorFans: 2 Nos (for cooling)
+    belt: Food grade T-belt in elevator
+    dimension: 9 ft x 3.5 ft x 6.5 ft   # CHECK (handwritten)
+    powerLoad: 6 hp   # CHECK (handwritten)
+- name: AC Unit (5 Ton)
+  model: SEW-318
+  function: >-
+    Floor-standing air-conditioning unit (5 ton / 6.5 HP) for cooling the conveyor
+    section and accessories.
+  description: >-
+    Indoor unit with copper-tube evaporator and 1 HP blower; Bitzer 6.5 HP outdoor
+    condensing unit with Copeland scroll compressor and full AC accessories.
+  image: ''
+  specs:
+    capacity: 5 Ton (6.5 HP)
+    type: Floor standing
+    indoorBlower: 1 HP motor, 3 phase 440V/50Hz
+    expansionValve: Emerson TCLE 6.5 HP
+    outdoorUnit: Bitzer, high-density condensing coil
+    compressor: Copeland scroll, 6.5 HP, 3 phase 440V/50Hz
+    safety: Danfoss dual high/low-pressure switch
+    refrigerant: R-22 (Honeywell, USA)
+    inverter: 7.5 KVA (INVT)
+    powerLoad: 6.5 hp
+- name: Wrapping Machine
+  model: SEW-320
+  function: >-
+    Single-twist wrapping machine that individually wraps round lollipops in a
+    tight, hygienic single-twist film seal at high speed.
+  description: >-
+    PLC-controlled single-twist lollipop wrapper. (Detailed spec page was not
+    included in this booklet; values below are from the standard lollipop wrapper.)
+  image: assets/STARMER/_ready/LOLLIPOP/Lollipop Standard Speed Line 450 KG _ HR_/Lollipop bunch Wrap Machine.jpg
+  specs:
+    productionSpeed: 110 - 130 pcs/min (standard lollipop shape)   # CHECK (page absent)
+    control: PLC control
+    mainMotor: 2 hp + 0.5 hp   # CHECK (page absent)
+    mainDriveInverter: 2 hp   # CHECK (page absent)

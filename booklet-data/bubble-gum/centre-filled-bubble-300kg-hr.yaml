@@ -1,0 +1,284 @@
+# Centre-Filled Bubble Gum Line 300 kg/hr (Slow Speed) -- extracted from BUBBLE CENTER FILLED 300KG.pdf
+category: BUBBLE GUM
+category_slug: bubble-gum
+line:
+  name: Centre-Filled Bubble Gum Line 300 kg/hr
+  productionRate: 300 kg/hr
+  description: >-
+    A slow-speed centre-filled bubble gum line covering sugar grinding, gum mixing
+    and heating, extrusion, liquid centre filling, rope sizing, Uniplast forming
+    with rotary die, tunnel cooling and pillow-pack wrapping at 300 kg/hr.
+  image: ''
+source_pdf: assets/STARMER/BUBBLE GUM/Centre Filled Bubble 300kg_hr/BUBBLE CENTER FILLED 300KG.pdf
+machines:
+- name: Sugar Grinder
+  model: SEW-701
+  function: >-
+    Converts crystal sugar into a fine uniform powder for smooth dough formation,
+    efficient blending with gum base and consistent product texture in bubble gum.
+  description: M.S/S.S 304 grinder with 45-number grinding and 15 hp motor.
+  image: ''
+  specs:
+    storageCapacity: 500 kg
+    grinder: 45 Number
+    motorPower: 15 hp
+    innerBox: S.S 304
+    outerBox: M.S
+    dimension: 4 (w) x 6 (l)
+    powerLoad: 15 hp
+- name: Heating Cabinet
+  model: SEW-702
+  function: >-
+    Maintains controlled temperature to pre-soften and condition the gum mass,
+    ensuring smooth shaping, uniform elasticity and stable processing.
+  description: Double-jacketed (glass wool) cabinet with M.S outer and S.S 304 inner sheets, 5 trays.
+  image: ''
+  specs:
+    trays: 5
+    outerSheets: M.S
+    innerSheets: S.S 304
+    construction: Double jacketed with glass wool
+    heatersAndBlower: Total load 10 hp
+    dimension: 3' x 3' x 6'
+    powerLoad: 10 hp
+- name: Bubble Gum Mixer
+  model: SEW-112
+  function: >-
+    Blends gum base and ingredients into a homogeneous gum mass suitable for
+    extrusion and shaping.
+  description: >-
+    Heavy-duty double-jacketed S.S 304 mixer with arms, 20 hp main drive, 6000 W
+    heaters and a tilting discharge system.
+  image: ''
+  specs:
+    capacity: 100 kg in 20 minutes
+    pan: S.S 304, double jacketed
+    construction: Double jacketed with S.S 304
+    arms: S.S 304
+    panCover: S.S 304
+    gearMotorMainDrive: 20 hp
+    structure: Heavy duty M.S
+    heaters: Electric heaters 6000 watt x2 = 12000 watt
+    controls: Electric panel with all new features
+    weight: 2 ton approx
+    tilt: Tilting system
+    dimension: 6' x 8' x 8'
+    powerLoad: 28 hp
+- name: Rest Table
+  model: SEW-804
+  function: For a temporary rest of the gum-base batch coming from the mixer.
+  description: S.S 304 base plate (10 mm) with S.S 201 legs.
+  image: ''
+  specs:
+    basePlateThickness: 10 mm in S.S 304
+    legs: 4 Nos in S.S 201
+    dimension: 3 ft x 6 ft
+    powerLoad: None
+- name: Trolly
+  model: SEW-815
+  function: >-
+    Safely transfers the hot, viscous gum-base mass from the mixer to the extruder,
+    ensuring continuous flow and preventing contamination or handling delays.
+  description: S.S 304 pan on an M.S trolly stand.
+  image: ''
+  specs:
+    use: Moving gum-base mass from mixer to extruder
+    length: 3 ft
+    width: 3 ft
+    pan: S.S 304
+    trollyStand: M.S
+    powerLoad: None
+- name: Bubble Gum Extruder
+  model: SEW-113
+  function: >-
+    Shapes the mixed gum mass into a continuous rope of uniform thickness and
+    density for downstream forming.
+  description: >-
+    Screw extruder on M.S structure with 7.5 hp drive, 10 hp inverter, S.S 304 roll
+    and head helping-roller system, with 6000 W heaters.
+  image: ''
+  specs:
+    type: 1 rope, 2 worms
+    gearMotorDrive: 7.5 hp
+    inverter: 10 hp
+    structure: M.S
+    roll: S.S 304
+    heaters: Electric heaters, 6000 watt
+    controls: Electric panel with all new features, helping roller system in head
+    powerLoad: 18 hp
+- name: Liquid Filling Pump
+  model: SEW-110
+  function: >-
+    Precision dosing system that injects liquid filling (fruit syrup, chocolate,
+    cream or jam) into the core of the candy rope during forming.
+  description: >-
+    Double-jacketed S.S 304 leaf with Teflon-covered food-grade rod, flexible pipe,
+    2 hp drive, 1000 W heater and 2 HP inverter with overflow recycle.
+  image: ''
+  specs:
+    filling: Chocolate and liquid
+    leaf: S.S 304, double jacketed
+    rod: S.S with Teflon covering (food grade, heat proof)
+    pipe: Flexible, food grade
+    gearMotorMainDrive: 2 hp
+    stand: M.S
+    heater: 1000 watt, 1 No
+    inverter: 2 HP
+    extra: Overflow system to recycle liquid/chocolate
+    powerLoad: 3.2 hp
+- name: Rope Sizer (5 Stages)
+  model: SEW-212
+  function: >-
+    Accurately reduces and calibrates the candy rope diameter through five sizing
+    stages for uniform thickness before forming.
+  description: >-
+    Horizontal 5-stage rope sizer (4 horizontal + 1 vertical) with S.S 304 roller
+    pairs, brass rope guide, digital inverter and SEW (Germany) gear motors.
+  image: ''
+  specs:
+    sizerModel: Horizontal, 5 stages (4 horizontal + 1 vertical)
+    pairs: S.S 304 (32 mm, 27 mm, 22 mm, 22 mm, 17 mm)
+    electricPanel: S.S 201
+    sidePlates: S.S 201
+    sizerPlates: S.S 304
+    ropeGuide: Brass
+    inverter: INVENT digital, 3 hp
+    gearMotors: SEW brand, Germany, 3 hp
+    heatControllers: Digital, 2 Nos
+    heaters: 500 watt (4 Nos) = 2 kw
+    bearings: Used instead of bushes
+    dimension: 4' x 2'5" x 6'
+    powerLoad: 5.68 hp
+- name: Rest Conveyor
+  model: SEW-808
+  function: >-
+    Provides a controlled resting time for the centre-filled bubble so the filling
+    settles evenly and seal strength develops, preventing leakage, deformation or
+    bursting.
+  description: >-
+    Food-grade single-belt conveyor with S.S 304 top cover, thermopore insulation,
+    twin cooling fans, 2 hp drive and variable inverter on an M.S frame.
+  image: ''
+  specs:
+    width: 3 ft
+    length: 20 ft
+    belt: Single belt, food-grade material
+    cover: S.S 304 top cover
+    insulation: Insulated with thermopore
+    gearMotorMainDrive: 2 hp
+    fans: 2 Nos (for cooling)
+    inverter: Variable, for speed control
+    frame: M.S
+    powerLoad: 2 hp
+- name: Uniplast Forming Machine
+  model: SEW-116
+  function: >-
+    Continuous forming machine for seamless sweets with or without centre filling;
+    forms hard-boiled, liquid/powder-filled candies, toffees, chewy candies,
+    chewing gum and bubble gum with high depth thickness.
+  description: >-
+    High-carbon-steel forged gears with bearing-steel CAMS and S.G iron reverse
+    cams, 5 hp drive and INVENT inverter; adjustable filling up to 12%.
+  image: ''
+  specs:
+    mainDrive: 5 hp motor
+    inverter: 5 hp (INVENT brand)
+    production: Up to 300 kg/hr
+    cams: Bearing steel grade
+    reverseCams: S.G iron
+    gears: High carbon steel, forged
+    speed: 1600 to 2000 pieces/min (depending on size)
+    filling: Up to 12% of candy
+    controls: Electric panel with all new features
+    dimension: 6.5' x 4.5' x 3.5'
+    powerLoad: 5 hp
+- name: Rotary Die with Cutting Rings
+  model: SEW-117
+  function: >-
+    Precision rotary forming die that shapes hard-boiled, toffee, eclair and filled
+    candies; built for durable, high-accuracy, seamless forming.
+  description: >-
+    Forged M.S/EN-grade cutting ring (tooth pitch 1.5-2.5 mm) and 45 HRC punch, cast
+    iron die parts and brass-cast outer ring.
+  image: ''
+  specs:
+    cuttingRing: Forged M.S (tooth pitch 1.5-2.5 mm)
+    punch: Grade 1045, hardness up to 45 HRC
+    block: High quality M.S
+    guidePins: Carbon steel
+    dieParts: Cast iron grade
+    outerRing: Brass casting (for rope cutting)
+    dimension: 18" x 18" x 5"
+    powerLoad: None
+- name: Die Stand
+  model: SEW-118
+  function: Makes die changing and fitting easier and more efficient.
+  description: M.S frame with movement wheels, casting die-caplene and die up/down screw.
+  image: ''
+  specs:
+    mainFrame: M.S
+    movement: Wheels for movement
+    dieCaplene: Casting material
+    adjustment: Screw for die up/down
+    dimension: 5.5 ft x 5 ft
+    powerLoad: None
+- name: Cooling Tunnel (3 Stages)
+  model: SEW-121
+  function: >-
+    Rapidly and uniformly reduces the temperature of freshly formed product for
+    dimensional stability and hardness before cutting, wrapping or packaging.
+  description: >-
+    Three-stage tunnel with S.S 304 mesh-wire steps, S.S 201 covers, thermopore
+    insulation, S.S 304 5 mm rods and SEW gear motor; with 5 ton AC.
+  image: ''
+  specs:
+    length: 10 ft
+    width: 3 ft
+    stages: 3 stages
+    cooling: With 5 ton AC
+    meshWire: S.S 304 grade (3 steps)
+    sideSheets: Outer and inner in S.S 201
+    covers: S.S 201
+    insulation: Double jacketed with thermopore
+    rods: S.S 304, 5 mm thickness
+    chain: M.S, 40 No
+    gearMotor: 3 hp (1 hp each, 3 nos), SEW brand
+    inverter: New brand, variable speed
+    dimension: 3 ft x 16 ft
+    powerLoad: 3 hp
+- name: AC Unit (5 Ton)
+  model: SEW-122
+  function: >-
+    Floor-standing air-conditioning unit (5 ton / 6.5 HP) for cooling the conveyor
+    section and accessories.
+  description: >-
+    Indoor unit with copper-tube evaporator and 1 HP blower; Bitzer 6.5 HP outdoor
+    condensing unit with Copeland scroll compressor and full AC accessories.
+  image: ''
+  specs:
+    capacity: 5 Ton (6.5 HP)   # CHECK (handwritten note "10 Ton")
+    type: Floor standing
+    indoorBlower: 1 HP motor, 3 phase 440V/50Hz
+    expansionValve: Emerson TCLE 6.5 HP
+    outdoorUnit: Bitzer, high-density condensing coil
+    compressor: Copeland scroll, 6.5 HP, 3 phase 440V/50Hz
+    safety: Danfoss dual high/low-pressure switch
+    refrigerant: R-22 (Honeywell, USA)
+    inverter: 7.5 KVA (INVT)
+    panelBox: 12" x 24"
+    powerLoad: 6.5 hp
+- name: Wrapping Machine
+  model: SEW-123
+  function: >-
+    High-performance pillow-pack wrapper for filled or un-filled candies and
+    bubblegums at up to 800 pieces per minute, with high-quality fin seal.
+  description: Photo-electric-eye pillow wrapper with inverter, 2 H.P 3-phase and ½ H.P motors, 3.2 kW heaters.
+  image: ''
+  specs:
+    output: Up to 800 pcs/min (candy); up to 600 pcs/min (bubble)
+    electricMotors: (1) 2 H.P / 3-phase, (2) ½ H.P
+    electricHeaters: 3.2 kW
+    standardEquipment: Photo-electric eye & inverter
+    dimensions: 2,335 x 900 x 1,715 mm (L x W x H)
+    weight: 750 kg
+    reel: Max outer dia 280 mm / core dia 70 mm

@@ -1,0 +1,201 @@
+# Ball Gum Production Line -- extracted from BALL GUM.pdf (clean typed booklet)
+category: BUBBLE GUM
+category_slug: bubble-gum
+line:
+  name: Ball Gum Production Line
+  productionRate: Custom
+  description: >-
+    A ball bubble gum production line covering sugar grinding, gum mixing and
+    heating, extrusion, cooling, ball forming, vibrating, sugar/chocolate coating
+    and pillow-pack wrapping.
+  image: ''
+source_pdf: assets/STARMER/BUBBLE GUM/Ball Gum Complete line_/BALL GUM.pdf
+machines:
+- name: Sugar Grinder
+  model: SEW-701
+  function: >-
+    Converts crystal sugar into a fine uniform powder for smooth dough formation,
+    efficient blending with gum base and consistent product texture.
+  description: M.S/S.S grinder with 45-number grinding and 15 hp motor.
+  image: ''
+  specs:
+    storageCapacity: 500 kg
+    grinder: 45 Number
+    motorPower: 15 hp
+    innerBox: S.S 303
+    outerBox: M.S
+    dimension: 4 (w) x 6 (l)
+    powerLoad: 15 hp
+- name: Heating Cabinet
+  model: SEW-702
+  function: >-
+    Maintains controlled temperature to pre-soften and condition the gum mass,
+    ensuring smooth shaping, uniform elasticity and stable processing.
+  description: Double-jacketed (glass wool) cabinet with M.S outer and S.S 304 inner sheets, 5 trays.
+  image: ''
+  specs:
+    trays: 5
+    outerSheets: M.S
+    innerSheets: S.S 304
+    construction: Double jacketed with glass wool
+    heatersAndBlower: Total load 10 hp
+    dimension: 3' x 3' x 6'
+    powerLoad: 10 hp
+- name: Bubble Gum Mixer
+  model: SEW-112
+  function: >-
+    Blends all raw ingredients into a homogeneous gum base mass suitable for
+    further processing (extrusion and shaping).
+  description: >-
+    Heavy-duty double-jacketed S.S 304 mixer with Z-arm, 20 hp main drive, 6000 W
+    heaters and a 2 hp tilting discharge system.
+  image: ''
+  specs:
+    capacity: 100 kg in 20 minutes
+    pan: S.S 304, double jacketed
+    construction: Double jacketed with S.S 304
+    zArm: S.S 304
+    panCover: S.S 304
+    gearMotorMainDrive: 20 hp
+    structure: Heavy duty M.S
+    heaters: Electric heaters, 6000 watt
+    sideSheets: S.S 201
+    tilt: Tilting system, gear motor 2 hp
+    controls: Electric panel with all new features
+    dimension: 6' x 8' x 8'
+    powerLoad: 28 hp
+- name: Rest Table
+  model: SEW-804
+  function: For a temporary rest of the gum-base batch coming from the mixer.
+  description: S.S 304 base plate (10 mm) with S.S 201 legs.
+  image: ''
+  specs:
+    basePlateThickness: 10 mm in S.S 304
+    legs: 4 Nos in S.S 201
+    dimension: 3 ft x 6 ft
+    powerLoad: None
+- name: Trolly
+  model: SEW-815
+  function: >-
+    Safely transfers the hot, viscous gum-base mass from the mixer to the extruder,
+    ensuring continuous flow and preventing contamination or handling delays.
+  description: S.S 304 pan on an M.S trolly stand.
+  image: ''
+  specs:
+    use: Moving gum-base mass from mixer to extruder
+    length: 3 ft
+    width: 3 ft
+    pan: S.S 304
+    trollyStand: M.S
+    powerLoad: None
+- name: Bubble Gum Extruder
+  model: SEW-113
+  function: >-
+    Shapes the mixed gum mass into a continuous rope of uniform thickness and
+    density for downstream forming.
+  description: >-
+    Screw extruder on M.S structure with 7.5 hp drive, 10 hp inverter, S.S 304 leef
+    and head helping-roller system, with 6000 W heaters.
+  image: ''
+  specs:
+    type: 1 rope, 2 worms
+    gearMotorDrive: 7.5 hp
+    inverter: 10 hp
+    structure: M.S
+    leef: S.S 304
+    heaters: Electric heaters, 6000 watt
+    controls: Electric panel with all new features, helping roller system in leef
+    powerLoad: 18 hp
+- name: Single Step Cooling Conveyor
+  model: SEW-809
+  function: >-
+    High-performance precision cooling conveyor for a wide range of ball and
+    cylindrical pieces, retaining their original shape and quality.
+  description: >-
+    White food-grade belt on a heavy 14g M.S pipe structure with 2 hp motor and
+    inverter.
+  image: assets/STARMER/_ready/BUBBLE GUM/Ball Gum Complete line_/Rest Conveyor For Bubble Line.jpg
+  specs:
+    function: All types of bubble gum
+    beltSize: W 600 mm x length 40 ft
+    beltType: White food grade
+    motorPower: 0.75 hp
+    inverter: 0.75 hp
+    structure: M.S heavy pipe 14g
+    cover: Totally covered with stainless steel
+    controls: Control panel with all new features
+- name: Ball Forming Machine
+  model: SEW-820
+  function: >-
+    Forms ball and other spheroid bubble gums (solid or hollow, with or without
+    filling) in many shapes — spherical, ellipse, watermelon, dinosaur egg, flagon.
+  description: >-
+    4140 hard-mould rollers (8620 geared) with 850 mm roller length, 3 x 1.5 kW
+    gear motors, 3 x 3 hp inverters and full control panel.
+  image: ''
+  specs:
+    function: All types of ball-shape bubble gums
+    rollerMaterial: 4140 hard mould material
+    rollerMoldSize: On demand
+    rollerLength: 850 mm
+    gearMotor: 1.5 kW (3 pcs)
+    wormGear: 80 number
+    inverter: 3 hp (3 pcs)
+    sizerStep: One step
+    productionCapacity: 30 to 35 stock/min
+    rollerGearMaterial: 8620 with hardness
+    controls: Control panel with all new features, totally safety covers
+- name: Running Ball Conveyor
+  model: SEW-821
+  function: Transports and circulates the formed gum balls to the next stage of the line.
+  description: Running conveyor for formed bubble-gum balls.
+  image: ''
+  specs: {}
+- name: Vibrator (Ball Gum)
+  model: SEW-822
+  function: >-
+    Shapes the chewing gum evenly as it moves through production, removing trapped
+    air, keeping size consistent and improving the final surface.
+  description: S.S 304 inner vibrator with fan air system, 1 kW drive and full safety covers.
+  image: assets/STARMER/_ready/BUBBLE GUM/Ball Gum Complete line_/Vibrating Conveyor.jpg
+  specs:
+    function: All types of ball gum
+    capacity: Variable
+    driveGearMotor: 1 kW
+    driveInverter: 1 kW
+    innerVibrator: Stainless steel 304
+    airSystem: With fans
+    weight: 300 kg approx
+    controls: Control panel with all new features, fully enclosed safety covers
+- name: Coating Pan
+  model: SEW-823
+  function: >-
+    Coats and polishes the gum with sugar or chocolate in various shapes
+    (spherical, ellipse, watermelon, dinosaur egg, flagon), giving a smooth,
+    distinct finished coating.
+  description: S.S 304 pan with 1.5 kW drive, 100-number drive gear, 0.5 kW blower on a heavy-duty M.S structure.
+  image: ''
+  specs:
+    function: All types of bubble gums
+    panMaterial: Stainless steel 304
+    driveMotor: 1.5 kW
+    driveGear: 100 number
+    blowerMotor: 0.5 kW
+    capacity: 100 kg
+    controls: Control panel with all new features
+    structure: Heavy-duty M.S structure
+- name: Pillow Wrapping Machine
+  model: SEW-123
+  function: >-
+    High-performance pillow-pack wrapper for filled or un-filled candies and
+    bubblegums at up to 800 packs per minute, with high-quality fin seal.
+  description: Photo-electric-eye pillow wrapper with inverter, 2 H.P 3-phase and ½ H.P motors, 3.2 kW heaters.
+  image: ''
+  specs:
+    output: Up to 800 packs per minute
+    electricMotors: (1) 2 H.P / 3-phase, (2) ½ H.P
+    electricHeaters: 3.2 kW
+    standardEquipment: Photo-electric eye & inverter
+    dimensions: 2,335 x 900 x 1,715 mm (L x W x H)
+    weight: 750 kg
+    reel: Max outer dia 280 mm / core dia 70 mm
