@@ -184,16 +184,20 @@ def main() -> int:
                 if not image:
                     print(f"    ! no image match for '{name}' ({yf.name})")
             machine_id = f"{prefix}-L{n:03d}-M{mi:02d}"
+            model = str(block.get("model", "")).strip()
+            specs = clean_specs(block.get("specs"))
+            if model:                         # show the SEW model code as the first spec row
+                specs = {"modelNumber": model, **specs}
             machines.append({
                 "id": machine_id,
                 "machineNumber": machine_id,
-                "model": str(block.get("model", "")).strip() or None,
+                "model": model or None,
                 "orderInLine": mi,
                 "name": name,
                 "function": str(block.get("function", "")).strip(),
                 "description": str(block.get("description", "")).strip(),
                 "image": image or None,
-                "specs": clean_specs(block.get("specs")),
+                "specs": specs,
                 "diesAndParts": dies_and_parts_for(machine_id, machine_id, name),
             })
             filled += 1

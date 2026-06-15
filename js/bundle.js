@@ -298,11 +298,11 @@ function initHomePage(catalog) {
 
 // ── Category real photos (using confirmed-working industrial IDs from machine pool) ──
 const CAT_IMAGES = {
-  'hard-candy':  'https://images.unsplash.com/photo-1565514928093-9ea92a2ae1c7?w=640&auto=format&q=82',
-  'lollipop':    'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=640&auto=format&q=82',
-  'chew-toffee': 'https://images.unsplash.com/photo-1517154421773-0529f29ea451?w=640&auto=format&q=82',
-  'bubble-gum':  'https://images.unsplash.com/photo-1536328526067-a5e6d4d99c34?w=640&auto=format&q=82',
-  'pharma':      'https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=640&auto=format&q=82',
+  'hard-candy':  'assets/images/categories/hard-candy.jpg',
+  'lollipop':    'assets/images/categories/lollipop.jpg',
+  'chew-toffee': 'assets/images/categories/chew-toffee.jpg',
+  'bubble-gum':  'assets/images/categories/bubble-gum.jpg',
+  'pharma':      'assets/images/categories/pharma.jpg',
 };
 
 const CAT_VISUAL = {

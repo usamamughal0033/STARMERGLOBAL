@@ -143,17 +143,37 @@
   background: linear-gradient(135deg, #F0F7FF 0%, #EBF4FF 40%, #F5F9FF 70%, #FAFCFF 100%);
 }
 
-#candy-canvas {
+#candy-canvas, .hero-video {
   position: absolute;
   top: 0; left: 0;
   width: 100%; height: 100%;
   pointer-events: none;
 }
 
+.hero-video {
+  object-fit: cover;
+  z-index: 0;
+}
+
+/* Light veil over the video — heavier on the left so the dark hero text
+   stays readable while the video shows through on the right. */
 .hero-overlay {
-  background: linear-gradient(135deg,
-    rgba(240,247,255,0.12) 0%,
-    rgba(235,244,255,0.06) 100%);
+  z-index: 1;
+  background: linear-gradient(105deg,
+    rgba(247,251,255,0.95) 0%,
+    rgba(247,251,255,0.85) 42%,
+    rgba(247,251,255,0.55) 72%,
+    rgba(247,251,255,0.22) 100%);
+}
+
+@media (max-width: 1023px) {
+  /* Narrow screens: text spans more width, so use a stronger even veil. */
+  .hero-overlay {
+    background: linear-gradient(180deg,
+      rgba(247,251,255,0.92) 0%,
+      rgba(247,251,255,0.86) 60%,
+      rgba(247,251,255,0.8) 100%);
+  }
 }
 
 .hero-gradient-text {

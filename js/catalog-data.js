@@ -26,6 +26,7 @@ window.CATALOG_DATA = {
               "description": "Vertical S.S 304 tank with base coil heating and external ladder.",
               "image": "assets/STARMER/_ready/HARD CANDY/Chain Die Candy Line 450kg_hr_/Glucose Tank.jpg",
               "specs": {
+                "modelNumber": "SEW-101",
                 "grade": "S.S 304",
                 "sheetThickness": "5 mm upper and lower sheet",
                 "outerDiaSheetThickness": "3 mm",
@@ -64,6 +65,7 @@ window.CATALOG_DATA = {
               "description": "Three-pass steam generator with Grundfos multistage feed-water pump, automatic electric control panel and burner with gas assembly & diesel pump.",
               "image": "assets/STARMER/_ready/HARD CANDY/Chain Die Candy Line 450kg_hr_/Steam Generator.jpg",
               "specs": {
+                "modelNumber": "SEW-102",
                 "typeOfPasses": "3 pass",
                 "testPressure": "225 psi",
                 "tubeSize": "2\" or 2½\"",
@@ -101,6 +103,7 @@ window.CATALOG_DATA = {
               "description": "Cushioned cylinder header in mild steel with configurable branch pipes.",
               "image": "assets/STARMER/_ready/HARD CANDY/Chain Die Candy Line 450kg_hr_/Steam Header.jpg",
               "specs": {
+                "modelNumber": "SEW-103",
                 "materialOfHeader": "M.S",
                 "diameter": "1 ft",
                 "branchPipes": "1\", 2\", 3\", 4\" (depending on system needs)",
@@ -138,6 +141,7 @@ window.CATALOG_DATA = {
               "description": "Double-jacketed tank, S.S 304 body and stirrer, M.S legs, 2 hp gear-motor drive, steam gauge and safety/seat valves.",
               "image": "assets/STARMER/_ready/HARD CANDY/Chain Die Candy Line 450kg_hr_/Dissolving Tank.jpg",
               "specs": {
+                "modelNumber": "SEW-106",
                 "capacity": "400 kg",
                 "construction": "Double jacketed with M.S",
                 "body": "S.S 304",
@@ -177,6 +181,7 @@ window.CATALOG_DATA = {
               "description": "Single-jacketed S.S 304 tank with stirrer, M.S legs and 1 hp drive.",
               "image": "assets/STARMER/_ready/HARD CANDY/Chain Die Candy Line 450kg_hr_/Storage Tank.jpg",
               "specs": {
+                "modelNumber": "SEW-107",
                 "capacity": "400 kg",
                 "construction": "Single jacketed",
                 "body": "S.S 304",
@@ -215,6 +220,7 @@ window.CATALOG_DATA = {
               "description": "Double-jacketed S.S 304 pans and body with adjustable output, food-grade S.S 304 heat zones, steam trap and full S.S water nozzles.",
               "image": "assets/STARMER/_ready/HARD CANDY/Chain Die Candy Line 450kg_hr_/Candy Continuous Cooker.jpg",
               "specs": {
+                "modelNumber": "SEW-104",
                 "output": "450 kg/hr",
                 "pans": "S.S 304",
                 "body": "S.S 304, double jacketed",
@@ -254,6 +260,7 @@ window.CATALOG_DATA = {
               "description": "M.S frame vacuum pump unit.",
               "image": "assets/STARMER/_ready/HARD CANDY/Chain Die Candy Line 450kg_hr_/Vacuum Pump.jpg",
               "specs": {
+                "modelNumber": "SEW-105",
                 "rating": "10 hp = 1400 rpm",
                 "frame": "M.S",
                 "dimension": "2 ft x 4 ft x 1 ft",
@@ -288,6 +295,7 @@ window.CATALOG_DATA = {
               "description": "Water-cooled S.S 304 table with A-frame circuit and S.S 201 legs.",
               "image": "assets/STARMER/_ready/HARD CANDY/Chain Die Candy Line 450kg_hr_/Cooling table.jpg",
               "specs": {
+                "modelNumber": "SEW-108",
                 "basePlateThickness": "10 mm in S.S 304",
                 "materialOfPlate": "Boundary wall S.S 304",
                 "coolingMedium": "Water cooling system, A-frame inlet/outlet",
@@ -324,6 +332,7 @@ window.CATALOG_DATA = {
               "description": "S.S 304 roller and main plates, S.S 201 side sheets, 5 hp drive.",
               "image": "assets/STARMER/_ready/HARD CANDY/Chain Die Candy Line 450kg_hr_/Kneading Machine.jpg",
               "specs": {
+                "modelNumber": "SEW-109",
                 "roller": "S.S 304",
                 "mainDrive": "5 hp",
                 "sideSheets": "S.S 201",
@@ -361,6 +370,7 @@ window.CATALOG_DATA = {
               "description": "Double-jacketed S.S 304 leaf with Teflon-covered food-grade rod, flexible food-grade pipe, 2 hp drive, 1000 W heater and 2 HP inverter with recycle.",
               "image": "assets/STARMER/_ready/HARD CANDY/Chain Die Candy Line 450kg_hr_/Liquid Filling Pump.jpg",
               "specs": {
+                "modelNumber": "SEW-110",
                 "filling": "Chocolate and liquid",
                 "leaf": "S.S 304, double jacketed",
                 "rod": "S.S with Teflon covering (food grade, heat proof)",
@@ -401,6 +411,7 @@ window.CATALOG_DATA = {
               "description": "S.S 304 leaf with Teflon-covered S.S worm, M.S stand, 2 hp gear motor and variable inverter for speed control.",
               "image": "assets/STARMER/_ready/HARD CANDY/Chain Die Candy Line 450kg_hr_/Powder Filling Pump.jpg",
               "specs": {
+                "modelNumber": "SEW-111",
                 "type": "Centre filling powder",
                 "leaf": "S.S 304 grade",
                 "gearMotor": "2 hp",
@@ -438,6 +449,7 @@ window.CATALOG_DATA = {
               "description": "Horizontal 4-roller batch roller in S.S 304 food grade with SEW (Germany) gear motor, up/down drive, control panel and 1000 W heaters.",
               "image": "assets/STARMER/_ready/HARD CANDY/Chain Die Candy Line 450kg_hr_/Batch Roller.jpg",
               "specs": {
+                "modelNumber": "SEW-114",
                 "frame": "Horizontal",
                 "rollersQuantity": "4",
                 "rollersMaterial": "S.S 304 food grade",
@@ -479,6 +491,7 @@ window.CATALOG_DATA = {
               "description": "Horizontal 4-stage rope sizer with S.S 304 roller pairs, brass rope guide, digital inverter and SEW (Germany) gear motors; bearings for low maintenance.",
               "image": "assets/STARMER/_ready/HARD CANDY/Chain Die Candy Line 450kg_hr_/Rope Sizer.jpg",
               "specs": {
+                "modelNumber": "SEW-115",
                 "sizerModel": "Horizontal, 4 stages",
                 "pairs": "S.S 304 (22 mm x2, 20 mm x2)",
                 "ropeGuide": "Brass",
@@ -520,6 +533,7 @@ window.CATALOG_DATA = {
               "description": "M.S sizer set and top cover with multiple gear-motor drives (sizer, main, bed, spreader) and matching inverters for speed control.",
               "image": "assets/STARMER/_ready/HARD CANDY/Chain Die Candy Line 450kg_hr_/Chain Die Forming Plant.jpg",
               "specs": {
+                "modelNumber": "SEW-112",
                 "speed": "2000 to 3500 pieces/min (depending on size & shape)",
                 "filling": "Up to 20% of product",
                 "sizerSet": "M.S",
@@ -560,6 +574,7 @@ window.CATALOG_DATA = {
               "description": "Precision die tooling with hardened, food-safe component materials.",
               "image": "assets/STARMER/_ready/HARD CANDY/Chain Die Candy Line 450kg_hr_/Chain Die.jpg",
               "specs": {
+                "modelNumber": "SEW-113",
                 "frameOfDie": "Aluminium alloy",
                 "cutterBlocks": "D-2",
                 "punches": "D-2",
@@ -597,6 +612,7 @@ window.CATALOG_DATA = {
               "description": "Close-body conveyor with S.S 304 mesh-wire steps, S.S 201 covers, thermopore insulation, S.S 304 inner skin and SEW gear motor.",
               "image": "assets/STARMER/_ready/HARD CANDY/Chain Die Candy Line 450kg_hr_/Close body Cooling Tunnel _ 3 Stages Cooling Conveyor .jpg",
               "specs": {
+                "modelNumber": "SEW-121",
                 "length": "10 ft",
                 "width": "3 ft",
                 "stages": "1 stage",
@@ -639,6 +655,7 @@ window.CATALOG_DATA = {
               "description": "Indoor unit with copper-tube evaporator and 1 HP blower; Bitzer 6.5 HP outdoor condensing unit with Copeland scroll compressor and full AC accessories.",
               "image": "assets/STARMER/_ready/HARD CANDY/Chain Die Candy Line 450kg_hr_/Ac Unit.jpg",
               "specs": {
+                "modelNumber": "SEW-122",
                 "capacity": "5 Ton (6.5 HP)",
                 "type": "Floor standing",
                 "indoorBlower": "1 HP motor, 3 phase 440V/50Hz",
@@ -679,6 +696,7 @@ window.CATALOG_DATA = {
               "description": "M.S frame vibrator with S.S 304 (18 gauge) main sheet and trays, twin fans, 1 hp drive.",
               "image": "assets/STARMER/_ready/HARD CANDY/Chain Die Candy Line 450kg_hr_/Vibrator.jpg",
               "specs": {
+                "modelNumber": "SEW-120",
                 "frame": "M.S",
                 "mainSheet": "S.S 304, 18 gauge",
                 "fans": "2 nos",
@@ -716,6 +734,7 @@ window.CATALOG_DATA = {
               "description": "Photo-electric-eye pillow wrapper with inverter, 2 H.P 3-phase and ½ H.P motors, 3.2 kW heaters.",
               "image": "assets/STARMER/_ready/HARD CANDY/Chain Die Candy Line 450kg_hr_/Pillow pack Wrapping Machine.jpg",
               "specs": {
+                "modelNumber": "SEW-123",
                 "output": "Up to 800 pcs/min (candy); up to 500 pcs/min (bubble)",
                 "electricMotors": "(1) 2 H.P / 3-phase, (2) ½ H.P",
                 "electricHeaters": "3.2 kW",
@@ -753,6 +772,7 @@ window.CATALOG_DATA = {
               "description": "M.S frame with movement wheels.",
               "image": "assets/STARMER/_ready/HARD CANDY/Chain Die Candy Line 450kg_hr_/Chain Die Stand.jpg",
               "specs": {
+                "modelNumber": "SEW-116",
                 "frame": "M.S",
                 "wheels": "4 Nos (for movement)"
               },
@@ -795,6 +815,7 @@ window.CATALOG_DATA = {
               "description": "Vertical S.S 304 tank with base coil heating and external ladder.",
               "image": "assets/STARMER/_ready/HARD CANDY/Complete Candy Line 1000kg_hr/Glucose Tank.jpg",
               "specs": {
+                "modelNumber": "SEW-201",
                 "grade": "S.S 304",
                 "sheetThickness": "5 mm upper and lower sheet",
                 "outerDiaSheetThickness": "3 mm",
@@ -833,6 +854,7 @@ window.CATALOG_DATA = {
               "description": "Three-pass steam generator with Grundfos multistage feed-water pump, automatic electric control panel and burner with gas assembly & diesel pump.",
               "image": "assets/STARMER/_ready/HARD CANDY/Complete Candy Line 1000kg_hr/Steam Generator.jpg",
               "specs": {
+                "modelNumber": "SEW-202",
                 "typeOfPasses": "3 pass",
                 "testPressure": "225 psi",
                 "workingPressure": "150 psi",
@@ -874,6 +896,7 @@ window.CATALOG_DATA = {
               "description": "Cushioned cylinder header in mild steel with configurable branch pipes.",
               "image": "assets/STARMER/_ready/HARD CANDY/Complete Candy Line 1000kg_hr/Steam Header.jpg",
               "specs": {
+                "modelNumber": "SEW-103",
                 "materialOfHeader": "M.S",
                 "diameter": "1 ft",
                 "branchPipes": "1\", 2\", 3\", 4\" (depending on system needs)",
@@ -910,6 +933,7 @@ window.CATALOG_DATA = {
               "description": "Double-jacketed S.S 304 pans with dosing pump, sugar pump, steam safety valves and hydraulic-tested vessel.",
               "image": "assets/STARMER/_ready/HARD CANDY/Complete Candy Line 1000kg_hr/Candy Continuous Cooker.jpg",
               "specs": {
+                "modelNumber": "SEW-204",
                 "output": "Up to 1000 kg/hr",
                 "drive": "2 hp",
                 "dosingPump": "3 hp (imported)",
@@ -950,6 +974,7 @@ window.CATALOG_DATA = {
               "description": "M.S frame vacuum pump unit.",
               "image": "assets/STARMER/_ready/HARD CANDY/Complete Candy Line 1000kg_hr/Vacuum Pump.jpg",
               "specs": {
+                "modelNumber": "SEW-205",
                 "rating": "20 hp",
                 "frame": "M.S",
                 "dimension": "2 ft x 4 ft x 1 ft",
@@ -984,6 +1009,7 @@ window.CATALOG_DATA = {
               "description": "Double-jacketed S.S 304 tank with SEW (Germany) gear motor, steam valves and hydraulic-tested vessel.",
               "image": "assets/STARMER/_ready/HARD CANDY/Complete Candy Line 1000kg_hr/Dissolving Tank.jpg",
               "specs": {
+                "modelNumber": "SEW-206",
                 "capacity": "750 kg",
                 "construction": "Double jacketed, main body S.S 304 with M.S",
                 "body": "S.S 304",
@@ -1027,6 +1053,7 @@ window.CATALOG_DATA = {
               "description": "Single-jacketed S.S 304 tank with stirrer and 2 hp drive.",
               "image": "assets/STARMER/_ready/HARD CANDY/Complete Candy Line 1000kg_hr/Storage Tank.jpg",
               "specs": {
+                "modelNumber": "SEW-207",
                 "capacity": "750 kg",
                 "construction": "Single jacketed",
                 "body": "S.S 304",
@@ -1065,6 +1092,7 @@ window.CATALOG_DATA = {
               "description": "Water-cooled S.S 304 table with A-frame circuit and S.S 201 legs.",
               "image": "assets/STARMER/_ready/HARD CANDY/Complete Candy Line 1000kg_hr/Cooling table.jpg",
               "specs": {
+                "modelNumber": "SEW-108",
                 "basePlateThickness": "10 mm in S.S 304",
                 "materialOfPlate": "Boundary wall S.S 304",
                 "coolingMedium": "Water cooling system, A-frame inlet/outlet",
@@ -1102,6 +1130,7 @@ window.CATALOG_DATA = {
               "description": "S.S 304 roller and main plates, S.S 201 side sheets, 5 hp drive.",
               "image": "assets/STARMER/_ready/HARD CANDY/Complete Candy Line 1000kg_hr/Kneading Machine.jpg",
               "specs": {
+                "modelNumber": "SEW-109",
                 "roller": "S.S 304",
                 "mainDrive": "5 hp",
                 "mainPlate": "4 ft, S.S 304",
@@ -1139,6 +1168,7 @@ window.CATALOG_DATA = {
               "description": "Heavy-duty double-jacketed S.S 304 mixer with twin arms, 20 hp main drive, 8 x 6000 W heaters and a tilting discharge system.",
               "image": "assets/STARMER/_ready/HARD CANDY/Complete Candy Line 1000kg_hr/Bubble Gum Mixer.jpg",
               "specs": {
+                "modelNumber": "SEW-209",
                 "capacity": "200 kg in 20 minutes",
                 "pan": "S.S 304, double jacketed",
                 "arms": "2, S.S 304",
@@ -1179,6 +1209,7 @@ window.CATALOG_DATA = {
               "description": "Two-stage screw extruder on M.S structure with 7.5 hp drive, inverter, S.S 304 rolls and head rotary roller system, with 6000 W heaters.",
               "image": "assets/STARMER/_ready/HARD CANDY/Complete Candy Line 1000kg_hr/Bubble Gum Extruder.jpg",
               "specs": {
+                "modelNumber": "SEW-211",
                 "type": "Screw, 2 stages",
                 "gearMainDrive": "7.5 hp",
                 "inverter": "7.5 hp",
@@ -1217,6 +1248,7 @@ window.CATALOG_DATA = {
               "description": "Double-jacketed S.S 304 leaf with Teflon-covered food-grade rod, flexible pipe, 2 hp drive, 1000 W heater and 2 HP inverter with recycle.",
               "image": "assets/STARMER/_ready/HARD CANDY/Complete Candy Line 1000kg_hr/Liquid Filling Pump.jpg",
               "specs": {
+                "modelNumber": "SEW-110",
                 "filling": "Chocolate and liquid",
                 "leaf": "S.S 304, double jacketed",
                 "rod": "S.S with Teflon covering (food grade, heat proof)",
@@ -1257,6 +1289,7 @@ window.CATALOG_DATA = {
               "description": "S.S 304 leaf with Teflon-covered S.S worm, M.S stand, 2 hp gear motor and variable inverter for speed control.",
               "image": "assets/STARMER/_ready/HARD CANDY/Complete Candy Line 1000kg_hr/Powder Filling Pump.jpg",
               "specs": {
+                "modelNumber": "SEW-116",
                 "type": "Centre filling powder",
                 "leaf": "S.S 304 grade",
                 "gearMotor": "2 hp",
@@ -1294,6 +1327,7 @@ window.CATALOG_DATA = {
               "description": "Horizontal 4-roller batch roller in S.S 304 food grade with SEW (Germany) gear motor, up/down drive, control panel and 1000 W heaters.",
               "image": "assets/STARMER/_ready/HARD CANDY/Complete Candy Line 1000kg_hr/Batch Roller.jpg",
               "specs": {
+                "modelNumber": "SEW-214",
                 "frame": "Horizontal",
                 "rollersQuantity": "4",
                 "rollersMaterial": "S.S 304 food grade",
@@ -1334,6 +1368,7 @@ window.CATALOG_DATA = {
               "description": "Horizontal 5-stage rope sizer (4 horizontal + 1 vertical) with S.S 304 roller pairs, brass rope guide, digital inverter and SEW (Germany) gear motors.",
               "image": "assets/STARMER/_ready/HARD CANDY/Complete Candy Line 1000kg_hr/Rope Sizer.jpg",
               "specs": {
+                "modelNumber": "SEW-215",
                 "sizerModel": "Horizontal, 5 stages (4 horizontal + 1 vertical)",
                 "pairs": "S.S 304 (22 mm x4, 16 mm x1)",
                 "ropeGuide": "Brass",
@@ -1373,6 +1408,7 @@ window.CATALOG_DATA = {
               "description": "Teflon-coated food-grade belt with D2 pressure cams, high carbon steel sizer ratio and gears, spring-loaded diamond-polished punches and 1 hp die blower.",
               "image": "assets/STARMER/_ready/HARD CANDY/Complete Candy Line 1000kg_hr/Kneading Machine.jpg",
               "specs": {
+                "modelNumber": "SEW-216",
                 "capacity": "Up to 1000 kg/hr",
                 "speed": "4000 to 6000 pieces/min (varies with product)",
                 "netWeight": "500 kg (1000 lbs)",
@@ -1416,6 +1452,7 @@ window.CATALOG_DATA = {
               "description": "EN19 high-wear cutting ring and punch (up to 55 HRC), high-speed carbon steel guide pins, cast iron die parts and brass-cast outer ring.",
               "image": "assets/STARMER/_ready/HARD CANDY/Complete Candy Line 1000kg_hr/Rotary Die.jpg",
               "specs": {
+                "modelNumber": "SEW-217",
                 "grade": "High speed grade",
                 "cuttingRing": "EN19, high wear resistance (tooth pitch up to 2 mm)",
                 "punch": "EN19, up to 55 HRC; high quality M.S tempered",
@@ -1453,6 +1490,7 @@ window.CATALOG_DATA = {
               "description": "M.S frame with movement wheels, casting die-cap lane and die up/down screw.",
               "image": "assets/STARMER/_ready/HARD CANDY/Complete Candy Line 1000kg_hr/Die Stand.jpg",
               "specs": {
+                "modelNumber": "SEW-218",
                 "mainFrame": "M.S",
                 "wheels": "For movement",
                 "dieCapLane": "Casting material",
@@ -1489,6 +1527,7 @@ window.CATALOG_DATA = {
               "description": "Three-tier horizontal conveyor with Teflon-coated mesh steps, S.S 201 covers, thermopore insulation, S.S 304 inner panel and AC-conditioned ventilation.",
               "image": "assets/STARMER/_ready/HARD CANDY/Complete Candy Line 1000kg_hr/Close body Cooling Tunnel _ 3 Stages Cooling Conveyor .jpg",
               "specs": {
+                "modelNumber": "SEW-219",
                 "style": "Three-tier horizontal cooling conveyor",
                 "stages": "3 stages",
                 "meshSteps": "Plastic Teflon-coated (3 steps), PP food-grade material",
@@ -1528,6 +1567,7 @@ window.CATALOG_DATA = {
               "description": "Indoor unit with copper-tube evaporator and 3 HP blower; Bitzer 25 HP outdoor semi-sealed condensing unit with full AC accessories and ducting.",
               "image": "assets/STARMER/_ready/HARD CANDY/Complete Candy Line 1000kg_hr/Ac Unit.jpg",
               "specs": {
+                "modelNumber": "SEW-220",
                 "capacity": "20 Ton (25 HP)",
                 "type": "Roof type",
                 "indoorBlower": "3 HP motor, 3 phase 440V/50Hz",
@@ -1569,6 +1609,7 @@ window.CATALOG_DATA = {
               "description": "M.S frame vibrator with S.S 304 main sheet and trays, twin fans, 1 hp drive.",
               "image": "assets/STARMER/_ready/HARD CANDY/Complete Candy Line 1000kg_hr/Vibrator.jpg",
               "specs": {
+                "modelNumber": "SEW-120",
                 "frame": "M.S",
                 "mainSheet": "S.S 304",
                 "fans": "2 nos",
@@ -1606,6 +1647,7 @@ window.CATALOG_DATA = {
               "description": "Photo-electric-eye pillow wrapper with inverter, 2 H.P 3-phase and ½ H.P motors, 3.2 kW heaters.",
               "image": "assets/STARMER/_ready/HARD CANDY/Complete Candy Line 1000kg_hr/Pillow pack Wrapping Machine.jpg",
               "specs": {
+                "modelNumber": "SEW-123",
                 "output": "Up to 800 pcs/min (candy); up to 500 pcs/min (bubble)",
                 "electricMotors": "(1) 2 H.P / 3-phase, (2) ½ H.P",
                 "electricHeaters": "3.2 kW",
@@ -1653,6 +1695,7 @@ window.CATALOG_DATA = {
               "description": "Vertical S.S 304 storage tank with coil heating on the base of the tank and an externally mounted ladder.",
               "image": "assets/STARMER/_ready/HARD CANDY/Complete Candy line 200Kg_Hr/Glucose Tank.jpg",
               "specs": {
+                "modelNumber": "SEW-101",
                 "grade": "S.S 304",
                 "sheetThickness": "5 mm upper and lower sheet",
                 "outerDiaSheetThickness": "3 mm",
@@ -1691,6 +1734,7 @@ window.CATALOG_DATA = {
               "description": "Three-pass steam generator with Grundfos multistage feed-water pump, fully automatic electric control panel, and burner with gas assembly & diesel pump.",
               "image": "assets/STARMER/_ready/HARD CANDY/Complete Candy line 200Kg_Hr/Steam Generator.jpg",
               "specs": {
+                "modelNumber": "SEW-102",
                 "typeOfPasses": "3 pass",
                 "testPressure": "225 psi",
                 "workingPressure": "150 psi",
@@ -1734,6 +1778,7 @@ window.CATALOG_DATA = {
               "description": "Cushioned cylinder header in mild steel with configurable branch pipes.",
               "image": "assets/STARMER/_ready/HARD CANDY/Complete Candy line 200Kg_Hr/Steam Header.jpg",
               "specs": {
+                "modelNumber": "SEW-103",
                 "materialOfHeader": "M.S",
                 "diameter": "1 ft",
                 "branchPipes": "1, 2, 3, 4 (depending on system needs)",
@@ -1768,6 +1813,7 @@ window.CATALOG_DATA = {
               "description": "Double-jacketed tank with S.S 304 body and stirrer, M.S legs, 2 hp gear-motor main drive, steam gauge and safety/seat valves.",
               "image": "assets/STARMER/_ready/HARD CANDY/Complete Candy line 200Kg_Hr/Dissolving Tank.jpg",
               "specs": {
+                "modelNumber": "SEW-106",
                 "capacity": "400 kg",
                 "construction": "Double jacketed with M.S",
                 "body": "S.S 304",
@@ -1807,6 +1853,7 @@ window.CATALOG_DATA = {
               "description": "Double-jacketed batch cooker with S.S 304 pan and main body, M.S cooker frame, 2 hp gear-motor main drive, gauges and electric control panel.",
               "image": "assets/STARMER/_ready/HARD CANDY/Complete Candy line 200Kg_Hr/Batch Type Cooker.jpg",
               "specs": {
+                "modelNumber": "SEW-005",
                 "capacity": "200 kg per hour",
                 "gearMotorMainDrive": "2 hp",
                 "pan": "S.S 304",
@@ -1846,6 +1893,7 @@ window.CATALOG_DATA = {
               "description": "M.S frame vacuum pump unit.",
               "image": "assets/STARMER/_ready/HARD CANDY/Complete Candy line 200Kg_Hr/Vacuum Pump.jpg",
               "specs": {
+                "modelNumber": "SEW-006",
                 "rating": "7.5 hp = 1450 rpm",
                 "frame": "M.S",
                 "dimension": "2 ft x 4 ft x 1 ft (H x W x L)",
@@ -1880,6 +1928,7 @@ window.CATALOG_DATA = {
               "description": "Water-cooled S.S 304 cooling table with A-frame water inlet/outlet circuit and S.S 201 legs.",
               "image": "assets/STARMER/_ready/HARD CANDY/Complete Candy line 200Kg_Hr/Cooling Table.jpg",
               "specs": {
+                "modelNumber": "SEW-108",
                 "basePlateThickness": "10 mm in S.S 304",
                 "materialOfPlate": "Boundary wall S.S 304",
                 "coolingMedium": "Water cooling system, A-frame for moving water inlet and outlet",
@@ -1916,6 +1965,7 @@ window.CATALOG_DATA = {
               "description": "S.S 304 roller and main plates with S.S 201 side sheets, 5 hp main drive and on/off control.",
               "image": "assets/STARMER/_ready/HARD CANDY/Complete Candy line 200Kg_Hr/Kneading Machine.jpg",
               "specs": {
+                "modelNumber": "SEW-109",
                 "roller": "S.S 304",
                 "mainDrive": "5 hp",
                 "steelPlate": "4 ft",
@@ -1954,6 +2004,7 @@ window.CATALOG_DATA = {
               "description": "S.S 304 powder filling pump with Teflon-covered S.S worm, M.S stand, 2 hp gear motor and variable inverter for speed control.",
               "image": "assets/STARMER/_ready/HARD CANDY/Complete Candy line 200Kg_Hr/Powder Filling Pump.jpg",
               "specs": {
+                "modelNumber": "SEW-009",
                 "type": "Centre filling powder",
                 "roller": "S.S 304 grade",
                 "gearMotor": "2 hp",
@@ -1991,6 +2042,7 @@ window.CATALOG_DATA = {
               "description": "Horizontal 4-roller batch roller in S.S 304 food grade with SEW (Germany) gear motor, up/down 1 hp drive, electric control panel and 1000 W heaters.",
               "image": "assets/STARMER/_ready/HARD CANDY/Complete Candy line 200Kg_Hr/Batch Roller.jpg",
               "specs": {
+                "modelNumber": "SEW-114",
                 "frame": "Horizontal",
                 "rollersQuantity": "4",
                 "rollersMaterial": "S.S 304 food grade",
@@ -2032,6 +2084,7 @@ window.CATALOG_DATA = {
               "description": "Horizontal 5-stage rope sizer with S.S 304 roller pairs, brass rope guide, digital inverter and SEW (Germany) gear motors; bearings used instead of bushes for low maintenance.",
               "image": "assets/STARMER/_ready/HARD CANDY/Complete Candy line 200Kg_Hr/Rope sizer.jpg",
               "specs": {
+                "modelNumber": "SEW-115",
                 "sizerModel": "Horizontal, 5 stages",
                 "firstPair": "S.S 304, 22 mm",
                 "secondPair": "S.S 304, 22 mm",
@@ -2077,6 +2130,7 @@ window.CATALOG_DATA = {
               "description": "Oil-bath geared candy former with M.S side sheets and on/off control; supports powder filling. Die supplied separately.",
               "image": "assets/STARMER/_ready/HARD CANDY/Complete Candy line 200Kg_Hr/Small Candy Plant .jpg",
               "specs": {
+                "modelNumber": "SEW-011",
                 "gears": "Oil bath system",
                 "motor": "1 hp",
                 "sideSheets": "M.S (mild steel)",
@@ -2114,7 +2168,9 @@ window.CATALOG_DATA = {
               "function": "Interchangeable forming die for the small candy plant, used to shape the candy rope into the required individual candy shape and size.",
               "description": "",
               "image": "assets/STARMER/_ready/HARD CANDY/Complete Candy line 200Kg_Hr/Small Candy Die .jpg",
-              "specs": {},
+              "specs": {
+                "modelNumber": "SEW-013"
+              },
               "diesAndParts": [
                 {
                   "id": "HC-L003-M13-D01",
@@ -2144,6 +2200,7 @@ window.CATALOG_DATA = {
               "description": "M.S frame vibrator with S.S 304 main sheet and trays, twin fans and a 1 hp gear motor.",
               "image": "assets/STARMER/_ready/HARD CANDY/Complete Candy line 200Kg_Hr/Vibrator.jpg",
               "specs": {
+                "modelNumber": "SEW-120",
                 "frame": "M.S",
                 "mainSheet": "S.S 304",
                 "fans": "2 nos",
@@ -2181,6 +2238,7 @@ window.CATALOG_DATA = {
               "description": "Photo-electric-eye pillow wrapper with inverter, 2 H.P 3-phase and ½ H.P motors and 3.2 kW heaters.",
               "image": "assets/STARMER/_ready/HARD CANDY/Complete Candy line 200Kg_Hr/Pillow Pack Wrapping Machine.jpg",
               "specs": {
+                "modelNumber": "SEW-123",
                 "output": "Up to 800 pcs/min (candy); up to 500 pcs/min (bubble)",
                 "electricMotors": "(1) 2 H.P / 3-phase, (2) ½ H.P",
                 "electricHeaters": "3.2 kW",
@@ -2228,6 +2286,7 @@ window.CATALOG_DATA = {
               "description": "Vertical S.S 304 tank with base coil heating and external ladder.",
               "image": "assets/STARMER/_ready/HARD CANDY/Complete Candy line 450Kg_Hr/Glucose Tank.jpg",
               "specs": {
+                "modelNumber": "SEW-101",
                 "grade": "S.S 304",
                 "sheetThickness": "5 mm upper and lower sheet",
                 "outerDiaSheetThickness": "3 mm",
@@ -2266,6 +2325,7 @@ window.CATALOG_DATA = {
               "description": "Three-pass steam generator with Grundfos multistage feed-water pump, automatic electric control panel and burner with gas assembly & diesel pump.",
               "image": "assets/STARMER/_ready/HARD CANDY/Complete Candy line 450Kg_Hr/Steam Generator.jpg",
               "specs": {
+                "modelNumber": "SEW-102",
                 "typeOfPasses": "3 pass",
                 "testPressure": "225 psi",
                 "workingPressure": "150 psi",
@@ -2307,6 +2367,7 @@ window.CATALOG_DATA = {
               "description": "Cushioned cylinder header in mild steel with configurable branch pipes.",
               "image": "assets/STARMER/_ready/HARD CANDY/Complete Candy line 450Kg_Hr/Steam Header.jpg",
               "specs": {
+                "modelNumber": "SEW-103",
                 "materialOfHeader": "M.S",
                 "diameter": "1 ft",
                 "branchPipes": "1\", 2\", 3\", 4\" (depending on system needs)",
@@ -2344,6 +2405,7 @@ window.CATALOG_DATA = {
               "description": "Double-jacketed S.S 304 pans and body with sugar pump, steam trap and full S.S water nozzles.",
               "image": "assets/STARMER/_ready/HARD CANDY/Complete Candy line 450Kg_Hr/Candy Continuous Cooker.jpg",
               "specs": {
+                "modelNumber": "SEW-104",
                 "output": "450 kg/hr",
                 "drive": "2 hp",
                 "pans": "S.S 304",
@@ -2384,6 +2446,7 @@ window.CATALOG_DATA = {
               "description": "M.S frame vacuum pump unit.",
               "image": "assets/STARMER/_ready/HARD CANDY/Complete Candy line 450Kg_Hr/Vacuum Pump.jpg",
               "specs": {
+                "modelNumber": "SEW-105",
                 "rating": "7.5 hp = 1450 rpm",
                 "frame": "M.S",
                 "dimension": "2 ft x 4 ft x 1 ft",
@@ -2418,6 +2481,7 @@ window.CATALOG_DATA = {
               "description": "Double-jacketed S.S 304 tank with stirrer, M.S legs, 2 hp drive, steam gauge and safety/seat valves.",
               "image": "assets/STARMER/_ready/HARD CANDY/Complete Candy line 450Kg_Hr/Dissolving Tank.jpg",
               "specs": {
+                "modelNumber": "SEW-106",
                 "capacity": "400 kg",
                 "construction": "Double jacketed with M.S",
                 "body": "S.S 304",
@@ -2457,6 +2521,7 @@ window.CATALOG_DATA = {
               "description": "Single-jacketed S.S 304 tank with stirrer, M.S legs and 1 hp drive.",
               "image": "assets/STARMER/_ready/HARD CANDY/Complete Candy line 450Kg_Hr/Storage Tank.jpg",
               "specs": {
+                "modelNumber": "SEW-107",
                 "capacity": "400 kg",
                 "construction": "Single jacketed",
                 "body": "S.S 304",
@@ -2495,6 +2560,7 @@ window.CATALOG_DATA = {
               "description": "Water-cooled S.S 304 table with A-frame circuit and S.S 201 legs.",
               "image": "assets/STARMER/_ready/HARD CANDY/Complete Candy line 450Kg_Hr/Cooling table.jpg",
               "specs": {
+                "modelNumber": "SEW-108",
                 "basePlateThickness": "10 mm in S.S 304",
                 "materialOfPlate": "Boundary wall S.S 304",
                 "coolingMedium": "Water cooling system, A-frame inlet/outlet",
@@ -2531,6 +2597,7 @@ window.CATALOG_DATA = {
               "description": "S.S 304 roller and main plates, S.S 201 side sheets, 5 hp drive.",
               "image": "assets/STARMER/_ready/HARD CANDY/Complete Candy line 450Kg_Hr/Kneading Machine.jpg",
               "specs": {
+                "modelNumber": "SEW-109",
                 "roller": "S.S 304",
                 "mainDrive": "5 hp",
                 "mainPlate": "4 ft, S.S 304",
@@ -2568,6 +2635,7 @@ window.CATALOG_DATA = {
               "description": "Double-jacketed S.S 304 leaf with Teflon-covered food-grade rod, flexible pipe, 2 hp drive, 1000 W heater and 2 HP inverter with recycle.",
               "image": "assets/STARMER/_ready/HARD CANDY/Complete Candy line 450Kg_Hr/Liquid Filling Pump.jpg",
               "specs": {
+                "modelNumber": "SEW-110",
                 "filling": "Chocolate and liquid",
                 "leaf": "S.S 304, double jacketed",
                 "rod": "S.S with Teflon covering (food grade, heat proof)",
@@ -2608,6 +2676,7 @@ window.CATALOG_DATA = {
               "description": "S.S 304 leaf with Teflon-covered S.S worm, M.S stand, 2 hp gear motor and variable inverter for speed control.",
               "image": "assets/STARMER/_ready/HARD CANDY/Complete Candy line 450Kg_Hr/Powder Filling Pump.jpg",
               "specs": {
+                "modelNumber": "SEW-111",
                 "type": "Centre filling powder",
                 "leaf": "S.S 304 grade",
                 "gearMotor": "2 hp",
@@ -2645,6 +2714,7 @@ window.CATALOG_DATA = {
               "description": "Heavy-duty double-jacketed S.S 304 mixer with twin arms, 20 hp main drive, 6000 W heaters and a tilting discharge system.",
               "image": "assets/STARMER/_ready/HARD CANDY/Complete Candy line 450Kg_Hr/Bubble Gum Mixer.jpg",
               "specs": {
+                "modelNumber": "SEW-112",
                 "capacity": "100 kg in 20 minutes",
                 "pan": "S.S 304, double jacketed",
                 "arms": "2, S.S 304",
@@ -2687,6 +2757,7 @@ window.CATALOG_DATA = {
               "description": "Screw extruder on M.S structure with 7.5 hp drive, 10 hp inverter, S.S 304 roll and head helping-roller system.",
               "image": "assets/STARMER/_ready/HARD CANDY/Complete Candy line 450Kg_Hr/Bubble Gum Extruder.jpg",
               "specs": {
+                "modelNumber": "SEW-113",
                 "type": "1 rope, 2 worms",
                 "gearMotorDrive": "7.5 hp",
                 "inverter": "10 hp",
@@ -2725,6 +2796,7 @@ window.CATALOG_DATA = {
               "description": "Horizontal 4-roller batch roller in S.S 304 food grade with SEW (Germany) gear motor, up/down drive, control panel and 1000 W heaters.",
               "image": "assets/STARMER/_ready/HARD CANDY/Complete Candy line 450Kg_Hr/Batch Roller.jpg",
               "specs": {
+                "modelNumber": "SEW-114",
                 "frame": "Horizontal",
                 "rollersQuantity": "4",
                 "rollersMaterial": "S.S 304 food grade",
@@ -2766,6 +2838,7 @@ window.CATALOG_DATA = {
               "description": "Horizontal 4-stage rope sizer with S.S 304 roller pairs, brass rope guide, digital inverter and SEW (Germany) gear motors; bearings for low maintenance.",
               "image": "assets/STARMER/_ready/HARD CANDY/Complete Candy line 450Kg_Hr/Rope Sizer.jpg",
               "specs": {
+                "modelNumber": "SEW-115",
                 "sizerModel": "Horizontal, 4 stages",
                 "pairs": "S.S 304 (22 mm x2, 20 mm x2)",
                 "ropeGuide": "Brass",
@@ -2807,6 +2880,7 @@ window.CATALOG_DATA = {
               "description": "High-carbon-steel forged gears and bearing-steel CAMS with 5 hp drive and INVENT inverter; adjustable filling up to ~34%.",
               "image": "assets/STARMER/_ready/HARD CANDY/Complete Candy line 450Kg_Hr/Kneading Machine.jpg",
               "specs": {
+                "modelNumber": "SEW-116",
                 "mainDriveMotor": "5 hp",
                 "inverter": "5 hp (INVENT brand)",
                 "cams": "Bearing steel grade",
@@ -2846,6 +2920,7 @@ window.CATALOG_DATA = {
               "description": "EN19 high-wear cutting ring and punch (up to 55 HRC), cast iron die parts and brass-cast outer ring.",
               "image": "assets/STARMER/_ready/HARD CANDY/Complete Candy line 450Kg_Hr/Rotary Die.jpg",
               "specs": {
+                "modelNumber": "SEW-117",
                 "grade": "Standard grade",
                 "cuttingRing": "EN19, high wear resistance (tooth pitch up to 2 mm)",
                 "punch": "EN19, up to 55 HRC; high quality M.S tempered",
@@ -2883,6 +2958,7 @@ window.CATALOG_DATA = {
               "description": "M.S frame with movement wheels, casting die-cap lane and die up/down screw.",
               "image": "assets/STARMER/_ready/HARD CANDY/Complete Candy line 450Kg_Hr/Die Stand.jpg",
               "specs": {
+                "modelNumber": "SEW-118",
                 "mainFrame": "M.S",
                 "wheels": "For movement",
                 "dieCapLane": "Casting material",
@@ -2919,6 +2995,7 @@ window.CATALOG_DATA = {
               "description": "18 ft open-body conveyor with 2 hp blower, Teflon belt, S.S mesh-wire steps, M.S chain/sprockets and S.S 304 rods.",
               "image": "assets/STARMER/_ready/HARD CANDY/Complete Candy line 450Kg_Hr/Close body Cooling Tunnel _ 3 Stages Cooling Conveyor .jpg",
               "specs": {
+                "modelNumber": "SEW-119",
                 "length": "18 ft",
                 "stages": "3 stages",
                 "blower": "2 hp",
@@ -2961,6 +3038,7 @@ window.CATALOG_DATA = {
               "description": "M.S frame vibrator with S.S 304 (18 gauge) main sheet and trays, twin fans, 1 hp drive.",
               "image": "assets/STARMER/_ready/HARD CANDY/Complete Candy line 450Kg_Hr/Vibrator.jpg",
               "specs": {
+                "modelNumber": "SEW-120",
                 "frame": "M.S",
                 "mainSheet": "S.S 304, 18 gauge",
                 "fans": "2 nos",
@@ -2998,6 +3076,7 @@ window.CATALOG_DATA = {
               "description": "Close-body conveyor with S.S 304 mesh-wire steps, S.S 201 covers, thermopore insulation, S.S 304 inner skin and SEW gear motor.",
               "image": "assets/STARMER/_ready/HARD CANDY/Complete Candy line 450Kg_Hr/Close body Cooling Tunnel _ 3 Stages Cooling Conveyor .jpg",
               "specs": {
+                "modelNumber": "SEW-121",
                 "length": "10 ft",
                 "width": "3 ft",
                 "stages": "3 stages",
@@ -3040,6 +3119,7 @@ window.CATALOG_DATA = {
               "description": "Indoor unit with copper-tube evaporator and 1 HP blower; Bitzer 6.5 HP outdoor condensing unit with Copeland scroll compressor and full AC accessories.",
               "image": "assets/STARMER/_ready/HARD CANDY/Complete Candy line 450Kg_Hr/Ac Unit.jpg",
               "specs": {
+                "modelNumber": "SEW-122",
                 "capacity": "5 Ton (6.5 HP)",
                 "type": "Floor standing",
                 "indoorBlower": "1 HP motor, 3 phase 440V/50Hz",
@@ -3080,6 +3160,7 @@ window.CATALOG_DATA = {
               "description": "Photo-electric-eye pillow wrapper with inverter, 2 H.P 3-phase and ½ H.P motors, 3.2 kW heaters.",
               "image": "assets/STARMER/_ready/HARD CANDY/Complete Candy line 450Kg_Hr/Pillow pack Wrapping Machine.jpg",
               "specs": {
+                "modelNumber": "SEW-123",
                 "output": "Up to 800 pcs/min",
                 "electricMotors": "(1) 2 H.P / 3-phase, (2) ½ H.P",
                 "electricHeaters": "3.2 kW",
@@ -3137,6 +3218,7 @@ window.CATALOG_DATA = {
               "description": "Vertical S.S 304 tank with base coil heating and external ladder.",
               "image": "assets/STARMER/_ready/PHARMA/Complete Pharma ( Lozenges ) 450KG_HR/Glucose Tank.jpg",
               "specs": {
+                "modelNumber": "SEW-101",
                 "grade": "S.S 304",
                 "sheetThickness": "5 mm upper and lower sheet",
                 "outerDiaSheetThickness": "3 mm",
@@ -3176,6 +3258,7 @@ window.CATALOG_DATA = {
               "description": "Three-pass steam generator with Grundfos multistage feed-water pump, automatic electric control panel and burner with gas assembly & diesel pump.",
               "image": "assets/STARMER/_ready/PHARMA/Complete Pharma ( Lozenges ) 450KG_HR/Steam Generator.jpg",
               "specs": {
+                "modelNumber": "SEW-102",
                 "typeOfPasses": "3 pass",
                 "testPressure": "225 psi",
                 "workingPressure": "150 psi",
@@ -3219,6 +3302,7 @@ window.CATALOG_DATA = {
               "description": "Cushioned cylinder header in mild steel with configurable branch pipes.",
               "image": "assets/STARMER/_ready/PHARMA/Complete Pharma ( Lozenges ) 450KG_HR/Steam Header.jpg",
               "specs": {
+                "modelNumber": "SEW-103",
                 "materialOfHeader": "M.S",
                 "diameter": "1 ft",
                 "branchPipes": "1\", 2\", 3\", 4\" (depending on system needs)",
@@ -3256,6 +3340,7 @@ window.CATALOG_DATA = {
               "description": "Double-jacketed S.S 304 pans and body with dosing pump, sugar pump, batch auto control, steam gauge and safety valves.",
               "image": "assets/STARMER/_ready/PHARMA/Complete Pharma ( Lozenges ) 450KG_HR/Candy Continuous Cooker.jpg",
               "specs": {
+                "modelNumber": "SEW-104",
                 "output": "450 kg/hr",
                 "pans": "2 nos in S.S 304 food grade",
                 "body": "S.S 304, double jacketed",
@@ -3295,6 +3380,7 @@ window.CATALOG_DATA = {
               "description": "M.S frame vacuum pump unit.",
               "image": "assets/STARMER/_ready/PHARMA/Complete Pharma ( Lozenges ) 450KG_HR/Vacuum Pump.jpg",
               "specs": {
+                "modelNumber": "SEW-105",
                 "rating": "10 hp = 1450 rpm",
                 "frame": "M.S",
                 "dimension": "2 ft x 4 ft x 1 ft",
@@ -3329,6 +3415,7 @@ window.CATALOG_DATA = {
               "description": "Double-jacketed S.S 304 tank with stirrer, M.S legs, 2 hp drive, steam gauge and safety/scat valves.",
               "image": "assets/STARMER/_ready/PHARMA/Complete Pharma ( Lozenges ) 450KG_HR/Dissolving Tank.jpg",
               "specs": {
+                "modelNumber": "SEW-106",
                 "capacity": "400 kg",
                 "construction": "Double jacketed with M.S",
                 "body": "S.S 304",
@@ -3368,6 +3455,7 @@ window.CATALOG_DATA = {
               "description": "Single-jacketed S.S 304 tank with stirrer, M.S legs and 1 hp drive.",
               "image": "assets/STARMER/_ready/PHARMA/Complete Pharma ( Lozenges ) 450KG_HR/Storage Tank.jpg",
               "specs": {
+                "modelNumber": "SEW-107",
                 "capacity": "400 kg",
                 "construction": "Single jacketed",
                 "body": "S.S 304",
@@ -3406,6 +3494,7 @@ window.CATALOG_DATA = {
               "description": "Water-cooled S.S 304 table with A-frame circuit and S.S 201 legs.",
               "image": "assets/STARMER/_ready/PHARMA/Complete Pharma ( Lozenges ) 450KG_HR/Cooling table.jpg",
               "specs": {
+                "modelNumber": "SEW-108",
                 "basePlateThickness": "10 mm in S.S 304",
                 "materialOfPlate": "Boundary wall S.S 304",
                 "coolingMedium": "Water cooling system, A-frame inlet/outlet valve",
@@ -3442,6 +3531,7 @@ window.CATALOG_DATA = {
               "description": "S.S 304 roller and main plate, S.S 201 side sheets, 5 hp drive.",
               "image": "assets/STARMER/_ready/PHARMA/Complete Pharma ( Lozenges ) 450KG_HR/Kneading Machine.jpg",
               "specs": {
+                "modelNumber": "SEW-109",
                 "roller": "S.S 304",
                 "mainDrive": "5 hp",
                 "steelPlate": "4 ft",
@@ -3480,6 +3570,7 @@ window.CATALOG_DATA = {
               "description": "Double-jacketed S.S 304 leaf with Teflon-covered food-grade rod, flexible pipe, 2 hp drive, 1000 W heater and 2 HP inverter with overflow recycle.",
               "image": "assets/STARMER/_ready/PHARMA/Complete Pharma ( Lozenges ) 450KG_HR/Liquid Filling Pump.jpg",
               "specs": {
+                "modelNumber": "SEW-110",
                 "filling": "Chocolate and liquid",
                 "leaf": "S.S 304, double jacketed",
                 "rod": "S.S with Teflon covering (food grade, heat proof)",
@@ -3520,6 +3611,7 @@ window.CATALOG_DATA = {
               "description": "Horizontal 4-roller batch roller in S.S 304 food grade with SEW (Germany) gear motor, up/down drive, control panel and 1000 W heaters.",
               "image": "assets/STARMER/_ready/PHARMA/Complete Pharma ( Lozenges ) 450KG_HR/Batch Roller.jpg",
               "specs": {
+                "modelNumber": "SEW-114",
                 "frame": "Horizontal",
                 "rollersQuantity": "4",
                 "rollersMaterial": "S.S 304 food grade",
@@ -3563,6 +3655,7 @@ window.CATALOG_DATA = {
               "description": "Horizontal 4-stage rope sizer with S.S 304 roller pairs, brass rope guide, digital inverter and SEW (Germany) gear motors; bearings for low maintenance.",
               "image": "assets/STARMER/_ready/PHARMA/Complete Pharma ( Lozenges ) 450KG_HR/Rope Sizer.jpg",
               "specs": {
+                "modelNumber": "SEW-115",
                 "sizerModel": "Horizontal, 4 stages",
                 "pairs": "S.S 304 (32 mm, 27 mm, 22 mm, 17 mm)",
                 "electricPanel": "S.S 201",
@@ -3607,6 +3700,7 @@ window.CATALOG_DATA = {
               "description": "High-carbon-steel forged gears with bearing-steel CAMS and S.G iron reverse cams, 5 hp drive and INVENT inverter; adjustable filling up to 12%.",
               "image": "assets/STARMER/_ready/PHARMA/Complete Pharma ( Lozenges ) 450KG_HR/Kneading Machine.jpg",
               "specs": {
+                "modelNumber": "SEW-116",
                 "mainDrive": "5 hp motor",
                 "inverter": "5 hp (INVENT brand)",
                 "production": "Up to 450 kg/hr",
@@ -3648,6 +3742,7 @@ window.CATALOG_DATA = {
               "description": "EN19 high-wear cutting ring (tooth pitch 2-3 mm) and 45 HRC punch, cast iron die parts and brass-cast outer ring.",
               "image": "assets/STARMER/_ready/PHARMA/Complete Pharma ( Lozenges ) 450KG_HR/Rotary Die.jpg",
               "specs": {
+                "modelNumber": "SEW-117",
                 "cuttingRing": "EN19, high wear resistance (tooth pitch 2-3 mm)",
                 "punch": "EN19, hardness up to 45 HRC",
                 "block": "High quality M.S grade carbon steel",
@@ -3685,6 +3780,7 @@ window.CATALOG_DATA = {
               "description": "M.S frame with movement wheels, casting die-cap lane and die up/down screw.",
               "image": "assets/STARMER/_ready/PHARMA/Complete Pharma ( Lozenges ) 450KG_HR/Die Stand.jpg",
               "specs": {
+                "modelNumber": "SEW-118",
                 "mainFrame": "M.S",
                 "movement": "Equipped with wheels",
                 "dieCaplene": "Casting material",
@@ -3721,6 +3817,7 @@ window.CATALOG_DATA = {
               "description": "18 ft open-body conveyor with 3 hp blower, Teflon belt, S.S 304 mesh-wire steps, M.S chain/sprockets and S.S 304 rods.",
               "image": "assets/STARMER/_ready/PHARMA/Complete Pharma ( Lozenges ) 450KG_HR/Close body Cooling Tunnel _ 3 Stages Cooling Conveyor .jpg",
               "specs": {
+                "modelNumber": "SEW-119",
                 "length": "18 ft",
                 "steps": "3 steps",
                 "blower": "3 hp",
@@ -3764,6 +3861,7 @@ window.CATALOG_DATA = {
               "description": "M.S frame vibrator with S.S 304 (18 gauge) main sheet and trays, twin fans, 1 hp drive.",
               "image": "assets/STARMER/_ready/PHARMA/Complete Pharma ( Lozenges ) 450KG_HR/Vibrator.jpg",
               "specs": {
+                "modelNumber": "SEW-120",
                 "frame": "M.S",
                 "mainSheet": "S.S 304, 18 gauge",
                 "fans": "2 nos",
@@ -3801,6 +3899,7 @@ window.CATALOG_DATA = {
               "description": "16 ft close-body tunnel with integrated 5 ton AC, S.S 304 mesh-wire steps, S.S 201 covers, thermopore insulation and SEW gear motor.",
               "image": "assets/STARMER/_ready/PHARMA/Complete Pharma ( Lozenges ) 450KG_HR/Close body Cooling Tunnel _ 3 Stages Cooling Conveyor .jpg",
               "specs": {
+                "modelNumber": "SEW-121",
                 "length": "16 ft",
                 "width": "3 ft",
                 "cooling": "With 5 ton AC",
@@ -3845,6 +3944,7 @@ window.CATALOG_DATA = {
               "description": "Indoor unit with copper-tube evaporator and 1 HP blower; Bitzer 6.5 HP outdoor condensing unit with Copeland scroll compressor and full AC accessories.",
               "image": "assets/STARMER/_ready/PHARMA/Complete Pharma ( Lozenges ) 450KG_HR/Ac Unit.jpg",
               "specs": {
+                "modelNumber": "SEW-122",
                 "capacity": "5 Ton (6.5 HP)",
                 "type": "Floor standing",
                 "indoorBlower": "1 HP motor, 3 phase 440V/50Hz",
@@ -3886,6 +3986,7 @@ window.CATALOG_DATA = {
               "description": "Photo-electric-eye flow wrapper with inverter, 2 H.P 3-phase and ½ H.P motors, 3.2 kW heaters.",
               "image": "assets/STARMER/_ready/PHARMA/Complete Pharma ( Lozenges ) 450KG_HR/Pillow pack Wrapping Machine.jpg",
               "specs": {
+                "modelNumber": "SEW-123",
                 "output": "Up to 800 packs per minute",
                 "electricMotors": "(1) 2 H.P / 3-phase, (2) ½ H.P",
                 "electricHeaters": "3.2 kW",

@@ -35,7 +35,24 @@ window.CATALOG_DATA = {
                 "capacity": "20 ton glucose",
                 "dimension": "16 ft height x 7 ft diameter"
               },
-              "diesAndParts": []
+              "diesAndParts": [
+                {
+                  "id": "HC-L001-M01-D01",
+                  "partNumber": "HC-L001-M01-D01",
+                  "name": "Glucose Tank Die",
+                  "type": "die",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Forming die for the Glucose Tank. Details coming soon."
+                },
+                {
+                  "id": "HC-L001-M01-P01",
+                  "partNumber": "HC-L001-M01-P01",
+                  "name": "Glucose Tank Spare Part",
+                  "type": "part",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Spare part for the Glucose Tank. Details coming soon."
+                }
+              ]
             },
             {
               "id": "HC-L001-M02",
@@ -55,7 +72,24 @@ window.CATALOG_DATA = {
                 "dimension": "8' x 3'5\" x 3'5\"",
                 "powerLoad": "5 hp"
               },
-              "diesAndParts": []
+              "diesAndParts": [
+                {
+                  "id": "HC-L001-M02-D01",
+                  "partNumber": "HC-L001-M02-D01",
+                  "name": "Steam Generator Die",
+                  "type": "die",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Forming die for the Steam Generator. Details coming soon."
+                },
+                {
+                  "id": "HC-L001-M02-P01",
+                  "partNumber": "HC-L001-M02-P01",
+                  "name": "Steam Generator Spare Part",
+                  "type": "part",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Spare part for the Steam Generator. Details coming soon."
+                }
+              ]
             },
             {
               "id": "HC-L001-M03",
@@ -75,7 +109,24 @@ window.CATALOG_DATA = {
                 "dimension": "4 ft (dia) x 3 ft (length)",
                 "powerLoad": "None"
               },
-              "diesAndParts": []
+              "diesAndParts": [
+                {
+                  "id": "HC-L001-M03-D01",
+                  "partNumber": "HC-L001-M03-D01",
+                  "name": "Steam Header Die",
+                  "type": "die",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Forming die for the Steam Header. Details coming soon."
+                },
+                {
+                  "id": "HC-L001-M03-P01",
+                  "partNumber": "HC-L001-M03-P01",
+                  "name": "Steam Header Spare Part",
+                  "type": "part",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Spare part for the Steam Header. Details coming soon."
+                }
+              ]
             },
             {
               "id": "HC-L001-M04",
@@ -97,7 +148,24 @@ window.CATALOG_DATA = {
                 "dimension": "5'6\" x 3'5\" x 3'5\"",
                 "powerLoad": "2 hp"
               },
-              "diesAndParts": []
+              "diesAndParts": [
+                {
+                  "id": "HC-L001-M04-D01",
+                  "partNumber": "HC-L001-M04-D01",
+                  "name": "Dissolving Tank Die",
+                  "type": "die",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Forming die for the Dissolving Tank. Details coming soon."
+                },
+                {
+                  "id": "HC-L001-M04-P01",
+                  "partNumber": "HC-L001-M04-P01",
+                  "name": "Dissolving Tank Spare Part",
+                  "type": "part",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Spare part for the Dissolving Tank. Details coming soon."
+                }
+              ]
             },
             {
               "id": "HC-L001-M05",
@@ -118,7 +186,24 @@ window.CATALOG_DATA = {
                 "dimension": "6' x 3'6\" x 3'6\"",
                 "powerLoad": "1 hp"
               },
-              "diesAndParts": []
+              "diesAndParts": [
+                {
+                  "id": "HC-L001-M05-D01",
+                  "partNumber": "HC-L001-M05-D01",
+                  "name": "Storage Tank Die",
+                  "type": "die",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Forming die for the Storage Tank. Details coming soon."
+                },
+                {
+                  "id": "HC-L001-M05-P01",
+                  "partNumber": "HC-L001-M05-P01",
+                  "name": "Storage Tank Spare Part",
+                  "type": "part",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Spare part for the Storage Tank. Details coming soon."
+                }
+              ]
             },
             {
               "id": "HC-L001-M06",
@@ -140,7 +225,24 @@ window.CATALOG_DATA = {
                 "dimension": "8' x 6' x 7'6\"",
                 "powerLoad": "4 hp"
               },
-              "diesAndParts": []
+              "diesAndParts": [
+                {
+                  "id": "HC-L001-M06-D01",
+                  "partNumber": "HC-L001-M06-D01",
+                  "name": "Candy Continuous Cooker Die",
+                  "type": "die",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Forming die for the Candy Continuous Cooker. Details coming soon."
+                },
+                {
+                  "id": "HC-L001-M06-P01",
+                  "partNumber": "HC-L001-M06-P01",
+                  "name": "Candy Continuous Cooker Spare Part",
+                  "type": "part",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Spare part for the Candy Continuous Cooker. Details coming soon."
+                }
+              ]
             },
             {
               "id": "HC-L001-M07",
@@ -157,7 +259,24 @@ window.CATALOG_DATA = {
                 "dimension": "2 ft x 4 ft x 1 ft",
                 "powerLoad": "10 hp"
               },
-              "diesAndParts": []
+              "diesAndParts": [
+                {
+                  "id": "HC-L001-M07-D01",
+                  "partNumber": "HC-L001-M07-D01",
+                  "name": "Vacuum Pump Die",
+                  "type": "die",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Forming die for the Vacuum Pump. Details coming soon."
+                },
+                {
+                  "id": "HC-L001-M07-P01",
+                  "partNumber": "HC-L001-M07-P01",
+                  "name": "Vacuum Pump Spare Part",
+                  "type": "part",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Spare part for the Vacuum Pump. Details coming soon."
+                }
+              ]
             },
             {
               "id": "HC-L001-M08",
@@ -176,7 +295,24 @@ window.CATALOG_DATA = {
                 "dimension": "3 ft x 6 ft x 2'6\"",
                 "powerLoad": "None"
               },
-              "diesAndParts": []
+              "diesAndParts": [
+                {
+                  "id": "HC-L001-M08-D01",
+                  "partNumber": "HC-L001-M08-D01",
+                  "name": "Cooling Table Die",
+                  "type": "die",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Forming die for the Cooling Table. Details coming soon."
+                },
+                {
+                  "id": "HC-L001-M08-P01",
+                  "partNumber": "HC-L001-M08-P01",
+                  "name": "Cooling Table Spare Part",
+                  "type": "part",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Spare part for the Cooling Table. Details coming soon."
+                }
+              ]
             },
             {
               "id": "HC-L001-M09",
@@ -196,7 +332,24 @@ window.CATALOG_DATA = {
                 "dimension": "3'5\" x 6\" x 5'5\"",
                 "powerLoad": "5 hp"
               },
-              "diesAndParts": []
+              "diesAndParts": [
+                {
+                  "id": "HC-L001-M09-D01",
+                  "partNumber": "HC-L001-M09-D01",
+                  "name": "Kneading Machine Die",
+                  "type": "die",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Forming die for the Kneading Machine. Details coming soon."
+                },
+                {
+                  "id": "HC-L001-M09-P01",
+                  "partNumber": "HC-L001-M09-P01",
+                  "name": "Kneading Machine Spare Part",
+                  "type": "part",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Spare part for the Kneading Machine. Details coming soon."
+                }
+              ]
             },
             {
               "id": "HC-L001-M10",
@@ -219,7 +372,24 @@ window.CATALOG_DATA = {
                 "extra": "Co-flow system to recycle liquid/chocolate",
                 "powerLoad": "3.2 hp"
               },
-              "diesAndParts": []
+              "diesAndParts": [
+                {
+                  "id": "HC-L001-M10-D01",
+                  "partNumber": "HC-L001-M10-D01",
+                  "name": "Center Filling Liquid Pump Die",
+                  "type": "die",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Forming die for the Center Filling Liquid Pump. Details coming soon."
+                },
+                {
+                  "id": "HC-L001-M10-P01",
+                  "partNumber": "HC-L001-M10-P01",
+                  "name": "Center Filling Liquid Pump Spare Part",
+                  "type": "part",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Spare part for the Center Filling Liquid Pump. Details coming soon."
+                }
+              ]
             },
             {
               "id": "HC-L001-M11",
@@ -239,7 +409,24 @@ window.CATALOG_DATA = {
                 "contactPart": "Rod with Teflon covering, S.S worm inside",
                 "powerLoad": "2 hp"
               },
-              "diesAndParts": []
+              "diesAndParts": [
+                {
+                  "id": "HC-L001-M11-D01",
+                  "partNumber": "HC-L001-M11-D01",
+                  "name": "Center Filling Powder Pump Die",
+                  "type": "die",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Forming die for the Center Filling Powder Pump. Details coming soon."
+                },
+                {
+                  "id": "HC-L001-M11-P01",
+                  "partNumber": "HC-L001-M11-P01",
+                  "name": "Center Filling Powder Pump Spare Part",
+                  "type": "part",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Spare part for the Center Filling Powder Pump. Details coming soon."
+                }
+              ]
             },
             {
               "id": "HC-L001-M12",
@@ -263,7 +450,24 @@ window.CATALOG_DATA = {
                 "dimension": "4' x 2' x 3'",
                 "powerLoad": "4.68 hp"
               },
-              "diesAndParts": []
+              "diesAndParts": [
+                {
+                  "id": "HC-L001-M12-D01",
+                  "partNumber": "HC-L001-M12-D01",
+                  "name": "Batch Roller Die",
+                  "type": "die",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Forming die for the Batch Roller. Details coming soon."
+                },
+                {
+                  "id": "HC-L001-M12-P01",
+                  "partNumber": "HC-L001-M12-P01",
+                  "name": "Batch Roller Spare Part",
+                  "type": "part",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Spare part for the Batch Roller. Details coming soon."
+                }
+              ]
             },
             {
               "id": "HC-L001-M13",
@@ -287,7 +491,24 @@ window.CATALOG_DATA = {
                 "dimension": "4.5 ft x 2.5 ft x 6 ft",
                 "powerLoad": "4.68 hp"
               },
-              "diesAndParts": []
+              "diesAndParts": [
+                {
+                  "id": "HC-L001-M13-D01",
+                  "partNumber": "HC-L001-M13-D01",
+                  "name": "Rope Sizer Die",
+                  "type": "die",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Forming die for the Rope Sizer. Details coming soon."
+                },
+                {
+                  "id": "HC-L001-M13-P01",
+                  "partNumber": "HC-L001-M13-P01",
+                  "name": "Rope Sizer Spare Part",
+                  "type": "part",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Spare part for the Rope Sizer. Details coming soon."
+                }
+              ]
             },
             {
               "id": "HC-L001-M14",
@@ -310,7 +531,24 @@ window.CATALOG_DATA = {
                 "inverters": "5 hp, 3 hp, 0.5 hp (speed control)",
                 "powerLoad": "5 hp"
               },
-              "diesAndParts": []
+              "diesAndParts": [
+                {
+                  "id": "HC-L001-M14-D01",
+                  "partNumber": "HC-L001-M14-D01",
+                  "name": "Chain Die Forming Plant Die",
+                  "type": "die",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Forming die for the Chain Die Forming Plant. Details coming soon."
+                },
+                {
+                  "id": "HC-L001-M14-P01",
+                  "partNumber": "HC-L001-M14-P01",
+                  "name": "Chain Die Forming Plant Spare Part",
+                  "type": "part",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Spare part for the Chain Die Forming Plant. Details coming soon."
+                }
+              ]
             },
             {
               "id": "HC-L001-M15",
@@ -330,7 +568,24 @@ window.CATALOG_DATA = {
                 "bushesBoltsPipesBearingCones": "EN19",
                 "connectingRods": "Copper + high-speed carbon steel"
               },
-              "diesAndParts": []
+              "diesAndParts": [
+                {
+                  "id": "HC-L001-M15-D01",
+                  "partNumber": "HC-L001-M15-D01",
+                  "name": "Chain Die Die",
+                  "type": "die",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Forming die for the Chain Die. Details coming soon."
+                },
+                {
+                  "id": "HC-L001-M15-P01",
+                  "partNumber": "HC-L001-M15-P01",
+                  "name": "Chain Die Spare Part",
+                  "type": "part",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Spare part for the Chain Die. Details coming soon."
+                }
+              ]
             },
             {
               "id": "HC-L001-M16",
@@ -355,7 +610,24 @@ window.CATALOG_DATA = {
                 "dimension": "3 ft x 16 ft",
                 "powerLoad": "3 hp"
               },
-              "diesAndParts": []
+              "diesAndParts": [
+                {
+                  "id": "HC-L001-M16-D01",
+                  "partNumber": "HC-L001-M16-D01",
+                  "name": "Cooling Conveyor (Close Body) Die",
+                  "type": "die",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Forming die for the Cooling Conveyor (Close Body). Details coming soon."
+                },
+                {
+                  "id": "HC-L001-M16-P01",
+                  "partNumber": "HC-L001-M16-P01",
+                  "name": "Cooling Conveyor (Close Body) Spare Part",
+                  "type": "part",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Spare part for the Cooling Conveyor (Close Body). Details coming soon."
+                }
+              ]
             },
             {
               "id": "HC-L001-M17",
@@ -378,7 +650,24 @@ window.CATALOG_DATA = {
                 "inverter": "7.5 HP (INVT)",
                 "powerLoad": "6.5 hp"
               },
-              "diesAndParts": []
+              "diesAndParts": [
+                {
+                  "id": "HC-L001-M17-D01",
+                  "partNumber": "HC-L001-M17-D01",
+                  "name": "AC Unit Die",
+                  "type": "die",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Forming die for the AC Unit. Details coming soon."
+                },
+                {
+                  "id": "HC-L001-M17-P01",
+                  "partNumber": "HC-L001-M17-P01",
+                  "name": "AC Unit Spare Part",
+                  "type": "part",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Spare part for the AC Unit. Details coming soon."
+                }
+              ]
             },
             {
               "id": "HC-L001-M18",
@@ -398,7 +687,24 @@ window.CATALOG_DATA = {
                 "dimension": "4 ft (width) x 8 ft (length)",
                 "powerLoad": "1 hp"
               },
-              "diesAndParts": []
+              "diesAndParts": [
+                {
+                  "id": "HC-L001-M18-D01",
+                  "partNumber": "HC-L001-M18-D01",
+                  "name": "Vibrator Die",
+                  "type": "die",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Forming die for the Vibrator. Details coming soon."
+                },
+                {
+                  "id": "HC-L001-M18-P01",
+                  "partNumber": "HC-L001-M18-P01",
+                  "name": "Vibrator Spare Part",
+                  "type": "part",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Spare part for the Vibrator. Details coming soon."
+                }
+              ]
             },
             {
               "id": "HC-L001-M19",
@@ -418,7 +724,24 @@ window.CATALOG_DATA = {
                 "weight": "750 kg",
                 "reel": "Max outer dia 280 mm / core dia 70 mm"
               },
-              "diesAndParts": []
+              "diesAndParts": [
+                {
+                  "id": "HC-L001-M19-D01",
+                  "partNumber": "HC-L001-M19-D01",
+                  "name": "Pillow Pack Wrapping Machine Die",
+                  "type": "die",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Forming die for the Pillow Pack Wrapping Machine. Details coming soon."
+                },
+                {
+                  "id": "HC-L001-M19-P01",
+                  "partNumber": "HC-L001-M19-P01",
+                  "name": "Pillow Pack Wrapping Machine Spare Part",
+                  "type": "part",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Spare part for the Pillow Pack Wrapping Machine. Details coming soon."
+                }
+              ]
             },
             {
               "id": "HC-L001-M20",
@@ -433,7 +756,24 @@ window.CATALOG_DATA = {
                 "frame": "M.S",
                 "wheels": "4 Nos (for movement)"
               },
-              "diesAndParts": []
+              "diesAndParts": [
+                {
+                  "id": "HC-L001-M20-D01",
+                  "partNumber": "HC-L001-M20-D01",
+                  "name": "Chain Die Stand (Reference Mold) Die",
+                  "type": "die",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Forming die for the Chain Die Stand (Reference Mold). Details coming soon."
+                },
+                {
+                  "id": "HC-L001-M20-P01",
+                  "partNumber": "HC-L001-M20-P01",
+                  "name": "Chain Die Stand (Reference Mold) Spare Part",
+                  "type": "part",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Spare part for the Chain Die Stand (Reference Mold). Details coming soon."
+                }
+              ]
             }
           ]
         },
@@ -464,7 +804,24 @@ window.CATALOG_DATA = {
                 "capacity": "20 ton glucose",
                 "dimension": "14 ft height x 7 ft diameter"
               },
-              "diesAndParts": []
+              "diesAndParts": [
+                {
+                  "id": "HC-L002-M01-D01",
+                  "partNumber": "HC-L002-M01-D01",
+                  "name": "Glucose Tank Die",
+                  "type": "die",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Forming die for the Glucose Tank. Details coming soon."
+                },
+                {
+                  "id": "HC-L002-M01-P01",
+                  "partNumber": "HC-L002-M01-P01",
+                  "name": "Glucose Tank Spare Part",
+                  "type": "part",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Spare part for the Glucose Tank. Details coming soon."
+                }
+              ]
             },
             {
               "id": "HC-L002-M02",
@@ -488,7 +845,24 @@ window.CATALOG_DATA = {
                 "capacity": "2000 kg/hr",
                 "powerLoad": "7 hp"
               },
-              "diesAndParts": []
+              "diesAndParts": [
+                {
+                  "id": "HC-L002-M02-D01",
+                  "partNumber": "HC-L002-M02-D01",
+                  "name": "Steam Generator Die",
+                  "type": "die",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Forming die for the Steam Generator. Details coming soon."
+                },
+                {
+                  "id": "HC-L002-M02-P01",
+                  "partNumber": "HC-L002-M02-P01",
+                  "name": "Steam Generator Spare Part",
+                  "type": "part",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Spare part for the Steam Generator. Details coming soon."
+                }
+              ]
             },
             {
               "id": "HC-L002-M03",
@@ -507,7 +881,24 @@ window.CATALOG_DATA = {
                 "dimension": "1 ft (dia) x 5 ft (length)",
                 "powerLoad": "None"
               },
-              "diesAndParts": []
+              "diesAndParts": [
+                {
+                  "id": "HC-L002-M03-D01",
+                  "partNumber": "HC-L002-M03-D01",
+                  "name": "Steam Header Die",
+                  "type": "die",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Forming die for the Steam Header. Details coming soon."
+                },
+                {
+                  "id": "HC-L002-M03-P01",
+                  "partNumber": "HC-L002-M03-P01",
+                  "name": "Steam Header Spare Part",
+                  "type": "part",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Spare part for the Steam Header. Details coming soon."
+                }
+              ]
             },
             {
               "id": "HC-L002-M04",
@@ -530,7 +921,24 @@ window.CATALOG_DATA = {
                 "controls": "Electric panel with all new features",
                 "powerLoad": "25 hp"
               },
-              "diesAndParts": []
+              "diesAndParts": [
+                {
+                  "id": "HC-L002-M04-D01",
+                  "partNumber": "HC-L002-M04-D01",
+                  "name": "Candy Continuous Vacuum Cooker Die",
+                  "type": "die",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Forming die for the Candy Continuous Vacuum Cooker. Details coming soon."
+                },
+                {
+                  "id": "HC-L002-M04-P01",
+                  "partNumber": "HC-L002-M04-P01",
+                  "name": "Candy Continuous Vacuum Cooker Spare Part",
+                  "type": "part",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Spare part for the Candy Continuous Vacuum Cooker. Details coming soon."
+                }
+              ]
             },
             {
               "id": "HC-L002-M05",
@@ -547,7 +955,24 @@ window.CATALOG_DATA = {
                 "dimension": "2 ft x 4 ft x 1 ft",
                 "powerLoad": "20 hp"
               },
-              "diesAndParts": []
+              "diesAndParts": [
+                {
+                  "id": "HC-L002-M05-D01",
+                  "partNumber": "HC-L002-M05-D01",
+                  "name": "Vacuum Pump Die",
+                  "type": "die",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Forming die for the Vacuum Pump. Details coming soon."
+                },
+                {
+                  "id": "HC-L002-M05-P01",
+                  "partNumber": "HC-L002-M05-P01",
+                  "name": "Vacuum Pump Spare Part",
+                  "type": "part",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Spare part for the Vacuum Pump. Details coming soon."
+                }
+              ]
             },
             {
               "id": "HC-L002-M06",
@@ -573,7 +998,24 @@ window.CATALOG_DATA = {
                 "dimension": "2150 mm x 750 mm",
                 "powerLoad": "3 hp"
               },
-              "diesAndParts": []
+              "diesAndParts": [
+                {
+                  "id": "HC-L002-M06-D01",
+                  "partNumber": "HC-L002-M06-D01",
+                  "name": "Dissolving Tank Die",
+                  "type": "die",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Forming die for the Dissolving Tank. Details coming soon."
+                },
+                {
+                  "id": "HC-L002-M06-P01",
+                  "partNumber": "HC-L002-M06-P01",
+                  "name": "Dissolving Tank Spare Part",
+                  "type": "part",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Spare part for the Dissolving Tank. Details coming soon."
+                }
+              ]
             },
             {
               "id": "HC-L002-M07",
@@ -594,7 +1036,24 @@ window.CATALOG_DATA = {
                 "dimension": "1250 L x 815 W mm",
                 "powerLoad": "2 hp"
               },
-              "diesAndParts": []
+              "diesAndParts": [
+                {
+                  "id": "HC-L002-M07-D01",
+                  "partNumber": "HC-L002-M07-D01",
+                  "name": "Storage Tank Die",
+                  "type": "die",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Forming die for the Storage Tank. Details coming soon."
+                },
+                {
+                  "id": "HC-L002-M07-P01",
+                  "partNumber": "HC-L002-M07-P01",
+                  "name": "Storage Tank Spare Part",
+                  "type": "part",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Spare part for the Storage Tank. Details coming soon."
+                }
+              ]
             },
             {
               "id": "HC-L002-M08",
@@ -614,7 +1073,24 @@ window.CATALOG_DATA = {
                 "dimension": "3 ft x 6 ft x 2'6\"",
                 "powerLoad": "None"
               },
-              "diesAndParts": []
+              "diesAndParts": [
+                {
+                  "id": "HC-L002-M08-D01",
+                  "partNumber": "HC-L002-M08-D01",
+                  "name": "Cooling Table Die",
+                  "type": "die",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Forming die for the Cooling Table. Details coming soon."
+                },
+                {
+                  "id": "HC-L002-M08-P01",
+                  "partNumber": "HC-L002-M08-P01",
+                  "name": "Cooling Table Spare Part",
+                  "type": "part",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Spare part for the Cooling Table. Details coming soon."
+                }
+              ]
             },
             {
               "id": "HC-L002-M09",
@@ -634,7 +1110,24 @@ window.CATALOG_DATA = {
                 "dimension": "5' x 6\" x 6'5\"",
                 "powerLoad": "5 hp"
               },
-              "diesAndParts": []
+              "diesAndParts": [
+                {
+                  "id": "HC-L002-M09-D01",
+                  "partNumber": "HC-L002-M09-D01",
+                  "name": "Kneading Machine Die",
+                  "type": "die",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Forming die for the Kneading Machine. Details coming soon."
+                },
+                {
+                  "id": "HC-L002-M09-P01",
+                  "partNumber": "HC-L002-M09-P01",
+                  "name": "Kneading Machine Spare Part",
+                  "type": "part",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Spare part for the Kneading Machine. Details coming soon."
+                }
+              ]
             },
             {
               "id": "HC-L002-M10",
@@ -657,7 +1150,24 @@ window.CATALOG_DATA = {
                 "dimension": "8 ft x 5 ft x 5 ft",
                 "powerLoad": "28 hp"
               },
-              "diesAndParts": []
+              "diesAndParts": [
+                {
+                  "id": "HC-L002-M10-D01",
+                  "partNumber": "HC-L002-M10-D01",
+                  "name": "Bubble Gum Mixer Die",
+                  "type": "die",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Forming die for the Bubble Gum Mixer. Details coming soon."
+                },
+                {
+                  "id": "HC-L002-M10-P01",
+                  "partNumber": "HC-L002-M10-P01",
+                  "name": "Bubble Gum Mixer Spare Part",
+                  "type": "part",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Spare part for the Bubble Gum Mixer. Details coming soon."
+                }
+              ]
             },
             {
               "id": "HC-L002-M11",
@@ -678,7 +1188,24 @@ window.CATALOG_DATA = {
                 "controls": "Electric panel with all new features, rotary roller system in head",
                 "powerLoad": "18 hp"
               },
-              "diesAndParts": []
+              "diesAndParts": [
+                {
+                  "id": "HC-L002-M11-D01",
+                  "partNumber": "HC-L002-M11-D01",
+                  "name": "Bubble Gum Extruder Die",
+                  "type": "die",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Forming die for the Bubble Gum Extruder. Details coming soon."
+                },
+                {
+                  "id": "HC-L002-M11-P01",
+                  "partNumber": "HC-L002-M11-P01",
+                  "name": "Bubble Gum Extruder Spare Part",
+                  "type": "part",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Spare part for the Bubble Gum Extruder. Details coming soon."
+                }
+              ]
             },
             {
               "id": "HC-L002-M12",
@@ -701,7 +1228,24 @@ window.CATALOG_DATA = {
                 "extra": "Co-flow system to recycle liquid/chocolate",
                 "powerLoad": "3.2 hp"
               },
-              "diesAndParts": []
+              "diesAndParts": [
+                {
+                  "id": "HC-L002-M12-D01",
+                  "partNumber": "HC-L002-M12-D01",
+                  "name": "Center Filling Liquid Pump Die",
+                  "type": "die",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Forming die for the Center Filling Liquid Pump. Details coming soon."
+                },
+                {
+                  "id": "HC-L002-M12-P01",
+                  "partNumber": "HC-L002-M12-P01",
+                  "name": "Center Filling Liquid Pump Spare Part",
+                  "type": "part",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Spare part for the Center Filling Liquid Pump. Details coming soon."
+                }
+              ]
             },
             {
               "id": "HC-L002-M13",
@@ -721,7 +1265,24 @@ window.CATALOG_DATA = {
                 "contactPart": "Rod with Teflon covering, S.S worm inside",
                 "powerLoad": "2 hp"
               },
-              "diesAndParts": []
+              "diesAndParts": [
+                {
+                  "id": "HC-L002-M13-D01",
+                  "partNumber": "HC-L002-M13-D01",
+                  "name": "Center Filling Powder Pump Die",
+                  "type": "die",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Forming die for the Center Filling Powder Pump. Details coming soon."
+                },
+                {
+                  "id": "HC-L002-M13-P01",
+                  "partNumber": "HC-L002-M13-P01",
+                  "name": "Center Filling Powder Pump Spare Part",
+                  "type": "part",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Spare part for the Center Filling Powder Pump. Details coming soon."
+                }
+              ]
             },
             {
               "id": "HC-L002-M14",
@@ -744,7 +1305,24 @@ window.CATALOG_DATA = {
                 "dimension": "5'5\" x 3' x 8'5\"",
                 "powerLoad": "5.34 hp"
               },
-              "diesAndParts": []
+              "diesAndParts": [
+                {
+                  "id": "HC-L002-M14-D01",
+                  "partNumber": "HC-L002-M14-D01",
+                  "name": "Batch Roller Die",
+                  "type": "die",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Forming die for the Batch Roller. Details coming soon."
+                },
+                {
+                  "id": "HC-L002-M14-P01",
+                  "partNumber": "HC-L002-M14-P01",
+                  "name": "Batch Roller Spare Part",
+                  "type": "part",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Spare part for the Batch Roller. Details coming soon."
+                }
+              ]
             },
             {
               "id": "HC-L002-M15",
@@ -766,7 +1344,24 @@ window.CATALOG_DATA = {
                 "dimension": "4' x 4' x 6'",
                 "powerLoad": "5.68 hp"
               },
-              "diesAndParts": []
+              "diesAndParts": [
+                {
+                  "id": "HC-L002-M15-D01",
+                  "partNumber": "HC-L002-M15-D01",
+                  "name": "Rope Sizer (5 Stages) Die",
+                  "type": "die",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Forming die for the Rope Sizer (5 Stages). Details coming soon."
+                },
+                {
+                  "id": "HC-L002-M15-P01",
+                  "partNumber": "HC-L002-M15-P01",
+                  "name": "Rope Sizer (5 Stages) Spare Part",
+                  "type": "part",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Spare part for the Rope Sizer (5 Stages). Details coming soon."
+                }
+              ]
             },
             {
               "id": "HC-L002-M16",
@@ -792,7 +1387,24 @@ window.CATALOG_DATA = {
                 "spreaderDrive": "0.5 hp",
                 "powerLoad": "7.5 hp"
               },
-              "diesAndParts": []
+              "diesAndParts": [
+                {
+                  "id": "HC-L002-M16-D01",
+                  "partNumber": "HC-L002-M16-D01",
+                  "name": "Uniplast Forming Machine Die",
+                  "type": "die",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Forming die for the Uniplast Forming Machine. Details coming soon."
+                },
+                {
+                  "id": "HC-L002-M16-P01",
+                  "partNumber": "HC-L002-M16-P01",
+                  "name": "Uniplast Forming Machine Spare Part",
+                  "type": "part",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Spare part for the Uniplast Forming Machine. Details coming soon."
+                }
+              ]
             },
             {
               "id": "HC-L002-M17",
@@ -812,7 +1424,24 @@ window.CATALOG_DATA = {
                 "outerRing": "Brass casting (for rope cutting)",
                 "dimension": "Dia 1.5 ft x L 2 ft"
               },
-              "diesAndParts": []
+              "diesAndParts": [
+                {
+                  "id": "HC-L002-M17-D01",
+                  "partNumber": "HC-L002-M17-D01",
+                  "name": "Rotary Die with Cutting Ring Die",
+                  "type": "die",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Forming die for the Rotary Die with Cutting Ring. Details coming soon."
+                },
+                {
+                  "id": "HC-L002-M17-P01",
+                  "partNumber": "HC-L002-M17-P01",
+                  "name": "Rotary Die with Cutting Ring Spare Part",
+                  "type": "part",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Spare part for the Rotary Die with Cutting Ring. Details coming soon."
+                }
+              ]
             },
             {
               "id": "HC-L002-M18",
@@ -831,7 +1460,24 @@ window.CATALOG_DATA = {
                 "dimension": "5.5 ft (H) x 5 ft (dia)",
                 "powerLoad": "None"
               },
-              "diesAndParts": []
+              "diesAndParts": [
+                {
+                  "id": "HC-L002-M18-D01",
+                  "partNumber": "HC-L002-M18-D01",
+                  "name": "Die Stand Die",
+                  "type": "die",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Forming die for the Die Stand. Details coming soon."
+                },
+                {
+                  "id": "HC-L002-M18-P01",
+                  "partNumber": "HC-L002-M18-P01",
+                  "name": "Die Stand Spare Part",
+                  "type": "part",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Spare part for the Die Stand. Details coming soon."
+                }
+              ]
             },
             {
               "id": "HC-L002-M19",
@@ -853,7 +1499,24 @@ window.CATALOG_DATA = {
                 "dimension": "20 ft x 3 ft x 8 ft",
                 "powerLoad": "6 hp"
               },
-              "diesAndParts": []
+              "diesAndParts": [
+                {
+                  "id": "HC-L002-M19-D01",
+                  "partNumber": "HC-L002-M19-D01",
+                  "name": "Cooling Tunnel (3 Stages) Die",
+                  "type": "die",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Forming die for the Cooling Tunnel (3 Stages). Details coming soon."
+                },
+                {
+                  "id": "HC-L002-M19-P01",
+                  "partNumber": "HC-L002-M19-P01",
+                  "name": "Cooling Tunnel (3 Stages) Spare Part",
+                  "type": "part",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Spare part for the Cooling Tunnel (3 Stages). Details coming soon."
+                }
+              ]
             },
             {
               "id": "HC-L002-M20",
@@ -877,7 +1540,24 @@ window.CATALOG_DATA = {
                 "ducting": "GI sheet with glass-wool insulation",
                 "powerLoad": "28 hp"
               },
-              "diesAndParts": []
+              "diesAndParts": [
+                {
+                  "id": "HC-L002-M20-D01",
+                  "partNumber": "HC-L002-M20-D01",
+                  "name": "Cooling AC Unit Die",
+                  "type": "die",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Forming die for the Cooling AC Unit. Details coming soon."
+                },
+                {
+                  "id": "HC-L002-M20-P01",
+                  "partNumber": "HC-L002-M20-P01",
+                  "name": "Cooling AC Unit Spare Part",
+                  "type": "part",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Spare part for the Cooling AC Unit. Details coming soon."
+                }
+              ]
             },
             {
               "id": "HC-L002-M21",
@@ -897,7 +1577,24 @@ window.CATALOG_DATA = {
                 "dimension": "4 ft (width) x 8 ft (length)",
                 "powerLoad": "1 hp"
               },
-              "diesAndParts": []
+              "diesAndParts": [
+                {
+                  "id": "HC-L002-M21-D01",
+                  "partNumber": "HC-L002-M21-D01",
+                  "name": "Vibrator Die",
+                  "type": "die",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Forming die for the Vibrator. Details coming soon."
+                },
+                {
+                  "id": "HC-L002-M21-P01",
+                  "partNumber": "HC-L002-M21-P01",
+                  "name": "Vibrator Spare Part",
+                  "type": "part",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Spare part for the Vibrator. Details coming soon."
+                }
+              ]
             },
             {
               "id": "HC-L002-M22",
@@ -917,7 +1614,24 @@ window.CATALOG_DATA = {
                 "weight": "750 kg",
                 "reel": "Max outer dia 280 mm / core dia 70 mm"
               },
-              "diesAndParts": []
+              "diesAndParts": [
+                {
+                  "id": "HC-L002-M22-D01",
+                  "partNumber": "HC-L002-M22-D01",
+                  "name": "Pillow Pack Wrapping Machine Die",
+                  "type": "die",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Forming die for the Pillow Pack Wrapping Machine. Details coming soon."
+                },
+                {
+                  "id": "HC-L002-M22-P01",
+                  "partNumber": "HC-L002-M22-P01",
+                  "name": "Pillow Pack Wrapping Machine Spare Part",
+                  "type": "part",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Spare part for the Pillow Pack Wrapping Machine. Details coming soon."
+                }
+              ]
             }
           ]
         },
@@ -948,7 +1662,24 @@ window.CATALOG_DATA = {
                 "capacity": "20 ton glucose",
                 "dimension": "16 ft x 7 ft (H x diameter)"
               },
-              "diesAndParts": []
+              "diesAndParts": [
+                {
+                  "id": "HC-L003-M01-D01",
+                  "partNumber": "HC-L003-M01-D01",
+                  "name": "Glucose Tank Die",
+                  "type": "die",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Forming die for the Glucose Tank. Details coming soon."
+                },
+                {
+                  "id": "HC-L003-M01-P01",
+                  "partNumber": "HC-L003-M01-P01",
+                  "name": "Glucose Tank Spare Part",
+                  "type": "part",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Spare part for the Glucose Tank. Details coming soon."
+                }
+              ]
             },
             {
               "id": "HC-L003-M02",
@@ -974,7 +1705,24 @@ window.CATALOG_DATA = {
                 "capacity": "600 kg/hr",
                 "powerLoad": "5 hp"
               },
-              "diesAndParts": []
+              "diesAndParts": [
+                {
+                  "id": "HC-L003-M02-D01",
+                  "partNumber": "HC-L003-M02-D01",
+                  "name": "Steam Generator Die",
+                  "type": "die",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Forming die for the Steam Generator. Details coming soon."
+                },
+                {
+                  "id": "HC-L003-M02-P01",
+                  "partNumber": "HC-L003-M02-P01",
+                  "name": "Steam Generator Spare Part",
+                  "type": "part",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Spare part for the Steam Generator. Details coming soon."
+                }
+              ]
             },
             {
               "id": "HC-L003-M03",
@@ -991,7 +1739,24 @@ window.CATALOG_DATA = {
                 "branchPipes": "1, 2, 3, 4 (depending on system needs)",
                 "design": "Cushioned Cylinder"
               },
-              "diesAndParts": []
+              "diesAndParts": [
+                {
+                  "id": "HC-L003-M03-D01",
+                  "partNumber": "HC-L003-M03-D01",
+                  "name": "Steam Header Die",
+                  "type": "die",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Forming die for the Steam Header. Details coming soon."
+                },
+                {
+                  "id": "HC-L003-M03-P01",
+                  "partNumber": "HC-L003-M03-P01",
+                  "name": "Steam Header Spare Part",
+                  "type": "part",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Spare part for the Steam Header. Details coming soon."
+                }
+              ]
             },
             {
               "id": "HC-L003-M04",
@@ -1013,7 +1778,24 @@ window.CATALOG_DATA = {
                 "dimension": "5'6\" x 3'5\" x 3'5\" (H x W x L)",
                 "powerLoad": "2 hp"
               },
-              "diesAndParts": []
+              "diesAndParts": [
+                {
+                  "id": "HC-L003-M04-D01",
+                  "partNumber": "HC-L003-M04-D01",
+                  "name": "Dissolving Tank Die",
+                  "type": "die",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Forming die for the Dissolving Tank. Details coming soon."
+                },
+                {
+                  "id": "HC-L003-M04-P01",
+                  "partNumber": "HC-L003-M04-P01",
+                  "name": "Dissolving Tank Spare Part",
+                  "type": "part",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Spare part for the Dissolving Tank. Details coming soon."
+                }
+              ]
             },
             {
               "id": "HC-L003-M05",
@@ -1035,7 +1817,24 @@ window.CATALOG_DATA = {
                 "dimension": "4' x 2'5\" x 3'5\" (H x W x L)",
                 "powerLoad": "2 hp"
               },
-              "diesAndParts": []
+              "diesAndParts": [
+                {
+                  "id": "HC-L003-M05-D01",
+                  "partNumber": "HC-L003-M05-D01",
+                  "name": "Batch Type Cooker Die",
+                  "type": "die",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Forming die for the Batch Type Cooker. Details coming soon."
+                },
+                {
+                  "id": "HC-L003-M05-P01",
+                  "partNumber": "HC-L003-M05-P01",
+                  "name": "Batch Type Cooker Spare Part",
+                  "type": "part",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Spare part for the Batch Type Cooker. Details coming soon."
+                }
+              ]
             },
             {
               "id": "HC-L003-M06",
@@ -1052,7 +1851,24 @@ window.CATALOG_DATA = {
                 "dimension": "2 ft x 4 ft x 1 ft (H x W x L)",
                 "powerLoad": "7.5 hp"
               },
-              "diesAndParts": []
+              "diesAndParts": [
+                {
+                  "id": "HC-L003-M06-D01",
+                  "partNumber": "HC-L003-M06-D01",
+                  "name": "Vacuum Pump Die",
+                  "type": "die",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Forming die for the Vacuum Pump. Details coming soon."
+                },
+                {
+                  "id": "HC-L003-M06-P01",
+                  "partNumber": "HC-L003-M06-P01",
+                  "name": "Vacuum Pump Spare Part",
+                  "type": "part",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Spare part for the Vacuum Pump. Details coming soon."
+                }
+              ]
             },
             {
               "id": "HC-L003-M07",
@@ -1071,7 +1887,24 @@ window.CATALOG_DATA = {
                 "dimension": "3 ft x 6 ft x 2'6\" (H x L x W)",
                 "powerLoad": "None"
               },
-              "diesAndParts": []
+              "diesAndParts": [
+                {
+                  "id": "HC-L003-M07-D01",
+                  "partNumber": "HC-L003-M07-D01",
+                  "name": "Cooling Tables Die",
+                  "type": "die",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Forming die for the Cooling Tables. Details coming soon."
+                },
+                {
+                  "id": "HC-L003-M07-P01",
+                  "partNumber": "HC-L003-M07-P01",
+                  "name": "Cooling Tables Spare Part",
+                  "type": "part",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Spare part for the Cooling Tables. Details coming soon."
+                }
+              ]
             },
             {
               "id": "HC-L003-M08",
@@ -1092,7 +1925,24 @@ window.CATALOG_DATA = {
                 "dimension": "3'5\" x 6\" x 5'5\" (H x W x L)",
                 "powerLoad": "5 hp"
               },
-              "diesAndParts": []
+              "diesAndParts": [
+                {
+                  "id": "HC-L003-M08-D01",
+                  "partNumber": "HC-L003-M08-D01",
+                  "name": "Kneading Machine Die",
+                  "type": "die",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Forming die for the Kneading Machine. Details coming soon."
+                },
+                {
+                  "id": "HC-L003-M08-P01",
+                  "partNumber": "HC-L003-M08-P01",
+                  "name": "Kneading Machine Spare Part",
+                  "type": "part",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Spare part for the Kneading Machine. Details coming soon."
+                }
+              ]
             },
             {
               "id": "HC-L003-M09",
@@ -1112,7 +1962,24 @@ window.CATALOG_DATA = {
                 "contactPart": "Teflon covering with S.S worm inside",
                 "powerLoad": "2 hp"
               },
-              "diesAndParts": []
+              "diesAndParts": [
+                {
+                  "id": "HC-L003-M09-D01",
+                  "partNumber": "HC-L003-M09-D01",
+                  "name": "Powder Filling Pump Die",
+                  "type": "die",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Forming die for the Powder Filling Pump. Details coming soon."
+                },
+                {
+                  "id": "HC-L003-M09-P01",
+                  "partNumber": "HC-L003-M09-P01",
+                  "name": "Powder Filling Pump Spare Part",
+                  "type": "part",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Spare part for the Powder Filling Pump. Details coming soon."
+                }
+              ]
             },
             {
               "id": "HC-L003-M10",
@@ -1136,7 +2003,24 @@ window.CATALOG_DATA = {
                 "dimension": "4'5\" x 2'5\" x 5'6\" (H x W x L)",
                 "powerLoad": "4.68 hp"
               },
-              "diesAndParts": []
+              "diesAndParts": [
+                {
+                  "id": "HC-L003-M10-D01",
+                  "partNumber": "HC-L003-M10-D01",
+                  "name": "Batch Roller Die",
+                  "type": "die",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Forming die for the Batch Roller. Details coming soon."
+                },
+                {
+                  "id": "HC-L003-M10-P01",
+                  "partNumber": "HC-L003-M10-P01",
+                  "name": "Batch Roller Spare Part",
+                  "type": "part",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Spare part for the Batch Roller. Details coming soon."
+                }
+              ]
             },
             {
               "id": "HC-L003-M11",
@@ -1164,7 +2048,24 @@ window.CATALOG_DATA = {
                 "dimension": "4.5 ft x 2.5 ft x 6 ft (H x W x L)",
                 "powerLoad": "4.68 hp"
               },
-              "diesAndParts": []
+              "diesAndParts": [
+                {
+                  "id": "HC-L003-M11-D01",
+                  "partNumber": "HC-L003-M11-D01",
+                  "name": "Rope Sizer Die",
+                  "type": "die",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Forming die for the Rope Sizer. Details coming soon."
+                },
+                {
+                  "id": "HC-L003-M11-P01",
+                  "partNumber": "HC-L003-M11-P01",
+                  "name": "Rope Sizer Spare Part",
+                  "type": "part",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Spare part for the Rope Sizer. Details coming soon."
+                }
+              ]
             },
             {
               "id": "HC-L003-M12",
@@ -1185,7 +2086,24 @@ window.CATALOG_DATA = {
                 "capacity": "Up to 200 kg/hr",
                 "powerLoad": "1 hp"
               },
-              "diesAndParts": []
+              "diesAndParts": [
+                {
+                  "id": "HC-L003-M12-D01",
+                  "partNumber": "HC-L003-M12-D01",
+                  "name": "Small Candy Plant Die",
+                  "type": "die",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Forming die for the Small Candy Plant. Details coming soon."
+                },
+                {
+                  "id": "HC-L003-M12-P01",
+                  "partNumber": "HC-L003-M12-P01",
+                  "name": "Small Candy Plant Spare Part",
+                  "type": "part",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Spare part for the Small Candy Plant. Details coming soon."
+                }
+              ]
             },
             {
               "id": "HC-L003-M13",
@@ -1197,7 +2115,24 @@ window.CATALOG_DATA = {
               "description": "",
               "image": "assets/STARMER/_ready/HARD CANDY/Complete Candy line 200Kg_Hr/Small Candy Die .jpg",
               "specs": {},
-              "diesAndParts": []
+              "diesAndParts": [
+                {
+                  "id": "HC-L003-M13-D01",
+                  "partNumber": "HC-L003-M13-D01",
+                  "name": "Small Candy Die Die",
+                  "type": "die",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Forming die for the Small Candy Die. Details coming soon."
+                },
+                {
+                  "id": "HC-L003-M13-P01",
+                  "partNumber": "HC-L003-M13-P01",
+                  "name": "Small Candy Die Spare Part",
+                  "type": "part",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Spare part for the Small Candy Die. Details coming soon."
+                }
+              ]
             },
             {
               "id": "HC-L003-M14",
@@ -1217,7 +2152,24 @@ window.CATALOG_DATA = {
                 "dimension": "4 ft (width) x 8 ft (length)",
                 "powerLoad": "1 hp"
               },
-              "diesAndParts": []
+              "diesAndParts": [
+                {
+                  "id": "HC-L003-M14-D01",
+                  "partNumber": "HC-L003-M14-D01",
+                  "name": "Vibrator Die",
+                  "type": "die",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Forming die for the Vibrator. Details coming soon."
+                },
+                {
+                  "id": "HC-L003-M14-P01",
+                  "partNumber": "HC-L003-M14-P01",
+                  "name": "Vibrator Spare Part",
+                  "type": "part",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Spare part for the Vibrator. Details coming soon."
+                }
+              ]
             },
             {
               "id": "HC-L003-M15",
@@ -1237,7 +2189,24 @@ window.CATALOG_DATA = {
                 "weight": "750 kg",
                 "reel": "Max outer dia 280 mm / core dia 70 mm"
               },
-              "diesAndParts": []
+              "diesAndParts": [
+                {
+                  "id": "HC-L003-M15-D01",
+                  "partNumber": "HC-L003-M15-D01",
+                  "name": "Pillow Pack Wrapping Machine Die",
+                  "type": "die",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Forming die for the Pillow Pack Wrapping Machine. Details coming soon."
+                },
+                {
+                  "id": "HC-L003-M15-P01",
+                  "partNumber": "HC-L003-M15-P01",
+                  "name": "Pillow Pack Wrapping Machine Spare Part",
+                  "type": "part",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Spare part for the Pillow Pack Wrapping Machine. Details coming soon."
+                }
+              ]
             }
           ]
         },
@@ -1268,7 +2237,24 @@ window.CATALOG_DATA = {
                 "capacity": "20 ton glucose",
                 "dimension": "16 ft height x 7 ft diameter"
               },
-              "diesAndParts": []
+              "diesAndParts": [
+                {
+                  "id": "HC-L004-M01-D01",
+                  "partNumber": "HC-L004-M01-D01",
+                  "name": "Glucose Tank Die",
+                  "type": "die",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Forming die for the Glucose Tank. Details coming soon."
+                },
+                {
+                  "id": "HC-L004-M01-P01",
+                  "partNumber": "HC-L004-M01-P01",
+                  "name": "Glucose Tank Spare Part",
+                  "type": "part",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Spare part for the Glucose Tank. Details coming soon."
+                }
+              ]
             },
             {
               "id": "HC-L004-M02",
@@ -1292,7 +2278,24 @@ window.CATALOG_DATA = {
                 "dimension": "8' x 3'5\" x 3'5\"",
                 "powerLoad": "7 hp"
               },
-              "diesAndParts": []
+              "diesAndParts": [
+                {
+                  "id": "HC-L004-M02-D01",
+                  "partNumber": "HC-L004-M02-D01",
+                  "name": "Steam Generator Die",
+                  "type": "die",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Forming die for the Steam Generator. Details coming soon."
+                },
+                {
+                  "id": "HC-L004-M02-P01",
+                  "partNumber": "HC-L004-M02-P01",
+                  "name": "Steam Generator Spare Part",
+                  "type": "part",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Spare part for the Steam Generator. Details coming soon."
+                }
+              ]
             },
             {
               "id": "HC-L004-M03",
@@ -1312,7 +2315,24 @@ window.CATALOG_DATA = {
                 "dimension": "1 ft (dia) x 3 ft (length)",
                 "powerLoad": "None"
               },
-              "diesAndParts": []
+              "diesAndParts": [
+                {
+                  "id": "HC-L004-M03-D01",
+                  "partNumber": "HC-L004-M03-D01",
+                  "name": "Steam Header Die",
+                  "type": "die",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Forming die for the Steam Header. Details coming soon."
+                },
+                {
+                  "id": "HC-L004-M03-P01",
+                  "partNumber": "HC-L004-M03-P01",
+                  "name": "Steam Header Spare Part",
+                  "type": "part",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Spare part for the Steam Header. Details coming soon."
+                }
+              ]
             },
             {
               "id": "HC-L004-M04",
@@ -1335,7 +2355,24 @@ window.CATALOG_DATA = {
                 "dimension": "8.5 ft x 6 ft x 7 ft",
                 "powerLoad": "4 hp"
               },
-              "diesAndParts": []
+              "diesAndParts": [
+                {
+                  "id": "HC-L004-M04-D01",
+                  "partNumber": "HC-L004-M04-D01",
+                  "name": "Candy Continuous Vacuum Cooker Die",
+                  "type": "die",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Forming die for the Candy Continuous Vacuum Cooker. Details coming soon."
+                },
+                {
+                  "id": "HC-L004-M04-P01",
+                  "partNumber": "HC-L004-M04-P01",
+                  "name": "Candy Continuous Vacuum Cooker Spare Part",
+                  "type": "part",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Spare part for the Candy Continuous Vacuum Cooker. Details coming soon."
+                }
+              ]
             },
             {
               "id": "HC-L004-M05",
@@ -1352,7 +2389,24 @@ window.CATALOG_DATA = {
                 "dimension": "2 ft x 4 ft x 1 ft",
                 "powerLoad": "10 hp"
               },
-              "diesAndParts": []
+              "diesAndParts": [
+                {
+                  "id": "HC-L004-M05-D01",
+                  "partNumber": "HC-L004-M05-D01",
+                  "name": "Vacuum Pump Die",
+                  "type": "die",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Forming die for the Vacuum Pump. Details coming soon."
+                },
+                {
+                  "id": "HC-L004-M05-P01",
+                  "partNumber": "HC-L004-M05-P01",
+                  "name": "Vacuum Pump Spare Part",
+                  "type": "part",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Spare part for the Vacuum Pump. Details coming soon."
+                }
+              ]
             },
             {
               "id": "HC-L004-M06",
@@ -1374,7 +2428,24 @@ window.CATALOG_DATA = {
                 "dimension": "5'6\" x 3'5\" x 3'5\"",
                 "powerLoad": "2 hp"
               },
-              "diesAndParts": []
+              "diesAndParts": [
+                {
+                  "id": "HC-L004-M06-D01",
+                  "partNumber": "HC-L004-M06-D01",
+                  "name": "Dissolving Tank Die",
+                  "type": "die",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Forming die for the Dissolving Tank. Details coming soon."
+                },
+                {
+                  "id": "HC-L004-M06-P01",
+                  "partNumber": "HC-L004-M06-P01",
+                  "name": "Dissolving Tank Spare Part",
+                  "type": "part",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Spare part for the Dissolving Tank. Details coming soon."
+                }
+              ]
             },
             {
               "id": "HC-L004-M07",
@@ -1395,7 +2466,24 @@ window.CATALOG_DATA = {
                 "dimension": "6' x 3'6\" x 3'6\"",
                 "powerLoad": "1 hp"
               },
-              "diesAndParts": []
+              "diesAndParts": [
+                {
+                  "id": "HC-L004-M07-D01",
+                  "partNumber": "HC-L004-M07-D01",
+                  "name": "Storage Tank Die",
+                  "type": "die",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Forming die for the Storage Tank. Details coming soon."
+                },
+                {
+                  "id": "HC-L004-M07-P01",
+                  "partNumber": "HC-L004-M07-P01",
+                  "name": "Storage Tank Spare Part",
+                  "type": "part",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Spare part for the Storage Tank. Details coming soon."
+                }
+              ]
             },
             {
               "id": "HC-L004-M08",
@@ -1414,7 +2502,24 @@ window.CATALOG_DATA = {
                 "dimension": "3 ft x 6 ft x 2'6\"",
                 "powerLoad": "None"
               },
-              "diesAndParts": []
+              "diesAndParts": [
+                {
+                  "id": "HC-L004-M08-D01",
+                  "partNumber": "HC-L004-M08-D01",
+                  "name": "Cooling Table Die",
+                  "type": "die",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Forming die for the Cooling Table. Details coming soon."
+                },
+                {
+                  "id": "HC-L004-M08-P01",
+                  "partNumber": "HC-L004-M08-P01",
+                  "name": "Cooling Table Spare Part",
+                  "type": "part",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Spare part for the Cooling Table. Details coming soon."
+                }
+              ]
             },
             {
               "id": "HC-L004-M09",
@@ -1434,7 +2539,24 @@ window.CATALOG_DATA = {
                 "dimension": "4' x 6' x 6'",
                 "powerLoad": "5 hp"
               },
-              "diesAndParts": []
+              "diesAndParts": [
+                {
+                  "id": "HC-L004-M09-D01",
+                  "partNumber": "HC-L004-M09-D01",
+                  "name": "Kneading Machine Die",
+                  "type": "die",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Forming die for the Kneading Machine. Details coming soon."
+                },
+                {
+                  "id": "HC-L004-M09-P01",
+                  "partNumber": "HC-L004-M09-P01",
+                  "name": "Kneading Machine Spare Part",
+                  "type": "part",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Spare part for the Kneading Machine. Details coming soon."
+                }
+              ]
             },
             {
               "id": "HC-L004-M10",
@@ -1457,7 +2579,24 @@ window.CATALOG_DATA = {
                 "extra": "Co-flow system to recycle liquid/chocolate",
                 "powerLoad": "3.34 hp"
               },
-              "diesAndParts": []
+              "diesAndParts": [
+                {
+                  "id": "HC-L004-M10-D01",
+                  "partNumber": "HC-L004-M10-D01",
+                  "name": "Center Filling Liquid Pump Die",
+                  "type": "die",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Forming die for the Center Filling Liquid Pump. Details coming soon."
+                },
+                {
+                  "id": "HC-L004-M10-P01",
+                  "partNumber": "HC-L004-M10-P01",
+                  "name": "Center Filling Liquid Pump Spare Part",
+                  "type": "part",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Spare part for the Center Filling Liquid Pump. Details coming soon."
+                }
+              ]
             },
             {
               "id": "HC-L004-M11",
@@ -1477,7 +2616,24 @@ window.CATALOG_DATA = {
                 "contactPart": "Rod with Teflon covering, S.S worm inside",
                 "powerLoad": "2 hp"
               },
-              "diesAndParts": []
+              "diesAndParts": [
+                {
+                  "id": "HC-L004-M11-D01",
+                  "partNumber": "HC-L004-M11-D01",
+                  "name": "Center Filling Powder Pump Die",
+                  "type": "die",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Forming die for the Center Filling Powder Pump. Details coming soon."
+                },
+                {
+                  "id": "HC-L004-M11-P01",
+                  "partNumber": "HC-L004-M11-P01",
+                  "name": "Center Filling Powder Pump Spare Part",
+                  "type": "part",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Spare part for the Center Filling Powder Pump. Details coming soon."
+                }
+              ]
             },
             {
               "id": "HC-L004-M12",
@@ -1502,7 +2658,24 @@ window.CATALOG_DATA = {
                 "dimension": "6' x 4' x 4'",
                 "powerLoad": "28 hp"
               },
-              "diesAndParts": []
+              "diesAndParts": [
+                {
+                  "id": "HC-L004-M12-D01",
+                  "partNumber": "HC-L004-M12-D01",
+                  "name": "Bubble Gum Mixer Die",
+                  "type": "die",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Forming die for the Bubble Gum Mixer. Details coming soon."
+                },
+                {
+                  "id": "HC-L004-M12-P01",
+                  "partNumber": "HC-L004-M12-P01",
+                  "name": "Bubble Gum Mixer Spare Part",
+                  "type": "part",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Spare part for the Bubble Gum Mixer. Details coming soon."
+                }
+              ]
             },
             {
               "id": "HC-L004-M13",
@@ -1523,7 +2696,24 @@ window.CATALOG_DATA = {
                 "controls": "Electric panel with all new features, helping roller system in head",
                 "powerLoad": "18 hp"
               },
-              "diesAndParts": []
+              "diesAndParts": [
+                {
+                  "id": "HC-L004-M13-D01",
+                  "partNumber": "HC-L004-M13-D01",
+                  "name": "Bubble Gum Extruder Die",
+                  "type": "die",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Forming die for the Bubble Gum Extruder. Details coming soon."
+                },
+                {
+                  "id": "HC-L004-M13-P01",
+                  "partNumber": "HC-L004-M13-P01",
+                  "name": "Bubble Gum Extruder Spare Part",
+                  "type": "part",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Spare part for the Bubble Gum Extruder. Details coming soon."
+                }
+              ]
             },
             {
               "id": "HC-L004-M14",
@@ -1547,7 +2737,24 @@ window.CATALOG_DATA = {
                 "dimension": "4' x 2' x 3'",
                 "powerLoad": "4.68 hp"
               },
-              "diesAndParts": []
+              "diesAndParts": [
+                {
+                  "id": "HC-L004-M14-D01",
+                  "partNumber": "HC-L004-M14-D01",
+                  "name": "Batch Roller Die",
+                  "type": "die",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Forming die for the Batch Roller. Details coming soon."
+                },
+                {
+                  "id": "HC-L004-M14-P01",
+                  "partNumber": "HC-L004-M14-P01",
+                  "name": "Batch Roller Spare Part",
+                  "type": "part",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Spare part for the Batch Roller. Details coming soon."
+                }
+              ]
             },
             {
               "id": "HC-L004-M15",
@@ -1571,7 +2778,24 @@ window.CATALOG_DATA = {
                 "dimension": "4.5 ft x 2.5 ft x 6 ft",
                 "powerLoad": "4.68 hp"
               },
-              "diesAndParts": []
+              "diesAndParts": [
+                {
+                  "id": "HC-L004-M15-D01",
+                  "partNumber": "HC-L004-M15-D01",
+                  "name": "Rope Sizer (4 Stages) Die",
+                  "type": "die",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Forming die for the Rope Sizer (4 Stages). Details coming soon."
+                },
+                {
+                  "id": "HC-L004-M15-P01",
+                  "partNumber": "HC-L004-M15-P01",
+                  "name": "Rope Sizer (4 Stages) Spare Part",
+                  "type": "part",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Spare part for the Rope Sizer (4 Stages). Details coming soon."
+                }
+              ]
             },
             {
               "id": "HC-L004-M16",
@@ -1593,7 +2817,24 @@ window.CATALOG_DATA = {
                 "dimension": "6.5 ft x 4.5 ft x 8 ft",
                 "powerLoad": "5 hp"
               },
-              "diesAndParts": []
+              "diesAndParts": [
+                {
+                  "id": "HC-L004-M16-D01",
+                  "partNumber": "HC-L004-M16-D01",
+                  "name": "Uniplast Forming Machine Die",
+                  "type": "die",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Forming die for the Uniplast Forming Machine. Details coming soon."
+                },
+                {
+                  "id": "HC-L004-M16-P01",
+                  "partNumber": "HC-L004-M16-P01",
+                  "name": "Uniplast Forming Machine Spare Part",
+                  "type": "part",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Spare part for the Uniplast Forming Machine. Details coming soon."
+                }
+              ]
             },
             {
               "id": "HC-L004-M17",
@@ -1613,7 +2854,24 @@ window.CATALOG_DATA = {
                 "dimension": "18\" x 18\" x 5\"",
                 "powerLoad": "None"
               },
-              "diesAndParts": []
+              "diesAndParts": [
+                {
+                  "id": "HC-L004-M17-D01",
+                  "partNumber": "HC-L004-M17-D01",
+                  "name": "Rotary Forming Die with Cutting Rings Die",
+                  "type": "die",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Forming die for the Rotary Forming Die with Cutting Rings. Details coming soon."
+                },
+                {
+                  "id": "HC-L004-M17-P01",
+                  "partNumber": "HC-L004-M17-P01",
+                  "name": "Rotary Forming Die with Cutting Rings Spare Part",
+                  "type": "part",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Spare part for the Rotary Forming Die with Cutting Rings. Details coming soon."
+                }
+              ]
             },
             {
               "id": "HC-L004-M18",
@@ -1632,7 +2890,24 @@ window.CATALOG_DATA = {
                 "dimension": "5.5 ft (H) x 5 ft (L)",
                 "powerLoad": "None"
               },
-              "diesAndParts": []
+              "diesAndParts": [
+                {
+                  "id": "HC-L004-M18-D01",
+                  "partNumber": "HC-L004-M18-D01",
+                  "name": "Die Stand Die",
+                  "type": "die",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Forming die for the Die Stand. Details coming soon."
+                },
+                {
+                  "id": "HC-L004-M18-P01",
+                  "partNumber": "HC-L004-M18-P01",
+                  "name": "Die Stand Spare Part",
+                  "type": "part",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Spare part for the Die Stand. Details coming soon."
+                }
+              ]
             },
             {
               "id": "HC-L004-M19",
@@ -1657,7 +2932,24 @@ window.CATALOG_DATA = {
                 "dimension": "18 ft (length)",
                 "powerLoad": "5 hp"
               },
-              "diesAndParts": []
+              "diesAndParts": [
+                {
+                  "id": "HC-L004-M19-D01",
+                  "partNumber": "HC-L004-M19-D01",
+                  "name": "Cooling Conveyor (Open Body) Die",
+                  "type": "die",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Forming die for the Cooling Conveyor (Open Body). Details coming soon."
+                },
+                {
+                  "id": "HC-L004-M19-P01",
+                  "partNumber": "HC-L004-M19-P01",
+                  "name": "Cooling Conveyor (Open Body) Spare Part",
+                  "type": "part",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Spare part for the Cooling Conveyor (Open Body). Details coming soon."
+                }
+              ]
             },
             {
               "id": "HC-L004-M20",
@@ -1677,7 +2969,24 @@ window.CATALOG_DATA = {
                 "dimension": "3.5 ft x 4.5 ft x 8 ft",
                 "powerLoad": "1 hp"
               },
-              "diesAndParts": []
+              "diesAndParts": [
+                {
+                  "id": "HC-L004-M20-D01",
+                  "partNumber": "HC-L004-M20-D01",
+                  "name": "Vibrator Die",
+                  "type": "die",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Forming die for the Vibrator. Details coming soon."
+                },
+                {
+                  "id": "HC-L004-M20-P01",
+                  "partNumber": "HC-L004-M20-P01",
+                  "name": "Vibrator Spare Part",
+                  "type": "part",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Spare part for the Vibrator. Details coming soon."
+                }
+              ]
             },
             {
               "id": "HC-L004-M21",
@@ -1702,7 +3011,24 @@ window.CATALOG_DATA = {
                 "dimension": "3 ft x 16 ft",
                 "powerLoad": "5 hp"
               },
-              "diesAndParts": []
+              "diesAndParts": [
+                {
+                  "id": "HC-L004-M21-D01",
+                  "partNumber": "HC-L004-M21-D01",
+                  "name": "Close Body Cooling Tunnel Die",
+                  "type": "die",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Forming die for the Close Body Cooling Tunnel. Details coming soon."
+                },
+                {
+                  "id": "HC-L004-M21-P01",
+                  "partNumber": "HC-L004-M21-P01",
+                  "name": "Close Body Cooling Tunnel Spare Part",
+                  "type": "part",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Spare part for the Close Body Cooling Tunnel. Details coming soon."
+                }
+              ]
             },
             {
               "id": "HC-L004-M22",
@@ -1725,7 +3051,24 @@ window.CATALOG_DATA = {
                 "inverter": "7.5 KVA (INVT)",
                 "powerLoad": "6.5 hp"
               },
-              "diesAndParts": []
+              "diesAndParts": [
+                {
+                  "id": "HC-L004-M22-D01",
+                  "partNumber": "HC-L004-M22-D01",
+                  "name": "AC Unit (5 Ton) Die",
+                  "type": "die",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Forming die for the AC Unit (5 Ton). Details coming soon."
+                },
+                {
+                  "id": "HC-L004-M22-P01",
+                  "partNumber": "HC-L004-M22-P01",
+                  "name": "AC Unit (5 Ton) Spare Part",
+                  "type": "part",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Spare part for the AC Unit (5 Ton). Details coming soon."
+                }
+              ]
             },
             {
               "id": "HC-L004-M23",
@@ -1745,7 +3088,24 @@ window.CATALOG_DATA = {
                 "weight": "750 kg",
                 "reel": "Max outer dia 280 mm / core dia 70 mm"
               },
-              "diesAndParts": []
+              "diesAndParts": [
+                {
+                  "id": "HC-L004-M23-D01",
+                  "partNumber": "HC-L004-M23-D01",
+                  "name": "Wrapping Machine Die",
+                  "type": "die",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Forming die for the Wrapping Machine. Details coming soon."
+                },
+                {
+                  "id": "HC-L004-M23-P01",
+                  "partNumber": "HC-L004-M23-P01",
+                  "name": "Wrapping Machine Spare Part",
+                  "type": "part",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Spare part for the Wrapping Machine. Details coming soon."
+                }
+              ]
             }
           ]
         }
@@ -1787,7 +3147,24 @@ window.CATALOG_DATA = {
                 "dimension": "16 ft height x 7 ft diameter",
                 "powerLoad": "None"
               },
-              "diesAndParts": []
+              "diesAndParts": [
+                {
+                  "id": "PH-L001-M01-D01",
+                  "partNumber": "PH-L001-M01-D01",
+                  "name": "Glucose Tank Die",
+                  "type": "die",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Forming die for the Glucose Tank. Details coming soon."
+                },
+                {
+                  "id": "PH-L001-M01-P01",
+                  "partNumber": "PH-L001-M01-P01",
+                  "name": "Glucose Tank Spare Part",
+                  "type": "part",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Spare part for the Glucose Tank. Details coming soon."
+                }
+              ]
             },
             {
               "id": "PH-L001-M02",
@@ -1813,7 +3190,24 @@ window.CATALOG_DATA = {
                 "dimension": "8' x 3'5\" x 3'5\"",
                 "powerLoad": "5 hp"
               },
-              "diesAndParts": []
+              "diesAndParts": [
+                {
+                  "id": "PH-L001-M02-D01",
+                  "partNumber": "PH-L001-M02-D01",
+                  "name": "Steam Generator Die",
+                  "type": "die",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Forming die for the Steam Generator. Details coming soon."
+                },
+                {
+                  "id": "PH-L001-M02-P01",
+                  "partNumber": "PH-L001-M02-P01",
+                  "name": "Steam Generator Spare Part",
+                  "type": "part",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Spare part for the Steam Generator. Details coming soon."
+                }
+              ]
             },
             {
               "id": "PH-L001-M03",
@@ -1833,7 +3227,24 @@ window.CATALOG_DATA = {
                 "dimension": "1 ft (dia) x 3 ft (length)",
                 "powerLoad": "None"
               },
-              "diesAndParts": []
+              "diesAndParts": [
+                {
+                  "id": "PH-L001-M03-D01",
+                  "partNumber": "PH-L001-M03-D01",
+                  "name": "Steam Header Die",
+                  "type": "die",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Forming die for the Steam Header. Details coming soon."
+                },
+                {
+                  "id": "PH-L001-M03-P01",
+                  "partNumber": "PH-L001-M03-P01",
+                  "name": "Steam Header Spare Part",
+                  "type": "part",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Spare part for the Steam Header. Details coming soon."
+                }
+              ]
             },
             {
               "id": "PH-L001-M04",
@@ -1855,7 +3266,24 @@ window.CATALOG_DATA = {
                 "dimension": "8.5 ft x 6 ft x 7 ft",
                 "powerLoad": "4 hp"
               },
-              "diesAndParts": []
+              "diesAndParts": [
+                {
+                  "id": "PH-L001-M04-D01",
+                  "partNumber": "PH-L001-M04-D01",
+                  "name": "Candy Continuous Vacuum Cooker Die",
+                  "type": "die",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Forming die for the Candy Continuous Vacuum Cooker. Details coming soon."
+                },
+                {
+                  "id": "PH-L001-M04-P01",
+                  "partNumber": "PH-L001-M04-P01",
+                  "name": "Candy Continuous Vacuum Cooker Spare Part",
+                  "type": "part",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Spare part for the Candy Continuous Vacuum Cooker. Details coming soon."
+                }
+              ]
             },
             {
               "id": "PH-L001-M05",
@@ -1872,7 +3300,24 @@ window.CATALOG_DATA = {
                 "dimension": "2 ft x 4 ft x 1 ft",
                 "powerLoad": "10 hp"
               },
-              "diesAndParts": []
+              "diesAndParts": [
+                {
+                  "id": "PH-L001-M05-D01",
+                  "partNumber": "PH-L001-M05-D01",
+                  "name": "Vacuum Pump Die",
+                  "type": "die",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Forming die for the Vacuum Pump. Details coming soon."
+                },
+                {
+                  "id": "PH-L001-M05-P01",
+                  "partNumber": "PH-L001-M05-P01",
+                  "name": "Vacuum Pump Spare Part",
+                  "type": "part",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Spare part for the Vacuum Pump. Details coming soon."
+                }
+              ]
             },
             {
               "id": "PH-L001-M06",
@@ -1894,7 +3339,24 @@ window.CATALOG_DATA = {
                 "dimension": "5'6\" x 3'5\" x 3'5\"",
                 "powerLoad": "2 hp"
               },
-              "diesAndParts": []
+              "diesAndParts": [
+                {
+                  "id": "PH-L001-M06-D01",
+                  "partNumber": "PH-L001-M06-D01",
+                  "name": "Dissolving Tank Die",
+                  "type": "die",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Forming die for the Dissolving Tank. Details coming soon."
+                },
+                {
+                  "id": "PH-L001-M06-P01",
+                  "partNumber": "PH-L001-M06-P01",
+                  "name": "Dissolving Tank Spare Part",
+                  "type": "part",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Spare part for the Dissolving Tank. Details coming soon."
+                }
+              ]
             },
             {
               "id": "PH-L001-M07",
@@ -1915,7 +3377,24 @@ window.CATALOG_DATA = {
                 "dimension": "6' x 3'6\" x 3'6\"",
                 "powerLoad": "1 hp"
               },
-              "diesAndParts": []
+              "diesAndParts": [
+                {
+                  "id": "PH-L001-M07-D01",
+                  "partNumber": "PH-L001-M07-D01",
+                  "name": "Storage Tank Die",
+                  "type": "die",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Forming die for the Storage Tank. Details coming soon."
+                },
+                {
+                  "id": "PH-L001-M07-P01",
+                  "partNumber": "PH-L001-M07-P01",
+                  "name": "Storage Tank Spare Part",
+                  "type": "part",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Spare part for the Storage Tank. Details coming soon."
+                }
+              ]
             },
             {
               "id": "PH-L001-M08",
@@ -1934,7 +3413,24 @@ window.CATALOG_DATA = {
                 "dimension": "3 ft x 6 ft x 2'6\"",
                 "powerLoad": "None"
               },
-              "diesAndParts": []
+              "diesAndParts": [
+                {
+                  "id": "PH-L001-M08-D01",
+                  "partNumber": "PH-L001-M08-D01",
+                  "name": "Cooling Table Die",
+                  "type": "die",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Forming die for the Cooling Table. Details coming soon."
+                },
+                {
+                  "id": "PH-L001-M08-P01",
+                  "partNumber": "PH-L001-M08-P01",
+                  "name": "Cooling Table Spare Part",
+                  "type": "part",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Spare part for the Cooling Table. Details coming soon."
+                }
+              ]
             },
             {
               "id": "PH-L001-M09",
@@ -1955,7 +3451,24 @@ window.CATALOG_DATA = {
                 "dimension": "5' x 5'6\" x 5'6\"",
                 "powerLoad": "5 hp"
               },
-              "diesAndParts": []
+              "diesAndParts": [
+                {
+                  "id": "PH-L001-M09-D01",
+                  "partNumber": "PH-L001-M09-D01",
+                  "name": "Kneading Machine Die",
+                  "type": "die",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Forming die for the Kneading Machine. Details coming soon."
+                },
+                {
+                  "id": "PH-L001-M09-P01",
+                  "partNumber": "PH-L001-M09-P01",
+                  "name": "Kneading Machine Spare Part",
+                  "type": "part",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Spare part for the Kneading Machine. Details coming soon."
+                }
+              ]
             },
             {
               "id": "PH-L001-M10",
@@ -1978,7 +3491,24 @@ window.CATALOG_DATA = {
                 "extra": "Overflow system to recycle liquid/chocolate",
                 "powerLoad": "3.34 hp"
               },
-              "diesAndParts": []
+              "diesAndParts": [
+                {
+                  "id": "PH-L001-M10-D01",
+                  "partNumber": "PH-L001-M10-D01",
+                  "name": "Center Filling Liquid Pump Die",
+                  "type": "die",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Forming die for the Center Filling Liquid Pump. Details coming soon."
+                },
+                {
+                  "id": "PH-L001-M10-P01",
+                  "partNumber": "PH-L001-M10-P01",
+                  "name": "Center Filling Liquid Pump Spare Part",
+                  "type": "part",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Spare part for the Center Filling Liquid Pump. Details coming soon."
+                }
+              ]
             },
             {
               "id": "PH-L001-M11",
@@ -2004,7 +3534,24 @@ window.CATALOG_DATA = {
                 "dimension": "4'6\" x 2'2\" x 7'",
                 "powerLoad": "4.68 hp"
               },
-              "diesAndParts": []
+              "diesAndParts": [
+                {
+                  "id": "PH-L001-M11-D01",
+                  "partNumber": "PH-L001-M11-D01",
+                  "name": "Batch Roller Die",
+                  "type": "die",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Forming die for the Batch Roller. Details coming soon."
+                },
+                {
+                  "id": "PH-L001-M11-P01",
+                  "partNumber": "PH-L001-M11-P01",
+                  "name": "Batch Roller Spare Part",
+                  "type": "part",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Spare part for the Batch Roller. Details coming soon."
+                }
+              ]
             },
             {
               "id": "PH-L001-M12",
@@ -2031,7 +3578,24 @@ window.CATALOG_DATA = {
                 "dimension": "4.3 ft x 2.5 ft x 6 ft",
                 "powerLoad": "4.68 hp"
               },
-              "diesAndParts": []
+              "diesAndParts": [
+                {
+                  "id": "PH-L001-M12-D01",
+                  "partNumber": "PH-L001-M12-D01",
+                  "name": "Rope Sizer (4 Stages) Die",
+                  "type": "die",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Forming die for the Rope Sizer (4 Stages). Details coming soon."
+                },
+                {
+                  "id": "PH-L001-M12-P01",
+                  "partNumber": "PH-L001-M12-P01",
+                  "name": "Rope Sizer (4 Stages) Spare Part",
+                  "type": "part",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Spare part for the Rope Sizer (4 Stages). Details coming soon."
+                }
+              ]
             },
             {
               "id": "PH-L001-M13",
@@ -2055,7 +3619,24 @@ window.CATALOG_DATA = {
                 "dimension": "6.5 ft x 4.5 ft x 3.5 ft",
                 "powerLoad": "5 hp"
               },
-              "diesAndParts": []
+              "diesAndParts": [
+                {
+                  "id": "PH-L001-M13-D01",
+                  "partNumber": "PH-L001-M13-D01",
+                  "name": "Uniplast Forming Machine Die",
+                  "type": "die",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Forming die for the Uniplast Forming Machine. Details coming soon."
+                },
+                {
+                  "id": "PH-L001-M13-P01",
+                  "partNumber": "PH-L001-M13-P01",
+                  "name": "Uniplast Forming Machine Spare Part",
+                  "type": "part",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Spare part for the Uniplast Forming Machine. Details coming soon."
+                }
+              ]
             },
             {
               "id": "PH-L001-M14",
@@ -2075,7 +3656,24 @@ window.CATALOG_DATA = {
                 "dimension": "18\" x 18\" x 5\"",
                 "powerLoad": "None"
               },
-              "diesAndParts": []
+              "diesAndParts": [
+                {
+                  "id": "PH-L001-M14-D01",
+                  "partNumber": "PH-L001-M14-D01",
+                  "name": "Rotary Forming Die with Cutting Rings Die",
+                  "type": "die",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Forming die for the Rotary Forming Die with Cutting Rings. Details coming soon."
+                },
+                {
+                  "id": "PH-L001-M14-P01",
+                  "partNumber": "PH-L001-M14-P01",
+                  "name": "Rotary Forming Die with Cutting Rings Spare Part",
+                  "type": "part",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Spare part for the Rotary Forming Die with Cutting Rings. Details coming soon."
+                }
+              ]
             },
             {
               "id": "PH-L001-M15",
@@ -2094,7 +3692,24 @@ window.CATALOG_DATA = {
                 "dimension": "5.5 ft x 5 ft",
                 "powerLoad": "None"
               },
-              "diesAndParts": []
+              "diesAndParts": [
+                {
+                  "id": "PH-L001-M15-D01",
+                  "partNumber": "PH-L001-M15-D01",
+                  "name": "Die Stand Die",
+                  "type": "die",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Forming die for the Die Stand. Details coming soon."
+                },
+                {
+                  "id": "PH-L001-M15-P01",
+                  "partNumber": "PH-L001-M15-P01",
+                  "name": "Die Stand Spare Part",
+                  "type": "part",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Spare part for the Die Stand. Details coming soon."
+                }
+              ]
             },
             {
               "id": "PH-L001-M16",
@@ -2120,7 +3735,24 @@ window.CATALOG_DATA = {
                 "dimension": "18 ft (length)",
                 "powerLoad": "5 hp"
               },
-              "diesAndParts": []
+              "diesAndParts": [
+                {
+                  "id": "PH-L001-M16-D01",
+                  "partNumber": "PH-L001-M16-D01",
+                  "name": "Cooling Conveyor (Open Body) Die",
+                  "type": "die",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Forming die for the Cooling Conveyor (Open Body). Details coming soon."
+                },
+                {
+                  "id": "PH-L001-M16-P01",
+                  "partNumber": "PH-L001-M16-P01",
+                  "name": "Cooling Conveyor (Open Body) Spare Part",
+                  "type": "part",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Spare part for the Cooling Conveyor (Open Body). Details coming soon."
+                }
+              ]
             },
             {
               "id": "PH-L001-M17",
@@ -2140,7 +3772,24 @@ window.CATALOG_DATA = {
                 "dimension": "3.5 ft x 4.5 ft x 8 ft",
                 "powerLoad": "1 hp"
               },
-              "diesAndParts": []
+              "diesAndParts": [
+                {
+                  "id": "PH-L001-M17-D01",
+                  "partNumber": "PH-L001-M17-D01",
+                  "name": "Vibrator Die",
+                  "type": "die",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Forming die for the Vibrator. Details coming soon."
+                },
+                {
+                  "id": "PH-L001-M17-P01",
+                  "partNumber": "PH-L001-M17-P01",
+                  "name": "Vibrator Spare Part",
+                  "type": "part",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Spare part for the Vibrator. Details coming soon."
+                }
+              ]
             },
             {
               "id": "PH-L001-M18",
@@ -2167,7 +3816,24 @@ window.CATALOG_DATA = {
                 "dimension": "3 ft x 16 ft",
                 "powerLoad": "3 hp"
               },
-              "diesAndParts": []
+              "diesAndParts": [
+                {
+                  "id": "PH-L001-M18-D01",
+                  "partNumber": "PH-L001-M18-D01",
+                  "name": "Close Body Cooling Tunnel Die",
+                  "type": "die",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Forming die for the Close Body Cooling Tunnel. Details coming soon."
+                },
+                {
+                  "id": "PH-L001-M18-P01",
+                  "partNumber": "PH-L001-M18-P01",
+                  "name": "Close Body Cooling Tunnel Spare Part",
+                  "type": "part",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Spare part for the Close Body Cooling Tunnel. Details coming soon."
+                }
+              ]
             },
             {
               "id": "PH-L001-M19",
@@ -2191,7 +3857,24 @@ window.CATALOG_DATA = {
                 "panelBox": "12\" x 24\"",
                 "powerLoad": "6.5 hp"
               },
-              "diesAndParts": []
+              "diesAndParts": [
+                {
+                  "id": "PH-L001-M19-D01",
+                  "partNumber": "PH-L001-M19-D01",
+                  "name": "AC Unit (5 Ton) Die",
+                  "type": "die",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Forming die for the AC Unit (5 Ton). Details coming soon."
+                },
+                {
+                  "id": "PH-L001-M19-P01",
+                  "partNumber": "PH-L001-M19-P01",
+                  "name": "AC Unit (5 Ton) Spare Part",
+                  "type": "part",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Spare part for the AC Unit (5 Ton). Details coming soon."
+                }
+              ]
             },
             {
               "id": "PH-L001-M20",
@@ -2211,7 +3894,24 @@ window.CATALOG_DATA = {
                 "weight": "750 kg",
                 "reel": "Max outer dia 280 mm / core dia 70 mm"
               },
-              "diesAndParts": []
+              "diesAndParts": [
+                {
+                  "id": "PH-L001-M20-D01",
+                  "partNumber": "PH-L001-M20-D01",
+                  "name": "Wrapping Machine Die",
+                  "type": "die",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Forming die for the Wrapping Machine. Details coming soon."
+                },
+                {
+                  "id": "PH-L001-M20-P01",
+                  "partNumber": "PH-L001-M20-P01",
+                  "name": "Wrapping Machine Spare Part",
+                  "type": "part",
+                  "image": "assets/images/coming-soon.svg",
+                  "description": "Spare part for the Wrapping Machine. Details coming soon."
+                }
+              ]
             }
           ]
         }
