@@ -88,7 +88,10 @@
         <span id="breadcrumb-name" class="text-slate-600 font-medium"></span>
       </nav>
 
-      <div class="grid lg:grid-cols-2 gap-12 items-start">
+      <!-- Comparison view (replaces the grid below when active) -->
+      <div id="compare-view" class="hidden"></div>
+
+      <div id="product-main-grid" class="grid lg:grid-cols-2 gap-12 items-start">
         <!-- Left: image (sticky on desktop) -->
         <div class="lg:sticky lg:top-24">
           <div id="product-image-container" class="rounded-2xl overflow-hidden bg-slate-900 aspect-[4/3] shadow-xl ring-1 ring-slate-200">
@@ -97,8 +100,8 @@
           <!-- Quick info chips -->
           <div class="flex gap-2 mt-4 flex-wrap">
             <span id="chip-part-num" class="text-xs font-mono bg-slate-100 text-slate-600 px-3 py-1.5 rounded-lg font-bold"></span>
-            <span class="text-xs bg-blue-50 text-blue-700 px-3 py-1.5 rounded-lg font-semibold">CE Certified</span>
-            <span class="text-xs bg-green-50 text-green-700 px-3 py-1.5 rounded-lg font-semibold">FDA Compliant</span>
+            <span class="text-xs bg-blue-50 text-blue-700 px-3 py-1.5 rounded-lg font-semibold">Certified</span>
+            <span class="text-xs bg-green-50 text-green-700 px-3 py-1.5 rounded-lg font-semibold">Safety Compliant</span>
           </div>
         </div>
 

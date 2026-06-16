@@ -186,7 +186,7 @@ function initGlobalNav(catalog) {
   }
   const machinesDd = document.getElementById('machines-dropdown-inner');
   if (machinesDd) {
-    machinesDd.innerHTML = `<a href="catalog.html?type=machine">View All Machines</a>` +
+    machinesDd.innerHTML =
       getCategories(catalog).map(cat => `<div class="dropdown-section-label">${cat.label}</div><a href="catalog.html?category=${cat.id}&type=machine">${cat.label} Machines</a>`).join('');
   }
   const diesDd = document.getElementById('dies-dropdown-inner');
@@ -357,7 +357,7 @@ const CAT_VISUAL = {
   },
   'pharma': {
     rate: '50K – 500K tabs/hr',
-    tagline: 'cGMP Pharmaceutical Lines',
+    tagline: 'Pharmaceutical Production Lines',
     bg: 'linear-gradient(135deg,#3B82F6 0%,#1E40AF 100%)',
     icon: `<svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
       <rect x="8" y="31" width="64" height="18" rx="9" fill="rgba(255,255,255,0.18)" stroke="rgba(255,255,255,0.5)" stroke-width="2"/>
@@ -698,31 +698,25 @@ function initLinePage(catalog) {
   setEl('line-rate', line.productionRate ? `Production Rate: ${line.productionRate}` : '');
   setEl('line-description', line.description);
 
-  // Banner
+  // Hero banner (full-width, matches machine page layout)
   const bannerEl = document.getElementById('line-banner');
   if (bannerEl) {
     const vis = CAT_VISUAL[line.categoryId];
     const bgGrad = vis?.bg || `linear-gradient(135deg,${cat?.color || '#1A3A5C'},#0D2035)`;
+    const bgImg = CAT_IMAGES[line.categoryId] || '';
     const mCount = line.machines?.length || 0;
-    const machineShapes = Array.from({ length: Math.min(mCount, 7) }, (_, i) => {
-      const x = 80 + i * 148, y = 55 + (i % 2) * 22;
-      return `<rect x="${x}" y="${y}" width="78" height="68" rx="8" fill="white" opacity="0.14"/>
-              <rect x="${x+14}" y="${y+14}" width="50" height="20" rx="4" fill="white" opacity="0.1"/>
-              ${i < 6 ? `<path d="M${x+78+20} 138 L${x+78+8} 132 L${x+78+8} 144Z" fill="white" opacity="0.22"/>` : ''}`;
-    }).join('');
-    const bannerBgImg = 'https://images.unsplash.com/photo-1565514928093-9ea92a2ae1c7?w=1400&auto=format&q=70';
     bannerEl.innerHTML = `
-      <div class="line-banner-wrap" style="background:${bgGrad}">
-        <img src="${bannerBgImg}" alt="" loading="lazy" onerror="this.style.display='none'"
-          style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0.18;"/>
-        <div style="position:absolute;inset:0;background:linear-gradient(135deg,rgba(0,0,0,0.35) 0%,transparent 60%);"></div>
-        <div style="position:absolute;inset:0;display:flex;flex-direction:column;justify-content:center;padding:2rem 2.5rem;">
-          <div style="color:rgba(255,255,255,0.55);font-size:0.7rem;font-family:monospace;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;margin-bottom:0.6rem;">${line.lineNumber || ''} &nbsp;&middot;&nbsp; ${cat?.label || ''}</div>
-          <h2 style="color:#fff;font-size:clamp(1.4rem,3vw,2rem);font-weight:800;margin:0 0 0.6rem;line-height:1.2;">${line.name}</h2>
-          <div style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-top:0.75rem;">
+      <div style="background:${bgGrad};padding:5.5rem 0 2.25rem;position:relative;overflow:hidden;">
+        ${bgImg ? `<img src="${bgImg}" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0.14;" loading="lazy" onerror="this.style.display='none'"/>` : ''}
+        <div style="position:absolute;inset:0;background:linear-gradient(to right,rgba(0,0,0,0.32) 0%,transparent 70%);"></div>
+        <div class="max-w-7xl mx-auto px-6" style="position:relative;">
+          <div style="color:rgba(255,255,255,0.5);font-size:0.68rem;font-family:monospace;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;margin-bottom:0.5rem;">${line.lineNumber || ''} &nbsp;&middot;&nbsp; ${cat?.label || ''}</div>
+          <h1 style="color:#fff;font-size:clamp(1.6rem,3.5vw,2.2rem);font-weight:800;margin:0 0 0.4rem;line-height:1.2;">${line.name}</h1>
+          ${line.description ? `<p style="color:rgba(255,255,255,0.7);font-size:0.9rem;margin:0;max-width:46rem;line-height:1.55;">${line.description}</p>` : ''}
+          <div style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-top:1rem;">
             ${line.productionRate ? `<span style="display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,0.12);backdrop-filter:blur(6px);border:1px solid rgba(255,255,255,0.2);color:rgba(255,255,255,0.9);font-size:0.75rem;font-weight:600;padding:0.35rem 0.8rem;border-radius:99px;"><svg style="width:14px;height:14px" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>${line.productionRate}</span>` : ''}
             <span style="display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,0.12);backdrop-filter:blur(6px);border:1px solid rgba(255,255,255,0.2);color:rgba(255,255,255,0.9);font-size:0.75rem;font-weight:600;padding:0.35rem 0.8rem;border-radius:99px;">⚙ ${mCount} Machines</span>
-            <span style="display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,0.12);backdrop-filter:blur(6px);border:1px solid rgba(255,255,255,0.2);color:rgba(255,255,255,0.9);font-size:0.75rem;font-weight:600;padding:0.35rem 0.8rem;border-radius:99px;">✓ CE · ISO 9001 · FDA</span>
+            <span style="display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,0.12);backdrop-filter:blur(6px);border:1px solid rgba(255,255,255,0.2);color:rgba(255,255,255,0.9);font-size:0.75rem;font-weight:600;padding:0.35rem 0.8rem;border-radius:99px;">✓ Certified · QMS · Safety</span>
           </div>
         </div>
       </div>`;
@@ -735,14 +729,14 @@ function initLinePage(catalog) {
     const mCount = line.machines?.length || 0;
     const estMin = Math.round(mCount * 3.5);
     const estMax = Math.round(mCount * 5.5);
-    const overviewText = (line.description ? line.description + ' ' : '') +
-      `The ${line.name} is built to CE and ISO 9001:2015 standards, engineered for reliable continuous production at ${line.productionRate || 'your specified rate'}.`;
+    const overviewText =
+      `Built to a documented quality management system (QMS) with safety-compliant design, the ${line.name} is engineered for reliable, continuous production at ${line.productionRate || 'your specified rate'}. Its ${mCount} machines work in sequence as a fully integrated line, from raw-material handling through to finished, wrapped product.`;
     const specs = [
       { label: 'Production Rate', value: line.productionRate || 'Custom' },
       { label: 'Machines in Line', value: `${mCount} machines` },
       { label: 'Est. Floor Space', value: `${estMin} – ${estMax} m²` },
       { label: 'Power Supply', value: '380V / 3Ph / 50Hz' },
-      { label: 'Certifications', value: 'CE · ISO 9001 · FDA' },
+      { label: 'Certifications', value: 'Certified · QMS · Safety Compliant' },
     ];
     overviewEl.innerHTML = `
       <div class="grid lg:grid-cols-3 gap-8">
@@ -828,9 +822,9 @@ function initProductPage(catalog) {
           <h1 style="color:#fff;font-size:clamp(1.6rem,3.5vw,2.2rem);font-weight:800;margin:0 0 0.4rem;line-height:1.2;">${item.name}</h1>
           <p style="color:rgba(255,255,255,0.65);font-size:0.85rem;margin:0;">${machine ? machine.function : (diePart ? `Type: ${diePart.type}` : '')}</p>
           <div style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-top:1rem;">
-            <span style="background:rgba(255,255,255,0.12);backdrop-filter:blur(6px);border:1px solid rgba(255,255,255,0.2);color:rgba(255,255,255,0.9);font-size:0.7rem;font-weight:600;padding:0.3rem 0.75rem;border-radius:99px;">✓ CE Certified</span>
-            <span style="background:rgba(255,255,255,0.12);backdrop-filter:blur(6px);border:1px solid rgba(255,255,255,0.2);color:rgba(255,255,255,0.9);font-size:0.7rem;font-weight:600;padding:0.3rem 0.75rem;border-radius:99px;">✓ FDA Compliant</span>
-            <span style="background:rgba(255,255,255,0.12);backdrop-filter:blur(6px);border:1px solid rgba(255,255,255,0.2);color:rgba(255,255,255,0.9);font-size:0.7rem;font-weight:600;padding:0.3rem 0.75rem;border-radius:99px;">ISO 9001:2015</span>
+            <span style="background:rgba(255,255,255,0.12);backdrop-filter:blur(6px);border:1px solid rgba(255,255,255,0.2);color:rgba(255,255,255,0.9);font-size:0.7rem;font-weight:600;padding:0.3rem 0.75rem;border-radius:99px;">✓ Certified</span>
+            <span style="background:rgba(255,255,255,0.12);backdrop-filter:blur(6px);border:1px solid rgba(255,255,255,0.2);color:rgba(255,255,255,0.9);font-size:0.7rem;font-weight:600;padding:0.3rem 0.75rem;border-radius:99px;">✓ Safety Compliant</span>
+            <span style="background:rgba(255,255,255,0.12);backdrop-filter:blur(6px);border:1px solid rgba(255,255,255,0.2);color:rgba(255,255,255,0.9);font-size:0.7rem;font-weight:600;padding:0.3rem 0.75rem;border-radius:99px;">QMS</span>
           </div>
         </div>
       </div>`;
@@ -931,9 +925,12 @@ function machineTypeKey(name) {
 
 function buildCompareUI(catalog, machine) {
   const mount = document.getElementById('compare-mount');
-  if (!mount) return;
+  const view = document.getElementById('compare-view');
+  const mainGrid = document.getElementById('product-main-grid');
+  const diesSection = document.getElementById('dies-parts-section');
+  if (!mount || !view) return;
   const category = getCategoryById(catalog, machine.categoryId);
-  if (!category) { mount.innerHTML = ''; return; }
+  if (!category) { mount.innerHTML = ''; view.innerHTML = ''; return; }
 
   const myType = machineTypeKey(machine.name);
   const candidates = [];
@@ -942,58 +939,127 @@ function buildCompareUI(catalog, machine) {
       candidates.push({ ...m, lineName: l.name });
     }
   }));
-  if (!candidates.length) { mount.innerHTML = ''; return; }
+  if (!candidates.length) { mount.innerHTML = ''; view.innerHTML = ''; return; }
+
+  let currentIdx = 0;
+  let diesWasVisible = false;
 
   mount.innerHTML = `
     <button id="compare-toggle" type="button"
       class="inline-flex items-center gap-2 text-sm font-semibold text-primary border border-primary/30 bg-primary/5 px-4 py-2.5 rounded-xl hover:bg-primary hover:text-white transition-colors">
       <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7h12m0 0l-4-4m4 4l-4 4M16 17H4m0 0l4 4m-4-4l4-4"/></svg>
       Compare with similar machines (${candidates.length})
-    </button>
-    <div id="compare-panel" class="hidden mt-4 rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
-      <div class="flex items-center gap-2 mb-4 flex-wrap">
-        <label for="compare-select" class="text-xs font-bold text-slate-500 uppercase tracking-widest">Compare with</label>
-        <select id="compare-select" class="text-sm border border-slate-300 rounded-lg px-3 py-1.5 bg-white text-slate-700 font-medium focus:outline-none focus:ring-2 focus:ring-primary/40">
-          ${candidates.map((c, i) => `<option value="${i}">${c.name} — ${c.lineName}</option>`).join('')}
-        </select>
+    </button>`;
+
+  document.getElementById('compare-toggle').addEventListener('click', openCompare);
+
+  function openCompare() {
+    diesWasVisible = diesSection && !diesSection.classList.contains('hidden');
+    mainGrid?.classList.add('hidden');
+    diesSection?.classList.add('hidden');
+    view.classList.remove('hidden');
+    renderCompareBody();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  function closeCompare() {
+    view.classList.add('hidden');
+    view.innerHTML = '';
+    mainGrid?.classList.remove('hidden');
+    if (diesWasVisible) diesSection?.classList.remove('hidden');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  function machineCol(m, isCurrent) {
+    const img = getImageSrc(m.image, category.color, m.machineNumber, 'machine');
+    return `
+      <div class="rounded-xl overflow-hidden bg-slate-900 aspect-[4/3] ring-1 ring-slate-200">
+        <img src="${img}" alt="${m.name}" class="w-full h-full object-cover" loading="lazy"/>
       </div>
-      <div id="compare-table" class="overflow-x-auto"></div>
-      <p class="text-xs text-slate-400 mt-3">Showing ${category.label} machines of the same type. Differing values are highlighted.</p>
-    </div>`;
+      <div class="mt-3">
+        <div class="font-mono text-[11px] font-bold ${isCurrent ? 'text-blue-600' : 'text-slate-500'}">${m.machineNumber || ''}${m.model ? ' · ' + m.model : ''}</div>
+        <div class="font-bold text-primary leading-tight text-sm mt-0.5">${m.name}${isCurrent ? ' <span class="text-[10px] font-semibold text-blue-600 bg-blue-50 px-1.5 py-0.5 rounded align-middle">This machine</span>' : ''}</div>
+        <div class="text-[11px] text-slate-400">${m.lineName || ''}</div>
+      </div>`;
+  }
 
-  const toggle = document.getElementById('compare-toggle');
-  const panel = document.getElementById('compare-panel');
-  const select = document.getElementById('compare-select');
-  toggle.addEventListener('click', () => panel.classList.toggle('hidden'));
-  select.addEventListener('change', renderCompareTable);
-  renderCompareTable();
+  function quoteBtn(m) {
+    const inCart = !!getCartItem(m.id);
+    const safeName = (m.name || '').replace(/'/g, "\\'");
+    return `<button onclick="quickAddToCart('${m.id}','${m.machineNumber}','${safeName}',this)"
+      class="w-full text-sm font-semibold ${inCart ? 'bg-green-100 text-green-700' : 'bg-primary text-white'} px-4 py-2.5 rounded-xl hover:bg-accent hover:text-white transition-colors flex items-center justify-center gap-2">
+      <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
+      ${inCart ? '✓ Added to Quote' : 'Add to Quote'}
+    </button>`;
+  }
 
-  function renderCompareTable() {
-    const cand = candidates[parseInt(select.value, 10) || 0];
+  function renderCompareBody() {
+    const cand = candidates[currentIdx] || candidates[0];
     const aSpecs = machine.specs || {}, bSpecs = cand.specs || {};
     const keys = [...new Set([...Object.keys(aSpecs), ...Object.keys(bSpecs)])];
-    const colHead = (m) => `<div class="font-bold text-primary leading-tight">${m.name}</div><div class="text-[11px] text-slate-400 font-normal">${m.lineName}${m.model ? ' · ' + m.model : ''}</div>`;
     const rows = keys.map(k => {
       const a = aSpecs[k] != null && aSpecs[k] !== '' ? aSpecs[k] : '—';
       const b = bSpecs[k] != null && bSpecs[k] !== '' ? bSpecs[k] : '—';
       const diff = String(a) !== String(b);
       return `<tr class="${diff ? 'bg-amber-50' : 'bg-white'} border-b border-slate-100">
         <th scope="row" class="text-left font-semibold text-slate-600 px-3 py-2 align-top whitespace-nowrap">${formatSpecKey(k)}</th>
-        <td class="px-3 py-2 text-slate-700 align-top">${a}</td>
-        <td class="px-3 py-2 text-slate-700 align-top">${b}</td>
+        <td class="px-3 py-2 text-slate-700 align-top w-[34%]">${a}</td>
+        <td class="px-3 py-2 text-slate-700 align-top w-[34%]">${b}</td>
       </tr>`;
     }).join('');
-    document.getElementById('compare-table').innerHTML = `
-      <table class="w-full text-sm border-collapse min-w-[480px]">
-        <thead>
-          <tr>
-            <th class="text-left text-xs font-bold text-slate-500 uppercase tracking-wide px-3 py-2 bg-slate-50 border-b border-slate-200 w-1/4">Specification</th>
-            <th class="text-left px-3 py-2 bg-blue-50/60 border-b border-slate-200 align-bottom">${colHead(machine)}</th>
-            <th class="text-left px-3 py-2 bg-slate-50 border-b border-slate-200 align-bottom">${colHead(cand)}</th>
-          </tr>
-        </thead>
-        <tbody>${rows}</tbody>
-      </table>`;
+    view.innerHTML = `
+      <div class="rounded-2xl border border-slate-200 bg-white p-5 sm:p-6 shadow-sm">
+        <div class="flex items-center justify-between gap-3 mb-5 flex-wrap">
+          <div>
+            <h2 class="text-lg font-extrabold text-primary">Compare Machines</h2>
+            <p class="text-xs text-slate-400">Same-type ${category.label} machines. Differing values are highlighted.</p>
+          </div>
+          <button id="compare-close" type="button"
+            class="inline-flex items-center gap-2 text-sm font-semibold text-slate-600 border border-slate-300 px-4 py-2 rounded-xl hover:bg-slate-50 transition-colors">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg>
+            Close comparison
+          </button>
+        </div>
+
+        <div class="grid grid-cols-2 gap-4 mb-4 items-end">
+          <div class="text-xs font-bold text-blue-700 uppercase tracking-widest">This machine</div>
+          <div>
+            <label for="compare-select" class="block text-xs font-bold text-slate-500 uppercase tracking-widest mb-1">Compare with</label>
+            <select id="compare-select" class="w-full text-sm border border-slate-300 rounded-lg px-3 py-1.5 bg-white text-slate-700 font-medium focus:outline-none focus:ring-2 focus:ring-primary/40">
+              ${candidates.map((c, i) => `<option value="${i}" ${i === currentIdx ? 'selected' : ''}>${c.name} — ${c.lineName}</option>`).join('')}
+            </select>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-2 gap-4 mb-5">
+          <div>${machineCol(machine, true)}</div>
+          <div>${machineCol(cand, false)}</div>
+        </div>
+
+        <div class="overflow-x-auto rounded-xl border border-slate-200">
+          <table class="w-full text-sm border-collapse min-w-[480px]">
+            <thead>
+              <tr>
+                <th class="text-left text-xs font-bold text-slate-500 uppercase tracking-wide px-3 py-2 bg-slate-50 border-b border-slate-200 w-[32%]">Specification</th>
+                <th class="text-left text-xs font-bold text-blue-700 px-3 py-2 bg-blue-50/60 border-b border-slate-200">${machine.name}</th>
+                <th class="text-left text-xs font-bold text-slate-600 px-3 py-2 bg-slate-50 border-b border-slate-200">${cand.name}</th>
+              </tr>
+            </thead>
+            <tbody>${rows}</tbody>
+          </table>
+        </div>
+
+        <div class="grid grid-cols-2 gap-4 mt-5">
+          <div>${quoteBtn(machine)}</div>
+          <div>${quoteBtn(cand)}</div>
+        </div>
+      </div>`;
+
+    document.getElementById('compare-close').addEventListener('click', closeCompare);
+    document.getElementById('compare-select').addEventListener('change', (e) => {
+      currentIdx = parseInt(e.target.value, 10) || 0;
+      renderCompareBody();
+    });
   }
 }
 

@@ -79,7 +79,6 @@ function initGlobalNav(catalog) {
   if (machinesDdInner) {
     const cats = getCategories(catalog);
     machinesDdInner.innerHTML = `
-      <a href="catalog.html?type=machine">View All Machines</a>
       ${cats.map(cat => `
         <div class="dropdown-section-label">${cat.label}</div>
         <a href="catalog.html?category=${cat.id}&type=machine">${cat.label} Machines</a>
