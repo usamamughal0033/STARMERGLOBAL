@@ -753,14 +753,24 @@ function initLinePage(catalog) {
       </div>`;
   }
 
-  document.getElementById('add-line-btn')?.addEventListener('click', () => {
-    getMachinesByLine(catalog, line.id).forEach(m => {
-      addToCart({ id: m.id, partNumber: m.machineNumber, name: m.name, quantity: 1, selectedVoltage: 'To be confirmed', selectedFinish: 'Standard', lineId: line.id });
+  const lineCartId = `line:${line.id}`;
+  const addLineBtn = document.getElementById('add-line-btn');
+  if (addLineBtn && getCartItem(lineCartId)) addLineBtn.textContent = '✓ Complete Line Added';
+  addLineBtn?.addEventListener('click', () => {
+    const mCount = line.machines?.length || getMachinesByLine(catalog, line.id).length;
+    addToCart({
+      id: lineCartId,
+      partNumber: line.lineNumber,
+      name: line.name,
+      quantity: 1,
+      selectedVoltage: '—',
+      selectedFinish: 'Standard',
+      isLine: true,
+      lineId: line.id,
+      machineCount: mCount,
     });
-    showToast(`Complete Line added to quote.`);
-    const btn = document.getElementById('add-line-btn');
-    if (btn) btn.textContent = '✓ Complete Line Added';
-    renderPipeline(catalog, line, cat);
+    showToast('Complete Line added to quote.');
+    addLineBtn.textContent = '✓ Complete Line Added';
   });
   renderPipeline(catalog, line, cat);
 }
@@ -970,17 +980,16 @@ function buildCompareUI(catalog, machine) {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }
 
-  function machineCol(m, isCurrent) {
+  function imageCell(m) {
     const img = getImageSrc(m.image, category.color, m.machineNumber, 'machine');
+    return `<div class="rounded-xl overflow-hidden bg-slate-900 aspect-[4/3] ring-1 ring-slate-200"><img src="${img}" alt="${m.name}" class="w-full h-full object-cover" loading="lazy"/></div>`;
+  }
+
+  function nameCell(m, isCurrent) {
     return `
-      <div class="rounded-xl overflow-hidden bg-slate-900 aspect-[4/3] ring-1 ring-slate-200">
-        <img src="${img}" alt="${m.name}" class="w-full h-full object-cover" loading="lazy"/>
-      </div>
-      <div class="mt-3">
-        <div class="font-mono text-[11px] font-bold ${isCurrent ? 'text-blue-600' : 'text-slate-500'}">${m.machineNumber || ''}${m.model ? ' · ' + m.model : ''}</div>
-        <div class="font-bold text-primary leading-tight text-sm mt-0.5">${m.name}${isCurrent ? ' <span class="text-[10px] font-semibold text-blue-600 bg-blue-50 px-1.5 py-0.5 rounded align-middle">This machine</span>' : ''}</div>
-        <div class="text-[11px] text-slate-400">${m.lineName || ''}</div>
-      </div>`;
+      <div class="font-mono text-[11px] font-bold ${isCurrent ? 'text-blue-600' : 'text-slate-500'}">${m.machineNumber || ''}${m.model ? ' · ' + m.model : ''}</div>
+      <div class="font-bold text-primary leading-tight text-sm mt-0.5">${m.name}${isCurrent ? ' <span class="text-[10px] font-semibold text-blue-600 bg-blue-50 px-1.5 py-0.5 rounded align-middle whitespace-nowrap">This machine</span>' : ''}</div>
+      <div class="text-[11px] text-slate-400">${m.lineName || ''}</div>`;
   }
 
   function quoteBtn(m) {
@@ -997,15 +1006,15 @@ function buildCompareUI(catalog, machine) {
     const cand = candidates[currentIdx] || candidates[0];
     const aSpecs = machine.specs || {}, bSpecs = cand.specs || {};
     const keys = [...new Set([...Object.keys(aSpecs), ...Object.keys(bSpecs)])];
-    const rows = keys.map(k => {
+    const dl = 'border-l border-slate-200';                 // continuous divider between the two machines
+    const specRows = keys.map(k => {
       const a = aSpecs[k] != null && aSpecs[k] !== '' ? aSpecs[k] : '—';
       const b = bSpecs[k] != null && bSpecs[k] !== '' ? bSpecs[k] : '—';
-      const diff = String(a) !== String(b);
-      return `<tr class="${diff ? 'bg-amber-50' : 'bg-white'} border-b border-slate-100">
-        <th scope="row" class="text-left font-semibold text-slate-600 px-3 py-2 align-top whitespace-nowrap">${formatSpecKey(k)}</th>
-        <td class="px-3 py-2 text-slate-700 align-top w-[34%]">${a}</td>
-        <td class="px-3 py-2 text-slate-700 align-top w-[34%]">${b}</td>
-      </tr>`;
+      const bg = String(a) !== String(b) ? 'bg-amber-50' : '';
+      return `
+        <div class="px-4 py-2.5 border-t border-slate-100 text-sm font-semibold text-slate-600 align-top ${bg}">${formatSpecKey(k)}</div>
+        <div class="px-4 py-2.5 border-t border-slate-100 text-sm text-slate-700 align-top ${bg}">${a}</div>
+        <div class="px-4 py-2.5 border-t border-slate-100 text-sm text-slate-700 align-top ${dl} ${bg}">${b}</div>`;
     }).join('');
     view.innerHTML = `
       <div class="rounded-2xl border border-slate-200 bg-white p-5 sm:p-6 shadow-sm">
@@ -1021,37 +1030,39 @@ function buildCompareUI(catalog, machine) {
           </button>
         </div>
 
-        <div class="grid grid-cols-2 gap-4 mb-4 items-end">
-          <div class="text-xs font-bold text-blue-700 uppercase tracking-widest">This machine</div>
-          <div>
-            <label for="compare-select" class="block text-xs font-bold text-slate-500 uppercase tracking-widest mb-1">Compare with</label>
-            <select id="compare-select" class="w-full text-sm border border-slate-300 rounded-lg px-3 py-1.5 bg-white text-slate-700 font-medium focus:outline-none focus:ring-2 focus:ring-primary/40">
-              ${candidates.map((c, i) => `<option value="${i}" ${i === currentIdx ? 'selected' : ''}>${c.name} — ${c.lineName}</option>`).join('')}
-            </select>
-          </div>
-        </div>
-
-        <div class="grid grid-cols-2 gap-4 mb-5">
-          <div>${machineCol(machine, true)}</div>
-          <div>${machineCol(cand, false)}</div>
-        </div>
-
         <div class="overflow-x-auto rounded-xl border border-slate-200">
-          <table class="w-full text-sm border-collapse min-w-[480px]">
-            <thead>
-              <tr>
-                <th class="text-left text-xs font-bold text-slate-500 uppercase tracking-wide px-3 py-2 bg-slate-50 border-b border-slate-200 w-[32%]">Specification</th>
-                <th class="text-left text-xs font-bold text-blue-700 px-3 py-2 bg-blue-50/60 border-b border-slate-200">${machine.name}</th>
-                <th class="text-left text-xs font-bold text-slate-600 px-3 py-2 bg-slate-50 border-b border-slate-200">${cand.name}</th>
-              </tr>
-            </thead>
-            <tbody>${rows}</tbody>
-          </table>
-        </div>
-
-        <div class="grid grid-cols-2 gap-4 mt-5">
-          <div>${quoteBtn(machine)}</div>
-          <div>${quoteBtn(cand)}</div>
+          <div style="display:grid;grid-template-columns:minmax(120px,24%) 1fr 1fr;min-width:560px;">
+            <!-- Control row: label on the left machine, "Compare with" selector above the right (changing) machine -->
+            <div class="px-4 pt-4"></div>
+            <div class="px-4 pt-4 flex items-end">
+              <span class="text-[11px] font-bold text-blue-700 uppercase tracking-widest">This machine</span>
+            </div>
+            <div class="px-4 pt-4 pl-5 ${dl}">
+              <label for="compare-select" class="block text-[11px] font-bold text-slate-500 uppercase tracking-widest mb-1">Compare with</label>
+              <select id="compare-select" class="w-full text-sm border border-slate-300 rounded-lg px-3 py-2 bg-white text-slate-700 font-medium focus:outline-none focus:ring-2 focus:ring-primary/40">
+                ${candidates.map((c, i) => `<option value="${i}" ${i === currentIdx ? 'selected' : ''}>${c.name} — ${c.lineName}</option>`).join('')}
+              </select>
+            </div>
+            <!-- Image row (comparison symbol fills the otherwise-empty left column) -->
+            <div class="p-4 flex flex-col items-center justify-center text-center">
+              <span class="inline-flex items-center justify-center w-12 h-12 rounded-full bg-slate-100 text-slate-400 mb-2">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7h12m0 0l-4-4m4 4l-4 4M16 17H4m0 0l4 4m-4-4l4-4"/></svg>
+              </span>
+              <span class="text-[11px] font-semibold text-slate-400 uppercase tracking-wide leading-tight">Side&nbsp;by&nbsp;side</span>
+            </div>
+            <div class="p-4 pr-5">${imageCell(machine)}</div>
+            <div class="p-4 pl-5 ${dl}">${imageCell(cand)}</div>
+            <!-- Names header row -->
+            <div class="px-4 py-3 bg-slate-50 border-t border-slate-200 flex items-end"><span class="text-xs font-bold text-slate-500 uppercase tracking-wide">Specification</span></div>
+            <div class="px-4 py-3 bg-blue-50/40 border-t border-slate-200">${nameCell(machine, true)}</div>
+            <div class="px-4 py-3 bg-slate-50 border-t border-slate-200 ${dl}">${nameCell(cand, false)}</div>
+            <!-- Spec rows -->
+            ${specRows}
+            <!-- Add to quote row -->
+            <div class="p-4 border-t border-slate-200"></div>
+            <div class="p-4 border-t border-slate-200">${quoteBtn(machine)}</div>
+            <div class="p-4 border-t border-slate-200 ${dl}">${quoteBtn(cand)}</div>
+          </div>
         </div>
       </div>`;
 
@@ -1210,7 +1221,7 @@ function renderQuoteTable() {
   tbody.innerHTML = cart.map(item => `
     <tr data-item-id="${item.id}">
       <td class="py-4 pr-4"><span class="font-mono text-xs text-blue-600 bg-blue-50 px-2 py-0.5 rounded font-bold whitespace-nowrap">${item.partNumber}</span></td>
-      <td class="py-4 pr-4 font-medium text-slate-700 text-sm">${item.name}</td>
+      <td class="py-4 pr-4 font-medium text-slate-700 text-sm">${item.name}${item.isLine ? ` <span class="ml-1 inline-block text-[10px] font-semibold text-blue-700 bg-blue-50 px-1.5 py-0.5 rounded align-middle whitespace-nowrap">Complete Line · ${item.machineCount} machines</span>` : ''}</td>
       <td class="py-4 pr-4 text-xs text-slate-500 whitespace-nowrap hidden sm:table-cell">${item.selectedVoltage || '—'}</td>
       <td class="py-4 pr-4">
         <div class="flex items-center gap-1 justify-center">
@@ -1235,7 +1246,10 @@ function submitWithEmailJS(form, cart) {
   const btn = form.querySelector('[type="submit"]');
   if (btn) { btn.disabled = true; btn.textContent = 'Sending…'; }
   const date = new Date().toLocaleDateString('en-GB', { day: '2-digit', month: 'long', year: 'numeric' });
-  const itemLines = cart.map((item, i) => `${i + 1}. ${item.partNumber} — ${item.name} | Qty: ${item.quantity} | Voltage: ${item.selectedVoltage || 'TBC'}`).join('\n');
+  const itemLines = cart.map((item, i) => {
+    const desc = item.isLine ? `${item.name} — COMPLETE LINE (${item.machineCount} machines)` : item.name;
+    return `${i + 1}. ${item.partNumber} — ${desc} | Qty: ${item.quantity} | Voltage: ${item.selectedVoltage || 'TBC'}`;
+  }).join('\n');
   const templateParams = { from_company: form.company.value.trim(), from_contact: form.contact.value.trim(), from_email: form.email.value.trim(), from_phone: form.phone.value.trim() || 'N/A', from_country: form.country.value.trim(), notes: form.notes.value.trim() || 'None.', item_list: itemLines, date };
   if (typeof emailjs === 'undefined' || window.EMAILJS_SERVICE_ID === 'YOUR_SERVICE_ID') {
     fallbackMailto(form, cart); if (btn) { btn.disabled = false; btn.textContent = 'Submit Quote Request'; } return;
@@ -1252,7 +1266,7 @@ function submitWithEmailJS(form, cart) {
 function fallbackMailto(form, cart) {
   const date = new Date().toLocaleDateString('en-GB', { day: '2-digit', month: 'long', year: 'numeric' });
   const subject = `RFQ — Starmer Global — ${form.company.value.trim()} — ${date}`;
-  const body = ['REQUEST FOR QUOTATION','=====================',`Date: ${date}`,'','CONTACT','-------',`Company: ${form.company.value.trim()}`,`Contact: ${form.contact.value.trim()}`,`Email: ${form.email.value.trim()}`,`Phone: ${form.phone.value.trim()||'N/A'}`,`Country: ${form.country.value.trim()}`,'','ITEMS','-----', ...cart.map((item,i)=>`${i+1}. ${item.partNumber} — ${item.name} | Qty: ${item.quantity}`),'','NOTES','-----', form.notes.value.trim()||'None.','','Sent via Starmer Global online catalog.'].join('\n');
+  const body = ['REQUEST FOR QUOTATION','=====================',`Date: ${date}`,'','CONTACT','-------',`Company: ${form.company.value.trim()}`,`Contact: ${form.contact.value.trim()}`,`Email: ${form.email.value.trim()}`,`Phone: ${form.phone.value.trim()||'N/A'}`,`Country: ${form.country.value.trim()}`,'','ITEMS','-----', ...cart.map((item,i)=>`${i+1}. ${item.partNumber} — ${item.isLine ? `${item.name} — COMPLETE LINE (${item.machineCount} machines)` : item.name} | Qty: ${item.quantity}`),'','NOTES','-----', form.notes.value.trim()||'None.','','Sent via Starmer Global online catalog.'].join('\n');
   window.location.href = `mailto:info@starmerglobal.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
 }
 
