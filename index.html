@@ -156,7 +156,7 @@
           Precision Machines.<br/>
           <span class="hero-gradient-text">Custom Parts.</span>
         </h1>
-        <p class="text-slate-500 text-xl leading-relaxed mb-7 max-w-2xl">
+        <p class="hero-lead text-xl leading-relaxed mb-7 max-w-2xl">
           Starmer Global manufactures production equipment for hard candy, lollipop, chew, toffee, bubble gum and pharma. Complete lines, individual machines, dies and spare parts &mdash; all under one roof.
         </p>
         <div class="hero-typing-badge mb-8">
@@ -169,7 +169,7 @@
             Browse Equipment
             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"/></svg>
           </a>
-          <a href="custom-quote.html" class="border-2 border-primary/40 text-primary font-semibold px-8 py-4 rounded-xl hover:bg-primary hover:text-white transition-colors text-base flex items-center gap-2">
+          <a href="custom-quote.html" class="bg-primary text-white font-semibold px-8 py-4 rounded-xl hover:bg-accent transition-colors shadow-lg text-base flex items-center gap-2">
             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 4a2 2 0 114 0v1a1 1 0 001 1h3a1 1 0 011 1v3a1 1 0 01-1 1h-1a2 2 0 100 4h1a1 1 0 011 1v3a1 1 0 01-1 1h-3a1 1 0 01-1-1v-1a2 2 0 10-4 0v1a1 1 0 01-1 1H7a1 1 0 01-1-1v-3a1 1 0 00-1-1H4a2 2 0 110-4h1a1 1 0 001-1V7a1 1 0 011-1h3a1 1 0 001-1V4z"/></svg>
             Custom Quote
           </a>
@@ -543,11 +543,16 @@
       if (!v) return;
       const playlist = [
         'assets/videos/home-hero.mp4',
-        'assets/videos/home-hero-2.mp4',
-        'assets/videos/home-hero-3.mp4'
+        'assets/videos/home-hero-3.mp4',
+        'assets/videos/home-hero-2.mp4'
       ];
       let i = 0;
       const src = v.querySelector('source');
+      // Per-clip playback speed (candies clip — now 2nd — plays a little slower)
+      const rates = { 1: 0.7 };
+      const applyRate = () => { v.playbackRate = rates[i] || 1; };
+      v.addEventListener('loadeddata', applyRate);
+      applyRate();
       v.addEventListener('ended', () => {
         i = (i + 1) % playlist.length;
         src.src = playlist[i];

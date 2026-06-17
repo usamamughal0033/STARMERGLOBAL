@@ -378,21 +378,19 @@ function buildHomeCategoryCard(cat) {
   const vis = CAT_VISUAL[cat.id] || { rate: 'Custom', tagline: '' };
   const imgUrl = CAT_IMAGES[cat.id] || '';
   return `
-    <article class="home-cat-photo-card category-card">
-      ${imgUrl ? `<img class="hc-bg" src="${imgUrl}" alt="" loading="lazy" onerror="this.style.opacity='0'"/>` : ''}
-      <div class="hc-overlay" style="background:linear-gradient(155deg,${cat.color}e8 0%,${cat.color}99 50%,rgba(0,0,0,0.55) 100%)"></div>
-      <div class="hc-content">
-        <div style="font-size:0.68rem;font-weight:700;text-transform:uppercase;letter-spacing:0.12em;color:rgba(255,255,255,0.55);margin-bottom:6px">${vis.tagline || ''}</div>
-        <h3 class="text-xl font-extrabold text-white mb-2 leading-tight">${cat.label}</h3>
-        <p class="text-sm mb-4 leading-relaxed" style="color:rgba(255,255,255,0.7);display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden">${cat.description}</p>
-        <div class="flex gap-5 mb-5" style="font-size:0.75rem;color:rgba(255,255,255,0.5)">
-          <span><strong style="color:#fff">${lineCount}</strong> Lines</span>
-          <span><strong style="color:#fff">${machineCount}+</strong> Machines</span>
-          <span style="color:rgba(255,255,255,0.4)">${vis.rate || ''}</span>
+    <article class="home-cat-card" style="--c:${cat.color}">
+      <div class="hcc-media">
+        ${imgUrl ? `<img class="hcc-img" src="${imgUrl}" alt="${cat.label}" loading="lazy" onerror="this.style.display='none'"/>` : ''}
+        ${vis.rate ? `<span class="hcc-cap">${vis.rate}</span>` : ''}
+      </div>
+      <div class="hcc-body">
+        <span class="hcc-eyebrow">${vis.tagline || ''}</span>
+        <h3 class="hcc-title">${cat.label}</h3>
+        <div class="hcc-meta">
+          <div class="hcc-stat"><span class="hcc-n">${lineCount}</span><span class="hcc-l">Lines</span></div>
+          <div class="hcc-stat"><span class="hcc-n">${machineCount}+</span><span class="hcc-l">Machines</span></div>
         </div>
-        <a href="catalog.html?category=${cat.id}"
-          class="inline-flex items-center gap-2 text-white text-sm font-bold px-5 py-2.5 rounded-xl transition-all"
-          style="background:rgba(255,255,255,0.15);border:1px solid rgba(255,255,255,0.28);backdrop-filter:blur(6px)">
+        <a class="hcc-link" href="catalog.html?category=${cat.id}">
           Explore Equipment
           <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"/></svg>
         </a>
@@ -542,7 +540,7 @@ function initCatalogPage(catalog) {
       <button class="cat-photo-btn" data-cat-id="${cat.id}">
         <div class="cat-photo-btn-inner">
           <img src="${CAT_IMAGES[cat.id] || ''}" alt="" loading="lazy" onerror="this.style.opacity='0'"/>
-          <div class="cat-photo-btn-overlay"></div>
+          <div class="cat-photo-btn-overlay" style="background:linear-gradient(to top, ${cat.color}cc 0%, ${cat.color}59 46%, ${cat.color}00 80%), linear-gradient(to top, rgba(8,15,30,0.82) 0%, rgba(8,15,30,0.22) 42%, transparent 72%)"></div>
           <div class="cat-photo-btn-label">
             <h4>${cat.label}</h4>
             <p>${cat.lines.length} production line${cat.lines.length !== 1 ? 's' : ''}</p>
@@ -595,6 +593,11 @@ function initCatalogPage(catalog) {
     if (backBtn2) backBtn2.onclick = () => showStep(1);
     const lbl = document.getElementById('step2-cat-label');
     if (lbl) lbl.textContent = cat.label;
+    // colour the eyebrow + underline rule to match the selected category
+    const eyebrow = document.getElementById('step2-eyebrow');
+    if (eyebrow) eyebrow.style.color = cat.color;
+    const rule = document.getElementById('step2-rule');
+    if (rule) rule.style.background = `linear-gradient(90deg, ${cat.color}, ${cat.color}55)`;
   }
 
   function buildStep3(line, cat) {

@@ -154,27 +154,38 @@
 .hero-video {
   object-fit: cover;
   z-index: 0;
+  /* subtle pop so the footage reads crisp under the veil */
+  filter: saturate(1.06) contrast(1.04);
 }
 
 /* Light veil over the video — heavier on the left so the dark hero text
-   stays readable while the video shows through on the right. */
+   stays readable while the video shows through clearly on the right. */
 .hero-overlay {
   z-index: 1;
   background: linear-gradient(105deg,
-    rgba(247,251,255,0.82) 0%,
-    rgba(247,251,255,0.55) 42%,
-    rgba(247,251,255,0.25) 72%,
-    rgba(247,251,255,0.06) 100%);
+    rgba(247,251,255,0.66) 0%,
+    rgba(247,251,255,0.38) 42%,
+    rgba(247,251,255,0.12) 72%,
+    rgba(247,251,255,0.00) 100%);
 }
 
 @media (max-width: 1023px) {
   /* Narrow screens: text spans more width, so use a stronger even veil. */
   .hero-overlay {
     background: linear-gradient(180deg,
-      rgba(247,251,255,0.86) 0%,
-      rgba(247,251,255,0.78) 60%,
-      rgba(247,251,255,0.68) 100%);
+      rgba(247,251,255,0.74) 0%,
+      rgba(247,251,255,0.60) 60%,
+      rgba(247,251,255,0.48) 100%);
   }
+}
+
+/* Hero subtitle — darker + a soft light halo so it stays readable
+   over the brighter (less veiled) video on the right. */
+.hero-lead {
+  color: #1f3a5c;
+  font-weight: 500;
+  text-shadow: 0 1px 2px rgba(247,251,255,0.92),
+               0 0 10px rgba(247,251,255,0.65);
 }
 
 .hero-gradient-text {
@@ -291,6 +302,21 @@
   align-items: center;
   padding: 0 16px;
   gap: 10px;
+  position: relative;
+  overflow: hidden;
+}
+/* glossy gradient sheen so the colour band isn't flat/solid */
+.line-card-accent::after {
+  content: ''; position: absolute; inset: 0; z-index: 0; pointer-events: none;
+  background:
+    linear-gradient(242deg, rgba(255,255,255,0.26) 0%, rgba(255,255,255,0.06) 36%, rgba(0,0,0,0) 56%, rgba(0,0,0,0.20) 100%),
+    radial-gradient(130% 150% at 90% -20%, rgba(255,255,255,0.32), transparent 55%);
+}
+.line-card-accent > * { position: relative; z-index: 1; }
+.rate-btn.line-card-rich:hover .line-card-accent::after {
+  background:
+    linear-gradient(242deg, rgba(255,255,255,0.34) 0%, rgba(255,255,255,0.08) 38%, rgba(0,0,0,0) 58%, rgba(0,0,0,0.24) 100%),
+    radial-gradient(130% 150% at 90% -20%, rgba(255,255,255,0.4), transparent 55%);
 }
 .line-card-body {
   padding: 12px 14px 14px;
@@ -563,37 +589,97 @@
 .process-step-check { color: #60a5fa; flex-shrink: 0; margin-top: 1px; }
 
 /* ── Home category cards (real photo backgrounds) ─────────────────────────── */
-.home-cat-photo-card {
-  position: relative;
-  border-radius: 22px;
-  overflow: hidden;
-  min-height: 290px;
+/* Home category cards — clean, minimal, professional */
+.home-cat-card {
   display: flex;
   flex-direction: column;
-  transition: transform 320ms ease, box-shadow 320ms ease;
-  border: 1px solid rgba(0,0,0,0.06);
-  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+  background: #fff;
+  border: 1px solid #e7edf3;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 1px 3px rgba(16,40,68,0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
 }
-.home-cat-photo-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 30px 64px rgba(0,0,0,0.22);
+.home-cat-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 22px 50px rgba(16,40,68,0.14);
+  border-color: #d4deea;
 }
-.home-cat-photo-card .hc-bg {
-  position: absolute; inset: 0;
+.home-cat-card .hcc-media {
+  position: relative;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  background: #eef2f7;
+}
+.home-cat-card .hcc-img {
   width: 100%; height: 100%;
   object-fit: cover;
-  transition: transform 520ms ease;
+  transition: transform 0.6s ease, filter 0.3s ease;
+  /* slightly muted so the loud candy photos read more premium */
+  filter: brightness(0.9) saturate(0.95);
 }
-.home-cat-photo-card:hover .hc-bg { transform: scale(1.08); }
-.home-cat-photo-card .hc-overlay {
-  position: absolute; inset: 0;
+.home-cat-card:hover .hcc-img { transform: scale(1.05); filter: brightness(0.85) saturate(1); }
+/* category-colour gradient wash over the photo (matches catalog cards) */
+.home-cat-card .hcc-media::before {
+  content: ''; position: absolute; inset: 0; z-index: 1; pointer-events: none;
+  background: linear-gradient(to top, var(--c, #2E7CC6) 0%, transparent 74%);
+  opacity: 0.58;
 }
-.home-cat-photo-card .hc-content {
-  position: relative; z-index: 1;
-  padding: 1.75rem 1.75rem 1.5rem;
-  flex: 1; display: flex; flex-direction: column; justify-content: flex-end;
-  background: linear-gradient(to top, rgba(0,0,0,0.82) 0%, rgba(0,0,0,0.4) 45%, transparent 100%);
+.home-cat-card .hcc-cap {
+  position: absolute; top: 12px; right: 12px; z-index: 2;
+  background: rgba(255,255,255,0.94);
+  color: #1A3A5C;
+  font-size: 0.7rem; font-weight: 700; letter-spacing: 0.01em;
+  padding: 5px 11px; border-radius: 999px;
+  box-shadow: 0 4px 12px rgba(16,40,68,0.16);
+  backdrop-filter: blur(4px);
 }
+/* slim category-colour accent under the photo */
+.home-cat-card .hcc-media::after {
+  content: ''; position: absolute; left: 0; right: 0; bottom: 0; height: 4px; z-index: 2;
+  background: var(--c, #2E7CC6);
+}
+.home-cat-card .hcc-body {
+  padding: 1.4rem 1.4rem 1.45rem;
+  display: flex; flex-direction: column; flex: 1;
+}
+.home-cat-card .hcc-eyebrow {
+  font-size: 0.66rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.13em;
+  color: var(--c, #2E7CC6); margin-bottom: 0.5rem;
+}
+.home-cat-card .hcc-title {
+  font-size: 1.18rem; font-weight: 800; color: #13314f; line-height: 1.2; margin-bottom: 0.5rem;
+}
+.home-cat-card .hcc-desc {
+  font-size: 0.9rem; line-height: 1.5; color: #5b6b7d; margin-bottom: 1.1rem;
+  display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;
+}
+.home-cat-card .hcc-meta {
+  display: flex; gap: 1.75rem;
+  margin-top: auto; padding-top: 1rem;
+  border-top: 1px solid #eef2f7;
+}
+.home-cat-card .hcc-stat { display: flex; flex-direction: column; }
+.home-cat-card .hcc-n { font-size: 1.15rem; font-weight: 800; color: #13314f; line-height: 1; }
+.home-cat-card .hcc-l { font-size: 0.72rem; color: #8593a3; margin-top: 0.28rem; font-weight: 500; }
+.home-cat-card .hcc-link {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  align-self: flex-start;
+  margin-top: 1.1rem;
+  padding: 0.6rem 1.2rem;
+  border: 1.5px solid var(--c, #2E7CC6);
+  border-radius: 10px;
+  background: transparent;
+  color: var(--c, #2E7CC6); font-size: 0.875rem; font-weight: 700;
+  transition: background 0.22s ease, color 0.22s ease, box-shadow 0.22s ease;
+}
+.home-cat-card .hcc-link:hover {
+  background: var(--c, #2E7CC6);
+  color: #fff;
+  box-shadow: 0 8px 18px rgba(16,40,68,0.18);
+}
+.home-cat-card .hcc-link svg { transition: transform 0.25s ease; }
+.home-cat-card .hcc-link:hover svg { transform: translateX(4px); }
 /* Centered flex layout for home category cards (3-up, trailing row centered) */
 #home-categories-grid > * { width: 100%; }
 @media (min-width: 768px) {
@@ -631,11 +717,11 @@
   width: 100%; height: 100%;
   object-fit: cover; display: block;
   transition: transform 500ms ease, filter 300ms ease;
-  filter: brightness(0.75) saturate(0.9);
+  filter: brightness(0.66) saturate(0.92);
 }
 .cat-photo-btn:hover img, .cat-photo-btn.selected img {
   transform: scale(1.09);
-  filter: brightness(0.65) saturate(1.1);
+  filter: brightness(0.58) saturate(1.1);
 }
 .cat-photo-btn-overlay {
   position: absolute; inset: 0;

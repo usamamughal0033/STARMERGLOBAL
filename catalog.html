@@ -115,12 +115,15 @@
 
     <!-- Step 2: Lines -->
     <div id="step2-panel" class="hidden">
-      <div class="flex items-center gap-3 mb-5">
-        <button id="step2-back" class="flex items-center gap-1 text-sm text-slate-500 hover:text-accent transition-colors">
-          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
-          Back
-        </button>
-        <h2 class="text-lg font-bold text-slate-700">Select a production line — <span id="step2-cat-label" class="text-accent"></span></h2>
+      <button id="step2-back" class="inline-flex items-center gap-1 text-sm text-slate-500 hover:text-accent transition-colors mb-4">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+        Back to categories
+      </button>
+      <div class="text-center mb-8">
+        <span id="step2-eyebrow" class="inline-block text-xs font-bold uppercase tracking-widest text-accent mb-2">Step 2 &middot; Choose Your Line</span>
+        <h2 class="text-2xl sm:text-3xl font-extrabold text-primary leading-tight"><span id="step2-cat-label"></span></h2>
+        <div id="step2-rule" class="mx-auto mt-3 h-1 w-16 rounded-full bg-accent"></div>
+        <p class="text-slate-500 text-sm mt-3 max-w-md mx-auto">Select a production line to explore its machines, dies &amp; spare parts.</p>
       </div>
       <div id="line-select-grid" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
         <!-- populated by JS -->
