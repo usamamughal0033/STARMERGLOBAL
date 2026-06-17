@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<title>Starmer — Poster Left (Who We Are)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet"/>
+<style>
+  :root{
+    --ink:#13314f; --navy:#1A3A5C; --deep:#0c233d; --accent:#2E7CC6; --light:#60b3f5;
+    --muted:#5b6b7d; --line:#e4eaf1; --bg:#f4f8fd; --pk:#0f7d5b;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  @page{ size:100.08in 94.8in; margin:0; }
+  html,body{ background:#c9d2dc; font-family:'Inter',Arial,sans-serif; -webkit-font-smoothing:antialiased; }
+  .poster{
+    width:3456px; height:8064px; position:relative; overflow:hidden;
+    background:
+      radial-gradient(1800px 1800px at 112% 2%, rgba(46,124,198,.09), transparent 60%),
+      radial-gradient(1500px 1500px at -14% 70%, rgba(46,124,198,.08), transparent 60%),
+      var(--bg);
+    display:flex; flex-direction:column; padding:120px 170px 0;
+  }
+  .wm{ position:absolute; border-radius:50%; border:16px solid rgba(46,124,198,.045); }
+  .wm1{ width:1700px; height:1700px; right:-560px; top:1450px; }
+  .wm2{ width:1200px; height:1200px; left:-470px; bottom:1900px; }
+
+  /* centered brand header */
+  .brandbar{ text-align:center; padding-bottom:54px; border-bottom:5px solid var(--line); }
+  .grp{ font-size:34px; font-weight:800; color:var(--muted); letter-spacing:.2em; text-transform:uppercase; margin-bottom:40px; }
+  .grp b{ color:var(--accent); }
+  .logos{ display:flex; align-items:center; justify-content:center; gap:80px; }
+  .logos .gl{ height:286px; }
+  .logos .vr{ width:5px; height:210px; background:var(--line); border-radius:5px; }
+  .logos .sew{ height:172px; }
+
+  .body{ flex:1; display:flex; flex-direction:column; justify-content:space-between; margin-bottom:110px; }
+
+  /* hero (centered, high impact) */
+  .hero{ text-align:center; padding:60px 0 4px; position:relative; z-index:2; }
+  .eyebrow{ display:inline-block; font-size:40px; font-weight:800; letter-spacing:.28em; text-transform:uppercase; color:var(--accent); margin-bottom:54px; }
+  h1{ font-size:300px; line-height:.96; font-weight:900; color:var(--ink); letter-spacing:-4px; }
+  h1 .g{ background:linear-gradient(110deg,#2E7CC6,#60b3f5 55%,#1A3A5C); -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent; }
+  .lead{ font-size:64px; line-height:1.42; color:var(--muted); font-weight:500; max-width:2820px; margin:88px auto 0; }
+  .lead b{ color:var(--ink); font-weight:700; }
+  .pill{ display:inline-flex; align-items:center; gap:34px; margin-top:96px;
+    background:linear-gradient(90deg,var(--navy),var(--accent)); color:#fff; font-size:58px; font-weight:800;
+    padding:42px 84px; border-radius:999px; box-shadow:0 26px 60px rgba(26,58,92,.30); }
+  .pill .dot{ width:34px;height:34px;border-radius:50%;background:#7fffd4;box-shadow:0 0 0 10px rgba(127,255,212,.25); }
+
+  /* two markets */
+  .markets{ display:grid; grid-template-columns:1fr 1fr; gap:60px; margin-top:0; position:relative; z-index:2; }
+  .mcard{ background:#fff; border:3px solid var(--line); border-radius:54px; padding:84px 74px 90px; box-shadow:0 40px 80px rgba(20,49,79,.08); position:relative; overflow:hidden; }
+  .mcard .top{ height:20px; position:absolute; left:0; right:0; top:0; }
+  .mcard.pk .top{ background:linear-gradient(90deg,#0f7d5b,#16a34a); }
+  .mcard.gl .top{ background:linear-gradient(90deg,#1A3A5C,#2E7CC6); }
+  .mhdr{ display:flex; align-items:center; gap:34px; margin-bottom:36px; }
+  .micon{ width:128px; height:128px; border-radius:32px; display:flex; align-items:center; justify-content:center; flex:none; }
+  .mcard.pk .micon{ background:rgba(15,125,91,.10); }
+  .mcard.gl .micon{ background:rgba(46,124,198,.12); }
+  .mlabel{ font-size:34px; font-weight:800; letter-spacing:.14em; text-transform:uppercase; }
+  .mcard.pk .mlabel{ color:#0f7d5b; } .mcard.gl .mlabel{ color:var(--accent); }
+  .mtitle{ font-size:64px; font-weight:900; color:var(--ink); line-height:1.04; margin-top:4px; }
+  .mbody{ font-size:45px; line-height:1.46; color:var(--muted); font-weight:500; margin-top:14px; }
+  .mtags{ display:flex; flex-wrap:wrap; gap:18px; margin-top:40px; }
+  .mtags span{ font-size:31px; font-weight:700; padding:15px 32px; border-radius:999px; }
+  .mcard.pk .mtags span{ background:rgba(15,125,91,.10); color:#0f7d5b; }
+  .mcard.gl .mtags span{ background:rgba(46,124,198,.12); color:var(--accent); }
+
+  /* stats */
+  .stats{ margin-top:0; background:linear-gradient(120deg,var(--deep),var(--navy) 55%,var(--accent)); border-radius:60px;
+    padding:118px 60px; display:grid; grid-template-columns:repeat(4,1fr); position:relative; overflow:hidden; box-shadow:0 40px 90px rgba(12,35,61,.35); }
+  .stats .sep{ position:absolute; top:24%; bottom:24%; width:3px; background:rgba(255,255,255,.16); }
+  .stat{ text-align:center; padding:0 22px; }
+  .stat .n{ font-size:178px; font-weight:900; color:#fff; line-height:1; letter-spacing:-2px; }
+  .stat .n .p{ color:var(--light); }
+  .stat .l{ font-size:41px; font-weight:600; color:#cfe2f6; margin-top:22px; }
+
+  /* section heading (centered) */
+  .sh{ text-align:center; }
+  .sh .e{ font-size:40px;font-weight:800;letter-spacing:.28em;text-transform:uppercase;color:var(--accent); }
+  .sh h2{ font-size:118px; font-weight:900; color:var(--ink); margin-top:16px; letter-spacing:-1px; }
+
+  /* what we build */
+  .build{ margin-top:0; position:relative; z-index:2; }
+  .chips{ display:grid; grid-template-columns:repeat(5,1fr); gap:30px; margin-top:66px; }
+  .chip{ display:flex; flex-direction:column; align-items:center; gap:26px; background:#fff; border:3px solid var(--line); border-radius:40px; padding:58px 30px 50px; box-shadow:0 24px 50px rgba(20,49,79,.06); }
+  .chip .ci{ width:140px;height:140px;border-radius:34px; background:linear-gradient(135deg,var(--navy),var(--accent)); display:flex;align-items:center;justify-content:center; }
+  .chip .ci svg{ width:78px;height:78px;stroke:#fff; }
+  .chip .cn{ font-size:46px; font-weight:800; color:var(--ink); text-align:center; line-height:1.1; }
+
+  /* capabilities */
+  .cap{ margin-top:0; position:relative; z-index:2; }
+  .cap-grid{ display:grid; grid-template-columns:1fr 1fr; gap:56px 60px; margin-top:66px; }
+  .cap-item{ display:flex; gap:42px; align-items:flex-start; background:#fff; border:3px solid var(--line); border-radius:44px; padding:66px 58px; box-shadow:0 24px 50px rgba(20,49,79,.06); }
+  .cap-ic{ width:124px;height:124px;border-radius:30px;flex:none; background:linear-gradient(135deg,var(--navy),var(--accent)); display:flex;align-items:center;justify-content:center; }
+  .cap-ic svg{ width:68px;height:68px;stroke:#fff; }
+  .cap-tt{ font-size:55px; font-weight:800; color:var(--ink); line-height:1.05; }
+  .cap-ds{ font-size:37px; font-weight:500; color:var(--muted); line-height:1.4; margin-top:12px; }
+
+  /* how we work */
+  .work{ position:relative; z-index:2; }
+  .work .steps{ display:grid; grid-template-columns:repeat(4,1fr); gap:40px; margin-top:62px; }
+  .wstep{ background:#fff; border:3px solid var(--line); border-radius:40px; padding:54px 38px; text-align:center; box-shadow:0 24px 50px rgba(20,49,79,.06); }
+  .wstep .wn{ width:112px;height:112px;border-radius:50%;margin:0 auto 28px;background:linear-gradient(135deg,var(--navy),var(--accent));color:#fff;font-size:56px;font-weight:900;display:flex;align-items:center;justify-content:center; }
+  .wstep .wt{ font-size:43px;font-weight:800;color:var(--ink);line-height:1.12; }
+  .wstep .wd{ font-size:32px;font-weight:500;color:var(--muted);margin-top:14px;line-height:1.34; }
+
+  /* custom parts band */
+  .cparts{ margin-top:0; background:linear-gradient(120deg,var(--navy),var(--accent)); border-radius:60px; padding:88px 100px; display:flex; align-items:center; gap:70px; position:relative; overflow:hidden; box-shadow:0 40px 90px rgba(12,35,61,.30); z-index:2; }
+  .cparts .cpi{ width:200px;height:200px;border-radius:46px;flex:none; background:rgba(255,255,255,.14); border:3px solid rgba(255,255,255,.25); display:flex;align-items:center;justify-content:center; }
+  .cparts .cpi svg{ width:108px;height:108px;stroke:#fff; }
+  .cparts .cpt .k{ font-size:38px;font-weight:800;letter-spacing:.2em;text-transform:uppercase;color:#bfe0ff; }
+  .cparts .cpt h3{ font-size:84px;font-weight:900;color:#fff;line-height:1.02;margin-top:10px; }
+  .cparts .cpt p{ font-size:44px;font-weight:500;color:#e6f1fc;line-height:1.42;margin-top:20px; }
+
+  /* shared footer (identity + contact combined) */
+  .foot{ margin-left:-170px; margin-right:-170px; padding:78px 170px 76px;
+    background:linear-gradient(120deg,var(--deep),var(--navy) 60%,#163a5e); color:#fff; position:relative; overflow:hidden; }
+  .foot .ftop{ display:flex; align-items:center; justify-content:space-between; gap:50px; padding-bottom:62px; border-bottom:3px solid rgba(255,255,255,.14); }
+  .plate{ background:#fff; border-radius:36px; padding:40px 60px; display:flex; align-items:center; gap:60px; box-shadow:0 24px 50px rgba(0,0,0,.25); }
+  .plate .pg{ height:150px; } .plate .pv{ width:4px; height:120px; background:var(--line); border-radius:4px; } .plate .ps{ height:96px; }
+  .ftag{ text-align:right; }
+  .ftag .t1{ font-size:54px; font-weight:900; }
+  .ftag .t2{ font-size:34px; color:#bcd4ef; font-weight:600; letter-spacing:.04em; margin-top:12px; }
+  .ftag .badge{ display:inline-block; margin-top:22px; font-size:30px; font-weight:700; letter-spacing:.14em; text-transform:uppercase; color:#dcebfb; border:2px solid rgba(255,255,255,.3); border-radius:999px; padding:14px 34px; }
+  .fcon{ display:grid; grid-template-columns:repeat(4,1fr); gap:50px; padding-top:58px; }
+  .fitem{ display:flex; gap:30px; align-items:flex-start; }
+  .fic{ width:96px;height:96px;border-radius:24px;flex:none;background:rgba(255,255,255,.10);border:2px solid rgba(255,255,255,.18);display:flex;align-items:center;justify-content:center; }
+  .fic svg{ width:50px;height:50px;stroke:var(--light); }
+  .fk{ font-size:30px;font-weight:700;color:#9cc2e8;letter-spacing:.12em;text-transform:uppercase; }
+  .fv{ font-size:40px;font-weight:700;color:#fff;line-height:1.26;margin-top:6px; }
+  .fv .ph{ display:block; }
+
+  /* === LANDSCAPE REDESIGN (base 7500) === */
+  .sheet{ width:9608px; height:9101px; overflow:hidden; background:var(--bg); }
+  .poster{ width:7500px !important; height:7187px !important; transform:scale(1.28107,1.26618); transform-origin:top left; padding:150px 190px 130px !important; }
+  .body{ flex:none !important; display:flex; flex-direction:column; margin:0 !important; }
+  .hero{ padding:40px 0 56px; }
+  .cols{ display:grid; grid-template-columns:1fr 1fr; column-gap:130px; margin:64px 0; align-items:start; }
+  .col{ display:flex; flex-direction:column; gap:80px; }
+  .markets{ grid-template-columns:1fr; gap:64px; margin:0; }
+  .stats{ grid-template-columns:repeat(2,1fr); gap:90px 50px; margin:0; }
+  .build,.cap,.work{ margin:0; }
+  .build .chips{ grid-template-columns:repeat(2,1fr); gap:50px; }
+  .cap-grid{ grid-template-columns:1fr; gap:54px; }
+  .work .steps{ grid-template-columns:repeat(2,1fr); gap:54px; }
+  .cparts{ margin:0; }
+</style>
+</head>
+<body>
+<div class="sheet">
+  <div class="poster">
+    <div class="wm wm1"></div><div class="wm wm2"></div>
+
+    <!-- Centered brand header -->
+    <div class="brandbar">
+      <div class="grp">One Group &nbsp;·&nbsp; <b>Two Brands</b> &nbsp;·&nbsp; Global Reach</div>
+      <div class="logos">
+        <img class="gl" src="assets/logos/starmer-global-color.png" alt="Starmer Global"/>
+        <div class="vr"></div>
+        <img class="sew" src="assets/logos/sew-color.png" alt="Starmer Engineering Works"/>
+      </div>
+    </div>
+
+    <div class="body">
+    <!-- Hero -->
+    <div class="hero">
+      <span class="eyebrow">Confectionery &amp; Pharma Equipment Manufacturers</span>
+      <h1>Complete Lines.<br/>Precision Machines.<br/><span class="g">Custom Parts.</span></h1>
+      <p class="lead">We design and build complete production equipment for <b>hard candy, lollipop, chew, toffee, bubble gum &amp; pharma</b> — full turnkey lines, individual machines, precision dies and spare parts, all engineered under one roof.</p>
+      <div class="pill"><span class="dot"></span>Engineered in Lahore · Trusted Worldwide</div>
+    </div>
+
+    <!-- Two markets -->
+    <div class="cols">
+    <div class="col">
+    <div class="markets">
+      <div class="mcard pk">
+        <div class="top"></div>
+        <div class="mhdr">
+          <div class="micon"><svg width="72" height="72" viewBox="0 0 24 24" fill="none" stroke="#0f7d5b" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M3 21h18M5 21V7l7-4 7 4v14M9 21v-6h6v6M9 11h.01M15 11h.01"/></svg></div>
+          <div><div class="mlabel">Pakistan Operations</div><div class="mtitle">Starmer Engineering Works</div></div>
+        </div>
+        <p class="mbody">Local manufacturing &amp; supply for Pakistan's confectionery and food industry — complete machine fabrication, precision dies &amp; molds, and full machine-shop services.</p>
+        <div class="mtags"><span>Local Fabrication</span><span>Dies &amp; Molds</span><span>Machine Shop</span></div>
+      </div>
+      <div class="mcard gl">
+        <div class="top"></div>
+        <div class="mhdr">
+          <div class="micon"><svg width="72" height="72" viewBox="0 0 24 24" fill="none" stroke="#2E7CC6" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path stroke-linecap="round" stroke-linejoin="round" d="M3 12h18M12 3c3 3.5 3 14 0 18M12 3c-3 3.5-3 14 0 18"/></svg></div>
+          <div><div class="mlabel">Worldwide Export</div><div class="mtitle">Starmer Global</div></div>
+        </div>
+        <p class="mbody">International export of confectionery machinery, dies &amp; molds to buyers across the globe — complete turnkey lines delivered, installed and supported in 25+ countries.</p>
+        <div class="mtags"><span>Global Export</span><span>OEM Supply</span><span>Worldwide Shipping</span></div>
+      </div>
+    </div>
+
+    <!-- Stats -->
+    <div class="stats">
+      <div class="sep" style="left:25%"></div><div class="sep" style="left:50%"></div><div class="sep" style="left:75%"></div>
+      <div class="stat"><div class="n">5,000<span class="p">+</span></div><div class="l">Clients Worldwide</div></div>
+      <div class="stat"><div class="n">21</div><div class="l">Complete Line Types</div></div>
+      <div class="stat"><div class="n">25<span class="p">+</span></div><div class="l">Countries Served</div></div>
+      <div class="stat"><div class="n">60<span class="p">+</span></div><div class="l">Years of Experience</div></div>
+    </div>
+
+    <!-- What we build -->
+    <div class="build">
+      <div class="sh"><span class="e">Production Categories</span><h2>What We Build</h2></div>
+      <div class="chips">
+        <div class="chip"><div class="ci"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.7"><circle cx="12" cy="12" r="8"/><path stroke-linecap="round" d="M12 4v16M4 12h16"/></svg></div><div class="cn">Hard Candy</div></div>
+        <div class="chip"><div class="ci"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.7"><circle cx="12" cy="9" r="6"/><path stroke-linecap="round" d="M12 15v6"/></svg></div><div class="cn">Lollipop</div></div>
+        <div class="chip"><div class="ci"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.7"><rect x="4" y="8" width="16" height="8" rx="4"/><path stroke-linecap="round" d="M4 12H1M23 12h-3"/></svg></div><div class="cn">Chew &amp; Toffee</div></div>
+        <div class="chip"><div class="ci"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.7"><circle cx="12" cy="12" r="7"/><circle cx="12" cy="12" r="2.5"/></svg></div><div class="cn">Bubble Gum</div></div>
+        <div class="chip"><div class="ci"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.7"><rect x="3" y="9" width="14" height="6" rx="3"/><path stroke-linecap="round" d="M10 9v6"/></svg></div><div class="cn">Pharma</div></div>
+      </div>
+    </div>
+
+    <!-- Capabilities -->
+    </div>
+    <div class="col">
+    <div class="cap">
+      <div class="sh"><span class="e">What We Do</span><h2>Our Capabilities</h2></div>
+      <div class="cap-grid">
+        <div class="cap-item"><div class="cap-ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M3 7l9-4 9 4v10l-9 4-9-4V7z M3 7l9 4 9-4 M12 11v10"/></svg></div><div><div class="cap-tt">Confectionery Machines</div><div class="cap-ds">Hard candy, lollipop, chew, toffee &amp; bubble gum production lines.</div></div></div>
+        <div class="cap-item"><div class="cap-ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M12 2l3 3-3 3-3-3 3-3z M5 9l3 3-3 3-3-3 3-3z M19 9l3 3-3 3-3-3 3-3z M12 16l3 3-3 3-3-3 3-3z"/></svg></div><div><div class="cap-tt">Dies &amp; Molds</div><div class="cap-ds">Precision candy tooling for every confection shape and size.</div></div></div>
+        <div class="cap-item"><div class="cap-ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M14 7l-1.5-1.5a2.1 2.1 0 00-3 0l-7 7a2.1 2.1 0 000 3L4 17l10-10z M14 7l3 3 4-4-3-3-4 4z M9 17l-3 3"/></svg></div><div><div class="cap-tt">Machine Shop</div><div class="cap-ds">CNC turning, milling, fabrication &amp; custom precision engineering.</div></div></div>
+        <div class="cap-item"><div class="cap-ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M11 4a2 2 0 114 0v1a1 1 0 001 1h3a1 1 0 011 1v3a1 1 0 01-1 1h-1a2 2 0 100 4h1a1 1 0 011 1v3a1 1 0 01-1 1h-3a1 1 0 01-1-1v-1a2 2 0 10-4 0v1a1 1 0 01-1 1H7a1 1 0 01-1-1v-3a1 1 0 00-1-1H4a2 2 0 110-4h1a1 1 0 001-1V7a1 1 0 011-1h3a1 1 0 001-1V4z"/></svg></div><div><div class="cap-tt">Custom Parts on Demand</div><div class="cap-ds">Send a drawing — or just your idea — and our engineers design &amp; build it.</div></div></div>
+        <div class="cap-item"><div class="cap-ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M12 3l8 4v6c0 5-3.4 7.4-8 9-4.6-1.6-8-4-8-9V7l8-4z M9 12l2 2 4-4"/></svg></div><div><div class="cap-tt">Spare Parts &amp; Upgrades</div><div class="cap-ds">Original spare parts, machine upgrades &amp; performance retrofits.</div></div></div>
+        <div class="cap-item"><div class="cap-ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M18 8A6 6 0 006 8c0 7-3 9-3 9h18s-3-2-3-9 M13.7 21a2 2 0 01-3.4 0"/></svg></div><div><div class="cap-tt">After-Sales &amp; Support</div><div class="cap-ds">On-site maintenance, operator training &amp; remote technical assistance.</div></div></div>
+      </div>
+    </div>
+
+    <!-- How we work -->
+    <div class="work">
+      <div class="sh"><span class="e">How We Work</span><h2>From Brief to Production</h2></div>
+      <div class="steps">
+        <div class="wstep"><div class="wn">1</div><div class="wt">Inquiry &amp; Consultation</div><div class="wd">Tell us your product, capacity &amp; budget.</div></div>
+        <div class="wstep"><div class="wn">2</div><div class="wt">Engineering &amp; Design</div><div class="wd">We design the line, machine or die to spec.</div></div>
+        <div class="wstep"><div class="wn">3</div><div class="wt">Precision Manufacturing</div><div class="wd">Built &amp; quality-checked in-house.</div></div>
+        <div class="wstep"><div class="wn">4</div><div class="wt">Install &amp; Support</div><div class="wd">Commissioning, training &amp; lifetime spares.</div></div>
+      </div>
+    </div>
+
+    <!-- Custom parts band -->
+    </div>
+    </div>
+    <div class="cparts">
+      <div class="cpi"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.7"><path stroke-linecap="round" stroke-linejoin="round" d="M11 4a2 2 0 114 0v1a1 1 0 001 1h3a1 1 0 011 1v3a1 1 0 01-1 1h-1a2 2 0 100 4h1a1 1 0 011 1v3a1 1 0 01-1 1h-3a1 1 0 01-1-1v-1a2 2 0 10-4 0v1a1 1 0 01-1 1H7a1 1 0 01-1-1v-3a1 1 0 00-1-1H4a2 2 0 110-4h1a1 1 0 001-1V7a1 1 0 011-1h3a1 1 0 001-1V4z"/></svg></div>
+      <div class="cpt">
+        <div class="k">Custom Parts &amp; Engineering</div>
+        <h3>Designed &amp; Built for You.</h3>
+        <p>Have a drawing and full details? We build to your exact spec. Only have an idea, a sample or a requirement? Our engineers design the part for you — with full technical support, start to finish.</p>
+      </div>
+    </div>
+
+    </div><!-- /body -->
+
+    <!-- Footer (identity + contact combined) -->
+    <div class="foot">
+      <div class="ftop">
+        <div class="plate">
+          <img class="pg" src="assets/logos/starmer-global-color.png" alt="Starmer Global"/>
+          <div class="pv"></div>
+          <img class="ps" src="assets/logos/sew-color.png" alt="Starmer Engineering Works"/>
+        </div>
+        <div class="ftag">
+          <div class="t1">www.starmerglobal.com</div>
+          <div class="t2">Precision Engineered · Globally Trusted</div>
+          <div class="badge">Certified · QMS · Safety Compliant</div>
+        </div>
+      </div>
+      <div class="fcon">
+        <div class="fitem"><div class="fic"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path stroke-linecap="round" stroke-linejoin="round" d="M3 12h18M12 3c3 3.5 3 14 0 18M12 3c-3 3.5-3 14 0 18"/></svg></div><div><div class="fk">Website</div><div class="fv">www.starmerglobal.com</div></div></div>
+        <div class="fitem"><div class="fic"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8l9 6 9-6M4 5h16a1 1 0 011 1v12a1 1 0 01-1 1H4a1 1 0 01-1-1V6a1 1 0 011-1z"/></svg></div><div><div class="fk">Email</div><div class="fv">info@starmerglobal.com</div></div></div>
+        <div class="fitem"><div class="fic"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.3a1 1 0 011 .76l1.2 4a1 1 0 01-.5 1.1L8 10a11 11 0 005 5l1.1-2.2a1 1 0 011.1-.5l4 1.2a1 1 0 01.8 1V19a2 2 0 01-2 2C9.7 21 3 14.3 3 5z"/></svg></div><div><div class="fk">Phone</div><div class="fv"><span class="ph">+92 322 6666899</span><span class="ph">+92 309 8829999</span><span class="ph">+92 306 8996666</span></div></div></div>
+        <div class="fitem"><div class="fic"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M12 21s7-6.2 7-11a7 7 0 10-14 0c0 4.8 7 11 7 11z"/><circle cx="12" cy="10" r="2.6"/></svg></div><div><div class="fk">Location</div><div class="fv">Lahore, Punjab,<br/>Pakistan</div></div></div>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

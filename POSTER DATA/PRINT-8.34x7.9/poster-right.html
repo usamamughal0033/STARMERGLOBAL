@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<title>Starmer — Poster Right (Trusted By)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet"/>
+<style>
+  :root{
+    --ink:#13314f; --navy:#1A3A5C; --deep:#0c233d; --accent:#2E7CC6; --light:#60b3f5;
+    --muted:#5b6b7d; --line:#e4eaf1; --bg:#f4f8fd;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  @page{ size:100.08in 94.8in; margin:0; }
+  html,body{ background:#c9d2dc; font-family:'Inter',Arial,sans-serif; -webkit-font-smoothing:antialiased; }
+  .poster{
+    width:3456px; height:8064px; position:relative; overflow:hidden;
+    background:
+      radial-gradient(1800px 1800px at -12% 2%, rgba(46,124,198,.09), transparent 60%),
+      radial-gradient(1500px 1500px at 114% 70%, rgba(46,124,198,.08), transparent 60%),
+      var(--bg);
+    display:flex; flex-direction:column; padding:120px 170px 0;
+  }
+  .wm{ position:absolute; border-radius:50%; border:16px solid rgba(46,124,198,.045); }
+  .wm1{ width:1700px; height:1700px; left:-560px; top:1500px; }
+  .wm2{ width:1200px; height:1200px; right:-470px; bottom:1900px; }
+
+  /* centered brand header (matches left) */
+  .brandbar{ text-align:center; padding-bottom:54px; border-bottom:5px solid var(--line); }
+  .grp{ font-size:34px; font-weight:800; color:var(--muted); letter-spacing:.2em; text-transform:uppercase; margin-bottom:40px; }
+  .grp b{ color:var(--accent); }
+  .logos{ display:flex; align-items:center; justify-content:center; gap:80px; }
+  .logos .gl{ height:286px; }
+  .logos .vr{ width:5px; height:210px; background:var(--line); border-radius:5px; }
+  .logos .sew{ height:172px; }
+
+  .body{ flex:1; display:flex; flex-direction:column; justify-content:space-between; margin-bottom:110px; }
+
+  /* hero */
+  .hero{ text-align:center; padding:64px 0 4px; position:relative; z-index:2; }
+  .eyebrow{ display:inline-block; font-size:40px; font-weight:800; letter-spacing:.28em; text-transform:uppercase; color:var(--accent); margin-bottom:50px; }
+  h1{ font-size:262px; line-height:.96; font-weight:900; color:var(--ink); letter-spacing:-3px; }
+  h1 .g{ background:linear-gradient(110deg,#2E7CC6,#60b3f5 55%,#1A3A5C); -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent; }
+  .lead{ font-size:60px; line-height:1.42; color:var(--muted); font-weight:500; max-width:2760px; margin:74px auto 0; }
+  .lead b{ color:var(--ink); font-weight:700; }
+
+  /* section heading */
+  .sh{ text-align:center; }
+  .sh .e{ font-size:40px;font-weight:800;letter-spacing:.28em;text-transform:uppercase;color:var(--accent); }
+  .sh h2{ font-size:118px; font-weight:900; color:var(--ink); margin-top:16px; letter-spacing:-1px; }
+
+  /* stats */
+  .stats{ background:linear-gradient(120deg,var(--deep),var(--navy) 55%,var(--accent)); border-radius:60px;
+    padding:104px 60px; display:grid; grid-template-columns:repeat(4,1fr); position:relative; overflow:hidden; box-shadow:0 40px 90px rgba(12,35,61,.35); }
+  .stats .sep{ position:absolute; top:24%; bottom:24%; width:3px; background:rgba(255,255,255,.16); }
+  .stat{ text-align:center; padding:0 22px; }
+  .stat .n{ font-size:178px; font-weight:900; color:#fff; line-height:1; letter-spacing:-2px; }
+  .stat .n .p{ color:var(--light); }
+  .stat .l{ font-size:41px; font-weight:600; color:#cfe2f6; margin-top:22px; }
+
+  /* clients */
+  .gridpanel{ background:#fff; border:3px solid var(--line); border-radius:54px; padding:60px 70px; box-shadow:0 40px 80px rgba(20,49,79,.08); margin-top:64px; }
+  .gridpanel img{ width:100%; display:block; border-radius:18px; }
+  .more{ display:grid; grid-template-columns:repeat(4,1fr); gap:40px; margin-top:44px; }
+  .ccard{ background:#fff; border:3px solid var(--line); border-radius:38px; height:420px; display:flex; align-items:center; justify-content:center; padding:50px; box-shadow:0 22px 46px rgba(20,49,79,.06); }
+  .ccard img{ max-width:100%; max-height:100%; object-fit:contain; }
+  .more-note{ text-align:center; font-size:46px; font-weight:600; color:var(--muted); margin-top:54px; }
+  .more-note b{ color:var(--accent); font-weight:800; }
+
+  /* supply highlight band */
+  .supply{ background:linear-gradient(120deg,var(--deep),var(--navy) 55%,var(--accent)); border-radius:60px; padding:104px 80px; display:grid; grid-template-columns:repeat(3,1fr); position:relative; overflow:hidden; box-shadow:0 40px 90px rgba(12,35,61,.35); }
+  .supply .sep{ position:absolute; top:22%; bottom:22%; width:3px; background:rgba(255,255,255,.16); }
+  .sup{ text-align:center; padding:0 30px; }
+  .sup .si{ width:120px;height:120px;border-radius:30px;margin:0 auto 26px; background:rgba(255,255,255,.12);border:2px solid rgba(255,255,255,.22); display:flex;align-items:center;justify-content:center; }
+  .sup .si svg{ width:64px;height:64px;stroke:#fff; }
+  .sup .st{ font-size:58px;font-weight:900;color:#fff;line-height:1; }
+  .sup .sd{ font-size:38px;font-weight:500;color:#cfe2f6;margin-top:16px;line-height:1.34; }
+
+  /* why choose */
+  .why{ position:relative; z-index:2; }
+  .why-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:46px; margin-top:60px; }
+  .wi{ background:#fff; border:3px solid var(--line); border-radius:44px; padding:60px 50px; text-align:center; box-shadow:0 24px 50px rgba(20,49,79,.06); }
+  .wi .wic{ width:130px;height:130px;border-radius:32px;margin:0 auto 28px;background:linear-gradient(135deg,var(--navy),var(--accent));display:flex;align-items:center;justify-content:center; }
+  .wi .wic svg{ width:72px;height:72px;stroke:#fff; }
+  .wi .wt{ font-size:50px;font-weight:800;color:var(--ink);line-height:1.08; }
+  .wi .wd{ font-size:35px;font-weight:500;color:var(--muted);margin-top:14px;line-height:1.36; }
+
+  /* shared footer (identity + contact combined) */
+  .foot{ margin-left:-170px; margin-right:-170px; padding:78px 170px 76px;
+    background:linear-gradient(120deg,var(--deep),var(--navy) 60%,#163a5e); color:#fff; position:relative; overflow:hidden; }
+  .foot .ftop{ display:flex; align-items:center; justify-content:space-between; gap:50px; padding-bottom:62px; border-bottom:3px solid rgba(255,255,255,.14); }
+  .plate{ background:#fff; border-radius:36px; padding:40px 60px; display:flex; align-items:center; gap:60px; box-shadow:0 24px 50px rgba(0,0,0,.25); }
+  .plate .pg{ height:150px; } .plate .pv{ width:4px; height:120px; background:var(--line); border-radius:4px; } .plate .ps{ height:96px; }
+  .ftag{ text-align:right; }
+  .ftag .t1{ font-size:54px; font-weight:900; }
+  .ftag .t2{ font-size:34px; color:#bcd4ef; font-weight:600; letter-spacing:.04em; margin-top:12px; }
+  .ftag .badge{ display:inline-block; margin-top:22px; font-size:30px; font-weight:700; letter-spacing:.14em; text-transform:uppercase; color:#dcebfb; border:2px solid rgba(255,255,255,.3); border-radius:999px; padding:14px 34px; }
+  .fcon{ display:grid; grid-template-columns:repeat(4,1fr); gap:50px; padding-top:58px; }
+  .fitem{ display:flex; gap:30px; align-items:flex-start; }
+  .fic{ width:96px;height:96px;border-radius:24px;flex:none;background:rgba(255,255,255,.10);border:2px solid rgba(255,255,255,.18);display:flex;align-items:center;justify-content:center; }
+  .fic svg{ width:50px;height:50px;stroke:var(--light); }
+  .fk{ font-size:30px;font-weight:700;color:#9cc2e8;letter-spacing:.12em;text-transform:uppercase; }
+  .fv{ font-size:40px;font-weight:700;color:#fff;line-height:1.26;margin-top:6px; }
+  .fv .ph{ display:block; }
+  /* wide-base layout (7500px) scaled near-uniformly to fill 8.34x7.9 */
+  .sheet{ width:9608px; height:9101px; overflow:hidden; background:var(--bg); }
+  .poster{ width:7500px; height:9483px; transform:scale(1.28107,0.95972); transform-origin:top left; }
+</style>
+</head>
+<body>
+  <div class="sheet">
+  <div class="poster">
+    <div class="wm wm1"></div><div class="wm wm2"></div>
+
+    <!-- Centered brand header -->
+    <div class="brandbar">
+      <div class="grp">One Group &nbsp;·&nbsp; <b>Two Brands</b> &nbsp;·&nbsp; Global Reach</div>
+      <div class="logos">
+        <img class="gl" src="assets/logos/starmer-global-color.png" alt="Starmer Global"/>
+        <div class="vr"></div>
+        <img class="sew" src="assets/logos/sew-color.png" alt="Starmer Engineering Works"/>
+      </div>
+    </div>
+
+    <div class="body">
+      <!-- Hero -->
+      <div class="hero">
+        <span class="eyebrow">Proven on the Production Floor</span>
+        <h1>Trusted By<br/><span class="g">Industry Leaders</span></h1>
+        <p class="lead">From local confectionery pioneers to global FMCG giants — Starmer supplies the precision machines, <b>dies &amp; molds and spare parts</b> that power the brands defining Pakistan's confectionery industry and beyond.</p>
+      </div>
+
+      <!-- Trust stats -->
+      <div class="stats">
+        <div class="sep" style="left:25%"></div><div class="sep" style="left:50%"></div><div class="sep" style="left:75%"></div>
+        <div class="stat"><div class="n">5,000<span class="p">+</span></div><div class="l">Clients Worldwide</div></div>
+        <div class="stat"><div class="n">21</div><div class="l">Complete Line Types</div></div>
+        <div class="stat"><div class="n">25<span class="p">+</span></div><div class="l">Countries Served</div></div>
+        <div class="stat"><div class="n">60<span class="p">+</span></div><div class="l">Years of Experience</div></div>
+      </div>
+
+      <!-- Clients -->
+      <div class="clients">
+        <div class="sh"><span class="e">Our Valued Clients</span><h2>Powering Top Brands</h2></div>
+        <div class="gridpanel"><img src="assets/clients/grid-clean.png" alt="Client brands"/></div>
+        <div class="more">
+          <div class="ccard"><img src="assets/clients/cut/excel.png" alt="Excel"/></div>
+          <div class="ccard"><img src="assets/clients/cut/israr.png" alt="Israr"/></div>
+          <div class="ccard"><img src="assets/clients/cut/jojo.png" alt="JoJo"/></div>
+          <div class="ccard"><img src="assets/clients/cut/enjoy.png" alt="Enjoy"/></div>
+          <div class="ccard"><img src="assets/clients/cut/regal.png" alt="Regal"/></div>
+          <div class="ccard"><img src="assets/clients/cut/suncrop.png" alt="Suncrop Group"/></div>
+          <div class="ccard"><img src="assets/clients/cut/daffy.png" alt="Daffy"/></div>
+          <div class="ccard" style="background:linear-gradient(135deg,#1A3A5C,#2E7CC6);border:none;color:#fff;font-size:46px;font-weight:800;text-align:center;line-height:1.2;">&amp; many<br/>more</div>
+        </div>
+        <div class="more-note">Trusted by <b>23+ leading confectionery &amp; FMCG brands</b> across Pakistan and export markets.</div>
+      </div>
+
+      <!-- Why brands choose us -->
+      <div class="why">
+        <div class="sh"><span class="e">Why Brands Choose Us</span><h2>Built to Outlast</h2></div>
+        <div class="why-grid">
+          <div class="wi"><div class="wic"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M12 3l8 4v6c0 5-3.4 7.4-8 9-4.6-1.6-8-4-8-9V7l8-4z M9 12l2 2 4-4"/></svg></div><div class="wt">Precision Engineering</div><div class="wd">Machines, dies &amp; molds built to exact, repeatable tolerances.</div></div>
+          <div class="wi"><div class="wic"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 2 M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg></div><div class="wt">60+ Years Expertise</div><div class="wd">Six decades of confectionery &amp; pharma process know-how.</div></div>
+          <div class="wi"><div class="wic"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M18 8A6 6 0 006 8c0 7-3 9-3 9h18s-3-2-3-9 M13.7 21a2 2 0 01-3.4 0"/></svg></div><div class="wt">Lifetime Support</div><div class="wd">Original spare parts, upgrades &amp; on-site service for the life of your line.</div></div>
+        </div>
+      </div>
+    </div><!-- /body -->
+
+    <!-- Footer (identity + contact combined) -->
+    <div class="foot">
+      <div class="ftop">
+        <div class="plate">
+          <img class="pg" src="assets/logos/starmer-global-color.png" alt="Starmer Global"/>
+          <div class="pv"></div>
+          <img class="ps" src="assets/logos/sew-color.png" alt="Starmer Engineering Works"/>
+        </div>
+        <div class="ftag">
+          <div class="t1">www.starmerglobal.com</div>
+          <div class="t2">Precision Engineered · Globally Trusted</div>
+          <div class="badge">Certified · QMS · Safety Compliant</div>
+        </div>
+      </div>
+      <div class="fcon">
+        <div class="fitem"><div class="fic"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path stroke-linecap="round" stroke-linejoin="round" d="M3 12h18M12 3c3 3.5 3 14 0 18M12 3c-3 3.5-3 14 0 18"/></svg></div><div><div class="fk">Website</div><div class="fv">www.starmerglobal.com</div></div></div>
+        <div class="fitem"><div class="fic"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8l9 6 9-6M4 5h16a1 1 0 011 1v12a1 1 0 01-1 1H4a1 1 0 01-1-1V6a1 1 0 011-1z"/></svg></div><div><div class="fk">Email</div><div class="fv">info@starmerglobal.com</div></div></div>
+        <div class="fitem"><div class="fic"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.3a1 1 0 011 .76l1.2 4a1 1 0 01-.5 1.1L8 10a11 11 0 005 5l1.1-2.2a1 1 0 011.1-.5l4 1.2a1 1 0 01.8 1V19a2 2 0 01-2 2C9.7 21 3 14.3 3 5z"/></svg></div><div><div class="fk">Phone</div><div class="fv"><span class="ph">+92 322 6666899</span><span class="ph">+92 309 8829999</span><span class="ph">+92 306 8996666</span></div></div></div>
+        <div class="fitem"><div class="fic"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M12 21s7-6.2 7-11a7 7 0 10-14 0c0 4.8 7 11 7 11z"/><circle cx="12" cy="10" r="2.6"/></svg></div><div><div class="fk">Location</div><div class="fv">Lahore, Punjab,<br/>Pakistan</div></div></div>
+      </div>
+    </div>
+  </div>
+  </div>
+</body>
+</html>

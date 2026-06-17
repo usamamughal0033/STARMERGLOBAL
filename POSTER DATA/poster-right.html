@@ -12,7 +12,7 @@
     --muted:#5b6b7d; --line:#e4eaf1; --bg:#f4f8fd;
   }
   *{margin:0;padding:0;box-sizing:border-box;}
-  @page{ size:36in 84in; margin:0; }
+  @page{ size:100.08in 94.8in; margin:0; }
   html,body{ background:#c9d2dc; font-family:'Inter',Arial,sans-serif; -webkit-font-smoothing:antialiased; }
   .poster{
     width:3456px; height:8064px; position:relative; overflow:hidden;
@@ -103,9 +103,13 @@
   .fk{ font-size:30px;font-weight:700;color:#9cc2e8;letter-spacing:.12em;text-transform:uppercase; }
   .fv{ font-size:40px;font-weight:700;color:#fff;line-height:1.26;margin-top:6px; }
   .fv .ph{ display:block; }
+  /* wide-base layout (7500px) scaled near-uniformly to fill 8.34x7.9 */
+  .sheet{ width:9608px; height:9101px; overflow:hidden; background:var(--bg); }
+  .poster{ width:7500px; height:9483px; transform:scale(1.28107,0.95972); transform-origin:top left; }
 </style>
 </head>
 <body>
+  <div class="sheet">
   <div class="poster">
     <div class="wm wm1"></div><div class="wm wm2"></div>
 
@@ -185,6 +189,7 @@
         <div class="fitem"><div class="fic"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M12 21s7-6.2 7-11a7 7 0 10-14 0c0 4.8 7 11 7 11z"/><circle cx="12" cy="10" r="2.6"/></svg></div><div><div class="fk">Location</div><div class="fv">Lahore, Punjab,<br/>Pakistan</div></div></div>
       </div>
     </div>
+  </div>
   </div>
 </body>
 </html>

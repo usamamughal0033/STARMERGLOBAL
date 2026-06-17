@@ -12,7 +12,7 @@
     --muted:#5b6b7d; --line:#e4eaf1; --bg:#f4f8fd; --pk:#0f7d5b;
   }
   *{margin:0;padding:0;box-sizing:border-box;}
-  @page{ size:36in 84in; margin:0; }
+  @page{ size:100.08in 94.8in; margin:0; }
   html,body{ background:#c9d2dc; font-family:'Inter',Arial,sans-serif; -webkit-font-smoothing:antialiased; }
   .poster{
     width:3456px; height:8064px; position:relative; overflow:hidden;
@@ -132,9 +132,25 @@
   .fk{ font-size:30px;font-weight:700;color:#9cc2e8;letter-spacing:.12em;text-transform:uppercase; }
   .fv{ font-size:40px;font-weight:700;color:#fff;line-height:1.26;margin-top:6px; }
   .fv .ph{ display:block; }
+
+  /* === LANDSCAPE REDESIGN (base 7500) === */
+  .sheet{ width:9608px; height:9101px; overflow:hidden; background:var(--bg); }
+  .poster{ width:7500px !important; height:7187px !important; transform:scale(1.28107,1.26618); transform-origin:top left; padding:150px 190px 130px !important; }
+  .body{ flex:none !important; display:flex; flex-direction:column; margin:0 !important; }
+  .hero{ padding:40px 0 56px; }
+  .cols{ display:grid; grid-template-columns:1fr 1fr; column-gap:130px; margin:64px 0; align-items:start; }
+  .col{ display:flex; flex-direction:column; gap:80px; }
+  .markets{ grid-template-columns:1fr; gap:64px; margin:0; }
+  .stats{ grid-template-columns:repeat(2,1fr); gap:90px 50px; margin:0; }
+  .build,.cap,.work{ margin:0; }
+  .build .chips{ grid-template-columns:repeat(2,1fr); gap:50px; }
+  .cap-grid{ grid-template-columns:1fr; gap:54px; }
+  .work .steps{ grid-template-columns:repeat(2,1fr); gap:54px; }
+  .cparts{ margin:0; }
 </style>
 </head>
 <body>
+<div class="sheet">
   <div class="poster">
     <div class="wm wm1"></div><div class="wm wm2"></div>
 
@@ -158,6 +174,8 @@
     </div>
 
     <!-- Two markets -->
+    <div class="cols">
+    <div class="col">
     <div class="markets">
       <div class="mcard pk">
         <div class="top"></div>
@@ -201,6 +219,8 @@
     </div>
 
     <!-- Capabilities -->
+    </div>
+    <div class="col">
     <div class="cap">
       <div class="sh"><span class="e">What We Do</span><h2>Our Capabilities</h2></div>
       <div class="cap-grid">
@@ -225,6 +245,8 @@
     </div>
 
     <!-- Custom parts band -->
+    </div>
+    </div>
     <div class="cparts">
       <div class="cpi"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.7"><path stroke-linecap="round" stroke-linejoin="round" d="M11 4a2 2 0 114 0v1a1 1 0 001 1h3a1 1 0 011 1v3a1 1 0 01-1 1h-1a2 2 0 100 4h1a1 1 0 011 1v3a1 1 0 01-1 1h-3a1 1 0 01-1-1v-1a2 2 0 10-4 0v1a1 1 0 01-1 1H7a1 1 0 01-1-1v-3a1 1 0 00-1-1H4a2 2 0 110-4h1a1 1 0 001-1V7a1 1 0 011-1h3a1 1 0 001-1V4z"/></svg></div>
       <div class="cpt">
@@ -258,5 +280,6 @@
       </div>
     </div>
   </div>
+</div>
 </body>
 </html>
