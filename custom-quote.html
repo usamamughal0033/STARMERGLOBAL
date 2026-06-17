@@ -22,17 +22,12 @@
     }
   </script>
   <link rel="stylesheet" href="css/style.css"/>
-  <!-- EmailJS -->
-  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
   <script>
-    window.EMAILJS_SERVICE_ID  = 'service_m22ycn4';
-    window.EMAILJS_TEMPLATE_ID = 'NCspnSWRE_gIEkgNzWpp4';
-    window.EMAILJS_PUBLIC_KEY  = 'DNHXOXsFQGtFeqaVK';
-    document.addEventListener('DOMContentLoaded', () => {
-      if (window.EMAILJS_PUBLIC_KEY !== 'YOUR_PUBLIC_KEY') {
-        emailjs.init({ publicKey: window.EMAILJS_PUBLIC_KEY });
-      }
-    });
+    // Forminit form endpoint -- stores file attachments and emails a notification
+    // to info@. Create a free form at https://forminit.com, set its notification
+    // email, and paste its endpoint URL below. Same value on quote.html.
+    // e.g. 'https://forminit.com/f/your-form-id'
+    window.RFQ_ENDPOINT = 'https://forminit.com/f/5co0gvv0p0w';
   </script>
 </head>
 <body data-page="custom-quote" class="font-sans text-text-main bg-white">
@@ -552,7 +547,7 @@
               </div>
               <div class="flex-1 min-w-0">
                 <p id="cq-attach-text" class="text-sm font-semibold text-slate-700">Click or drag files to upload</p>
-                <p class="text-xs text-slate-400 mt-1">DWG, DXF, STEP, PDF, JPG, PNG — up to 10 MB each</p>
+                <p class="text-xs text-slate-400 mt-1">DWG, DXF, STEP, PDF, JPG, PNG — up to 10 MB total</p>
                 <p class="text-xs text-blue-500 mt-2 font-medium">Optional — a drawing speeds things up, but if you don't have one our engineers will design the part from your description</p>
               </div>
               <input id="cq-attachments" type="file" multiple accept=".pdf,.dwg,.dxf,.stp,.step,.jpg,.jpeg,.png,.xlsx,.xls,.doc,.docx" class="hidden"/>
@@ -605,26 +600,30 @@
     const text  = document.getElementById('cq-attach-text');
     const list  = document.getElementById('cq-file-list');
     if (input) {
-      input.addEventListener('change', () => {
+      const renderFiles = () => {
         const files = Array.from(input.files);
-        if (!files.length) { text.textContent = 'Click or drag files to upload'; list.classList.add('hidden'); return; }
+        if (!files.length) { text.textContent = 'Click or drag files to upload'; list.classList.add('hidden'); list.innerHTML = ''; return; }
         text.textContent = files.length === 1 ? files[0].name : `${files.length} files selected`;
-        list.innerHTML = files.map(f =>
+        list.innerHTML = files.map((f, i) =>
           `<div class="flex items-center gap-2 text-xs text-slate-600 bg-blue-50 border border-blue-100 rounded-lg px-3 py-2">
             <svg class="w-3.5 h-3.5 text-accent shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.172 7l-6.586 6.586a2 2 0 102.828 2.828l6.414-6.586a4 4 0 00-5.656-5.656l-6.415 6.585a6 6 0 108.486 8.486L20.5 13"/></svg>
             <span class="truncate font-medium">${f.name}</span>
             <span class="ml-auto shrink-0 text-slate-400">${(f.size/1024).toFixed(0)} KB</span>
+            <button type="button" data-remove="${i}" title="Remove" class="shrink-0 text-slate-400 hover:text-red-500 font-bold leading-none px-1">&times;</button>
           </div>`
         ).join('');
         list.classList.remove('hidden');
-        /* Append filenames to notes for EmailJS */
-        const notes = document.querySelector('#cq-rfq-form [name="notes"]');
-        if (notes) {
-          const tag = '[Attached files: ' + files.map(f => f.name).join(', ') + ']';
-          if (!notes.value.includes('[Attached files:')) {
-            notes.value = (notes.value ? notes.value + '\n\n' : '') + tag;
-          }
-        }
+      };
+      const removeFile = (idx) => {
+        const dt = new DataTransfer();
+        Array.from(input.files).forEach((f, i) => { if (i !== idx) dt.items.add(f); });
+        input.files = dt.files;
+        renderFiles();
+      };
+      input.addEventListener('change', renderFiles);
+      list.addEventListener('click', (e) => {
+        const btn = e.target.closest('[data-remove]');
+        if (btn) { e.preventDefault(); removeFile(Number(btn.dataset.remove)); }
       });
     }
 
@@ -695,7 +694,7 @@
         submitBtn.disabled = true;
         submitBtn.innerHTML = `<svg class="w-4 h-4 animate-spin" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z"></path></svg> Sending…`;
 
-        const params = {
+        const fields = {
           from_company: data.company,
           from_contact: data.contact,
           from_email:   data.email,
@@ -705,17 +704,22 @@
           item_list:    'Custom Parts Request',
           date:         new Date().toLocaleDateString('en-GB', { year:'numeric', month:'long', day:'numeric' })
         };
+        const attachInput = document.getElementById('cq-attachments');
+        const files = attachInput && attachInput.files ? Array.from(attachInput.files) : [];
 
         try {
-          if (window.EMAILJS_SERVICE_ID && window.EMAILJS_PUBLIC_KEY !== 'YOUR_PUBLIC_KEY') {
-            await emailjs.send(window.EMAILJS_SERVICE_ID, window.EMAILJS_TEMPLATE_ID, params);
-          }
+          await window.postRFQ({
+            subject: `Custom Parts RFQ — Starmer Global — ${data.company} — ${fields.date}`,
+            fields, files, replyto: data.email
+          });
           form.style.display = 'none';
           success.classList.remove('hidden');
         } catch (err) {
           submitBtn.disabled = false;
           submitBtn.innerHTML = `<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg> Send Quote Request`;
-          showErr('Failed to send — please try again or email us directly.');
+          if (err && err.message === 'TOO_BIG') showErr('Your attachments exceed 10 MB total — please remove some files or email them directly to info@starmerglobal.com.');
+          else if (err && err.message === 'NO_ENDPOINT') showErr('The form is not yet configured. Please email us directly at info@starmerglobal.com.');
+          else showErr('Failed to send — please try again, or email us directly at info@starmerglobal.com.');
         }
       });
     }

@@ -1,0 +1,128 @@
+COLLISIONS (one model number on different machines) : 5  -- LEFT AS-IS, NEEDS NEW MODEL #s
+  [SEW-112] used by 2 different machines:
+      "Bubble Gum Mixer"  ->  bubble-gum/BG-L001-M03, bubble-gum/BG-L002-M03, bubble-gum/BG-L003-M03, bubble-gum/BG-L005-M03, bubble-gum/BG-L006-M03, hard-candy/HC-L004-M12, lollipop/LO-L002-M09, lollipop/LO-L003-M10
+      "Chain Die Forming Plant"  ->  hard-candy/HC-L001-M14
+  [SEW-113] used by 2 different machines:
+      "Bubble Gum Extruder"  ->  bubble-gum/BG-L001-M06, bubble-gum/BG-L002-M06, bubble-gum/BG-L003-M06, bubble-gum/BG-L005-M06, bubble-gum/BG-L006-M06, hard-candy/HC-L004-M13, lollipop/LO-L002-M10, lollipop/LO-L003-M11
+      "Chain Die"  ->  hard-candy/HC-L001-M15
+  [SEW-116] used by 3 different machines:
+      "Uniplast Forming Machine"  ->  bubble-gum/BG-L003-M10, hard-candy/HC-L004-M16, pharma/PH-L001-M13
+      "Chain Die Stand (Reference Mold)"  ->  hard-candy/HC-L001-M20
+      "Center Filling Powder Pump"  ->  hard-candy/HC-L002-M13
+  [SEW-121] used by 2 different machines:
+      "Cooling Tunnel (3 Stages)"  ->  bubble-gum/BG-L003-M13
+      "Close Body Cooling Tunnel"  ->  hard-candy/HC-L001-M16, hard-candy/HC-L004-M21, pharma/PH-L001-M18
+  [SEW-220] used by 2 different machines:
+      "AC Unit (20 Ton)"  ->  chew-toffee/CT-L006-M13
+      "Cooling AC Unit"  ->  hard-candy/HC-L002-M20
+
+VALUE CONFLICTS (same machine, genuinely different values) : 80  -- LEFT AS-IS, NEEDS YOUR REVIEW
+  [SEW-006] Vacuum Pump
+      dimensions: HC-L003-M06='610 x 1219 x 305 mm (H x W x L)' | LO-L002-M05='737 x 305 x 1041 mm'
+  [SEW-102] Steam Generator
+      electricLoad: CT-L001-M02='5 hp' | CT-L002-M02='5 hp' | CT-L003-M02='5 hp' | CT-L004-M02='5 hp' | CT-L005-M02='5 hp' | CT-L007-M02='5 hp' | LO-L001-M02='5 hp' | LO-L002-M02='5 kW' | LO-L003-M02='5 hp'
+      capacity: CT-L001-M02='600 kg/hr' | CT-L002-M02='600 kg/hr' | CT-L003-M02='600 kg/hr' | CT-L004-M02='600 kg/hr' | CT-L005-M02='600 kg/hr' | CT-L007-M02='600 kg/hr' | HC-L001-M02='450 kg/hr' | HC-L003-M02='600 kg/hr' | HC-L004-M02='1000 kg/hr' | LO-L001-M02='1500 kg/hr' | LO-L002-M02='600 kg/hr' | LO-L003-M02='1500 kg/hr' | PH-L001-M02='1500 kg/hr'
+      pressureShellThickness: CT-L001-M02='1/2"' | CT-L002-M02='1/2"' | CT-L003-M02='1/2"' | CT-L004-M02='1/2"' | CT-L005-M02='1/2"' | CT-L007-M02='1/2"' | HC-L003-M02='1/2"' | HC-L004-M02='3/8"' | LO-L002-M02='3/8"' | LO-L003-M02='1/2"'
+      burnerMotor: CT-L001-M02='2 hp' | CT-L002-M02='2 hp' | CT-L003-M02='2 hp' | CT-L004-M02='2 hp' | CT-L005-M02='2 hp' | CT-L007-M02='2 hp' | HC-L003-M02='20 hp' | LO-L001-M02='2 hp' | PH-L001-M02='2 hp'
+      tubeSheetThickness: CT-L001-M02='1/2"' | CT-L002-M02='1/2"' | CT-L003-M02='1/2"' | CT-L004-M02='1/2"' | CT-L005-M02='1/2"' | CT-L007-M02='1/2"' | HC-L003-M02='1/2"' | LO-L001-M02='1/2"' | LO-L003-M02='2"' | PH-L001-M02='1/2"'
+      powerLoad: CT-L001-M02='5 hp' | CT-L002-M02='5 hp' | CT-L003-M02='5 hp' | CT-L004-M02='5 hp' | CT-L005-M02='5 hp' | CT-L007-M02='5 hp' | HC-L001-M02='5 hp' | HC-L003-M02='5 hp' | HC-L004-M02='7 hp' | LO-L002-M02='5 hp' | LO-L003-M02='5 hp' | PH-L001-M02='5 hp'
+      rockWoolThickness: CT-L001-M02='2"' | CT-L002-M02='1/2"' | CT-L003-M02='1/2"' | CT-L004-M02='2"' | CT-L005-M02='2"' | CT-L007-M02='1/2"' | HC-L003-M02='2"' | LO-L001-M02='2"' | LO-L003-M02='2"' | PH-L001-M02='2"'
+  [SEW-103] Steam Header
+      dimensions: CT-L001-M03='305 x 914 mm (Dia x L)' | CT-L002-M03='305 x 914 mm (Dia x L)' | CT-L003-M03='305 x 914 mm (Dia x L)' | CT-L004-M03='305 x 914 mm (Dia x L)' | CT-L005-M03='305 x 914 mm (Dia x L)' | CT-L006-M03='305 x 914 mm (Dia x L)' | CT-L007-M03='305 x 914 mm (Dia x L)' | HC-L001-M03='1219 x 914 mm (L x H)' | HC-L002-M03='305 x 1524 mm (L x H)' | HC-L004-M03='305 x 914 mm (L x H)' | LO-L001-M03='305 x 914 mm (L x H)' | LO-L002-M03='305 x 914 mm (L x H)' | LO-L003-M03='305 x 914 mm (L x H)' | PH-L001-M03='305 x 914 mm (L x H)'
+      connection: CT-L001-M03='S.S' | CT-L002-M03='5' | CT-L003-M03='5' | CT-L004-M03='5' | CT-L005-M03='5' | CT-L006-M03='5' | CT-L007-M03='5'
+  [SEW-104] Candy Continuous Vacuum Cooker
+      pans: CT-L002-M04='S.S 304' | HC-L001-M06='S.S 304' | HC-L004-M04='S.S 304' | LO-L001-M04='S.S 304' | LO-L003-M04='S.S 304' | PH-L001-M04='2 nos in S.S 304 food grade'
+      dimensions: CT-L002-M04='2591 x 1829 x 2134 mm' | HC-L001-M06='2438 x 1829 x 2286 mm' | HC-L004-M04='2591 x 1829 x 2134 mm' | LO-L001-M04='2591 x 1829 x 2134 mm' | LO-L003-M04='2591 x 1829 x 2134 mm' | PH-L001-M04='2591 x 1829 x 2134 mm'
+      fittings: CT-L002-M04='Outer tube jacketed, steam trap, seat valve' | HC-L001-M06='Outer tube jacketed, steam trap, full S.S water nozzles' | HC-L004-M04='Outer tube jacketed, steam trap, full S.S water nozzles' | LO-L001-M04='Outer tube jacketed, steam trap, safety valve, seat valve' | LO-L003-M04='Outer tube jacketed, steam trap, seat valve' | PH-L001-M04='Steam gauge, safety valve, sect valve'
+  [SEW-105] Vacuum Pump
+      rating: CT-L002-M05='7.5 hp = 1450 rpm' | HC-L001-M07='10 hp = 1400 rpm' | HC-L004-M05='7.5 hp = 1450 rpm' | LO-L001-M05='10 hp = 1450 rpm' | LO-L003-M05='7.5 hp = 1450 rpm' | PH-L001-M05='10 hp = 1450 rpm'
+  [SEW-108] Cooling Table
+      coolingMedium: CT-L001-M05='Water; A-frame for moving water inlet/outlet valve' | CT-L002-M06='Water; A-frame for moving water inlet/outlet valve' | CT-L003-M05='Water; A-frame for moving water inlet/outlet valve' | CT-L004-M05='Water; A-frame for moving water inlet/outlet valve' | CT-L005-M05='Water; A-frame for moving water inlet/outlet valve' | CT-L006-M05='Water; A-frame for moving water inlet/outlet valve' | CT-L007-M05='Water; A-frame for moving water inlet/outlet valve' | HC-L001-M08='Water cooling system, A-frame inlet/outlet' | HC-L002-M08='Water cooling system, A-frame inlet/outlet' | HC-L003-M07='Water cooling system, A-frame for moving water inlet and outlet' | HC-L004-M08='Water cooling system, A-frame inlet/outlet' | LO-L001-M08='Water cooling system, A-frame inlet/outlet valve' | LO-L002-M07='Water cooling system, A-frame inlet/outlet' | LO-L003-M08='Water cooling system, A-frame inlet/outlet' | PH-L001-M08='Water cooling system, A-frame inlet/outlet valve'
+  [SEW-109] Kneading Machine
+      mainPlate: CT-L002-M07='S.S 304' | HC-L002-M09='4 ft, S.S 304' | HC-L004-M09='4 ft, S.S 304' | LO-L001-M09='S.S 304' | LO-L002-M08='S.S 304' | LO-L003-M09='S.S 304' | PH-L001-M09='S.S 304'
+      dimensions: CT-L002-M07='1524 x 1676 x 1956 mm' | HC-L001-M09='1041 x 152 x 1651 mm' | HC-L002-M09='1524 x 152 x 1956 mm' | HC-L003-M08='1041 x 152 x 1651 mm (H x W x L)' | HC-L004-M09='1219 x 1829 x 1829 mm' | LO-L001-M09='1524 x 1676 x 1956 mm' | LO-L002-M08='1524 x 1676 x 1956 mm' | LO-L003-M09='1524 x 1676 x 1956 mm' | PH-L001-M09='1524 x 1676 x 1676 mm'
+  [SEW-110] Center Filling Liquid Pump
+      extra: BG-L003-M07='Overflow system to recycle liquid/chocolate' | BG-L004-M07='Overflow system to recycle liquid/chocolate' | HC-L001-M10='Co-flow system to recycle liquid/chocolate' | HC-L002-M12='Co-flow system to recycle liquid/chocolate' | HC-L004-M10='Co-flow system to recycle liquid/chocolate' | PH-L001-M10='Overflow system to recycle liquid/chocolate'
+      powerLoad: BG-L003-M07='3.2 hp' | BG-L004-M07='3.2 hp' | HC-L001-M10='3.2 hp' | HC-L002-M12='3.2 hp' | HC-L004-M10='3.34 hp' | PH-L001-M10='3.34 hp'
+  [SEW-112] Bubble Gum Mixer
+      arms: BG-L003-M03='S.S 304' | HC-L004-M12='2, S.S 304' | LO-L002-M09='2, S.S 304' | LO-L003-M10='2, S.S 304'
+      tilt: BG-L001-M03='Tilting system, gear motor 2 hp' | BG-L002-M03='Tilting system, gear motor 2 hp' | BG-L003-M03='Tilting system' | BG-L005-M03='Tilting system, gear motor 2 hp' | BG-L006-M03='Tilting system, gear motor 2 hp' | HC-L004-M12='S.S 201, tilting system' | LO-L002-M09='S.S 201, tilting system' | LO-L003-M10='S.S 201, tilting system'
+      sideSheets: BG-L001-M03='S.S 201' | BG-L002-M03='S.S 201' | BG-L005-M03='S.S 201' | BG-L006-M03='S.S 201' | HC-L004-M12='S.S 304' | LO-L002-M09='S.S 201' | LO-L003-M10='S.S 201'
+      construction: BG-L001-M03='Double jacketed with S.S 304' | BG-L002-M03='Double jacketed with S.S 304' | BG-L003-M03='Double jacketed with S.S 304' | BG-L005-M03='Double jacketed with S.S 304' | BG-L006-M03='Double jacketed with S.S 304' | LO-L002-M09='Double jacketed with M.S' | LO-L003-M10='Double jacketed with M.S'
+      dimensions: BG-L001-M03='1829 x 2438 x 2438 mm' | BG-L002-M03='1829 x 2438 x 2438 mm' | BG-L003-M03='1829 x 2438 x 2438 mm' | BG-L005-M03='1829 x 2438 x 2438 mm' | BG-L006-M03='1829 x 2438 x 2438 mm' | HC-L004-M12='1829 x 1219 x 1219 mm' | LO-L002-M09='1829 x 2438 x 2438 mm' | LO-L003-M10='1829 x 2438 x 2438 mm'
+      heaters: BG-L001-M03='Electric heaters, 6000 watt' | BG-L002-M03='Electric heaters, 6000 watt' | BG-L003-M03='Electric heaters 6000 watt x2 = 12000 watt' | BG-L005-M03='Electric heaters, 6000 watt' | BG-L006-M03='Electric heaters, 6000 watt' | HC-L004-M12='Electric heaters, 6000 watt' | LO-L002-M09='Electric heaters, 6000 watt' | LO-L003-M10='Electric heaters, 6000 watt'
+  [SEW-113] Bubble Gum Extruder
+      controls: BG-L001-M06='Electric panel with all new features, helping roller system in leaf' | BG-L002-M06='Electric panel with all new features, helping roller system in leaf' | BG-L003-M06='Electric panel with all new features, helping roller system in head' | BG-L005-M06='Electric panel with all new features, helping roller system in leaf' | BG-L006-M06='Electric panel with all new features, helping roller system in leaf' | HC-L004-M13='Electric panel with all new features, helping roller system in head' | LO-L002-M10='Electric panel with all new features, helping roller system in head' | LO-L003-M11='Electric panel with all new features, helping roller system in head'
+      heaters: BG-L001-M06='Electric heaters, 6000 watt' | BG-L002-M06='Electric heaters, 6000 watt' | BG-L003-M06='Electric heaters, 6000 watt' | BG-L005-M06='Electric heaters, 6000 watt' | BG-L006-M06='Electric heaters, 6000 watt' | HC-L004-M13='Electric heaters' | LO-L002-M10='Electric heaters, 6000 watt' | LO-L003-M11='Electric heaters, 6000 watt'
+  [SEW-114] Batch Roller
+      upDownDrive: CT-L004-M07='1 hp' | HC-L001-M12='1 hp' | HC-L003-M10='1 hp' | HC-L004-M14='2 hp' | LO-L001-M10='1 hp' | LO-L002-M11='1 hp' | LO-L003-M12='1 hp' | PH-L001-M11='1 hp'
+      gearMotorMainDrive: HC-L001-M12='1 hp' | HC-L004-M14='2 hp' | LO-L001-M10='1 hp' | LO-L002-M11='1 hp' | LO-L003-M12='1 hp' | PH-L001-M11='1 hp'
+      dimensions: HC-L001-M12='1219 x 610 x 914 mm' | HC-L003-M10='1346 x 737 x 1676 mm (H x W x L)' | HC-L004-M14='1219 x 610 x 914 mm' | LO-L001-M10='1372 x 660 x 2134 mm' | LO-L002-M11='1219 x 610 x 914 mm' | LO-L003-M12='1219 x 610 x 914 mm' | PH-L001-M11='1372 x 660 x 2134 mm'
+      length: CT-L004-M07='1981 mm' | HC-L001-M12='1981 mm' | HC-L003-M10='1372 mm' | HC-L004-M14='1981 mm' | LO-L001-M10='1981 mm' | LO-L002-M11='1981 mm' | LO-L003-M12='1981 mm' | PH-L001-M11='1981 mm'
+  [SEW-115] Rope Sizer
+      dimensions: CT-L004-M08='1981 x 914 x 1676 mm (H x W x L)' | HC-L001-M13='1372 x 762 x 1829 mm' | HC-L003-M11='1372 x 762 x 1829 mm (H x W x L)' | HC-L004-M15='1372 x 762 x 1829 mm' | LO-L001-M11='1311 x 762 x 1829 mm' | LO-L002-M12='1219 x 737 x 1829 mm' | PH-L001-M12='1311 x 762 x 1829 mm'
+      electricPanel: CT-L004-M08='S.S 304' | LO-L001-M11='S.S 201' | LO-L002-M12='S.S 201' | PH-L001-M12='S.S 201'
+      pairs: HC-L001-M13='S.S 304 (22 mm x2, 20 mm x2)' | HC-L004-M15='S.S 304 (22 mm x2, 20 mm x2)' | LO-L001-M11='S.S 304 (32 mm, 27 mm, 22 mm, 22 mm)' | LO-L002-M12='S.S 304 (32 mm, 27 mm, 22 mm, 22 mm)' | PH-L001-M12='S.S 304 (32 mm, 27 mm, 22 mm, 17 mm)'
+      sizerModel: HC-L001-M13='Horizontal, 4 stages' | HC-L003-M11='Horizontal, 5 stages' | HC-L004-M15='Horizontal, 4 stages' | LO-L001-M11='Horizontal, 4 stages' | LO-L002-M12='Horizontal, 5 stages' | PH-L001-M12='Horizontal, 4 stages'
+      inverter: CT-L004-M08='INVENT brand, 3 hp' | HC-L001-M13='INVENT digital, 2 hp' | HC-L003-M11='Digital, new brand' | HC-L004-M15='INVENT digital, 2 hp' | LO-L001-M11='INVENT digital, 2 hp' | LO-L002-M12='INVENT digital, 2 hp' | PH-L001-M12='INVENT digital, 2 hp'
+      gearMotor: CT-L004-M08='SEW brand Germany, 3 hp' | HC-L001-M13='SEW brand, Germany' | HC-L003-M11='SEW brand, Germany' | HC-L004-M15='SEW brand, Germany' | LO-L001-M11='SEW brand, Germany' | LO-L002-M12='SEW brand, Germany, 2 hp' | PH-L001-M12='SEW brand, Germany'
+      powerLoad: CT-L004-M08='5.68 hp' | HC-L001-M13='4.68 hp' | HC-L003-M11='4.68 hp' | HC-L004-M15='4.68 hp' | LO-L001-M11='4.68 hp' | LO-L002-M12='4.68 hp' | PH-L001-M12='4.68 hp'
+  [SEW-116] Uniplast Forming Machine
+      filling: BG-L003-M10='Up to 12% of candy' | HC-L004-M16='Up to ~34% of candy' | PH-L001-M13='Up to 12% of candy'
+      dimensions: BG-L003-M10='1981 x 1372 x 1067 mm' | HC-L004-M16='1981 x 1372 x 2438 mm' | PH-L001-M13='1981 x 1372 x 1067 mm'
+      production: BG-L003-M10='Up to 300 kg/hr' | PH-L001-M13='Up to 450 kg/hr'
+  [SEW-117] Rotary Forming Die with Cutting Rings
+      dimensions: BG-L003-M11='457 x 457 x 127 mm' | BG-L004-M11='457 x 610 mm' | HC-L004-M17='457 x 457 x 127 mm' | PH-L001-M14='457 x 457 x 127 mm'
+      punch: BG-L003-M11='Grade 1045, hardness up to 45 HRC' | BG-L004-M11='Grade 1045, hardness up to 45 HRC' | HC-L004-M17='EN19, up to 55 HRC; high quality M.S tempered' | PH-L001-M14='EN19, hardness up to 45 HRC'
+      cuttingRing: BG-L003-M11='Forged M.S (tooth pitch 1.5-2.5 mm)' | BG-L004-M11='Forged M.S (tooth pitch 1.5-2.5 mm)' | HC-L004-M17='EN19, high wear resistance (tooth pitch up to 2 mm)' | PH-L001-M14='EN19, high wear resistance (tooth pitch 2-3 mm)'
+  [SEW-118] Die Stand
+      movement: BG-L003-M12='Wheels for movement' | BG-L004-M12='Wheels for movement' | PH-L001-M15='Equipped with wheels'
+  [SEW-119] Cooling Conveyor (Open Body)
+      blower: HC-L004-M19='2 hp' | PH-L001-M16='3 hp'
+  [SEW-120] Vibrator
+      dimensions: HC-L001-M18='1219 x 2438 mm' | HC-L002-M21='1219 x 2438 mm' | HC-L003-M14='1219 x 2438 mm' | HC-L004-M20='1067 x 1372 x 2438 mm' | PH-L001-M17='1067 x 1372 x 2438 mm'
+      mainSheet: HC-L001-M18='S.S 304, 18 gauge' | HC-L002-M21='S.S 304' | HC-L003-M14='S.S 304' | HC-L004-M20='S.S 304, 18 gauge' | PH-L001-M17='S.S 304, 18 gauge'
+  [SEW-121] Close Body Cooling Tunnel
+      inverter: HC-L001-M16='2 hp' | HC-L004-M21='2 hp' | PH-L001-M18='INVENT new brand, 5 hp'
+      stages: HC-L001-M16='1 stage' | HC-L004-M21='3 stages' | PH-L001-M18='3 stages'
+      insulation: HC-L001-M16='Double jacketed, thermopore; inner S.S 304 5 mm' | HC-L004-M21='Double jacketed, thermopore; inner S.S 304 5 mm' | PH-L001-M18='Double jacketed with thermopore'
+      sideSheets: HC-L001-M16='Outer and inner in S.S 304' | HC-L004-M21='Outer and inner in S.S 304' | PH-L001-M18='Outer and inner in S.S 201'
+      gearMotor: HC-L001-M16='2 hp, SEW brand' | HC-L004-M21='2 hp, SEW brand' | PH-L001-M18='3 hp (1 hp each, 3 nos), SEW brand'
+      length: HC-L001-M16='3048 mm' | HC-L004-M21='3048 mm' | PH-L001-M18='4877 mm'
+      powerLoad: HC-L001-M16='3 hp' | HC-L004-M21='5 hp' | PH-L001-M18='3 hp'
+  [SEW-122] AC Unit
+      inverter: BG-L003-M14='7.5 KVA (INVT)' | HC-L001-M17='7.5 hp (INVT)' | HC-L004-M22='7.5 KVA (INVT)' | LO-L002-M15='7.5 KVA (INVT)' | PH-L001-M19='7.5 KVA (INVT)'
+  [SEW-123] Pillow Pack Wrapping Machine
+      dimensions: BG-L001-M12='2335 x 900 x 1715 mm (L x W x H)' | BG-L003-M15='2335 x 900 x 1715 mm (L x W x H)' | BG-L004-M15='2335 x 900 x 1715 mm (L x W x H)' | HC-L001-M19='2335 x 900 x 1725 mm' | HC-L002-M22='2335 x 900 x 1725 mm' | HC-L003-M15='2335 x 900 x 1725 mm (H x W x L)' | HC-L004-M23='2335 x 900 x 1725 mm' | PH-L001-M20='2335 x 900 x 1715 mm (L x W x H)'
+      output: BG-L001-M12='Up to 800 packs/min' | BG-L003-M15='Up to 800 pcs/min (candy); up to 600 pcs/min (bubble)' | BG-L004-M15='Up to 800 pcs/min (candy); up to 600 pcs/min (bubble)' | HC-L001-M19='Up to 800 pcs/min (candy); up to 500 pcs/min (bubble)' | HC-L002-M22='Up to 800 pcs/min (candy); up to 500 pcs/min (bubble)' | HC-L003-M15='Up to 800 pcs/min (candy); up to 500 pcs/min (bubble)' | HC-L004-M23='Up to 800 pcs/min' | PH-L001-M20='Up to 800 packs/min'
+  [SEW-202] Steam Generator
+      pressureShellThickness: CT-L006-M02='1/2"' | HC-L002-M02='3/8"'
+      burnerMotor: CT-L006-M02='4 hp' | HC-L002-M02='8 hp'
+  [SEW-212] Rope Sizer
+      electricHeaters: CT-L001-M09='6 ft x 4, 2 kW' | CT-L005-M09='500 x 4, 2 kW' | CT-L006-M09='500 x 4, 2 kW'
+      dimensions: BG-L003-M08='1219 x 737 x 1829 mm' | BG-L004-M08='1372 x 914 x 1829 mm' | CT-L001-M09='1981 x 914 x 1676 mm (H x W x L)' | CT-L005-M09='1981 x 914 x 1676 mm (H x W x L)' | CT-L006-M09='1981 x 914 x 1676 mm (H x W x L)' | LO-L003-M13='1219 x 737 x 1829 mm'
+      electricPanel: BG-L003-M08='S.S 201' | BG-L004-M08='S.S 201' | CT-L001-M09='S.S 304' | CT-L005-M09='S.S 304' | CT-L006-M09='S.S 304' | LO-L003-M13='S.S 201'
+      pair2: CT-L001-M09='S.S 304, 27 mm' | CT-L005-M09='S.S 304, 32 mm' | CT-L006-M09='S.S 304, 27 mm'
+      pair1: CT-L001-M09='S.S 304, 37 mm' | CT-L005-M09='S.S 304, 33 mm' | CT-L006-M09='S.S 304, 37 mm'
+      pair3: CT-L001-M09='S.S 304, 22 mm' | CT-L005-M09='S.S 304, 27 mm' | CT-L006-M09='S.S 304, 32 mm'
+      inverter: BG-L003-M08='INVENT digital, 3 hp' | BG-L004-M08='INVENT digital, 3 hp' | CT-L001-M09='INVENT brand, 3 hp' | CT-L005-M09='INVENT brand, 3 hp' | CT-L006-M09='INVENT brand, 3 hp' | LO-L003-M13='INVENT digital, 3 hp'
+      sideSheets: CT-L001-M09='S.S 201' | CT-L005-M09='S.S 201' | CT-L006-M09='S.S 304'
+      sidePlates: BG-L003-M08='S.S 201' | BG-L004-M08='S.S 201' | LO-L003-M13='S.S 304'
+      pair5: CT-L001-M09='S.S 304, 12 mm' | CT-L005-M09='S.S 304, 12 mm' | CT-L006-M09='S.S 304, 22 mm'
+      powerLoad: BG-L003-M08='5.68 hp' | BG-L004-M08='5.6 hp' | CT-L001-M09='5.68 hp' | CT-L005-M09='5.68 hp' | CT-L006-M09='5.68 hp' | LO-L003-M13='5.68 hp'
+  [SEW-214] Batch Roller
+      dimensions: CT-L006-M08='1651 x 660 x 2362 mm (H x W x L)' | HC-L002-M14='1651 x 914 x 2565 mm'
+      powerLoad: CT-L006-M08='5.3 hp' | HC-L002-M14='5.34 hp'
+  [SEW-219] Cooling Tunnel 3 Stages
+      insulation: CT-L006-M14='Double jacketed, insulated with thermopore' | HC-L002-M19='Double jacketed with thermopore; inner panel S.S 304'
+      dimensions: CT-L006-M14='6096 x 1219 mm' | HC-L002-M19='6096 x 914 x 2438 mm'
+  [SEW-701] Sugar Grinder
+      innerBox: BG-L001-M01='S.S 303' | BG-L002-M01='S.S 303' | BG-L003-M01='S.S 304' | BG-L004-M01='S.S 304' | BG-L005-M01='S.S 303' | BG-L006-M01='S.S 303'
+  [SEW-808] Rest Conveyor
+      width: BG-L003-M09='914 mm' | BG-L004-M09='2438 mm'
+  [SEW-809] Single Step Cooling Conveyor
+      motorPower: BG-L001-M07='0.75 hp' | BG-L002-M07='2 hp' | BG-L005-M07='2 hp' | BG-L006-M07='2 hp'
+      inverter: BG-L001-M07='0.75 hp' | BG-L002-M07='2 hp' | BG-L005-M07='2 hp' | BG-L006-M07='2 hp'
+      beltSize: BG-L001-M07='W 600 mm x length 40 ft' | BG-L002-M07='W 2.5 ft x length 20 ft' | BG-L005-M07='W 2.5 ft x length 20 ft' | BG-L006-M07='W 2.5 ft x length 20 ft'
+
+DRY RUN (no files written). Re-run with --apply to write.

@@ -243,7 +243,7 @@
         </p>
       </div>
       <!-- Populated by JS -->
-      <div id="home-categories-grid" class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div id="home-categories-grid" class="flex flex-wrap justify-center gap-6">
         <!-- skeleton placeholders while loading -->
         <div class="skeleton h-64 rounded-2xl"></div>
         <div class="skeleton h-64 rounded-2xl"></div>
@@ -536,7 +536,7 @@
       });
     }
   </script>
-  <!-- Hero video playlist: play the clips one by one, then loop -->
+  <!-- Hero video: cycle the high-res clips in sequence, then loop -->
   <script>
     (function () {
       const v = document.getElementById('hero-video');
@@ -554,7 +554,7 @@
         v.load();
         v.play().catch(() => {});
       });
-      // Preload the next clip so the switch is seamless
+      // Prefetch the upcoming clips so each switch is seamless
       playlist.slice(1).forEach(p => { const l = document.createElement('link'); l.rel = 'prefetch'; l.as = 'video'; l.href = p; document.head.appendChild(l); });
     })();
   </script>

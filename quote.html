@@ -11,25 +11,12 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <script>tailwind.config={theme:{extend:{colors:{primary:'#1A3A5C',accent:'#2E7CC6','text-main':'#334155'},fontFamily:{sans:['Inter','system-ui','sans-serif']}}}}</script>
   <link rel="stylesheet" href="css/style.css"/>
-  <!-- EmailJS SDK -->
-  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
   <script>
-    // â”€â”€ EmailJS config â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
-    // Replace these with your actual EmailJS credentials after sign-up.
-    // Sign up free at: https://www.emailjs.com/
-    // 1. Create an Email Service (Gmail, Outlook, etc.)
-    // 2. Create an Email Template with variables: from_company, from_contact,
-    //    from_email, from_phone, from_country, notes, item_list, date
-    // 3. Copy the Service ID, Template ID, and Public Key below.
-    window.EMAILJS_SERVICE_ID  = 'service_m22ycn4';   // e.g. 'service_abc123'
-    window.EMAILJS_TEMPLATE_ID = 'NCspnSWRE_gIEkgNzWpp4';  // e.g. 'template_xyz789'
-    window.EMAILJS_PUBLIC_KEY  = 'DNHXOXsFQGtFeqaVK';   // e.g. 'AbCdEfGhIjKlMnOp'
-
-    document.addEventListener('DOMContentLoaded', () => {
-      if (window.EMAILJS_PUBLIC_KEY !== 'YOUR_PUBLIC_KEY') {
-        emailjs.init({ publicKey: window.EMAILJS_PUBLIC_KEY });
-      }
-    });
+    // Forminit form endpoint -- stores file attachments and emails a notification
+    // to info@. Create a free form at https://forminit.com, set its notification
+    // email, and paste its endpoint URL below. Same value on custom-quote.html.
+    // e.g. 'https://forminit.com/f/your-form-id'
+    window.RFQ_ENDPOINT = 'https://forminit.com/f/5co0gvv0p0w';
   </script>
 </head>
 <body data-page="quote" class="font-sans text-text-main bg-white">
@@ -201,7 +188,7 @@
               </div>
               <div class="flex-1 min-w-0">
                 <p id="attach-text" class="text-sm font-medium text-slate-600">Click to attach files</p>
-                <p class="text-xs text-slate-400 mt-0.5">PDF, DWG, DXF, STEP, images — max 10 MB each</p>
+                <p class="text-xs text-slate-400 mt-0.5">PDF, DWG, DXF, STEP, images — up to 10 MB total</p>
               </div>
               <input id="quote-attachments" type="file" multiple accept=".pdf,.dwg,.dxf,.stp,.step,.jpg,.jpeg,.png,.xlsx,.xls,.doc,.docx" class="hidden"/>
             </label>
@@ -244,24 +231,30 @@
       const text  = document.getElementById('attach-text');
       const list  = document.getElementById('attach-file-list');
       if (!input) return;
-      input.addEventListener('change', () => {
+      const renderFiles = () => {
         const files = Array.from(input.files);
-        if (!files.length) { text.textContent = 'Click to attach files'; list.classList.add('hidden'); return; }
+        if (!files.length) { text.textContent = 'Click to attach files'; list.classList.add('hidden'); list.innerHTML = ''; return; }
         text.textContent = files.length === 1 ? files[0].name : `${files.length} files selected`;
-        list.innerHTML = files.map(f =>
+        list.innerHTML = files.map((f, i) =>
           `<div class="flex items-center gap-2 text-xs text-slate-600 bg-blue-50 rounded-lg px-3 py-1.5">
             <svg class="w-3.5 h-3.5 text-accent shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.172 7l-6.586 6.586a2 2 0 102.828 2.828l6.414-6.586a4 4 0 00-5.656-5.656l-6.415 6.585a6 6 0 108.486 8.486L20.5 13"/></svg>
             <span class="truncate">${f.name}</span>
             <span class="ml-auto shrink-0 text-slate-400">${(f.size/1024).toFixed(0)} KB</span>
+            <button type="button" data-remove="${i}" title="Remove" class="shrink-0 text-slate-400 hover:text-red-500 font-bold leading-none px-1">&times;</button>
           </div>`
         ).join('');
         list.classList.remove('hidden');
-        /* Append file names to notes so EmailJS captures them */
-        const notes = document.querySelector('[name="notes"]');
-        const names = files.map(f => f.name).join(', ');
-        if (notes && !notes.value.includes('[Attachments:')) {
-          notes.value += (notes.value ? '\n' : '') + `[Attachments: ${names}]`;
-        }
+      };
+      const removeFile = (idx) => {
+        const dt = new DataTransfer();
+        Array.from(input.files).forEach((f, i) => { if (i !== idx) dt.items.add(f); });
+        input.files = dt.files;
+        renderFiles();
+      };
+      input.addEventListener('change', renderFiles);
+      list.addEventListener('click', (e) => {
+        const btn = e.target.closest('[data-remove]');
+        if (btn) { e.preventDefault(); removeFile(Number(btn.dataset.remove)); }
       });
     })();
   </script>

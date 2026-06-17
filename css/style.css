@@ -134,6 +134,7 @@
 .result-type.type-machine { background: #dcfce7; color: #15803d; }
 .result-type.type-die-part { background: #fef3c7; color: #b45309; }
 .result-number { font-family: 'Courier New', monospace; font-size: 10px; font-weight: 700; color: #3b82f6; }
+.result-model { color: #64748b; }
 .result-name { font-size: 13px; font-weight: 600; color: #1e293b; }
 .result-cat { font-size: 11px; color: #94a3b8; }
 
@@ -160,19 +161,19 @@
 .hero-overlay {
   z-index: 1;
   background: linear-gradient(105deg,
-    rgba(247,251,255,0.95) 0%,
-    rgba(247,251,255,0.85) 42%,
-    rgba(247,251,255,0.55) 72%,
-    rgba(247,251,255,0.22) 100%);
+    rgba(247,251,255,0.82) 0%,
+    rgba(247,251,255,0.55) 42%,
+    rgba(247,251,255,0.25) 72%,
+    rgba(247,251,255,0.06) 100%);
 }
 
 @media (max-width: 1023px) {
   /* Narrow screens: text spans more width, so use a stronger even veil. */
   .hero-overlay {
     background: linear-gradient(180deg,
-      rgba(247,251,255,0.92) 0%,
-      rgba(247,251,255,0.86) 60%,
-      rgba(247,251,255,0.8) 100%);
+      rgba(247,251,255,0.86) 0%,
+      rgba(247,251,255,0.78) 60%,
+      rgba(247,251,255,0.68) 100%);
   }
 }
 
@@ -323,8 +324,8 @@
 }
 .pipeline-machine-card.in-cart { border-color: #22c55e; }
 
-.pipeline-machine-img { height: 96px; overflow: hidden; background: #f8fafc; }
-.pipeline-machine-img img { width: 100%; height: 100%; object-fit: cover; }
+.pipeline-machine-img { height: 150px; overflow: hidden; background: #fff; display: flex; align-items: center; justify-content: center; padding: 8px; }
+.pipeline-machine-img img { width: 100%; height: 100%; object-fit: contain; }
 
 .pipeline-machine-body { padding: 12px; flex: 1; display: flex; flex-direction: column; }
 .pipeline-order { font-size: 10px; font-weight: 700; color: #94a3b8; margin-bottom: 2px; }
@@ -592,6 +593,14 @@
   padding: 1.75rem 1.75rem 1.5rem;
   flex: 1; display: flex; flex-direction: column; justify-content: flex-end;
   background: linear-gradient(to top, rgba(0,0,0,0.82) 0%, rgba(0,0,0,0.4) 45%, transparent 100%);
+}
+/* Centered flex layout for home category cards (3-up, trailing row centered) */
+#home-categories-grid > * { width: 100%; }
+@media (min-width: 768px) {
+  #home-categories-grid > * { width: calc((100% - 1.5rem) / 2); }
+}
+@media (min-width: 1024px) {
+  #home-categories-grid > * { width: calc((100% - 3rem) / 3); }
 }
 
 /* ── Catalog category photo buttons (Step 1) ─────────────────────────────── */

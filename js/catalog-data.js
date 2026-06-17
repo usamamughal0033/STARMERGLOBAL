@@ -4,7 +4,7 @@ window.CATALOG_DATA = {
       "id": "bubble-gum",
       "label": "Bubble Gum Production",
       "slug": "bubble-gum",
-      "color": "#9D174D",
+      "color": "#DB2777",
       "accentColor": "#EC4899",
       "description": "",
       "lines": [
@@ -32,7 +32,7 @@ window.CATALOG_DATA = {
                 "motorPower": "15 hp",
                 "innerBox": "S.S 303",
                 "outerBox": "M.S",
-                "dimension": "4 (w) x 6 (l)",
+                "dimensions": "1219 x 1829 mm",
                 "powerLoad": "15 hp"
               },
               "diesAndParts": [
@@ -70,7 +70,7 @@ window.CATALOG_DATA = {
                 "innerSheets": "S.S 304",
                 "construction": "Double jacketed with glass wool",
                 "heatersAndBlower": "Total load 10 hp",
-                "dimension": "3' x 3' x 6'",
+                "dimensions": "914 x 914 x 1829 mm",
                 "powerLoad": "10 hp"
               },
               "diesAndParts": [
@@ -114,7 +114,7 @@ window.CATALOG_DATA = {
                 "sideSheets": "S.S 201",
                 "tilt": "Tilting system, gear motor 2 hp",
                 "controls": "Electric panel with all new features",
-                "dimension": "6' x 8' x 8'",
+                "dimensions": "1829 x 2438 x 2438 mm",
                 "powerLoad": "28 hp"
               },
               "diesAndParts": [
@@ -149,8 +149,7 @@ window.CATALOG_DATA = {
                 "modelNumber": "SEW-804",
                 "basePlateThickness": "10 mm in S.S 304",
                 "legs": "4 Nos in S.S 201",
-                "dimension": "3 ft x 6 ft",
-                "powerLoad": "None"
+                "dimensions": "914 x 1829 mm"
               },
               "diesAndParts": [
                 {
@@ -176,35 +175,34 @@ window.CATALOG_DATA = {
               "machineNumber": "BG-L001-M05",
               "model": "SEW-815",
               "orderInLine": 5,
-              "name": "Trolly",
+              "name": "Trolley",
               "function": "Safely transfers the hot, viscous gum-base mass from the mixer to the extruder, ensuring continuous flow and preventing contamination or handling delays.",
-              "description": "S.S 304 pan on an M.S trolly stand.",
+              "description": "S.S 304 pan on an M.S trolley stand.",
               "image": "assets/STARMER/_ready/BUBBLE GUM/Ball Gum Complete line_/Trolly.jpg",
               "specs": {
                 "modelNumber": "SEW-815",
                 "use": "Moving gum-base mass from mixer to extruder",
-                "length": "3 ft",
-                "width": "3 ft",
+                "length": "914 mm",
+                "width": "914 mm",
                 "pan": "S.S 304",
-                "trollyStand": "M.S",
-                "powerLoad": "None"
+                "trolleyStand": "M.S"
               },
               "diesAndParts": [
                 {
                   "id": "BG-L001-M05-D01",
                   "partNumber": "BG-L001-M05-D01",
-                  "name": "Trolly Die",
+                  "name": "Trolley Die",
                   "type": "die",
                   "image": "assets/images/coming-soon.svg",
-                  "description": "Forming die for the Trolly. Details coming soon."
+                  "description": "Forming die for the Trolley. Details coming soon."
                 },
                 {
                   "id": "BG-L001-M05-P01",
                   "partNumber": "BG-L001-M05-P01",
-                  "name": "Trolly Spare Part",
+                  "name": "Trolley Spare Part",
                   "type": "part",
                   "image": "assets/images/coming-soon.svg",
-                  "description": "Spare part for the Trolly. Details coming soon."
+                  "description": "Spare part for the Trolley. Details coming soon."
                 }
               ]
             },
@@ -215,7 +213,7 @@ window.CATALOG_DATA = {
               "orderInLine": 6,
               "name": "Bubble Gum Extruder",
               "function": "Shapes the mixed gum mass into a continuous rope of uniform thickness and density for downstream forming.",
-              "description": "Screw extruder on M.S structure with 7.5 hp drive, 10 hp inverter, S.S 304 leef and head helping-roller system, with 6000 W heaters.",
+              "description": "Screw extruder on M.S structure with 7.5 hp drive, 10 hp inverter, S.S 304 leaf and head helping-roller system, with 6000 W heaters.",
               "image": "assets/STARMER/_ready/BUBBLE GUM/Ball Gum Complete line_/Bubble Gum Extruder.jpg",
               "specs": {
                 "modelNumber": "SEW-113",
@@ -223,10 +221,11 @@ window.CATALOG_DATA = {
                 "gearMotorDrive": "7.5 hp",
                 "inverter": "10 hp",
                 "structure": "M.S",
-                "leef": "S.S 304",
+                "leaf": "S.S 304",
                 "heaters": "Electric heaters, 6000 watt",
-                "controls": "Electric panel with all new features, helping roller system in leef",
-                "powerLoad": "18 hp"
+                "controls": "Electric panel with all new features, helping roller system in leaf",
+                "powerLoad": "18 hp",
+                "roll": "S.S 304"
               },
               "diesAndParts": [
                 {
@@ -265,7 +264,12 @@ window.CATALOG_DATA = {
                 "inverter": "0.75 hp",
                 "structure": "M.S heavy pipe 14g",
                 "cover": "Totally covered with stainless steel",
-                "controls": "Control panel with all new features"
+                "controls": "Control panel with all new features",
+                "conveyor": "3 ft x 20 ft",
+                "powerLoad": "2 hp",
+                "duct": "Double jacketed duct on top of conveyor",
+                "dimensions": "914 x 6096 mm",
+                "insulation": "Insulated with thermopore"
               },
               "diesAndParts": [
                 {
@@ -305,7 +309,7 @@ window.CATALOG_DATA = {
                 "wormGear": "80 number",
                 "inverter": "3 hp (3 pcs)",
                 "sizerStep": "One step",
-                "productionCapacity": "30 to 35 stock/min",
+                "productionCapacity": "30-35 stock/min",
                 "rollerGearMaterial": "8620 with hardness",
                 "controls": "Control panel with all new features, totally safety covers"
               },
@@ -376,7 +380,7 @@ window.CATALOG_DATA = {
                 "driveInverter": "1 kW",
                 "innerVibrator": "Stainless steel 304",
                 "airSystem": "With fans",
-                "weight": "300 kg approx",
+                "weight": "300 kg (approx.)",
                 "controls": "Control panel with all new features, fully enclosed safety covers"
               },
               "diesAndParts": [
@@ -442,17 +446,17 @@ window.CATALOG_DATA = {
               "machineNumber": "BG-L001-M12",
               "model": "SEW-123",
               "orderInLine": 12,
-              "name": "Pillow Wrapping Machine",
+              "name": "Pillow Pack Wrapping Machine",
               "function": "High-performance pillow-pack wrapper for filled or un-filled candies and bubblegums at up to 800 packs per minute, with high-quality fin seal.",
               "description": "Photo-electric-eye pillow wrapper with inverter, 2 H.P 3-phase and ½ H.P motors, 3.2 kW heaters.",
               "image": "assets/STARMER/_ready/BUBBLE GUM/Ball Gum Complete line_/Pillow pack Wrapping Machine.jpg",
               "specs": {
                 "modelNumber": "SEW-123",
-                "output": "Up to 800 packs per minute",
-                "electricMotors": "(1) 2 H.P / 3-phase, (2) ½ H.P",
+                "output": "Up to 800 packs/min",
+                "electricMotor": "(1) 2 hp / 3-phase, (2) 1/2 hp",
                 "electricHeaters": "3.2 kW",
                 "standardEquipment": "Photo-electric eye & inverter",
-                "dimensions": "2,335 x 900 x 1,715 mm (L x W x H)",
+                "dimensions": "2335 x 900 x 1715 mm (L x W x H)",
                 "weight": "750 kg",
                 "reel": "Max outer dia 280 mm / core dia 70 mm"
               },
@@ -501,7 +505,7 @@ window.CATALOG_DATA = {
                 "motorPower": "15 hp",
                 "innerBox": "S.S 303",
                 "outerBox": "M.S",
-                "dimension": "4 (w) x 6 (l)",
+                "dimensions": "1219 x 1829 mm",
                 "powerLoad": "15 hp"
               },
               "diesAndParts": [
@@ -539,7 +543,7 @@ window.CATALOG_DATA = {
                 "innerSheets": "S.S 304",
                 "construction": "Double jacketed with glass wool",
                 "heatersAndBlower": "Total load 10 hp",
-                "dimension": "3' x 3' x 6'",
+                "dimensions": "914 x 914 x 1829 mm",
                 "powerLoad": "10 hp"
               },
               "diesAndParts": [
@@ -583,7 +587,7 @@ window.CATALOG_DATA = {
                 "sideSheets": "S.S 201",
                 "tilt": "Tilting system, gear motor 2 hp",
                 "controls": "Electric panel with all new features",
-                "dimension": "6' x 8' x 8'",
+                "dimensions": "1829 x 2438 x 2438 mm",
                 "powerLoad": "28 hp"
               },
               "diesAndParts": [
@@ -618,8 +622,7 @@ window.CATALOG_DATA = {
                 "modelNumber": "SEW-804",
                 "basePlateThickness": "10 mm in S.S 304",
                 "legs": "4 Nos in S.S 201",
-                "dimension": "3 ft x 6 ft",
-                "powerLoad": "None"
+                "dimensions": "914 x 1829 mm"
               },
               "diesAndParts": [
                 {
@@ -645,35 +648,34 @@ window.CATALOG_DATA = {
               "machineNumber": "BG-L002-M05",
               "model": "SEW-815",
               "orderInLine": 5,
-              "name": "Trolly",
+              "name": "Trolley",
               "function": "Safely transfers the hot, viscous gum-base mass from the mixer to the extruder, ensuring continuous flow and preventing contamination or handling delays.",
-              "description": "S.S 304 pan on an M.S trolly stand.",
+              "description": "S.S 304 pan on an M.S trolley stand.",
               "image": "assets/STARMER/_ready/BUBBLE GUM/Bazuka Bubble Gum Line_/Trolly.jpg",
               "specs": {
                 "modelNumber": "SEW-815",
                 "use": "Moving gum-base mass from mixer to extruder",
-                "length": "3 ft",
-                "width": "3 ft",
+                "length": "914 mm",
+                "width": "914 mm",
                 "pan": "S.S 304",
-                "trollyStand": "M.S",
-                "powerLoad": "None"
+                "trolleyStand": "M.S"
               },
               "diesAndParts": [
                 {
                   "id": "BG-L002-M05-D01",
                   "partNumber": "BG-L002-M05-D01",
-                  "name": "Trolly Die",
+                  "name": "Trolley Die",
                   "type": "die",
                   "image": "assets/images/coming-soon.svg",
-                  "description": "Forming die for the Trolly. Details coming soon."
+                  "description": "Forming die for the Trolley. Details coming soon."
                 },
                 {
                   "id": "BG-L002-M05-P01",
                   "partNumber": "BG-L002-M05-P01",
-                  "name": "Trolly Spare Part",
+                  "name": "Trolley Spare Part",
                   "type": "part",
                   "image": "assets/images/coming-soon.svg",
-                  "description": "Spare part for the Trolly. Details coming soon."
+                  "description": "Spare part for the Trolley. Details coming soon."
                 }
               ]
             },
@@ -684,7 +686,7 @@ window.CATALOG_DATA = {
               "orderInLine": 6,
               "name": "Bubble Gum Extruder",
               "function": "Shapes the mixed gum mass into a continuous rope of uniform thickness and density for downstream forming.",
-              "description": "Screw extruder on M.S structure with 7.5 hp drive, 10 hp inverter, S.S 304 leef and head helping-roller system, with 6000 W heaters.",
+              "description": "Screw extruder on M.S structure with 7.5 hp drive, 10 hp inverter, S.S 304 leaf and head helping-roller system, with 6000 W heaters.",
               "image": "assets/STARMER/_ready/BUBBLE GUM/Bazuka Bubble Gum Line_/Bubble Gum Extruder.jpg",
               "specs": {
                 "modelNumber": "SEW-113",
@@ -692,10 +694,11 @@ window.CATALOG_DATA = {
                 "gearMotorDrive": "7.5 hp",
                 "inverter": "10 hp",
                 "structure": "M.S",
-                "leef": "S.S 304",
+                "leaf": "S.S 304",
                 "heaters": "Electric heaters, 6000 watt",
-                "controls": "Electric panel with all new features, helping roller system in leef",
-                "powerLoad": "18 hp"
+                "controls": "Electric panel with all new features, helping roller system in leaf",
+                "powerLoad": "18 hp",
+                "roll": "S.S 304"
               },
               "diesAndParts": [
                 {
@@ -737,7 +740,7 @@ window.CATALOG_DATA = {
                 "duct": "Double jacketed duct on top of conveyor",
                 "insulation": "Insulated with thermopore",
                 "controls": "Control panel with all new features",
-                "dimension": "3 ft x 20 ft",
+                "dimensions": "914 x 6096 mm",
                 "powerLoad": "2 hp"
               },
               "diesAndParts": [
@@ -770,7 +773,7 @@ window.CATALOG_DATA = {
               "image": "assets/STARMER/_ready/BUBBLE GUM/Bazuka Bubble Gum Line_/Cut & Fold Wrapping Machine.jpg",
               "specs": {
                 "modelNumber": "SEW-816",
-                "speed": "350 pieces/min (depending on size of product)",
+                "speed": "350 pcs/min (depending on size of product)",
                 "reel": "Double reel, inner & outer",
                 "bearings": "NTN, Japan",
                 "inverter": "2 hp, INVENT brand",
@@ -778,7 +781,7 @@ window.CATALOG_DATA = {
                 "motorBrand": "New HECO",
                 "photocell": "Photocell eye",
                 "weight": "1100 kg",
-                "dimensions": "1,500 x 1,500 x 2,100 mm (L x W x H)"
+                "dimensions": "1500 x 1500 x 2100 mm (L x W x H)"
               },
               "diesAndParts": [
                 {
@@ -825,7 +828,7 @@ window.CATALOG_DATA = {
                 "motorPower": "15 hp",
                 "innerBox": "S.S 304",
                 "outerBox": "M.S",
-                "dimension": "4 (w) x 6 (l)",
+                "dimensions": "1219 x 1829 mm",
                 "powerLoad": "15 hp"
               },
               "diesAndParts": [
@@ -863,7 +866,7 @@ window.CATALOG_DATA = {
                 "innerSheets": "S.S 304",
                 "construction": "Double jacketed with glass wool",
                 "heatersAndBlower": "Total load 10 hp",
-                "dimension": "3' x 3' x 6'",
+                "dimensions": "914 x 914 x 1829 mm",
                 "powerLoad": "10 hp"
               },
               "diesAndParts": [
@@ -905,10 +908,11 @@ window.CATALOG_DATA = {
                 "structure": "Heavy duty M.S",
                 "heaters": "Electric heaters 6000 watt x2 = 12000 watt",
                 "controls": "Electric panel with all new features",
-                "weight": "2 ton approx",
+                "weight": "2000 kg (approx.)",
                 "tilt": "Tilting system",
-                "dimension": "6' x 8' x 8'",
-                "powerLoad": "28 hp"
+                "dimensions": "1829 x 2438 x 2438 mm",
+                "powerLoad": "28 hp",
+                "zArm": "S.S 304"
               },
               "diesAndParts": [
                 {
@@ -942,8 +946,7 @@ window.CATALOG_DATA = {
                 "modelNumber": "SEW-804",
                 "basePlateThickness": "10 mm in S.S 304",
                 "legs": "4 Nos in S.S 201",
-                "dimension": "3 ft x 6 ft",
-                "powerLoad": "None"
+                "dimensions": "914 x 1829 mm"
               },
               "diesAndParts": [
                 {
@@ -969,35 +972,34 @@ window.CATALOG_DATA = {
               "machineNumber": "BG-L003-M05",
               "model": "SEW-815",
               "orderInLine": 5,
-              "name": "Trolly",
+              "name": "Trolley",
               "function": "Safely transfers the hot, viscous gum-base mass from the mixer to the extruder, ensuring continuous flow and preventing contamination or handling delays.",
-              "description": "S.S 304 pan on an M.S trolly stand.",
+              "description": "S.S 304 pan on an M.S trolley stand.",
               "image": "assets/STARMER/_ready/BUBBLE GUM/Centre Filled Bubble 300kg_hr/Trolly.jpg",
               "specs": {
                 "modelNumber": "SEW-815",
                 "use": "Moving gum-base mass from mixer to extruder",
-                "length": "3 ft",
-                "width": "3 ft",
+                "length": "914 mm",
+                "width": "914 mm",
                 "pan": "S.S 304",
-                "trollyStand": "M.S",
-                "powerLoad": "None"
+                "trolleyStand": "M.S"
               },
               "diesAndParts": [
                 {
                   "id": "BG-L003-M05-D01",
                   "partNumber": "BG-L003-M05-D01",
-                  "name": "Trolly Die",
+                  "name": "Trolley Die",
                   "type": "die",
                   "image": "assets/images/coming-soon.svg",
-                  "description": "Forming die for the Trolly. Details coming soon."
+                  "description": "Forming die for the Trolley. Details coming soon."
                 },
                 {
                   "id": "BG-L003-M05-P01",
                   "partNumber": "BG-L003-M05-P01",
-                  "name": "Trolly Spare Part",
+                  "name": "Trolley Spare Part",
                   "type": "part",
                   "image": "assets/images/coming-soon.svg",
-                  "description": "Spare part for the Trolly. Details coming soon."
+                  "description": "Spare part for the Trolley. Details coming soon."
                 }
               ]
             },
@@ -1019,7 +1021,8 @@ window.CATALOG_DATA = {
                 "roll": "S.S 304",
                 "heaters": "Electric heaters, 6000 watt",
                 "controls": "Electric panel with all new features, helping roller system in head",
-                "powerLoad": "18 hp"
+                "powerLoad": "18 hp",
+                "leaf": "S.S 304"
               },
               "diesAndParts": [
                 {
@@ -1045,7 +1048,7 @@ window.CATALOG_DATA = {
               "machineNumber": "BG-L003-M07",
               "model": "SEW-110",
               "orderInLine": 7,
-              "name": "Liquid Filling Pump",
+              "name": "Center Filling Liquid Pump",
               "function": "Precision dosing system that injects liquid filling (fruit syrup, chocolate, cream or jam) into the core of the candy rope during forming.",
               "description": "Double-jacketed S.S 304 leaf with Teflon-covered food-grade rod, flexible pipe, 2 hp drive, 1000 W heater and 2 HP inverter with overflow recycle.",
               "image": "assets/STARMER/_ready/BUBBLE GUM/Centre Filled Bubble 300kg_hr/Liquid Filling Pump.jpg",
@@ -1058,7 +1061,7 @@ window.CATALOG_DATA = {
                 "gearMotorMainDrive": "2 hp",
                 "stand": "M.S",
                 "heater": "1000 watt, 1 No",
-                "inverter": "2 HP",
+                "inverter": "2 hp",
                 "extra": "Overflow system to recycle liquid/chocolate",
                 "powerLoad": "3.2 hp"
               },
@@ -1086,7 +1089,7 @@ window.CATALOG_DATA = {
               "machineNumber": "BG-L003-M08",
               "model": "SEW-212",
               "orderInLine": 8,
-              "name": "Rope Sizer (5 Stages)",
+              "name": "Rope Sizer",
               "function": "Accurately reduces and calibrates the candy rope diameter through five sizing stages for uniform thickness before forming.",
               "description": "Horizontal 5-stage rope sizer (4 horizontal + 1 vertical) with S.S 304 roller pairs, brass rope guide, digital inverter and SEW (Germany) gear motors.",
               "image": "assets/STARMER/_ready/BUBBLE GUM/Centre Filled Bubble 300kg_hr/Rope Sizer.jpg",
@@ -1099,12 +1102,14 @@ window.CATALOG_DATA = {
                 "sizerPlates": "S.S 304",
                 "ropeGuide": "Brass",
                 "inverter": "INVENT digital, 3 hp",
-                "gearMotors": "SEW brand, Germany, 3 hp",
+                "gearMotor": "SEW brand, Germany, 3 hp",
                 "heatControllers": "Digital, 2 Nos",
                 "heaters": "500 watt (4 Nos) = 2 kw",
                 "bearings": "Used instead of bushes",
-                "dimension": "4' x 2'5\" x 6'",
-                "powerLoad": "5.68 hp"
+                "dimensions": "1219 x 737 x 1829 mm",
+                "powerLoad": "5.68 hp",
+                "model": "Horizontal, 5 stages (4 horizontal + 1 vertical)",
+                "pair4": "S.S 304, 22 mm"
               },
               "diesAndParts": [
                 {
@@ -1136,8 +1141,8 @@ window.CATALOG_DATA = {
               "image": "assets/STARMER/_ready/BUBBLE GUM/Centre Filled Bubble 300kg_hr/Rest Conveyor For Bubble Line.jpg",
               "specs": {
                 "modelNumber": "SEW-808",
-                "width": "3 ft",
-                "length": "20 ft",
+                "width": "914 mm",
+                "length": "6096 mm",
                 "belt": "Single belt, food-grade material",
                 "cover": "S.S 304 top cover",
                 "insulation": "Insulated with thermopore",
@@ -1145,7 +1150,8 @@ window.CATALOG_DATA = {
                 "fans": "2 Nos (for cooling)",
                 "inverter": "Variable, for speed control",
                 "frame": "M.S",
-                "powerLoad": "2 hp"
+                "powerLoad": "2 hp",
+                "duct": "Double jacketed duct on top of conveyor"
               },
               "diesAndParts": [
                 {
@@ -1183,10 +1189,10 @@ window.CATALOG_DATA = {
                 "cams": "Bearing steel grade",
                 "reverseCams": "S.G iron",
                 "gears": "High carbon steel, forged",
-                "speed": "1600 to 2000 pieces/min (depending on size)",
+                "speed": "1600-2000 pcs/min (depending on size)",
                 "filling": "Up to 12% of candy",
                 "controls": "Electric panel with all new features",
-                "dimension": "6.5' x 4.5' x 3.5'",
+                "dimensions": "1981 x 1372 x 1067 mm",
                 "powerLoad": "5 hp"
               },
               "diesAndParts": [
@@ -1213,7 +1219,7 @@ window.CATALOG_DATA = {
               "machineNumber": "BG-L003-M11",
               "model": "SEW-117",
               "orderInLine": 11,
-              "name": "Rotary Die with Cutting Rings",
+              "name": "Rotary Forming Die with Cutting Rings",
               "function": "Precision rotary forming die that shapes hard-boiled, toffee, eclair and filled candies; built for durable, high-accuracy, seamless forming.",
               "description": "Forged M.S/EN-grade cutting ring (tooth pitch 1.5-2.5 mm) and 45 HRC punch, cast iron die parts and brass-cast outer ring.",
               "image": "assets/STARMER/_ready/BUBBLE GUM/Centre Filled Bubble 300kg_hr/Rotary Die.jpg",
@@ -1221,12 +1227,11 @@ window.CATALOG_DATA = {
                 "modelNumber": "SEW-117",
                 "cuttingRing": "Forged M.S (tooth pitch 1.5-2.5 mm)",
                 "punch": "Grade 1045, hardness up to 45 HRC",
-                "block": "High quality M.S",
+                "block": "High quality M.S grade carbon steel",
                 "guidePins": "Carbon steel",
                 "dieParts": "Cast iron grade",
                 "outerRing": "Brass casting (for rope cutting)",
-                "dimension": "18\" x 18\" x 5\"",
-                "powerLoad": "None"
+                "dimensions": "457 x 457 x 127 mm"
               },
               "diesAndParts": [
                 {
@@ -1262,8 +1267,7 @@ window.CATALOG_DATA = {
                 "movement": "Wheels for movement",
                 "dieCaplene": "Casting material",
                 "adjustment": "Screw for die up/down",
-                "dimension": "5.5 ft x 5 ft",
-                "powerLoad": "None"
+                "dimensions": "1676 x 1524 mm"
               },
               "diesAndParts": [
                 {
@@ -1295,19 +1299,19 @@ window.CATALOG_DATA = {
               "image": "assets/STARMER/_ready/BUBBLE GUM/Centre Filled Bubble 300kg_hr/Close body Cooling Tunnel _ 3 Stages Cooling Conveyor .jpg",
               "specs": {
                 "modelNumber": "SEW-121",
-                "length": "10 ft",
-                "width": "3 ft",
+                "length": "3048 mm",
+                "width": "914 mm",
                 "stages": "3 stages",
                 "cooling": "With 5 ton AC",
                 "meshWire": "S.S 304 grade (3 steps)",
                 "sideSheets": "Outer and inner in S.S 201",
-                "covers": "S.S 201",
+                "cover": "S.S 201",
                 "insulation": "Double jacketed with thermopore",
-                "rods": "S.S 304, 5 mm thickness",
+                "rod": "S.S 304, 5 mm thickness",
                 "chain": "M.S, 40 No",
                 "gearMotor": "3 hp (1 hp each, 3 nos), SEW brand",
                 "inverter": "New brand, variable speed",
-                "dimension": "3 ft x 16 ft",
+                "dimensions": "914 x 4877 mm",
                 "powerLoad": "3 hp"
               },
               "diesAndParts": [
@@ -1334,18 +1338,18 @@ window.CATALOG_DATA = {
               "machineNumber": "BG-L003-M14",
               "model": "SEW-122",
               "orderInLine": 14,
-              "name": "AC Unit (5 Ton)",
+              "name": "AC Unit",
               "function": "Floor-standing air-conditioning unit (5 ton / 6.5 HP) for cooling the conveyor section and accessories.",
               "description": "Indoor unit with copper-tube evaporator and 1 HP blower; Bitzer 6.5 HP outdoor condensing unit with Copeland scroll compressor and full AC accessories.",
               "image": "assets/STARMER/_ready/BUBBLE GUM/Centre Filled Bubble 300kg_hr/Ac Unit.jpg",
               "specs": {
                 "modelNumber": "SEW-122",
-                "capacity": "5 Ton (6.5 HP)",
+                "capacity": "5 Ton (6.5 hp)",
                 "type": "Floor standing",
-                "indoorBlower": "1 HP motor, 3 phase 440V/50Hz",
-                "expansionValve": "Emerson TCLE 6.5 HP",
+                "indoorBlower": "1 hp motor, 3 phase 440V/50Hz",
+                "expansionValve": "Emerson TCLE 6.5 hp",
                 "outdoorUnit": "Bitzer, high-density condensing coil",
-                "compressor": "Copeland scroll, 6.5 HP, 3 phase 440V/50Hz",
+                "compressor": "Copeland scroll, 6.5 hp, 3 phase 440V/50Hz",
                 "safety": "Danfoss dual high/low-pressure switch",
                 "refrigerant": "R-22 (Honeywell, USA)",
                 "inverter": "7.5 KVA (INVT)",
@@ -1376,17 +1380,17 @@ window.CATALOG_DATA = {
               "machineNumber": "BG-L003-M15",
               "model": "SEW-123",
               "orderInLine": 15,
-              "name": "Wrapping Machine",
+              "name": "Pillow Pack Wrapping Machine",
               "function": "High-performance pillow-pack wrapper for filled or un-filled candies and bubblegums at up to 800 pieces per minute, with high-quality fin seal.",
               "description": "Photo-electric-eye pillow wrapper with inverter, 2 H.P 3-phase and ½ H.P motors, 3.2 kW heaters.",
               "image": "assets/STARMER/_ready/BUBBLE GUM/Centre Filled Bubble 300kg_hr/Pillow pack Wrapping Machine.jpg",
               "specs": {
                 "modelNumber": "SEW-123",
                 "output": "Up to 800 pcs/min (candy); up to 600 pcs/min (bubble)",
-                "electricMotors": "(1) 2 H.P / 3-phase, (2) ½ H.P",
+                "electricMotor": "(1) 2 hp / 3-phase, (2) 1/2 hp",
                 "electricHeaters": "3.2 kW",
                 "standardEquipment": "Photo-electric eye & inverter",
-                "dimensions": "2,335 x 900 x 1,715 mm (L x W x H)",
+                "dimensions": "2335 x 900 x 1715 mm (L x W x H)",
                 "weight": "750 kg",
                 "reel": "Max outer dia 280 mm / core dia 70 mm"
               },
@@ -1435,7 +1439,7 @@ window.CATALOG_DATA = {
                 "motorPower": "15 hp",
                 "innerBox": "S.S 304",
                 "outerBox": "M.S",
-                "dimension": "4 (w) x 6 (l)",
+                "dimensions": "1219 x 1829 mm",
                 "powerLoad": "15 hp"
               },
               "diesAndParts": [
@@ -1473,7 +1477,7 @@ window.CATALOG_DATA = {
                 "innerSheets": "S.S 304",
                 "construction": "Double jacketed with glass wool",
                 "heatersAndBlower": "Total load 10 hp",
-                "dimension": "3' x 3' x 6'",
+                "dimensions": "914 x 914 x 1829 mm",
                 "powerLoad": "10 hp"
               },
               "diesAndParts": [
@@ -1516,7 +1520,7 @@ window.CATALOG_DATA = {
                 "hydraulicCapacity": "3 hp",
                 "heaters": "6000 watt",
                 "controls": "Control panel with all new features",
-                "dimension": "13' x ... (H x W x L)",
+                "dimensions": "3962 mm (H)",
                 "powerLoad": "61 hp"
               },
               "diesAndParts": [
@@ -1551,8 +1555,7 @@ window.CATALOG_DATA = {
                 "modelNumber": "SEW-804",
                 "basePlateThickness": "10 mm in S.S 304",
                 "legs": "4 Nos in S.S 201",
-                "dimension": "3 ft x 6 ft",
-                "powerLoad": "None"
+                "dimensions": "914 x 1829 mm"
               },
               "diesAndParts": [
                 {
@@ -1578,35 +1581,34 @@ window.CATALOG_DATA = {
               "machineNumber": "BG-L004-M05",
               "model": "SEW-815",
               "orderInLine": 5,
-              "name": "Trolly",
+              "name": "Trolley",
               "function": "Safely transfers the hot, viscous gum-base mass from the mixer to the extruder, ensuring continuous flow and preventing contamination or handling delays.",
-              "description": "S.S 304 pan on an M.S trolly stand.",
+              "description": "S.S 304 pan on an M.S trolley stand.",
               "image": "assets/STARMER/_ready/BUBBLE GUM/Centre Filled Bubble 600kg_hr/Trolly.jpg",
               "specs": {
                 "modelNumber": "SEW-815",
                 "use": "Moving gum-base mass from mixer to extruder",
-                "length": "3 ft",
-                "width": "3 ft",
+                "length": "914 mm",
+                "width": "914 mm",
                 "pan": "S.S 304",
-                "trollyStand": "M.S",
-                "powerLoad": "None"
+                "trolleyStand": "M.S"
               },
               "diesAndParts": [
                 {
                   "id": "BG-L004-M05-D01",
                   "partNumber": "BG-L004-M05-D01",
-                  "name": "Trolly Die",
+                  "name": "Trolley Die",
                   "type": "die",
                   "image": "assets/images/coming-soon.svg",
-                  "description": "Forming die for the Trolly. Details coming soon."
+                  "description": "Forming die for the Trolley. Details coming soon."
                 },
                 {
                   "id": "BG-L004-M05-P01",
                   "partNumber": "BG-L004-M05-P01",
-                  "name": "Trolly Spare Part",
+                  "name": "Trolley Spare Part",
                   "type": "part",
                   "image": "assets/images/coming-soon.svg",
-                  "description": "Spare part for the Trolly. Details coming soon."
+                  "description": "Spare part for the Trolley. Details coming soon."
                 }
               ]
             },
@@ -1623,7 +1625,7 @@ window.CATALOG_DATA = {
                 "modelNumber": "SEW-805",
                 "suitableFor": "All types of bubble gum",
                 "screwDiameter": "125 mm x 660 mm",
-                "capacity": "600 kg/hour",
+                "capacity": "600 kg/hr",
                 "headType": "Double jacketed, twin screw",
                 "motorPower": "15 hp",
                 "inverter": "7.5 kW (China)",
@@ -1656,7 +1658,7 @@ window.CATALOG_DATA = {
               "machineNumber": "BG-L004-M07",
               "model": "SEW-110",
               "orderInLine": 7,
-              "name": "Liquid Filling Pump",
+              "name": "Center Filling Liquid Pump",
               "function": "Precision dosing system that injects liquid filling (fruit syrup, chocolate, cream or jam) into the core of the candy rope during forming.",
               "description": "Double-jacketed S.S 304 leaf with Teflon-covered food-grade rod, flexible pipe, 2 hp drive, 1000 W heater and 2 HP inverter with overflow recycle.",
               "image": "assets/STARMER/_ready/BUBBLE GUM/Centre Filled Bubble 600kg_hr/Liquid Filling Pump.jpg",
@@ -1669,7 +1671,7 @@ window.CATALOG_DATA = {
                 "gearMotorMainDrive": "2 hp",
                 "stand": "M.S",
                 "heater": "1000 watt, 1 No",
-                "inverter": "2 HP",
+                "inverter": "2 hp",
                 "extra": "Overflow system to recycle liquid/chocolate",
                 "powerLoad": "3.2 hp"
               },
@@ -1697,7 +1699,7 @@ window.CATALOG_DATA = {
               "machineNumber": "BG-L004-M08",
               "model": "SEW-212",
               "orderInLine": 8,
-              "name": "Rope Sizer (5 Stages)",
+              "name": "Rope Sizer",
               "function": "Accurately reduces and calibrates the candy rope diameter through five sizing stages for uniform thickness before forming.",
               "description": "Horizontal 5-stage rope sizer (4 horizontal + 1 vertical) with S.S 304 roller pairs, brass rope guide, digital inverter and SEW (Germany) gear motors.",
               "image": "assets/STARMER/_ready/BUBBLE GUM/Centre Filled Bubble 600kg_hr/Rope Sizer.jpg",
@@ -1710,12 +1712,14 @@ window.CATALOG_DATA = {
                 "sizerPlates": "S.S 304",
                 "ropeGuide": "Brass",
                 "inverter": "INVENT digital, 3 hp",
-                "gearMotors": "SEW brand, Germany, 3 hp",
+                "gearMotor": "SEW brand, Germany, 3 hp",
                 "heatControllers": "Digital, 2 Nos",
                 "heaters": "500 watt (4 Nos) = 2 kw",
                 "bearings": "Used instead of bushes",
-                "dimension": "4'6\" x 3' x 6'",
-                "powerLoad": "5.6 hp"
+                "dimensions": "1372 x 914 x 1829 mm",
+                "powerLoad": "5.6 hp",
+                "model": "Horizontal, 5 stages (4 horizontal + 1 vertical)",
+                "pair4": "S.S 304, 22 mm"
               },
               "diesAndParts": [
                 {
@@ -1747,15 +1751,17 @@ window.CATALOG_DATA = {
               "image": "assets/STARMER/_ready/BUBBLE GUM/Centre Filled Bubble 600kg_hr/Rest Conveyor For Bubble Line.jpg",
               "specs": {
                 "modelNumber": "SEW-808",
-                "width": "8 ft",
-                "length": "20 ft",
+                "width": "2438 mm",
+                "length": "6096 mm",
                 "belt": "Single belt, food-grade material",
                 "duct": "Double jacketed duct on top of conveyor",
                 "insulation": "Insulated with thermopore",
                 "gearMotorMainDrive": "2 hp",
                 "inverter": "Variable, for speed control",
                 "frame": "M.S",
-                "powerLoad": "2 hp"
+                "powerLoad": "2 hp",
+                "cover": "S.S 304 top cover",
+                "fans": "2 Nos (for cooling)"
               },
               "diesAndParts": [
                 {
@@ -1788,7 +1794,7 @@ window.CATALOG_DATA = {
               "specs": {
                 "modelNumber": "SEW-213",
                 "capacity": "Up to 600 kg/hr",
-                "speed": "4000 to 6000 pieces/min (varies with product)",
+                "speed": "4000-6000 pcs/min (varies with product)",
                 "netWeight": "1500 kg",
                 "belt": "Teflon coated, food grade",
                 "sideSheets": "S.S 201",
@@ -1799,7 +1805,7 @@ window.CATALOG_DATA = {
                 "mainDrive": "3 hp",
                 "sizeBoxDrive": "1 hp",
                 "spreaderDrive": "0.5 hp",
-                "dimension": "6' x 4.5' x 8.5'",
+                "dimensions": "1829 x 1372 x 2591 mm",
                 "powerLoad": "7.5 hp"
               },
               "diesAndParts": [
@@ -1826,7 +1832,7 @@ window.CATALOG_DATA = {
               "machineNumber": "BG-L004-M11",
               "model": "SEW-117",
               "orderInLine": 11,
-              "name": "Rotary Die with Cutting Rings",
+              "name": "Rotary Forming Die with Cutting Rings",
               "function": "Precision rotary forming die that shapes hard-boiled, toffee, eclair and filled candies; built for durable, high-accuracy, seamless forming.",
               "description": "Forged M.S cutting ring (tooth pitch 1.5-2.5 mm) and 45 HRC punch, cast iron die parts and brass-cast outer ring.",
               "image": "assets/STARMER/_ready/BUBBLE GUM/Centre Filled Bubble 600kg_hr/Rotary Die.jpg",
@@ -1834,12 +1840,11 @@ window.CATALOG_DATA = {
                 "modelNumber": "SEW-117",
                 "cuttingRing": "Forged M.S (tooth pitch 1.5-2.5 mm)",
                 "punch": "Grade 1045, hardness up to 45 HRC",
-                "block": "High quality M.S",
+                "block": "High quality M.S grade carbon steel",
                 "guidePins": "Carbon steel",
                 "dieParts": "Cast iron grade",
                 "outerRing": "Brass casting (for rope cutting)",
-                "dimension": "1.5 ft x 2 ft",
-                "powerLoad": "None"
+                "dimensions": "457 x 610 mm"
               },
               "diesAndParts": [
                 {
@@ -1875,7 +1880,7 @@ window.CATALOG_DATA = {
                 "movement": "Wheels for movement",
                 "dieCaplene": "Casting material",
                 "adjustment": "Screw for die up/down",
-                "powerLoad": "None"
+                "dimensions": "1676 x 1524 mm"
               },
               "diesAndParts": [
                 {
@@ -1913,7 +1918,7 @@ window.CATALOG_DATA = {
                 "meshSteps": "Plastic Teflon-coated (3 steps), PP food-grade material",
                 "acCapacity": "20 Ton",
                 "sideSheets": "Outer and inner in S.S 201",
-                "covers": "S.S 201",
+                "cover": "S.S 201",
                 "insulation": "Double jacketed with thermopore",
                 "gearMotor": "3 kW (1 kW each, 3 nos), SEW brand, water cooled",
                 "inverter": "New brand, variable speed",
@@ -1949,10 +1954,10 @@ window.CATALOG_DATA = {
               "image": "assets/STARMER/_ready/BUBBLE GUM/Centre Filled Bubble 600kg_hr/Ac Unit.jpg",
               "specs": {
                 "modelNumber": "SEW-813",
-                "capacity": "20 Ton (25 HP)",
+                "capacity": "20 Ton (25 hp)",
                 "type": "Roof type",
-                "indoorBlower": "3 HP motor, 3 phase 440V/50Hz",
-                "expansionValve": "Emerson TCLE 25 HP",
+                "indoorBlower": "3 hp motor, 3 phase 440V/50Hz",
+                "expansionValve": "Emerson TCLE 25 hp",
                 "outdoorUnit": "Bitzer, high-density condensing coil",
                 "compressor": "Semi-sealed Bitzer, 3 phase 440V/50Hz",
                 "safety": "Danfoss dual high/low-pressure switch",
@@ -1985,17 +1990,17 @@ window.CATALOG_DATA = {
               "machineNumber": "BG-L004-M15",
               "model": "SEW-123",
               "orderInLine": 15,
-              "name": "Wrapping Machine",
+              "name": "Pillow Pack Wrapping Machine",
               "function": "High-performance pillow-pack wrapper for filled or un-filled candies and bubblegums at up to 800 pieces per minute, with high-quality fin seal.",
               "description": "Photo-electric-eye pillow wrapper with inverter, 2 H.P 3-phase and ½ H.P motors, 3.2 kW heaters.",
               "image": "assets/STARMER/_ready/BUBBLE GUM/Centre Filled Bubble 600kg_hr/Pillow pack Wrapping Machine.jpg",
               "specs": {
                 "modelNumber": "SEW-123",
                 "output": "Up to 800 pcs/min (candy); up to 600 pcs/min (bubble)",
-                "electricMotors": "(1) 2 H.P / 3-phase, (2) ½ H.P",
+                "electricMotor": "(1) 2 hp / 3-phase, (2) 1/2 hp",
                 "electricHeaters": "3.2 kW",
                 "standardEquipment": "Photo-electric eye & inverter",
-                "dimensions": "2,335 x 900 x 1,715 mm (L x W x H)",
+                "dimensions": "2335 x 900 x 1715 mm (L x W x H)",
                 "weight": "750 kg",
                 "reel": "Max outer dia 280 mm / core dia 70 mm"
               },
@@ -2044,7 +2049,7 @@ window.CATALOG_DATA = {
                 "motorPower": "15 hp",
                 "innerBox": "S.S 303",
                 "outerBox": "M.S",
-                "dimension": "4 (w) x 6 (l)",
+                "dimensions": "1219 x 1829 mm",
                 "powerLoad": "15 hp"
               },
               "diesAndParts": [
@@ -2082,7 +2087,7 @@ window.CATALOG_DATA = {
                 "innerSheets": "S.S 304",
                 "construction": "Double jacketed with glass wool",
                 "heatersAndBlower": "Total load 10 hp",
-                "dimension": "3' x 3' x 6'",
+                "dimensions": "914 x 914 x 1829 mm",
                 "powerLoad": "10 hp"
               },
               "diesAndParts": [
@@ -2126,7 +2131,7 @@ window.CATALOG_DATA = {
                 "sideSheets": "S.S 201",
                 "tilt": "Tilting system, gear motor 2 hp",
                 "controls": "Electric panel with all new features",
-                "dimension": "6' x 8' x 8'",
+                "dimensions": "1829 x 2438 x 2438 mm",
                 "powerLoad": "28 hp"
               },
               "diesAndParts": [
@@ -2161,8 +2166,7 @@ window.CATALOG_DATA = {
                 "modelNumber": "SEW-804",
                 "basePlateThickness": "10 mm in S.S 304",
                 "legs": "4 Nos in S.S 201",
-                "dimension": "3 ft x 6 ft",
-                "powerLoad": "None"
+                "dimensions": "914 x 1829 mm"
               },
               "diesAndParts": [
                 {
@@ -2188,35 +2192,34 @@ window.CATALOG_DATA = {
               "machineNumber": "BG-L005-M05",
               "model": "SEW-815",
               "orderInLine": 5,
-              "name": "Trolly",
+              "name": "Trolley",
               "function": "Safely transfers the hot, viscous gum-base mass from the mixer to the extruder, ensuring continuous flow and preventing contamination or handling delays.",
-              "description": "S.S 304 pan on an M.S trolly stand.",
+              "description": "S.S 304 pan on an M.S trolley stand.",
               "image": "assets/STARMER/_ready/BUBBLE GUM/Pop Complete line_/Trolly.jpg",
               "specs": {
                 "modelNumber": "SEW-815",
                 "use": "Moving gum-base mass from mixer to extruder",
-                "length": "3 ft",
-                "width": "3 ft",
+                "length": "914 mm",
+                "width": "914 mm",
                 "pan": "S.S 304",
-                "trollyStand": "M.S",
-                "powerLoad": "None"
+                "trolleyStand": "M.S"
               },
               "diesAndParts": [
                 {
                   "id": "BG-L005-M05-D01",
                   "partNumber": "BG-L005-M05-D01",
-                  "name": "Trolly Die",
+                  "name": "Trolley Die",
                   "type": "die",
                   "image": "assets/images/coming-soon.svg",
-                  "description": "Forming die for the Trolly. Details coming soon."
+                  "description": "Forming die for the Trolley. Details coming soon."
                 },
                 {
                   "id": "BG-L005-M05-P01",
                   "partNumber": "BG-L005-M05-P01",
-                  "name": "Trolly Spare Part",
+                  "name": "Trolley Spare Part",
                   "type": "part",
                   "image": "assets/images/coming-soon.svg",
-                  "description": "Spare part for the Trolly. Details coming soon."
+                  "description": "Spare part for the Trolley. Details coming soon."
                 }
               ]
             },
@@ -2227,7 +2230,7 @@ window.CATALOG_DATA = {
               "orderInLine": 6,
               "name": "Bubble Gum Extruder",
               "function": "Shapes the mixed gum mass into a continuous rope of uniform thickness and density for downstream forming.",
-              "description": "Screw extruder on M.S structure with 7.5 hp drive, 10 hp inverter, S.S 304 keef and head helping-roller system, with 6000 W heaters.",
+              "description": "Screw extruder on M.S structure with 7.5 hp drive, 10 hp inverter, S.S 304 leaf and head helping-roller system, with 6000 W heaters.",
               "image": "assets/STARMER/_ready/BUBBLE GUM/Pop Complete line_/Bubble Gum Extruder.jpg",
               "specs": {
                 "modelNumber": "SEW-113",
@@ -2235,10 +2238,11 @@ window.CATALOG_DATA = {
                 "gearMotorDrive": "7.5 hp",
                 "inverter": "10 hp",
                 "structure": "M.S",
-                "keef": "S.S 304",
+                "leaf": "S.S 304",
                 "heaters": "Electric heaters, 6000 watt",
-                "controls": "Electric panel with all new features, helping roller system in keef",
-                "powerLoad": "18 hp"
+                "controls": "Electric panel with all new features, helping roller system in leaf",
+                "powerLoad": "18 hp",
+                "roll": "S.S 304"
               },
               "diesAndParts": [
                 {
@@ -2280,7 +2284,7 @@ window.CATALOG_DATA = {
                 "duct": "Double jacketed duct on top of conveyor",
                 "insulation": "Insulated with thermopore",
                 "controls": "Control panel with all new features",
-                "dimension": "3 ft x 20 ft",
+                "dimensions": "914 x 6096 mm",
                 "powerLoad": "2 hp"
               },
               "diesAndParts": [
@@ -2313,16 +2317,16 @@ window.CATALOG_DATA = {
               "image": "assets/STARMER/_ready/BUBBLE GUM/Pop Complete line_/Cut & Double Twist _ Cut & Twist.jpg",
               "specs": {
                 "modelNumber": "SEW-810",
-                "speed": "350 pieces/min (depending on size of product)",
+                "speed": "350 pcs/min (depending on size of product)",
                 "reel": "Double reel, inner & outer",
                 "bearings": "NTN, Japan",
-                "inverter": "2 HP, INVENT brand",
+                "inverter": "2 hp, INVENT brand",
                 "gearMotor": "2 hp, 3 phase",
                 "motorBrand": "New HECO",
                 "photocell": "Photocell eye",
                 "paper": "Continuous paper",
                 "weight": "1100 kg",
-                "dimensions": "1,500 x 1,500 x 2,100 mm (L x W x H)"
+                "dimensions": "1500 x 1500 x 2100 mm (L x W x H)"
               },
               "diesAndParts": [
                 {
@@ -2369,7 +2373,7 @@ window.CATALOG_DATA = {
                 "motorPower": "15 hp",
                 "innerBox": "S.S 303",
                 "outerBox": "M.S",
-                "dimension": "4 (w) x 6 (l)",
+                "dimensions": "1219 x 1829 mm",
                 "powerLoad": "15 hp"
               },
               "diesAndParts": [
@@ -2407,7 +2411,7 @@ window.CATALOG_DATA = {
                 "innerSheets": "S.S 304",
                 "construction": "Double jacketed with glass wool",
                 "heatersAndBlower": "Total load 10 hp",
-                "dimension": "3' x 3' x 6'",
+                "dimensions": "914 x 914 x 1829 mm",
                 "powerLoad": "10 hp"
               },
               "diesAndParts": [
@@ -2451,7 +2455,7 @@ window.CATALOG_DATA = {
                 "sideSheets": "S.S 201",
                 "tilt": "Tilting system, gear motor 2 hp",
                 "controls": "Electric panel with all new features",
-                "dimension": "6' x 8' x 8'",
+                "dimensions": "1829 x 2438 x 2438 mm",
                 "powerLoad": "28 hp"
               },
               "diesAndParts": [
@@ -2486,8 +2490,7 @@ window.CATALOG_DATA = {
                 "modelNumber": "SEW-804",
                 "basePlateThickness": "10 mm in S.S 304",
                 "legs": "4 Nos in S.S 201",
-                "dimension": "3 ft x 6 ft",
-                "powerLoad": "None"
+                "dimensions": "914 x 1829 mm"
               },
               "diesAndParts": [
                 {
@@ -2513,35 +2516,34 @@ window.CATALOG_DATA = {
               "machineNumber": "BG-L006-M05",
               "model": "SEW-815",
               "orderInLine": 5,
-              "name": "Trolly",
+              "name": "Trolley",
               "function": "Safely transfers the hot, viscous gum-base mass from the mixer to the extruder, ensuring continuous flow and preventing contamination or handling delays.",
-              "description": "S.S 304 pan on an M.S trolly stand.",
+              "description": "S.S 304 pan on an M.S trolley stand.",
               "image": "assets/STARMER/_ready/BUBBLE GUM/Trigum Line_/Trolly.jpg",
               "specs": {
                 "modelNumber": "SEW-815",
                 "use": "Moving gum-base mass from mixer to extruder",
-                "length": "3 ft",
-                "width": "3 ft",
+                "length": "914 mm",
+                "width": "914 mm",
                 "pan": "S.S 304",
-                "trollyStand": "M.S",
-                "powerLoad": "None"
+                "trolleyStand": "M.S"
               },
               "diesAndParts": [
                 {
                   "id": "BG-L006-M05-D01",
                   "partNumber": "BG-L006-M05-D01",
-                  "name": "Trolly Die",
+                  "name": "Trolley Die",
                   "type": "die",
                   "image": "assets/images/coming-soon.svg",
-                  "description": "Forming die for the Trolly. Details coming soon."
+                  "description": "Forming die for the Trolley. Details coming soon."
                 },
                 {
                   "id": "BG-L006-M05-P01",
                   "partNumber": "BG-L006-M05-P01",
-                  "name": "Trolly Spare Part",
+                  "name": "Trolley Spare Part",
                   "type": "part",
                   "image": "assets/images/coming-soon.svg",
-                  "description": "Spare part for the Trolly. Details coming soon."
+                  "description": "Spare part for the Trolley. Details coming soon."
                 }
               ]
             },
@@ -2552,7 +2554,7 @@ window.CATALOG_DATA = {
               "orderInLine": 6,
               "name": "Bubble Gum Extruder",
               "function": "Shapes the mixed gum mass into a continuous rope of uniform thickness and density for downstream forming.",
-              "description": "Screw extruder on M.S structure with 7.5 hp drive, 10 hp inverter, S.S 304 keef and head helping-roller system, with 6000 W heaters.",
+              "description": "Screw extruder on M.S structure with 7.5 hp drive, 10 hp inverter, S.S 304 leaf and head helping-roller system, with 6000 W heaters.",
               "image": "assets/STARMER/_ready/BUBBLE GUM/Trigum Line_/Bubble Gum Extruder.jpg",
               "specs": {
                 "modelNumber": "SEW-113",
@@ -2560,10 +2562,11 @@ window.CATALOG_DATA = {
                 "gearMotorDrive": "7.5 hp",
                 "inverter": "10 hp",
                 "structure": "M.S",
-                "keef": "S.S 304",
+                "leaf": "S.S 304",
                 "heaters": "Electric heaters, 6000 watt",
-                "controls": "Electric panel with all new features, helping roller system in keef",
-                "powerLoad": "18 hp"
+                "controls": "Electric panel with all new features, helping roller system in leaf",
+                "powerLoad": "18 hp",
+                "roll": "S.S 304"
               },
               "diesAndParts": [
                 {
@@ -2605,7 +2608,7 @@ window.CATALOG_DATA = {
                 "duct": "Double jacketed duct on top of conveyor",
                 "insulation": "Insulated with thermopore",
                 "controls": "Control panel with all new features",
-                "dimension": "3 ft x 20 ft",
+                "dimensions": "914 x 6096 mm",
                 "powerLoad": "2 hp"
               },
               "diesAndParts": [
@@ -2639,11 +2642,11 @@ window.CATALOG_DATA = {
               "specs": {
                 "modelNumber": "SEW-811",
                 "packSize": "80-200 x 5-10 x 22-35 mm (L x W x H)",
-                "output": "Up to 250 packs per minute",
-                "electricMotors": "(1) 2 H.P, (2) ½ H.P",
+                "output": "Up to 250 packs/min",
+                "electricMotor": "(1) 2 hp, (2) ½ hp",
                 "heaters": "2.6 kW",
                 "standardEquipment": "Photo-electric eye & inverter",
-                "dimensions": "4,590 x 1,820 x 1,000 mm (L x W x H)",
+                "dimensions": "4590 x 1820 x 1000 mm (L x W x H)",
                 "weight": "1050 kg",
                 "reel": "Max outer dia 300 mm / core dia 75 mm",
                 "options": "Date coder, stainless steel version",
@@ -2676,8 +2679,8 @@ window.CATALOG_DATA = {
       "id": "chew-toffee",
       "label": "Chew & Toffee Production",
       "slug": "chew-toffee",
-      "color": "#7C2D12",
-      "accentColor": "#EA580C",
+      "color": "#B45309",
+      "accentColor": "#D97706",
       "description": "",
       "lines": [
         {
@@ -2706,7 +2709,7 @@ window.CATALOG_DATA = {
                 "heatingSystem": "Coil on the base of tank for steam circulation",
                 "ladder": "Outside the tank",
                 "capacity": "20 ton glucose",
-                "dimension": "16 ft height x 7 ft diameter",
+                "dimensions": "4877 x 2134 mm (H x Dia)",
                 "powerLoad": "0"
               },
               "diesAndParts": [
@@ -2749,11 +2752,12 @@ window.CATALOG_DATA = {
                 "isolationSheetThickness": "24 gauge",
                 "burnerMotor": "2 hp",
                 "feedWaterMotor": "3 hp",
-                "feedWaterPump": "Multistage (Grundfos)",
+                "feedWaterPump": "Grundfos, multistage",
                 "capacity": "600 kg/hr",
                 "electricLoad": "5 hp",
-                "dimension": "8' x 3'5\" x 3'5\"",
-                "powerLoad": "5 hp"
+                "dimensions": "2438 x 1041 x 1041 mm",
+                "powerLoad": "5 hp",
+                "tubeDia": "2\" or 2 1/2\""
               },
               "diesAndParts": [
                 {
@@ -2786,11 +2790,11 @@ window.CATALOG_DATA = {
               "specs": {
                 "modelNumber": "SEW-103",
                 "materialOfHeader": "M.S",
-                "diameter": "1 ft",
+                "diameter": "305 mm",
                 "branchPipes": "1\", 2\", 3\", 4\" depending on system needs",
-                "design": "Cushioned cylinder",
+                "design": "Cushioned Cylinder",
                 "connection": "S.S",
-                "dimension": "Dia 1 ft x Length 3 ft",
+                "dimensions": "305 x 914 mm (Dia x L)",
                 "powerLoad": "0"
               },
               "diesAndParts": [
@@ -2867,7 +2871,7 @@ window.CATALOG_DATA = {
                 "materialOfPlate": "Boundary wall S.S 304",
                 "coolingMedium": "Water; A-frame for moving water inlet/outlet valve",
                 "legs": "4 Nos in S.S 201 grade",
-                "dimension": "3 ft x 6 ft x 2'6\" (W x L x H)",
+                "dimensions": "914 x 1829 x 762 mm",
                 "powerLoad": "0"
               },
               "diesAndParts": [
@@ -2933,11 +2937,11 @@ window.CATALOG_DATA = {
               "orderInLine": 7,
               "name": "Liquid Filling Pump",
               "function": "The centre filling pump is a precision dosing system designed to inject liquid filling (such as fruit syrup, chocolate, cream or jam) into the core of the candy rope during the forming process, ensuring consistent filling quantity and uniform distribution across all candies.",
-              "description": "Double-jacketed S.S 304 filling pump with Teflon-lined leef, food-grade flexible pipe, 2 hp gear-motor drive, heater and 2 hp inverter with overflow recycling.",
+              "description": "Double-jacketed S.S 304 filling pump with Teflon-lined leaf, food-grade flexible pipe, 2 hp gear-motor drive, heater and 2 hp inverter with overflow recycling.",
               "image": "assets/STARMER/_ready/CHEW & TOFFEE/Chain Die Toffee 400kg_hr Complete line_/Liquid Filling Pump.jpg",
               "specs": {
                 "filling": "Chocolate and liquid",
-                "leef": "S.S 304, double jacketed, 1.5 with Teflon food-grade heat-proof covering",
+                "leaf": "S.S 304, double jacketed, 1.5 with Teflon food-grade heat-proof covering",
                 "pipe": "Flexible food grade",
                 "controls": "Electric panel with new feature",
                 "gearMotor": "2 hp main drive",
@@ -2984,11 +2988,11 @@ window.CATALOG_DATA = {
                 "upDownDrive": "1 hp",
                 "heaters": "1000 watt (2 Nos) to maximum temperature",
                 "capacity": "75 kg",
-                "length": "6.5 ft",
+                "length": "1981 mm",
                 "gearMotor": "SEW brand Germany",
                 "rollerCaplexe": "Casting material",
                 "extra": "Additional tray for removal of wastage",
-                "dimension": "4'4\" x 4' x 2'2\" x 7' (W x H x L)",
+                "dimensions": "1321 x 1219 x 660 x 2134 mm",
                 "powerLoad": "4.68 hp"
               },
               "diesAndParts": [
@@ -3031,11 +3035,15 @@ window.CATALOG_DATA = {
                 "sideSheets": "S.S 201",
                 "ropeGuide": "Brass",
                 "inverter": "INVENT brand, 3 hp",
-                "gearMotors": "SEW brand Germany, 3 hp",
-                "heatControllers": "2 Nos",
+                "gearMotor": "SEW brand, Germany, 3 hp",
+                "heatControllers": "Digital, 2 Nos",
                 "electricHeaters": "6 ft x 4, 2 kW",
-                "dimension": "6'6\" x 3' x 5'6\" (H x W x L)",
-                "powerLoad": "5.68 hp"
+                "dimensions": "1981 x 914 x 1676 mm (H x W x L)",
+                "powerLoad": "5.68 hp",
+                "sizerModel": "Horizontal, 5 stages (4 horizontal + 1 vertical)",
+                "heaters": "500 watt (4 Nos) = 2 kw",
+                "bearings": "Used instead of bushes",
+                "pairs": "S.S 304 (32 mm, 27 mm, 22 mm, 22 mm, 17 mm)"
               },
               "diesAndParts": [
                 {
@@ -3066,7 +3074,7 @@ window.CATALOG_DATA = {
               "description": "Chain-die forming plant with M.S steer set and top cover, 7.5 hp steer-box drive, 3 hp main drive, 0.5 hp belt and spreader drives and 3 hp inverters.",
               "image": "assets/STARMER/_ready/CHEW & TOFFEE/Chain Die Toffee 400kg_hr Complete line_/Chain Die Forming Plant.jpg",
               "specs": {
-                "speed": "2000 to 3500 pieces/min depending on size and shape of product",
+                "speed": "2000-3500 pcs/min depending on size and shape of product",
                 "filling": "Up to 20% filling of product",
                 "steerSet": "M.S",
                 "topCover": "M.S",
@@ -3177,19 +3185,19 @@ window.CATALOG_DATA = {
               "description": "18 ft three-stage close-body cooling tunnel with S.S 304 mesh-wire belts, thermopore-insulated double jacket and a 12-ton AC unit; SEW gear motors.",
               "image": "assets/STARMER/_ready/CHEW & TOFFEE/Chain Die Toffee 400kg_hr Complete line_/Close body Cooling Tunnel _ 3 Stages Cooling Conveyor .jpg",
               "specs": {
-                "length": "18 ft",
-                "width": "3 ft",
+                "length": "5486 mm",
+                "width": "914 mm",
                 "stages": "3 stages with 12-ton AC",
                 "meshWire": "S.S 304 grade (all 3 steps)",
                 "outerInnerSideSheets": "S.S 304 grade",
                 "controls": "Electric panel with all new features",
                 "inverter": "INVENT brand, 5 hp",
-                "covers": "S.S 201",
+                "cover": "S.S 201",
                 "insulation": "Double jacketed, insulated with thermopore",
-                "rods": "S.S 304, 5 mm thickness",
+                "rod": "S.S 304, 5 mm thickness",
                 "chain": "M.S, 60 No",
                 "gearMotor": "3 hp (1 hp each, 3 Nos), SEW brand",
-                "dimension": "18 ft x 3 ft (H x W x L)",
+                "dimensions": "5486 x 914 mm",
                 "powerLoad": "3 hp"
               },
               "diesAndParts": [
@@ -3221,7 +3229,7 @@ window.CATALOG_DATA = {
               "description": "12-ton, 7.5 HP roof-top condensing unit with Copeland scroll compressor, Danfoss controls and Emerson TCLE 7.5 HP expansion valve.",
               "image": "assets/STARMER/_ready/CHEW & TOFFEE/Chain Die Toffee 400kg_hr Complete line_/Ac Unit.jpg",
               "specs": {
-                "capacity": "12 ton (7.5 HP), x2 roof type for cooling conveyor",
+                "capacity": "12 ton (7.5 hp), x2 roof type for cooling conveyor",
                 "condenser": "Copper tube, size 3/8 gauge 22, distributor size 1/2 section header 7/8",
                 "aluminiumFins": "0.150 mm",
                 "compressor": "Copeland scroll, 12 ton, 3-phase, 440 V, Hz 50",
@@ -3229,11 +3237,11 @@ window.CATALOG_DATA = {
                 "oilSeparator": "In/out pipe size 7/8",
                 "filter": "1/2",
                 "suctionAccumulator": "7/8",
-                "expansionValve": "Emerson TCLE 7.5 HP",
+                "expansionValve": "Emerson TCLE 7.5 hp",
                 "refrigerant": "R-22",
                 "outdoorBaseFrame": "Channel and angle iron",
                 "panelBox": "12\" x 24\"",
-                "powerLoad": "7.5 HP"
+                "powerLoad": "7.5 hp"
               },
               "diesAndParts": [
                 {
@@ -3270,10 +3278,10 @@ window.CATALOG_DATA = {
                 "electricalSource": "380 V, 3 phase",
                 "weight": "1003 kg",
                 "speedOfFood": "2 to 3 ms",
-                "length": "11.02 mm",
+                "length": "11 mm",
                 "width": "12-20 mm",
                 "thickness": "3-20 mm",
-                "dimension": "1900 x 1100 x 1400 mm (L x W x H)"
+                "dimensions": "1900 x 1100 x 1400 mm (L x W x H)"
               },
               "diesAndParts": [
                 {
@@ -3322,7 +3330,7 @@ window.CATALOG_DATA = {
                 "heatingSystem": "Coil on the base of tank for steam circulation",
                 "ladder": "Outside the tank",
                 "capacity": "20 ton glucose",
-                "dimension": "16 ft height x 7 ft diameter",
+                "dimensions": "4877 x 2134 mm (H x Dia)",
                 "powerLoad": "0"
               },
               "diesAndParts": [
@@ -3365,10 +3373,10 @@ window.CATALOG_DATA = {
                 "isolationSheetThickness": "24 gauge",
                 "burnerMotor": "2 hp",
                 "feedWaterMotor": "3 hp",
-                "feedWaterPump": "Multistage (Grundfos)",
+                "feedWaterPump": "Grundfos, multistage",
                 "capacity": "600 kg/hr",
                 "electricLoad": "5 hp",
-                "dimension": "8' x 3'5\" x 3'5\"",
+                "dimensions": "2438 x 1041 x 1041 mm",
                 "powerLoad": "5 hp"
               },
               "diesAndParts": [
@@ -3402,11 +3410,11 @@ window.CATALOG_DATA = {
               "specs": {
                 "modelNumber": "SEW-103",
                 "materialOfHeader": "M.S",
-                "diameter": "1 ft",
+                "diameter": "305 mm",
                 "branchPipes": "1\", 2\", 3\", 4\" depending on system needs",
-                "design": "Cushioned cylinder",
+                "design": "Cushioned Cylinder",
                 "connection": "5",
-                "dimension": "Dia 1 ft x Length 3 ft",
+                "dimensions": "305 x 914 mm (Dia x L)",
                 "powerLoad": "0"
               },
               "diesAndParts": [
@@ -3433,7 +3441,7 @@ window.CATALOG_DATA = {
               "machineNumber": "CT-L002-M04",
               "model": "SEW-104",
               "orderInLine": 4,
-              "name": "Candy Continuous Cooker",
+              "name": "Candy Continuous Vacuum Cooker",
               "function": "Continuous vacuum cooker that automatically produces hard-boiled candies with high clarity and smooth texture at adjustable parameters.",
               "description": "Double-jacketed S.S 304 pans and body with dosing pump, sugar pump, steam trap and electric control panel.",
               "image": "assets/STARMER/_ready/CHEW & TOFFEE/Chew Stick Lollipop Line_/Candy Continuous Cooker.jpg",
@@ -3442,11 +3450,11 @@ window.CATALOG_DATA = {
                 "output": "450 kg/hr",
                 "pans": "S.S 304",
                 "body": "S.S 304, double jacketed",
-                "dozingPump": "3 hp (imported)",
+                "dosingPump": "3 hp (imported)",
                 "sugarPump": "2 hp, 1450 rpm",
-                "controls": "Electric panel with all new features",
+                "controls": "Electric panel with all new features, batch auto control",
                 "fittings": "Outer tube jacketed, steam trap, seat valve",
-                "dimension": "8.5' x 6' x 7'",
+                "dimensions": "2591 x 1829 x 2134 mm",
                 "powerLoad": "4 hp"
               },
               "diesAndParts": [
@@ -3481,7 +3489,7 @@ window.CATALOG_DATA = {
                 "modelNumber": "SEW-105",
                 "rating": "7.5 hp = 1450 rpm",
                 "frame": "M.S",
-                "dimension": "2 ft x 4 ft x 1 ft",
+                "dimensions": "610 x 1219 x 305 mm",
                 "powerLoad": "10 hp"
               },
               "diesAndParts": [
@@ -3518,7 +3526,7 @@ window.CATALOG_DATA = {
                 "materialOfPlate": "Boundary wall S.S 304",
                 "coolingMedium": "Water; A-frame for moving water inlet/outlet valve",
                 "legs": "4 Nos in S.S 201 grade",
-                "dimension": "3 ft x 6 ft x 2'6\"",
+                "dimensions": "914 x 1829 x 762 mm",
                 "powerLoad": "0"
               },
               "diesAndParts": [
@@ -3557,7 +3565,7 @@ window.CATALOG_DATA = {
                 "control": "Switch on/off",
                 "sideSheets": "S.S 201",
                 "mainPlate": "S.S 304",
-                "dimension": "5' x 5'6\" x 6'5\"",
+                "dimensions": "1524 x 1676 x 1956 mm",
                 "powerLoad": "5 hp"
               },
               "diesAndParts": [
@@ -3597,11 +3605,11 @@ window.CATALOG_DATA = {
                 "upDownDrive": "1 hp",
                 "heaters": "1000 watt (2 Nos) to maximum temperature",
                 "capacity": "75 kg",
-                "length": "6.5 ft",
+                "length": "1981 mm",
                 "gearMotor": "SEW brand Germany",
                 "rollerCaplexe": "Casting material",
                 "extra": "Additional tray for removal of wastage",
-                "dimension": "4'4\" x 4' x 2'2\" x 7' (W x H x L)",
+                "dimensions": "1321 x 1219 x 660 x 2134 mm",
                 "powerLoad": "4.68 hp"
               },
               "diesAndParts": [
@@ -3643,9 +3651,9 @@ window.CATALOG_DATA = {
                 "sideSheets": "S.S 201",
                 "ropeGuide": "Brass",
                 "inverter": "INVENT brand, 3 hp",
-                "gearMotors": "SEW brand Germany, 3 hp",
+                "gearMotor": "SEW brand Germany, 3 hp",
                 "heatControllers": "2 Nos",
-                "dimension": "6'6\" x 3' x 5'6\" (H x W x L)",
+                "dimensions": "1981 x 914 x 1676 mm (H x W x L)",
                 "powerLoad": "5.68 hp"
               },
               "diesAndParts": [
@@ -3677,12 +3685,12 @@ window.CATALOG_DATA = {
               "description": "Cut & fold stick wrapper with double reel system, advanced photocell sensor, 2 HP inverter drive and 2 HP HECO main motor on a heavy-duty industrial frame.",
               "image": "assets/STARMER/_ready/CHEW & TOFFEE/Chew Stick Lollipop Line_/Cut & Double Twist _ Cut & Twist.jpg",
               "specs": {
-                "output": "Up to 300 pieces per minute",
+                "output": "Up to 300 pcs/min",
                 "wrappingTechnology": "Cut & fold",
                 "reelSystem": "Double reel (inner & outer wrap)",
                 "photocell": "Advanced eye-mark detection sensor",
-                "inverter": "2 HP inverter-controlled speed",
-                "mainMotor": "2 HP HECO (brand new)",
+                "inverter": "2 hp inverter-controlled speed",
+                "mainMotor": "2 hp HECO (brand new)",
                 "operation": "Automatic",
                 "structure": "Heavy-duty industrial body"
               },
@@ -3733,7 +3741,7 @@ window.CATALOG_DATA = {
                 "heatingSystem": "Coil on the base of tank for steam circulation",
                 "ladder": "Outside the tank",
                 "capacity": "20 ton glucose",
-                "dimension": "16 ft height x 7 ft diameter",
+                "dimensions": "4877 x 2134 mm (H x Dia)",
                 "powerLoad": "0"
               },
               "diesAndParts": [
@@ -3776,10 +3784,10 @@ window.CATALOG_DATA = {
                 "isolationSheetThickness": "24 gauge",
                 "burnerMotor": "2 hp",
                 "feedWaterMotor": "3 hp",
-                "feedWaterPump": "Multistage (Grundfos)",
+                "feedWaterPump": "Grundfos, multistage",
                 "capacity": "600 kg/hr",
                 "electricLoad": "5 hp",
-                "dimension": "8' x 3'5\" x 3'5\"",
+                "dimensions": "2438 x 1041 x 1041 mm",
                 "powerLoad": "5 hp"
               },
               "diesAndParts": [
@@ -3813,11 +3821,11 @@ window.CATALOG_DATA = {
               "specs": {
                 "modelNumber": "SEW-103",
                 "materialOfHeader": "M.S",
-                "diameter": "1 ft",
+                "diameter": "305 mm",
                 "branchPipes": "1\", 2\", 3\", 4\" depending on system needs",
-                "design": "Cushioned cylinder",
+                "design": "Cushioned Cylinder",
                 "connection": "5",
-                "dimension": "Dia 1 ft x Length 3 ft",
+                "dimensions": "305 x 914 mm (Dia x L)",
                 "powerLoad": "0"
               },
               "diesAndParts": [
@@ -3894,7 +3902,7 @@ window.CATALOG_DATA = {
                 "materialOfPlate": "Boundary wall S.S 304",
                 "coolingMedium": "Water; A-frame for moving water inlet/outlet valve",
                 "legs": "4 Nos in S.S 201 grade",
-                "dimension": "3 ft x 6 ft x 2'6\"",
+                "dimensions": "914 x 1829 x 762 mm",
                 "powerLoad": "0"
               },
               "diesAndParts": [
@@ -3971,11 +3979,11 @@ window.CATALOG_DATA = {
                 "upDownDrive": "1 hp",
                 "heaters": "1000 watt (2 Nos) to maximum temperature",
                 "capacity": "75 kg",
-                "length": "6.5 ft",
+                "length": "1981 mm",
                 "gearMotor": "SEW brand Germany",
                 "rollerCaplexe": "Casting material",
                 "extra": "Additional tray for removal of wastage",
-                "dimension": "4'6\" x 2'2\" x 7' (H x W x L)",
+                "dimensions": "1372 x 660 x 2134 mm (H x W x L)",
                 "powerLoad": "4.68 hp"
               },
               "diesAndParts": [
@@ -4017,9 +4025,9 @@ window.CATALOG_DATA = {
                 "sideSheets": "S.S 201",
                 "ropeGuide": "Brass",
                 "inverter": "INVENT brand, 3 hp",
-                "gearMotors": "SEW brand Germany, 3 hp",
+                "gearMotor": "SEW brand Germany, 3 hp",
                 "heatControllers": "Digital, 2 Nos",
-                "dimension": "6'6\" x 3' x 5'6\" (H x W x L)",
+                "dimensions": "1981 x 914 x 1676 mm (H x W x L)",
                 "powerLoad": "5.68 hp"
               },
               "diesAndParts": [
@@ -4051,10 +4059,10 @@ window.CATALOG_DATA = {
               "description": "Double-reel (inner & outer) double-twist wrapper with NTN (Japan) bearings, HECO motor, INVENT inverter and photocell-eye control.",
               "image": "assets/STARMER/_ready/CHEW & TOFFEE/Double Twist Chew Complete line_/Cut & Double Twist _ Cut & Twist.jpg",
               "specs": {
-                "speed": "350 pieces/min (depending on size of product)",
+                "speed": "350 pcs/min (depending on size of product)",
                 "reel": "Double reel, inner & outer",
                 "bearings": "NTN, Japan",
-                "inverter": "2 HP, INVENT brand",
+                "inverter": "2 hp, INVENT brand",
                 "gearMotor": "2 hp, 3 phase",
                 "motorBrand": "New HECO",
                 "photocell": "Photocell eye",
@@ -4110,7 +4118,7 @@ window.CATALOG_DATA = {
                 "heatingSystem": "Coil on the base of tank for steam circulation",
                 "ladder": "Outside the tank",
                 "capacity": "20 ton glucose",
-                "dimension": "16 ft height x 7 ft diameter",
+                "dimensions": "4877 x 2134 mm (H x Dia)",
                 "powerLoad": "0"
               },
               "diesAndParts": [
@@ -4153,10 +4161,10 @@ window.CATALOG_DATA = {
                 "isolationSheetThickness": "24 gauge",
                 "burnerMotor": "2 hp",
                 "feedWaterMotor": "3 hp",
-                "feedWaterPump": "Multistage (Grundfos)",
+                "feedWaterPump": "Grundfos, multistage",
                 "capacity": "600 kg/hr",
                 "electricLoad": "5 hp",
-                "dimension": "8' x 3'5\" x 3'5\"",
+                "dimensions": "2438 x 1041 x 1041 mm",
                 "powerLoad": "5 hp"
               },
               "diesAndParts": [
@@ -4190,11 +4198,11 @@ window.CATALOG_DATA = {
               "specs": {
                 "modelNumber": "SEW-103",
                 "materialOfHeader": "M.S",
-                "diameter": "1 ft",
+                "diameter": "305 mm",
                 "branchPipes": "1\", 2\", 3\", 4\" depending on system needs",
-                "design": "Cushioned cylinder",
+                "design": "Cushioned Cylinder",
                 "connection": "5",
-                "dimension": "Dia 1 ft x Length 3 ft",
+                "dimensions": "305 x 914 mm (Dia x L)",
                 "powerLoad": "0"
               },
               "diesAndParts": [
@@ -4272,7 +4280,7 @@ window.CATALOG_DATA = {
                 "materialOfPlate": "Boundary wall S.S 304",
                 "coolingMedium": "Water; A-frame for moving water inlet/outlet valve",
                 "legs": "4 Nos in S.S 201 grade",
-                "dimension": "3 ft x 6 ft x 2'6\" (W x L x H)",
+                "dimensions": "914 x 1829 x 762 mm",
                 "powerLoad": "0"
               },
               "diesAndParts": [
@@ -4351,11 +4359,12 @@ window.CATALOG_DATA = {
                 "upDownDrive": "1 hp",
                 "heaters": "1000 watt (2 Nos) to maximum temperature",
                 "capacity": "75 kg",
-                "length": "6.5 ft",
-                "gearMotor": "SEW brand Germany",
+                "length": "1981 mm",
+                "gearMotor": "SEW brand, Germany",
                 "rollerCaplexe": "Casting material",
                 "extra": "Additional tray for removal of wastage",
-                "powerLoad": "4.68 hp"
+                "powerLoad": "4.68 hp",
+                "bearing": "In gears"
               },
               "diesAndParts": [
                 {
@@ -4397,11 +4406,14 @@ window.CATALOG_DATA = {
                 "sideSheets": "S.S 201",
                 "ropeGuide": "Brass",
                 "inverter": "INVENT brand, 3 hp",
-                "gearMotors": "SEW brand Germany, 3 hp",
-                "heatControllers": "2 Nos",
+                "gearMotor": "SEW brand Germany, 3 hp",
+                "heatControllers": "Digital, 2 Nos",
                 "electricHeaters": "500 x 4, 2 kW",
-                "dimension": "6'6\" x 3' x 5'6\" (H x W x L)",
-                "powerLoad": "5.68 hp"
+                "dimensions": "1981 x 914 x 1676 mm (H x W x L)",
+                "powerLoad": "5.68 hp",
+                "mainDriveGearMotor": "2 hp",
+                "heaters": "500 watt (4 Nos) = 2 kw",
+                "bearings": "Used instead of bushes to reduce maintenance"
               },
               "diesAndParts": [
                 {
@@ -4432,7 +4444,7 @@ window.CATALOG_DATA = {
               "description": "Double-reel (inner & outer) cut-and-fold wrapper with NTN (Japan) bearings, HECO motor, INVENT inverter and photocell-eye control.",
               "image": "assets/STARMER/_ready/CHEW & TOFFEE/Fudge Complete Line_/Cut & Fold Wrapping Machine.jpg",
               "specs": {
-                "speed": "300 pieces/min (depending on size of product)",
+                "speed": "300 pcs/min (depending on size of product)",
                 "reel": "Double reel, inner & outer",
                 "bearings": "NTN, Japan",
                 "inverter": "2 hp, INVENT brand",
@@ -4472,7 +4484,7 @@ window.CATALOG_DATA = {
               "description": "Double-reel (inner & outer) cut-and-twist wrapper with NTN (Japan) bearings, HECO motor, INVENT inverter and photocell-eye control.",
               "image": "assets/STARMER/_ready/CHEW & TOFFEE/Fudge Complete Line_/Cut & Double Twist _ Cut & Twist.jpg",
               "specs": {
-                "speed": "350 pieces/min (depending on size of product)",
+                "speed": "350 pcs/min (depending on size of product)",
                 "reel": "Double reel, inner & outer",
                 "bearings": "NTN, Japan",
                 "inverter": "2 hp, INVENT brand",
@@ -4530,7 +4542,7 @@ window.CATALOG_DATA = {
                 "heatingSystem": "Coil on the base of tank for steam circulation",
                 "ladder": "Outside the tank",
                 "capacity": "20 ton glucose",
-                "dimension": "16 ft height x 7 ft diameter",
+                "dimensions": "4877 x 2134 mm (H x Dia)",
                 "powerLoad": "0"
               },
               "diesAndParts": [
@@ -4573,10 +4585,10 @@ window.CATALOG_DATA = {
                 "isolationSheetThickness": "24 gauge",
                 "burnerMotor": "2 hp",
                 "feedWaterMotor": "3 hp",
-                "feedWaterPump": "Multistage (Grundfos)",
+                "feedWaterPump": "Grundfos, multistage",
                 "capacity": "600 kg/hr",
                 "electricLoad": "5 hp",
-                "dimension": "8' x 3'5\" x 3'5\"",
+                "dimensions": "2438 x 1041 x 1041 mm",
                 "powerLoad": "5 hp"
               },
               "diesAndParts": [
@@ -4610,11 +4622,11 @@ window.CATALOG_DATA = {
               "specs": {
                 "modelNumber": "SEW-103",
                 "materialOfHeader": "M.S",
-                "diameter": "1 ft",
+                "diameter": "305 mm",
                 "branchPipes": "1\", 2\", 3\", 4\" depending on system needs",
-                "design": "Cushioned cylinder",
+                "design": "Cushioned Cylinder",
                 "connection": "5",
-                "dimension": "Dia 1 ft x Length 3 ft",
+                "dimensions": "305 x 914 mm (Dia x L)",
                 "powerLoad": "0"
               },
               "diesAndParts": [
@@ -4691,7 +4703,7 @@ window.CATALOG_DATA = {
                 "materialOfPlate": "Boundary wall S.S 304",
                 "coolingMedium": "Water; A-frame for moving water inlet/outlet valve",
                 "legs": "4 Nos in S.S 201 grade",
-                "dimension": "3 ft x 6 ft x 2'6\" (W x L x H)",
+                "dimensions": "914 x 1829 x 762 mm",
                 "powerLoad": "0"
               },
               "diesAndParts": [
@@ -4757,11 +4769,11 @@ window.CATALOG_DATA = {
               "orderInLine": 7,
               "name": "Liquid Filling Pump",
               "function": "The centre filling pump is a precision dosing system designed to inject liquid filling (such as fruit syrup, chocolate, cream or jam) into the core of the candy rope during the forming process, ensuring consistent filling quantity and uniform distribution across all candies.",
-              "description": "Double-jacketed S.S 304 filling pump with Teflon-lined leef, food-grade flexible pipe, 2 hp gear-motor drive, heater and 2 hp inverter with overflow recycling.",
+              "description": "Double-jacketed S.S 304 filling pump with Teflon-lined leaf, food-grade flexible pipe, 2 hp gear-motor drive, heater and 2 hp inverter with overflow recycling.",
               "image": "assets/STARMER/_ready/CHEW & TOFFEE/Toffee 400kg_hr Complete line_/Liquid Filling Pump.jpg",
               "specs": {
                 "filling": "Chocolate and liquid",
-                "leef": "S.S 304, double jacketed, 1.5 with Teflon food-grade heat-proof covering",
+                "leaf": "S.S 304, double jacketed, 1.5 with Teflon food-grade heat-proof covering",
                 "pipe": "Flexible food grade",
                 "controls": "Electric panel with new feature",
                 "gearMotor": "2 hp main drive",
@@ -4808,11 +4820,11 @@ window.CATALOG_DATA = {
                 "upDownDrive": "1 hp",
                 "heaters": "1000 watt (2 Nos) to maximum temperature",
                 "capacity": "75 kg",
-                "length": "6.5 ft",
+                "length": "1981 mm",
                 "gearMotor": "SEW brand Germany",
                 "rollerCaplexe": "Casting material",
                 "extra": "Additional tray for removal of wastage",
-                "dimension": "4'4\" x 4' x 2'2\" x 7' (W x H x L)",
+                "dimensions": "1321 x 1219 x 660 x 2134 mm",
                 "powerLoad": "4.68 hp"
               },
               "diesAndParts": [
@@ -4855,11 +4867,15 @@ window.CATALOG_DATA = {
                 "sideSheets": "S.S 201",
                 "ropeGuide": "Brass",
                 "inverter": "INVENT brand, 3 hp",
-                "gearMotors": "SEW brand Germany, 3 hp",
-                "heatControllers": "2 Nos",
+                "gearMotor": "SEW brand, Germany, 3 hp",
+                "heatControllers": "Digital, 2 Nos",
                 "electricHeaters": "500 x 4, 2 kW",
-                "dimension": "6'6\" x 3' x 5'6\" (H x W x L)",
-                "powerLoad": "5.68 hp"
+                "dimensions": "1981 x 914 x 1676 mm (H x W x L)",
+                "powerLoad": "5.68 hp",
+                "sizerModel": "Horizontal, 5 stages (4 horizontal + 1 vertical)",
+                "heaters": "500 watt (4 Nos) = 2 kw",
+                "bearings": "Used instead of bushes",
+                "pairs": "S.S 304 (32 mm, 27 mm, 22 mm, 22 mm, 17 mm)"
               },
               "diesAndParts": [
                 {
@@ -4897,7 +4913,7 @@ window.CATALOG_DATA = {
                 "cams": "Bearing steel grade; reverse cams in 1.0 iron",
                 "gears": "High carbon steel forged material",
                 "fillingPercent": "Up to 12% of the candy",
-                "dimension": "6.3 ft x 4.5 ft x 1.5 ft (H x W x L)",
+                "dimensions": "1920 x 1372 x 457 mm (H x W x L)",
                 "powerLoad": "5 hp"
               },
               "diesAndParts": [
@@ -4935,7 +4951,7 @@ window.CATALOG_DATA = {
                 "guidePins": "Carbon steel grade",
                 "dieParts": "Casting in grade cast iron",
                 "outerRing": "Brass casting (improves rope cutting)",
-                "dimension": "1 ft x 1 ft x 1 ft (H x W x L)",
+                "dimensions": "305 x 305 x 305 mm (H x W x L)",
                 "powerLoad": "0"
               },
               "diesAndParts": [
@@ -4971,7 +4987,7 @@ window.CATALOG_DATA = {
                 "wheels": "For movement",
                 "dieCaplexe": "Casting material",
                 "screw": "For die up/down",
-                "dimension": "5.5 ft x 5 ft (H x L)",
+                "dimensions": "1676 x 1524 mm (H x L)",
                 "powerLoad": "0"
               },
               "diesAndParts": [
@@ -5003,7 +5019,7 @@ window.CATALOG_DATA = {
               "description": "12-ton, 7.5 HP roof-top condensing unit with Copeland scroll compressor, Danfoss controls and Emerson TCLE 7.5 HP expansion valve.",
               "image": "assets/STARMER/_ready/CHEW & TOFFEE/Toffee 400kg_hr Complete line_/Ac Unit.jpg",
               "specs": {
-                "capacity": "12 ton (7.5 HP), x2 roof type for cooling conveyor",
+                "capacity": "12 ton (7.5 hp), x2 roof type for cooling conveyor",
                 "condenser": "Copper tube, size 3/8 gauge 22, distributor size 1/2 section header 7/8",
                 "aluminiumFins": "0.150 mm",
                 "compressor": "Copeland scroll, 12 ton, 3-phase, 440 V, Hz 50",
@@ -5011,11 +5027,11 @@ window.CATALOG_DATA = {
                 "oilSeparator": "In/out pipe size 7/8",
                 "filter": "1/2",
                 "suctionAccumulator": "7/8",
-                "expansionValve": "Emerson TCLE 7.5 HP",
+                "expansionValve": "Emerson TCLE 7.5 hp",
                 "refrigerant": "R-22",
                 "outdoorBaseFrame": "Channel and angle iron",
                 "panelBox": "12\" x 24\"",
-                "powerLoad": "7.5 HP"
+                "powerLoad": "7.5 hp"
               },
               "diesAndParts": [
                 {
@@ -5046,19 +5062,19 @@ window.CATALOG_DATA = {
               "description": "18 ft three-stage close-body cooling tunnel with S.S 304 mesh-wire belts, thermopore-insulated double jacket and a 12-ton AC unit; SEW gear motors.",
               "image": "assets/STARMER/_ready/CHEW & TOFFEE/Toffee 400kg_hr Complete line_/Close body Cooling Tunnel _ 3 Stages Cooling Conveyor .jpg",
               "specs": {
-                "length": "18 ft",
-                "width": "3 ft",
+                "length": "5486 mm",
+                "width": "914 mm",
                 "stages": "3 stages with 12-ton AC",
                 "meshWire": "S.S 304 grade (all 3 steps)",
                 "outerInnerSideSheets": "S.S 304 grade",
                 "controls": "Electric panel with all new features",
                 "inverter": "INVENT brand, 5 hp",
-                "covers": "S.S 201",
+                "cover": "S.S 201",
                 "insulation": "Double jacketed, insulated with thermopore",
-                "rods": "S.S 304, 5 mm thickness",
+                "rod": "S.S 304, 5 mm thickness",
                 "chain": "M.S, 60 No",
                 "gearMotor": "3 hp (1 hp each, 3 Nos), SEW brand",
-                "dimension": "18 ft x 3 ft (H x W x L)",
+                "dimensions": "5486 x 914 mm",
                 "powerLoad": "3 hp"
               },
               "diesAndParts": [
@@ -5096,10 +5112,10 @@ window.CATALOG_DATA = {
                 "electricalSource": "380 V, 30 Hz",
                 "weight": "1003 kg",
                 "speedOfFood": "2 to 3 ms",
-                "length": "11.02 mm",
+                "length": "11 mm",
                 "width": "12-20 mm",
                 "thickness": "5-20 mm",
-                "dimension": "1900 x 1100 x 1400 mm (L x W x H)"
+                "dimensions": "1900 x 1100 x 1400 mm (L x W x H)"
               },
               "diesAndParts": [
                 {
@@ -5148,7 +5164,7 @@ window.CATALOG_DATA = {
                 "heatingSystem": "Coil on the base of tank for steam circulation",
                 "ladder": "Outside the tank",
                 "capacity": "20 ton glucose",
-                "dimension": "16 ft height x 7 ft diameter",
+                "dimensions": "4877 x 2134 mm (H x Dia)",
                 "powerLoad": "0"
               },
               "diesAndParts": [
@@ -5191,10 +5207,12 @@ window.CATALOG_DATA = {
                 "isolationSheetThickness": "24 gauge",
                 "burnerMotor": "4 hp",
                 "feedWaterMotor": "3 hp",
-                "feedWaterPump": "Multistage (Grundfos)",
+                "feedWaterPump": "Grundfos, multistage",
                 "stack": "10\" dia, 20 ft height, 2.5 mm thick",
-                "capacity": "2000 kg",
-                "powerLoad": "7 hp"
+                "capacity": "2000 kg/hr",
+                "powerLoad": "7 hp",
+                "tubeSize": "2\" or 2 1/2\"",
+                "insulationSheetThickness": "24 gauge"
               },
               "diesAndParts": [
                 {
@@ -5227,11 +5245,11 @@ window.CATALOG_DATA = {
               "specs": {
                 "modelNumber": "SEW-103",
                 "materialOfHeader": "M.S",
-                "diameter": "1 ft",
+                "diameter": "305 mm",
                 "branchPipes": "1\", 2\", 3\", 4\" depending on system needs",
-                "design": "Cushioned cylinder",
+                "design": "Cushioned Cylinder",
                 "connection": "5",
-                "dimension": "Dia 1 ft x Length 3 ft",
+                "dimensions": "305 x 914 mm (Dia x L)",
                 "powerLoad": "0"
               },
               "diesAndParts": [
@@ -5309,7 +5327,7 @@ window.CATALOG_DATA = {
                 "materialOfPlate": "Boundary wall S.S 304",
                 "coolingMedium": "Water; A-frame for moving water inlet/outlet valve",
                 "legs": "4 Nos in S.S 201 grade",
-                "dimension": "3 ft x 6 ft x 2'6\" (W x L x H)",
+                "dimensions": "914 x 1829 x 762 mm",
                 "powerLoad": "0"
               },
               "diesAndParts": [
@@ -5375,11 +5393,11 @@ window.CATALOG_DATA = {
               "orderInLine": 7,
               "name": "Liquid Filling Pump",
               "function": "The centre filling pump is a precision dosing system designed to inject liquid filling (such as fruit syrup, chocolate, cream or jam) into the core of the candy rope during the forming process, ensuring consistent filling quantity and uniform distribution across all candies.",
-              "description": "Double-jacketed S.S 304 filling pump with Teflon-lined leef, food-grade flexible pipe, 2 hp gear-motor drive, heater and 2 hp inverter with overflow recycling.",
+              "description": "Double-jacketed S.S 304 filling pump with Teflon-lined leaf, food-grade flexible pipe, 2 hp gear-motor drive, heater and 2 hp inverter with overflow recycling.",
               "image": "assets/STARMER/_ready/CHEW & TOFFEE/Toffee 800kg_hr Complete line_/Liquid Filling Pump.jpg",
               "specs": {
                 "filling": "Chocolate and liquid",
-                "leef": "S.S 304, double jacketed, 1.5 with Teflon food-grade heat-proof covering",
+                "leaf": "S.S 304, double jacketed, 1.5 with Teflon food-grade heat-proof covering",
                 "pipe": "Flexible food grade",
                 "controls": "Electric panel with new feature",
                 "gearMotor": "2 hp main drive",
@@ -5427,11 +5445,12 @@ window.CATALOG_DATA = {
                 "upDownDrive": "2 hp",
                 "heaters": "1000 watt (2 Nos) to maximum temperature",
                 "capacity": "125 kg",
-                "gearMotor": "SEW brand Germany",
+                "gearMotor": "SEW brand, Germany",
                 "rollerCaplexe": "Casting material",
                 "extra": "Additional tray for removal of wastage",
-                "dimension": "5'5\" x 2'2\" x 7'9\" (H x W x L)",
-                "powerLoad": "5.3 hp"
+                "dimensions": "1651 x 660 x 2362 mm (H x W x L)",
+                "powerLoad": "5.3 hp",
+                "gearMotorMainDrive": "2 hp"
               },
               "diesAndParts": [
                 {
@@ -5473,11 +5492,15 @@ window.CATALOG_DATA = {
                 "sideSheets": "S.S 304",
                 "ropeGuide": "Brass",
                 "inverter": "INVENT brand, 3 hp",
-                "gearMotors": "SEW brand Germany, 3 hp",
-                "heatControllers": "2 Nos",
+                "gearMotor": "SEW brand, Germany, 3 hp",
+                "heatControllers": "Digital, 2 Nos",
                 "electricHeaters": "500 x 4, 2 kW",
-                "dimension": "6'6\" x 3' x 5'6\" (H x W x L)",
-                "powerLoad": "5.68 hp"
+                "dimensions": "1981 x 914 x 1676 mm (H x W x L)",
+                "powerLoad": "5.68 hp",
+                "sizerModel": "Horizontal, 5 stages (4 horizontal + 1 vertical)",
+                "heaters": "500 watt (4 Nos) = 2 kw",
+                "bearings": "Used instead of bushes",
+                "pairs": "S.S 304 (32 mm, 27 mm, 22 mm, 22 mm, 17 mm)"
               },
               "diesAndParts": [
                 {
@@ -5522,7 +5545,7 @@ window.CATALOG_DATA = {
                 "starSets": "High carbon steel",
                 "blower": "2 hp for cooling of die",
                 "controls": "Electric panel with all new features",
-                "dimension": "6 ft x 4.5 ft x 8.5 ft (H x W x L)",
+                "dimensions": "1829 x 1372 x 2591 mm (H x W x L)",
                 "powerLoad": "7.5 hp"
               },
               "diesAndParts": [
@@ -5592,7 +5615,7 @@ window.CATALOG_DATA = {
                 "wheels": "For movement",
                 "dieCaplene": "Casting material",
                 "screw": "For die up/down",
-                "dimension": "5.5 ft x 5 ft (H x L)",
+                "dimensions": "1676 x 1524 mm (H x L)",
                 "powerLoad": "0"
               },
               "diesAndParts": [
@@ -5625,12 +5648,12 @@ window.CATALOG_DATA = {
               "image": "assets/STARMER/_ready/CHEW & TOFFEE/Toffee 800kg_hr Complete line_/Ac Unit.jpg",
               "specs": {
                 "modelNumber": "SEW-220",
-                "indoorCapacity": "20 ton (25 HP), roof type for cooling conveyor",
+                "indoorCapacity": "20 ton (25 hp), roof type for cooling conveyor",
                 "evaporator": "Brand-new copper tube, size 3/8 gauge 22",
                 "aluminiumFins": "0.150 mm (Breez)",
-                "airBlower": "3 HP motor, 3 phase, 440 V, Hz 50",
-                "expansionValve": "Emerson TCLE 21 HP",
-                "condensingUnit": "Riser, high-density condensing coil, 25 HP outdoor",
+                "airBlower": "3 hp motor, 3 phase, 440 V, Hz 50",
+                "expansionValve": "Emerson TCLE 21 hp",
+                "condensingUnit": "Riser, high-density condensing coil, 25 hp outdoor",
                 "compressor": "Semi-sealed, Riser, 3 phase, 440 V, Hz 50",
                 "liquidReceiver": "30 litre",
                 "refrigerant": "R-22 (Honeywell USA)",
@@ -5675,12 +5698,14 @@ window.CATALOG_DATA = {
                 "mesh": "PP food-grade material (all 3 steps)",
                 "ac": "20-ton capacity",
                 "outerInnerSideSheets": "S.S 201",
-                "controls": "Electric panel with all new features",
+                "controls": "Electric panel with all new features, variable-speed inverter",
                 "inverter": "Variable-speed inverter, 6 hp",
-                "covers": "S.S 201",
+                "cover": "S.S 201",
                 "insulation": "Double jacketed, insulated with thermopore",
-                "dimension": "20 ft x 4 ft (H x W x L)",
-                "powerLoad": "6 hp"
+                "dimensions": "6096 x 1219 mm",
+                "powerLoad": "6 hp",
+                "meshSteps": "Plastic Teflon-coated (3 steps), PP food-grade material",
+                "sideSheets": "Cooler and inner side sheets in S.S 201"
               },
               "diesAndParts": [
                 {
@@ -5717,10 +5742,10 @@ window.CATALOG_DATA = {
                 "electricalSource": "380 V, 30 Hz",
                 "weight": "1003 kg",
                 "speedOfFood": "2 to 3 ms",
-                "length": "11.02 mm",
+                "length": "11 mm",
                 "width": "12-20 mm",
                 "thickness": "5-20 mm",
-                "dimension": "1900 x 1100 x 1400 mm (L x W x H)"
+                "dimensions": "1900 x 1100 x 1400 mm (L x W x H)"
               },
               "diesAndParts": [
                 {
@@ -5769,7 +5794,7 @@ window.CATALOG_DATA = {
                 "heatingSystem": "Coil on the base of tank for steam circulation",
                 "ladder": "Outside the tank",
                 "capacity": "20 ton glucose",
-                "dimension": "16 ft height x 7 ft diameter",
+                "dimensions": "4877 x 2134 mm (H x Dia)",
                 "powerLoad": "0"
               },
               "diesAndParts": [
@@ -5812,10 +5837,10 @@ window.CATALOG_DATA = {
                 "isolationSheetThickness": "24 gauge",
                 "burnerMotor": "2 hp",
                 "feedWaterMotor": "3 hp",
-                "feedWaterPump": "Multistage (Grundfos)",
+                "feedWaterPump": "Grundfos, multistage",
                 "capacity": "600 kg/hr",
                 "electricLoad": "5 hp",
-                "dimension": "8' x 3'5\" x 3'5\"",
+                "dimensions": "2438 x 1041 x 1041 mm",
                 "powerLoad": "5 hp"
               },
               "diesAndParts": [
@@ -5849,11 +5874,11 @@ window.CATALOG_DATA = {
               "specs": {
                 "modelNumber": "SEW-103",
                 "materialOfHeader": "M.S",
-                "diameter": "1 ft",
+                "diameter": "305 mm",
                 "branchPipes": "1\", 2\", 3\", 4\" depending on system needs",
-                "design": "Cushioned cylinder",
+                "design": "Cushioned Cylinder",
                 "connection": "5",
-                "dimension": "Dia 1 ft x Length 3 ft",
+                "dimensions": "305 x 914 mm (Dia x L)",
                 "powerLoad": "0"
               },
               "diesAndParts": [
@@ -5930,7 +5955,7 @@ window.CATALOG_DATA = {
                 "materialOfPlate": "Boundary wall S.S 304",
                 "coolingMedium": "Water; A-frame for moving water inlet/outlet valve",
                 "legs": "4 Nos in S.S 201 grade",
-                "dimension": "3 ft x 6 ft x 2'6\"",
+                "dimensions": "914 x 1829 x 762 mm",
                 "powerLoad": "0"
               },
               "diesAndParts": [
@@ -6007,11 +6032,11 @@ window.CATALOG_DATA = {
                 "upDownDrive": "1 hp",
                 "heaters": "1000 watt (2 Nos) to maximum temperature",
                 "capacity": "75 kg",
-                "length": "6.5 ft",
+                "length": "1981 mm",
                 "gearMotor": "SEW brand Germany",
                 "rollerCaplexe": "Casting material",
                 "extra": "Additional tray for removal of wastage",
-                "dimension": "4'4\" x 4' x 2'2\" x 7' (W x H x L)",
+                "dimensions": "1321 x 1219 x 660 x 2134 mm",
                 "powerLoad": "4.68 hp"
               },
               "diesAndParts": [
@@ -6053,10 +6078,10 @@ window.CATALOG_DATA = {
                 "sideSheets": "S.S 201",
                 "ropeGuide": "Brass",
                 "inverter": "INVENT brand, 3 hp",
-                "gearMotors": "SEW brand Germany, 3 hp",
+                "gearMotor": "SEW brand Germany, 3 hp",
                 "heatControllers": "2 Nos",
                 "electricHeaters": "500 x 4, 2 kW",
-                "dimension": "6'6\" x 3' x 5'6\" (H x W x L)",
+                "dimensions": "1981 x 914 x 1676 mm (H x W x L)",
                 "powerLoad": "5.68 hp"
               },
               "diesAndParts": [
@@ -6089,8 +6114,8 @@ window.CATALOG_DATA = {
               "image": "assets/STARMER/_ready/CHEW & TOFFEE/Zombie Complete line_/Cut & Pillow pack wrapping Machine.jpg",
               "specs": {
                 "packSize": "80-200 x 5-10 x 22-35 mm (L x W x H)",
-                "output": "250 packs per minute",
-                "electricMotors": "(1) 2 H.P, (2) ½ H.P",
+                "output": "250 packs/min",
+                "electricMotor": "(1) 2 hp, (2) ½ hp",
                 "heaters": "2.6 kW",
                 "standardEquipment": "Photo-electric eye & inverter",
                 "dimensions": "4590 x 1820 x 1000 mm (L x W x H)",
@@ -6125,8 +6150,8 @@ window.CATALOG_DATA = {
       "id": "hard-candy",
       "label": "Hard Candy Production",
       "slug": "hard-candy",
-      "color": "#0D6B5E",
-      "accentColor": "#14B8A6",
+      "color": "#DC2626",
+      "accentColor": "#EF4444",
       "description": "",
       "lines": [
         {
@@ -6152,10 +6177,11 @@ window.CATALOG_DATA = {
                 "sheetThickness": "5 mm upper and lower sheet",
                 "outerDiaSheetThickness": "3 mm",
                 "designType": "Vertical",
-                "heatingSystem": "Coil on the base of tank (for steam circulation)",
+                "heatingSystem": "Coil on the base of tank for steam circulation",
                 "ladder": "Outside the tank",
                 "capacity": "20 ton glucose",
-                "dimension": "16 ft height x 7 ft diameter"
+                "dimensions": "4877 x 2134 mm (H x Dia)",
+                "powerLoad": "0"
               },
               "diesAndParts": [
                 {
@@ -6189,11 +6215,14 @@ window.CATALOG_DATA = {
                 "modelNumber": "SEW-102",
                 "typeOfPasses": "3 pass",
                 "testPressure": "225 psi",
-                "tubeSize": "2\" or 2½\"",
+                "tubeSize": "2\" or 2 1/2\"",
                 "feedWaterPump": "Grundfos, multistage",
                 "capacity": "450 kg/hr",
-                "dimension": "8' x 3'5\" x 3'5\"",
-                "powerLoad": "5 hp"
+                "dimensions": "2438 x 1041 x 1041 mm",
+                "powerLoad": "5 hp",
+                "workingPressure": "150 psi",
+                "tubeDia": "2\" or 2 1/2\"",
+                "feedWaterMotor": "3 hp"
               },
               "diesAndParts": [
                 {
@@ -6226,12 +6255,11 @@ window.CATALOG_DATA = {
               "specs": {
                 "modelNumber": "SEW-103",
                 "materialOfHeader": "M.S",
-                "diameter": "1 ft",
-                "branchPipes": "1\", 2\", 3\", 4\" (depending on system needs)",
+                "diameter": "305 mm",
+                "branchPipes": "1\", 2\", 3\", 4\" depending on system needs",
                 "design": "Cushioned Cylinder",
                 "connections": "5",
-                "dimension": "4 ft (dia) x 3 ft (length)",
-                "powerLoad": "None"
+                "dimensions": "1219 x 914 mm (L x H)"
               },
               "diesAndParts": [
                 {
@@ -6270,7 +6298,7 @@ window.CATALOG_DATA = {
                 "stirrer": "S.S 304",
                 "gearMotorMainDrive": "2 hp",
                 "fittings": "Steam gauge, safety valve, seat valve",
-                "dimension": "5'6\" x 3'5\" x 3'5\"",
+                "dimensions": "1676 x 1041 x 1041 mm",
                 "powerLoad": "2 hp"
               },
               "diesAndParts": [
@@ -6309,7 +6337,7 @@ window.CATALOG_DATA = {
                 "legs": "M.S",
                 "stirrer": "S.S 304",
                 "gearMotorMainDrive": "1 hp",
-                "dimension": "6' x 3'6\" x 3'6\"",
+                "dimensions": "1829 x 1067 x 1067 mm",
                 "powerLoad": "1 hp"
               },
               "diesAndParts": [
@@ -6336,7 +6364,7 @@ window.CATALOG_DATA = {
               "machineNumber": "HC-L001-M06",
               "model": "SEW-104",
               "orderInLine": 6,
-              "name": "Candy Continuous Cooker",
+              "name": "Candy Continuous Vacuum Cooker",
               "function": "Continuous vacuum cooker that automatically produces hard-boiled candies and milk caramels with high clarity and smooth texture, minimising sugar loss at moisture below 2%.",
               "description": "Double-jacketed S.S 304 pans and body with adjustable output, food-grade S.S 304 heat zones, steam trap and full S.S water nozzles.",
               "image": "assets/STARMER/_ready/HARD CANDY/Chain Die Candy Line 450kg_hr_/Candy Continuous Cooker.jpg",
@@ -6348,9 +6376,10 @@ window.CATALOG_DATA = {
                 "sugarPump": "2 hp, 1450 rpm",
                 "heatZones": "S.S 304 food grade",
                 "fittings": "Outer tube jacketed, steam trap, full S.S water nozzles",
-                "controls": "Electric panel with new features",
-                "dimension": "8' x 6' x 7'6\"",
-                "powerLoad": "4 hp"
+                "controls": "Electric panel with all new features, batch auto control",
+                "dimensions": "2438 x 1829 x 2286 mm",
+                "powerLoad": "4 hp",
+                "dosingPump": "3 hp (imported)"
               },
               "diesAndParts": [
                 {
@@ -6384,7 +6413,7 @@ window.CATALOG_DATA = {
                 "modelNumber": "SEW-105",
                 "rating": "10 hp = 1400 rpm",
                 "frame": "M.S",
-                "dimension": "2 ft x 4 ft x 1 ft",
+                "dimensions": "610 x 1219 x 305 mm",
                 "powerLoad": "10 hp"
               },
               "diesAndParts": [
@@ -6421,8 +6450,7 @@ window.CATALOG_DATA = {
                 "materialOfPlate": "Boundary wall S.S 304",
                 "coolingMedium": "Water cooling system, A-frame inlet/outlet",
                 "legs": "4 Nos in S.S 201 grade",
-                "dimension": "3 ft x 6 ft x 2'6\"",
-                "powerLoad": "None"
+                "dimensions": "914 x 1829 x 762 mm"
               },
               "diesAndParts": [
                 {
@@ -6458,9 +6486,10 @@ window.CATALOG_DATA = {
                 "mainDrive": "5 hp",
                 "sideSheets": "S.S 201",
                 "mainPlates": "S.S 304",
-                "control": "On/off switch",
-                "dimension": "3'5\" x 6\" x 5'5\"",
-                "powerLoad": "5 hp"
+                "control": "Switch on/off",
+                "dimensions": "1041 x 152 x 1651 mm",
+                "powerLoad": "5 hp",
+                "steelPlate": "4 ft"
               },
               "diesAndParts": [
                 {
@@ -6499,7 +6528,7 @@ window.CATALOG_DATA = {
                 "gearMotorMainDrive": "2 hp",
                 "stand": "M.S",
                 "heater": "1000 watt, 1 No",
-                "inverter": "2 HP (increase/decrease filling)",
+                "inverter": "2 hp",
                 "extra": "Co-flow system to recycle liquid/chocolate",
                 "powerLoad": "3.2 hp"
               },
@@ -6571,17 +6600,19 @@ window.CATALOG_DATA = {
               "image": "assets/STARMER/_ready/HARD CANDY/Chain Die Candy Line 450kg_hr_/Batch Roller.jpg",
               "specs": {
                 "modelNumber": "SEW-114",
-                "frame": "Horizontal",
+                "frame": "Horizontal work",
                 "rollersQuantity": "4",
                 "rollersMaterial": "S.S 304 food grade",
                 "gearMotorMainDrive": "1 hp",
                 "upDownDrive": "1 hp",
-                "heaters": "1000 watt (2 Nos)",
+                "heaters": "1000 watt (2 Nos) to maximum temperature",
                 "capacity": "75 kg",
-                "length": "6.5 ft",
+                "length": "1981 mm",
                 "gearMotor": "SEW brand, Germany",
-                "dimension": "4' x 2' x 3'",
-                "powerLoad": "4.68 hp"
+                "dimensions": "1219 x 610 x 914 mm",
+                "powerLoad": "4.68 hp",
+                "bearing": "In gears",
+                "upperBody": "S.S 304 food grade"
               },
               "diesAndParts": [
                 {
@@ -6617,12 +6648,12 @@ window.CATALOG_DATA = {
                 "pairs": "S.S 304 (22 mm x2, 20 mm x2)",
                 "ropeGuide": "Brass",
                 "inverter": "INVENT digital, 2 hp",
-                "gearMotors": "SEW brand, Germany",
+                "gearMotor": "SEW brand, Germany",
                 "heatControllers": "Digital, 2 Nos",
                 "mainDriveGearMotor": "2 hp",
                 "heaters": "500 watt (4 Nos) = 2 kw",
-                "bearings": "Used instead of bushes",
-                "dimension": "4.5 ft x 2.5 ft x 6 ft",
+                "bearings": "Used instead of bushes to reduce maintenance",
+                "dimensions": "1372 x 762 x 1829 mm",
                 "powerLoad": "4.68 hp"
               },
               "diesAndParts": [
@@ -6655,7 +6686,7 @@ window.CATALOG_DATA = {
               "image": "assets/STARMER/_ready/HARD CANDY/Chain Die Candy Line 450kg_hr_/Chain Die Forming Plant.jpg",
               "specs": {
                 "modelNumber": "SEW-112",
-                "speed": "2000 to 3500 pieces/min (depending on size & shape)",
+                "speed": "2000-3500 pcs/min (depending on size & shape)",
                 "filling": "Up to 20% of product",
                 "sizerSet": "M.S",
                 "topCover": "M.S",
@@ -6728,23 +6759,23 @@ window.CATALOG_DATA = {
               "machineNumber": "HC-L001-M16",
               "model": "SEW-121",
               "orderInLine": 16,
-              "name": "Cooling Conveyor (Close Body)",
+              "name": "Close Body Cooling Tunnel",
               "function": "Rapidly and uniformly reduces the temperature of freshly formed candy for dimensional stability and hardness before cutting, wrapping or packaging.",
               "description": "Close-body conveyor with S.S 304 mesh-wire steps, S.S 201 covers, thermopore insulation, S.S 304 inner skin and SEW gear motor.",
               "image": "assets/STARMER/_ready/HARD CANDY/Chain Die Candy Line 450kg_hr_/Close body Cooling Tunnel _ 3 Stages Cooling Conveyor .jpg",
               "specs": {
                 "modelNumber": "SEW-121",
-                "length": "10 ft",
-                "width": "3 ft",
+                "length": "3048 mm",
+                "width": "914 mm",
                 "stages": "1 stage",
                 "meshWire": "S.S 304 grade (3 steps)",
                 "sideSheets": "Outer and inner in S.S 304",
-                "covers": "S.S 201",
+                "cover": "S.S 201",
                 "insulation": "Double jacketed, thermopore; inner S.S 304 5 mm",
                 "chain": "M.S, 40 No",
                 "gearMotor": "2 hp, SEW brand",
-                "inverter": "2 HP",
-                "dimension": "3 ft x 16 ft",
+                "inverter": "2 hp",
+                "dimensions": "914 x 4877 mm",
                 "powerLoad": "3 hp"
               },
               "diesAndParts": [
@@ -6777,16 +6808,17 @@ window.CATALOG_DATA = {
               "image": "assets/STARMER/_ready/HARD CANDY/Chain Die Candy Line 450kg_hr_/Ac Unit.jpg",
               "specs": {
                 "modelNumber": "SEW-122",
-                "capacity": "5 Ton (6.5 HP)",
+                "capacity": "5 Ton (6.5 hp)",
                 "type": "Floor standing",
-                "indoorBlower": "1 HP motor, 3 phase 440V/50Hz",
-                "expansionValve": "Emerson TCLE 6.5 HP",
+                "indoorBlower": "1 hp motor, 3 phase 440V/50Hz",
+                "expansionValve": "Emerson TCLE 6.5 hp",
                 "outdoorUnit": "Bitzer, high-density condensing coil",
-                "compressor": "Copeland scroll, 6.5 HP, 3 phase 440V/50Hz",
+                "compressor": "Copeland scroll, 6.5 hp, 3 phase 440V/50Hz",
                 "safety": "Danfoss dual high/low-pressure switch",
-                "refrigerant": "R-22",
-                "inverter": "7.5 HP (INVT)",
-                "powerLoad": "6.5 hp"
+                "refrigerant": "R-22 (Honeywell, USA)",
+                "inverter": "7.5 hp (INVT)",
+                "powerLoad": "6.5 hp",
+                "panelBox": "12\" x 24\""
               },
               "diesAndParts": [
                 {
@@ -6823,7 +6855,7 @@ window.CATALOG_DATA = {
                 "fans": "2 nos",
                 "gearMotor": "1 hp",
                 "trays": "S.S 304, 2 nos",
-                "dimension": "4 ft (width) x 8 ft (length)",
+                "dimensions": "1219 x 2438 mm",
                 "powerLoad": "1 hp"
               },
               "diesAndParts": [
@@ -6857,10 +6889,10 @@ window.CATALOG_DATA = {
               "specs": {
                 "modelNumber": "SEW-123",
                 "output": "Up to 800 pcs/min (candy); up to 500 pcs/min (bubble)",
-                "electricMotors": "(1) 2 H.P / 3-phase, (2) ½ H.P",
+                "electricMotor": "(1) 2 hp / 3-phase, (2) 1/2 hp",
                 "electricHeaters": "3.2 kW",
                 "standardEquipment": "Photo-electric eye & inverter",
-                "dimensions": "2,335 x 900 x 1,725 mm",
+                "dimensions": "2335 x 900 x 1725 mm",
                 "weight": "750 kg",
                 "reel": "Max outer dia 280 mm / core dia 70 mm"
               },
@@ -6944,7 +6976,7 @@ window.CATALOG_DATA = {
                 "heatingSystem": "Coil on the base of tank",
                 "ladder": "Outside the tank",
                 "capacity": "20 ton glucose",
-                "dimension": "14 ft height x 7 ft diameter"
+                "dimensions": "4267 x 2134 mm (H x Dia)"
               },
               "diesAndParts": [
                 {
@@ -6979,14 +7011,19 @@ window.CATALOG_DATA = {
                 "typeOfPasses": "3 pass",
                 "testPressure": "225 psi",
                 "workingPressure": "150 psi",
-                "tubeSize": "2\" or 2½\"",
+                "tubeSize": "2\" or 2 1/2\"",
                 "pressureShellThickness": "3/8\"",
                 "insulationSheetThickness": "24 gauge",
                 "feedWaterPump": "Grundfos, multistage",
                 "burnerMotor": "8 hp",
                 "feedWaterMotor": "3 hp",
                 "capacity": "2000 kg/hr",
-                "powerLoad": "7 hp"
+                "powerLoad": "7 hp",
+                "stack": "10\" dia, 20 ft height, 2.5 mm thick",
+                "rockWoolThickness": "2\"",
+                "tubeDia": "2\" or 2.5\"",
+                "isolationSheetThickness": "24 gauge",
+                "tubeSheetThickness": "1/2\""
               },
               "diesAndParts": [
                 {
@@ -7019,11 +7056,10 @@ window.CATALOG_DATA = {
               "specs": {
                 "modelNumber": "SEW-103",
                 "materialOfHeader": "M.S",
-                "diameter": "1 ft",
-                "branchPipes": "1\", 2\", 3\", 4\" (depending on system needs)",
+                "diameter": "305 mm",
+                "branchPipes": "1\", 2\", 3\", 4\" depending on system needs",
                 "design": "Cushioned Cylinder",
-                "dimension": "1 ft (dia) x 5 ft (length)",
-                "powerLoad": "None"
+                "dimensions": "305 x 1524 mm (L x H)"
               },
               "diesAndParts": [
                 {
@@ -7098,7 +7134,7 @@ window.CATALOG_DATA = {
                 "modelNumber": "SEW-205",
                 "rating": "20 hp",
                 "frame": "M.S",
-                "dimension": "2 ft x 4 ft x 1 ft",
+                "dimensions": "610 x 1219 x 305 mm",
                 "powerLoad": "20 hp"
               },
               "diesAndParts": [
@@ -7142,7 +7178,7 @@ window.CATALOG_DATA = {
                 "steamValveInlet": "1\"",
                 "steamSafetyValve": "3\"/4\"",
                 "steamOutlet": "3\"/4\"",
-                "dimension": "2150 mm x 750 mm",
+                "dimensions": "2150 x 750 mm",
                 "powerLoad": "3 hp"
               },
               "diesAndParts": [
@@ -7181,7 +7217,7 @@ window.CATALOG_DATA = {
                 "stirrer": "S.S 304",
                 "outletValve": "2\"",
                 "gearMotorMainDrive": "2 hp",
-                "dimension": "1250 L x 815 W mm",
+                "dimensions": "1250 x 815 mm (L x W)",
                 "powerLoad": "2 hp"
               },
               "diesAndParts": [
@@ -7219,8 +7255,7 @@ window.CATALOG_DATA = {
                 "coolingMedium": "Water cooling system, A-frame inlet/outlet",
                 "valve": "6",
                 "legs": "4 Nos in S.S 201 grade",
-                "dimension": "3 ft x 6 ft x 2'6\"",
-                "powerLoad": "None"
+                "dimensions": "914 x 1829 x 762 mm"
               },
               "diesAndParts": [
                 {
@@ -7256,9 +7291,10 @@ window.CATALOG_DATA = {
                 "mainDrive": "5 hp",
                 "mainPlate": "4 ft, S.S 304",
                 "sideSheets": "S.S 201",
-                "control": "On/off switch",
-                "dimension": "5' x 6\" x 6'5\"",
-                "powerLoad": "5 hp"
+                "control": "Switch on/off",
+                "dimensions": "1524 x 152 x 1956 mm",
+                "powerLoad": "5 hp",
+                "steelPlate": "4 ft"
               },
               "diesAndParts": [
                 {
@@ -7298,7 +7334,7 @@ window.CATALOG_DATA = {
                 "heaters": "8 electric heaters, 6000 watt",
                 "controls": "Electric panel with all new features",
                 "tilt": "S.S 201, tilting system",
-                "dimension": "8 ft x 5 ft x 5 ft",
+                "dimensions": "2438 x 1524 x 1524 mm",
                 "powerLoad": "28 hp"
               },
               "diesAndParts": [
@@ -7377,7 +7413,7 @@ window.CATALOG_DATA = {
                 "gearMotorMainDrive": "2 hp",
                 "stand": "M.S",
                 "heater": "1000 watt, 1 No",
-                "inverter": "2 HP",
+                "inverter": "2 hp",
                 "extra": "Co-flow system to recycle liquid/chocolate",
                 "powerLoad": "3.2 hp"
               },
@@ -7449,16 +7485,20 @@ window.CATALOG_DATA = {
               "image": "assets/STARMER/_ready/HARD CANDY/Complete Candy Line 1000kg_hr/Batch Roller.jpg",
               "specs": {
                 "modelNumber": "SEW-214",
-                "frame": "Horizontal",
+                "frame": "Horizontal work",
                 "rollersQuantity": "4",
                 "rollersMaterial": "S.S 304 food grade",
                 "gearMotorMainDrive": "2 hp",
                 "upDownDrive": "2 hp",
-                "heaters": "1000 watt (2 Nos)",
+                "heaters": "1000 watt (2 Nos) to maximum temperature",
                 "capacity": "125 kg",
                 "gearMotor": "SEW brand, Germany",
-                "dimension": "5'5\" x 3' x 8'5\"",
-                "powerLoad": "5.34 hp"
+                "dimensions": "1651 x 914 x 2565 mm",
+                "powerLoad": "5.34 hp",
+                "mainDrive": "Gear motor 2 hp",
+                "rollerCaplexe": "Casting material",
+                "extra": "Additional tray for removal of wastage",
+                "upperBody": "S.S 304 food grade"
               },
               "diesAndParts": [
                 {
@@ -7494,10 +7534,10 @@ window.CATALOG_DATA = {
                 "pairs": "S.S 304 (22 mm x4, 16 mm x1)",
                 "ropeGuide": "Brass",
                 "inverter": "INVENT digital, 3 hp",
-                "gearMotors": "SEW brand, Germany, 3 hp",
+                "gearMotor": "SEW brand, Germany, 3 hp",
                 "heatControllers": "Digital, 2 Nos",
                 "bearings": "Used instead of bushes",
-                "dimension": "4' x 4' x 6'",
+                "dimensions": "1219 x 1219 x 1829 mm",
                 "powerLoad": "5.68 hp"
               },
               "diesAndParts": [
@@ -7531,9 +7571,9 @@ window.CATALOG_DATA = {
               "specs": {
                 "modelNumber": "SEW-216",
                 "capacity": "Up to 1000 kg/hr",
-                "speed": "4000 to 6000 pieces/min (varies with product)",
-                "netWeight": "500 kg (1000 lbs)",
-                "grossWeight": "600 kg (1500 lbs)",
+                "speed": "4000-6000 pcs/min (varies with product)",
+                "netWeight": "500 kg",
+                "grossWeight": "600 kg",
                 "belt": "Teflon coated, food grade",
                 "sideSheets": "S.S 304",
                 "pressureCams": "D2 grade",
@@ -7580,7 +7620,7 @@ window.CATALOG_DATA = {
                 "guidePins": "High speed carbon steel",
                 "dieParts": "Cast iron grade",
                 "outerRing": "Brass casting (for rope cutting)",
-                "dimension": "Dia 1.5 ft x L 2 ft"
+                "dimensions": "457 x 610 mm (Dia x L)"
               },
               "diesAndParts": [
                 {
@@ -7616,8 +7656,7 @@ window.CATALOG_DATA = {
                 "wheels": "For movement",
                 "dieCapLane": "Casting material",
                 "screw": "For die up/down",
-                "dimension": "5.5 ft (H) x 5 ft (dia)",
-                "powerLoad": "None"
+                "dimensions": "1676 x 1524 mm"
               },
               "diesAndParts": [
                 {
@@ -7643,7 +7682,7 @@ window.CATALOG_DATA = {
               "machineNumber": "HC-L002-M19",
               "model": "SEW-219",
               "orderInLine": 19,
-              "name": "Cooling Tunnel (3 Stages)",
+              "name": "Cooling Tunnel 3 Stages",
               "function": "Compact high-capacity three-tier cooling conveyor/tunnel with individually controlled motors, variable-speed AC drives and food-grade belting for precision cooling of up to 1000 kg/hr.",
               "description": "Three-tier horizontal conveyor with Teflon-coated mesh steps, S.S 201 covers, thermopore insulation, S.S 304 inner panel and AC-conditioned ventilation.",
               "image": "assets/STARMER/_ready/HARD CANDY/Complete Candy Line 1000kg_hr/Close body Cooling Tunnel _ 3 Stages Cooling Conveyor .jpg",
@@ -7653,11 +7692,16 @@ window.CATALOG_DATA = {
                 "stages": "3 stages",
                 "meshSteps": "Plastic Teflon-coated (3 steps), PP food-grade material",
                 "sideSheets": "Cooler and inner side sheets in S.S 201",
-                "covers": "S.S 201",
+                "cover": "S.S 201",
                 "insulation": "Double jacketed with thermopore; inner panel S.S 304",
                 "controls": "Electric panel with all new features, variable-speed inverter",
-                "dimension": "20 ft x 3 ft x 8 ft",
-                "powerLoad": "6 hp"
+                "dimensions": "6096 x 914 x 2438 mm",
+                "powerLoad": "6 hp",
+                "ac": "20-ton capacity",
+                "mesh": "PP food-grade material (all 3 steps)",
+                "inverter": "Variable-speed inverter, 6 hp",
+                "outerInnerSideSheets": "S.S 201",
+                "size": "20 ft length, 4 ft width"
               },
               "diesAndParts": [
                 {
@@ -7689,10 +7733,10 @@ window.CATALOG_DATA = {
               "image": "assets/STARMER/_ready/HARD CANDY/Complete Candy Line 1000kg_hr/Ac Unit.jpg",
               "specs": {
                 "modelNumber": "SEW-220",
-                "capacity": "20 Ton (25 HP)",
+                "capacity": "20 Ton (25 hp)",
                 "type": "Roof type",
-                "indoorBlower": "3 HP motor, 3 phase 440V/50Hz",
-                "expansionValve": "Emerson TCLE 25 HP",
+                "indoorBlower": "3 hp motor, 3 phase 440V/50Hz",
+                "expansionValve": "Emerson TCLE 25 hp",
                 "outdoorUnit": "Bitzer, high-density condensing coil",
                 "compressor": "Semi-sealed Bitzer, 3 phase 440V/50Hz",
                 "safety": "Danfoss dual high/low-pressure switch",
@@ -7736,7 +7780,7 @@ window.CATALOG_DATA = {
                 "fans": "2 nos",
                 "gearMotor": "1 hp",
                 "trays": "S.S 304, 2 nos",
-                "dimension": "4 ft (width) x 8 ft (length)",
+                "dimensions": "1219 x 2438 mm",
                 "powerLoad": "1 hp"
               },
               "diesAndParts": [
@@ -7770,10 +7814,10 @@ window.CATALOG_DATA = {
               "specs": {
                 "modelNumber": "SEW-123",
                 "output": "Up to 800 pcs/min (candy); up to 500 pcs/min (bubble)",
-                "electricMotors": "(1) 2 H.P / 3-phase, (2) ½ H.P",
+                "electricMotor": "(1) 2 hp / 3-phase, (2) 1/2 hp",
                 "electricHeaters": "3.2 kW",
                 "standardEquipment": "Photo-electric eye & inverter",
-                "dimensions": "2,335 x 900 x 1,725 mm",
+                "dimensions": "2335 x 900 x 1725 mm",
                 "weight": "750 kg",
                 "reel": "Max outer dia 280 mm / core dia 70 mm"
               },
@@ -7821,10 +7865,11 @@ window.CATALOG_DATA = {
                 "sheetThickness": "5 mm upper and lower sheet",
                 "outerDiaSheetThickness": "3 mm",
                 "designType": "Vertical",
-                "heatingSystem": "Coil on the base of tank",
+                "heatingSystem": "Coil on the base of tank for steam circulation",
                 "ladder": "Outside the tank",
                 "capacity": "20 ton glucose",
-                "dimension": "16 ft x 7 ft (H x diameter)"
+                "dimensions": "4877 x 2134 mm (H x Dia)",
+                "powerLoad": "0"
               },
               "diesAndParts": [
                 {
@@ -7859,16 +7904,18 @@ window.CATALOG_DATA = {
                 "typeOfPasses": "3 pass",
                 "testPressure": "225 psi",
                 "workingPressure": "150 psi",
-                "tubeSize": "2\" or 2½\"",
+                "tubeSize": "2\" or 2 1/2\"",
                 "pressureShellThickness": "1/2\"",
                 "tubeSheetThickness": "1/2\"",
                 "insulationSheetThickness": "24 gauge",
                 "rockWoolThickness": "2\"",
                 "feedWaterPump": "Grundfos, multistage",
                 "burnerMotor": "20 hp",
-                "dimension": "8' x 3'5\" x 3'5\"",
+                "dimensions": "2438 x 1041 x 1041 mm",
                 "capacity": "600 kg/hr",
-                "powerLoad": "5 hp"
+                "powerLoad": "5 hp",
+                "tubeDia": "2\" or 2 1/2\"",
+                "feedWaterMotor": "3 hp"
               },
               "diesAndParts": [
                 {
@@ -7901,8 +7948,8 @@ window.CATALOG_DATA = {
               "specs": {
                 "modelNumber": "SEW-103",
                 "materialOfHeader": "M.S",
-                "diameter": "1 ft",
-                "branchPipes": "1, 2, 3, 4 (depending on system needs)",
+                "diameter": "305 mm",
+                "branchPipes": "1\", 2\", 3\", 4\" depending on system needs",
                 "design": "Cushioned Cylinder"
               },
               "diesAndParts": [
@@ -7942,7 +7989,7 @@ window.CATALOG_DATA = {
                 "stirrer": "S.S 304",
                 "gearMotorMainDrive": "2 hp",
                 "fittings": "Steam gauge, safety valve, seat valve",
-                "dimension": "5'6\" x 3'5\" x 3'5\" (H x W x L)",
+                "dimensions": "1676 x 1041 x 1041 mm",
                 "powerLoad": "2 hp"
               },
               "diesAndParts": [
@@ -7975,14 +8022,14 @@ window.CATALOG_DATA = {
               "image": "assets/STARMER/_ready/HARD CANDY/Complete Candy line 200Kg_Hr/Batch Type Cooker.jpg",
               "specs": {
                 "modelNumber": "SEW-005",
-                "capacity": "200 kg per hour",
+                "capacity": "200 kg/hr",
                 "gearMotorMainDrive": "2 hp",
                 "pan": "S.S 304",
                 "mainBody": "S.S 304",
                 "cookerFrame": "M.S",
                 "construction": "Double jacketed with M.S",
                 "controls": "Electric control panel, gauges",
-                "dimension": "4' x 2'5\" x 3'5\" (H x W x L)",
+                "dimensions": "1219 x 737 x 1041 mm (H x W x L)",
                 "powerLoad": "2 hp"
               },
               "diesAndParts": [
@@ -8017,7 +8064,7 @@ window.CATALOG_DATA = {
                 "modelNumber": "SEW-006",
                 "rating": "7.5 hp = 1450 rpm",
                 "frame": "M.S",
-                "dimension": "2 ft x 4 ft x 1 ft (H x W x L)",
+                "dimensions": "610 x 1219 x 305 mm (H x W x L)",
                 "powerLoad": "7.5 hp"
               },
               "diesAndParts": [
@@ -8044,7 +8091,7 @@ window.CATALOG_DATA = {
               "machineNumber": "HC-L003-M07",
               "model": "SEW-108",
               "orderInLine": 7,
-              "name": "Cooling Tables",
+              "name": "Cooling Table",
               "function": "The cooling table is a crucial post-cooking unit used for rapid cooling and conditioning of the cooked sugar mass before further processing such as mixing, flavoring, coloring, or forming. It ensures uniform texture and workability of the batch.",
               "description": "Water-cooled S.S 304 cooling table with A-frame water inlet/outlet circuit and S.S 201 legs.",
               "image": "assets/STARMER/_ready/HARD CANDY/Complete Candy line 200Kg_Hr/Cooling Table.jpg",
@@ -8054,8 +8101,7 @@ window.CATALOG_DATA = {
                 "materialOfPlate": "Boundary wall S.S 304",
                 "coolingMedium": "Water cooling system, A-frame for moving water inlet and outlet",
                 "legs": "4 Nos in S.S 201 grade",
-                "dimension": "3 ft x 6 ft x 2'6\" (H x L x W)",
-                "powerLoad": "None"
+                "dimensions": "914 x 1829 x 762 mm"
               },
               "diesAndParts": [
                 {
@@ -8090,10 +8136,10 @@ window.CATALOG_DATA = {
                 "roller": "S.S 304",
                 "mainDrive": "5 hp",
                 "steelPlate": "4 ft",
-                "control": "On/off switch",
+                "control": "Switch on/off",
                 "sideSheets": "S.S 201",
                 "mainPlates": "S.S 304",
-                "dimension": "3'5\" x 6\" x 5'5\" (H x W x L)",
+                "dimensions": "1041 x 152 x 1651 mm (H x W x L)",
                 "powerLoad": "5 hp"
               },
               "diesAndParts": [
@@ -8164,17 +8210,18 @@ window.CATALOG_DATA = {
               "image": "assets/STARMER/_ready/HARD CANDY/Complete Candy line 200Kg_Hr/Batch Roller.jpg",
               "specs": {
                 "modelNumber": "SEW-114",
-                "frame": "Horizontal",
+                "frame": "Horizontal work",
                 "rollersQuantity": "4",
                 "rollersMaterial": "S.S 304 food grade",
                 "upperBody": "S.S 304 food grade",
                 "gearMotor": "SEW brand, Germany",
                 "upDownDrive": "1 hp",
-                "heaters": "1000 watt (2 Nos)",
+                "heaters": "1000 watt (2 Nos) to maximum temperature",
                 "capacity": "75 kg",
-                "length": "4.5 ft",
-                "dimension": "4'5\" x 2'5\" x 5'6\" (H x W x L)",
-                "powerLoad": "4.68 hp"
+                "length": "1372 mm",
+                "dimensions": "1346 x 737 x 1676 mm (H x W x L)",
+                "powerLoad": "4.68 hp",
+                "bearing": "In gears"
               },
               "diesAndParts": [
                 {
@@ -8213,13 +8260,13 @@ window.CATALOG_DATA = {
                 "fourthPair": "S.S 304, 20 mm",
                 "ropeGuide": "Brass",
                 "inverter": "Digital, new brand",
-                "gearMotors": "SEW brand, Germany",
+                "gearMotor": "SEW brand, Germany",
                 "heatControllers": "Digital, 2 Nos",
                 "mainDriveGearMotor": "2 hp",
                 "heaters": "500 watt (4 Nos) = 2 kw",
                 "safety": "Emergency break & switch, electric breakers",
                 "bearings": "Used instead of bushes to reduce maintenance",
-                "dimension": "4.5 ft x 2.5 ft x 6 ft (H x W x L)",
+                "dimensions": "1372 x 762 x 1829 mm (H x W x L)",
                 "powerLoad": "4.68 hp"
               },
               "diesAndParts": [
@@ -8257,7 +8304,7 @@ window.CATALOG_DATA = {
                 "sideSheets": "M.S (mild steel)",
                 "die": "Without die (supplied separately)",
                 "control": "On/off switch",
-                "speed": "Up to 1000 pieces/min",
+                "speed": "Up to 1000 pcs/min",
                 "capacity": "Up to 200 kg/hr",
                 "powerLoad": "1 hp"
               },
@@ -8326,8 +8373,8 @@ window.CATALOG_DATA = {
                 "mainSheet": "S.S 304",
                 "fans": "2 nos",
                 "gearMotor": "1 hp",
-                "trays": "S.S 304, 2 nos (for removal of wastage)",
-                "dimension": "4 ft (width) x 8 ft (length)",
+                "trays": "S.S 304, 2 nos",
+                "dimensions": "1219 x 2438 mm",
                 "powerLoad": "1 hp"
               },
               "diesAndParts": [
@@ -8361,10 +8408,10 @@ window.CATALOG_DATA = {
               "specs": {
                 "modelNumber": "SEW-123",
                 "output": "Up to 800 pcs/min (candy); up to 500 pcs/min (bubble)",
-                "electricMotors": "(1) 2 H.P / 3-phase, (2) ½ H.P",
+                "electricMotor": "(1) 2 hp / 3-phase, (2) 1/2 hp",
                 "electricHeaters": "3.2 kW",
                 "standardEquipment": "Photo-electric eye & inverter",
-                "dimensions": "2,335 x 900 x 1,725 mm (H x W x L)",
+                "dimensions": "2335 x 900 x 1725 mm (H x W x L)",
                 "weight": "750 kg",
                 "reel": "Max outer dia 280 mm / core dia 70 mm"
               },
@@ -8412,10 +8459,11 @@ window.CATALOG_DATA = {
                 "sheetThickness": "5 mm upper and lower sheet",
                 "outerDiaSheetThickness": "3 mm",
                 "designType": "Vertical",
-                "heatingSystem": "Coil on the base of tank (for steam circulation)",
+                "heatingSystem": "Coil on the base of tank for steam circulation",
                 "ladder": "Outside the tank",
                 "capacity": "20 ton glucose",
-                "dimension": "16 ft height x 7 ft diameter"
+                "dimensions": "4877 x 2134 mm (H x Dia)",
+                "powerLoad": "0"
               },
               "diesAndParts": [
                 {
@@ -8450,14 +8498,15 @@ window.CATALOG_DATA = {
                 "typeOfPasses": "3 pass",
                 "testPressure": "225 psi",
                 "workingPressure": "150 psi",
-                "tubeSize": "2\" or 2½\"",
+                "tubeSize": "2\" or 2 1/2\"",
                 "pressureShellThickness": "3/8\"",
                 "insulationSheetThickness": "24 gauge",
                 "feedWaterPump": "Grundfos, multistage",
                 "feedWaterMotor": "3 hp",
                 "capacity": "1000 kg/hr",
-                "dimension": "8' x 3'5\" x 3'5\"",
-                "powerLoad": "7 hp"
+                "dimensions": "2438 x 1041 x 1041 mm",
+                "powerLoad": "7 hp",
+                "tubeDia": "2\" or 2 1/2\""
               },
               "diesAndParts": [
                 {
@@ -8490,12 +8539,11 @@ window.CATALOG_DATA = {
               "specs": {
                 "modelNumber": "SEW-103",
                 "materialOfHeader": "M.S",
-                "diameter": "1 ft",
-                "branchPipes": "1\", 2\", 3\", 4\" (depending on system needs)",
+                "diameter": "305 mm",
+                "branchPipes": "1\", 2\", 3\", 4\" depending on system needs",
                 "design": "Cushioned Cylinder",
                 "connections": "5",
-                "dimension": "1 ft (dia) x 3 ft (length)",
-                "powerLoad": "None"
+                "dimensions": "305 x 914 mm (L x H)"
               },
               "diesAndParts": [
                 {
@@ -8534,8 +8582,8 @@ window.CATALOG_DATA = {
                 "sugarPump": "2 hp, 1450 rpm",
                 "dosingPump": "3 hp (imported)",
                 "fittings": "Outer tube jacketed, steam trap, full S.S water nozzles",
-                "controls": "Electric panel with all new features",
-                "dimension": "8.5 ft x 6 ft x 7 ft",
+                "controls": "Electric panel with all new features, batch auto control",
+                "dimensions": "2591 x 1829 x 2134 mm",
                 "powerLoad": "4 hp"
               },
               "diesAndParts": [
@@ -8570,7 +8618,7 @@ window.CATALOG_DATA = {
                 "modelNumber": "SEW-105",
                 "rating": "7.5 hp = 1450 rpm",
                 "frame": "M.S",
-                "dimension": "2 ft x 4 ft x 1 ft",
+                "dimensions": "610 x 1219 x 305 mm",
                 "powerLoad": "10 hp"
               },
               "diesAndParts": [
@@ -8610,7 +8658,7 @@ window.CATALOG_DATA = {
                 "stirrer": "S.S 304",
                 "gearMotorMainDrive": "2 hp",
                 "fittings": "Steam gauge, safety valve, seat valve",
-                "dimension": "5'6\" x 3'5\" x 3'5\"",
+                "dimensions": "1676 x 1041 x 1041 mm",
                 "powerLoad": "2 hp"
               },
               "diesAndParts": [
@@ -8649,7 +8697,7 @@ window.CATALOG_DATA = {
                 "legs": "M.S",
                 "stirrer": "S.S 304",
                 "gearMotorMainDrive": "1 hp",
-                "dimension": "6' x 3'6\" x 3'6\"",
+                "dimensions": "1829 x 1067 x 1067 mm",
                 "powerLoad": "1 hp"
               },
               "diesAndParts": [
@@ -8686,8 +8734,7 @@ window.CATALOG_DATA = {
                 "materialOfPlate": "Boundary wall S.S 304",
                 "coolingMedium": "Water cooling system, A-frame inlet/outlet",
                 "legs": "4 Nos in S.S 201 grade",
-                "dimension": "3 ft x 6 ft x 2'6\"",
-                "powerLoad": "None"
+                "dimensions": "914 x 1829 x 762 mm"
               },
               "diesAndParts": [
                 {
@@ -8723,9 +8770,10 @@ window.CATALOG_DATA = {
                 "mainDrive": "5 hp",
                 "mainPlate": "4 ft, S.S 304",
                 "sideSheets": "S.S 201",
-                "control": "On/off switch",
-                "dimension": "4' x 6' x 6'",
-                "powerLoad": "5 hp"
+                "control": "Switch on/off",
+                "dimensions": "1219 x 1829 x 1829 mm",
+                "powerLoad": "5 hp",
+                "steelPlate": "4 ft"
               },
               "diesAndParts": [
                 {
@@ -8764,7 +8812,7 @@ window.CATALOG_DATA = {
                 "gearMotorMainDrive": "2 hp",
                 "stand": "M.S",
                 "heater": "1000 watt, 1 No",
-                "inverter": "2 HP",
+                "inverter": "2 hp",
                 "extra": "Co-flow system to recycle liquid/chocolate",
                 "powerLoad": "3.34 hp"
               },
@@ -8846,8 +8894,9 @@ window.CATALOG_DATA = {
                 "sideSheets": "S.S 304",
                 "tilt": "S.S 201, tilting system",
                 "controls": "Electric panel with all new features",
-                "dimension": "6' x 4' x 4'",
-                "powerLoad": "28 hp"
+                "dimensions": "1829 x 1219 x 1219 mm",
+                "powerLoad": "28 hp",
+                "zArm": "S.S 304"
               },
               "diesAndParts": [
                 {
@@ -8886,7 +8935,8 @@ window.CATALOG_DATA = {
                 "roll": "S.S 304",
                 "heaters": "Electric heaters",
                 "controls": "Electric panel with all new features, helping roller system in head",
-                "powerLoad": "18 hp"
+                "powerLoad": "18 hp",
+                "leaf": "S.S 304"
               },
               "diesAndParts": [
                 {
@@ -8918,17 +8968,19 @@ window.CATALOG_DATA = {
               "image": "assets/STARMER/_ready/HARD CANDY/Complete Candy line 450Kg_Hr/Batch Roller.jpg",
               "specs": {
                 "modelNumber": "SEW-114",
-                "frame": "Horizontal",
+                "frame": "Horizontal work",
                 "rollersQuantity": "4",
                 "rollersMaterial": "S.S 304 food grade",
                 "gearMotorMainDrive": "2 hp",
                 "upDownDrive": "2 hp",
-                "heaters": "1000 watt (2 Nos)",
+                "heaters": "1000 watt (2 Nos) to maximum temperature",
                 "capacity": "75 kg",
-                "length": "6.5 ft",
+                "length": "1981 mm",
                 "gearMotor": "SEW brand, Germany",
-                "dimension": "4' x 2' x 3'",
-                "powerLoad": "4.68 hp"
+                "dimensions": "1219 x 610 x 914 mm",
+                "powerLoad": "4.68 hp",
+                "bearing": "In gears",
+                "upperBody": "S.S 304 food grade"
               },
               "diesAndParts": [
                 {
@@ -8954,7 +9006,7 @@ window.CATALOG_DATA = {
               "machineNumber": "HC-L004-M15",
               "model": "SEW-115",
               "orderInLine": 15,
-              "name": "Rope Sizer (4 Stages)",
+              "name": "Rope Sizer",
               "function": "Accurately reduces and calibrates the candy/toffee rope diameter through four sizing stages for uniform thickness.",
               "description": "Horizontal 4-stage rope sizer with S.S 304 roller pairs, brass rope guide, digital inverter and SEW (Germany) gear motors; bearings for low maintenance.",
               "image": "assets/STARMER/_ready/HARD CANDY/Complete Candy line 450Kg_Hr/Rope Sizer.jpg",
@@ -8964,12 +9016,12 @@ window.CATALOG_DATA = {
                 "pairs": "S.S 304 (22 mm x2, 20 mm x2)",
                 "ropeGuide": "Brass",
                 "inverter": "INVENT digital, 2 hp",
-                "gearMotors": "SEW brand, Germany",
+                "gearMotor": "SEW brand, Germany",
                 "heatControllers": "Digital, 2 Nos",
                 "mainDriveGearMotor": "2 hp",
                 "heaters": "500 watt (4 Nos) = 2 kw",
-                "bearings": "Used instead of bushes",
-                "dimension": "4.5 ft x 2.5 ft x 6 ft",
+                "bearings": "Used instead of bushes to reduce maintenance",
+                "dimensions": "1372 x 762 x 1829 mm",
                 "powerLoad": "4.68 hp"
               },
               "diesAndParts": [
@@ -9006,11 +9058,13 @@ window.CATALOG_DATA = {
                 "inverter": "5 hp (INVENT brand)",
                 "cams": "Bearing steel grade",
                 "gears": "High carbon steel, forged",
-                "speed": "1600 to 2000 pieces/min (depending on size)",
+                "speed": "1600-2000 pcs/min (depending on size)",
                 "filling": "Up to ~34% of candy",
                 "controls": "Electric panel with all new features",
-                "dimension": "6.5 ft x 4.5 ft x 8 ft",
-                "powerLoad": "5 hp"
+                "dimensions": "1981 x 1372 x 2438 mm",
+                "powerLoad": "5 hp",
+                "mainDrive": "5 hp motor",
+                "reverseCams": "S.G iron"
               },
               "diesAndParts": [
                 {
@@ -9047,8 +9101,9 @@ window.CATALOG_DATA = {
                 "punch": "EN19, up to 55 HRC; high quality M.S tempered",
                 "dieParts": "Cast iron grade",
                 "outerRing": "Brass casting (for rope cutting)",
-                "dimension": "18\" x 18\" x 5\"",
-                "powerLoad": "None"
+                "dimensions": "457 x 457 x 127 mm",
+                "guidePins": "Carbon steel",
+                "block": "High quality M.S grade carbon steel"
               },
               "diesAndParts": [
                 {
@@ -9084,8 +9139,9 @@ window.CATALOG_DATA = {
                 "wheels": "For movement",
                 "dieCapLane": "Casting material",
                 "screw": "For die up/down",
-                "dimension": "5.5 ft (H) x 5 ft (L)",
-                "powerLoad": "None"
+                "dimensions": "1676 x 1524 mm",
+                "adjustment": "Screw for die up/down",
+                "dieCaplene": "Casting material"
               },
               "diesAndParts": [
                 {
@@ -9117,7 +9173,7 @@ window.CATALOG_DATA = {
               "image": "assets/STARMER/_ready/HARD CANDY/Complete Candy line 450Kg_Hr/Close body Cooling Tunnel _ 3 Stages Cooling Conveyor .jpg",
               "specs": {
                 "modelNumber": "SEW-119",
-                "length": "18 ft",
+                "length": "5486 mm",
                 "stages": "3 stages",
                 "blower": "2 hp",
                 "firstBelt": "Teflon, 4 inch width",
@@ -9126,9 +9182,12 @@ window.CATALOG_DATA = {
                 "inverter": "2 hp (speed control)",
                 "chain": "M.S",
                 "sprockets": "M.S",
-                "rods": "S.S 304",
-                "dimension": "18 ft (length)",
-                "powerLoad": "5 hp"
+                "rod": "S.S 304",
+                "dimensions": "5486 mm",
+                "powerLoad": "5 hp",
+                "steps": "3 steps",
+                "thirdMesh": "S.S 304, 28 inch width",
+                "secondMesh": "S.S 304, 21 inch width"
               },
               "diesAndParts": [
                 {
@@ -9165,7 +9224,7 @@ window.CATALOG_DATA = {
                 "fans": "2 nos",
                 "gearMotor": "1 hp",
                 "trays": "S.S 304, 2 nos",
-                "dimension": "3.5 ft x 4.5 ft x 8 ft",
+                "dimensions": "1067 x 1372 x 2438 mm",
                 "powerLoad": "1 hp"
               },
               "diesAndParts": [
@@ -9198,17 +9257,17 @@ window.CATALOG_DATA = {
               "image": "assets/STARMER/_ready/HARD CANDY/Complete Candy line 450Kg_Hr/Close body Cooling Tunnel _ 3 Stages Cooling Conveyor .jpg",
               "specs": {
                 "modelNumber": "SEW-121",
-                "length": "10 ft",
-                "width": "3 ft",
+                "length": "3048 mm",
+                "width": "914 mm",
                 "stages": "3 stages",
                 "meshWire": "S.S 304 grade (3 steps)",
                 "sideSheets": "Outer and inner in S.S 304",
-                "covers": "S.S 201",
+                "cover": "S.S 201",
                 "insulation": "Double jacketed, thermopore; inner S.S 304 5 mm",
                 "chain": "M.S, 40 No",
                 "gearMotor": "2 hp, SEW brand",
                 "inverter": "2 hp",
-                "dimension": "3 ft x 16 ft",
+                "dimensions": "914 x 4877 mm",
                 "powerLoad": "5 hp"
               },
               "diesAndParts": [
@@ -9235,22 +9294,23 @@ window.CATALOG_DATA = {
               "machineNumber": "HC-L004-M22",
               "model": "SEW-122",
               "orderInLine": 22,
-              "name": "AC Unit (5 Ton)",
+              "name": "AC Unit",
               "function": "Floor-standing air-conditioning unit (5 ton / 6.5 HP) for cooling the conveyor section and accessories.",
               "description": "Indoor unit with copper-tube evaporator and 1 HP blower; Bitzer 6.5 HP outdoor condensing unit with Copeland scroll compressor and full AC accessories.",
               "image": "assets/STARMER/_ready/HARD CANDY/Complete Candy line 450Kg_Hr/Ac Unit.jpg",
               "specs": {
                 "modelNumber": "SEW-122",
-                "capacity": "5 Ton (6.5 HP)",
+                "capacity": "5 Ton (6.5 hp)",
                 "type": "Floor standing",
-                "indoorBlower": "1 HP motor, 3 phase 440V/50Hz",
-                "expansionValve": "Emerson TCLE 6.5 HP",
+                "indoorBlower": "1 hp motor, 3 phase 440V/50Hz",
+                "expansionValve": "Emerson TCLE 6.5 hp",
                 "outdoorUnit": "Bitzer, high-density condensing coil",
-                "compressor": "Copeland scroll, 6.5 HP, 3 phase 440V/50Hz",
+                "compressor": "Copeland scroll, 6.5 hp, 3 phase 440V/50Hz",
                 "safety": "Danfoss dual high/low-pressure switch",
-                "refrigerant": "R-22",
+                "refrigerant": "R-22 (Honeywell, USA)",
                 "inverter": "7.5 KVA (INVT)",
-                "powerLoad": "6.5 hp"
+                "powerLoad": "6.5 hp",
+                "panelBox": "12\" x 24\""
               },
               "diesAndParts": [
                 {
@@ -9276,17 +9336,17 @@ window.CATALOG_DATA = {
               "machineNumber": "HC-L004-M23",
               "model": "SEW-123",
               "orderInLine": 23,
-              "name": "Wrapping Machine",
+              "name": "Pillow Pack Wrapping Machine",
               "function": "High-performance pillow-pack wrapper for filled or un-filled candies and bubblegums at up to 800 pieces per minute.",
               "description": "Photo-electric-eye pillow wrapper with inverter, 2 H.P 3-phase and ½ H.P motors, 3.2 kW heaters.",
               "image": "assets/STARMER/_ready/HARD CANDY/Complete Candy line 450Kg_Hr/Pillow pack Wrapping Machine.jpg",
               "specs": {
                 "modelNumber": "SEW-123",
                 "output": "Up to 800 pcs/min",
-                "electricMotors": "(1) 2 H.P / 3-phase, (2) ½ H.P",
+                "electricMotor": "(1) 2 hp / 3-phase, (2) 1/2 hp",
                 "electricHeaters": "3.2 kW",
                 "standardEquipment": "Photo-electric eye & inverter",
-                "dimensions": "2,335 x 900 x 1,725 mm",
+                "dimensions": "2335 x 900 x 1725 mm",
                 "weight": "750 kg",
                 "reel": "Max outer dia 280 mm / core dia 70 mm"
               },
@@ -9317,8 +9377,8 @@ window.CATALOG_DATA = {
       "id": "lollipop",
       "label": "Lollipop Production",
       "slug": "lollipop",
-      "color": "#B45309",
-      "accentColor": "#F59E0B",
+      "color": "#7C3AED",
+      "accentColor": "#8B5CF6",
       "description": "",
       "lines": [
         {
@@ -9344,11 +9404,11 @@ window.CATALOG_DATA = {
                 "sheetThickness": "5 mm upper and lower sheet",
                 "outerDiaSheetThickness": "3 mm",
                 "designType": "Vertical",
-                "heatingSystem": "Coil on the base of tank (for steam circulation)",
+                "heatingSystem": "Coil on the base of tank for steam circulation",
                 "ladder": "Outside the tank",
                 "capacity": "20 ton glucose",
-                "dimension": "16 ft height x 7 ft diameter",
-                "powerLoad": "None"
+                "dimensions": "4877 x 2134 mm (H x Dia)",
+                "powerLoad": "0"
               },
               "diesAndParts": [
                 {
@@ -9392,7 +9452,7 @@ window.CATALOG_DATA = {
                 "feedWaterMotor": "3 hp",
                 "capacity": "1500 kg/hr",
                 "electricLoad": "5 hp",
-                "dimension": "8' x 3'5\" x 3'5\""
+                "dimensions": "2438 x 1041 x 1041 mm"
               },
               "diesAndParts": [
                 {
@@ -9425,12 +9485,11 @@ window.CATALOG_DATA = {
               "specs": {
                 "modelNumber": "SEW-103",
                 "materialOfHeader": "M.S",
-                "diameter": "1 ft",
-                "branchPipes": "1\", 2\", 3\", 4\" (depending on system needs)",
+                "diameter": "305 mm",
+                "branchPipes": "1\", 2\", 3\", 4\" depending on system needs",
                 "design": "Cushioned Cylinder",
                 "connections": "5",
-                "dimension": "1 ft (dia) x 3 ft (length)",
-                "powerLoad": "None"
+                "dimensions": "305 x 914 mm (L x H)"
               },
               "diesAndParts": [
                 {
@@ -9456,7 +9515,7 @@ window.CATALOG_DATA = {
               "machineNumber": "LO-L001-M04",
               "model": "SEW-104",
               "orderInLine": 4,
-              "name": "Candy Continuous Cooker",
+              "name": "Candy Continuous Vacuum Cooker",
               "function": "Continuous vacuum cooker that automatically produces hard-boiled candies with high clarity and smooth texture at adjustable parameters.",
               "description": "Double-jacketed S.S 304 pans and body with dosing pump, sugar pump, steam trap and electric control panel.",
               "image": "assets/STARMER/_ready/LOLLIPOP/_Flat Lollipop Line_._/Candy Continuous Cooker.jpg",
@@ -9465,11 +9524,11 @@ window.CATALOG_DATA = {
                 "output": "450 kg/hr",
                 "pans": "S.S 304",
                 "body": "S.S 304, double jacketed",
-                "dozingPump": "3 hp (imported)",
+                "dosingPump": "3 hp (imported)",
                 "sugarPump": "2 hp, 1450 rpm",
-                "controls": "Electric panel with all new features",
+                "controls": "Electric panel with all new features, batch auto control",
                 "fittings": "Outer tube jacketed, steam trap, safety valve, seat valve",
-                "dimension": "8.5' x 6' x 7'",
+                "dimensions": "2591 x 1829 x 2134 mm",
                 "powerLoad": "4 hp"
               },
               "diesAndParts": [
@@ -9504,7 +9563,7 @@ window.CATALOG_DATA = {
                 "modelNumber": "SEW-105",
                 "rating": "10 hp = 1450 rpm",
                 "frame": "M.S",
-                "dimension": "2 ft x 4 ft x 1 ft",
+                "dimensions": "610 x 1219 x 305 mm",
                 "powerLoad": "10 hp"
               },
               "diesAndParts": [
@@ -9543,8 +9602,8 @@ window.CATALOG_DATA = {
                 "legs": "M.S",
                 "stirrer": "S.S 304",
                 "gearMotorMainDrive": "2 hp",
-                "fittings": "Steam gauge, safety valve, scat valve",
-                "dimension": "5'6\" x 3'5\" x 3'5\"",
+                "fittings": "Steam gauge, safety valve, seat valve",
+                "dimensions": "1676 x 1041 x 1041 mm",
                 "powerLoad": "2 hp"
               },
               "diesAndParts": [
@@ -9583,7 +9642,7 @@ window.CATALOG_DATA = {
                 "legs": "M.S",
                 "stirrer": "S.S 304",
                 "gearMotorMainDrive": "1 hp",
-                "dimension": "6' x 3'6\" x 3'6\"",
+                "dimensions": "1829 x 1067 x 1067 mm",
                 "powerLoad": "1 hp"
               },
               "diesAndParts": [
@@ -9620,8 +9679,7 @@ window.CATALOG_DATA = {
                 "materialOfPlate": "Boundary wall S.S 304",
                 "coolingMedium": "Water cooling system, A-frame inlet/outlet valve",
                 "legs": "4 Nos in S.S 201 grade",
-                "dimension": "3 ft x 6 ft x 2'6\"",
-                "powerLoad": "None"
+                "dimensions": "914 x 1829 x 762 mm"
               },
               "diesAndParts": [
                 {
@@ -9659,7 +9717,7 @@ window.CATALOG_DATA = {
                 "control": "Switch on/off",
                 "sideSheets": "S.S 201",
                 "mainPlate": "S.S 304",
-                "dimension": "5' x 5'6\" x 6'5\"",
+                "dimensions": "1524 x 1676 x 1956 mm",
                 "powerLoad": "5 hp"
               },
               "diesAndParts": [
@@ -9692,18 +9750,18 @@ window.CATALOG_DATA = {
               "image": "assets/STARMER/_ready/LOLLIPOP/_Flat Lollipop Line_._/Batch Roller.jpg",
               "specs": {
                 "modelNumber": "SEW-114",
-                "frame": "Horizontal",
+                "frame": "Horizontal work",
                 "rollersQuantity": "4",
                 "rollersMaterial": "S.S 304 food grade",
                 "upperBody": "S.S 304 food grade",
                 "bearing": "In gears",
                 "gearMotorMainDrive": "1 hp",
                 "upDownDrive": "1 hp",
-                "heaters": "1000 watt (2 Nos)",
+                "heaters": "1000 watt (2 Nos) to maximum temperature",
                 "capacity": "75 kg",
-                "length": "6.5 ft",
+                "length": "1981 mm",
                 "gearMotor": "SEW brand, Germany",
-                "dimension": "4'6\" x 2'2\" x 7'",
+                "dimensions": "1372 x 660 x 2134 mm",
                 "powerLoad": "4.68 hp"
               },
               "diesAndParts": [
@@ -9730,7 +9788,7 @@ window.CATALOG_DATA = {
               "machineNumber": "LO-L001-M11",
               "model": "SEW-115",
               "orderInLine": 11,
-              "name": "Rope Sizer (4 Stages)",
+              "name": "Rope Sizer",
               "function": "Accurately reduces and calibrates the candy rope diameter through four sizing stages for uniform thickness before forming.",
               "description": "Horizontal 4-stage rope sizer with S.S 304 roller pairs, brass rope guide, digital inverter and SEW (Germany) gear motors; bearings for low maintenance.",
               "image": "assets/STARMER/_ready/LOLLIPOP/_Flat Lollipop Line_._/Rope Sizer.jpg",
@@ -9743,12 +9801,12 @@ window.CATALOG_DATA = {
                 "sizerPlates": "S.S 304",
                 "ropeGuide": "Brass",
                 "inverter": "INVENT digital, 2 hp",
-                "gearMotors": "SEW brand, Germany",
+                "gearMotor": "SEW brand, Germany",
                 "heatControllers": "Digital, 2 Nos",
                 "mainDriveGearMotor": "2 hp",
                 "heaters": "500 watt (4 Nos) = 2 kw",
-                "bearings": "Used instead of bushes",
-                "dimension": "4.3 ft x 2.5 ft x 6 ft",
+                "bearings": "Used instead of bushes to reduce maintenance",
+                "dimensions": "1311 x 762 x 1829 mm",
                 "powerLoad": "4.68 hp"
               },
               "diesAndParts": [
@@ -9777,7 +9835,7 @@ window.CATALOG_DATA = {
               "orderInLine": 12,
               "name": "Flat Lollipop Forming + Wrapping Machine",
               "function": "A single unit that forms flat-shape hard-boiled lollipops from die-formed shapes and wraps them immediately — a complete cut-and-wrap setup for different kinds of flat lollipops.",
-              "description": "Heavy-duty M.S structure with special/imported MS punches (12/round), 7.5 kW motor, 10 kW inverter and automatic cut-and-wrap with full electric panel.",
+              "description": "Heavy-duty M.S structure with special/imported M.S punches (12/round), 7.5 kW motor, 10 kW inverter and automatic cut-and-wrap with full electric panel.",
               "image": "assets/STARMER/_ready/LOLLIPOP/_Flat Lollipop Line_._/Flat Lollipop Former and Wrapping..jpg",
               "specs": {
                 "modelNumber": "SEW-415",
@@ -9785,7 +9843,7 @@ window.CATALOG_DATA = {
                 "capacity": "350 to 400 pcs/min",
                 "motorPower": "7.5 kW",
                 "inverter": "10 kW",
-                "modelMaterial": "Special MS / imported",
+                "modelMaterial": "Special M.S / imported",
                 "punchesQuantity": "12 per round",
                 "sizerSet": "One step with pulley",
                 "cutAndWrap": "Automatic",
@@ -9837,11 +9895,11 @@ window.CATALOG_DATA = {
                 "sheetThickness": "5 mm upper and lower sheet",
                 "outerDiaSheetThickness": "3 mm",
                 "designType": "Vertical",
-                "heatingSystem": "Coil on the base of tank",
+                "heatingSystem": "Coil on the base of tank for steam circulation",
                 "ladder": "Outside the tank",
                 "capacity": "20 ton glucose",
-                "dimension": "16 ft height x 7 ft diameter",
-                "powerLoad": "None"
+                "dimensions": "4877 x 2134 mm (H x Dia)",
+                "powerLoad": "0"
               },
               "diesAndParts": [
                 {
@@ -9876,15 +9934,16 @@ window.CATALOG_DATA = {
                 "typeOfPasses": "3 pass",
                 "testPressure": "225 psi",
                 "workingPressure": "150 psi",
-                "tubeDia": "2\" or 2½\"",
+                "tubeDia": "2\" or 2 1/2\"",
                 "pressureShellThickness": "3/8\"",
                 "insulationSheetThickness": "24 gauge",
                 "feedWaterPump": "Grundfos, multistage",
                 "motor": "2 hp",
                 "capacity": "600 kg/hr",
                 "electricLoad": "5 kW",
-                "dimension": "8' x 3'5\" x 3'5\"",
-                "powerLoad": "5 hp"
+                "dimensions": "2438 x 1041 x 1041 mm",
+                "powerLoad": "5 hp",
+                "feedWaterMotor": "3 hp"
               },
               "diesAndParts": [
                 {
@@ -9917,12 +9976,11 @@ window.CATALOG_DATA = {
               "specs": {
                 "modelNumber": "SEW-103",
                 "materialOfHeader": "M.S",
-                "diameter": "1 ft",
-                "branchPipes": "1\", 2\", 3\", 4\" (depending on system needs)",
+                "diameter": "305 mm",
+                "branchPipes": "1\", 2\", 3\", 4\" depending on system needs",
                 "design": "Cushioned Cylinder",
                 "connections": "5",
-                "dimension": "1 ft (dia) x 3 ft (length)",
-                "powerLoad": "None"
+                "dimensions": "305 x 914 mm (L x H)"
               },
               "diesAndParts": [
                 {
@@ -9954,14 +10012,14 @@ window.CATALOG_DATA = {
               "image": "assets/STARMER/_ready/LOLLIPOP/Lollipop 200 Kg/Batch Type Cooker.jpg",
               "specs": {
                 "modelNumber": "SEW-005",
-                "capacity": "200 kg per hour",
+                "capacity": "200 kg/hr",
                 "gearMotorMainDrive": "2 hp",
                 "pan": "S.S 304",
                 "mainBody": "S.S 304",
                 "cookerFrame": "M.S",
                 "construction": "Double jacketed with M.S",
                 "controls": "Electric control panel, gauges",
-                "dimension": "4' x 2'5\" x 3'5\"",
+                "dimensions": "1219 x 737 x 1041 mm (H x W x L)",
                 "powerLoad": "2 hp"
               },
               "diesAndParts": [
@@ -9996,7 +10054,7 @@ window.CATALOG_DATA = {
                 "modelNumber": "SEW-006",
                 "rating": "7.5 hp = 1450 rpm",
                 "frame": "M.S",
-                "dimension": "2'5\" x 1' x 3'5\"",
+                "dimensions": "737 x 305 x 1041 mm",
                 "powerLoad": "7.5 hp"
               },
               "diesAndParts": [
@@ -10036,7 +10094,7 @@ window.CATALOG_DATA = {
                 "stirrer": "S.S 304",
                 "gearMotorMainDrive": "2 hp",
                 "fittings": "Steam gauge, safety valve, seat valve",
-                "dimension": "5'6\" x 3'5\" x 3'5\"",
+                "dimensions": "1676 x 1041 x 1041 mm",
                 "powerLoad": "2 hp"
               },
               "diesAndParts": [
@@ -10073,8 +10131,7 @@ window.CATALOG_DATA = {
                 "materialOfPlate": "Boundary wall S.S 304",
                 "coolingMedium": "Water cooling system, A-frame inlet/outlet",
                 "legs": "4 Nos in S.S 201 grade",
-                "dimension": "3 ft x 6 ft x 2'6\"",
-                "powerLoad": "None"
+                "dimensions": "914 x 1829 x 762 mm"
               },
               "diesAndParts": [
                 {
@@ -10112,7 +10169,7 @@ window.CATALOG_DATA = {
                 "control": "Switch on/off",
                 "sideSheets": "S.S 201",
                 "mainPlate": "S.S 304",
-                "dimension": "5' x 5'6\" x 6'5\"",
+                "dimensions": "1524 x 1676 x 1956 mm",
                 "powerLoad": "5 hp"
               },
               "diesAndParts": [
@@ -10156,8 +10213,9 @@ window.CATALOG_DATA = {
                 "sideSheets": "S.S 201",
                 "tilt": "S.S 201, tilting system",
                 "controls": "Electric panel with all new features",
-                "dimension": "6' x 8' x 8'",
-                "powerLoad": "28 hp"
+                "dimensions": "1829 x 2438 x 2438 mm",
+                "powerLoad": "28 hp",
+                "zArm": "S.S 304"
               },
               "diesAndParts": [
                 {
@@ -10196,7 +10254,8 @@ window.CATALOG_DATA = {
                 "roll": "S.S 304",
                 "heaters": "Electric heaters, 6000 watt",
                 "controls": "Electric panel with all new features, helping roller system in head",
-                "powerLoad": "18 hp"
+                "powerLoad": "18 hp",
+                "leaf": "S.S 304"
               },
               "diesAndParts": [
                 {
@@ -10228,18 +10287,18 @@ window.CATALOG_DATA = {
               "image": "assets/STARMER/_ready/LOLLIPOP/Lollipop 200 Kg/Batch Roller.jpg",
               "specs": {
                 "modelNumber": "SEW-114",
-                "frame": "Horizontal",
+                "frame": "Horizontal work",
                 "rollersQuantity": "4",
                 "rollersMaterial": "S.S 304 food grade",
                 "upperBody": "S.S 304 food grade",
                 "bearing": "In gears",
                 "gearMotorMainDrive": "1 hp",
                 "upDownDrive": "1 hp",
-                "heaters": "1000 watt (2 Nos)",
+                "heaters": "1000 watt (2 Nos) to maximum temperature",
                 "capacity": "75 kg",
-                "length": "6.5 ft",
+                "length": "1981 mm",
                 "gearMotor": "SEW brand, Germany",
-                "dimension": "4' x 2' x 3'",
+                "dimensions": "1219 x 610 x 914 mm",
                 "powerLoad": "4.68 hp"
               },
               "diesAndParts": [
@@ -10266,7 +10325,7 @@ window.CATALOG_DATA = {
               "machineNumber": "LO-L002-M12",
               "model": "SEW-115",
               "orderInLine": 12,
-              "name": "Rope Sizer (5 Stages)",
+              "name": "Rope Sizer",
               "function": "Accurately reduces and calibrates the candy/toffee rope diameter for uniform thickness before forming or cutting.",
               "description": "Horizontal multi-stage rope sizer with S.S 304 roller pairs, brass rope guide, digital inverter and SEW (Germany) gear motors; bearings for low maintenance.",
               "image": "assets/STARMER/_ready/LOLLIPOP/Lollipop 200 Kg/Rope Sizer.jpg",
@@ -10279,12 +10338,12 @@ window.CATALOG_DATA = {
                 "sizerPlates": "S.S 304",
                 "ropeGuide": "Brass",
                 "inverter": "INVENT digital, 2 hp",
-                "gearMotors": "SEW brand, Germany, 2 hp",
+                "gearMotor": "SEW brand, Germany, 2 hp",
                 "heatControllers": "Digital, 2 Nos",
                 "mainDriveGearMotor": "2 hp",
                 "heaters": "500 watt (4 Nos) = 2 kw",
-                "bearings": "Used instead of bushes",
-                "dimension": "4' x 2'5\" x 6 ft",
+                "bearings": "Used instead of bushes to reduce maintenance",
+                "dimensions": "1219 x 737 x 1829 mm",
                 "powerLoad": "4.68 hp"
               },
               "diesAndParts": [
@@ -10318,12 +10377,12 @@ window.CATALOG_DATA = {
               "specs": {
                 "modelNumber": "SEW-411",
                 "lollipopDiameter": "17 mm - 34 mm",
-                "speed": "250 - 300 pcs/min",
+                "speed": "250-300 pcs/min",
                 "mainDrive": "Gear motor 3 hp with variable inverter",
                 "controls": "Electric panel with all new features",
                 "structure": "Heavy duty M.S",
                 "sideSheets": "M.S",
-                "dimension": "4'6\" x 4'6\" x 4'6\"",
+                "dimensions": "1372 x 1372 x 1372 mm",
                 "powerLoad": "3 hp"
               },
               "diesAndParts": [
@@ -10363,8 +10422,7 @@ window.CATALOG_DATA = {
                 "block": "High quality M.S",
                 "guidePins": "Carbon steel",
                 "dieParts": "Cast iron grade",
-                "dimension": "2' x 2' x 2'",
-                "powerLoad": "None"
+                "dimensions": "610 x 610 x 610 mm"
               },
               "diesAndParts": [
                 {
@@ -10390,18 +10448,18 @@ window.CATALOG_DATA = {
               "machineNumber": "LO-L002-M15",
               "model": "SEW-122",
               "orderInLine": 15,
-              "name": "AC Unit (5 Ton)",
+              "name": "AC Unit",
               "function": "Floor-standing air-conditioning unit (5 ton / 6.5 HP) for cooling the conveyor section and accessories.",
               "description": "Indoor unit with copper-tube evaporator and 1 HP blower; Bitzer 6.5 HP outdoor condensing unit with Copeland scroll compressor and full AC accessories.",
               "image": "assets/STARMER/_ready/LOLLIPOP/Lollipop 200 Kg/Ac Unit.jpg",
               "specs": {
                 "modelNumber": "SEW-122",
-                "capacity": "5 Ton (6.5 HP)",
+                "capacity": "5 Ton (6.5 hp)",
                 "type": "Floor standing",
-                "indoorBlower": "1 HP motor, 3 phase 440V/50Hz",
-                "expansionValve": "Emerson TCLE 6.5 HP",
+                "indoorBlower": "1 hp motor, 3 phase 440V/50Hz",
+                "expansionValve": "Emerson TCLE 6.5 hp",
                 "outdoorUnit": "Bitzer, high-density condensing coil",
-                "compressor": "Copeland scroll, 6.5 HP, 3 phase 440V/50Hz",
+                "compressor": "Copeland scroll, 6.5 hp, 3 phase 440V/50Hz",
                 "safety": "Danfoss dual high/low-pressure switch",
                 "refrigerant": "R-22 (Honeywell, USA)",
                 "inverter": "7.5 KVA (INVT)",
@@ -10445,7 +10503,7 @@ window.CATALOG_DATA = {
                 "elevatorDrive": "Gear motor 1 hp",
                 "elevatorFans": "2 Nos (for cooling)",
                 "belt": "Food grade T-belt in elevator",
-                "dimension": "9 ft x 3.5 ft x 6.5 ft",
+                "dimensions": "2743 x 1067 x 1981 mm",
                 "powerLoad": "6 hp"
               },
               "diesAndParts": [
@@ -10478,13 +10536,13 @@ window.CATALOG_DATA = {
               "image": "assets/STARMER/_ready/LOLLIPOP/Lollipop 200 Kg/Lollipop bunch Wrap Machine.jpg",
               "specs": {
                 "modelNumber": "SEW-414",
-                "productionSpeed": "110 - 130 pcs/min (standard lollipop shape)",
+                "productionSpeed": "110-130 pcs/min (standard lollipop shape)",
                 "control": "PLC control",
                 "mainMotor": "2 hp + 0.5 hp",
                 "electricHeater": "0.25 kW x 6",
                 "mainDriveInverter": "2 hp",
                 "servoMotor": "True",
-                "dimensions": "2,600 x 920 x 1,520 mm (H x W x L)"
+                "dimensions": "2600 x 920 x 1520 mm (H x W x L)"
               },
               "diesAndParts": [
                 {
@@ -10530,11 +10588,11 @@ window.CATALOG_DATA = {
                 "sheetThickness": "5 mm upper and lower sheet",
                 "outerDiaSheetThickness": "3 mm",
                 "designType": "Vertical",
-                "heatingSystem": "Coil on the base of tank",
+                "heatingSystem": "Coil on the base of tank for steam circulation",
                 "ladder": "Outside the tank",
                 "capacity": "20 ton glucose",
-                "dimension": "16 ft height x 7 ft diameter",
-                "powerLoad": "None"
+                "dimensions": "4877 x 2134 mm (H x Dia)",
+                "powerLoad": "0"
               },
               "diesAndParts": [
                 {
@@ -10569,7 +10627,7 @@ window.CATALOG_DATA = {
                 "typeOfPasses": "3 pass",
                 "testPressure": "225 psi",
                 "workingPressure": "150 psi",
-                "tubeDia": "2\" or 2½\"",
+                "tubeDia": "2\" or 2 1/2\"",
                 "pressureShellThickness": "1/2\"",
                 "tubeSheetThickness": "2\"",
                 "rockWoolThickness": "2\"",
@@ -10579,7 +10637,7 @@ window.CATALOG_DATA = {
                 "feedWaterMotor": "3 hp",
                 "capacity": "1500 kg/hr",
                 "electricLoad": "5 hp",
-                "dimension": "8' x 3'5\" x 3'5\"",
+                "dimensions": "2438 x 1041 x 1041 mm",
                 "powerLoad": "5 hp"
               },
               "diesAndParts": [
@@ -10613,12 +10671,11 @@ window.CATALOG_DATA = {
               "specs": {
                 "modelNumber": "SEW-103",
                 "materialOfHeader": "M.S",
-                "diameter": "1 ft",
-                "branchPipes": "1\", 2\", 3\", 4\" (depending on system needs)",
+                "diameter": "305 mm",
+                "branchPipes": "1\", 2\", 3\", 4\" depending on system needs",
                 "design": "Cushioned Cylinder",
                 "connections": "5",
-                "dimension": "1 ft (dia) x 3 ft (length)",
-                "powerLoad": "None"
+                "dimensions": "305 x 914 mm (L x H)"
               },
               "diesAndParts": [
                 {
@@ -10644,7 +10701,7 @@ window.CATALOG_DATA = {
               "machineNumber": "LO-L003-M04",
               "model": "SEW-104",
               "orderInLine": 4,
-              "name": "Candy Continuous Cooker",
+              "name": "Candy Continuous Vacuum Cooker",
               "function": "Continuous vacuum cooker that automatically produces hard-boiled candies with high clarity and smooth texture at adjustable parameters.",
               "description": "Double-jacketed S.S 304 pans and body with dosing pump, sugar pump, steam trap and electric control panel.",
               "image": "assets/STARMER/_ready/LOLLIPOP/Lollipop Standard Speed Line 450 KG _ HR_/Candy Continuous Cooker.jpg",
@@ -10653,11 +10710,11 @@ window.CATALOG_DATA = {
                 "output": "450 kg/hr",
                 "pans": "S.S 304",
                 "body": "S.S 304, double jacketed",
-                "dozingPump": "3 hp (imported)",
+                "dosingPump": "3 hp (imported)",
                 "sugarPump": "2 hp, 1450 rpm",
-                "controls": "Electric panel with all new features",
+                "controls": "Electric panel with all new features, batch auto control",
                 "fittings": "Outer tube jacketed, steam trap, seat valve",
-                "dimension": "8.5' x 6' x 7'",
+                "dimensions": "2591 x 1829 x 2134 mm",
                 "powerLoad": "4 hp"
               },
               "diesAndParts": [
@@ -10692,7 +10749,7 @@ window.CATALOG_DATA = {
                 "modelNumber": "SEW-105",
                 "rating": "7.5 hp = 1450 rpm",
                 "frame": "M.S",
-                "dimension": "2 ft x 4 ft x 1 ft",
+                "dimensions": "610 x 1219 x 305 mm",
                 "powerLoad": "10 hp"
               },
               "diesAndParts": [
@@ -10732,7 +10789,7 @@ window.CATALOG_DATA = {
                 "stirrer": "S.S 304",
                 "gearMotorMainDrive": "2 hp",
                 "fittings": "Steam gauge, safety valve, seat valve",
-                "dimension": "5'6\" x 3'5\" x 3'5\"",
+                "dimensions": "1676 x 1041 x 1041 mm",
                 "powerLoad": "2 hp"
               },
               "diesAndParts": [
@@ -10771,7 +10828,7 @@ window.CATALOG_DATA = {
                 "legs": "M.S",
                 "stirrer": "S.S 304",
                 "gearMotorMainDrive": "1 hp",
-                "dimension": "6' x 3'6\" x 3'6\"",
+                "dimensions": "1829 x 1067 x 1067 mm",
                 "powerLoad": "1 hp"
               },
               "diesAndParts": [
@@ -10808,8 +10865,7 @@ window.CATALOG_DATA = {
                 "materialOfPlate": "Boundary wall S.S 304",
                 "coolingMedium": "Water cooling system, A-frame inlet/outlet",
                 "legs": "4 Nos in S.S 201 grade",
-                "dimension": "3 ft x 6 ft x 2'6\"",
-                "powerLoad": "None"
+                "dimensions": "914 x 1829 x 762 mm"
               },
               "diesAndParts": [
                 {
@@ -10847,7 +10903,7 @@ window.CATALOG_DATA = {
                 "control": "Switch on/off",
                 "sideSheets": "S.S 201",
                 "mainPlate": "S.S 304",
-                "dimension": "5' x 5'6\" x 6'5\"",
+                "dimensions": "1524 x 1676 x 1956 mm",
                 "powerLoad": "5 hp"
               },
               "diesAndParts": [
@@ -10891,8 +10947,9 @@ window.CATALOG_DATA = {
                 "sideSheets": "S.S 201",
                 "tilt": "S.S 201, tilting system",
                 "controls": "Electric panel with all new features",
-                "dimension": "6' x 8' x 8'",
-                "powerLoad": "28 hp"
+                "dimensions": "1829 x 2438 x 2438 mm",
+                "powerLoad": "28 hp",
+                "zArm": "S.S 304"
               },
               "diesAndParts": [
                 {
@@ -10931,7 +10988,8 @@ window.CATALOG_DATA = {
                 "roll": "S.S 304",
                 "heaters": "Electric heaters, 6000 watt",
                 "controls": "Electric panel with all new features, helping roller system in head",
-                "powerLoad": "18 hp"
+                "powerLoad": "18 hp",
+                "leaf": "S.S 304"
               },
               "diesAndParts": [
                 {
@@ -10963,18 +11021,18 @@ window.CATALOG_DATA = {
               "image": "assets/STARMER/_ready/LOLLIPOP/Lollipop Standard Speed Line 450 KG _ HR_/Batch Roller.jpg",
               "specs": {
                 "modelNumber": "SEW-114",
-                "frame": "Horizontal",
+                "frame": "Horizontal work",
                 "rollersQuantity": "4",
                 "rollersMaterial": "S.S 304 food grade",
                 "upperBody": "S.S 304 food grade",
                 "bearing": "In gears",
                 "gearMotorMainDrive": "1 hp",
                 "upDownDrive": "1 hp",
-                "heaters": "1000 watt (2 Nos)",
+                "heaters": "1000 watt (2 Nos) to maximum temperature",
                 "capacity": "75 kg",
-                "length": "6.5 ft",
+                "length": "1981 mm",
                 "gearMotor": "SEW brand, Germany",
-                "dimension": "4' x 2' x 3'",
+                "dimensions": "1219 x 610 x 914 mm",
                 "powerLoad": "4.68 hp"
               },
               "diesAndParts": [
@@ -11001,7 +11059,7 @@ window.CATALOG_DATA = {
               "machineNumber": "LO-L003-M13",
               "model": "SEW-212",
               "orderInLine": 13,
-              "name": "Rope Sizer (5 Stages)",
+              "name": "Rope Sizer",
               "function": "Accurately reduces and calibrates the candy rope diameter through five sizing stages for uniform thickness before forming.",
               "description": "Horizontal 5-stage rope sizer (4 horizontal + 1 vertical) with S.S 304 roller pairs, brass rope guide, digital inverter and SEW (Germany) gear motors.",
               "image": "assets/STARMER/_ready/LOLLIPOP/Lollipop Standard Speed Line 450 KG _ HR_/Rope Sizer.jpg",
@@ -11013,12 +11071,14 @@ window.CATALOG_DATA = {
                 "sidePlates": "S.S 304",
                 "ropeGuide": "Brass",
                 "inverter": "INVENT digital, 3 hp",
-                "gearMotors": "SEW brand, Germany, 3 hp",
+                "gearMotor": "SEW brand, Germany, 3 hp",
                 "heatControllers": "Digital, 2 Nos",
                 "heaters": "500 watt (4 Nos) = 2 kw",
                 "bearings": "Used instead of bushes",
-                "dimension": "4' x 2'5\" x 6'",
-                "powerLoad": "5.68 hp"
+                "dimensions": "1219 x 737 x 1829 mm",
+                "powerLoad": "5.68 hp",
+                "model": "Horizontal, 5 stages (4 horizontal + 1 vertical)",
+                "pair4": "S.S 304, 22 mm"
               },
               "diesAndParts": [
                 {
@@ -11051,11 +11111,11 @@ window.CATALOG_DATA = {
               "specs": {
                 "modelNumber": "SEW-314",
                 "lollipopDiameter": "17 mm - 34 mm",
-                "speed": "500 - 600 pcs/min",
+                "speed": "500-600 pcs/min",
                 "mainPower": "3 kW",
                 "capacity": "500 kg/hr (based on 5-25 g spherical lollipops)",
                 "grossWeight": "1500 kg",
-                "dimension": "1,600 x 1,050 x 1,350 mm (H x W x L)",
+                "dimensions": "1600 x 1050 x 1350 mm (H x W x L)",
                 "powerLoad": "4 kW"
               },
               "diesAndParts": [
@@ -11094,8 +11154,7 @@ window.CATALOG_DATA = {
                 "punch": "Grade 1045, hardness up to 45 HRC",
                 "block": "High quality M.S",
                 "guidePins": "Carbon steel",
-                "dieParts": "Cast iron grade",
-                "powerLoad": "None"
+                "dieParts": "Cast iron grade"
               },
               "diesAndParts": [
                 {
@@ -11130,8 +11189,7 @@ window.CATALOG_DATA = {
                 "mainFrame": "M.S",
                 "movement": "Wheels for movement",
                 "dieCaplene": "Casting material",
-                "adjustment": "Screw for die up/down",
-                "powerLoad": "None"
+                "adjustment": "Screw for die up/down"
               },
               "diesAndParts": [
                 {
@@ -11169,7 +11227,7 @@ window.CATALOG_DATA = {
                 "elevatorDrive": "Gear motor 1 hp",
                 "elevatorFans": "2 Nos (for cooling)",
                 "belt": "Food grade T-belt in elevator",
-                "dimension": "9 ft x 3.5 ft x 6.5 ft",
+                "dimensions": "2743 x 1067 x 1981 mm",
                 "powerLoad": "6 hp"
               },
               "diesAndParts": [
@@ -11202,12 +11260,12 @@ window.CATALOG_DATA = {
               "image": "assets/STARMER/_ready/LOLLIPOP/Lollipop Standard Speed Line 450 KG _ HR_/Ac Unit.jpg",
               "specs": {
                 "modelNumber": "SEW-318",
-                "capacity": "5 Ton (6.5 HP)",
+                "capacity": "5 Ton (6.5 hp)",
                 "type": "Floor standing",
-                "indoorBlower": "1 HP motor, 3 phase 440V/50Hz",
-                "expansionValve": "Emerson TCLE 6.5 HP",
+                "indoorBlower": "1 hp motor, 3 phase 440V/50Hz",
+                "expansionValve": "Emerson TCLE 6.5 hp",
                 "outdoorUnit": "Bitzer, high-density condensing coil",
-                "compressor": "Copeland scroll, 6.5 HP, 3 phase 440V/50Hz",
+                "compressor": "Copeland scroll, 6.5 hp, 3 phase 440V/50Hz",
                 "safety": "Danfoss dual high/low-pressure switch",
                 "refrigerant": "R-22 (Honeywell, USA)",
                 "inverter": "7.5 KVA (INVT)",
@@ -11239,11 +11297,11 @@ window.CATALOG_DATA = {
               "orderInLine": 19,
               "name": "Wrapping Machine",
               "function": "Single-twist wrapping machine that individually wraps round lollipops in a tight, hygienic single-twist film seal at high speed.",
-              "description": "PLC-controlled single-twist lollipop wrapper. (Detailed spec page was not included in this booklet; values below are from the standard lollipop wrapper.)",
+              "description": "PLC-controlled single-twist lollipop wrapper. (Detailed spec page was not included in this booklet; values below are from the standard lollipop wrapper.).",
               "image": "assets/STARMER/_ready/LOLLIPOP/Lollipop Standard Speed Line 450 KG _ HR_/Lollipop bunch Wrap Machine.jpg",
               "specs": {
                 "modelNumber": "SEW-320",
-                "productionSpeed": "110 - 130 pcs/min (standard lollipop shape)",
+                "productionSpeed": "110-130 pcs/min (standard lollipop shape)",
                 "control": "PLC control",
                 "mainMotor": "2 hp + 0.5 hp",
                 "mainDriveInverter": "2 hp"
@@ -11275,8 +11333,8 @@ window.CATALOG_DATA = {
       "id": "pharma",
       "label": "Pharma (Lozenges)",
       "slug": "pharma",
-      "color": "#1E3A8A",
-      "accentColor": "#3B82F6",
+      "color": "#0D9488",
+      "accentColor": "#14B8A6",
       "description": "",
       "lines": [
         {
@@ -11302,11 +11360,11 @@ window.CATALOG_DATA = {
                 "sheetThickness": "5 mm upper and lower sheet",
                 "outerDiaSheetThickness": "3 mm",
                 "designType": "Vertical",
-                "heatingSystem": "Coil on the base of tank (for steam circulation)",
+                "heatingSystem": "Coil on the base of tank for steam circulation",
                 "ladder": "Outside the tank",
-                "capacity": "20 ton Glucose",
-                "dimension": "16 ft height x 7 ft diameter",
-                "powerLoad": "None"
+                "capacity": "20 ton glucose",
+                "dimensions": "4877 x 2134 mm (H x Dia)",
+                "powerLoad": "0"
               },
               "diesAndParts": [
                 {
@@ -11349,7 +11407,7 @@ window.CATALOG_DATA = {
                 "burnerMotor": "2 hp",
                 "feedWaterMotor": "3 hp",
                 "capacity": "1500 kg/hr",
-                "dimension": "8' x 3'5\" x 3'5\"",
+                "dimensions": "2438 x 1041 x 1041 mm",
                 "powerLoad": "5 hp"
               },
               "diesAndParts": [
@@ -11383,12 +11441,11 @@ window.CATALOG_DATA = {
               "specs": {
                 "modelNumber": "SEW-103",
                 "materialOfHeader": "M.S",
-                "diameter": "1 ft",
-                "branchPipes": "1\", 2\", 3\", 4\" (depending on system needs)",
+                "diameter": "305 mm",
+                "branchPipes": "1\", 2\", 3\", 4\" depending on system needs",
                 "design": "Cushioned Cylinder",
                 "connections": "5",
-                "dimension": "1 ft (dia) x 3 ft (length)",
-                "powerLoad": "None"
+                "dimensions": "305 x 914 mm (L x H)"
               },
               "diesAndParts": [
                 {
@@ -11423,11 +11480,11 @@ window.CATALOG_DATA = {
                 "output": "450 kg/hr",
                 "pans": "2 nos in S.S 304 food grade",
                 "body": "S.S 304, double jacketed",
-                "dozingPump": "3 hp (imported)",
+                "dosingPump": "3 hp (imported)",
                 "sugarPump": "2 hp, 1450 rpm",
                 "controls": "Electric panel with all new features, batch auto control",
                 "fittings": "Steam gauge, safety valve, sect valve",
-                "dimension": "8.5 ft x 6 ft x 7 ft",
+                "dimensions": "2591 x 1829 x 2134 mm",
                 "powerLoad": "4 hp"
               },
               "diesAndParts": [
@@ -11462,7 +11519,7 @@ window.CATALOG_DATA = {
                 "modelNumber": "SEW-105",
                 "rating": "10 hp = 1450 rpm",
                 "frame": "M.S",
-                "dimension": "2 ft x 4 ft x 1 ft",
+                "dimensions": "610 x 1219 x 305 mm",
                 "powerLoad": "10 hp"
               },
               "diesAndParts": [
@@ -11501,8 +11558,8 @@ window.CATALOG_DATA = {
                 "legs": "M.S",
                 "stirrer": "S.S 304",
                 "gearMotorMainDrive": "2 hp",
-                "fittings": "Steam gauge, safety valve, scat valve",
-                "dimension": "5'6\" x 3'5\" x 3'5\"",
+                "fittings": "Steam gauge, safety valve, seat valve",
+                "dimensions": "1676 x 1041 x 1041 mm",
                 "powerLoad": "2 hp"
               },
               "diesAndParts": [
@@ -11541,7 +11598,7 @@ window.CATALOG_DATA = {
                 "legs": "M.S",
                 "stirrer": "S.S 304",
                 "gearMotorMainDrive": "1 hp",
-                "dimension": "6' x 3'6\" x 3'6\"",
+                "dimensions": "1829 x 1067 x 1067 mm",
                 "powerLoad": "1 hp"
               },
               "diesAndParts": [
@@ -11578,8 +11635,7 @@ window.CATALOG_DATA = {
                 "materialOfPlate": "Boundary wall S.S 304",
                 "coolingMedium": "Water cooling system, A-frame inlet/outlet valve",
                 "legs": "4 Nos in S.S 201 grade",
-                "dimension": "3 ft x 6 ft x 2'6\"",
-                "powerLoad": "None"
+                "dimensions": "914 x 1829 x 762 mm"
               },
               "diesAndParts": [
                 {
@@ -11617,7 +11673,7 @@ window.CATALOG_DATA = {
                 "control": "Switch on/off",
                 "sideSheets": "S.S 201",
                 "mainPlate": "S.S 304",
-                "dimension": "5' x 5'6\" x 5'6\"",
+                "dimensions": "1524 x 1676 x 1676 mm",
                 "powerLoad": "5 hp"
               },
               "diesAndParts": [
@@ -11657,7 +11713,7 @@ window.CATALOG_DATA = {
                 "gearMotorMainDrive": "2 hp",
                 "stand": "M.S",
                 "heater": "1000 watt, 1 No",
-                "inverter": "2 HP",
+                "inverter": "2 hp",
                 "extra": "Overflow system to recycle liquid/chocolate",
                 "powerLoad": "3.34 hp"
               },
@@ -11691,18 +11747,18 @@ window.CATALOG_DATA = {
               "image": "assets/STARMER/_ready/PHARMA/Complete Pharma ( Lozenges ) 450KG_HR/Batch Roller.jpg",
               "specs": {
                 "modelNumber": "SEW-114",
-                "frame": "Horizontal",
+                "frame": "Horizontal work",
                 "rollersQuantity": "4",
                 "rollersMaterial": "S.S 304 food grade",
                 "upperBody": "S.S 304 food grade",
                 "bearing": "In gears",
                 "gearMotorMainDrive": "1 hp",
                 "upDownDrive": "1 hp",
-                "heaters": "1000 watt (2 Nos)",
+                "heaters": "1000 watt (2 Nos) to maximum temperature",
                 "capacity": "75 kg",
-                "length": "6.5 ft",
+                "length": "1981 mm",
                 "gearMotor": "SEW brand, Germany",
-                "dimension": "4'6\" x 2'2\" x 7'",
+                "dimensions": "1372 x 660 x 2134 mm",
                 "powerLoad": "4.68 hp"
               },
               "diesAndParts": [
@@ -11729,7 +11785,7 @@ window.CATALOG_DATA = {
               "machineNumber": "PH-L001-M12",
               "model": "SEW-115",
               "orderInLine": 12,
-              "name": "Rope Sizer (4 Stages)",
+              "name": "Rope Sizer",
               "function": "Accurately reduces and calibrates the candy/toffee rope diameter through four sizing stages for uniform thickness.",
               "description": "Horizontal 4-stage rope sizer with S.S 304 roller pairs, brass rope guide, digital inverter and SEW (Germany) gear motors; bearings for low maintenance.",
               "image": "assets/STARMER/_ready/PHARMA/Complete Pharma ( Lozenges ) 450KG_HR/Rope Sizer.jpg",
@@ -11742,12 +11798,12 @@ window.CATALOG_DATA = {
                 "sizerPlates": "S.S 304",
                 "ropeGuide": "Brass",
                 "inverter": "INVENT digital, 2 hp",
-                "gearMotors": "SEW brand, Germany",
+                "gearMotor": "SEW brand, Germany",
                 "heatControllers": "Digital, 2 Nos",
                 "mainDriveGearMotor": "2 hp",
                 "heaters": "500 watt (4 Nos) = 2 kw",
-                "bearings": "Used instead of bushes",
-                "dimension": "4.3 ft x 2.5 ft x 6 ft",
+                "bearings": "Used instead of bushes to reduce maintenance",
+                "dimensions": "1311 x 762 x 1829 mm",
                 "powerLoad": "4.68 hp"
               },
               "diesAndParts": [
@@ -11786,11 +11842,12 @@ window.CATALOG_DATA = {
                 "cams": "Bearing steel grade",
                 "reverseCams": "S.G iron",
                 "gears": "High carbon steel, forged",
-                "outputSpeed": "2500 to 3500 pieces/min (depending on size)",
+                "outputSpeed": "2500-3500 pcs/min (depending on size)",
                 "filling": "Up to 12% of candy",
                 "controls": "Electric panel with all new features",
-                "dimension": "6.5 ft x 4.5 ft x 3.5 ft",
-                "powerLoad": "5 hp"
+                "dimensions": "1981 x 1372 x 1067 mm",
+                "powerLoad": "5 hp",
+                "speed": "1600-2000 pcs/min (depending on size)"
               },
               "diesAndParts": [
                 {
@@ -11827,8 +11884,8 @@ window.CATALOG_DATA = {
                 "block": "High quality M.S grade carbon steel",
                 "dieParts": "Cast iron grade",
                 "outerRing": "Brass casting (for rope cutting)",
-                "dimension": "18\" x 18\" x 5\"",
-                "powerLoad": "None"
+                "dimensions": "457 x 457 x 127 mm",
+                "guidePins": "Carbon steel"
               },
               "diesAndParts": [
                 {
@@ -11864,8 +11921,7 @@ window.CATALOG_DATA = {
                 "movement": "Equipped with wheels",
                 "dieCaplene": "Casting material",
                 "adjustment": "Screw for die up/down",
-                "dimension": "5.5 ft x 5 ft",
-                "powerLoad": "None"
+                "dimensions": "1676 x 1524 mm"
               },
               "diesAndParts": [
                 {
@@ -11897,7 +11953,7 @@ window.CATALOG_DATA = {
               "image": "assets/STARMER/_ready/PHARMA/Complete Pharma ( Lozenges ) 450KG_HR/Close body Cooling Tunnel _ 3 Stages Cooling Conveyor .jpg",
               "specs": {
                 "modelNumber": "SEW-119",
-                "length": "18 ft",
+                "length": "5486 mm",
                 "steps": "3 steps",
                 "blower": "3 hp",
                 "firstBelt": "Teflon, 4 inch width",
@@ -11907,9 +11963,11 @@ window.CATALOG_DATA = {
                 "inverter": "2 hp (speed control)",
                 "chain": "M.S",
                 "sprockets": "M.S",
-                "rods": "S.S 304",
-                "dimension": "18 ft (length)",
-                "powerLoad": "5 hp"
+                "rod": "S.S 304",
+                "dimensions": "5486 mm",
+                "powerLoad": "5 hp",
+                "stages": "3 stages",
+                "meshSteps": "S.S (2nd 21 inch, 3rd 26 inch width)"
               },
               "diesAndParts": [
                 {
@@ -11946,7 +12004,7 @@ window.CATALOG_DATA = {
                 "fans": "2 nos",
                 "gearMotor": "1 hp",
                 "trays": "S.S 304, 2 nos",
-                "dimension": "3.5 ft x 4.5 ft x 8 ft",
+                "dimensions": "1067 x 1372 x 2438 mm",
                 "powerLoad": "1 hp"
               },
               "diesAndParts": [
@@ -11979,19 +12037,19 @@ window.CATALOG_DATA = {
               "image": "assets/STARMER/_ready/PHARMA/Complete Pharma ( Lozenges ) 450KG_HR/Close body Cooling Tunnel _ 3 Stages Cooling Conveyor .jpg",
               "specs": {
                 "modelNumber": "SEW-121",
-                "length": "16 ft",
-                "width": "3 ft",
+                "length": "4877 mm",
+                "width": "914 mm",
                 "cooling": "With 5 ton AC",
                 "stages": "3 stages",
                 "meshWire": "S.S 304 grade (3 steps)",
                 "sideSheets": "Outer and inner in S.S 201",
-                "covers": "S.S 201",
+                "cover": "S.S 201",
                 "insulation": "Double jacketed with thermopore",
-                "rods": "S.S 304, 5 mm thickness",
+                "rod": "S.S 304, 5 mm thickness",
                 "chain": "M.S, 40 No",
                 "gearMotor": "3 hp (1 hp each, 3 nos), SEW brand",
                 "inverter": "INVENT new brand, 5 hp",
-                "dimension": "3 ft x 16 ft",
+                "dimensions": "914 x 4877 mm",
                 "powerLoad": "3 hp"
               },
               "diesAndParts": [
@@ -12018,18 +12076,18 @@ window.CATALOG_DATA = {
               "machineNumber": "PH-L001-M19",
               "model": "SEW-122",
               "orderInLine": 19,
-              "name": "AC Unit (5 Ton)",
+              "name": "AC Unit",
               "function": "Floor-standing air-conditioning unit (5 ton / 6.5 HP) for cooling the conveyor section and accessories.",
               "description": "Indoor unit with copper-tube evaporator and 1 HP blower; Bitzer 6.5 HP outdoor condensing unit with Copeland scroll compressor and full AC accessories.",
               "image": "assets/STARMER/_ready/PHARMA/Complete Pharma ( Lozenges ) 450KG_HR/Ac Unit.jpg",
               "specs": {
                 "modelNumber": "SEW-122",
-                "capacity": "5 Ton (6.5 HP)",
+                "capacity": "5 Ton (6.5 hp)",
                 "type": "Floor standing",
-                "indoorBlower": "1 HP motor, 3 phase 440V/50Hz",
-                "expansionValve": "Emerson TCLE 6.5 HP",
+                "indoorBlower": "1 hp motor, 3 phase 440V/50Hz",
+                "expansionValve": "Emerson TCLE 6.5 hp",
                 "outdoorUnit": "Bitzer, high-density condensing coil",
-                "compressor": "Copeland scroll, 6.5 HP, 3 phase 440V/50Hz",
+                "compressor": "Copeland scroll, 6.5 hp, 3 phase 440V/50Hz",
                 "safety": "Danfoss dual high/low-pressure switch",
                 "refrigerant": "R-22 (Honeywell, USA)",
                 "inverter": "7.5 KVA (INVT)",
@@ -12060,17 +12118,17 @@ window.CATALOG_DATA = {
               "machineNumber": "PH-L001-M20",
               "model": "SEW-123",
               "orderInLine": 20,
-              "name": "Wrapping Machine",
+              "name": "Pillow Pack Wrapping Machine",
               "function": "High-speed horizontal flow wrapper that feeds, encloses, heat-seals and cuts individual candies into uniform retail-ready packs as the final packaging stage.",
               "description": "Photo-electric-eye flow wrapper with inverter, 2 H.P 3-phase and ½ H.P motors, 3.2 kW heaters.",
               "image": "assets/STARMER/_ready/PHARMA/Complete Pharma ( Lozenges ) 450KG_HR/Pillow pack Wrapping Machine.jpg",
               "specs": {
                 "modelNumber": "SEW-123",
-                "output": "Up to 800 packs per minute",
-                "electricMotors": "(1) 2 H.P / 3-phase, (2) ½ H.P",
+                "output": "Up to 800 packs/min",
+                "electricMotor": "(1) 2 hp / 3-phase, (2) 1/2 hp",
                 "electricHeaters": "3.2 kW",
                 "standardEquipment": "Photo-electric eye & inverter",
-                "dimensions": "2,335 x 900 x 1,715 mm (L x W x H)",
+                "dimensions": "2335 x 900 x 1715 mm (L x W x H)",
                 "weight": "750 kg",
                 "reel": "Max outer dia 280 mm / core dia 70 mm"
               },

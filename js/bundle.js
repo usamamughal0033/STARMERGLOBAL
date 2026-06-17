@@ -89,11 +89,11 @@ function searchCatalog(catalog, query, limit = 10) {
       const ls = scoreItem(q, [line.id, line.lineNumber, line.name, line.description, cat.label]);
       if (ls > 0) results.push({ type: 'line', score: ls, item: { ...line, categoryId: cat.id, categoryLabel: cat.label, categoryColor: cat.color } });
       for (const machine of line.machines) {
-        const ms = scoreItem(q, [machine.id, machine.machineNumber, machine.name, machine.function, machine.description, cat.label]);
-        if (ms > 0) results.push({ type: 'machine', score: ms, item: { ...machine, lineId: line.id, lineName: line.name, categoryId: cat.id, categoryLabel: cat.label } });
+        const ms = scoreItem(q, [machine.id, machine.machineNumber, machine.model, machine.name, machine.function, machine.description, cat.label]);
+        if (ms > 0) results.push({ type: 'machine', score: ms, item: { ...machine, lineId: line.id, lineName: line.name, lineRate: line.productionRate, categoryId: cat.id, categoryLabel: cat.label } });
         for (const dp of (machine.diesAndParts || [])) {
-          const ds = scoreItem(q, [dp.id, dp.partNumber, dp.name, dp.description, dp.type, machine.name, cat.label]);
-          if (ds > 0) results.push({ type: 'die-part', score: ds, item: { ...dp, machineId: machine.id, machineName: machine.name, lineId: line.id, categoryId: cat.id, categoryLabel: cat.label } });
+          const ds = scoreItem(q, [dp.id, dp.partNumber, dp.model, dp.name, dp.description, dp.type, machine.name, cat.label]);
+          if (ds > 0) results.push({ type: 'die-part', score: ds, item: { ...dp, machineId: machine.id, machineName: machine.name, lineId: line.id, lineName: line.name, lineRate: line.productionRate, categoryId: cat.id, categoryLabel: cat.label } });
         }
       }
     }
@@ -238,11 +238,12 @@ function renderSearchDropdown(results, dropdown) {
   dropdown.innerHTML = results.map(r => {
     const typeLabel = r.type === 'line' ? 'Line' : r.type === 'machine' ? 'Machine' : 'Die / Part';
     const num = r.item.lineNumber || r.item.machineNumber || r.item.partNumber || r.item.id;
+    const model = r.type === 'line' ? '' : (r.item.model || 'SEW-XYZ');
     return `<a href="${resultHref(r)}" class="search-result-item">
       <span class="result-type type-${r.type === 'die-part' ? 'die-part' : r.type}">${typeLabel}</span>
-      <span class="result-number">${num}</span>
+      <span class="result-number">${num}${model ? `<span class="result-model"> · ${model}</span>` : ''}</span>
       <span class="result-name">${r.item.name}</span>
-      <span class="result-cat">${r.item.categoryLabel || ''}</span>
+      <span class="result-cat">${[r.item.categoryLabel, r.item.lineName, r.item.lineRate || r.item.productionRate].filter(Boolean).join(' · ')}</span>
     </a>`;
   }).join('');
 }
@@ -309,7 +310,7 @@ const CAT_VISUAL = {
   'hard-candy': {
     rate: '200 – 1,200 kg/hr',
     tagline: 'Deposited, Stamped & Drop-Rolled',
-    bg: 'linear-gradient(135deg,#F59E0B 0%,#DC2626 100%)',
+    bg: 'linear-gradient(135deg,#EF4444 0%,#B91C1C 100%)',
     icon: `<svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
       <circle cx="40" cy="40" r="26" fill="rgba(255,255,255,0.18)" stroke="rgba(255,255,255,0.5)" stroke-width="2"/>
       <circle cx="40" cy="40" r="17" fill="rgba(255,255,255,0.12)" stroke="rgba(255,255,255,0.35)" stroke-width="1.5"/>
@@ -322,7 +323,7 @@ const CAT_VISUAL = {
   'lollipop': {
     rate: '100 – 600 kg/hr',
     tagline: 'Stick, Flat & Novelty Shapes',
-    bg: 'linear-gradient(135deg,#EC4899 0%,#7C3AED 100%)',
+    bg: 'linear-gradient(135deg,#8B5CF6 0%,#6D28D9 100%)',
     icon: `<svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
       <line x1="40" y1="72" x2="40" y2="52" stroke="rgba(255,255,255,0.7)" stroke-width="3.5" stroke-linecap="round"/>
       <circle cx="40" cy="35" r="22" fill="rgba(255,255,255,0.18)" stroke="rgba(255,255,255,0.5)" stroke-width="2"/>
@@ -333,7 +334,7 @@ const CAT_VISUAL = {
   'chew-toffee': {
     rate: '200 – 800 kg/hr',
     tagline: 'Chew, Toffee & Caramel Lines',
-    bg: 'linear-gradient(135deg,#10B981 0%,#0369A1 100%)',
+    bg: 'linear-gradient(135deg,#D97706 0%,#92400E 100%)',
     icon: `<svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
       <rect x="14" y="29" width="52" height="22" rx="9" fill="rgba(255,255,255,0.18)" stroke="rgba(255,255,255,0.5)" stroke-width="2"/>
       <ellipse cx="14" cy="40" rx="7" ry="11" fill="rgba(255,255,255,0.28)" stroke="rgba(255,255,255,0.4)" stroke-width="1.5"/>
@@ -345,7 +346,7 @@ const CAT_VISUAL = {
   'bubble-gum': {
     rate: '100 – 500 kg/hr',
     tagline: 'Gum Ball, Stick & Coated Gum',
-    bg: 'linear-gradient(135deg,#8B5CF6 0%,#DB2777 100%)',
+    bg: 'linear-gradient(135deg,#EC4899 0%,#BE185D 100%)',
     icon: `<svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
       <circle cx="40" cy="44" r="16" fill="rgba(255,255,255,0.22)" stroke="rgba(255,255,255,0.5)" stroke-width="2"/>
       <circle cx="18" cy="44" r="10" fill="rgba(255,255,255,0.16)" stroke="rgba(255,255,255,0.38)" stroke-width="1.5"/>
@@ -358,7 +359,7 @@ const CAT_VISUAL = {
   'pharma': {
     rate: '50K – 500K tabs/hr',
     tagline: 'Pharmaceutical Production Lines',
-    bg: 'linear-gradient(135deg,#3B82F6 0%,#1E40AF 100%)',
+    bg: 'linear-gradient(135deg,#14B8A6 0%,#0F766E 100%)',
     icon: `<svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
       <rect x="8" y="31" width="64" height="18" rx="9" fill="rgba(255,255,255,0.18)" stroke="rgba(255,255,255,0.5)" stroke-width="2"/>
       <line x1="40" y1="31" x2="40" y2="49" stroke="rgba(255,255,255,0.5)" stroke-width="1.5"/>
@@ -656,15 +657,15 @@ function buildMachineCard(machine, cat) {
   const inCart = !!getCartItem(machine.id);
   return `<article class="product-card border border-slate-200 rounded-2xl overflow-hidden bg-white">
     <a href="product.html?id=${machine.id}">
-      <div class="h-44 overflow-hidden bg-slate-50"><img src="${img}" alt="${machine.name}" class="w-full h-full object-cover" loading="lazy"/></div>
+      <div class="h-56 overflow-hidden bg-white flex items-center justify-center p-3"><img src="${img}" alt="${machine.name}" class="w-full h-full object-contain" loading="lazy"/></div>
     </a>
     <div class="p-5">
       <div class="flex items-center gap-2 mb-2 flex-wrap">
         <span class="font-mono text-xs bg-blue-50 text-blue-600 px-2 py-0.5 rounded font-bold">${machine.machineNumber}</span>
+        <span class="font-mono text-xs bg-slate-100 text-slate-600 px-2 py-0.5 rounded font-bold">${machine.model || 'SEW-XYZ'}</span>
         ${inCart ? '<span class="text-xs text-green-600 font-semibold">✓ In Quote</span>' : ''}
       </div>
-      <h3 class="font-bold text-slate-800 text-sm mb-1 leading-snug">${machine.name}</h3>
-      <p class="text-xs text-slate-500 mb-3 line-clamp-2">${machine.function}</p>
+      <h3 class="font-bold text-slate-800 text-sm mb-3 leading-snug">${machine.name}</h3>
       <div class="flex gap-2">
         <a href="product.html?id=${machine.id}" class="text-xs font-semibold text-blue-700 border border-blue-600 px-3 py-1.5 rounded-lg hover:bg-blue-700 hover:text-white transition-colors">View Details</a>
         <button onclick="quickAddToCart('${machine.id}','${machine.machineNumber}','${machine.name.replace(/'/g,"\\'")}',this)"
@@ -787,9 +788,8 @@ function renderPipeline(catalog, line, cat) {
       <div class="pipeline-machine-img"><img src="${img}" alt="${m.name}" loading="lazy"/></div>
       <div class="pipeline-machine-body">
         <div class="pipeline-order">Step ${m.orderInLine}</div>
-        <div class="pipeline-machine-num">${m.machineNumber}</div>
+        <div class="pipeline-machine-num">${m.machineNumber} · ${m.model || 'SEW-XYZ'}</div>
         <div class="pipeline-machine-name">${m.name}</div>
-        <div class="pipeline-machine-func">${m.function}</div>
         <div class="pipeline-machine-actions">
           <a href="product.html?id=${m.id}" class="text-xs font-semibold text-blue-600 border border-blue-500 px-2 py-1 rounded-md hover:bg-blue-600 hover:text-white transition-colors">Details</a>
           <button onclick="quickAddToCart('${m.id}','${m.machineNumber}','${m.name.replace(/'/g,"\\'")}',this)"
@@ -855,8 +855,11 @@ function initProductPage(catalog) {
     imgContainer.innerHTML = `<img src="${src}" alt="${item.name}" class="w-full h-full object-cover rounded-2xl"/>`;
   }
   const pNum = machine ? machine.machineNumber : diePart?.partNumber;
+  const modelNum = (machine ? machine.model : diePart?.model) || 'SEW-XYZ';
   setEl('detail-part-number', pNum);
   setEl('chip-part-num', pNum);
+  setEl('detail-model', modelNum);
+  setEl('chip-model', modelNum);
   setEl('detail-name', item.name);
   setEl('detail-function', machine ? machine.function : (diePart ? `Type: ${diePart.type}` : ''));
   setEl('detail-description', item.description);
@@ -1010,11 +1013,11 @@ function buildCompareUI(catalog, machine) {
     const specRows = keys.map(k => {
       const a = aSpecs[k] != null && aSpecs[k] !== '' ? aSpecs[k] : '—';
       const b = bSpecs[k] != null && bSpecs[k] !== '' ? bSpecs[k] : '—';
-      const bg = String(a) !== String(b) ? 'bg-amber-50' : '';
+      const bg = String(a) !== String(b) ? `style="background:${category.color}1f"` : '';
       return `
-        <div class="px-4 py-2.5 border-t border-slate-100 text-sm font-semibold text-slate-600 align-top ${bg}">${formatSpecKey(k)}</div>
-        <div class="px-4 py-2.5 border-t border-slate-100 text-sm text-slate-700 align-top ${bg}">${a}</div>
-        <div class="px-4 py-2.5 border-t border-slate-100 text-sm text-slate-700 align-top ${dl} ${bg}">${b}</div>`;
+        <div class="px-4 py-2.5 border-t border-slate-100 text-sm font-semibold text-slate-600 align-top" ${bg}>${formatSpecKey(k)}</div>
+        <div class="px-4 py-2.5 border-t border-slate-100 text-sm text-slate-700 align-top" ${bg}>${a}</div>
+        <div class="px-4 py-2.5 border-t border-slate-100 text-sm text-slate-700 align-top ${dl}" ${bg}>${b}</div>`;
     }).join('');
     view.innerHTML = `
       <div class="rounded-2xl border border-slate-200 bg-white p-5 sm:p-6 shadow-sm">
@@ -1077,10 +1080,11 @@ function buildCompareUI(catalog, machine) {
 function buildDiePartCard(dp, cat) {
   const img = getImageSrc(dp.image, cat?.color, dp.partNumber, 'die-part');
   return `<article class="border border-slate-200 rounded-xl overflow-hidden bg-white hover:shadow-md transition-shadow">
-    <div class="h-32 overflow-hidden bg-slate-50"><img src="${img}" alt="${dp.name}" class="w-full h-full object-cover" loading="lazy"/></div>
+    <div class="h-44 overflow-hidden bg-white flex items-center justify-center p-3"><img src="${img}" alt="${dp.name}" class="w-full h-full object-contain" loading="lazy"/></div>
     <div class="p-4">
       <div class="flex items-center gap-2 mb-2">
         <span class="font-mono text-xs text-blue-600 bg-blue-50 px-2 py-0.5 rounded font-bold">${dp.partNumber}</span>
+        <span class="font-mono text-xs bg-slate-100 text-slate-600 px-2 py-0.5 rounded font-bold">${dp.model || 'SEW-XYZ'}</span>
         <span class="part-type-badge type-${dp.type}">${dp.type === 'die' ? 'Die' : 'Part'}</span>
       </div>
       <p class="text-sm font-semibold text-slate-700 mb-3 leading-snug">${dp.name}</p>
@@ -1134,14 +1138,14 @@ function initDiesPage(catalog) {
       const cat = getCategoryById(catalog, dp.categoryId);
       const img = getImageSrc(dp.image, cat?.color, dp.partNumber, 'die-part');
       return `<article class="product-card border border-slate-200 rounded-2xl overflow-hidden bg-white">
-        <div class="h-40 overflow-hidden bg-slate-50"><img src="${img}" alt="${dp.name}" class="w-full h-full object-cover" loading="lazy"/></div>
+        <div class="h-52 overflow-hidden bg-white flex items-center justify-center p-3"><img src="${img}" alt="${dp.name}" class="w-full h-full object-contain" loading="lazy"/></div>
         <div class="p-5">
           <div class="flex items-center gap-2 mb-2 flex-wrap">
             <span class="font-mono text-xs bg-blue-50 text-blue-600 px-2 py-0.5 rounded font-bold">${dp.partNumber}</span>
+            <span class="font-mono text-xs bg-slate-100 text-slate-600 px-2 py-0.5 rounded font-bold">${dp.model || 'SEW-XYZ'}</span>
             <span class="part-type-badge type-${dp.type}">${dp.type === 'die' ? 'Die' : 'Part'}</span>
           </div>
-          <h3 class="font-bold text-slate-800 text-sm mb-1 leading-snug">${dp.name}</h3>
-          <p class="text-xs text-slate-400 mb-3">For: ${dp.machineName}</p>
+          <h3 class="font-bold text-slate-800 text-sm mb-3 leading-snug">${dp.name}</h3>
           <div class="flex gap-2">
             <a href="product.html?id=${dp.id}" class="text-xs font-semibold text-blue-700 border border-blue-600 px-3 py-1.5 rounded-lg hover:bg-blue-700 hover:text-white transition-colors">View Details</a>
             <button onclick="quickAddToCart('${dp.id}','${dp.partNumber}','${dp.name.replace(/'/g,"\\'")}',this)"
@@ -1206,9 +1210,46 @@ function initQuotePage(catalog) {
     if (!validateRFQForm(form)) return;
     const cart = getCart();
     if (!cart.length) { showFormError('Your quote list is empty. Please add products first.'); return; }
-    submitWithEmailJS(form, cart);
+    submitRFQ(form, cart);
   });
 }
+
+// ── RFQ submit ────────────────────────────────────────────────────────────────
+// Sends the RFQ (and any file attachments) to Forminit, which stores the files
+// and emails a notification to the business inbox. The Forminit form endpoint is
+// configured per page as window.RFQ_ENDPOINT. Used by quote.html + custom-quote.html.
+const RFQ_MAX_BYTES = 10 * 1024 * 1024;   // 10 MB total attachment safety cap
+
+// Map our field names to Forminit "block keys". Phone goes through a plain text
+// block (fi-text-*) on purpose — fi-sender-phone enforces strict E.164 format.
+const FORMINIT_KEYS = {
+  from_email:   'fi-sender-email',
+  from_contact: 'fi-sender-fullName',
+  from_company: 'fi-text-company',
+  from_phone:   'fi-text-phone',
+  from_country: 'fi-text-country',
+  notes:        'fi-text-message',
+  item_list:    'fi-text-items',
+  date:         'fi-text-date',
+};
+
+async function postRFQ({ subject, fields, files = [] }) {
+  const endpoint = window.RFQ_ENDPOINT;
+  if (!endpoint || endpoint === 'YOUR_FORMINIT_ENDPOINT') throw new Error('NO_ENDPOINT');
+  const total = files.reduce((s, f) => s + (f.size || 0), 0);
+  if (total > RFQ_MAX_BYTES) throw new Error('TOO_BIG');
+  const fd = new FormData();
+  if (subject) fd.append('fi-text-subject', subject);
+  Object.entries(fields).forEach(([k, v]) => {
+    fd.append(FORMINIT_KEYS[k] || `fi-text-${k}`, v == null ? '' : String(v));
+  });
+  files.forEach((f, i) => fd.append(`fi-file-attachment${i + 1}`, f, f.name));
+  const res = await fetch(endpoint, { method: 'POST', body: fd, headers: { 'Accept': 'application/json' } });
+  const json = await res.json().catch(() => ({}));
+  if (!res.ok || json.success === false) throw new Error(json.error || 'SEND_FAILED');
+  return json;
+}
+window.postRFQ = postRFQ;
 
 function renderQuoteTable() {
   const cart = getCart();
@@ -1242,7 +1283,7 @@ function renderQuoteTable() {
   });
 }
 
-function submitWithEmailJS(form, cart) {
+function submitRFQ(form, cart) {
   const btn = form.querySelector('[type="submit"]');
   if (btn) { btn.disabled = true; btn.textContent = 'Sending…'; }
   const date = new Date().toLocaleDateString('en-GB', { day: '2-digit', month: 'long', year: 'numeric' });
@@ -1250,17 +1291,32 @@ function submitWithEmailJS(form, cart) {
     const desc = item.isLine ? `${item.name} — COMPLETE LINE (${item.machineCount} machines)` : item.name;
     return `${i + 1}. ${item.partNumber} — ${desc} | Qty: ${item.quantity} | Voltage: ${item.selectedVoltage || 'TBC'}`;
   }).join('\n');
-  const templateParams = { from_company: form.company.value.trim(), from_contact: form.contact.value.trim(), from_email: form.email.value.trim(), from_phone: form.phone.value.trim() || 'N/A', from_country: form.country.value.trim(), notes: form.notes.value.trim() || 'None.', item_list: itemLines, date };
-  if (typeof emailjs === 'undefined' || window.EMAILJS_SERVICE_ID === 'YOUR_SERVICE_ID') {
-    fallbackMailto(form, cart); if (btn) { btn.disabled = false; btn.textContent = 'Submit Quote Request'; } return;
-  }
-  emailjs.send(window.EMAILJS_SERVICE_ID, window.EMAILJS_TEMPLATE_ID, templateParams).then(() => {
+  const fields = {
+    from_company: form.company.value.trim(),
+    from_contact: form.contact.value.trim(),
+    from_email:   form.email.value.trim(),
+    from_phone:   form.phone.value.trim() || 'N/A',
+    from_country: form.country.value.trim(),
+    notes:        form.notes.value.trim() || 'None.',
+    item_list:    itemLines,
+    date
+  };
+  const input = document.getElementById('quote-attachments');
+  const files = input && input.files ? Array.from(input.files) : [];
+  const subject = `RFQ — Starmer Global — ${fields.from_company} — ${date}`;
+  postRFQ({ subject, fields, files, replyto: fields.from_email }).then(() => {
     clearCart();
     document.getElementById('quote-success')?.classList.remove('hidden');
     document.getElementById('rfq-form')?.classList.add('hidden');
     document.getElementById('cart-table-wrapper')?.classList.add('hidden');
     document.getElementById('cart-empty')?.classList.add('hidden');
-  }).catch(() => fallbackMailto(form, cart)).finally(() => { if (btn) { btn.disabled = false; btn.textContent = 'Submit Quote Request'; } });
+  }).catch(err => {
+    if (err && err.message === 'TOO_BIG') {
+      showFormError('Your attachments exceed 10 MB total. Please remove some files, or email them directly to info@starmerglobal.com.');
+    } else {
+      fallbackMailto(form, cart);
+    }
+  }).finally(() => { if (btn) { btn.disabled = false; btn.textContent = 'Submit Quote Request'; } });
 }
 
 function fallbackMailto(form, cart) {
