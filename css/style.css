@@ -169,6 +169,22 @@
     rgba(247,251,255,0.00) 100%);
 }
 
+/* ── Machine comparison table ───────────────────────────────────────────────── */
+.compare-grid {
+  display: grid;
+  grid-template-columns: minmax(120px, 24%) 1fr 1fr;  /* desktop = original inline layout */
+  min-width: 560px;
+}
+@media (max-width: 639px) {
+  /* Mobile: full-width label band, then the two machines side by side (50/50)
+     so both values are visible in one view — no horizontal scrolling. */
+  .compare-grid { grid-template-columns: 1fr 1fr; min-width: 0; }
+  .compare-grid > div:nth-child(3n+1) { grid-column: 1 / -1; }          /* label/header → full width */
+  .compare-grid > div:nth-child(3n+1):empty { display: none; }          /* drop empty spacer cells */
+  .compare-grid > div:not(:nth-child(3n+1)) { border-top: 0; }          /* one divider per spec (on the band) */
+  .compare-grid > div { padding-left: 0.75rem; padding-right: 0.75rem; }
+}
+
 @media (max-width: 1023px) {
   /* Narrow screens: text spans more width, so use a stronger even veil. */
   .hero-overlay {
@@ -177,6 +193,9 @@
       rgba(247,251,255,0.60) 60%,
       rgba(247,251,255,0.48) 100%);
   }
+  /* Let the hero be content-height on mobile (not forced to 100vh) so the
+     landscape video isn't scaled up as much → less zoom / more frame shown. */
+  .hero-section { min-height: auto; }
 }
 
 /* Hero subtitle — darker + a soft light halo so it stays readable
@@ -187,6 +206,20 @@
   text-shadow: 0 1px 2px rgba(247,251,255,0.92),
                0 0 10px rgba(247,251,255,0.65);
 }
+
+/* Hero stats sit over the video — give the numbers and (light) labels a
+   soft light halo + darker labels so they stay readable on any frame. */
+.hero-stats .text-primary {
+  text-shadow: 0 1px 3px rgba(247,251,255,0.85), 0 0 12px rgba(247,251,255,0.5);
+}
+.hero-stats .text-slate-400 {
+  color: #475569;
+  font-weight: 600;
+  text-shadow: 0 1px 2px rgba(247,251,255,0.95), 0 0 10px rgba(247,251,255,0.6);
+}
+.hero-stats .border-slate-200,
+.hero-stats.border-slate-200 { border-color: rgba(71,85,105,0.35); }
+.hero-stats .bg-slate-200 { background: rgba(71,85,105,0.3); }
 
 .hero-gradient-text {
   background: linear-gradient(90deg, #1A3A5C 0%, #2E7CC6 55%, #0EA5E9 100%);

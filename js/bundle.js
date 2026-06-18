@@ -1023,7 +1023,7 @@ function buildCompareUI(catalog, machine) {
         <div class="px-4 py-2.5 border-t border-slate-100 text-sm text-slate-700 align-top ${dl}" ${bg}>${b}</div>`;
     }).join('');
     view.innerHTML = `
-      <div class="rounded-2xl border border-slate-200 bg-white p-5 sm:p-6 shadow-sm">
+      <div class="rounded-2xl border border-slate-200 bg-white p-4 sm:p-6 shadow-sm">
         <div class="flex items-center justify-between gap-3 mb-5 flex-wrap">
           <div>
             <h2 class="text-lg font-extrabold text-primary">Compare Machines</h2>
@@ -1037,7 +1037,7 @@ function buildCompareUI(catalog, machine) {
         </div>
 
         <div class="overflow-x-auto rounded-xl border border-slate-200">
-          <div style="display:grid;grid-template-columns:minmax(120px,24%) 1fr 1fr;min-width:560px;">
+          <div class="compare-grid">
             <!-- Control row: label on the left machine, "Compare with" selector above the right (changing) machine -->
             <div class="px-4 pt-4"></div>
             <div class="px-4 pt-4 flex items-end">
