@@ -73,7 +73,7 @@ machines:
   specs:
     output: Up to 1000 kg/hr
     drive: 2 hp
-    dosingPump: 3 hp (imported)
+    dosingPump: 2 hp
     pans: S.S 304
     sugarPump: 2 hp, 1450 rpm
     steamWorkingPressure: 150 (above)
@@ -169,7 +169,7 @@ machines:
     for extrusion and shaping.
   description: >-
     Heavy-duty double-jacketed S.S 304 mixer with twin arms, 20 hp main drive,
-    8 x 6000 W heaters and a tilting discharge system.
+    6000 W heaters and a tilting discharge system.
   image: ''
   specs:
     capacity: 200 kg in 20 minutes
@@ -177,7 +177,7 @@ machines:
     arms: 2, S.S 304
     panCover: S.S 304
     gearMotorMainDrive: 20 hp
-    heaters: 8 electric heaters, 6000 watt
+    heaters: Electric heaters 3000 watt x2 = 6000 watt
     controls: Electric panel with all new features
     tilt: S.S 201, tilting system
     dimension: 8 ft x 5 ft x 5 ft   # CHECK (handwritten)
@@ -188,50 +188,51 @@ machines:
     Shapes the mixed gum mass into a continuous rope of uniform thickness and
     density for downstream forming, cutting or rolling.
   description: >-
-    Two-stage screw extruder on M.S structure with 7.5 hp drive, inverter, S.S 304
-    rolls and head rotary roller system, with 6000 W heaters.
+    Screw extruder on M.S structure with 7.5 hp drive, 10 hp inverter, S.S 304 roll
+    and keef helping-roller system, with 6000 W heaters.
   image: ''
   specs:
-    type: Screw, 2 stages
-    gearMainDrive: 7.5 hp
-    inverter: 7.5 hp
+    type: 1 rope, 2 worms
+    gearMotorDrive: 7.5 hp
+    inverter: 10 hp
     structure: M.S
     roll: S.S 304
     heaters: Electric heaters, 6000 watt
-    controls: Electric panel with all new features, rotary roller system in head
-    powerLoad: 18 hp   # CHECK (handwritten)
+    controls: Electric panel with all new features, helping roller system in keef
+    powerLoad: 18 hp
 - name: Center Filling Liquid Pump
   model: SEW-110
   function: >-
     Precision dosing system that injects liquid filling (fruit syrup, chocolate,
     cream or jam) into the core of the candy rope during forming.
   description: >-
-    Double-jacketed S.S 304 leaf with Teflon-covered food-grade rod, flexible pipe,
-    2 hp drive, 1000 W heater and 2 HP inverter with recycle.
+    Double-jacketed S.S 304 keef with Teflon-covered food-grade rod, flexible pipe,
+    2 hp drive, 1000 W heater and 2 HP inverter with overflow recycling.
   image: ''
   specs:
     filling: Chocolate and liquid
-    leaf: S.S 304, double jacketed
+    keef: S.S 304, double jacketed, with Teflon food-grade heat-proof covering
     rod: S.S with Teflon covering (food grade, heat proof)
     pipe: Flexible, food grade
+    controls: Electric panel with all new features
     gearMotorMainDrive: 2 hp
     stand: M.S
-    heater: 1000 watt, 1 No
-    inverter: 2 HP
-    extra: Co-flow system to recycle liquid/chocolate
-    powerLoad: 3.2 hp
+    heater: 1000 watt (1 No) to moderate temperature
+    inverter: 2 hp to increase or decrease filling in product
+    overflow: System to recycle liquid/chocolate
+    powerLoad: 3.34 hp
 - name: Center Filling Powder Pump
   model: SEW-116
   function: >-
     Precision feeding unit that injects dry or semi-dry powdered filling into the
     centre of the candy rope.
   description: >-
-    S.S 304 leaf with Teflon-covered S.S worm, M.S stand, 2 hp gear motor and
+    S.S 304 keef with Teflon-covered S.S worm, M.S stand, 2 hp gear motor and
     variable inverter for speed control.
   image: ''
   specs:
     type: Centre filling powder
-    leaf: S.S 304 grade
+    keef: S.S 304 grade
     gearMotor: 2 hp
     variableInverter: 2 hp (speed control)
     stand: M.S
@@ -268,11 +269,21 @@ machines:
   image: ''
   specs:
     sizerModel: Horizontal, 5 stages (4 horizontal + 1 vertical)
-    pairs: S.S 304 (22 mm x4, 16 mm x1)
+    firstPair: S.S 304, 37 mm
+    secondPair: S.S 304, 32 mm
+    thirdPair: S.S 304, 27 mm
+    fourthPair: S.S 304, 22 mm
+    fifthPair: S.S 304, 17 mm
+    electricPanel: S.S 201
+    sizerPlates: S.S 304
+    sideSheets: S.S 201
     ropeGuide: Brass
     inverter: INVENT digital, 3 hp
     gearMotors: SEW brand, Germany, 3 hp
     heatControllers: Digital, 2 Nos
+    electricHeaters: 500 x 4 = 2 kW
+    safety: Emergency break to stop equipment, emergency switch to off equipment, electric breakers
+    electricComponents: Brand new
     bearings: Used instead of bushes
     dimension: 4' x 4' x 6'   # CHECK (handwritten)
     powerLoad: 5.68 hp   # CHECK (handwritten)
@@ -283,23 +294,28 @@ machines:
     candy, caramel and gum products, running 24/7 in solid, centre-filled,
     liquid-filled and powder-filled types at up to 1000 kg/hr.
   description: >-
-    Teflon-coated food-grade belt with D2 pressure cams, high carbon steel sizer
-    ratio and gears, spring-loaded diamond-polished punches and 1 hp die blower.
-  image: ''
+    Universal seamless-sweet forming machine with 7.5 hp inverter main drive, 3 hp
+    spreader and box drives, Teflon-coated food-grade self, grease lubrication and
+    high-carbon-steel star sets; up to 1000 kg/hr.
+  image: assets/STARMER/_ready/HARD CANDY/Complete Candy Line 1000kg_hr/Uniplast 160-C.jpg
   specs:
     capacity: Up to 1000 kg/hr
-    speed: 4000 to 6000 pieces/min (varies with product)
-    netWeight: 500 kg (1000 lbs)
-    grossWeight: 600 kg (1500 lbs)
-    belt: Teflon coated, food grade
-    sideSheets: S.S 304
-    pressureCams: D2 grade
-    sizerRatioAndGears: High carbon steel
-    blower: 1 hp (die cooling)
-    mainDrive: 3 hp
-    sizeBoxDrive: 1 hp
-    spreaderDrive: 0.5 hp
-    powerLoad: 7.5 hp   # CHECK (handwritten)
+    speed: 4000 to 5000 pieces/min (varies with product)
+    centreFilled: Up to 30% depending on product size (candy, toffee, bubble gum)
+    netWeight: 1500 kg
+    inverterMainDrive: 7.5 hp
+    spreaderDrive: 3 hp
+    spreaderBoxDrive: 3 hp
+    self: Teflon-coated food grade
+    lubrication: Grease pump
+    steelSection: S.S 201
+    cams: Pressure cams grade D2
+    reverseCams: S.G iron
+    starSets: High carbon steel
+    blower: 2 hp for cooling of die
+    controls: Electric panel with all new features
+    dimension: 6 ft x 4.5 ft x 8.5 ft (H x W x L)
+    powerLoad: 7.5 hp
 - name: Rotary Die with Cutting Ring
   model: SEW-217
   function: >-

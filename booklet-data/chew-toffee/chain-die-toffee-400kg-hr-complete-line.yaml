@@ -78,12 +78,11 @@ machines:
     controlled temperature so the toffee reaches the correct thickness, texture
     and moisture level, providing uniform heating and precise temperature control
     for consistent quality and the required hardness or chewiness.
-  description: Double-jacketed S.S 304 toffee cooker with stirrer, coil, 2 hp gear-motor drive and safety valve.
+  description: Double-jacketed S.S 304 toffee cooker with stirrer, 2 hp gear-motor drive and safety valve.
   image: ''
   specs:
     capacity: 150 kg per batch after 20 to 25 mins  # CHECK (handwritten)
     stirrer: S.S 304
-    coil: S.S 304
     pan: Double jacketed with S.S 304 (S.S also applied)
     frame: M.S (S.S also applied)
     drive: 2 hp gear-motor drive
@@ -113,14 +112,14 @@ machines:
     in a controlled way to improve its texture and structure. By continuously
     pulling the mass it incorporates air, evens out temperature and develops the
     desired smoothness, shine and chew of the final product.
-  description: Hard-chromed 3-arm pulling machine with 10 hp main drive and S.S 304 side sheets.
+  description: Hard-chromed 3-arm pulling machine with 10 hp main drive and S.S 201 side sheets.
   image: ''
   specs:
     capacity: 200 kg
     mainDriveMotor: 10 hp
     arms: Hard chromed
     armsForContinuousPulling: 3 arms
-    sideSheets: S.S 304
+    sideSheets: S.S 201
     controls: Electric panel for control
     powerLoad: 10 hp  # CHECK (handwritten)
 - name: Liquid Filling Pump
@@ -131,12 +130,12 @@ machines:
     candy rope during the forming process, ensuring consistent filling quantity
     and uniform distribution across all candies.
   description: >-
-    Double-jacketed S.S 304 filling pump with Teflon-lined leef, food-grade flexible
+    Double-jacketed S.S 304 filling pump with Teflon-lined keef, food-grade flexible
     pipe, 2 hp gear-motor drive, heater and 2 hp inverter with overflow recycling.
   image: ''
   specs:
     filling: Chocolate and liquid
-    leef: S.S 304, double jacketed, 1.5 with Teflon food-grade heat-proof covering
+    keef: S.S 304, double jacketed, 1.5 with Teflon food-grade heat-proof covering
     pipe: Flexible food grade
     controls: Electric panel with new feature
     gearMotor: 2 hp main drive
@@ -184,19 +183,22 @@ machines:
     brass rope guides, INVENT inverter and SEW (Germany) gear motors.
   image: ''
   specs:
-    model: Horizontal, 5 stages (4 horizontal + 1 vertical)
-    pair1: S.S 304, 37 mm
-    pair2: S.S 304, 27 mm
-    pair3: S.S 304, 22 mm
-    pair4: S.S 304, 22 mm
-    pair5: S.S 304, 12 mm
-    electricPanel: S.S 304
+    sizerModel: Horizontal, 5 stages (4 horizontal + 1 vertical)
+    firstPair: S.S 304, 37 mm
+    secondPair: S.S 304, 32 mm
+    thirdPair: S.S 304, 27 mm
+    fourthPair: S.S 304, 22 mm
+    fifthPair: S.S 304, 17 mm
+    electricPanel: S.S 201
+    sizerPlates: S.S 304
     sideSheets: S.S 201
     ropeGuide: Brass
     inverter: INVENT brand, 3 hp
     gearMotors: SEW brand Germany, 3 hp
     heatControllers: 2 Nos
-    electricHeaters: 6 ft x 4, 2 kW
+    electricHeaters: 500 x 4 = 2 kW
+    safety: Emergency break to stop equipment, emergency switch to off equipment, electric breakers
+    electricComponents: Brand new
     dimension: 6'6" x 3' x 5'6" (H x W x L)
     powerLoad: 5.68 hp
 - name: Chain Die Forming Plant
@@ -209,19 +211,19 @@ machines:
     stable encapsulation of powder, liquid or cream fillings without leakage while
     maintaining accurate weight and dimensions.
   description: >-
-    Chain-die forming plant with M.S steer set and top cover, 7.5 hp steer-box
+    Chain-die forming plant with M.S sizer set and top cover, 7.5 hp sizer-box
     drive, 3 hp main drive, 0.5 hp belt and spreader drives and 3 hp inverters.
   image: ''
   specs:
     speed: 2000 to 3500 pieces/min depending on size and shape of product
     filling: Up to 20% filling of product
-    steerSet: M.S
+    sizerSet: M.S
     topCover: M.S
-    steerBoxDrive: Gear motor 7.5 hp
+    sizerBoxDrive: Gear motor 7.5 hp
     mainDrive: Gear motor 3 hp
     beltDrive: Gear motor 0.5 hp
     spreaderDrive: Gear motor 0.5 hp
-    inverters: 3 hp for steer box; 3 hp for spreader-belt speed control
+    inverters: 3 hp for sizer box; 3 hp for spreader-belt speed control
     productionSpeed: 400 kg/hr  # CHECK (handwritten)
     powerLoad: 5 hp
 - name: Chain Die
@@ -234,12 +236,12 @@ machines:
   image: ''
   specs:
     frameOfDie: Aluminium alloy
-    cutterBlocks: 02
-    punches: 02
+    cutterBlocks: D2 material
+    punches: D2 material
     uClamps: Case-hardened M.S
     sprockets: Forged carbon steel
     bushesBoltsPipesBearingCones: EN19
-    connectingRods: High carbon steel (chopper & lever)
+    connectingRods: High carbon steel (upper & lower)
 - name: Chain Die Stand
   model: ''
   function: Supports and positions the chain-die forming assembly, with a servo-driven movement system.
@@ -264,13 +266,13 @@ machines:
     width: 3 ft
     stages: 3 stages with 12-ton AC
     meshWire: S.S 304 grade (all 3 steps)
-    outerInnerSideSheets: S.S 304 grade
+    outerInnerSideSheets: S.S 201 grade
     controls: Electric panel with all new features
     inverter: INVENT brand, 5 hp  # CHECK (handwritten)
     covers: S.S 201
     insulation: Double jacketed, insulated with thermopore
     rods: S.S 304, 5 mm thickness
-    chain: M.S, 60 No
+    chain: M.S, 40 Nos
     gearMotor: 3 hp (1 hp each, 3 Nos), SEW brand
     dimension: 18 ft x 3 ft (H x W x L)
     powerLoad: 3 hp
@@ -310,7 +312,7 @@ machines:
     paper sending, photo-electric control and frequency-changing speed device.
   image: assets/STARMER/_ready/CHEW & TOFFEE/Chain Die Toffee 400kg_hr Complete line_/Cut & Double Twist _ Cut & Twist.jpg
   specs:
-    capacity: 350-400 pcs/min
+    capacity: Up to 450 pcs/min
     packingMaterial: Cellophane, PVC, polypropylene, stencil, composite material, etc.
     power: 2.5 kW
     electricalSource: 380 V, 3 phase

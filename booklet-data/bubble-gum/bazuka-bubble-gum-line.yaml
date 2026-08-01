@@ -21,7 +21,7 @@ machines:
     storageCapacity: 500 kg
     grinder: 45 Number
     motorPower: 15 hp
-    innerBox: S.S 303
+    innerBox: S.S 304
     outerBox: M.S
     dimension: 4 (w) x 6 (l)
     powerLoad: 15 hp
@@ -58,7 +58,6 @@ machines:
     gearMotorMainDrive: 20 hp
     structure: Heavy duty M.S
     heaters: Electric heaters, 6000 watt
-    sideSheets: S.S 201
     tilt: Tilting system, gear motor 2 hp
     controls: Electric panel with all new features
     dimension: 6' x 8' x 8'
@@ -93,7 +92,7 @@ machines:
     Shapes the mixed gum mass into a continuous rope of uniform thickness and
     density for downstream forming.
   description: >-
-    Screw extruder on M.S structure with 7.5 hp drive, 10 hp inverter, S.S 304 leef
+    Screw extruder on M.S structure with 7.5 hp drive, 10 hp inverter, S.S 304 keef
     and head helping-roller system, with 6000 W heaters.
   image: ''
   specs:
@@ -101,9 +100,9 @@ machines:
     gearMotorDrive: 7.5 hp
     inverter: 10 hp
     structure: M.S
-    leef: S.S 304
+    keef: S.S 304
     heaters: Electric heaters, 6000 watt
-    controls: Electric panel with all new features, helping roller system in leef
+    controls: Electric panel with all new features, helping roller system in keef
     powerLoad: 18 hp
 - name: Single Step Cooling Conveyor
   model: SEW-809

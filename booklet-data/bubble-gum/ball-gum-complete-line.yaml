@@ -22,7 +22,7 @@ machines:
     storageCapacity: 500 kg
     grinder: 45 Number
     motorPower: 15 hp
-    innerBox: S.S 303
+    innerBox: S.S 304
     outerBox: M.S
     dimension: 4 (w) x 6 (l)
     powerLoad: 15 hp
@@ -59,7 +59,6 @@ machines:
     gearMotorMainDrive: 20 hp
     structure: Heavy duty M.S
     heaters: Electric heaters, 6000 watt
-    sideSheets: S.S 201
     tilt: Tilting system, gear motor 2 hp
     controls: Electric panel with all new features
     dimension: 6' x 8' x 8'
@@ -94,17 +93,17 @@ machines:
     Shapes the mixed gum mass into a continuous rope of uniform thickness and
     density for downstream forming.
   description: >-
-    Screw extruder on M.S structure with 7.5 hp drive, 10 hp inverter, S.S 304 leef
-    and head helping-roller system, with 6000 W heaters.
+    Screw extruder on M.S structure with 7.5 hp drive, 10 hp inverter, S.S 304 keef
+    and keef helping-roller system, with 6000 W heaters.
   image: ''
   specs:
     type: 1 rope, 2 worms
     gearMotorDrive: 7.5 hp
     inverter: 10 hp
     structure: M.S
-    leef: S.S 304
+    keef: S.S 304
     heaters: Electric heaters, 6000 watt
-    controls: Electric panel with all new features, helping roller system in leef
+    controls: Electric panel with all new features, helping roller system in keef
     powerLoad: 18 hp
 - name: Single Step Cooling Conveyor
   model: SEW-809
@@ -112,18 +111,20 @@ machines:
     High-performance precision cooling conveyor for a wide range of ball and
     cylindrical pieces, retaining their original shape and quality.
   description: >-
-    White food-grade belt on a heavy 14g M.S pipe structure with 2 hp motor and
-    inverter.
+    White food-grade belt on a heavy 14 gauge M.S pipe structure, fully covered with
+    stainless steel sheet, with 3-fan air system and variable inverter speed control.
   image: assets/STARMER/_ready/BUBBLE GUM/Ball Gum Complete line_/Rest Conveyor For Bubble Line.jpg
   specs:
     function: All types of bubble gum
-    beltSize: W 600 mm x length 40 ft
+    beltSize: 660 mm x 4875 mm (W x L)
     beltType: White food grade
-    motorPower: 0.75 hp
-    inverter: 0.75 hp
-    structure: M.S heavy pipe 14g
-    cover: Totally covered with stainless steel
+    motorPower: 0.75 kw
+    inverter: Variable inverter for speed control, 0.75 kw
+    airSystem: 3 fans
+    structure: M.S heavy pipe, 14 gauge
+    cover: Totally covered with stainless steel sheet
     controls: Control panel with all new features
+    dimension: 4 ft (W) x 20 ft (L)
 - name: Ball Forming Machine
   model: SEW-820
   function: >-

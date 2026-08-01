@@ -109,6 +109,19 @@ def ready_dir_for(source_pdf: str) -> Path | None:
     return d if d.is_dir() else None
 
 
+def plated(path: str) -> str:
+    """Prefer the name-plated copy of a photo when one exists.
+
+    scripts/apply_nameplate.py writes assets/STARMER/_ready/... twins into
+    assets/STARMER/_plated/..., so the originals stay untouched. Deleting the
+    _plated folder reverts the whole site to unbranded photos.
+    """
+    if not path or "_ready" not in path:
+        return path
+    twin = Path(*[("_plated" if p == "_ready" else p) for p in Path(path).parts])
+    return twin.as_posix() if twin.is_file() else path
+
+
 def match_image(name: str, ready_dir: Path):
     """Find the best photo in ready_dir whose filename matches the machine name."""
     if not ready_dir:
@@ -183,6 +196,7 @@ def main() -> int:
                 image = match_image(name, ready_dir)
                 if not image:
                     print(f"    ! no image match for '{name}' ({yf.name})")
+            image = plated(image)
             machine_id = f"{prefix}-L{n:03d}-M{mi:02d}"
             model = str(block.get("model", "")).strip()
             specs = clean_specs(block.get("specs"))

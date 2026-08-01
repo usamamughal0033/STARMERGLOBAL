@@ -58,7 +58,7 @@ machines:
     panCover: S.S 304
     gearMotorMainDrive: 20 hp
     structure: Heavy duty M.S
-    heaters: Electric heaters 6000 watt x2 = 12000 watt
+    heaters: Electric heaters 3000 watt x2 = 6000 watt
     controls: Electric panel with all new features
     weight: 2 ton approx
     tilt: Tilting system
@@ -95,7 +95,7 @@ machines:
     density for downstream forming.
   description: >-
     Screw extruder on M.S structure with 7.5 hp drive, 10 hp inverter, S.S 304 roll
-    and head helping-roller system, with 6000 W heaters.
+    and keef helping-roller system, with 6000 W heaters.
   image: ''
   specs:
     type: 1 rope, 2 worms
@@ -104,7 +104,7 @@ machines:
     structure: M.S
     roll: S.S 304
     heaters: Electric heaters, 6000 watt
-    controls: Electric panel with all new features, helping roller system in head
+    controls: Electric panel with all new features, helping roller system in keef
     powerLoad: 18 hp
 - name: Liquid Filling Pump
   model: SEW-110
@@ -112,13 +112,13 @@ machines:
     Precision dosing system that injects liquid filling (fruit syrup, chocolate,
     cream or jam) into the core of the candy rope during forming.
   description: >-
-    Double-jacketed S.S 304 leaf with Teflon-covered food-grade rod, flexible pipe,
+    Double-jacketed S.S 304 keef with food-grade rod, flexible pipe,
     2 hp drive, 1000 W heater and 2 HP inverter with overflow recycle.
   image: ''
   specs:
     filling: Chocolate and liquid
-    leaf: S.S 304, double jacketed
-    rod: S.S with Teflon covering (food grade, heat proof)
+    keef: S.S 304, double jacketed
+    rod: S.S 304 (food grade, heat proof)
     pipe: Flexible, food grade
     gearMotorMainDrive: 2 hp
     stand: M.S
@@ -137,17 +137,23 @@ machines:
   image: ''
   specs:
     sizerModel: Horizontal, 5 stages (4 horizontal + 1 vertical)
-    pairs: S.S 304 (32 mm, 27 mm, 22 mm, 22 mm, 17 mm)
+    firstPair: S.S 304, 37 mm
+    secondPair: S.S 304, 32 mm
+    thirdPair: S.S 304, 27 mm
+    fourthPair: S.S 304, 22 mm
+    fifthPair: S.S 304, 17 mm
     electricPanel: S.S 201
-    sidePlates: S.S 201
     sizerPlates: S.S 304
+    sideSheets: S.S 201
     ropeGuide: Brass
-    inverter: INVENT digital, 3 hp
+    inverter: INVENT (new brand), 3 hp
     gearMotors: SEW brand, Germany, 3 hp
     heatControllers: Digital, 2 Nos
-    heaters: 500 watt (4 Nos) = 2 kw
+    heaters: 500 watt x 4 = 2 kw
+    safety: Emergency break to stop equipment, emergency switch to off equipment, electric breakers
+    electricComponents: Brand new
     bearings: Used instead of bushes
-    dimension: 4' x 2'5" x 6'
+    dimension: 4'6" x 3' x 5'6" (H x W x L)
     powerLoad: 5.68 hp
 - name: Rest Conveyor
   model: SEW-808
@@ -166,7 +172,7 @@ machines:
     cover: S.S 304 top cover
     insulation: Insulated with thermopore
     gearMotorMainDrive: 2 hp
-    fans: 2 Nos (for cooling)
+    fans: 3 Nos (for cooling)
     inverter: Variable, for speed control
     frame: M.S
     powerLoad: 2 hp
@@ -179,7 +185,7 @@ machines:
   description: >-
     High-carbon-steel forged gears with bearing-steel CAMS and S.G iron reverse
     cams, 5 hp drive and INVENT inverter; adjustable filling up to 12%.
-  image: ''
+  image: assets/STARMER/_ready/BUBBLE GUM/Centre Filled Bubble 300kg_hr/Uniplast 160-A.jpg
   specs:
     mainDrive: 5 hp motor
     inverter: 5 hp (INVENT brand)
@@ -187,7 +193,7 @@ machines:
     cams: Bearing steel grade
     reverseCams: S.G iron
     gears: High carbon steel, forged
-    speed: 1600 to 2000 pieces/min (depending on size)
+    speed: Up to 2200 pieces/min
     filling: Up to 12% of candy
     controls: Electric panel with all new features
     dimension: 6.5' x 4.5' x 3.5'
@@ -246,27 +252,26 @@ machines:
     inverter: New brand, variable speed
     dimension: 3 ft x 16 ft
     powerLoad: 3 hp
-- name: AC Unit (5 Ton)
+- name: AC Unit (10 Ton)
   model: SEW-122
   function: >-
-    Floor-standing air-conditioning unit (5 ton / 6.5 HP) for cooling the conveyor
-    section and accessories.
+    Floor-standing air-conditioning unit (10 ton) for cooling the conveyor section
+    and accessories.
   description: >-
-    Indoor unit with copper-tube evaporator and 1 HP blower; Bitzer 6.5 HP outdoor
-    condensing unit with Copeland scroll compressor and full AC accessories.
+    Indoor unit with copper-tube evaporator and high-velocity blower; Bitzer outdoor
+    condensing unit with scroll compressor and full AC accessories.
   image: ''
   specs:
-    capacity: 5 Ton (6.5 HP)   # CHECK (handwritten note "10 Ton")
+    capacity: 10 Ton
     type: Floor standing
-    indoorBlower: 1 HP motor, 3 phase 440V/50Hz
-    expansionValve: Emerson TCLE 6.5 HP
+    evaporator: Brand new copper tube, aluminium fins (Breez)
+    expansionValve: Emerson TCLE   # CHECK (printed 6.5 HP page struck out for 10 Ton)
     outdoorUnit: Bitzer, high-density condensing coil
-    compressor: Copeland scroll, 6.5 HP, 3 phase 440V/50Hz
+    compressor: Copeland scroll, 3 phase 440V/50Hz   # CHECK (rating to confirm for 10 Ton)
     safety: Danfoss dual high/low-pressure switch
     refrigerant: R-22 (Honeywell, USA)
-    inverter: 7.5 KVA (INVT)
+    inverter: INVT   # CHECK (KVA to confirm for 10 Ton)
     panelBox: 12" x 24"
-    powerLoad: 6.5 hp
 - name: Wrapping Machine
   model: SEW-123
   function: >-

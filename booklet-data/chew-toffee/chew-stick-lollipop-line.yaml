@@ -1,8 +1,8 @@
 # Chew Stick Lollipop Line -- extracted from CHEW STICK LOLLIPOP.pdf
-# NOTE: machine list follows the booklet INDEX (the BOM) + the _ready images.
-# The PDF's cooker/pulling spec pages are leftover toffee pages with no matching
-# image, so cooker/vacuum/kneading specs are sourced from the lollipop boilerplate
-# and tagged # CHECK.
+# NOTE: machine list follows the booklet SPEC PAGES (confirmed by the client):
+# toffee cooker (not candy continuous vacuum cooker), no vacuum pump, and a
+# pulling machine (not a kneading machine). Cooker/pulling photos are shared with
+# the Toffee 400 kg/hr line.
 category: CHEW & TOFFEE
 category_slug: chew-toffee
 line:
@@ -10,7 +10,7 @@ line:
   productionRate: 450 kg/hr
   description: >-
     A chew stick-lollipop production line covering glucose storage, steam
-    generation, continuous vacuum cooking, cooling, kneading, batch rolling,
+    generation, toffee cooking, cooling, pulling, batch rolling,
     five-stage rope sizing and cut-and-stick wrapping.
   image: ''
 source_pdf: assets/STARMER/CHEW & TOFFEE/Chew Stick Lollipop Line_/CHEW STICK LOLLIPOP.pdf
@@ -74,37 +74,26 @@ machines:
     connection: 5
     dimension: Dia 1 ft x Length 3 ft
     powerLoad: 0
-- name: Candy Continuous Cooker
-  model: SEW-104
+- name: Toffee Cooker
+  model: ''
   function: >-
-    Continuous vacuum cooker that automatically produces hard-boiled candies with
-    high clarity and smooth texture at adjustable parameters.
-  description: >-
-    Double-jacketed S.S 304 pans and body with dosing pump, sugar pump, steam trap
-    and electric control panel.
-  image: ''
+    The purpose of a toffee cooker is to heat and cook sugar-based mixtures to a
+    controlled temperature so the toffee reaches the correct thickness, texture and
+    moisture level, providing uniform heating and precise temperature control for
+    consistent quality and the required hardness or chewiness.
+  description: Double-jacketed S.S 304 toffee cooker with stirrer, 3 hp gear-motor drive and safety valve.
+  image: assets/STARMER/_ready/CHEW & TOFFEE/Toffee 400kg_hr Complete line_/Toffee Cooker.jpg
   specs:
-    output: 450 kg/hr  # CHECK (from index; dedicated spec page absent)
-    pans: S.S 304
-    body: S.S 304, double jacketed
-    dozingPump: 3 hp (imported)
-    sugarPump: 2 hp, 1450 rpm
+    capacity: 150 kg per batch after 20 to 25 mins
+    stirrer: S.S 304
+    panMaterial: S.S 304
+    pan: Double jacketed with S.S 304 (M.S optional)
+    frame: M.S (S.S 201 optional)
     controls: Electric panel with all new features
-    fittings: Outer tube jacketed, steam trap, seat valve
-    dimension: 8.5' x 6' x 7'
-    powerLoad: 4 hp
-- name: Vacuum Pump
-  model: SEW-105
-  function: >-
-    Rapidly removes moisture from the cooked candy mass under reduced pressure to
-    prevent caramelisation.
-  description: M.S frame vacuum pump unit.
-  image: ''
-  specs:
-    rating: 7.5 hp = 1450 rpm  # CHECK (dedicated spec page absent)
-    frame: M.S
-    dimension: 2 ft x 4 ft x 1 ft
-    powerLoad: 10 hp  # CHECK
+    drive: 3 hp gear-motor drive
+    safetyValve: Yes
+    panCover: S.S 304
+    powerLoad: 3 hp
 - name: Cooling Table
   model: SEW-108
   function: >-
@@ -120,22 +109,23 @@ machines:
     legs: 4 Nos in S.S 201 grade
     dimension: 3 ft x 6 ft x 2'6"
     powerLoad: 0
-- name: Kneading Machine
-  model: SEW-109
+- name: Pulling Machine
+  model: ''
   function: >-
-    Uniform mixing and kneading of the cooked sugar mass with hygienic,
-    water-cooled stainless steel contact parts.
-  description: S.S 304 roller and main plate, S.S 201 side sheets, 5 hp drive.
-  image: ''
+    The purpose of a pulling machine is to stretch and fold cooked candy or toffee
+    in a controlled way to improve its texture and structure. By continuously
+    pulling the mass it incorporates air, evens out temperature and develops the
+    desired smoothness, shine and chew of the final product.
+  description: Hard-chromed 3-arm pulling machine with 10 hp main drive and S.S 201 side sheets.
+  image: assets/STARMER/_ready/CHEW & TOFFEE/Toffee 400kg_hr Complete line_/Pulling Machine.jpg
   specs:
-    roller: S.S 304  # CHECK (dedicated spec page absent)
-    mainDrive: 5 hp
-    steelPlate: 4 ft
-    control: Switch on/off
+    capacity: 100 kg
+    mainDriveMotor: 10 hp
+    arms: Hard chromed
+    armsForContinuousPulling: 3 arms
     sideSheets: S.S 201
-    mainPlate: S.S 304
-    dimension: 5' x 5'6" x 6'5"
-    powerLoad: 5 hp
+    controls: Electric panel for control
+    powerLoad: 10 hp
 - name: Batch Roller
   model: ''
   function: >-
@@ -175,18 +165,22 @@ machines:
     rope guides, INVENT inverter and SEW (Germany) gear motors.
   image: ''
   specs:
-    model: Horizontal, 5 stages (4 horizontal + 1 vertical)
-    pair1: S.S 304, 33 mm
-    pair2: S.S 304, 27 mm
-    pair3: S.S 304, 22 mm
-    pair4: S.S 304, 22 mm
-    pair5: S.S 304, 12 mm
-    electricPanel: S.S 304
+    sizerModel: Horizontal, 5 stages (4 horizontal + 1 vertical)
+    firstPair: S.S 304, 37 mm
+    secondPair: S.S 304, 32 mm
+    thirdPair: S.S 304, 27 mm
+    fourthPair: S.S 304, 22 mm
+    fifthPair: S.S 304, 17 mm
+    electricPanel: S.S 201
+    sizerPlates: S.S 304
     sideSheets: S.S 201
     ropeGuide: Brass
     inverter: INVENT brand, 3 hp
     gearMotors: SEW brand Germany, 3 hp
-    heatControllers: 2 Nos
+    heatControllers: Digital, 2 Nos
+    electricHeaters: 500 x 4 = 2 kW
+    safety: Emergency break to stop equipment, emergency switch to off equipment, electric breakers
+    electricComponents: Brand new
     dimension: 6'6" x 3' x 5'6" (H x W x L)
     powerLoad: 5.68 hp
 - name: Cut & Stick Wrapping Machine

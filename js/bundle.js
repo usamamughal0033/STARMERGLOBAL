@@ -144,6 +144,142 @@ function getImageSrc(imagePath, fallbackColor, label, type) {
   return pool[_simpleHash(label || type || 'x') % pool.length];
 }
 
+// ── Category gallery ──────────────────────────────────────────────────────────
+// A 3-up coverflow above the line picker: centre focused, flanks dimmed, auto-
+// advancing. Images come from the category's OWN machine photos (spread across
+// its lines) so it stays in sync with the catalog and needs no extra assets.
+const GALLERY_MS = 2000;   // 2s on each image
+const GALLERY_BASE = 'assets/images/gallery/';
+
+// The confectionery each category produces — built from the client's own
+// product photography by scripts/build_gallery.py. NOTE: no lozenge shots
+// exist yet, so pharma borrows hard-boiled candy (same product form).
+const CATEGORY_GALLERY = {
+  'hard-candy': [
+    ['01-hard-boiled-candy.jpg', 'Hard Boiled Candy'],
+    ['02-hard-boiled-candy.jpg', 'Hard Boiled Candy'],
+    ['03-liquid-centre-filled-candy.jpg', 'Liquid Centre-Filled Candy'],
+    ['04-powder-centre-filled-candy.jpg', 'Powder Centre-Filled Candy'],
+    ['05-powder-centre-filled-candy.jpg', 'Powder Centre-Filled Candy'],
+    ['06-bubble-gum-filled-candy.jpg', 'Bubble Gum Filled Candy'],
+  ],
+  'lollipop': [
+    ['01-round-lollipop.jpg', 'Round Lollipop'],
+    ['02-round-lollipop.jpg', 'Round Lollipop'],
+    ['03-flat-lollipop.jpg', 'Flat Lollipop'],
+    ['04-flat-lollipop.jpg', 'Flat Lollipop'],
+    ['05-flat-lollipop.jpg', 'Flat Lollipop'],
+    ['06-centre-filled-lollipop.jpg', 'Centre-Filled Lollipop'],
+  ],
+  'bubble-gum': [
+    ['01-ball-gum.jpg', 'Ball Gum'],
+    ['02-ball-gum.jpg', 'Ball Gum'],
+    ['03-ball-gum.jpg', 'Ball Gum'],
+    ['04-bazooka-bubble-gum.jpg', 'Bazooka Bubble Gum'],
+    ['05-bazooka-bubble-gum.jpg', 'Bazooka Bubble Gum'],
+    ['06-centre-filled-bubble-gum.jpg', 'Centre-Filled Bubble Gum'],
+  ],
+  'chew-toffee': [
+    ['01-fudge-toffee.jpg', 'Fudge Toffee'],
+    ['02-fudge-toffee.jpg', 'Fudge Toffee'],
+    ['03-fudge-toffee.jpg', 'Fudge Toffee'],
+    ['04-eclair-toffee.jpg', 'Eclair Toffee'],
+    ['05-zombie-chew.jpg', 'Zombie Chew'],
+    ['06-zombie-chew.jpg', 'Zombie Chew'],
+  ],
+  'pharma': [
+    ['01-medicated-lozenge.jpg', 'Medicated Lozenge'],
+    ['02-hard-boiled-candy.jpg', 'Hard Boiled Candy'],
+    ['03-hard-boiled-candy.jpg', 'Hard Boiled Candy'],
+    ['04-hard-boiled-candy.jpg', 'Hard Boiled Candy'],
+    ['05-powder-centre-filled-candy.jpg', 'Powder Centre-Filled Candy'],
+    ['06-powder-centre-filled-candy.jpg', 'Powder Centre-Filled Candy'],
+  ],
+};
+
+function galleryItems(cat) {
+  return (CATEGORY_GALLERY[cat.id] || []).map(([file, name]) => ({
+    src: `${GALLERY_BASE}${cat.id}/${file}`, name,
+  }));
+}
+
+function buildCategoryGallery(mount, cat) {
+  if (!mount) return;
+  const items = galleryItems(cat);
+  if (items.length < 3) { mount.innerHTML = ''; return; }
+
+  const arrow = d => `<svg width="15" height="15" viewBox="0 0 24 24" fill="none"
+    stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="${d}"/></svg>`;
+
+  // Tint the panel and controls with the category's own colour. 8-digit hex
+  // alpha keeps it a faint wash over the page rather than a solid block.
+  const c = cat.color || '#334155';
+  const tint = `--gal-c:${c};--gal-bg1:${c}08;--gal-bg2:${c}14;` +
+               `--gal-bd:${c}24;--gal-nav-bd:${c}33;--gal-dot:${c}40;`;
+
+  mount.innerHTML = `
+    <div class="sg-gal" style="${tint}" role="region" aria-label="${cat.label} gallery">
+      <button class="sg-gal__nav prev" aria-label="Previous">${arrow('M15 19l-7-7 7-7')}</button>
+      <button class="sg-gal__nav next" aria-label="Next">${arrow('M9 5l7 7-7 7')}</button>
+      <div class="sg-gal__stage">
+        ${items.map((it, i) => `
+          <div class="sg-gal__slide" data-i="${i}">
+            <img src="${it.src}" alt="${it.name}" loading="lazy"/>
+          </div>`).join('')}
+      </div>
+      <p class="sg-gal__caption"></p>
+      <div class="sg-gal__dots">
+        ${items.map((_, i) => `<button class="sg-gal__dot" data-i="${i}"
+           aria-label="Show image ${i + 1}"></button>`).join('')}
+      </div>
+    </div>`;
+
+  const root = mount.firstElementChild;
+  const slides = [...root.querySelectorAll('.sg-gal__slide')];
+  const dots = [...root.querySelectorAll('.sg-gal__dot')];
+  const caption = root.querySelector('.sg-gal__caption');
+  const n = items.length;
+  let active = 0, timer = null;
+
+  function render() {
+    slides.forEach((el, i) => {
+      // shortest signed distance around the ring
+      let d = (i - active + n) % n;
+      if (d > n / 2) d -= n;
+      el.classList.toggle('is-active', d === 0);
+      el.classList.toggle('is-prev', d === -1);
+      el.classList.toggle('is-next', d === 1);
+    });
+    dots.forEach((el, i) => el.classList.toggle('is-on', i === active));
+    caption.textContent = items[active].name;
+  }
+  const go = i => { active = ((i % n) + n) % n; render(); };
+  const start = () => { stop(); timer = setInterval(() => go(active + 1), GALLERY_MS); };
+  const stop = () => { if (timer) { clearInterval(timer); timer = null; } };
+
+  root.querySelector('.prev').addEventListener('click', () => { go(active - 1); start(); });
+  root.querySelector('.next').addEventListener('click', () => { go(active + 1); start(); });
+  dots.forEach(d => d.addEventListener('click', () => { go(+d.dataset.i); start(); }));
+  slides.forEach(s => s.addEventListener('click', () => { go(+s.dataset.i); start(); }));
+
+  // don't advance under the cursor, or while the tab is hidden
+  root.addEventListener('mouseenter', stop);
+  root.addEventListener('mouseleave', start);
+  const onVis = () => document.hidden ? stop() : start();
+  document.addEventListener('visibilitychange', onVis);
+
+  render();
+  start();                       // always auto-advances
+
+  // tear down cleanly when another category is picked, or the listener and
+  // its timer leak and several galleries end up fighting over the same mount
+  mount._stopGallery = () => {
+    stop();
+    document.removeEventListener('visibilitychange', onVis);
+  };
+}
+
 // ── App ───────────────────────────────────────────────────────────────────────
 const PAGE = document.body.dataset.page;
 
@@ -559,6 +695,8 @@ function initCatalogPage(catalog) {
   }
 
   function buildStep2(cat) {
+    const gal = document.getElementById('step2-gallery');
+    if (gal) { gal._stopGallery?.(); buildCategoryGallery(gal, cat); }
     const lineGrid = document.getElementById('line-select-grid');
     if (!lineGrid) return;
     const vis = CAT_VISUAL[cat.id];
@@ -685,6 +823,97 @@ window.quickAddToCart = function(id, partNumber, name, btn) {
 };
 
 // ── Line page ─────────────────────────────────────────────────────────────────
+// ── Line process flow ─────────────────────────────────────────────────────────
+// Every line, whatever the product, runs through the same three stages. Machines
+// are matched by name (most specific first) rather than by position, because
+// line lengths and machine counts vary a lot between categories.
+const FLOW_STAGES = [
+  {
+    key: 'batching',
+    title: 'Batching &amp; Mixing',
+    blurb: 'Raw sugar, glucose and gum base are stored, ground, dissolved and blended into a consistent mass.',
+    icon: 'M4 7h16M4 12h16M4 17h10',
+  },
+  {
+    key: 'cooking',
+    title: 'Cooking &amp; Forming',
+    blurb: 'The mass is cooked under vacuum, cooled, worked into a rope, centre-filled and formed into shape.',
+    icon: 'M12 3v3m0 12v3M5.6 5.6l2.1 2.1m8.6 8.6l2.1 2.1M3 12h3m12 0h3M5.6 18.4l2.1-2.1m8.6-8.6l2.1-2.1',
+  },
+  {
+    key: 'packing',
+    title: 'Wrapping &amp; Packing',
+    blurb: 'Formed product is cooled and hardened, then wrapped and packed ready for despatch.',
+    icon: 'M4 7l8-4 8 4v10l-8 4-8-4V7zm8-4v18M4 7l8 4 8-4',
+  },
+];
+
+// ordered, most specific first — first match wins
+const FLOW_RULES = [
+  [/coating pan|running ball|vibrat|cooling conveyor|cooling tunnel|close body|open body|ac unit|air condition|wrap|pillow|cut *&|twist|stick|pack/i, 'packing'],
+  // rest conveyor rests centre-filled rope AFTER filling, so it is a forming step
+  [/cooker|vacuum pump|cooling table|kneading|pulling|batch roller|rope sizer|sizer|filling pump|filling|extruder|uniplast|forming|rotary die|chain die|die stand|former|plant|small candy|rest conveyor/i, 'cooking'],
+  [/glucose|sugar grinder|grinder|dissolv|storage tank|steam|mixer|heating cabinet|rest table|trolley|trolly/i, 'batching'],
+];
+
+function flowStageOf(name) {
+  for (const [re, key] of FLOW_RULES) if (re.test(name)) return key;
+  return 'cooking';                 // anything unrecognised is a process machine
+}
+
+function buildLineFlow(mount, line, cat) {
+  if (!mount) return;
+  const machines = (line.machines || []).slice()
+    .sort((a, b) => (a.orderInLine || 0) - (b.orderInLine || 0));
+  if (!machines.length) { mount.innerHTML = ''; return; }
+
+  const c = cat?.color || '#334155';
+  const groups = FLOW_STAGES.map(s => ({
+    ...s, items: machines.filter(m => flowStageOf(m.name) === s.key),
+  })).filter(g => g.items.length);
+
+  const chip = m => `
+    <a class="flow-chip" href="product.html?id=${m.id}" title="${m.name}">
+      <span class="flow-chip__img"><img src="${getImageSrc(m.image, c, m.machineNumber, 'machine')}"
+        alt="${m.name}" loading="lazy"/></span>
+      <span class="flow-chip__name">${m.name}</span>
+    </a>`;
+
+  const stage = (g, i) => `
+    <section class="flow-stage">
+      <header class="flow-stage__head">
+        <span class="flow-stage__icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"
+               stroke-linecap="round" stroke-linejoin="round"><path d="${g.icon}"/></svg>
+        </span>
+        <span>
+          <b>Stage ${i + 1}</b>
+          <h4>${g.title}</h4>
+        </span>
+        <span class="flow-stage__count">${g.items.length}</span>
+      </header>
+      <p class="flow-stage__blurb">${g.blurb}</p>
+      <div class="flow-chips">${g.items.map(chip).join('')}</div>
+    </section>`;
+
+  const arrow = `<div class="flow-arrow" aria-hidden="true">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"
+           stroke-linecap="round" stroke-linejoin="round"><path d="M9 5l7 7-7 7"/></svg>
+    </div>`;
+
+  mount.innerHTML = `
+    <div class="flow" style="--flow-c:${c};--flow-soft:${c}14;--flow-line:${c}2E;">
+      <div class="flow__intro">
+        <h3>How this line works</h3>
+        <p>${machines.length} machines, working end to end in three stages.
+           Tap any machine to open its specification.</p>
+      </div>
+      <div class="flow__track">
+        ${groups.map((g, i) => stage(g, i)).join(arrow)}
+      </div>
+    </div>`;
+}
+
 function initLinePage(catalog) {
   const params = new URLSearchParams(window.location.search);
   const line = getLineById(catalog, params.get('id'));
@@ -701,6 +930,7 @@ function initLinePage(catalog) {
   setEl('line-name', line.name);
   setEl('line-rate', line.productionRate ? `Production Rate: ${line.productionRate}` : '');
   setEl('line-description', line.description);
+  buildLineFlow(document.getElementById('line-flow'), line, cat);
 
   // Hero banner (full-width, matches machine page layout)
   const bannerEl = document.getElementById('line-banner');
@@ -855,7 +1085,7 @@ function initProductPage(catalog) {
   if (imgContainer) {
     const t = machine ? 'machine' : 'die-part';
     const src = getImageSrc(item.image, cat?.color, machine?.machineNumber || diePart?.partNumber, t);
-    imgContainer.innerHTML = `<img src="${src}" alt="${item.name}" class="w-full h-full object-cover rounded-2xl"/>`;
+    imgContainer.innerHTML = `<img src="${src}" alt="${item.name}" class="w-full h-full object-contain rounded-2xl"/>`;
   }
   const pNum = machine ? machine.machineNumber : diePart?.partNumber;
   const modelNum = (machine ? machine.model : diePart?.model) || 'SEW-XYZ';
@@ -988,7 +1218,7 @@ function buildCompareUI(catalog, machine) {
 
   function imageCell(m) {
     const img = getImageSrc(m.image, category.color, m.machineNumber, 'machine');
-    return `<div class="rounded-xl overflow-hidden bg-slate-900 aspect-[4/3] ring-1 ring-slate-200"><img src="${img}" alt="${m.name}" class="w-full h-full object-cover" loading="lazy"/></div>`;
+    return `<div class="rounded-xl overflow-hidden bg-white aspect-[4/3] ring-1 ring-slate-200"><img src="${img}" alt="${m.name}" class="w-full h-full object-contain" loading="lazy"/></div>`;
   }
 
   function nameCell(m, isCurrent) {
@@ -1189,7 +1419,7 @@ function runSearch(catalog, q) {
     const typeLabel = r.type === 'line' ? 'Production Line' : r.type === 'machine' ? 'Machine' : 'Die / Part';
     const img = getImageSrc(r.item.image, cat?.color, num, r.type);
     return `<article class="product-card border border-slate-200 rounded-2xl overflow-hidden bg-white">
-      <a href="${href}"><div class="h-40 overflow-hidden bg-slate-50"><img src="${img}" alt="${r.item.name}" class="w-full h-full object-cover" loading="lazy"/></div></a>
+      <a href="${href}"><div class="h-40 overflow-hidden bg-white"><img src="${img}" alt="${r.item.name}" class="w-full h-full object-contain p-2" loading="lazy"/></div></a>
       <div class="p-5">
         <div class="flex items-center gap-2 mb-2 flex-wrap">
           <span class="font-mono text-xs bg-blue-50 text-blue-600 px-2 py-0.5 rounded font-bold">${num}</span>
@@ -1254,29 +1484,23 @@ async function postRFQ({ subject, fields, files = [] }) {
 }
 window.postRFQ = postRFQ;
 
-function renderQuoteTable() {
-  const cart = getCart();
-  const tbody = document.getElementById('cart-tbody');
-  const empty = document.getElementById('cart-empty');
-  const wrapper = document.getElementById('cart-table-wrapper');
-  if (!cart.length) { wrapper?.classList.add('hidden'); empty?.classList.remove('hidden'); return; }
-  empty?.classList.add('hidden'); wrapper?.classList.remove('hidden');
-  if (!tbody) return;
-  tbody.innerHTML = cart.map(item => `
-    <tr data-item-id="${item.id}">
-      <td class="py-4 pr-4"><span class="font-mono text-xs text-blue-600 bg-blue-50 px-2 py-0.5 rounded font-bold whitespace-nowrap">${item.partNumber}</span></td>
-      <td class="py-4 pr-4 font-medium text-slate-700 text-sm">${item.name}${item.isLine ? ` <span class="ml-1 inline-block text-[10px] font-semibold text-blue-700 bg-blue-50 px-1.5 py-0.5 rounded align-middle whitespace-nowrap">Complete Line · ${item.machineCount} machines</span>` : ''}</td>
-      <td class="py-4 pr-4 text-xs text-slate-500 whitespace-nowrap hidden sm:table-cell">${item.selectedVoltage || '—'}</td>
-      <td class="py-4 pr-4">
-        <div class="flex items-center gap-1 justify-center">
-          <button class="qty-btn" data-action="dec" data-id="${item.id}">−</button>
-          <span class="w-6 text-center text-sm font-medium">${item.quantity}</span>
-          <button class="qty-btn" data-action="inc" data-id="${item.id}">+</button>
-        </div>
-      </td>
-      <td class="py-4 text-right"><button data-action="remove" data-id="${item.id}" class="text-slate-300 hover:text-red-500 transition-colors text-lg font-bold leading-none">✕</button></td>
-    </tr>`).join('');
-  tbody.querySelectorAll('[data-action]').forEach(btn => {
+function lineBadge(item) {
+  return item.isLine
+    ? ` <span class="ml-1 inline-block text-[10px] font-semibold text-blue-700 bg-blue-50 px-1.5 py-0.5 rounded align-middle whitespace-nowrap">Complete Line · ${item.machineCount} machines</span>`
+    : '';
+}
+
+function qtyStepper(item) {
+  return `
+    <div class="flex items-center gap-1">
+      <button class="qty-btn" data-action="dec" data-id="${item.id}" aria-label="Decrease quantity">−</button>
+      <span class="w-6 text-center text-sm font-medium">${item.quantity}</span>
+      <button class="qty-btn" data-action="inc" data-id="${item.id}" aria-label="Increase quantity">+</button>
+    </div>`;
+}
+
+function bindCartActions(root) {
+  root.querySelectorAll('[data-action]').forEach(btn => {
     btn.addEventListener('click', () => {
       const id = btn.dataset.id, item = getCartItem(id), a = btn.dataset.action;
       if (a === 'inc') updateQuantity(id, (item?.quantity || 1) + 1);
@@ -1284,6 +1508,50 @@ function renderQuoteTable() {
       else if (a === 'remove') removeFromCart(id);
     });
   });
+}
+
+function renderQuoteTable() {
+  const cart = getCart();
+  const tbody = document.getElementById('cart-tbody');
+  const cards = document.getElementById('cart-cards');
+  const empty = document.getElementById('cart-empty');
+  const wrapper = document.getElementById('cart-table-wrapper');
+  if (!cart.length) { wrapper?.classList.add('hidden'); empty?.classList.remove('hidden'); return; }
+  empty?.classList.add('hidden'); wrapper?.classList.remove('hidden');
+
+  // Phone layout: one card per item so the qty stepper is always reachable.
+  if (cards) {
+    cards.innerHTML = cart.map(item => `
+      <div class="p-4" data-item-id="${item.id}">
+        <div class="flex items-start justify-between gap-3 mb-2">
+          <span class="font-mono text-xs text-blue-600 bg-blue-50 px-2 py-0.5 rounded font-bold">${item.partNumber}</span>
+          <button data-action="remove" data-id="${item.id}" aria-label="Remove ${item.name}"
+            class="text-slate-300 hover:text-red-500 transition-colors text-lg font-bold leading-none -mt-0.5">✕</button>
+        </div>
+        <p class="font-medium text-slate-700 text-sm mb-3">${item.name}${lineBadge(item)}</p>
+        <div class="flex items-center justify-between gap-3">
+          <span class="text-xs text-slate-500">Voltage: ${item.selectedVoltage || '—'}</span>
+          <div class="flex items-center gap-2">
+            <span class="text-xs font-semibold text-slate-500 uppercase tracking-wide">Qty</span>
+            ${qtyStepper(item)}
+          </div>
+        </div>
+      </div>`).join('');
+    bindCartActions(cards);
+  }
+
+  if (!tbody) return;
+  tbody.innerHTML = cart.map(item => `
+    <tr data-item-id="${item.id}">
+      <td class="py-4 pr-4"><span class="font-mono text-xs text-blue-600 bg-blue-50 px-2 py-0.5 rounded font-bold whitespace-nowrap">${item.partNumber}</span></td>
+      <td class="py-4 pr-4 font-medium text-slate-700 text-sm">${item.name}${lineBadge(item)}</td>
+      <td class="py-4 pr-4 text-xs text-slate-500 whitespace-nowrap">${item.selectedVoltage || '—'}</td>
+      <td class="py-4 pr-4">
+        <div class="flex justify-center">${qtyStepper(item)}</div>
+      </td>
+      <td class="py-4 text-right"><button data-action="remove" data-id="${item.id}" aria-label="Remove ${item.name}" class="text-slate-300 hover:text-red-500 transition-colors text-lg font-bold leading-none">✕</button></td>
+    </tr>`).join('');
+  bindCartActions(tbody);
 }
 
 function submitRFQ(form, cart) {

@@ -107,6 +107,7 @@ machines:
     output: 450 kg/hr
     pans: S.S 304
     body: S.S 304, double jacketed
+    dosingPump: 2 hp
     sugarPump: 2 hp, 1450 rpm
     heatZones: S.S 304 food grade
     fittings: Outer tube jacketed, steam trap, full S.S water nozzles
@@ -160,32 +161,33 @@ machines:
     Precision dosing system that injects liquid filling (fruit syrup, chocolate,
     cream or jam) into the core of the candy rope during forming.
   description: >-
-    Double-jacketed S.S 304 leaf with Teflon-covered food-grade rod, flexible
-    food-grade pipe, 2 hp drive, 1000 W heater and 2 HP inverter with recycle.
+    Double-jacketed S.S 304 keef with Teflon-covered food-grade rod, flexible
+    food-grade pipe, 2 hp drive, 1000 W heater and 2 HP inverter with overflow recycling.
   image: ''
   specs:
     filling: Chocolate and liquid
-    leaf: S.S 304, double jacketed
+    keef: S.S 304, double jacketed, with Teflon food-grade heat-proof covering
     rod: S.S with Teflon covering (food grade, heat proof)
     pipe: Flexible, food grade
+    controls: Electric panel with all new features
     gearMotorMainDrive: 2 hp
     stand: M.S
-    heater: 1000 watt, 1 No
-    inverter: 2 HP (increase/decrease filling)
-    extra: Co-flow system to recycle liquid/chocolate
-    powerLoad: 3.2 hp
+    heater: 1000 watt (1 No) to moderate temperature
+    inverter: 2 hp to increase or decrease filling in product
+    overflow: System to recycle liquid/chocolate
+    powerLoad: 3.34 hp
 - name: Center Filling Powder Pump
   model: SEW-111
   function: >-
     Precision feeding unit that injects dry or semi-dry powdered filling (milk,
     cocoa or fruit powder) into the centre of the candy rope.
   description: >-
-    S.S 304 leaf with Teflon-covered S.S worm, M.S stand, 2 hp gear motor and
+    S.S 304 keef with Teflon-covered S.S worm, M.S stand, 2 hp gear motor and
     variable inverter for speed control.
   image: ''
   specs:
     type: Centre filling powder
-    leaf: S.S 304 grade
+    keef: S.S 304 grade
     gearMotor: 2 hp
     variableInverter: 2 hp (speed control)
     stand: M.S
@@ -223,13 +225,20 @@ machines:
   image: ''
   specs:
     sizerModel: Horizontal, 4 stages
-    pairs: S.S 304 (22 mm x2, 20 mm x2)
+    firstPair: S.S 304, 32 mm
+    secondPair: S.S 304, 27 mm
+    thirdPair: S.S 304, 22 mm
+    fourthPair: S.S 304, 17 mm
+    electricPanel: S.S 201
+    sideSheets: S.S 201
+    sizerPlates: S.S 304
     ropeGuide: Brass
     inverter: INVENT digital, 2 hp
     gearMotors: SEW brand, Germany
     heatControllers: Digital, 2 Nos
     mainDriveGearMotor: 2 hp
     heaters: 500 watt (4 Nos) = 2 kw
+    safety: Emergency break to stop equipment, emergency switch to off equipment, electric breakers
     bearings: Used instead of bushes
     dimension: 4.5 ft x 2.5 ft x 6 ft
     powerLoad: 4.68 hp   # CHECK (handwritten)
@@ -263,30 +272,31 @@ machines:
   image: ''
   specs:
     frameOfDie: Aluminium alloy
-    cutterBlocks: D-2
-    punches: D-2
+    cutterBlocks: D2 material
+    punches: D2 material
     uClamps: Cast hardened M.S
     sprockets: Forged carbon steel
     bushesBoltsPipesBearingCones: EN19
-    connectingRods: Copper + high-speed carbon steel
+    connectingRods: Upper & lower, high-speed carbon steel
 - name: Cooling Conveyor (Close Body)
   model: SEW-121
   function: >-
     Rapidly and uniformly reduces the temperature of freshly formed candy for
     dimensional stability and hardness before cutting, wrapping or packaging.
   description: >-
-    Close-body conveyor with S.S 304 mesh-wire steps, S.S 201 covers, thermopore
-    insulation, S.S 304 inner skin and SEW gear motor.
+    Close-body conveyor with S.S 304 mesh-wire steps, S.S 201 outer and inner side
+    sheets, thermopore insulation, S.S 304 5 mm rods and SEW gear motor.
   image: ''
   specs:
     length: 10 ft
     width: 3 ft
-    stages: 1 stage
+    stages: 3 stages
     meshWire: S.S 304 grade (3 steps)
-    sideSheets: Outer and inner in S.S 304
+    sideSheets: Outer and inner in S.S 201
     covers: S.S 201
-    insulation: Double jacketed, thermopore; inner S.S 304 5 mm
-    chain: M.S, 40 No
+    insulation: Double jacketed, thermopore
+    rods: S.S 304, 5 mm thickness
+    chain: M.S, 40 Nos
     gearMotor: 2 hp, SEW brand
     inverter: 2 HP
     dimension: 3 ft x 16 ft

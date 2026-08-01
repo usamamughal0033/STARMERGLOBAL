@@ -161,19 +161,22 @@ machines:
     rope guides, INVENT inverter and SEW (Germany) gear motors.
   image: ''
   specs:
-    model: Horizontal, 5 stages (4 horizontal + 1 vertical)
-    pair1: S.S 304, 37 mm
-    pair2: S.S 304, 32 mm
-    pair3: S.S 304, 27 mm
-    pair4: S.S 304, 22 mm
-    pair5: S.S 304, 22 mm
-    electricPanel: S.S 304
+    sizerModel: Horizontal, 5 stages (4 horizontal + 1 vertical)
+    firstPair: S.S 304, 37 mm
+    secondPair: S.S 304, 32 mm
+    thirdPair: S.S 304, 27 mm
+    fourthPair: S.S 304, 22 mm
+    fifthPair: S.S 304, 17 mm
+    electricPanel: S.S 201
+    sizerPlates: S.S 304
     sideSheets: S.S 201
     ropeGuide: Brass
     inverter: INVENT brand, 3 hp
     gearMotors: SEW brand Germany, 3 hp
-    heatControllers: 2 Nos
-    electricHeaters: 500 x 4, 2 kW
+    heatControllers: Digital, 2 Nos
+    electricHeaters: 500 x 4 = 2 kW
+    safety: Emergency break to stop equipment, emergency switch to off equipment, electric breakers
+    electricComponents: Brand new
     dimension: 6'6" x 3' x 5'6" (H x W x L)
     powerLoad: 5.68 hp
 - name: Cut & Pillow Pack Zombie Machine

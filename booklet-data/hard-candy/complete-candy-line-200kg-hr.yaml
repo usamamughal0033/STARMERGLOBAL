@@ -216,17 +216,19 @@ machines:
     cutting machine, maintaining consistent candy size and weight throughout
     production.
   description: >-
-    Horizontal 5-stage rope sizer with S.S 304 roller pairs, brass rope guide,
+    Horizontal 4-stage rope sizer with S.S 304 roller pairs, brass rope guide,
     digital inverter and SEW (Germany) gear motors; bearings used instead of
     bushes for low maintenance.
   image: ''
   specs:
-    sizerModel: Horizontal, 5 stages
-    firstPair: S.S 304, 22 mm
-    secondPair: S.S 304, 22 mm
-    thirdPair: S.S 304, 20 mm
-    fourthPair: S.S 304, 20 mm
+    sizerModel: Horizontal, 4 stages
+    firstPair: S.S 304, 32 mm
+    secondPair: S.S 304, 27 mm
+    thirdPair: S.S 304, 22 mm
+    fourthPair: S.S 304, 17 mm
     ropeGuide: Brass
+    sideSheets: S.S 201
+    electricPanel: S.S 201
     inverter: Digital, new brand
     gearMotors: SEW brand, Germany
     heatControllers: Digital, 2 Nos

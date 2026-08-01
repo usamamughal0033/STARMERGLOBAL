@@ -195,9 +195,12 @@ machines:
   image: ''
   specs:
     sizerModel: Horizontal, 4 stages
-    pairs: S.S 304 (32 mm, 27 mm, 22 mm, 22 mm)
+    firstPair: S.S 304, 32 mm
+    secondPair: S.S 304, 27 mm
+    thirdPair: S.S 304, 22 mm
+    fourthPair: S.S 304, 17 mm
     electricPanel: S.S 201
-    sidePlates: S.S 201
+    sideSheets: S.S 201
     sizerPlates: S.S 304
     ropeGuide: Brass
     inverter: INVENT digital, 2 hp
@@ -215,7 +218,7 @@ machines:
     shapes and wraps them immediately — a complete cut-and-wrap setup for different
     kinds of flat lollipops.
   description: >-
-    Heavy-duty M.S structure with special/imported MS punches (12/round), 7.5 kW
+    Heavy-duty M.S structure with special/imported MS punches (22/round), 7.5 kW
     motor, 10 kW inverter and automatic cut-and-wrap with full electric panel.
   image: assets/STARMER/_ready/LOLLIPOP/_Flat Lollipop Line_._/Flat Lollipop Former and Wrapping..jpg
   specs:
@@ -224,7 +227,7 @@ machines:
     motorPower: 7.5 kW
     inverter: 10 kW
     modelMaterial: Special MS / imported
-    punchesQuantity: 12 per round
+    punchesQuantity: 22 per round
     sizerSet: One step with pulley
     cutAndWrap: Automatic
     structure: Heavy duty M.S

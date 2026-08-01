@@ -156,7 +156,6 @@ machines:
   specs:
     capacity: 100 kg in 20 minutes
     pan: S.S 304, double jacketed
-    construction: Double jacketed with M.S
     arms: 2, S.S 304
     panCover: S.S 304
     gearMotorMainDrive: 20 hp
@@ -174,7 +173,7 @@ machines:
     density for downstream forming.
   description: >-
     Screw extruder on M.S structure with 7.5 hp drive, 10 hp inverter, S.S 304 roll
-    and head helping-roller system, with 6000 W heaters.
+    and keef helping-roller system, with 6000 W heaters.
   image: ''
   specs:
     type: 1 rope, 2 worms
@@ -183,8 +182,8 @@ machines:
     structure: M.S
     roll: S.S 304
     heaters: Electric heaters, 6000 watt
-    controls: Electric panel with all new features, helping roller system in head
-    powerLoad: 18 hp   # CHECK (handwritten)
+    controls: Electric panel with all new features, helping roller system in keef
+    powerLoad: 18 hp
 - name: Batch Roller
   model: SEW-114
   function: >-
@@ -208,18 +207,21 @@ machines:
     gearMotor: SEW brand, Germany
     dimension: 4' x 2' x 3'   # CHECK (handwritten)
     powerLoad: 4.68 hp   # CHECK (handwritten)
-- name: Rope Sizer (5 Stages)
+- name: Rope Sizer (4 Stages)
   model: SEW-115
   function: >-
     Accurately reduces and calibrates the candy/toffee rope diameter for uniform
     thickness before forming or cutting.
   description: >-
-    Horizontal multi-stage rope sizer with S.S 304 roller pairs, brass rope guide,
+    Horizontal 4-stage rope sizer with S.S 304 roller pairs, brass rope guide,
     digital inverter and SEW (Germany) gear motors; bearings for low maintenance.
   image: ''
   specs:
-    sizerModel: Horizontal, 5 stages
-    pairs: S.S 304 (32 mm, 27 mm, 22 mm, 22 mm)
+    sizerModel: Horizontal, 4 stages
+    firstPair: S.S 304, 32 mm
+    secondPair: S.S 304, 27 mm
+    thirdPair: S.S 304, 22 mm
+    fourthPair: S.S 304, 17 mm
     electricPanel: S.S 201
     sideSheets: S.S 201
     sizerPlates: S.S 304
@@ -295,19 +297,23 @@ machines:
     Five-stage round-lollipop cooling conveyor with elevator for gradual cooling,
     hardening and smooth transfer of formed lollipops before packaging.
   description: >-
-    Five aircross-pored 5.5 plate stages with 5 hp main drive and inverter, plus an
+    Five aircross-pored S.S plate stages with 5 hp main drive and inverter, plus an
     integrated elevator (1 hp drive, twin cooling fans, food-grade T-belt).
   image: assets/STARMER/_ready/LOLLIPOP/Lollipop 200 Kg/Lollipop Close Body 5 Stages Cooling Conveyor .jpg
   specs:
-    stages: 5 (5.5 plate with pores for aircross)
+    firstStage: S.S plate with pores for aircross
+    secondStage: S.S plate with pores for aircross
+    thirdStage: S.S plate with pores for aircross
+    fourthStage: S.S plate with pores for aircross
+    fifthStage: S.S plate with pores for aircross
     gearMotorMainDrive: 5 hp
-    inverter: 5 hp (speed control)
-    elevator: For shifting product from machine to conveyor
+    inverter: 5 hp (to control speeds)
+    elevator: For shifting the products from machine to conveyor
     elevatorDrive: Gear motor 1 hp
-    elevatorFans: 2 Nos (for cooling)
-    belt: Food grade T-belt in elevator
-    dimension: 9 ft x 3.5 ft x 6.5 ft   # CHECK (handwritten)
-    powerLoad: 6 hp   # CHECK (handwritten)
+    elevatorFans: 2 Nos (for cooling of product)
+    belt: Food grade T belt in elevator
+    dimension: 8 ft x 11.5 ft x 6.5 ft (H x W x L)
+    powerLoad: 6 hp
 - name: Wrapping Machine
   model: SEW-414
   function: >-
@@ -319,6 +325,7 @@ machines:
     productionSpeed: 110 - 130 pcs/min (standard lollipop shape)
     control: PLC control
     mainMotor: 2 hp + 0.5 hp
+    brushMotors: 3 x 0.5 hp = 1.5 hp
     electricHeater: 0.25 kW x 6
     mainDriveInverter: 2 hp
     servoMotor: Yes

@@ -41,12 +41,15 @@ machines:
     workingPressure: 150 psi
     tubeSize: 2" or 2½"
     pressureShellThickness: 3/8"
+    tubeSheetThickness: 1/2"
     insulationSheetThickness: 24 gauge
+    rockWoolThickness: 2"
     feedWaterPump: Grundfos, multistage
     feedWaterMotor: 3 hp
-    capacity: 1000 kg/hr   # CHECK (handwritten)
+    burnerMotor: 2 hp
+    capacity: 1500 kg/hr
     dimension: 8' x 3'5" x 3'5"
-    powerLoad: 7 hp   # CHECK (handwritten)
+    powerLoad: 5 hp
 - name: Steam Header
   model: SEW-103
   function: >-
@@ -74,11 +77,14 @@ machines:
   specs:
     output: 450 kg/hr
     drive: 2 hp
-    pans: S.S 304
+    pans: 2 Nos in S.S 304 food grade
     body: S.S 304, double jacketed
     sugarPump: 2 hp, 1450 rpm
     dosingPump: 3 hp (imported)
     fittings: Outer tube jacketed, steam trap, full S.S water nozzles
+    steamGauge: Yes
+    safetyValve: Yes
+    seatValve: Yes
     controls: Electric panel with all new features
     dimension: 8.5 ft x 6 ft x 7 ft   # CHECK (handwritten)
     powerLoad: 4 hp   # CHECK (handwritten)
@@ -93,7 +99,7 @@ machines:
     rating: 7.5 hp = 1450 rpm
     frame: M.S
     dimension: 2 ft x 4 ft x 1 ft
-    powerLoad: 10 hp   # CHECK (handwritten)
+    powerLoad: 7.5 hp
 - name: Dissolving Tank
   model: SEW-106
   function: >-
@@ -140,7 +146,6 @@ machines:
     basePlateThickness: 10 mm in S.S 304
     materialOfPlate: Boundary wall S.S 304
     coolingMedium: Water cooling system, A-frame inlet/outlet
-    legs: 4 Nos in S.S 201 grade
     dimension: 3 ft x 6 ft x 2'6"
     powerLoad: None
 - name: Kneading Machine
@@ -164,19 +169,19 @@ machines:
     Precision dosing system that injects liquid filling (fruit syrup, chocolate,
     cream or jam) into the core of the candy rope during forming.
   description: >-
-    Double-jacketed S.S 304 leaf with Teflon-covered food-grade rod, flexible pipe,
+    Double-jacketed S.S 304 keef with Teflon-covered food-grade rod, flexible pipe,
     2 hp drive, 1000 W heater and 2 HP inverter with recycle.
   image: ''
   specs:
     filling: Chocolate and liquid
-    leaf: S.S 304, double jacketed
+    keef: S.S 304, double jacketed
     rod: S.S with Teflon covering (food grade, heat proof)
     pipe: Flexible, food grade
     gearMotorMainDrive: 2 hp
     stand: M.S
     heater: 1000 watt, 1 No
     inverter: 2 HP
-    extra: Co-flow system to recycle liquid/chocolate
+    extra: Over flow system to recycle liquid/chocolate
     powerLoad: 3.34 hp
 - name: Center Filling Powder Pump
   model: SEW-111
@@ -184,16 +189,17 @@ machines:
     Precision feeding unit that injects dry or semi-dry powdered filling into the
     centre of the candy rope.
   description: >-
-    S.S 304 leaf with Teflon-covered S.S worm, M.S stand, 2 hp gear motor and
+    S.S 304 keef with Teflon-covered S.S worm, M.S stand, 2 hp gear motor and
     variable inverter for speed control.
   image: ''
   specs:
     type: Centre filling powder
-    leaf: S.S 304 grade
+    keef: S.S 304 grade
     gearMotor: 2 hp
     variableInverter: 2 hp (speed control)
     stand: M.S
     contactPart: Rod with Teflon covering, S.S worm inside
+    controls: Electric panel with all new features
     powerLoad: 2 hp
 - name: Bubble Gum Mixer
   model: SEW-112
@@ -212,8 +218,8 @@ machines:
     gearMotorMainDrive: 20 hp
     structure: Heavy duty M.S
     heaters: Electric heaters, 6000 watt
-    sideSheets: S.S 304
-    tilt: S.S 201, tilting system
+    sideSheets: S.S 201
+    tilt: Tilting system
     controls: Electric panel with all new features
     dimension: 6' x 4' x 4'   # CHECK (handwritten)
     powerLoad: 28 hp   # CHECK (handwritten)
@@ -232,8 +238,8 @@ machines:
     inverter: 10 hp
     structure: M.S
     roll: S.S 304
-    heaters: Electric heaters
-    controls: Electric panel with all new features, helping roller system in head
+    heaters: Electric heaters, 6000 watt
+    controls: Electric panel with all new features, helping roller system in keef
     powerLoad: 18 hp   # CHECK (handwritten)
 - name: Batch Roller
   model: SEW-114
@@ -248,8 +254,9 @@ machines:
     frame: Horizontal
     rollersQuantity: 4
     rollersMaterial: S.S 304 food grade
-    gearMotorMainDrive: 2 hp
-    upDownDrive: 2 hp
+    rollerCaplene: Casting material
+    gearMotorMainDrive: 1 hp
+    upDownDrive: 1 hp
     heaters: 1000 watt (2 Nos)
     capacity: 75 kg
     length: 6.5 ft
@@ -267,7 +274,13 @@ machines:
   image: ''
   specs:
     sizerModel: Horizontal, 4 stages
-    pairs: S.S 304 (22 mm x2, 20 mm x2)
+    firstPair: S.S 304, 32 mm
+    secondPair: S.S 304, 27 mm
+    thirdPair: S.S 304, 22 mm
+    fourthPair: S.S 304, 17 mm
+    electricPanel: S.S 201
+    sideSheets: S.S 201
+    sizerPlates: S.S 304
     ropeGuide: Brass
     inverter: INVENT digital, 2 hp
     gearMotors: SEW brand, Germany
@@ -285,15 +298,15 @@ machines:
     bubble gum with high dough thickness.
   description: >-
     High-carbon-steel forged gears and bearing-steel CAMS with 5 hp drive and
-    INVENT inverter; adjustable filling up to ~34%.
-  image: ''
+    INVENT inverter; adjustable filling up to 12%.
+  image: assets/STARMER/_ready/HARD CANDY/Complete Candy line 450Kg_Hr/Uniplast 160-A.jpg
   specs:
     mainDriveMotor: 5 hp
     inverter: 5 hp (INVENT brand)
     cams: Bearing steel grade
     gears: High carbon steel, forged
-    speed: 1600 to 2000 pieces/min (depending on size)
-    filling: Up to ~34% of candy
+    speed: 2500 to 3500 pieces/min (depending on size of product)
+    filling: Up to 12%
     controls: Electric panel with all new features
     dimension: 6.5 ft x 4.5 ft x 8 ft   # CHECK (handwritten)
     powerLoad: 5 hp
@@ -332,15 +345,15 @@ machines:
     Cools and stabilises the hot candy mass after forming or rope sizing, before
     cutting, wrapping or packaging.
   description: >-
-    18 ft open-body conveyor with 2 hp blower, Teflon belt, S.S mesh-wire steps,
+    18 ft open-body conveyor with 3 hp blower, Teflon belt, S.S 304 mesh-wire steps,
     M.S chain/sprockets and S.S 304 rods.
   image: ''
   specs:
     length: 18 ft
     stages: 3 stages
-    blower: 2 hp
+    blower: 3 hp
     firstBelt: Teflon, 4 inch width
-    meshSteps: S.S (2nd 21 inch, 3rd 26 inch width)
+    meshSteps: S.S 304 (2nd 21 inch, 3rd 26 inch width)
     gearMotor: 2 hp
     inverter: 2 hp (speed control)
     chain: M.S
@@ -369,22 +382,25 @@ machines:
     Rapidly and uniformly reduces the temperature of freshly formed candy for
     dimensional stability and hardness before cutting, wrapping or packaging.
   description: >-
-    Close-body conveyor with S.S 304 mesh-wire steps, S.S 201 covers, thermopore
-    insulation, S.S 304 inner skin and SEW gear motor.
+    Close-body conveyor with S.S 304 mesh-wire steps, S.S 201 outer and inner side
+    sheets, thermopore insulation, 5 ton AC and SEW gear motors.
   image: ''
   specs:
     length: 10 ft
     width: 3 ft
     stages: 3 stages
     meshWire: S.S 304 grade (3 steps)
-    sideSheets: Outer and inner in S.S 304
+    sideSheets: Outer and inner in S.S 201
     covers: S.S 201
-    insulation: Double jacketed, thermopore; inner S.S 304 5 mm
+    insulation: Double jacketed, thermopore
+    rods: S.S 304, 5 mm thickness
     chain: M.S, 40 No
-    gearMotor: 2 hp, SEW brand
-    inverter: 2 hp
+    airConditioning: 5 Ton AC
+    gearMotor: 3 hp total (1 hp each, 3 Nos), SEW brand
+    inverter: INVENT (new brand), 5 hp
+    controls: Electric panel with all new features
     dimension: 3 ft x 16 ft
-    powerLoad: 5 hp
+    powerLoad: 3 hp
 - name: AC Unit (5 Ton)
   model: SEW-122
   function: >-

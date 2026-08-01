@@ -1,5 +1,11 @@
 node_modules/
 admin-local/
+__pycache__/
+*.pyc
+
+# working artefact from scripts/upscale_new_images.py — nothing on the site
+# references it; regenerate on demand
+assets/images/NEW IMAGES/_upscaled/
 server.js
 package.json
 package-lock.json

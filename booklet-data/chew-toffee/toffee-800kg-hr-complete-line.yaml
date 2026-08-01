@@ -116,14 +116,14 @@ machines:
     in a controlled way to improve its texture and structure. By continuously
     pulling the mass it incorporates air, evens out temperature and develops the
     desired smoothness, shine and chew of the final product.
-  description: Hard-chromed 3-arm pulling machine with 10 hp main drive and S.S side sheets.
+  description: Hard-chromed 3-arm pulling machine with 10 hp main drive and S.S 201 side sheets.
   image: ''
   specs:
     capacity: 100 kg
     mainDriveMotor: 10 hp
     arms: Hard chromed
     armsForContinuousPulling: 3 arms
-    sideSheets: S.S
+    sideSheets: S.S 201
     controls: Electric panel for control
     powerLoad: 10 hp
 - name: Liquid Filling Pump
@@ -134,12 +134,12 @@ machines:
     candy rope during the forming process, ensuring consistent filling quantity and
     uniform distribution across all candies.
   description: >-
-    Double-jacketed S.S 304 filling pump with Teflon-lined leef, food-grade flexible
+    Double-jacketed S.S 304 filling pump with Teflon-lined keef, food-grade flexible
     pipe, 2 hp gear-motor drive, heater and 2 hp inverter with overflow recycling.
   image: ''
   specs:
     filling: Chocolate and liquid
-    leef: S.S 304, double jacketed, 1.5 with Teflon food-grade heat-proof covering
+    keef: S.S 304, double jacketed, 1.5 with Teflon food-grade heat-proof covering
     pipe: Flexible food grade
     controls: Electric panel with new feature
     gearMotor: 2 hp main drive
@@ -186,19 +186,22 @@ machines:
     rope guides, INVENT inverter and SEW (Germany) gear motors.
   image: ''
   specs:
-    model: Horizontal, 5 stages (4 horizontal + 1 vertical)
-    pair1: S.S 304, 37 mm  # CHECK (stage sizes)
-    pair2: S.S 304, 27 mm
-    pair3: S.S 304, 32 mm
-    pair4: S.S 304, 22 mm
-    pair5: S.S 304, 22 mm
-    electricPanel: S.S 304
-    sideSheets: S.S 304
+    sizerModel: Horizontal, 5 stages (4 horizontal + 1 vertical)
+    firstPair: S.S 304, 37 mm
+    secondPair: S.S 304, 32 mm
+    thirdPair: S.S 304, 27 mm
+    fourthPair: S.S 304, 22 mm
+    fifthPair: S.S 304, 17 mm
+    electricPanel: S.S 201
+    sizerPlates: S.S 304
+    sideSheets: S.S 201
     ropeGuide: Brass
     inverter: INVENT brand, 3 hp
     gearMotors: SEW brand Germany, 3 hp
     heatControllers: 2 Nos
-    electricHeaters: 500 x 4, 2 kW
+    electricHeaters: 500 x 4 = 2 kW
+    safety: Emergency break to stop equipment, emergency switch to off equipment, electric breakers
+    electricComponents: Brand new
     dimension: 6'6" x 3' x 5'6" (H x W x L)
     powerLoad: 5.68 hp
 - name: Uniplast Forming Machine (160-C)
@@ -213,7 +216,7 @@ machines:
     Universal seamless-sweet forming machine with 7.5 hp inverter main drive, 3 hp
     spreader and box drives, Teflon-coated food-grade self, grease lubrication and
     high-carbon-steel star sets; up to 800 kg/hr.
-  image: ''
+  image: assets/STARMER/_ready/CHEW & TOFFEE/Toffee 800kg_hr Complete line_/Uniplast 160-C.jpg
   specs:
     capacity: Up to 800 kg/hr  # CHECK (printed 1000 kg/hr, handwritten 800 kg/hr)
     centreFilled: Up to 30% depending on product size (candy, toffee, bubble gum)
@@ -224,7 +227,8 @@ machines:
     self: Teflon-coated food grade
     lubrication: Grease pump
     steelSection: S.S 201
-    cams: Pressure cams grade 02; reverse cam grade 1.0
+    cams: Pressure cams grade D2
+    reverseCams: S.G iron
     starSets: High carbon steel
     blower: 2 hp for cooling of die
     controls: Electric panel with all new features
@@ -328,7 +332,7 @@ machines:
     electricalSource: 380 V, 30 Hz
     weight: 1003 kg
     speedOfFood: 2 to 3 ms
-    length: 11.02 mm
-    width: 12-20 mm
-    thickness: 5-20 mm
+    paperLength: 11-35 mm
+    paperWidth: 11-26 mm
+    paperThickness: 5-20 mm
     dimension: 1900 x 1100 x 1400 mm (L x W x H)

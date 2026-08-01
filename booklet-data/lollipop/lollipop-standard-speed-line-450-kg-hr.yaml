@@ -94,10 +94,10 @@ machines:
   description: M.S frame vacuum pump unit.
   image: ''
   specs:
-    rating: 7.5 hp = 1450 rpm
+    rating: 10 hp = 1450 rpm
     frame: M.S
     dimension: 2 ft x 4 ft x 1 ft
-    powerLoad: 10 hp   # CHECK (handwritten)
+    powerLoad: 10 hp
 - name: Dissolving Tank
   model: SEW-106
   function: >-
@@ -202,7 +202,7 @@ machines:
     structure: M.S
     roll: S.S 304
     heaters: Electric heaters, 6000 watt
-    controls: Electric panel with all new features, helping roller system in head
+    controls: Electric panel with all new features, helping roller system in keef
     powerLoad: 18 hp   # CHECK (handwritten)
 - name: Batch Roller
   model: SEW-114
@@ -238,14 +238,21 @@ machines:
   image: ''
   specs:
     sizerModel: Horizontal, 5 stages (4 horizontal + 1 vertical)
-    pairs: S.S 304 (32 mm, 27 mm, 22 mm, 22 mm, 17 mm)
+    firstPair: S.S 304, 37 mm
+    secondPair: S.S 304, 32 mm
+    thirdPair: S.S 304, 27 mm
+    fourthPair: S.S 304, 22 mm
+    fifthPair: S.S 304, 17 mm
     electricPanel: S.S 201
-    sidePlates: S.S 304
+    sizerPlates: S.S 304
+    sideSheets: S.S 201
     ropeGuide: Brass
     inverter: INVENT digital, 3 hp
     gearMotors: SEW brand, Germany, 3 hp
     heatControllers: Digital, 2 Nos
-    heaters: 500 watt (4 Nos) = 2 kw
+    heaters: 500 watt x 4 = 2 kw
+    safety: Emergency break to stop equipment, emergency switch to off equipment, electric breakers
+    electricComponents: Brand new
     bearings: Used instead of bushes
     dimension: 4' x 2'5" x 6'   # CHECK (handwritten)
     powerLoad: 5.68 hp   # CHECK (handwritten)
@@ -300,18 +307,23 @@ machines:
     Five-stage round-lollipop cooling conveyor with elevator for gradual cooling,
     hardening and smooth transfer of formed lollipops before packaging.
   description: >-
-    Five aircross-pored 5.5 plate stages with 5 hp main drive and inverter, plus an
+    Five aircross-pored S.S plate stages with 5 hp main drive and inverter, plus an
     integrated elevator (1 hp drive, twin cooling fans, food-grade T-belt).
   image: assets/STARMER/_ready/LOLLIPOP/Lollipop Standard Speed Line 450 KG _ HR_/Lollipop Close Body 5 Stages Cooling Conveyor .jpg
   specs:
-    stages: 5 (5.5 plate with pores for aircross)
+    firstStage: S.S plate with pores for aircross
+    secondStage: S.S plate with pores for aircross
+    thirdStage: S.S plate with pores for aircross
+    fourthStage: S.S plate with pores for aircross
+    fifthStage: S.S plate with pores for aircross
     gearMotorMainDrive: 5 hp
-    inverter: 5 hp (speed control)
+    inverter: 5 hp (to control speeds)
+    elevator: For shifting the products from machine to conveyor
     elevatorDrive: Gear motor 1 hp
-    elevatorFans: 2 Nos (for cooling)
-    belt: Food grade T-belt in elevator
-    dimension: 9 ft x 3.5 ft x 6.5 ft   # CHECK (handwritten)
-    powerLoad: 6 hp   # CHECK (handwritten)
+    elevatorFans: 2 Nos (for cooling of product)
+    belt: Food grade T belt in elevator
+    dimension: 8 ft x 11.5 ft x 6.5 ft (H x W x L)
+    powerLoad: 6 hp
 - name: AC Unit (5 Ton)
   model: SEW-318
   function: >-
@@ -345,4 +357,5 @@ machines:
     productionSpeed: 110 - 130 pcs/min (standard lollipop shape)   # CHECK (page absent)
     control: PLC control
     mainMotor: 2 hp + 0.5 hp   # CHECK (page absent)
+    brushMotors: 3 x 0.5 hp = 1.5 hp
     mainDriveInverter: 2 hp   # CHECK (page absent)

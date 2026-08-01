@@ -94,33 +94,33 @@ machines:
     Twin-screw extruder that shapes the mixed gum mass into a continuous rope of
     uniform thickness and density for downstream forming.
   description: >-
-    Double-jacketed twin-screw extruder with 3-step German gear, China inverter and
-    head helping system with mechanical rollers; full safety covers.
+    Double-jacketed twin-screw extruder with 3-step German gear, new China inverter
+    and keef helping system with mechanical rollers; full safety covers.
   image: ''
   specs:
     suitableFor: All types of bubble gum
-    screwDiameter: 125 mm x 660 mm   # CHECK (handwritten)
+    screwDiameter: 125 mm x 800 mm
     capacity: 600 kg/hour
     headType: Double jacketed, twin screw
     motorPower: 15 hp   # CHECK (handwritten)
-    inverter: 7.5 kW (China)
+    inverter: New brand (China), 20 hp
     stepGear: Three step (made by Germany)
-    helpingSystem: Mechanical rollers
+    helpingSystem: Mechanical rollers in keef
     controls: Control panel with all new features, full safety covers
-    powerLoad: 18 hp   # CHECK (handwritten)
+    powerLoad: 28 hp
 - name: Liquid Filling Pump
   model: SEW-110
   function: >-
     Precision dosing system that injects liquid filling (fruit syrup, chocolate,
     cream or jam) into the core of the candy rope during forming.
   description: >-
-    Double-jacketed S.S 304 leaf with Teflon-covered food-grade rod, flexible pipe,
+    Double-jacketed S.S 304 keef with food-grade rod, flexible pipe,
     2 hp drive, 1000 W heater and 2 HP inverter with overflow recycle.
   image: ''
   specs:
     filling: Chocolate and liquid
-    leaf: S.S 304, double jacketed
-    rod: S.S with Teflon covering (food grade, heat proof)
+    keef: S.S 304, double jacketed
+    rod: S.S 304 (food grade, heat proof)
     pipe: Flexible, food grade
     gearMotorMainDrive: 2 hp
     stand: M.S
@@ -139,15 +139,21 @@ machines:
   image: ''
   specs:
     sizerModel: Horizontal, 5 stages (4 horizontal + 1 vertical)
-    pairs: S.S 304 (32 mm, 27 mm, 22 mm, 22 mm, 17 mm)
+    firstPair: S.S 304, 37 mm
+    secondPair: S.S 304, 32 mm
+    thirdPair: S.S 304, 27 mm
+    fourthPair: S.S 304, 22 mm
+    fifthPair: S.S 304, 17 mm
     electricPanel: S.S 201
-    sidePlates: S.S 201
     sizerPlates: S.S 304
+    sideSheets: S.S 201
     ropeGuide: Brass
-    inverter: INVENT digital, 3 hp
+    inverter: INVENT (new brand), 3 hp
     gearMotors: SEW brand, Germany, 3 hp
     heatControllers: Digital, 2 Nos
-    heaters: 500 watt (4 Nos) = 2 kw
+    heaters: 500 watt x 4 = 2 kw
+    safety: Emergency break to stop equipment, emergency switch to off equipment, electric breakers
+    electricComponents: Brand new
     bearings: Used instead of bushes
     dimension: 4'6" x 3' x 6'
     powerLoad: 5.6 hp
@@ -168,6 +174,7 @@ machines:
     duct: Double jacketed duct on top of conveyor
     insulation: Insulated with thermopore
     gearMotorMainDrive: 2 hp
+    fans: 3 Nos (for cooling)
     inverter: Variable, for speed control
     frame: M.S
     powerLoad: 2 hp
@@ -180,15 +187,15 @@ machines:
   description: >-
     Teflon-coated food-grade belt with D2 pressure cams, high carbon steel sizer
     sets and gears, spring-loaded diamond-polished punches and 2 hp die blower.
-  image: ''
+  image: assets/STARMER/_ready/BUBBLE GUM/Centre Filled Bubble 600kg_hr/Uniplast 160-C.jpg
   specs:
     capacity: Up to 600 kg/hr
-    speed: 4000 to 6000 pieces/min (varies with product)
+    speed: Up to 3500 pieces/min
     netWeight: 1500 kg
     belt: Teflon coated, food grade
     sideSheets: S.S 201
     pressureCams: D2 grade
-    reserveCams: S.G.B iron grade
+    reverseCams: S.G iron grade
     sizerSetsAndGears: High carbon steel
     blower: 2 hp (die cooling)
     mainDrive: 3 hp

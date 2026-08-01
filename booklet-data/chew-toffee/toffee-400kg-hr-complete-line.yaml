@@ -113,14 +113,14 @@ machines:
     in a controlled way to improve its texture and structure. By continuously
     pulling the mass it incorporates air, evens out temperature and develops the
     desired smoothness, shine and chew of the final product.
-  description: Hard-chromed 3-arm pulling machine with 10 hp main drive and S.S 304 side sheets.
+  description: Hard-chromed 3-arm pulling machine with 10 hp main drive and S.S 201 side sheets.
   image: ''
   specs:
     capacity: 100 kg
     mainDriveMotor: 10 hp
     arms: Hard chromed
     armsForContinuousPulling: 3 arms
-    sideSheets: S.S 304
+    sideSheets: S.S 201
     controls: Electric panel for control
     powerLoad: 10 hp
 - name: Liquid Filling Pump
@@ -131,12 +131,12 @@ machines:
     candy rope during the forming process, ensuring consistent filling quantity and
     uniform distribution across all candies.
   description: >-
-    Double-jacketed S.S 304 filling pump with Teflon-lined leef, food-grade flexible
+    Double-jacketed S.S 304 filling pump with Teflon-lined keef, food-grade flexible
     pipe, 2 hp gear-motor drive, heater and 2 hp inverter with overflow recycling.
   image: ''
   specs:
     filling: Chocolate and liquid
-    leef: S.S 304, double jacketed, 1.5 with Teflon food-grade heat-proof covering
+    keef: S.S 304, double jacketed, 1.5 with Teflon food-grade heat-proof covering
     pipe: Flexible food grade
     controls: Electric panel with new feature
     gearMotor: 2 hp main drive
@@ -184,19 +184,22 @@ machines:
     rope guides, INVENT inverter and SEW (Germany) gear motors.
   image: ''
   specs:
-    model: Horizontal, 5 stages (4 horizontal + 1 vertical)
-    pair1: S.S 304, 33 mm
-    pair2: S.S 304, 32 mm
-    pair3: S.S 304, 27 mm
-    pair4: S.S 304, 22 mm
-    pair5: S.S 304, 12 mm
-    electricPanel: S.S 304
+    sizerModel: Horizontal, 5 stages (4 horizontal + 1 vertical)
+    firstPair: S.S 304, 37 mm
+    secondPair: S.S 304, 32 mm
+    thirdPair: S.S 304, 27 mm
+    fourthPair: S.S 304, 22 mm
+    fifthPair: S.S 304, 17 mm
+    electricPanel: S.S 201
+    sizerPlates: S.S 304
     sideSheets: S.S 201
     ropeGuide: Brass
     inverter: INVENT brand, 3 hp
     gearMotors: SEW brand Germany, 3 hp
     heatControllers: 2 Nos
-    electricHeaters: 500 x 4, 2 kW
+    electricHeaters: 500 x 4 = 2 kW
+    safety: Emergency break to stop equipment, emergency switch to off equipment, electric breakers
+    electricComponents: Brand new
     dimension: 6'6" x 3' x 5'6" (H x W x L)
     powerLoad: 5.68 hp
 - name: Uniplast (160-A)
@@ -217,7 +220,8 @@ machines:
     inverter: 5 hp, INVENT brand
     production: Up to 450 kg/hr  # CHECK (handwritten)
     controls: Electric panel with all new features
-    cams: Bearing steel grade; reverse cams in 1.0 iron
+    cams: Bearing steel grade
+    reverseCams: S.G iron
     gears: High carbon steel forged material
     fillingPercent: Up to 12% of the candy
     dimension: 6.3 ft x 4.5 ft x 1.5 ft (H x W x L)
@@ -293,13 +297,13 @@ machines:
     width: 3 ft
     stages: 3 stages with 12-ton AC
     meshWire: S.S 304 grade (all 3 steps)
-    outerInnerSideSheets: S.S 304 grade
+    outerInnerSideSheets: S.S 201 grade
     controls: Electric panel with all new features
     inverter: INVENT brand, 5 hp  # CHECK (handwritten)
     covers: S.S 201
     insulation: Double jacketed, insulated with thermopore
     rods: S.S 304, 5 mm thickness
-    chain: M.S, 60 No
+    chain: M.S, 40 Nos
     gearMotor: 3 hp (1 hp each, 3 Nos), SEW brand
     dimension: 18 ft x 3 ft (H x W x L)
     powerLoad: 3 hp
@@ -322,7 +326,7 @@ machines:
     electricalSource: 380 V, 30 Hz
     weight: 1003 kg
     speedOfFood: 2 to 3 ms
-    length: 11.02 mm
-    width: 12-20 mm
-    thickness: 5-20 mm
+    paperLength: 11-35 mm
+    paperWidth: 11-26 mm
+    paperThickness: 5-20 mm
     dimension: 1900 x 1100 x 1400 mm (L x W x H)

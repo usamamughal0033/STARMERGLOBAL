@@ -167,12 +167,12 @@ machines:
     Precision dosing system that injects liquid filling (fruit syrup, chocolate,
     cream or jam) into the core of the candy rope during forming.
   description: >-
-    Double-jacketed S.S 304 leaf with Teflon-covered food-grade rod, flexible pipe,
+    Double-jacketed S.S 304 keef with Teflon-covered food-grade rod, flexible pipe,
     2 hp drive, 1000 W heater and 2 HP inverter with overflow recycle.
   image: ''
   specs:
     filling: Chocolate and liquid
-    leaf: S.S 304, double jacketed
+    keef: S.S 304, double jacketed
     rod: S.S with Teflon covering (food grade, heat proof)
     pipe: Flexible, food grade
     gearMotorMainDrive: 2 hp
@@ -215,7 +215,10 @@ machines:
   image: ''
   specs:
     sizerModel: Horizontal, 4 stages
-    pairs: S.S 304 (32 mm, 27 mm, 22 mm, 17 mm)
+    firstPair: S.S 304, 32 mm
+    secondPair: S.S 304, 27 mm
+    thirdPair: S.S 304, 22 mm
+    fourthPair: S.S 304, 17 mm
     electricPanel: S.S 201
     sideSheets: S.S 201
     sizerPlates: S.S 304
@@ -237,7 +240,7 @@ machines:
   description: >-
     High-carbon-steel forged gears with bearing-steel CAMS and S.G iron reverse
     cams, 5 hp drive and INVENT inverter; adjustable filling up to 12%.
-  image: ''
+  image: assets/STARMER/_ready/PHARMA/Complete Pharma ( Lozenges ) 450KG_HR/Uniplast 160-A.jpg
   specs:
     mainDrive: 5 hp motor
     inverter: 5 hp (INVENT brand)

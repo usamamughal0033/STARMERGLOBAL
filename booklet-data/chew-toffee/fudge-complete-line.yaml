@@ -113,14 +113,14 @@ machines:
     in a controlled way to improve its texture and structure. By continuously
     pulling the mass it incorporates air, evens out temperature and develops the
     desired smoothness, shine and chew of the final product.
-  description: Hard-chromed 3-arm pulling machine with 10 hp main drive and S.S side sheets.
+  description: Hard-chromed 3-arm pulling machine with 10 hp main drive and S.S 201 side sheets.
   image: ''
   specs:
     capacity: 100 kg
     mainDriveMotor: 10 hp
     arms: Hard chromed
     armsForContinuousPulling: 3 arms
-    sideSheets: S.S
+    sideSheets: S.S 201
     controls: Electric panel for control
     powerLoad: 10 hp
 - name: Batch Roller
@@ -161,19 +161,22 @@ machines:
     rope guides, INVENT inverter and SEW (Germany) gear motors.
   image: ''
   specs:
-    model: Horizontal, 5 stages (4 horizontal + 1 vertical)
-    pair1: S.S 304, 37 mm
-    pair2: S.S 304, 32 mm
-    pair3: S.S 304, 27 mm
-    pair4: S.S 304, 22 mm
-    pair5: S.S 304, 12 mm
-    electricPanel: S.S 304
+    sizerModel: Horizontal, 5 stages (4 horizontal + 1 vertical)
+    firstPair: S.S 304, 37 mm
+    secondPair: S.S 304, 32 mm
+    thirdPair: S.S 304, 27 mm
+    fourthPair: S.S 304, 22 mm
+    fifthPair: S.S 304, 17 mm
+    electricPanel: S.S 201
+    sizerPlates: S.S 304
     sideSheets: S.S 201
     ropeGuide: Brass
     inverter: INVENT brand, 3 hp
     gearMotors: SEW brand Germany, 3 hp
-    heatControllers: 2 Nos
-    electricHeaters: 500 x 4, 2 kW
+    heatControllers: Digital, 2 Nos
+    electricHeaters: 500 x 4 = 2 kW
+    safety: Emergency break to stop equipment, emergency switch to off equipment, electric breakers
+    electricComponents: Brand new
     dimension: 6'6" x 3' x 5'6" (H x W x L)
     powerLoad: 5.68 hp
 - name: Cut & Fold Wrapping Machine
@@ -188,7 +191,7 @@ machines:
     HECO motor, INVENT inverter and photocell-eye control.
   image: ''
   specs:
-    speed: 300 pieces/min (depending on size of product)
+    speed: Up to 350 pieces/min (depending on size of product)
     reel: Double reel, inner & outer
     bearings: NTN, Japan
     inverter: 2 hp, INVENT brand
