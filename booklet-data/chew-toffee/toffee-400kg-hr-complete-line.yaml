@@ -78,15 +78,16 @@ machines:
     controlled temperature so the toffee reaches the correct thickness, texture and
     moisture level, providing uniform heating and precise temperature control for
     consistent quality and the required hardness or chewiness.
-  description: Double-jacketed S.S 304 toffee cooker with stirrer, coil, 3 hp gear-motor drive and safety valve.
+  description: Double-jacketed S.S 304 toffee cooker with stirrer, 3 hp gear-motor drive and safety valve.
   image: ''
   specs:
     capacity: 150 kg per batch after 20 to 25 mins
     stirrer: S.S 304
     panMaterial: S.S 304
     pan: Double jacketed with S.S 304 (M.S optional)
-    frame: M.S (S.S optional)
-    controls: Electric panel with new feature
+    frame: M.S (S.S 201 optional)
+    controls: Electric panel with all new features
+    # dimension: booklet page 7 leaves "Dimension (H/W/L)" blank -- value needed from client
     drive: 3 hp gear-motor drive
     safetyValve: Yes
     panCover: S.S 304
@@ -131,15 +132,17 @@ machines:
     candy rope during the forming process, ensuring consistent filling quantity and
     uniform distribution across all candies.
   description: >-
-    Double-jacketed S.S 304 filling pump with Teflon-lined keef, food-grade flexible
-    pipe, 2 hp gear-motor drive, heater and 2 hp inverter with overflow recycling.
+    Double-jacketed S.S 304 keef with Teflon-covered food-grade rod, flexible pipe,
+    2 hp gear-motor drive, heater and 2 hp inverter with overflow recycling.
   image: ''
   specs:
+    # per approved booklet page (Liquid Filling Pump, toffee lines)
     filling: Chocolate and liquid
-    keef: S.S 304, double jacketed, 1.5 with Teflon food-grade heat-proof covering
-    pipe: Flexible food grade
-    controls: Electric panel with new feature
-    gearMotor: 2 hp main drive
+    keef: S.S 304, double jacketed
+    rod: S.S with Teflon covering (food grade, heat proof)
+    pipe: Flexible, food grade
+    controls: Electric panel with new features
+    gearMotorMainDrive: 2 hp
     stand: M.S
     heater: 1000 watt (1 No) to moderate temperature
     inverter: 2 hp to increase or decrease filling in product
@@ -200,7 +203,7 @@ machines:
     electricHeaters: 500 x 4 = 2 kW
     safety: Emergency break to stop equipment, emergency switch to off equipment, electric breakers
     electricComponents: Brand new
-    dimension: 6'6" x 3' x 5'6" (H x W x L)
+    dimension: 4'6" x 3' x 5'6" (H x W x L)   # per approved booklet rope-sizer page
     powerLoad: 5.68 hp
 - name: Uniplast (160-A)
   model: ''

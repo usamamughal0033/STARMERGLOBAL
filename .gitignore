@@ -10,3 +10,6 @@ server.js
 package.json
 package-lock.json
 data-templates/
+
+# local-only layout drafts — never deployed
+mockups/

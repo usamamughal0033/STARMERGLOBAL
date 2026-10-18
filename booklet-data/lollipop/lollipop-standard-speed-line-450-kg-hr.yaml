@@ -182,7 +182,7 @@ machines:
     structure: Heavy duty M.S
     heaters: Electric heaters, 6000 watt
     sideSheets: S.S 201
-    tilt: S.S 201, tilting system
+    tilt: Tilting system
     controls: Electric panel with all new features
     dimension: 6' x 8' x 8'   # CHECK (handwritten)
     powerLoad: 28 hp   # CHECK (handwritten)
@@ -193,7 +193,7 @@ machines:
     density for downstream forming.
   description: >-
     Screw extruder on M.S structure with 7.5 hp drive, 10 hp inverter, S.S 304 roll
-    and head helping-roller system, with 6000 W heaters.
+    and keef helping-roller system, with 6000 W heaters.
   image: ''
   specs:
     type: 1 rope, 2 worms
@@ -356,6 +356,6 @@ machines:
   specs:
     productionSpeed: 110 - 130 pcs/min (standard lollipop shape)   # CHECK (page absent)
     control: PLC control
-    mainMotor: 2 hp + 0.5 hp   # CHECK (page absent)
+    motor: 2 hp   # from the standard lollipop wrapper (LOLLIPOP 200 KG.pdf p.21)
     brushMotors: 3 x 0.5 hp = 1.5 hp
     mainDriveInverter: 2 hp   # CHECK (page absent)

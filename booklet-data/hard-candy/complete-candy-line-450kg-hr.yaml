@@ -140,7 +140,7 @@ machines:
   function: >-
     Rapid cooling and conditioning of the cooked sugar mass for uniform texture
     and workability before forming.
-  description: Water-cooled S.S 304 table with A-frame circuit and S.S 201 legs.
+  description: Water-cooled S.S 304 table with A-frame water inlet/outlet circuit.
   image: ''
   specs:
     basePlateThickness: 10 mm in S.S 304
@@ -229,8 +229,8 @@ machines:
     Shapes the mixed gum mass into a continuous rope of uniform thickness and
     density for downstream forming.
   description: >-
-    Screw extruder on M.S structure with 7.5 hp drive, 10 hp inverter, S.S 304 roll
-    and head helping-roller system.
+    Screw extruder on M.S structure with 7.5 hp drive, 10 hp inverter, S.S 304 roll,
+    6000 W heaters and a helping-roller system in the keef.
   image: ''
   specs:
     type: 1 rope, 2 worms
@@ -304,6 +304,7 @@ machines:
     mainDriveMotor: 5 hp
     inverter: 5 hp (INVENT brand)
     cams: Bearing steel grade
+    reverseCams: S.G iron
     gears: High carbon steel, forged
     speed: 2500 to 3500 pieces/min (depending on size of product)
     filling: Up to 12%
@@ -347,7 +348,7 @@ machines:
   description: >-
     18 ft open-body conveyor with 3 hp blower, Teflon belt, S.S 304 mesh-wire steps,
     M.S chain/sprockets and S.S 304 rods.
-  image: ''
+  image: assets/STARMER/_ready/HARD CANDY/Complete Candy line 450Kg_Hr/Open Body Cooling Conveyor.jpg
   specs:
     length: 18 ft
     stages: 3 stages

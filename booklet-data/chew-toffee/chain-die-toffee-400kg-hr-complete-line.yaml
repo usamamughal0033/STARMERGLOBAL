@@ -115,7 +115,7 @@ machines:
   description: Hard-chromed 3-arm pulling machine with 10 hp main drive and S.S 201 side sheets.
   image: ''
   specs:
-    capacity: 200 kg
+    capacity: 100 kg   # per approved booklet p.9 (was 200 kg)
     mainDriveMotor: 10 hp
     arms: Hard chromed
     armsForContinuousPulling: 3 arms
@@ -130,20 +130,22 @@ machines:
     candy rope during the forming process, ensuring consistent filling quantity
     and uniform distribution across all candies.
   description: >-
-    Double-jacketed S.S 304 filling pump with Teflon-lined keef, food-grade flexible
-    pipe, 2 hp gear-motor drive, heater and 2 hp inverter with overflow recycling.
+    Double-jacketed S.S 304 keef with Teflon-covered food-grade rod, flexible pipe,
+    2 hp gear-motor drive, heater and 2 hp inverter with overflow recycling.
   image: ''
   specs:
+    # per approved booklet page (CHAIN DIE TOFFEE booklet, page 10)
     filling: Chocolate and liquid
-    keef: S.S 304, double jacketed, 1.5 with Teflon food-grade heat-proof covering
-    pipe: Flexible food grade
-    controls: Electric panel with new feature
-    gearMotor: 2 hp main drive
+    keef: S.S 304, double jacketed
+    rod: S.S with Teflon covering (food grade, heat proof)
+    pipe: Flexible, food grade
+    controls: Electric panel with new features
+    gearMotorMainDrive: 2 hp
     stand: M.S
     heater: 1000 watt (1 No) to moderate temperature
     inverter: 2 hp to increase or decrease filling in product
     overflow: System to recycle liquid/chocolate
-    powerLoad: 6.84 hp
+    powerLoad: 3.34 hp
 - name: Batch Roller
   model: ''
   function: >-
@@ -199,7 +201,7 @@ machines:
     electricHeaters: 500 x 4 = 2 kW
     safety: Emergency break to stop equipment, emergency switch to off equipment, electric breakers
     electricComponents: Brand new
-    dimension: 6'6" x 3' x 5'6" (H x W x L)
+    dimension: 4'6" x 3' x 5'6" (H x W x L)   # per approved booklet rope-sizer page
     powerLoad: 5.68 hp
 - name: Chain Die Forming Plant
   model: ''
@@ -211,20 +213,24 @@ machines:
     stable encapsulation of powder, liquid or cream fillings without leakage while
     maintaining accurate weight and dimensions.
   description: >-
-    Chain-die forming plant with M.S sizer set and top cover, 7.5 hp sizer-box
-    drive, 3 hp main drive, 0.5 hp belt and spreader drives and 3 hp inverters.
+    Chain-die forming plant with M.S sizer set and top cover, 1 hp sizer-box drive,
+    3 hp main drive, 0.5 hp belt and spreader-movement drives, and inverters for
+    die, sizer-box and spreader-belt speed control.
   image: ''
   specs:
+    # per approved booklet page (CHAIN DIE TOFFEE booklet, page 13)
     speed: 2000 to 3500 pieces/min depending on size and shape of product
     filling: Up to 20% filling of product
     sizerSet: M.S
     topCover: M.S
-    sizerBoxDrive: Gear motor 7.5 hp
+    sizerBoxDrive: Gear motor 1 hp
     mainDrive: Gear motor 3 hp
     beltDrive: Gear motor 0.5 hp
-    spreaderDrive: Gear motor 0.5 hp
-    inverters: 3 hp for sizer box; 3 hp for spreader-belt speed control
-    productionSpeed: 400 kg/hr  # CHECK (handwritten)
+    spreaderMovement: Gear motor 0.5 hp
+    inverterDie: 3 hp for speed control of die
+    inverterSizerBox: 1 hp for speed control of sizer box   # handwritten digit, please confirm
+    inverterSpreaderBelt: 1 hp for speed control of spreader belt
+    production: Up to 400 kg/hr
     powerLoad: 5 hp
 - name: Chain Die
   model: ''
@@ -318,7 +324,8 @@ machines:
     electricalSource: 380 V, 3 phase
     weight: 1003 kg
     speedOfFood: 2 to 3 ms
-    length: 11.02 mm
-    width: 12-20 mm
-    thickness: 3-20 mm
+    # same double-twist wrapper as the Toffee 400/800 lines (client item 10)
+    paperLength: 11-35 mm
+    paperWidth: 11-26 mm
+    paperThickness: 5-20 mm
     dimension: 1900 x 1100 x 1400 mm (L x W x H)

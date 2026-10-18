@@ -163,7 +163,7 @@ machines:
     bursting.
   description: >-
     Food-grade single-belt conveyor with S.S 304 top cover, thermopore insulation,
-    twin cooling fans, 2 hp drive and variable inverter on an M.S frame.
+    3 cooling fans, 2 hp drive and variable inverter on an M.S frame.
   image: ''
   specs:
     width: 3 ft

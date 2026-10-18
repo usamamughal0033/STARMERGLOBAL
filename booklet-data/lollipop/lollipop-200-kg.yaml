@@ -162,7 +162,7 @@ machines:
     structure: Heavy duty M.S
     heaters: Electric heaters, 6000 watt
     sideSheets: S.S 201
-    tilt: S.S 201, tilting system
+    tilt: Tilting system
     controls: Electric panel with all new features
     dimension: 6' x 8' x 8'   # CHECK (handwritten)
     powerLoad: 28 hp   # CHECK (handwritten)
@@ -319,14 +319,15 @@ machines:
   function: >-
     Single-twist wrapping machine that individually wraps round lollipops in a
     tight, hygienic single-twist film seal at high speed.
-  description: PLC-controlled wrapper with 2 hp + 0.5 hp motors, 2 hp drive inverter and 0.25 kW x6 heaters.
+  description: PLC-controlled wrapper with 2 hp motor, 3 x 0.5 hp brush motors, 2 hp drive inverter, servo motor and 0.15 kW x6 heaters.
   image: assets/STARMER/_ready/LOLLIPOP/Lollipop 200 Kg/Lollipop bunch Wrap Machine.jpg
   specs:
+    # per approved booklet page (LOLLIPOP 200 KG.pdf, page 21)
     productionSpeed: 110 - 130 pcs/min (standard lollipop shape)
     control: PLC control
-    mainMotor: 2 hp + 0.5 hp
+    motor: 2 hp
     brushMotors: 3 x 0.5 hp = 1.5 hp
-    electricHeater: 0.25 kW x 6
+    electricHeater: 0.15 kW x 6
     mainDriveInverter: 2 hp
     servoMotor: Yes
-    dimensions: 2,600 x 920 x 1,520 mm (H x W x L)
+    dimensions: 2,500 x 920 x 1,520 mm (H x W x L)

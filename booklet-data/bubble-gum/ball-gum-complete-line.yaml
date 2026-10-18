@@ -16,7 +16,7 @@ machines:
   function: >-
     Converts crystal sugar into a fine uniform powder for smooth dough formation,
     efficient blending with gum base and consistent product texture.
-  description: M.S/S.S grinder with 45-number grinding and 15 hp motor.
+  description: Grinder with S.S 304 inner box, M.S outer box, 45-number grinding and 15 hp motor.
   image: ''
   specs:
     storageCapacity: 500 kg
@@ -113,7 +113,8 @@ machines:
   description: >-
     White food-grade belt on a heavy 14 gauge M.S pipe structure, fully covered with
     stainless steel sheet, with 3-fan air system and variable inverter speed control.
-  image: assets/STARMER/_ready/BUBBLE GUM/Ball Gum Complete line_/Rest Conveyor For Bubble Line.jpg
+  # single-step cooling conveyor photo (the rest-conveyor photo was the wrong machine)
+  image: assets/STARMER/_ready/BUBBLE GUM/Bazuka Bubble Gum Line_/Bazooka Bubble Conveyor .jpg
   specs:
     function: All types of bubble gum
     beltSize: 660 mm x 4875 mm (W x L)

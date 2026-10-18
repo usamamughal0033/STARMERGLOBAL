@@ -179,7 +179,7 @@ machines:
     gearMotorMainDrive: 20 hp
     heaters: Electric heaters 3000 watt x2 = 6000 watt
     controls: Electric panel with all new features
-    tilt: S.S 201, tilting system
+    tilt: Tilting system
     dimension: 8 ft x 5 ft x 5 ft   # CHECK (handwritten)
     powerLoad: 28 hp   # CHECK (handwritten)
 - name: Bubble Gum Extruder
@@ -210,11 +210,12 @@ machines:
     2 hp drive, 1000 W heater and 2 HP inverter with overflow recycling.
   image: ''
   specs:
+    # tallied with the approved toffee-line liquid filling pump (TOFFEE 800 KG.pdf p.10)
     filling: Chocolate and liquid
-    keef: S.S 304, double jacketed, with Teflon food-grade heat-proof covering
+    keef: S.S 304, double jacketed
     rod: S.S with Teflon covering (food grade, heat proof)
     pipe: Flexible, food grade
-    controls: Electric panel with all new features
+    controls: Electric panel with new features
     gearMotorMainDrive: 2 hp
     stand: M.S
     heater: 1000 watt (1 No) to moderate temperature
@@ -294,26 +295,35 @@ machines:
     candy, caramel and gum products, running 24/7 in solid, centre-filled,
     liquid-filled and powder-filled types at up to 1000 kg/hr.
   description: >-
-    Universal seamless-sweet forming machine with 7.5 hp inverter main drive, 3 hp
-    spreader and box drives, Teflon-coated food-grade self, grease lubrication and
-    high-carbon-steel star sets; up to 1000 kg/hr.
-  image: assets/STARMER/_ready/HARD CANDY/Complete Candy Line 1000kg_hr/Uniplast 160-C.jpg
+    Universal seamless-sweet forming machine with 3 hp inverter die drive, 1 hp
+    spreader and spreader-box drives, Teflon-coated food-grade belt, grease
+    lubrication, D2 pressure cams, S.G.R iron reverse cams and high-carbon-steel
+    sizer sets and gears; up to 1000 kg/hr.
+  # Uniplast photo (the old "Uniplast 160-C.jpg" showed a different machine)
+  image: assets/STARMER/_ready/HARD CANDY/Complete Candy line 450Kg_Hr/Uniplast 160-A.jpg
   specs:
+    # tallied with the Toffee 800 kg/hr Uniplast (client), except speed
     capacity: Up to 1000 kg/hr
-    speed: 4000 to 5000 pieces/min (varies with product)
+    speed: 4000 to 5000 pieces/min (depending on size of product)
     centreFilled: Up to 30% depending on product size (candy, toffee, bubble gum)
     netWeight: 1500 kg
-    inverterMainDrive: 7.5 hp
-    spreaderDrive: 3 hp
-    spreaderBoxDrive: 3 hp
-    self: Teflon-coated food grade
-    lubrication: Grease pump
-    steelSection: S.S 201
-    cams: Pressure cams grade D2
-    reverseCams: S.G iron
-    starSets: High carbon steel
-    blower: 2 hp for cooling of die
+    inverterMainDriveDie: 3 hp
+    inverterMainDriveSpreader: 1 hp
+    inverterMainDriveSpreaderBox: 1 hp
+    belt: Teflon coated, food grade
+    greasePump: Lubrication
+    sideSheets: S.S 201
+    pressureCams: D2 grade
+    reverseCams: S.G.R iron grade
+    sizerSets: High carbon steel
+    gears: High carbon steel
     controls: Electric panel with all new features
+    blower: 2 hp for cooling of die
+    powerLoadMainDrive: 3 hp
+    powerLoadSizerBoxDrive: 1 hp
+    powerLoadSpreaderDrive: 0.5 hp
+    powerLoadSpreaderMovement: 0.5 hp
+    powerLoadArmsMovement: 0.5 hp (for die changing)
     dimension: 6 ft x 4.5 ft x 8.5 ft (H x W x L)
     powerLoad: 7.5 hp
 - name: Rotary Die with Cutting Ring

@@ -165,11 +165,12 @@ machines:
     food-grade pipe, 2 hp drive, 1000 W heater and 2 HP inverter with overflow recycling.
   image: ''
   specs:
+    # tallied with the approved toffee-line liquid filling pump (TOFFEE 800 KG.pdf p.10)
     filling: Chocolate and liquid
-    keef: S.S 304, double jacketed, with Teflon food-grade heat-proof covering
+    keef: S.S 304, double jacketed
     rod: S.S with Teflon covering (food grade, heat proof)
     pipe: Flexible, food grade
-    controls: Electric panel with all new features
+    controls: Electric panel with new features
     gearMotorMainDrive: 2 hp
     stand: M.S
     heater: 1000 watt (1 No) to moderate temperature

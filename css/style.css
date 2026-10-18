@@ -503,20 +503,20 @@
   padding: 0.5rem 0 0.25rem;
 }
 
-/* Slide box is 4:3, the aspect the gallery images are built at, and images use
+/* Slide box is 16:9, the aspect the gallery images are built at, and images use
    object-fit: contain — so the whole photo is always visible, never cropped. */
 .sg-gal__stage {
   position: relative;
-  aspect-ratio: 100 / 23;
+  aspect-ratio: 100 / 27;
   min-height: 160px;
-  max-height: 260px;
+  max-height: 360px;
 }
 
 .sg-gal__slide {
   position: absolute;
   top: 50%; left: 50%;
-  width: 27%;
-  aspect-ratio: 4 / 3;
+  width: 40%;
+  aspect-ratio: 16 / 9;
   border-radius: 0.75rem;
   overflow: hidden;
   background: #fff;
@@ -538,8 +538,8 @@
 
 .sg-gal__slide.is-prev,
 .sg-gal__slide.is-next { opacity: .45; z-index: 2; pointer-events: auto; cursor: pointer; }
-.sg-gal__slide.is-prev { transform: translate(-132%, -50%) scale(.8); }
-.sg-gal__slide.is-next { transform: translate(32%, -50%) scale(.8); }
+.sg-gal__slide.is-prev { transform: translate(-125%, -50%) scale(.8); }
+.sg-gal__slide.is-next { transform: translate(25%, -50%) scale(.8); }
 .sg-gal__slide.is-prev:hover,
 .sg-gal__slide.is-next:hover { opacity: .7; }
 
@@ -583,7 +583,8 @@
 .sg-gal__nav.next { right: 10px; }
 
 @media (max-width: 640px) {
-  .sg-gal__stage { aspect-ratio: 100 / 38; max-height: none; }
+  /* min-height off: with aspect-ratio it would widen the stage past the screen */
+  .sg-gal__stage { aspect-ratio: 100 / 32; min-height: 0; max-height: none; }
   .sg-gal__slide { width: 46%; }
   .sg-gal__slide.is-prev { transform: translate(-118%, -50%) scale(.78); }
   .sg-gal__slide.is-next { transform: translate(18%, -50%) scale(.78); }
@@ -634,7 +635,7 @@
   text-transform: uppercase; color: var(--flow-c, #64748b); line-height: 1;
 }
 .flow-stage__head h4 {
-  margin: .2rem 0 0; font-size: .88rem; font-weight: 800; color: #0f172a;
+  margin: .2rem 0 0; font-size: 1rem; font-weight: 800; color: #0f172a;
   line-height: 1.2;
 }
 .flow-stage__head > span:nth-child(2) { flex: 1; min-width: 0; }
@@ -653,16 +654,18 @@
 }
 
 .flow-stage__blurb {
-  font-size: .72rem; line-height: 1.5; color: #64748b;
+  font-size: .8rem; line-height: 1.5; color: #64748b;
   margin: .6rem 0 .8rem;
 }
 
-.flow-chips { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .45rem; }
+.flow-chips { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .6rem; }
 
+/* Each machine is a small card: photo on top, name underneath, so both the
+   picture and the full name stay readable. */
 .flow-chip {
-  display: flex; align-items: center; gap: .45rem;
-  border: 1px solid #e8edf3; border-radius: .55rem;
-  background: #fff; padding: .3rem .45rem .3rem .3rem;
+  display: flex; flex-direction: column; gap: .45rem;
+  border: 1px solid #e8edf3; border-radius: .65rem;
+  background: #fff; padding: .45rem .45rem .55rem;
   text-decoration: none; min-width: 0;
   transition: border-color .18s, box-shadow .18s, transform .18s;
 }
@@ -672,12 +675,13 @@
   transform: translateY(-1px);
 }
 .flow-chip__img {
-  width: 34px; height: 34px; flex: 0 0 auto; border-radius: .4rem;
+  width: 100%; aspect-ratio: 4 / 3; border-radius: .45rem;
   overflow: hidden; background: #fff; border: 1px solid #eef2f7;
 }
 .flow-chip__img img { width: 100%; height: 100%; object-fit: contain; display: block; }
 .flow-chip__name {
-  font-size: .68rem; font-weight: 600; color: #334155; line-height: 1.25;
+  font-size: .8rem; font-weight: 600; color: #334155; line-height: 1.3;
+  text-align: center; padding: 0 .15rem;
   min-width: 0; overflow: hidden; text-overflow: ellipsis;
   display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical;
 }
@@ -692,13 +696,13 @@
   /* stack the stages; the arrow turns to point downward */
   .flow__track { grid-template-columns: 1fr; gap: .35rem; }
   .flow-arrow { width: auto; height: 26px; transform: rotate(90deg); }
-  .flow-chips { grid-template-columns: repeat(auto-fill, minmax(130px, 1fr)); }
+  .flow-chips { grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); }
 }
 
 @media (max-width: 420px) {
   .flow { padding: 1rem .85rem 1.1rem; }
   .flow-chips { grid-template-columns: 1fr 1fr; }
-  .flow-chip__name { font-size: .64rem; }
+  .flow-chip__name { font-size: .74rem; }
 }
 
 /* ── Form field errors ───────────────────────────────────────────────────── */

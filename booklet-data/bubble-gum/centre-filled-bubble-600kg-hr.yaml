@@ -187,7 +187,8 @@ machines:
   description: >-
     Teflon-coated food-grade belt with D2 pressure cams, high carbon steel sizer
     sets and gears, spring-loaded diamond-polished punches and 2 hp die blower.
-  image: assets/STARMER/_ready/BUBBLE GUM/Centre Filled Bubble 600kg_hr/Uniplast 160-C.jpg
+  # Uniplast photo (the old "Uniplast 160-C.jpg" showed a different machine)
+  image: assets/STARMER/_ready/BUBBLE GUM/Centre Filled Bubble 300kg_hr/Uniplast 160-A.jpg
   specs:
     capacity: Up to 600 kg/hr
     speed: Up to 3500 pieces/min
@@ -195,7 +196,7 @@ machines:
     belt: Teflon coated, food grade
     sideSheets: S.S 201
     pressureCams: D2 grade
-    reverseCams: S.G iron grade
+    reverseCams: S.G.R iron grade
     sizerSetsAndGears: High carbon steel
     blower: 2 hp (die cooling)
     mainDrive: 3 hp

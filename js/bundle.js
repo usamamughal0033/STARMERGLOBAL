@@ -151,49 +151,44 @@ function getImageSrc(imagePath, fallbackColor, label, type) {
 const GALLERY_MS = 2000;   // 2s on each image
 const GALLERY_BASE = 'assets/images/gallery/';
 
-// The confectionery each category produces — built from the client's own
-// product photography by scripts/build_gallery.py. NOTE: no lozenge shots
-// exist yet, so pharma borrows hard-boiled candy (same product form).
+// The confectionery each category produces — product renders from
+// "assets/images/NEW RENDERS", cropped to 16:9 JPGs. Each gallery opens with
+// the category's MAIN render (the same shot as its category card).
 const CATEGORY_GALLERY = {
   'hard-candy': [
-    ['01-hard-boiled-candy.jpg', 'Hard Boiled Candy'],
-    ['02-hard-boiled-candy.jpg', 'Hard Boiled Candy'],
-    ['03-liquid-centre-filled-candy.jpg', 'Liquid Centre-Filled Candy'],
-    ['04-powder-centre-filled-candy.jpg', 'Powder Centre-Filled Candy'],
-    ['05-powder-centre-filled-candy.jpg', 'Powder Centre-Filled Candy'],
-    ['06-bubble-gum-filled-candy.jpg', 'Bubble Gum Filled Candy'],
+    ['render-00-main.jpg', 'Hard Boiled Candy'],
+    ['render-01.jpg', 'Stamped Hard Candy'],
+    ['render-02.jpg', 'Assorted Hard Candy'],
+    ['render-03.jpg', 'Fruit-Shaped Hard Candy'],
   ],
   'lollipop': [
-    ['01-round-lollipop.jpg', 'Round Lollipop'],
-    ['02-round-lollipop.jpg', 'Round Lollipop'],
-    ['03-flat-lollipop.jpg', 'Flat Lollipop'],
-    ['04-flat-lollipop.jpg', 'Flat Lollipop'],
-    ['05-flat-lollipop.jpg', 'Flat Lollipop'],
-    ['06-centre-filled-lollipop.jpg', 'Centre-Filled Lollipop'],
+    ['render-00-main.jpg', 'Assorted Lollipops'],
+    ['render-01.jpg', 'Round Lollipops'],
+    ['render-02.jpg', 'Shaped Lollipops'],
+    ['render-03.jpg', 'Ball Lollipops'],
   ],
   'bubble-gum': [
-    ['01-ball-gum.jpg', 'Ball Gum'],
-    ['02-ball-gum.jpg', 'Ball Gum'],
-    ['03-ball-gum.jpg', 'Ball Gum'],
-    ['04-bazooka-bubble-gum.jpg', 'Bazooka Bubble Gum'],
-    ['05-bazooka-bubble-gum.jpg', 'Bazooka Bubble Gum'],
-    ['06-centre-filled-bubble-gum.jpg', 'Centre-Filled Bubble Gum'],
+    ['render-00-main.jpg', 'Stick & Pellet Gum'],
+    ['render-01.jpg', 'Ball Gum'],
+    ['render-02.jpg', 'Bazooka Bubble Gum'],
+    ['render-03.jpg', 'Centre-Filled Bubble Gum'],
+    ['render-04.jpg', 'Trigum'],
+    ['render-05.jpg', 'Coated Pellet Gum'],
   ],
   'chew-toffee': [
-    ['01-fudge-toffee.jpg', 'Fudge Toffee'],
-    ['02-fudge-toffee.jpg', 'Fudge Toffee'],
-    ['03-fudge-toffee.jpg', 'Fudge Toffee'],
-    ['04-eclair-toffee.jpg', 'Eclair Toffee'],
-    ['05-zombie-chew.jpg', 'Zombie Chew'],
-    ['06-zombie-chew.jpg', 'Zombie Chew'],
+    ['render-00-main.jpg', 'Chews & Toffees'],
+    ['render-01.jpg', 'Caramel & Chocolate Toffee'],
+    ['render-02.jpg', 'Chew Stick Lollipop'],
+    ['render-03.jpg', 'Wrapped Fruit Chew'],
+    ['render-04.jpg', 'Fudge'],
+    ['render-05.jpg', 'Wrapped Toffee'],
+    ['render-06.jpg', 'Zombie Chew'],
   ],
   'pharma': [
-    ['01-medicated-lozenge.jpg', 'Medicated Lozenge'],
-    ['02-hard-boiled-candy.jpg', 'Hard Boiled Candy'],
-    ['03-hard-boiled-candy.jpg', 'Hard Boiled Candy'],
-    ['04-hard-boiled-candy.jpg', 'Hard Boiled Candy'],
-    ['05-powder-centre-filled-candy.jpg', 'Powder Centre-Filled Candy'],
-    ['06-powder-centre-filled-candy.jpg', 'Powder Centre-Filled Candy'],
+    ['render-00-main.jpg', 'Medicated Lozenges'],
+    ['render-01.jpg', 'Assorted Lozenges'],
+    ['render-02.jpg', 'Herbal Lozenges'],
+    ['render-03.jpg', 'Tablet Lozenges'],
   ],
 };
 
@@ -435,11 +430,11 @@ function initHomePage(catalog) {
 
 // ── Category real photos (using confirmed-working industrial IDs from machine pool) ──
 const CAT_IMAGES = {
-  'hard-candy':  'assets/images/categories/hard-candy.jpg',
-  'lollipop':    'assets/images/categories/lollipop.jpg',
-  'chew-toffee': 'assets/images/categories/chew-toffee.jpg',
-  'bubble-gum':  'assets/images/categories/bubble-gum.jpg',
-  'pharma':      'assets/images/categories/pharma.jpg',
+  'hard-candy':  'assets/images/categories/hard-candy-render.jpg',
+  'lollipop':    'assets/images/categories/lollipop-render.jpg',
+  'chew-toffee': 'assets/images/categories/chew-toffee-render.jpg',
+  'bubble-gum':  'assets/images/categories/bubble-gum-render.jpg',
+  'pharma':      'assets/images/categories/pharma-render.jpg',
 };
 
 const CAT_VISUAL = {

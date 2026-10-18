@@ -79,8 +79,8 @@ machines:
     moisture level, providing uniform heating and precise temperature control for
     consistent quality and the required hardness or chewiness.
   description: >-
-    Double-jacketed S.S 304 toffee cooker with stirrer, coil, 3 hp gear-motor drive
-    and safety valve; this high-speed line installs two 150 kg cookers.
+    Double-jacketed S.S 304 toffee cooker with stirrer, 3 hp gear-motor drive and
+    safety valve; this high-speed line installs two 150 kg cookers.
   image: ''
   specs:
     capacity: 150 kg per batch after 20 to 25 mins
@@ -134,15 +134,17 @@ machines:
     candy rope during the forming process, ensuring consistent filling quantity and
     uniform distribution across all candies.
   description: >-
-    Double-jacketed S.S 304 filling pump with Teflon-lined keef, food-grade flexible
-    pipe, 2 hp gear-motor drive, heater and 2 hp inverter with overflow recycling.
+    Double-jacketed S.S 304 keef with Teflon-covered food-grade rod, flexible pipe,
+    2 hp gear-motor drive, heater and 2 hp inverter with overflow recycling.
   image: ''
   specs:
+    # per approved booklet page (TOFFEE 800 KG.pdf, page 10)
     filling: Chocolate and liquid
-    keef: S.S 304, double jacketed, 1.5 with Teflon food-grade heat-proof covering
-    pipe: Flexible food grade
-    controls: Electric panel with new feature
-    gearMotor: 2 hp main drive
+    keef: S.S 304, double jacketed
+    rod: S.S with Teflon covering (food grade, heat proof)
+    pipe: Flexible, food grade
+    controls: Electric panel with new features
+    gearMotorMainDrive: 2 hp
     stand: M.S
     heater: 1000 watt (1 No) to moderate temperature
     inverter: 2 hp to increase or decrease filling in product
@@ -202,7 +204,7 @@ machines:
     electricHeaters: 500 x 4 = 2 kW
     safety: Emergency break to stop equipment, emergency switch to off equipment, electric breakers
     electricComponents: Brand new
-    dimension: 6'6" x 3' x 5'6" (H x W x L)
+    dimension: 4'6" x 3' x 5'6" (H x W x L)   # per approved booklet rope-sizer page
     powerLoad: 5.68 hp
 - name: Uniplast Forming Machine (160-C)
   model: SEW-160C
@@ -213,25 +215,35 @@ machines:
     centre-filled, liquid-filled and powder-filled sweets, with string-saving
     diamond-polished punches for long die life, quick die changeover and low scrap.
   description: >-
-    Universal seamless-sweet forming machine with 7.5 hp inverter main drive, 3 hp
-    spreader and box drives, Teflon-coated food-grade self, grease lubrication and
-    high-carbon-steel star sets; up to 800 kg/hr.
-  image: assets/STARMER/_ready/CHEW & TOFFEE/Toffee 800kg_hr Complete line_/Uniplast 160-C.jpg
+    Universal seamless-sweet forming machine with 3 hp inverter die drive, 1 hp
+    spreader and spreader-box drives, Teflon-coated food-grade belt, grease
+    lubrication, D2 pressure cams, S.G.R iron reverse cams and high-carbon-steel
+    sizer sets and gears; up to 800 kg/hr.
+  # Uniplast photo (the old "Uniplast 160-C.jpg" showed a different machine)
+  image: assets/STARMER/_ready/CHEW & TOFFEE/Toffee 400kg_hr Complete line_/Uniplast 160-A.jpg
   specs:
-    capacity: Up to 800 kg/hr  # CHECK (printed 1000 kg/hr, handwritten 800 kg/hr)
+    # per approved booklet page (TOFFEE 800 KG.pdf, page 13-14)
+    capacity: Up to 800 kg/hr
+    speed: Up to 4000 pieces/min (depending on size of product)
     centreFilled: Up to 30% depending on product size (candy, toffee, bubble gum)
     netWeight: 1500 kg
-    inverterMainDrive: 7.5 hp
-    spreaderDrive: 3 hp
-    spreaderBoxDrive: 3 hp
-    self: Teflon-coated food grade
-    lubrication: Grease pump
-    steelSection: S.S 201
-    cams: Pressure cams grade D2
-    reverseCams: S.G iron
-    starSets: High carbon steel
-    blower: 2 hp for cooling of die
+    inverterMainDriveDie: 3 hp
+    inverterMainDriveSpreader: 1 hp
+    inverterMainDriveSpreaderBox: 1 hp
+    belt: Teflon coated, food grade
+    greasePump: Lubrication
+    sideSheets: S.S 201
+    pressureCams: D2 grade
+    reverseCams: S.G.R iron grade
+    sizerSets: High carbon steel
+    gears: High carbon steel
     controls: Electric panel with all new features
+    blower: 2 hp for cooling of die
+    powerLoadMainDrive: 3 hp
+    powerLoadSizerBoxDrive: 1 hp
+    powerLoadSpreaderDrive: 0.5 hp
+    powerLoadSpreaderMovement: 0.5 hp
+    powerLoadArmsMovement: 0.5 hp (for die changing)
     dimension: 6 ft x 4.5 ft x 8.5 ft (H x W x L)
     powerLoad: 7.5 hp
 - name: Rotary Die
