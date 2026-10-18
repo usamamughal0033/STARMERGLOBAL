@@ -1,0 +1,34 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(grep -v '^$')",
+      "Bash(python -c ' *)",
+      "Bash(cd \"C:/Users/Usama/OneDrive/Desktop/STACK/confectionery-equipment\" && find . -iname \"*nameplate*\" -not -path \"./node_modules/*\" 2>/dev/null; echo \"--- desktop/parent ---\"; find \"C:/Users/Usama/OneDrive/Desktop\" -maxdepth 4 -iname \"*nameplate*\" 2>/dev/null | head)",
+      "Bash(python -c \"import PIL; print\\('PIL', PIL.__version__\\)\")",
+      "Bash(python scripts/apply_nameplate.py --image 'assets/STARMER/_ready/BUBBLE GUM/Ball Gum Complete line_/Heating Cabinet.jpg' --out __TRACKED_VAR__/demo2.jpg)",
+      "Bash(python -c \"import scipy; print\\('scipy', scipy.__version__\\)\")",
+      "Bash(python scripts/apply_nameplate.py --image 'assets/STARMER/_ready/BUBBLE GUM/Ball Gum Complete line_/Heating Cabinet.jpg' --out __TRACKED_VAR__/demo3.jpg)",
+      "Bash(python scripts/apply_nameplate.py --all)",
+      "Bash(python scripts/apply_nameplate.py --image 'assets/STARMER/_ready/HARD CANDY/Complete Candy line 450Kg_Hr/Kneading Machine.jpg' --out __TRACKED_VAR__/c1.jpg)",
+      "Bash(sed -i 's/^import json$//' scripts/apply_nameplate.py)",
+      "Bash(rm -rf \"assets/STARMER/_plated\")",
+      "Bash(sed -i 's/^PLATE_FRAC = 0.17 .*/PLATE_FRAC = 0.12       # plate width as a fraction of the image width \\(visiting-card scale\\)/' scripts/apply_nameplate.py)",
+      "Bash(python scripts/apply_nameplate.py --image 'assets/STARMER/_ready/HARD CANDY/Complete Candy line 450Kg_Hr/Bubble Gum Mixer.jpg' --out __TRACKED_VAR__/card.jpg)",
+      "Bash(awk -F/ '{c[$1]++} END {for \\(k in c\\) printf \"%-45s %d\\\\n\", k, c[k]}')",
+      "Bash(python scripts/build_gallery.py)",
+      "Read(//tmp/**)",
+      "Bash(git checkout *)",
+      "Bash(grep -n \"gal-c\\\\|gal-bg1\\\\|style=\\\\\"\\\\${tint}\\\\\"\" js/bundle.js)",
+      "Bash(sed -n '/^\\\\.sg-gal {/,/^}/p' css/style.css)",
+      "Bash(sed -n '/^\\\\.sg-gal__nav {/,/^}/p' css/style.css)",
+      "Bash(sed -n '/\\\\.hcc-img\\\\b/,/^}/p' css/style.css)",
+      "Bash(sed -n '/\\\\.pipeline-machine-img\\\\b/,/^}/p' css/style.css)",
+      "Bash(git add *)",
+      "Bash(awk '{print $1}')",
+      "Bash(git commit *)",
+      "Bash(git push *)",
+      "Bash(git fetch *)",
+      "Bash(git rev-list *)"
+    ]
+  }
+}
