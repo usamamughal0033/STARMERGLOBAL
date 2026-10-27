@@ -844,64 +844,56 @@ window.quickAddToCart = function(id, partNumber, name, btn) {
 
 // ── Line page ─────────────────────────────────────────────────────────────────
 // ── Line process flow ─────────────────────────────────────────────────────────
-// Every line runs through four stages in the same order — preparation, cooking
-// (mixing for gum), forming, then cooling & wrapping — but what happens in each
-// differs by product, so titles and blurbs are per product family.
+// Every line runs through the same three stages, in booklet order. Machines are
+// placed by what they do; a stage never mixes in work from another stage.
 const FLOW_ICONS = {
-  prep: 'M4 7h16M4 12h16M4 17h10',
-  cook: 'M12 3v3m0 12v3M5.6 5.6l2.1 2.1m8.6 8.6l2.1 2.1M3 12h3m12 0h3M5.6 18.4l2.1-2.1m8.6-8.6l2.1-2.1',
-  form: 'M12 3a9 9 0 100 18 9 9 0 000-18zm0 5a4 4 0 100 8 4 4 0 000-8z',
-  pack: 'M4 7l8-4 8 4v10l-8 4-8-4V7zm8-4v18M4 7l8 4 8-4',
+  batching: 'M4 7h16M4 12h16M4 17h10',
+  cooking: 'M12 3v3m0 12v3M5.6 5.6l2.1 2.1m8.6 8.6l2.1 2.1M3 12h3m12 0h3M5.6 18.4l2.1-2.1m8.6-8.6l2.1-2.1',
+  packing: 'M4 7l8-4 8 4v10l-8 4-8-4V7zm8-4v18M4 7l8 4 8-4',
 };
+// [title, blurb] per stage; bubble gum is mixed and extruded, not cooked
 const FLOW_TEXT = {
   candy: {
-    prep: ['Syrup Preparation', 'Glucose is stored and sugar is dissolved into syrup, with steam supplied to the tanks and cookers.'],
-    cook: ['Cooking &amp; Kneading', 'The syrup is cooked under vacuum, cooled on the table and kneaded with colour, flavour and acid.'],
-    form: ['Filling &amp; Forming', 'The mass is rolled into a rope, centre-filled, sized and formed into individual pieces.'],
-    pack: ['Cooling &amp; Wrapping', 'Formed pieces are cooled and hardened, then wrapped and packed ready for despatch.'],
+    batching: ['Batching &amp; Mixing', 'Glucose is stored and sugar is dissolved into syrup, with steam supplied to the tanks and cooker.'],
+    cooking: ['Cooking &amp; Forming', 'The syrup is cooked under vacuum, cooled, kneaded, rolled into a rope, centre-filled, sized and formed.'],
+    packing: ['Wrapping &amp; Packing', 'Formed pieces are cooled and hardened, then wrapped and packed ready for despatch.'],
   },
   lollipop: {
-    prep: ['Syrup Preparation', 'Glucose is stored and sugar is dissolved into syrup, with steam supplied to the tanks and cookers.'],
-    cook: ['Cooking &amp; Kneading', 'The syrup is cooked, cooled on the table and kneaded with colour, flavour and acid.'],
-    form: ['Rope Sizing &amp; Forming', 'The mass is rolled into a rope, sized and formed into lollipops with the stick inserted.'],
-    pack: ['Cooling &amp; Wrapping', 'Lollipops are cooled and hardened, then wrapped and packed ready for despatch.'],
+    batching: ['Batching &amp; Mixing', 'Glucose is stored and sugar is dissolved into syrup, with steam supplied to the tanks and cooker.'],
+    cooking: ['Cooking &amp; Forming', 'The syrup is cooked, cooled, kneaded, rolled into a rope, sized and formed into lollipops on sticks.'],
+    packing: ['Wrapping &amp; Packing', 'Lollipops are cooled and hardened, then wrapped and packed ready for despatch.'],
   },
   toffee: {
-    prep: ['Syrup Preparation', 'Glucose is stored and steam is supplied to the toffee cookers.'],
-    cook: ['Cooking &amp; Pulling', 'The toffee mass is cooked in batches, cooled on the table and pulled to aerate it and develop its chew.'],
-    form: ['Filling &amp; Forming', 'The mass is rolled into a rope, centre-filled, sized and formed or cut into pieces.'],
-    pack: ['Cooling &amp; Wrapping', 'Pieces are cooled to set, then wrapped and packed ready for despatch.'],
+    batching: ['Batching &amp; Mixing', 'Glucose is stored and steam is supplied to the toffee cooker.'],
+    cooking: ['Cooking &amp; Forming', 'The toffee is cooked in batches, cooled, pulled, rolled into a rope, centre-filled, sized and formed.'],
+    packing: ['Wrapping &amp; Packing', 'Formed toffee is cooled to set, then wrapped and packed ready for despatch.'],
   },
   gum: {
-    prep: ['Raw Material Preparation', 'Sugar is ground to a fine powder and the gum base is softened in the heating cabinet.'],
-    cook: ['Mixing', 'Gum base, powdered sugar and ingredients are blended into a smooth mass, rested and moved to the extruder.'],
-    form: ['Extrusion &amp; Forming', 'The gum is extruded into a rope, centre-filled, sized and cooled before forming.'],
-    pack: ['Finishing &amp; Wrapping', 'Formed gum is cooled, conditioned or coated, then wrapped and packed ready for despatch.'],
+    batching: ['Batching &amp; Mixing', 'Sugar is ground, the gum base is softened, and both are mixed into a smooth mass and moved to the extruder.'],
+    cooking: ['Extrusion &amp; Forming', 'The gum is extruded into a rope, centre-filled, sized, cooled and formed into shape.'],
+    packing: ['Wrapping &amp; Packing', 'Formed gum is cooled, conditioned or coated, then wrapped and packed ready for despatch.'],
   },
 };
-const FLOW_ORDER = ['prep', 'cook', 'form', 'pack'];
+const FLOW_ORDER = ['batching', 'cooking', 'packing'];
 
 function flowFamily(catId) {
   return { 'bubble-gum': 'gum', 'chew-toffee': 'toffee', lollipop: 'lollipop' }[catId] || 'candy';
 }
 
 // What each machine does, matched by name (first match wins).
-const FORMER = /uniplast|forming|former|plant|ball forming/i;
+const FORMER = /uniplast|forming|former|plant/i;
 function flowStageOf(m, family, machines) {
   const n = m.name;
-  // a forming machine that also wraps is still where the product takes shape
-  if (/forming\s*\+\s*wrapping/i.test(n)) return 'form';
   // a cooling conveyor that feeds a forming machine cools the rope, not the
   // finished pieces (Ball Gum: extruder -> single-step conveyor -> ball former)
   if (/cooling conveyor/i.test(n) &&
-      machines.some(x => x.orderInLine > m.orderInLine && FORMER.test(x.name))) return 'form';
-  if (/wrap|pillow|cut *&|twist|pack|ac unit|air condition|cooling tunnel|close body|open body|cooling conveyor|vibrat|coating pan|running ball/i.test(n)) return 'pack';
-  // in candy and lollipop lines the gum mixer/extruder make the centre filling
-  if (/bubble gum (mixer|extruder)/i.test(n) && family !== 'gum') return 'form';
-  if (/filling|batch roller|rope sizer|sizer|uniplast|forming|former|plant|rotary|\bdie\b|chain|small candy|rest conveyor|extruder/i.test(n)) return 'form';
-  if (/cooker|vacuum pump|cooling table|kneading|pulling|mixer|rest table|trolly|trolley/i.test(n)) return 'cook';
-  if (/glucose|steam|dissolv|storage tank|grinder|heating cabinet/i.test(n)) return 'prep';
-  return 'form';                    // anything unrecognised is a process machine
+      machines.some(x => x.orderInLine > m.orderInLine && FORMER.test(x.name))) return 'cooking';
+  if (/wrap|pillow|cut *&|twist|pack|ac unit|air condition|cooling tunnel|close body|open body|cooling conveyor|vibrat|coating pan|running ball/i.test(n)) return 'packing';
+  // gum lines: grinding, softening, mixing and moving the mass is batching
+  if (family === 'gum' && /grinder|heating cabinet|mixer|rest table|trolly|trolley/i.test(n)) return 'batching';
+  // candy/lollipop lines: the gum mixer + extruder make the centre filling
+  if (/glucose|steam|dissolv|storage tank|grinder|heating cabinet/i.test(n)) return 'batching';
+  return 'cooking';                 // cooker through forming dies and stands
 }
 
 function buildLineFlow(mount, line, cat) {
@@ -946,23 +938,16 @@ function buildLineFlow(mount, line, cat) {
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"
            stroke-linecap="round" stroke-linejoin="round"><path d="M9 5l7 7-7 7"/></svg>
     </div>`;
-  const rowTurn = `<div class="flow-arrow flow-arrow--row" aria-hidden="true">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"
-           stroke-linecap="round" stroke-linejoin="round"><path d="M19 5l-7 7-7-7M12 12v7"/></svg>
-    </div>`;
 
   mount.innerHTML = `
     <div class="flow" style="--flow-c:${c};--flow-soft:${c}14;--flow-line:${c}2E;">
       <div class="flow__intro">
         <h3>How this line works</h3>
-        <p>${machines.length} machines, working end to end in ${groups.length} stages.
+        <p>${machines.length} machines, working end to end in three stages.
            Tap any machine to open its specification.</p>
       </div>
       <div class="flow__track">
-        ${groups.map((g, i) =>
-          // two stages per row: stage, arrow, stage — then a turn down to the next row
-          stage(g, i) + (i === groups.length - 1 ? '' : i % 2 === 0 ? arrow : rowTurn)
-        ).join('')}
+        ${groups.map((g, i) => stage(g, i)).join(arrow)}
       </div>
     </div>`;
 }
