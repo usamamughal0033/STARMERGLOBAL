@@ -148,18 +148,19 @@ function getImageSrc(imagePath, fallbackColor, label, type) {
 // A 3-up coverflow above the line picker: centre focused, flanks dimmed, auto-
 // advancing. Images come from the category's OWN machine photos (spread across
 // its lines) so it stays in sync with the catalog and needs no extra assets.
-const GALLERY_MS = 2000;   // 2s on each image
+const GALLERY_MS = 3000;   // one step every 3s (1.1s glide + rest)
 const GALLERY_BASE = 'assets/images/gallery/';
+const GALLERY_MIN_RING = 5; // short lists repeat so the ring always rolls one way
 
 // The confectionery each category produces — product renders from
 // "assets/images/NEW RENDERS", cropped to 16:9 JPGs. Each gallery opens with
 // the category's MAIN render (the same shot as its category card).
 const CATEGORY_GALLERY = {
+  // client: no multi-colour swirl or grape-shaped candy in this set
   'hard-candy': [
-    ['render-00-main.jpg', 'Hard Boiled Candy'],
-    ['render-01.jpg', 'Stamped Hard Candy'],
-    ['render-02.jpg', 'Assorted Hard Candy'],
-    ['render-03.jpg', 'Fruit-Shaped Hard Candy'],
+    ['render-10-main.jpg', 'Hard Boiled Candy'],
+    ['render-11.jpg', 'Assorted Hard Candy'],
+    ['render-12.jpg', 'Fruit-Shaped Hard Candy'],
   ],
   'lollipop': [
     ['render-00-main.jpg', 'Assorted Lollipops'],
@@ -168,7 +169,7 @@ const CATEGORY_GALLERY = {
     ['render-03.jpg', 'Ball Lollipops'],
   ],
   'bubble-gum': [
-    ['render-00-main.jpg', 'Stick & Pellet Gum'],
+    ['render-10-main.jpg', 'Stick & Pellet Gum'],
     ['render-01.jpg', 'Ball Gum'],
     ['render-02.jpg', 'Bazooka Bubble Gum'],
     ['render-03.jpg', 'Centre-Filled Bubble Gum'],
@@ -202,6 +203,11 @@ function buildCategoryGallery(mount, cat) {
   if (!mount) return;
   const items = galleryItems(cat);
   if (items.length < 3) { mount.innerHTML = ''; return; }
+  // The ring needs spare slides parked off-stage on both sides, otherwise a
+  // slide has to jump across the centre. Repeat short lists to fill it; the
+  // dots still show only the real images.
+  let ring = items;
+  while (ring.length < GALLERY_MIN_RING) ring = ring.concat(items);
 
   const arrow = d => `<svg width="15" height="15" viewBox="0 0 24 24" fill="none"
     stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
@@ -214,13 +220,13 @@ function buildCategoryGallery(mount, cat) {
                `--gal-bd:${c}24;--gal-nav-bd:${c}33;--gal-dot:${c}40;`;
 
   mount.innerHTML = `
-    <div class="sg-gal" style="${tint}" role="region" aria-label="${cat.label} gallery">
+    <div class="sg-gal is-init" style="${tint}" role="region" aria-label="${cat.label} gallery">
       <button class="sg-gal__nav prev" aria-label="Previous">${arrow('M15 19l-7-7 7-7')}</button>
       <button class="sg-gal__nav next" aria-label="Next">${arrow('M9 5l7 7-7 7')}</button>
       <div class="sg-gal__stage">
-        ${items.map((it, i) => `
+        ${ring.map((it, i) => `
           <div class="sg-gal__slide" data-i="${i}">
-            <img src="${it.src}" alt="${it.name}" loading="lazy"/>
+            <img src="${it.src}" alt="${it.name}" decoding="async"/>
           </div>`).join('')}
       </div>
       <p class="sg-gal__caption"></p>
@@ -234,7 +240,7 @@ function buildCategoryGallery(mount, cat) {
   const slides = [...root.querySelectorAll('.sg-gal__slide')];
   const dots = [...root.querySelectorAll('.sg-gal__dot')];
   const caption = root.querySelector('.sg-gal__caption');
-  const n = items.length;
+  const n = ring.length, real = items.length;
   let active = 0, timer = null;
 
   function render() {
@@ -245,27 +251,38 @@ function buildCategoryGallery(mount, cat) {
       el.classList.toggle('is-active', d === 0);
       el.classList.toggle('is-prev', d === -1);
       el.classList.toggle('is-next', d === 1);
+      // everything else waits off-stage on the side it will leave / enter from
+      el.classList.toggle('is-gone', d < -1);
     });
-    dots.forEach((el, i) => el.classList.toggle('is-on', i === active));
-    caption.textContent = items[active].name;
+    dots.forEach((el, i) => el.classList.toggle('is-on', i === active % real));
+    caption.textContent = ring[active].name;
   }
   const go = i => { active = ((i % n) + n) % n; render(); };
   const start = () => { stop(); timer = setInterval(() => go(active + 1), GALLERY_MS); };
   const stop = () => { if (timer) { clearInterval(timer); timer = null; } };
+  // jump to the nearest ring copy of a real image, so a dot click glides
+  const goReal = r => {
+    let best = active, bestD = Infinity;
+    for (let i = r; i < n; i += real) {
+      let d = (i - active + n) % n; if (d > n / 2) d -= n;
+      if (Math.abs(d) < Math.abs(bestD)) { best = i; bestD = d; }
+    }
+    go(best);
+  };
 
   root.querySelector('.prev').addEventListener('click', () => { go(active - 1); start(); });
   root.querySelector('.next').addEventListener('click', () => { go(active + 1); start(); });
-  dots.forEach(d => d.addEventListener('click', () => { go(+d.dataset.i); start(); }));
+  dots.forEach(d => d.addEventListener('click', () => { goReal(+d.dataset.i); start(); }));
   slides.forEach(s => s.addEventListener('click', () => { go(+s.dataset.i); start(); }));
 
-  // don't advance under the cursor, or while the tab is hidden
-  root.addEventListener('mouseenter', stop);
-  root.addEventListener('mouseleave', start);
+  // pause only while the tab is hidden; no hover pause, because the gallery
+  // opens right under the pointer that clicked the category and would sit still
   const onVis = () => document.hidden ? stop() : start();
   document.addEventListener('visibilitychange', onVis);
 
-  render();
-  start();                       // always auto-advances
+  render();                      // place slides without animating (is-init)…
+  requestAnimationFrame(() => requestAnimationFrame(() => root.classList.remove('is-init')));
+  start();                       // …then roll from the moment the page shows
 
   // tear down cleanly when another category is picked, or the listener and
   // its timer leak and several galleries end up fighting over the same mount
@@ -277,6 +294,12 @@ function buildCategoryGallery(mount, cat) {
 
 // ── App ───────────────────────────────────────────────────────────────────────
 const PAGE = document.body.dataset.page;
+
+// Every page opens at the top. Browsers otherwise restore the last scroll
+// position on reload/back, which lands mid-page once the JS content renders.
+// Links to a section (#about) still jump to that section.
+if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
+if (!location.hash) window.scrollTo(0, 0);
 
 document.addEventListener('DOMContentLoaded', async () => {
   let catalog = null;
@@ -430,10 +453,10 @@ function initHomePage(catalog) {
 
 // ── Category real photos (using confirmed-working industrial IDs from machine pool) ──
 const CAT_IMAGES = {
-  'hard-candy':  'assets/images/categories/hard-candy-render.jpg',
+  'hard-candy':  'assets/images/categories/hard-candy-render2.jpg',
   'lollipop':    'assets/images/categories/lollipop-render.jpg',
   'chew-toffee': 'assets/images/categories/chew-toffee-render.jpg',
-  'bubble-gum':  'assets/images/categories/bubble-gum-render.jpg',
+  'bubble-gum':  'assets/images/categories/bubble-gum-render2.jpg',
   'pharma':      'assets/images/categories/pharma-render.jpg',
 };
 
@@ -759,6 +782,8 @@ function initCatalogPage(catalog) {
     step1Panel?.classList.toggle('hidden', n !== 1);
     step2Panel?.classList.toggle('hidden', n !== 2);
     step3Panel?.classList.toggle('hidden', n !== 3);
+    // each step replaces the page content, so start it from the top
+    window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
     if (stepIndicator) {
       stepIndicator.querySelectorAll('.step-indicator-item').forEach((el, i) => {
         el.classList.remove('active', 'done');
@@ -819,41 +844,64 @@ window.quickAddToCart = function(id, partNumber, name, btn) {
 
 // ── Line page ─────────────────────────────────────────────────────────────────
 // ── Line process flow ─────────────────────────────────────────────────────────
-// Every line, whatever the product, runs through the same three stages. Machines
-// are matched by name (most specific first) rather than by position, because
-// line lengths and machine counts vary a lot between categories.
-const FLOW_STAGES = [
-  {
-    key: 'batching',
-    title: 'Batching &amp; Mixing',
-    blurb: 'Raw sugar, glucose and gum base are stored, ground, dissolved and blended into a consistent mass.',
-    icon: 'M4 7h16M4 12h16M4 17h10',
+// Every line runs through four stages in the same order — preparation, cooking
+// (mixing for gum), forming, then cooling & wrapping — but what happens in each
+// differs by product, so titles and blurbs are per product family.
+const FLOW_ICONS = {
+  prep: 'M4 7h16M4 12h16M4 17h10',
+  cook: 'M12 3v3m0 12v3M5.6 5.6l2.1 2.1m8.6 8.6l2.1 2.1M3 12h3m12 0h3M5.6 18.4l2.1-2.1m8.6-8.6l2.1-2.1',
+  form: 'M12 3a9 9 0 100 18 9 9 0 000-18zm0 5a4 4 0 100 8 4 4 0 000-8z',
+  pack: 'M4 7l8-4 8 4v10l-8 4-8-4V7zm8-4v18M4 7l8 4 8-4',
+};
+const FLOW_TEXT = {
+  candy: {
+    prep: ['Syrup Preparation', 'Glucose is stored and sugar is dissolved into syrup, with steam supplied to the tanks and cookers.'],
+    cook: ['Cooking &amp; Kneading', 'The syrup is cooked under vacuum, cooled on the table and kneaded with colour, flavour and acid.'],
+    form: ['Filling &amp; Forming', 'The mass is rolled into a rope, centre-filled, sized and formed into individual pieces.'],
+    pack: ['Cooling &amp; Wrapping', 'Formed pieces are cooled and hardened, then wrapped and packed ready for despatch.'],
   },
-  {
-    key: 'cooking',
-    title: 'Cooking &amp; Forming',
-    blurb: 'The mass is cooked under vacuum, cooled, worked into a rope, centre-filled and formed into shape.',
-    icon: 'M12 3v3m0 12v3M5.6 5.6l2.1 2.1m8.6 8.6l2.1 2.1M3 12h3m12 0h3M5.6 18.4l2.1-2.1m8.6-8.6l2.1-2.1',
+  lollipop: {
+    prep: ['Syrup Preparation', 'Glucose is stored and sugar is dissolved into syrup, with steam supplied to the tanks and cookers.'],
+    cook: ['Cooking &amp; Kneading', 'The syrup is cooked, cooled on the table and kneaded with colour, flavour and acid.'],
+    form: ['Rope Sizing &amp; Forming', 'The mass is rolled into a rope, sized and formed into lollipops with the stick inserted.'],
+    pack: ['Cooling &amp; Wrapping', 'Lollipops are cooled and hardened, then wrapped and packed ready for despatch.'],
   },
-  {
-    key: 'packing',
-    title: 'Wrapping &amp; Packing',
-    blurb: 'Formed product is cooled and hardened, then wrapped and packed ready for despatch.',
-    icon: 'M4 7l8-4 8 4v10l-8 4-8-4V7zm8-4v18M4 7l8 4 8-4',
+  toffee: {
+    prep: ['Syrup Preparation', 'Glucose is stored and steam is supplied to the toffee cookers.'],
+    cook: ['Cooking &amp; Pulling', 'The toffee mass is cooked in batches, cooled on the table and pulled to aerate it and develop its chew.'],
+    form: ['Filling &amp; Forming', 'The mass is rolled into a rope, centre-filled, sized and formed or cut into pieces.'],
+    pack: ['Cooling &amp; Wrapping', 'Pieces are cooled to set, then wrapped and packed ready for despatch.'],
   },
-];
+  gum: {
+    prep: ['Raw Material Preparation', 'Sugar is ground to a fine powder and the gum base is softened in the heating cabinet.'],
+    cook: ['Mixing', 'Gum base, powdered sugar and ingredients are blended into a smooth mass, rested and moved to the extruder.'],
+    form: ['Extrusion &amp; Forming', 'The gum is extruded into a rope, centre-filled, sized and cooled before forming.'],
+    pack: ['Finishing &amp; Wrapping', 'Formed gum is cooled, conditioned or coated, then wrapped and packed ready for despatch.'],
+  },
+};
+const FLOW_ORDER = ['prep', 'cook', 'form', 'pack'];
 
-// ordered, most specific first — first match wins
-const FLOW_RULES = [
-  [/coating pan|running ball|vibrat|cooling conveyor|cooling tunnel|close body|open body|ac unit|air condition|wrap|pillow|cut *&|twist|stick|pack/i, 'packing'],
-  // rest conveyor rests centre-filled rope AFTER filling, so it is a forming step
-  [/cooker|vacuum pump|cooling table|kneading|pulling|batch roller|rope sizer|sizer|filling pump|filling|extruder|uniplast|forming|rotary die|chain die|die stand|former|plant|small candy|rest conveyor/i, 'cooking'],
-  [/glucose|sugar grinder|grinder|dissolv|storage tank|steam|mixer|heating cabinet|rest table|trolley|trolly/i, 'batching'],
-];
+function flowFamily(catId) {
+  return { 'bubble-gum': 'gum', 'chew-toffee': 'toffee', lollipop: 'lollipop' }[catId] || 'candy';
+}
 
-function flowStageOf(name) {
-  for (const [re, key] of FLOW_RULES) if (re.test(name)) return key;
-  return 'cooking';                 // anything unrecognised is a process machine
+// What each machine does, matched by name (first match wins).
+const FORMER = /uniplast|forming|former|plant|ball forming/i;
+function flowStageOf(m, family, machines) {
+  const n = m.name;
+  // a forming machine that also wraps is still where the product takes shape
+  if (/forming\s*\+\s*wrapping/i.test(n)) return 'form';
+  // a cooling conveyor that feeds a forming machine cools the rope, not the
+  // finished pieces (Ball Gum: extruder -> single-step conveyor -> ball former)
+  if (/cooling conveyor/i.test(n) &&
+      machines.some(x => x.orderInLine > m.orderInLine && FORMER.test(x.name))) return 'form';
+  if (/wrap|pillow|cut *&|twist|pack|ac unit|air condition|cooling tunnel|close body|open body|cooling conveyor|vibrat|coating pan|running ball/i.test(n)) return 'pack';
+  // in candy and lollipop lines the gum mixer/extruder make the centre filling
+  if (/bubble gum (mixer|extruder)/i.test(n) && family !== 'gum') return 'form';
+  if (/filling|batch roller|rope sizer|sizer|uniplast|forming|former|plant|rotary|\bdie\b|chain|small candy|rest conveyor|extruder/i.test(n)) return 'form';
+  if (/cooker|vacuum pump|cooling table|kneading|pulling|mixer|rest table|trolly|trolley/i.test(n)) return 'cook';
+  if (/glucose|steam|dissolv|storage tank|grinder|heating cabinet/i.test(n)) return 'prep';
+  return 'form';                    // anything unrecognised is a process machine
 }
 
 function buildLineFlow(mount, line, cat) {
@@ -863,8 +911,11 @@ function buildLineFlow(mount, line, cat) {
   if (!machines.length) { mount.innerHTML = ''; return; }
 
   const c = cat?.color || '#334155';
-  const groups = FLOW_STAGES.map(s => ({
-    ...s, items: machines.filter(m => flowStageOf(m.name) === s.key),
+  const family = flowFamily(cat?.id || line.categoryId);
+  const groups = FLOW_ORDER.map(key => ({
+    key, icon: FLOW_ICONS[key],
+    title: FLOW_TEXT[family][key][0], blurb: FLOW_TEXT[family][key][1],
+    items: machines.filter(m => flowStageOf(m, family, machines) === key),
   })).filter(g => g.items.length);
 
   const chip = m => `
@@ -895,16 +946,23 @@ function buildLineFlow(mount, line, cat) {
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"
            stroke-linecap="round" stroke-linejoin="round"><path d="M9 5l7 7-7 7"/></svg>
     </div>`;
+  const rowTurn = `<div class="flow-arrow flow-arrow--row" aria-hidden="true">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"
+           stroke-linecap="round" stroke-linejoin="round"><path d="M19 5l-7 7-7-7M12 12v7"/></svg>
+    </div>`;
 
   mount.innerHTML = `
     <div class="flow" style="--flow-c:${c};--flow-soft:${c}14;--flow-line:${c}2E;">
       <div class="flow__intro">
         <h3>How this line works</h3>
-        <p>${machines.length} machines, working end to end in three stages.
+        <p>${machines.length} machines, working end to end in ${groups.length} stages.
            Tap any machine to open its specification.</p>
       </div>
       <div class="flow__track">
-        ${groups.map((g, i) => stage(g, i)).join(arrow)}
+        ${groups.map((g, i) =>
+          // two stages per row: stage, arrow, stage — then a turn down to the next row
+          stage(g, i) + (i === groups.length - 1 ? '' : i % 2 === 0 ? arrow : rowTurn)
+        ).join('')}
       </div>
     </div>`;
 }
@@ -932,11 +990,14 @@ function initLinePage(catalog) {
   if (bannerEl) {
     const vis = CAT_VISUAL[line.categoryId];
     const bgGrad = vis?.bg || `linear-gradient(135deg,${cat?.color || '#1A3A5C'},#0D2035)`;
-    const bgImg = CAT_IMAGES[line.categoryId] || '';
+    // This line's own machines side by side (scripts/build_line_headers.py),
+    // blurred behind the title; the category photo is the fallback.
+    const lineImg = `assets/images/lines/${line.id}.jpg`;
+    const catImg = CAT_IMAGES[line.categoryId] || '';
     const mCount = line.machines?.length || 0;
     bannerEl.innerHTML = `
       <div style="background:${bgGrad};padding:5.5rem 0 2.25rem;position:relative;overflow:hidden;">
-        ${bgImg ? `<img src="${bgImg}" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0.14;" loading="lazy" onerror="this.style.display='none'"/>` : ''}
+        <img class="line-banner__bg" src="${lineImg}" alt="" onerror="if(this.dataset.f||!'${catImg}'){this.style.display='none'}else{this.dataset.f=1;this.src='${catImg}'}"/>
         <div style="position:absolute;inset:0;background:linear-gradient(to right,rgba(0,0,0,0.32) 0%,transparent 70%);"></div>
         <div class="max-w-7xl mx-auto px-6" style="position:relative;">
           <div style="color:rgba(255,255,255,0.5);font-size:0.68rem;font-family:monospace;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;margin-bottom:0.5rem;">${line.lineNumber || ''} &nbsp;&middot;&nbsp; ${cat?.label || ''}</div>
