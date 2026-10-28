@@ -260,6 +260,110 @@
   background-clip: text;
 }
 
+/* ── Home hero intro motion (initHeroMotion) ─────────────────────────────── */
+/* lines 1-2: candy rope through a rope sizer, stretched then squeezed to size */
+.hero-motion h1 .hl-rope {
+  display: inline-block; transform-origin: left center;
+  animation: hl-rope .95s cubic-bezier(.2,.75,.25,1) both;
+  animation-delay: calc(.2s + var(--k, 0) * .28s);
+}
+@keyframes hl-rope {
+  0%   { opacity: 0; transform: translateX(-4%) scale(1.55, .55); letter-spacing: .12em; }
+  55%  { opacity: 1; transform: scale(.97, 1.05); letter-spacing: -.01em; }
+  78%  { transform: scale(1.01, .99); }
+  100% { opacity: 1; transform: none; letter-spacing: normal; }
+}
+/* line 3: a candy mould, outline first, then the colour rises from the bottom */
+.hero-motion h1 .hl-mould {
+  display: inline-block;
+  -webkit-text-stroke: 2px #2E7CC6;
+  background-image: linear-gradient(to top, #1A3A5C 0%, #2E7CC6 40%, #0EA5E9 49.5%, transparent 50.5%);
+  background-size: 100% 210%;
+  background-repeat: no-repeat;
+  background-position: 0 0;
+  animation: hl-mould-in .5s ease both, hl-mould-fill 1.4s cubic-bezier(.5,.05,.3,1) both;
+  animation-delay: calc(.2s + var(--k, 0) * .28s), calc(.55s + var(--k, 0) * .28s);
+}
+@keyframes hl-mould-in { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
+@keyframes hl-mould-fill {
+  from { background-position: 0 0; }
+  to   { background-position: 0 100%; -webkit-text-stroke-color: transparent; }
+}
+/* badge, lead, typing badge, buttons, stats: a clean fade-up in sequence */
+.hero-motion .hero-in { animation: hero-rise .7s cubic-bezier(.2,.7,.2,1) var(--d, 0s) both; }
+@keyframes hero-rise {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: none; }
+}
+/* ── Hero buttons (initHeroButtons) ─────────────────────────────────────────
+   They never move. Attention comes from light and colour only: a sheen
+   passing through the "Browse Equipment" letters, and a slowly shifting,
+   softly glowing fill on "Custom Parts Manufacturing". Hover = colour fill. */
+#hero .hero-cta { position: relative; overflow: hidden; isolation: isolate; cursor: pointer; }
+
+/* clickable look: a solid "key" edge under each button, pressed only on click */
+#hero .hero-cta--browse {
+  box-shadow: 0 4px 0 #c3d2e3, 0 12px 24px rgba(15,23,42,.14);
+  transition: box-shadow .12s ease, transform .12s ease, color .25s ease;
+}
+#hero .hero-cta:active { transform: translateY(3px); }
+#hero .hero-cta--browse:active { box-shadow: 0 1px 0 #c3d2e3, 0 4px 10px rgba(15,23,42,.12); }
+#hero .hero-cta:focus-visible { outline: 3px solid #7cc7ff; outline-offset: 3px; }
+
+/* ripple from the exact click point (added by initHeroButtons) */
+#hero .hero-cta .cta-ripple {
+  position: absolute; z-index: 1; border-radius: 50%; pointer-events: none;
+  width: 16px; height: 16px; margin: -8px 0 0 -8px;
+  background: rgba(255,255,255,.55);
+  animation: cta-ripple .6s ease-out forwards;
+}
+#hero .hero-cta--browse .cta-ripple { background: rgba(46,124,198,.35); }
+@keyframes cta-ripple { from { transform: scale(0); opacity: 1; } to { transform: scale(22); opacity: 0; } }
+#hero .hero-cta .hero-cta-label { position: relative; z-index: 1; display: inline-flex; align-items: center; gap: .5rem; }
+
+/* Browse Equipment: a light sheen through the letters every few seconds */
+#hero .hero-cta--browse .hero-cta-text {
+  background-image: linear-gradient(100deg, #1A3A5C 0%, #1A3A5C 40%, #6cc0ff 50%, #1A3A5C 60%, #1A3A5C 100%);
+  background-size: 300% 100%; background-position: 100% 0;
+  -webkit-background-clip: text; background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: cta-sheen 4.5s ease-in-out 2.4s infinite;
+}
+@keyframes cta-sheen {
+  0%, 60% { background-position: 100% 0; }
+  100%    { background-position: 0% 0; }
+}
+
+/* Custom Parts: a living navy -> blue fill with a soft glow (position fixed) */
+#hero .hero-cta--custom {
+  background-image: linear-gradient(110deg, #1A3A5C 0%, #1f4f86 30%, #2E7CC6 50%, #1f4f86 70%, #1A3A5C 100%);
+  background-size: 260% 100%;
+  animation: cta-flow 6s ease-in-out 2.4s infinite alternate;
+  box-shadow: 0 4px 0 #0c2238, 0 12px 24px rgba(15,23,42,.24), 0 0 22px rgba(46,124,198,.35);
+  transition: box-shadow .12s ease, transform .12s ease;
+}
+#hero .hero-cta--custom:active { box-shadow: 0 1px 0 #0c2238, 0 4px 10px rgba(15,23,42,.2), 0 0 16px rgba(46,124,198,.3); }
+@keyframes cta-flow { from { background-position: 0% 0; } to { background-position: 100% 0; } }
+
+/* hover: a colour fill rises from the bottom; nothing changes position */
+#hero .hero-cta::before {
+  content: ''; position: absolute; left: 0; right: 0; bottom: 0; z-index: 0; height: 0;
+  transition: height .4s cubic-bezier(.2,.7,.2,1);
+}
+#hero .hero-cta:hover::before { height: 100%; }
+#hero .hero-cta--browse::before { background: #1A3A5C; }
+#hero .hero-cta--browse:hover .hero-cta-text { -webkit-text-fill-color: #fff; animation: none; background: none; }
+#hero .hero-cta--browse:hover { color: #fff; background-color: #fff; }
+#hero .hero-cta--custom::before { background: #2E7CC6; }
+
+@media (prefers-reduced-motion: reduce) {
+  #hero .hero-cta--browse .hero-cta-text, #hero .hero-cta--custom { animation: none; }
+  #hero .hero-cta::before { transition: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  #hero a.rounded-xl:hover::after { animation: none; }
+}
+
 /* ── Category cards (home page) ──────────────────────────────────────────── */
 .category-card {
   transition: transform var(--transition-slow), box-shadow var(--transition-slow);
@@ -431,6 +535,21 @@
   display: flex; align-items: center; justify-content: center;
   color: #cbd5e1; align-self: center;
 }
+
+/* Pipeline reveal (startPipelineMotion): cards rise in, staggered, the first
+   time the strip scrolls into view. */
+.pipeline-track.is-armed .pipeline-machine-card {
+  opacity: 0; transform: translateY(18px); filter: blur(6px);
+}
+.pipeline-track.is-armed.is-in .pipeline-machine-card {
+  opacity: 1; transform: none; filter: none;
+  transition: opacity .7s cubic-bezier(.2,.7,.2,1), transform .7s cubic-bezier(.2,.7,.2,1),
+              filter .7s ease, border-color .2s ease, box-shadow .2s ease !important;
+  transition-delay: calc(var(--i, 0) * 80ms) !important;
+}
+/* after the reveal, hover behaves exactly as before (no stagger delay) */
+.pipeline-track.is-settled .pipeline-machine-card { transition-delay: 0s !important; }
+.pipeline-track.is-armed.is-in .pipeline-machine-card:hover { transform: translateY(-4px) !important; }
 
 /* ── Specs table ─────────────────────────────────────────────────────────── */
 .specs-table { width: 100%; border-collapse: collapse; }
@@ -971,6 +1090,74 @@
 }
 .home-cat-card .hcc-link svg { transition: transform 0.25s ease; }
 .home-cat-card .hcc-link:hover svg { transform: translateX(4px); }
+/* ── Home category card motion (initHomeCardMotion) ─────────────────────────
+   Rise-in on scroll, pointer tilt with photo parallax, a light sweep over the
+   photo, the colour bar filling and the button filling from the left. */
+#home-categories-grid { perspective: 1200px; }
+.home-cat-card {
+  transform: perspective(1200px) rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg));
+  transition: transform .45s cubic-bezier(.2,.7,.2,1), box-shadow .3s ease, border-color .3s ease;
+}
+.home-cat-card:hover {
+  transform: perspective(1200px) rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg)) translateY(-6px);
+  transition: transform .12s linear, box-shadow .3s ease, border-color .3s ease;
+}
+/* photo parallax: drifts against the tilt, on top of the existing zoom */
+.home-cat-card:hover .hcc-img {
+  transform: scale(1.08) translate(var(--px, 0px), var(--py, 0px));
+}
+
+/* scroll reveal, staggered */
+#home-categories-grid.is-armed .home-cat-card { opacity: 0; translate: 0 26px; filter: blur(8px); }
+#home-categories-grid.is-armed .home-cat-card.is-in {
+  opacity: 1; translate: 0 0; filter: none;
+  transition: opacity .8s cubic-bezier(.2,.7,.2,1), translate .8s cubic-bezier(.2,.7,.2,1),
+              filter .8s ease, transform .45s cubic-bezier(.2,.7,.2,1), box-shadow .3s ease, border-color .3s ease;
+  transition-delay: calc(var(--i, 0) * 110ms);
+}
+#home-categories-grid.is-armed .home-cat-card.is-settled { transition-delay: 0s; }
+#home-categories-grid.is-armed .home-cat-card.is-settled:hover {
+  transition: transform .12s linear, box-shadow .3s ease, border-color .3s ease;
+}
+
+/* light sweep across the photo on hover */
+.home-cat-card .hcc-shine {
+  position: absolute; top: -10%; bottom: -10%; left: -60%; width: 45%; z-index: 2;
+  background: linear-gradient(100deg, transparent, rgba(255,255,255,.38) 50%, transparent);
+  transform: skewX(-18deg); pointer-events: none; opacity: 0;
+}
+.home-cat-card:hover .hcc-shine { animation: hcc-sweep .9s cubic-bezier(.45,.05,.25,1) both; }
+@keyframes hcc-sweep {
+  0%   { opacity: 0; transform: skewX(-18deg) translateX(0); }
+  20%  { opacity: 1; }
+  100% { opacity: 0; transform: skewX(-18deg) translateX(420%); }
+}
+
+/* colour bar under the photo: a short accent that fills the width on hover */
+.home-cat-card .hcc-media::after {
+  transform-origin: left center; transform: scaleX(.28);
+  transition: transform .55s cubic-bezier(.2,.7,.2,1);
+}
+.home-cat-card:hover .hcc-media::after { transform: scaleX(1); }
+
+/* button fills with the category colour from the left */
+.home-cat-card .hcc-link {
+  background-image: linear-gradient(var(--c, #2E7CC6), var(--c, #2E7CC6));
+  background-repeat: no-repeat; background-size: 0% 100%; background-position: left;
+  transition: background-size .35s cubic-bezier(.2,.7,.2,1), color .25s ease, box-shadow .25s ease;
+}
+/* (restate the fill: the older hover rule sets the whole background shorthand) */
+.home-cat-card .hcc-link:hover {
+  background-color: transparent;
+  background-image: linear-gradient(var(--c, #2E7CC6), var(--c, #2E7CC6));
+  background-repeat: no-repeat; background-position: left; background-size: 100% 100%;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .home-cat-card, .home-cat-card:hover { transform: none; }
+  .home-cat-card:hover .hcc-shine { animation: none; }
+}
+
 /* Centered flex layout for home category cards (3-up, trailing row centered) */
 #home-categories-grid > * { width: 100%; }
 @media (min-width: 768px) {
@@ -1041,6 +1228,52 @@
   box-shadow: 0 2px 12px rgba(46,124,198,0.5);
 }
 .cat-photo-btn.selected .cat-photo-btn-check { display: flex; }
+
+/* ── Catalog category cards: motion (rise-in, tilt, sweep, hover hint) ───── */
+#cat-select-grid { perspective: 1100px; }
+.cat-photo-btn {
+  transform: perspective(1100px) rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg));
+}
+.cat-photo-btn:hover {
+  transform: perspective(1100px) rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg)) translateY(-8px) scale(1.02);
+  transition: transform .12s linear, box-shadow 260ms ease, border-color 200ms ease;
+}
+.cat-photo-btn:hover img {
+  transform: scale(1.12) translate(var(--px, 0px), var(--py, 0px));
+}
+/* staggered rise-in when the page opens */
+#cat-select-grid.is-armed .cat-photo-btn { opacity: 0; translate: 0 22px; filter: blur(8px); }
+#cat-select-grid.is-armed.is-in .cat-photo-btn {
+  opacity: 1; translate: 0 0; filter: none;
+  transition: opacity .75s cubic-bezier(.2,.7,.2,1), translate .75s cubic-bezier(.2,.7,.2,1),
+              filter .75s ease, transform 260ms cubic-bezier(.22,.68,0,1.2), box-shadow 260ms ease, border-color 200ms ease;
+  transition-delay: calc(var(--i, 0) * 90ms);
+}
+#cat-select-grid.is-settled .cat-photo-btn { transition-delay: 0s; }
+#cat-select-grid.is-settled .cat-photo-btn:hover {
+  transition: transform .12s linear, box-shadow 260ms ease, border-color 200ms ease;
+}
+/* light sweep across the photo on hover */
+.cat-photo-btn-shine {
+  position: absolute; top: -10%; bottom: -10%; left: -60%; width: 45%; z-index: 2;
+  background: linear-gradient(100deg, transparent, rgba(255,255,255,.32) 50%, transparent);
+  transform: skewX(-18deg); pointer-events: none; opacity: 0;
+}
+.cat-photo-btn:hover .cat-photo-btn-shine { animation: hcc-sweep .9s cubic-bezier(.45,.05,.25,1) both; }
+/* the label lifts and a "View lines" hint slides in */
+.cat-photo-btn-label { z-index: 3; transition: transform .35s cubic-bezier(.2,.7,.2,1); }
+.cat-photo-btn-go {
+  display: block; margin-top: 6px; font-size: .7rem; font-weight: 700; color: #fff;
+  letter-spacing: .02em; opacity: 0; transform: translateY(6px);
+  transition: opacity .3s ease, transform .35s cubic-bezier(.2,.7,.2,1);
+  height: 0; overflow: visible;
+}
+.cat-photo-btn:hover .cat-photo-btn-label { transform: translateY(-14px); }
+.cat-photo-btn:hover .cat-photo-btn-go { opacity: .95; transform: none; }
+@media (prefers-reduced-motion: reduce) {
+  .cat-photo-btn, .cat-photo-btn:hover { transform: none; }
+  .cat-photo-btn:hover .cat-photo-btn-shine { animation: none; }
+}
 
 /* ── Scroll reveal ────────────────────────────────────────────────────────── */
 [data-reveal] {
@@ -1282,13 +1515,101 @@
 [data-cq-reveal][data-cq-delay="4"] { transition-delay: 400ms; }
 [data-cq-reveal][data-cq-delay="5"] { transition-delay: 500ms; }
 
-/* ── Line page header: the line's machines, blurred behind the title ─────── */
-.line-banner__bg {
-  position: absolute; inset: -8px;            /* bleed so the blur has no soft edge */
-  width: calc(100% + 16px); height: calc(100% + 16px);
-  object-fit: cover; object-position: center 58%;
-  opacity: .3;
-  filter: blur(2px) grayscale(.35);
-  mix-blend-mode: luminosity;                 /* keeps the category colour */
-  pointer-events: none;
+/* ── Line page header (motion) ───────────────────────────────────────────────
+   The line's own machines glide past behind the title like a running line,
+   the text sharpens in and a light sweep passes once. Inspired by NullMotion's blur-reveal
+   and loop templates; pure CSS, transform/opacity/filter only. */
+.lh { position: relative; overflow: hidden; padding: 5.5rem 0 3rem; isolation: isolate; }
+
+/* machine belt: two copies of the strip side by side, shifted by one copy */
+.lh__track {
+  /* sits low in the header, never taller than it, so every machine is
+     shown whole; capped so a tall header (long text, phones) never blows
+     them up */
+  position: absolute; bottom: 16px; height: min(270px, calc(100% - 44px));
+  left: 22%; right: 0; z-index: 0;
+  /* blend HERE, on the masked box: a masked element is composited as its own
+     group, so a blend set on the belt inside it would never reach the header
+     colour and its grey backdrop would show as a lighter box */
+  mix-blend-mode: multiply; opacity: .75;
+  /* fade toward the text on the left AND out at the bottom, so the strip
+     has no hard horizontal edge above the conveyor line */
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, #000 38%, #000 100%),
+                      linear-gradient(to bottom, #000 72%, transparent 100%);
+  -webkit-mask-composite: source-in;
+          mask-image: linear-gradient(to right, transparent 0%, #000 38%, #000 100%),
+                      linear-gradient(to bottom, #000 72%, transparent 100%);
+          mask-composite: intersect;
+}
+.lh__belt {
+  /* one surface, image repeated sideways at a whole-pixel tile width (set in
+     JS), slid left by exactly one tile per loop: seamless, no join line */
+  position: absolute; top: 0; bottom: 0; left: 0;
+  width: calc(100% + var(--tile, 1200px));
+  background-repeat: repeat-x;
+  background-size: var(--tile, 1200px) 100%;
+  filter: grayscale(.25) contrast(1.15) blur(.4px);
+  animation: lh-belt var(--dur, 70s) linear infinite;
+  will-change: transform;
+}
+@keyframes lh-belt { to { transform: translateX(calc(-1 * var(--tile, 1200px))); } }
+
+
+/* shade: dark on the left behind the text, light on the right where the
+   machines run */
+.lh__shade {
+  position: absolute; inset: 0; z-index: 1; pointer-events: none;
+  /* strong enough to read through the machine strip's multiply blend,
+     which otherwise evens the colour out across the header */
+  background: linear-gradient(to right,
+    rgba(0,0,0,.34) 0%, rgba(0,0,0,.16) 25%, rgba(255,255,255,.1) 50%,
+    rgba(255,255,255,.3) 74%, rgba(255,255,255,.46) 100%);
+}
+
+/* one soft light sweep after load */
+.lh__sweep {
+  position: absolute; top: -20%; bottom: -20%; left: -35%; width: 30%; z-index: 2;
+  background: linear-gradient(100deg, transparent, rgba(255,255,255,.22) 50%, transparent);
+  transform: skewX(-18deg); pointer-events: none; opacity: 0;
+  animation: lh-sweep 1.6s cubic-bezier(.45,.05,.25,1) .55s 1 both;
+}
+@keyframes lh-sweep {
+  0%   { transform: translateX(0) skewX(-18deg); opacity: 0; }
+  15%  { opacity: 1; }
+  100% { transform: translateX(520%) skewX(-18deg); opacity: 0; }
+}
+
+.lh__body { position: relative; z-index: 3; }
+.lh__code {
+  color: rgba(255,255,255,.62); font-size: .68rem; font-family: monospace; font-weight: 700;
+  letter-spacing: .18em; text-transform: uppercase; margin-bottom: .5rem;
+}
+.lh__title {
+  color: #fff; font-size: clamp(1.6rem, 3.5vw, 2.4rem); font-weight: 800; margin: 0 0 .4rem;
+  line-height: 1.15; letter-spacing: -.01em; text-shadow: 0 2px 18px rgba(0,0,0,.18);
+}
+.lh__desc { color: rgba(255,255,255,.78); font-size: .9rem; margin: 0; max-width: 46rem; line-height: 1.55; }
+.lh__pills { display: flex; flex-wrap: wrap; gap: .5rem; margin-top: 1rem; }
+
+/* blur reveal: each line sharpens and settles, one after another */
+.lh-in { animation: lh-in .9s cubic-bezier(.2,.7,.2,1) var(--d, 0s) both; }
+@keyframes lh-in {
+  from { opacity: 0; filter: blur(12px); transform: translateY(12px); }
+  to   { opacity: 1; filter: none;     transform: none; }
+}
+
+@media (max-width: 640px) {
+  .lh { padding: 5rem 0 2.75rem; }
+  .lh__track {
+    left: 0; height: min(160px, calc(100% - 44px)); opacity: .45;
+    /* the strip is shorter than the header here: fade its top edge away */
+    -webkit-mask-image: linear-gradient(to bottom, transparent 0%, #000 40%);
+            mask-image: linear-gradient(to bottom, transparent 0%, #000 40%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .lh__belt { animation: none; }
+  .lh__sweep { display: none; }
+  .lh-in { animation: none; }
 }

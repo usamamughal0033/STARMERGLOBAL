@@ -418,9 +418,15 @@ function initHomePage(catalog) {
     observer.observe(statsSection);
   }
 
+  initHeroMotion();
+  initHeroButtons();
+
   // Category cards
   const catsGrid = document.getElementById('home-categories-grid');
-  if (catsGrid) catsGrid.innerHTML = getCategories(catalog).map(cat => buildHomeCategoryCard(cat)).join('');
+  if (catsGrid) {
+    catsGrid.innerHTML = getCategories(catalog).map((cat, i) => buildHomeCategoryCard(cat, i)).join('');
+    initHomeCardMotion(catsGrid);
+  }
 
   // Typing animation
   const heroTyping = document.getElementById('hero-typing');
@@ -526,23 +532,24 @@ const CAT_VISUAL = {
   }
 };
 
-function buildHomeCategoryCard(cat) {
+function buildHomeCategoryCard(cat, i = 0) {
   const lineCount = cat.lines.length;
   const machineCount = cat.lines.reduce((sum, l) => sum + l.machines.length, 0);
   const vis = CAT_VISUAL[cat.id] || { rate: 'Custom', tagline: '' };
   const imgUrl = CAT_IMAGES[cat.id] || '';
   return `
-    <article class="home-cat-card" style="--c:${cat.color}">
+    <article class="home-cat-card" style="--c:${cat.color};--i:${i}">
       <div class="hcc-media">
         ${imgUrl ? `<img class="hcc-img" src="${imgUrl}" alt="${cat.label}" loading="lazy" onerror="this.style.display='none'"/>` : ''}
+        <span class="hcc-shine" aria-hidden="true"></span>
         ${vis.rate ? `<span class="hcc-cap">${vis.rate}</span>` : ''}
       </div>
       <div class="hcc-body">
         <span class="hcc-eyebrow">${vis.tagline || ''}</span>
         <h3 class="hcc-title">${cat.label}</h3>
         <div class="hcc-meta">
-          <div class="hcc-stat"><span class="hcc-n">${lineCount}</span><span class="hcc-l">Lines</span></div>
-          <div class="hcc-stat"><span class="hcc-n">${machineCount}+</span><span class="hcc-l">Machines</span></div>
+          <div class="hcc-stat"><span class="hcc-n" data-count="${lineCount}">${lineCount}</span><span class="hcc-l">Lines</span></div>
+          <div class="hcc-stat"><span class="hcc-n" data-count="${machineCount}" data-suffix="+">${machineCount}+</span><span class="hcc-l">Machines</span></div>
         </div>
         <a class="hcc-link" href="catalog.html?category=${cat.id}">
           Explore Equipment
@@ -550,6 +557,167 @@ function buildHomeCategoryCard(cat) {
         </a>
       </div>
     </article>`;
+}
+
+// Home hero intro, themed on how candy is made: the first two headline lines
+// come in like rope through a rope sizer (stretched, then squeezed to size),
+// and "Custom Parts." fills like a candy mould (outline first, then the colour
+// rises from the bottom). The text, buttons and stats follow and the stats
+// count up. Plays once; without JS or with reduced motion the hero is static.
+function initHeroMotion() {
+  const hero = document.getElementById('hero');
+  if (!hero || matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  const h1 = hero.querySelector('h1');
+  if (!h1) return;
+
+  // wrap each headline line (text between <br>s) in its own span
+  let line = 0;
+  [...h1.childNodes].forEach(n => {
+    if (n.nodeType === 3 && n.textContent.trim()) {
+      const span = document.createElement('span');
+      span.className = 'hl-rope';
+      span.style.setProperty('--k', line++);
+      span.textContent = n.textContent.trim();
+      n.replaceWith(span);
+    } else if (n.nodeType === 1 && n.classList.contains('hero-gradient-text')) {
+      n.classList.add('hl-mould');
+      n.style.setProperty('--k', line++);
+    }
+  });
+
+  const after = 0.2 + line * 0.28 + 0.9;      // once the mould has filled
+  const seq = [
+    [hero.querySelector('span.inline-flex'), 0],
+    [hero.querySelector('.hero-lead'), after - 0.6],
+    [hero.querySelector('.hero-typing-badge'), after - 0.45],
+    [hero.querySelector('.flex.flex-wrap.gap-4'), after - 0.3],
+    [hero.querySelector('.hero-stats'), after - 0.15],
+  ];
+  seq.forEach(([el, d]) => { if (el) { el.classList.add('hero-in'); el.style.setProperty('--d', Math.max(0, d) + 's'); } });
+  hero.classList.add('hero-motion');
+
+  // stats count up once they are in
+  setTimeout(() => {
+    hero.querySelectorAll('.hero-stats .text-3xl').forEach(el => {
+      const t = el.firstChild;
+      if (!t || t.nodeType !== 3) return;
+      const to = parseInt(t.textContent.replace(/[^0-9]/g, ''), 10);
+      if (!to) return;
+      const t0 = performance.now(), dur = 1400;
+      const step = now => {
+        const p = Math.min(1, (now - t0) / dur), e = 1 - Math.pow(1 - p, 3);
+        t.textContent = Math.round(to * e).toLocaleString('en-US');
+        if (p < 1) requestAnimationFrame(step);
+      };
+      t.textContent = '0';
+      requestAnimationFrame(step);
+    });
+  }, after * 1000);
+}
+
+// Hero buttons: tag them for their CSS. They never move; attention comes from
+// a text sheen (Browse) and a slowly shifting glowing fill (Custom Parts).
+function initHeroButtons() {
+  const hero = document.getElementById('hero');
+  if (!hero) return;
+  [
+    [hero.querySelector('a[href="catalog.html"]'), 'hero-cta--browse'],
+    [hero.querySelector('a[href="custom-quote.html"]'), 'hero-cta--custom'],
+  ].forEach(([el, mod]) => {
+    if (!el) return;
+    el.classList.add('hero-cta', mod);
+    const label = document.createElement('span');
+    label.className = 'hero-cta-label';
+    // the words get their own span so the sheen paints only the text
+    [...el.childNodes].forEach(n => {
+      if (n.nodeType === 3 && n.textContent.trim()) {
+        const w = document.createElement('span');
+        w.className = 'hero-cta-text';
+        w.textContent = n.textContent.trim();
+        label.append(w);
+      } else if (n.nodeType === 1) label.append(n);
+    });
+    // Custom Parts gets a trailing arrow too, so both read as "go somewhere"
+    if (mod === 'hero-cta--custom' && !label.querySelector('.cta-go')) {
+      label.insertAdjacentHTML('beforeend', '<svg class="cta-go w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"/></svg>');
+    }
+    el.textContent = '';
+    el.append(label);
+    // a ripple spreads from where the button was pressed
+    el.addEventListener('pointerdown', ev => {
+      if (matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+      const r = el.getBoundingClientRect();
+      const dot = document.createElement('span');
+      dot.className = 'cta-ripple';
+      dot.style.left = (ev.clientX - r.left) + 'px';
+      dot.style.top = (ev.clientY - r.top) + 'px';
+      el.append(dot);
+      dot.addEventListener('animationend', () => dot.remove());
+    });
+  });
+}
+
+// Home category cards: rise in (blur to sharp) and count their numbers up the
+// first time they scroll into view; on desktop they tilt toward the pointer
+// with a slight photo parallax. Nothing moves on its own.
+function initHomeCardMotion(grid) {
+  if (matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  const cards = [...grid.querySelectorAll('.home-cat-card')];
+
+  const countUp = el => {
+    const to = +el.dataset.count, suffix = el.dataset.suffix || '';
+    const t0 = performance.now(), dur = 1100;
+    const step = now => {
+      const p = Math.min(1, (now - t0) / dur), e = 1 - Math.pow(1 - p, 3);
+      el.textContent = Math.round(to * e) + (p === 1 ? suffix : '');
+      if (p < 1) requestAnimationFrame(step);
+    };
+    el.textContent = '0';
+    requestAnimationFrame(step);
+  };
+
+  if ('IntersectionObserver' in window) {
+    grid.classList.add('is-armed');
+    const io = new IntersectionObserver(entries => entries.forEach(e => {
+      if (!e.isIntersecting) return;
+      const card = e.target;
+      card.classList.add('is-in');
+      io.unobserve(card);
+      setTimeout(() => card.querySelectorAll('[data-count]').forEach(countUp),
+                 200 + (+card.style.getPropertyValue('--i') || 0) * 110);
+      // drop the stagger once it has landed, so hover reacts instantly
+      setTimeout(() => card.classList.add('is-settled'), 1400);
+    }), { threshold: 0.25 });
+    cards.forEach(c => io.observe(c));
+  }
+
+  addPointerTilt(cards);
+}
+
+// 3D tilt toward the pointer with a slight photo parallax: the card sets
+// --rx/--ry (tilt) and --px/--py (photo drift) for its CSS to use. Real mice
+// only, not touch screens.
+function addPointerTilt(cards) {
+  if (!matchMedia('(hover: hover) and (pointer: fine)').matches) return;
+  if (matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  cards.forEach(card => {
+    let raf = 0;
+    card.addEventListener('pointermove', ev => {
+      const r = card.getBoundingClientRect();
+      const x = (ev.clientX - r.left) / r.width - 0.5, y = (ev.clientY - r.top) / r.height - 0.5;
+      cancelAnimationFrame(raf);
+      raf = requestAnimationFrame(() => {
+        card.style.setProperty('--rx', (-y * 6).toFixed(2) + 'deg');
+        card.style.setProperty('--ry', (x * 7).toFixed(2) + 'deg');
+        card.style.setProperty('--px', (-x * 14).toFixed(1) + 'px');
+        card.style.setProperty('--py', (-y * 10).toFixed(1) + 'px');
+      });
+    });
+    card.addEventListener('pointerleave', () => {
+      cancelAnimationFrame(raf);
+      ['--rx', '--ry', '--px', '--py'].forEach(p => card.style.removeProperty(p));
+    });
+  });
 }
 
 function initCandyCanvas() {
@@ -690,18 +858,27 @@ function initCatalogPage(catalog) {
 
   const catGrid = document.getElementById('cat-select-grid');
   if (catGrid) {
-    catGrid.innerHTML = getCategories(catalog).map(cat => `
-      <button class="cat-photo-btn" data-cat-id="${cat.id}">
+    catGrid.innerHTML = getCategories(catalog).map((cat, i) => `
+      <button class="cat-photo-btn" data-cat-id="${cat.id}" style="--i:${i}">
         <div class="cat-photo-btn-inner">
           <img src="${CAT_IMAGES[cat.id] || ''}" alt="" loading="lazy" onerror="this.style.opacity='0'"/>
+          <span class="cat-photo-btn-shine" aria-hidden="true"></span>
           <div class="cat-photo-btn-overlay" style="background:linear-gradient(to top, ${cat.color}cc 0%, ${cat.color}59 46%, ${cat.color}00 80%), linear-gradient(to top, rgba(8,15,30,0.82) 0%, rgba(8,15,30,0.22) 42%, transparent 72%)"></div>
           <div class="cat-photo-btn-label">
             <h4>${cat.label}</h4>
             <p>${cat.lines.length} production line${cat.lines.length !== 1 ? 's' : ''}</p>
+            <span class="cat-photo-btn-go">View lines &rarr;</span>
           </div>
           <div class="cat-photo-btn-check">✓</div>
         </div>
       </button>`).join('');
+    // rise in one by one (blur to sharp) as the page opens, then tilt on hover
+    if (!matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      catGrid.classList.add('is-armed');
+      requestAnimationFrame(() => requestAnimationFrame(() => catGrid.classList.add('is-in')));
+      setTimeout(() => catGrid.classList.add('is-settled'), 1500);
+    }
+    addPointerTilt([...catGrid.querySelectorAll('.cat-photo-btn')]);
     catGrid.querySelectorAll('.cat-photo-btn').forEach(btn => {
       btn.addEventListener('click', () => {
         selectedCategory = getCategoryById(catalog, btn.dataset.catId);
@@ -952,6 +1129,35 @@ function buildLineFlow(mount, line, cat) {
     </div>`;
 }
 
+// The machine strip is ONE element whose background repeats the line image
+// sideways; it slides left by exactly one tile and loops. A single painted
+// surface with a whole-pixel tile width has no join between copies, so no
+// hairline appears where the line starts again.
+function startLineBelt(track, sources) {
+  if (!track) return;
+  const belt = track.querySelector('.lh__belt');
+  const srcs = sources.filter(Boolean);
+  const tryNext = () => {
+    const src = srcs.shift();
+    if (!src) { track.style.display = 'none'; return; }
+    const probe = new Image();
+    probe.onload = () => {
+      const size = () => {
+        const h = track.clientHeight || 1;
+        const tile = Math.max(1, Math.round(h * probe.naturalWidth / probe.naturalHeight));
+        belt.style.setProperty('--tile', tile + 'px');
+        belt.style.setProperty('--dur', (tile / 16).toFixed(1) + 's');  // ~16px/s glide
+      };
+      belt.style.backgroundImage = `url("${src}")`;
+      size();
+      window.addEventListener('resize', size, { passive: true });
+    };
+    probe.onerror = tryNext;
+    probe.src = src;
+  };
+  tryNext();
+}
+
 function initLinePage(catalog) {
   const params = new URLSearchParams(window.location.search);
   const line = getLineById(catalog, params.get('id'));
@@ -980,21 +1186,28 @@ function initLinePage(catalog) {
     const lineImg = `assets/images/lines/${line.id}.jpg`;
     const catImg = CAT_IMAGES[line.categoryId] || '';
     const mCount = line.machines?.length || 0;
+    // Motion header: the line's machines glide past like a running line, the
+    // text sharpens in (blur reveal) and a light sweep passes once. All CSS
+    // (.lh-*); it all stops under prefers-reduced-motion.
     bannerEl.innerHTML = `
-      <div style="background:${bgGrad};padding:5.5rem 0 2.25rem;position:relative;overflow:hidden;">
-        <img class="line-banner__bg" src="${lineImg}" alt="" onerror="if(this.dataset.f||!'${catImg}'){this.style.display='none'}else{this.dataset.f=1;this.src='${catImg}'}"/>
-        <div style="position:absolute;inset:0;background:linear-gradient(to right,rgba(0,0,0,0.32) 0%,transparent 70%);"></div>
-        <div class="max-w-7xl mx-auto px-6" style="position:relative;">
-          <div style="color:rgba(255,255,255,0.5);font-size:0.68rem;font-family:monospace;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;margin-bottom:0.5rem;">${line.lineNumber || ''} &nbsp;&middot;&nbsp; ${cat?.label || ''}</div>
-          <h1 style="color:#fff;font-size:clamp(1.6rem,3.5vw,2.2rem);font-weight:800;margin:0 0 0.4rem;line-height:1.2;">${line.name}</h1>
-          ${line.description ? `<p style="color:rgba(255,255,255,0.7);font-size:0.9rem;margin:0;max-width:46rem;line-height:1.55;">${line.description}</p>` : ''}
-          <div style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-top:1rem;">
+      <div class="lh" style="background:${bgGrad};">
+        <div class="lh__track" aria-hidden="true">
+          <div class="lh__belt"></div>
+        </div>
+        <div class="lh__shade" aria-hidden="true"></div>
+        <div class="lh__sweep" aria-hidden="true"></div>
+        <div class="max-w-7xl mx-auto px-6 lh__body">
+          <div class="lh-in lh__code" style="--d:.05s">${line.lineNumber || ''} &nbsp;&middot;&nbsp; ${cat?.label || ''}</div>
+          <h1 class="lh-in lh__title" style="--d:.18s">${line.name}</h1>
+          ${line.description ? `<p class="lh-in lh__desc" style="--d:.34s">${line.description}</p>` : ''}
+          <div class="lh-in lh__pills" style="--d:.5s">
             ${line.productionRate ? `<span style="display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,0.12);backdrop-filter:blur(6px);border:1px solid rgba(255,255,255,0.2);color:rgba(255,255,255,0.9);font-size:0.75rem;font-weight:600;padding:0.35rem 0.8rem;border-radius:99px;"><svg style="width:14px;height:14px" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>${line.productionRate}</span>` : ''}
             <span style="display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,0.12);backdrop-filter:blur(6px);border:1px solid rgba(255,255,255,0.2);color:rgba(255,255,255,0.9);font-size:0.75rem;font-weight:600;padding:0.35rem 0.8rem;border-radius:99px;">⚙ ${mCount} Machines</span>
             <span style="display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,0.12);backdrop-filter:blur(6px);border:1px solid rgba(255,255,255,0.2);color:rgba(255,255,255,0.9);font-size:0.75rem;font-weight:600;padding:0.35rem 0.8rem;border-radius:99px;">✓ Certified · QMS · Safety</span>
           </div>
         </div>
       </div>`;
+    startLineBelt(bannerEl.querySelector('.lh__track'), [lineImg, catImg]);
   }
 
   // Overview + key specs
@@ -1058,7 +1271,7 @@ function renderPipeline(catalog, line, cat) {
     const img = getImageSrc(m.image, cat?.color, m.machineNumber, 'machine');
     const inCart = !!getCartItem(m.id);
     const arrow = i < machines.length - 1 ? `<div class="pipeline-arrow"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg></div>` : '';
-    return `<div class="pipeline-machine-card${inCart ? ' in-cart' : ''}">
+    return `<div class="pipeline-machine-card${inCart ? ' in-cart' : ''}" style="--i:${Math.min(i, 8)}">
       <div class="pipeline-machine-img"><img src="${img}" alt="${m.name}" loading="lazy"/></div>
       <div class="pipeline-machine-body">
         <div class="pipeline-order">Step ${m.orderInLine}</div>
@@ -1074,6 +1287,27 @@ function renderPipeline(catalog, line, cat) {
       </div>
     </div>${arrow}`;
   }).join('');
+  startPipelineMotion(track);
+}
+
+// Pipeline reveal: the machine cards rise in one by one (blur to sharp) the
+// first time the section scrolls into view. Nothing moves on its own after
+// that; reduced-motion users and old browsers just get the static strip.
+function startPipelineMotion(track) {
+  const scroller = track.closest('.pipeline-scroll');
+  if (!scroller || track.classList.contains('is-armed')) return;
+  if (matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  if (!('IntersectionObserver' in window)) return;
+
+  track.classList.add('is-armed');           // cards wait hidden until in view
+  const io = new IntersectionObserver(([e]) => {
+    if (!e.isIntersecting) return;
+    track.classList.add('is-in');
+    io.disconnect();
+    // once every card has landed, drop the stagger so hover reacts instantly
+    setTimeout(() => track.classList.add('is-settled'), 1600);
+  }, { threshold: 0.2 });
+  io.observe(scroller);
 }
 
 // ── Product / Machine detail ──────────────────────────────────────────────────
