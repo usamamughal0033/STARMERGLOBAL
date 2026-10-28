@@ -1,15 +1,63 @@
+# ── What is NOT in this repository ───────────────────────────────────────────
+# The live site (GitHub Pages) only needs the pages, css/, js/bundle.js,
+# js/catalog-data.js, data/catalog.json and the images under assets/ that the
+# catalog uses. Working material below stays on the developer's machine.
+
+# Dependencies / tooling caches
 node_modules/
-admin-local/
 __pycache__/
 *.pyc
+.claude/
 
-# working artefact from scripts/upscale_new_images.py — nothing on the site
-# references it; regenerate on demand
-assets/images/NEW IMAGES/_upscaled/
-server.js
-package.json
-package-lock.json
+# Source material (booklet scans, raw photos, original renders, uploads)
+booklet-data/**/pages/
+assets/STARMER/BUBBLE GUM/
+assets/STARMER/CHEW & TOFFEE/
+assets/STARMER/HARD CANDY/
+assets/STARMER/LOLLIPOP/
+assets/STARMER/PHARMA/
+assets/STARMER/DIES/
+assets/STARMER/PARTS/
+assets/STARMER/_ready/
+assets/STARMER/*.jpg
+assets/images/NEW RENDERS/
+assets/images/NEW IMAGES/
+assets/images/CATAGORIES IMAGES/
+assets/images/CUSTOM PARTS GALLERY/
+assets/images/HOW WE WORK IMAGES/
+assets/images/HOME PAGE VIDEO.mp4
+assets/images/nameplate.png
+assets/images/nameplate.webp
+assets/_video_backup/
+assets/_img_blackfix_backup/
+
+# Backups and generated intermediates
+*.bak
+*.normbak
+*.premodelbak
+data/catalog.generated.json
+
+# Old code no page loads any more (js/bundle.js replaced them)
+js/app.js
+js/data.js
+js/cart.js
+js/data-loader.js
+js/hero-three.js
+
+# Not used on GitHub Pages (Netlify-only config and the Netlify CMS)
+netlify.toml
+_redirects
+admin/
+
+# Internal / unrelated files
+click-game.html
+nameplate-review.html
+MODEL-NUMBER-REVIEW.txt
+NAMEPLATE.jpeg
+NAMEPLATE-EXAMPLE.jpeg
+LOGO-original.jpeg
+scripts/MIGRATION_STATUS.md
 data-templates/
 
-# local-only layout drafts — never deployed
+# Local-only drafts
 mockups/

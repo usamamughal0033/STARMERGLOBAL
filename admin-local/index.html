@@ -1,0 +1,886 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Admin — Add Equipment</title>
+  <!-- Local tool: works only with `npm run admin` (server.js). Keep it out of search. -->
+  <meta name="robots" content="noindex, nofollow"/>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: { extend: { colors: { primary: '#1A3A5C', accent: '#2E7CC6' } } }
+    }
+  </script>
+  <style>
+    body { font-family: Inter, system-ui, sans-serif; }
+    .tab-active   { background: #1A3A5C; color: #fff; }
+    .tab-inactive { color: #475569; }
+    .tab-inactive:hover { background: #f1f5f9; }
+    .field label  { display: block; font-size: .8125rem; font-weight: 500; color: #374151; margin-bottom: .25rem; }
+    .field input[type=text],
+    .field input[type=file],
+    .field textarea,
+    .field select { width: 100%; border: 1px solid #e2e8f0; border-radius: .5rem; padding: .5rem .75rem; font-size: .875rem; outline: none; }
+    .field input:focus, .field textarea:focus, .field select:focus { box-shadow: 0 0 0 2px #2E7CC640; border-color: #2E7CC6; }
+    .spec-row input { flex: 1; border: 1px solid #e2e8f0; border-radius: .5rem; padding: .375rem .625rem; font-size: .8125rem; outline: none; min-width: 0; }
+    .spec-row input:focus { box-shadow: 0 0 0 2px #2E7CC640; border-color: #2E7CC6; }
+    .badge { display: inline-block; font-size: .7rem; font-weight: 700; font-family: monospace; background: #eff6ff; color: #1d4ed8; padding: .15rem .5rem; border-radius: .35rem; }
+  </style>
+</head>
+<body class="bg-slate-50 min-h-screen">
+
+<!-- ── Header ────────────────────────────────────────────────────────────────── -->
+<header class="bg-white border-b border-slate-200 px-6 py-4">
+  <div class="max-w-2xl mx-auto flex items-center justify-between">
+    <div>
+      <h1 class="text-lg font-extrabold text-primary leading-tight">Equipment Admin</h1>
+      <p class="text-xs text-slate-400 mt-0.5">Add machines and dies/parts to the live catalog</p>
+    </div>
+    <div class="flex items-center gap-3">
+      <span id="status-dot" class="flex items-center gap-1.5 text-xs text-slate-400">
+        <span class="w-2 h-2 rounded-full bg-slate-300" id="dot"></span>
+        <span id="dot-label">connecting…</span>
+      </span>
+      <a href="/" target="_blank" class="text-xs font-semibold text-accent hover:underline">View site ↗</a>
+    </div>
+  </div>
+</header>
+
+<main class="max-w-2xl mx-auto px-4 py-8">
+
+  <!-- ── Tab bar ──────────────────────────────────────────────────────────────── -->
+  <div class="flex gap-1.5 mb-6 bg-white border border-slate-200 rounded-xl p-1.5">
+    <button id="tab-machine" onclick="switchTab('machine')"
+      class="tab-active flex-1 px-4 py-2 rounded-lg text-sm font-semibold transition-colors">
+      + Add Machine
+    </button>
+    <button id="tab-part" onclick="switchTab('part')"
+      class="tab-inactive flex-1 px-4 py-2 rounded-lg text-sm font-semibold transition-colors">
+      + Add Die / Part
+    </button>
+    <button id="tab-delete" onclick="switchTab('delete')"
+      class="tab-inactive flex-1 px-4 py-2 rounded-lg text-sm font-semibold transition-colors">
+      Edit / Delete
+    </button>
+  </div>
+
+  <!-- ── Add Machine ──────────────────────────────────────────────────────────── -->
+  <section id="panel-machine">
+    <form id="form-machine" novalidate>
+      <div class="bg-white border border-slate-200 rounded-2xl divide-y divide-slate-100">
+
+        <!-- Section: Location -->
+        <div class="px-6 py-5">
+          <p class="text-xs font-semibold text-slate-400 uppercase tracking-widest mb-4">1 — Where to add it</p>
+          <div class="grid grid-cols-2 gap-4">
+            <div class="field">
+              <label>Category <span class="text-red-400">*</span></label>
+              <select id="m-cat" onchange="onMCatChange()">
+                <option value="">Select…</option>
+              </select>
+            </div>
+            <div class="field">
+              <label>Production Line <span class="text-red-400">*</span></label>
+              <select id="m-line" onchange="onMLineChange()">
+                <option value="">Select…</option>
+              </select>
+            </div>
+          </div>
+          <div id="m-line-info" class="hidden mt-3 text-xs text-slate-500 bg-slate-50 rounded-lg px-3 py-2"></div>
+        </div>
+
+        <!-- Section: Details -->
+        <div class="px-6 py-5 space-y-4">
+          <p class="text-xs font-semibold text-slate-400 uppercase tracking-widest mb-4">2 — Machine details</p>
+          <div class="field">
+            <label>Machine Name <span class="text-red-400">*</span></label>
+            <input type="text" id="m-name" placeholder="e.g. Vacuum Cooker"/>
+          </div>
+          <div class="field">
+            <label>Function <span class="text-slate-400 font-normal">(one-line: what it does)</span></label>
+            <input type="text" id="m-fn" placeholder="e.g. Cooks syrup under vacuum to >98% dry solids"/>
+          </div>
+          <div class="field">
+            <label>Description <span class="text-slate-400 font-normal">(detailed)</span></label>
+            <textarea id="m-desc" rows="3" placeholder="Detailed description of operation, construction, controls…" class="resize-none"></textarea>
+          </div>
+        </div>
+
+        <!-- Section: Image -->
+        <div class="px-6 py-5">
+          <p class="text-xs font-semibold text-slate-400 uppercase tracking-widest mb-4">3 — Image</p>
+          <div class="field">
+            <label>Upload image from your computer</label>
+            <input type="file" id="m-img" accept="image/*" onchange="previewImg('m-img','m-preview')"/>
+          </div>
+          <div id="m-preview-wrap" class="hidden mt-3">
+            <img id="m-preview" class="h-44 w-full object-cover rounded-xl border border-slate-200" alt="preview"/>
+          </div>
+        </div>
+
+        <!-- Section: Specs -->
+        <div class="px-6 py-5">
+          <div class="flex items-center justify-between mb-3">
+            <p class="text-xs font-semibold text-slate-400 uppercase tracking-widest">4 — Specifications</p>
+            <button type="button" onclick="addSpec('m-specs')"
+              class="text-xs text-accent font-semibold hover:text-primary transition-colors">+ Add row</button>
+          </div>
+          <div id="m-specs" class="space-y-2">
+            <!-- rows added dynamically -->
+          </div>
+          <p class="text-xs text-slate-400 mt-2">Example keys: Capacity, Power Consumption, Dimensions, Weight, Material, Certifications</p>
+        </div>
+
+        <!-- Submit -->
+        <div class="px-6 py-5">
+          <button type="submit" id="m-submit"
+            class="w-full bg-primary text-white font-bold py-3 rounded-xl hover:bg-accent transition-colors text-sm">
+            Add Machine to Catalog
+          </button>
+        </div>
+
+      </div>
+    </form>
+  </section>
+
+  <!-- ── Add Die / Part ───────────────────────────────────────────────────────── -->
+  <section id="panel-part" class="hidden">
+    <form id="form-part" novalidate>
+      <div class="bg-white border border-slate-200 rounded-2xl divide-y divide-slate-100">
+
+        <!-- Section: Location -->
+        <div class="px-6 py-5">
+          <p class="text-xs font-semibold text-slate-400 uppercase tracking-widest mb-4">1 — Where to add it</p>
+          <div class="grid grid-cols-2 gap-4 mb-4">
+            <div class="field">
+              <label>Category <span class="text-red-400">*</span></label>
+              <select id="p-cat" onchange="onPCatChange()">
+                <option value="">Select…</option>
+              </select>
+            </div>
+            <div class="field">
+              <label>Production Line <span class="text-red-400">*</span></label>
+              <select id="p-line" onchange="onPLineChange()">
+                <option value="">Select…</option>
+              </select>
+            </div>
+          </div>
+          <div class="field">
+            <label>Machine <span class="text-red-400">*</span></label>
+            <select id="p-machine" onchange="onPMachineChange()">
+              <option value="">Select…</option>
+            </select>
+          </div>
+          <div id="p-machine-info" class="hidden mt-3 text-xs text-slate-500 bg-slate-50 rounded-lg px-3 py-2"></div>
+        </div>
+
+        <!-- Section: Details -->
+        <div class="px-6 py-5 space-y-4">
+          <p class="text-xs font-semibold text-slate-400 uppercase tracking-widest mb-4">2 — Part details</p>
+          <div class="field">
+            <label>Part / Die Name <span class="text-red-400">*</span></label>
+            <input type="text" id="p-name" placeholder="e.g. Scraped-Surface Heating Element"/>
+          </div>
+          <div>
+            <label class="block text-sm font-medium text-slate-700 mb-2">Type</label>
+            <div class="flex gap-5">
+              <label class="flex items-center gap-2 text-sm cursor-pointer select-none">
+                <input type="radio" name="p-type" value="part" checked class="accent-accent w-4 h-4"/> Spare Part
+              </label>
+              <label class="flex items-center gap-2 text-sm cursor-pointer select-none">
+                <input type="radio" name="p-type" value="die" class="accent-accent w-4 h-4"/> Die Set
+              </label>
+            </div>
+          </div>
+          <div class="field">
+            <label>Description</label>
+            <textarea id="p-desc" rows="3" placeholder="Material, compatibility, notes…" class="resize-none"></textarea>
+          </div>
+        </div>
+
+        <!-- Section: Image -->
+        <div class="px-6 py-5">
+          <p class="text-xs font-semibold text-slate-400 uppercase tracking-widest mb-4">3 — Image</p>
+          <div class="field">
+            <label>Upload image from your computer</label>
+            <input type="file" id="p-img" accept="image/*" onchange="previewImg('p-img','p-preview')"/>
+          </div>
+          <div id="p-preview-wrap" class="hidden mt-3">
+            <img id="p-preview" class="h-44 w-full object-cover rounded-xl border border-slate-200" alt="preview"/>
+          </div>
+        </div>
+
+        <!-- Section: Specs -->
+        <div class="px-6 py-5">
+          <div class="flex items-center justify-between mb-3">
+            <p class="text-xs font-semibold text-slate-400 uppercase tracking-widest">4 — Specifications</p>
+            <button type="button" onclick="addSpec('p-specs')"
+              class="text-xs text-accent font-semibold hover:text-primary transition-colors">+ Add row</button>
+          </div>
+          <div id="p-specs" class="space-y-2">
+            <!-- rows added dynamically -->
+          </div>
+          <p class="text-xs text-slate-400 mt-2">Example keys: Dimensions, Material, Compatible Machine, Weight</p>
+        </div>
+
+        <!-- Submit -->
+        <div class="px-6 py-5">
+          <button type="submit" id="p-submit"
+            class="w-full bg-primary text-white font-bold py-3 rounded-xl hover:bg-accent transition-colors text-sm">
+            Add Part to Catalog
+          </button>
+        </div>
+
+      </div>
+    </form>
+  </section>
+
+  <!-- ── Delete panel ────────────────────────────────────────────────────────────── -->
+  <section id="panel-delete" class="hidden">
+    <div class="bg-white border border-slate-200 rounded-2xl divide-y divide-slate-100">
+
+      <!-- Filters -->
+      <div class="px-6 py-5">
+        <p class="text-xs font-semibold text-slate-400 uppercase tracking-widest mb-4">Browse to edit or delete</p>
+        <div class="grid grid-cols-2 gap-4">
+          <div class="field">
+            <label>Category</label>
+            <select id="d-cat" onchange="onDCatChange()">
+              <option value="">All categories</option>
+            </select>
+          </div>
+          <div class="field">
+            <label>Production Line</label>
+            <select id="d-line" onchange="renderDeleteList()">
+              <option value="">All lines</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <!-- List -->
+      <div class="px-6 py-5">
+        <div id="delete-list" class="space-y-2">
+          <p class="text-sm text-slate-400 text-center py-4">Select a category or line above to browse items.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ── Success banner (appears after add) ───────────────────────────────────── -->
+  <div id="success-banner" class="hidden mt-5 bg-green-50 border border-green-200 rounded-2xl px-6 py-5">
+    <div class="flex items-start gap-3">
+      <svg class="w-5 h-5 text-green-500 mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+      </svg>
+      <div>
+        <p class="text-sm font-bold text-green-800" id="success-title">Added successfully</p>
+        <p class="text-xs text-green-700 mt-0.5">Auto-generated ID: <span id="success-id" class="badge bg-green-100 text-green-800"></span></p>
+        <div class="flex gap-3 mt-3">
+          <a id="success-view-link" href="#" target="_blank"
+            class="text-xs font-semibold text-green-700 underline hover:text-green-900">View in catalog ↗</a>
+          <button onclick="dismissSuccess()"
+            class="text-xs text-green-600 hover:text-green-800">Dismiss</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</main>
+
+<!-- ── Server offline banner ──────────────────────────────────────────────────── -->
+<div id="offline-banner" class="hidden fixed inset-0 bg-black/60 z-50 flex items-center justify-center p-6">
+  <div class="bg-white rounded-2xl shadow-2xl max-w-sm w-full p-8 text-center">
+    <div class="w-12 h-12 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4">
+      <svg class="w-6 h-6 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/>
+      </svg>
+    </div>
+    <h2 class="text-base font-bold text-slate-800 mb-2">Server not running</h2>
+    <p class="text-sm text-slate-500 mb-4">Start the server first, then open this page through it.</p>
+    <div class="bg-slate-900 text-green-400 text-xs font-mono rounded-lg px-4 py-3 text-left mb-4">
+      cd confectionery-equipment<br/>
+      node server.js
+    </div>
+    <p class="text-xs text-slate-400">Then visit: <span class="font-mono text-accent">http://localhost:3333/admin-local/</span></p>
+  </div>
+</div>
+
+<!-- ── Edit modal ─────────────────────────────────────────────────────────────── -->
+<div id="edit-overlay" class="hidden fixed inset-0 bg-black/55 z-50 flex items-center justify-center p-4">
+  <div class="bg-white rounded-2xl shadow-2xl w-full max-w-lg max-h-[90vh] overflow-y-auto">
+    <div class="flex items-center justify-between px-6 py-4 border-b border-slate-100">
+      <div>
+        <h2 class="text-base font-bold text-primary">Edit <span id="e-kind">Machine</span></h2>
+        <p class="text-xs text-slate-400 mt-0.5">Update details, replace the image, edit or delete specs.</p>
+      </div>
+      <button type="button" onclick="closeEdit()" class="text-slate-400 hover:text-slate-700 text-2xl leading-none">×</button>
+    </div>
+    <form id="form-edit" novalidate class="px-6 py-5 space-y-4">
+      <div><span class="badge" id="e-id"></span></div>
+      <div class="field">
+        <label>Name <span class="text-red-400">*</span></label>
+        <input type="text" id="e-name"/>
+      </div>
+      <div class="field" id="e-fn-wrap">
+        <label>Function <span class="text-slate-400 font-normal">(one-line: what it does)</span></label>
+        <input type="text" id="e-fn"/>
+      </div>
+      <div id="e-type-wrap" class="hidden">
+        <label class="block text-sm font-medium text-slate-700 mb-2">Type</label>
+        <div class="flex gap-5">
+          <label class="flex items-center gap-2 text-sm cursor-pointer select-none">
+            <input type="radio" name="e-type" value="part" class="accent-accent w-4 h-4"/> Spare Part
+          </label>
+          <label class="flex items-center gap-2 text-sm cursor-pointer select-none">
+            <input type="radio" name="e-type" value="die" class="accent-accent w-4 h-4"/> Die Set
+          </label>
+        </div>
+      </div>
+      <div class="field">
+        <label>Description</label>
+        <textarea id="e-desc" rows="3" class="resize-none"></textarea>
+      </div>
+      <div class="field">
+        <label>Image <span class="text-slate-400 font-normal">(choose a file to replace the current one)</span></label>
+        <div id="e-current-img" class="mb-2"></div>
+        <input type="file" id="e-img" accept="image/*" onchange="previewImg('e-img','e-preview')"/>
+        <div id="e-preview-wrap" class="hidden mt-3">
+          <img id="e-preview" class="h-44 w-full object-cover rounded-xl border border-slate-200" alt="preview"/>
+        </div>
+      </div>
+      <div>
+        <div class="flex items-center justify-between mb-3">
+          <p class="text-xs font-semibold text-slate-400 uppercase tracking-widest">Specifications</p>
+          <button type="button" onclick="addSpec('e-specs')"
+            class="text-xs text-accent font-semibold hover:text-primary transition-colors">+ Add row</button>
+        </div>
+        <div id="e-specs" class="space-y-2"></div>
+      </div>
+      <div class="flex justify-end gap-3 pt-2 border-t border-slate-100">
+        <button type="button" onclick="closeEdit()"
+          class="px-5 py-2 text-sm font-semibold text-slate-500 border border-slate-200 rounded-xl hover:bg-slate-50 transition-colors">Cancel</button>
+        <button type="submit" id="e-submit"
+          class="px-6 py-2 text-sm font-bold bg-primary text-white rounded-xl hover:bg-accent transition-colors">Save Changes</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<!-- ── Toast ─────────────────────────────────────────────────────────────────── -->
+<div id="toast"
+  class="hidden fixed bottom-6 right-6 max-w-xs bg-red-600 text-white text-sm font-semibold px-5 py-3 rounded-xl shadow-xl z-50"></div>
+
+<script>
+// ─── State ────────────────────────────────────────────────────────────────────
+let catalog = null;
+
+// ─── Boot ─────────────────────────────────────────────────────────────────────
+(async () => {
+  try {
+    const res = await fetch('/api/catalog');
+    if (!res.ok) throw new Error('server not responding');
+    catalog = await res.json();
+    setStatus(true);
+    populateCatDropdown('m-cat');
+    populateCatDropdown('p-cat');
+  } catch {
+    setStatus(false);
+    document.getElementById('offline-banner').classList.remove('hidden');
+  }
+})();
+
+function setStatus(ok) {
+  document.getElementById('dot').className       = `w-2 h-2 rounded-full ${ok ? 'bg-green-500' : 'bg-red-400'}`;
+  document.getElementById('dot-label').textContent = ok ? 'connected' : 'offline';
+}
+
+// ─── Tab switching ────────────────────────────────────────────────────────────
+function switchTab(tab) {
+  ['machine','part','delete'].forEach(t => {
+    const btn = document.getElementById(`tab-${t}`);
+    const isActive = t === tab;
+    btn.className = `${isActive ? 'tab-active' : 'tab-inactive'} flex-1 px-4 py-2 rounded-lg text-sm font-semibold transition-colors`;
+    document.getElementById(`panel-${t}`).classList.toggle('hidden', !isActive);
+  });
+  dismissSuccess();
+  if (tab === 'delete' && catalog) {
+    populateCatDropdown('d-cat');
+    renderDeleteList();
+  }
+}
+
+// ─── Dropdown helpers ─────────────────────────────────────────────────────────
+function populateCatDropdown(selId) {
+  const sel = document.getElementById(selId);
+  const prev = sel.value;
+  // Keep only the first placeholder option, then re-add categories
+  while (sel.options.length > 1) sel.remove(1);
+  catalog.categories.forEach(cat => sel.add(new Option(cat.label, cat.id)));
+  if (prev) sel.value = prev;
+}
+
+function onMCatChange() {
+  const catId = document.getElementById('m-cat').value;
+  const lineSel = document.getElementById('m-line');
+  lineSel.innerHTML = '<option value="">Select…</option>';
+  document.getElementById('m-line-info').classList.add('hidden');
+  if (!catId) return;
+  const cat = catalog.categories.find(c => c.id === catId);
+  cat.lines.forEach(l => lineSel.add(new Option(`${l.lineNumber} — ${l.name} (${l.productionRate})`, l.id)));
+}
+
+function onMLineChange() {
+  const lineId = document.getElementById('m-line').value;
+  const info   = document.getElementById('m-line-info');
+  if (!lineId) { info.classList.add('hidden'); return; }
+  const line = findLine(lineId);
+  if (!line) return;
+  info.textContent = `${line.machines.length} machine(s) already in this line. New machine will be #${line.machines.length + 1}.`;
+  info.classList.remove('hidden');
+}
+
+function onPCatChange() {
+  const catId = document.getElementById('p-cat').value;
+  const lineSel = document.getElementById('p-line');
+  lineSel.innerHTML = '<option value="">Select…</option>';
+  document.getElementById('p-machine').innerHTML = '<option value="">Select…</option>';
+  document.getElementById('p-machine-info').classList.add('hidden');
+  if (!catId) return;
+  const cat = catalog.categories.find(c => c.id === catId);
+  cat.lines.forEach(l => lineSel.add(new Option(`${l.lineNumber} — ${l.name}`, l.id)));
+}
+
+function onPLineChange() {
+  const lineId     = document.getElementById('p-line').value;
+  const machineSel = document.getElementById('p-machine');
+  machineSel.innerHTML = '<option value="">Select…</option>';
+  document.getElementById('p-machine-info').classList.add('hidden');
+  if (!lineId) return;
+  const line = findLine(lineId);
+  if (!line) return;
+  line.machines.forEach(m => machineSel.add(new Option(`${m.machineNumber} — ${m.name}`, m.id)));
+}
+
+function onPMachineChange() {
+  const machineId = document.getElementById('p-machine').value;
+  const info      = document.getElementById('p-machine-info');
+  if (!machineId) { info.classList.add('hidden'); return; }
+  const machine = findMachine(machineId);
+  if (!machine) return;
+  const count = (machine.diesAndParts || []).length;
+  info.textContent = `${count} part(s) already attached to this machine.`;
+  info.classList.remove('hidden');
+}
+
+function findLine(lineId) {
+  for (const cat of catalog.categories) {
+    const l = cat.lines.find(l => l.id === lineId);
+    if (l) return l;
+  }
+  return null;
+}
+
+function findMachine(machineId) {
+  for (const cat of catalog.categories) {
+    for (const line of cat.lines) {
+      const m = line.machines.find(m => m.id === machineId);
+      if (m) return m;
+    }
+  }
+  return null;
+}
+
+// ─── Spec rows ────────────────────────────────────────────────────────────────
+function addSpec(containerId) {
+  const container = document.getElementById(containerId);
+  const row = document.createElement('div');
+  row.className = 'spec-row flex gap-2 items-center';
+  row.innerHTML = `
+    <input type="text" placeholder="Key (e.g. Capacity)" class="spec-key"/>
+    <input type="text" placeholder="Value (e.g. 300 L)" class="spec-val"/>
+    <button type="button" onclick="this.closest('.spec-row').remove()"
+      class="w-6 h-6 flex items-center justify-center rounded-full text-slate-300 hover:bg-red-50 hover:text-red-400 transition-colors text-lg leading-none font-bold shrink-0">×</button>`;
+  container.appendChild(row);
+  row.querySelector('.spec-key').focus();
+}
+
+function collectSpecs(containerId) {
+  const obj = {};
+  document.querySelectorAll(`#${containerId} .spec-key`).forEach(k => {
+    const key = k.value.trim();
+    const val = k.nextElementSibling.value.trim();
+    if (key) obj[key] = val;
+  });
+  return JSON.stringify(obj);
+}
+
+// ─── Image preview ────────────────────────────────────────────────────────────
+function previewImg(inputId, previewId) {
+  const file = document.getElementById(inputId).files[0];
+  if (!file) return;
+  const img  = document.getElementById(previewId);
+  img.src    = URL.createObjectURL(file);
+  img.closest('[id$="-wrap"]').classList.remove('hidden');
+}
+
+// ─── Machine form submit ──────────────────────────────────────────────────────
+document.getElementById('form-machine').addEventListener('submit', async e => {
+  e.preventDefault();
+
+  const lineId = document.getElementById('m-line').value;
+  const name   = document.getElementById('m-name').value.trim();
+
+  if (!lineId) return showToast('Please select a production line.');
+  if (!name)   return showToast('Machine name is required.');
+
+  const fd = new FormData();
+  fd.append('lineId',      lineId);
+  fd.append('name',        name);
+  fd.append('fn',          document.getElementById('m-fn').value.trim());
+  fd.append('description', document.getElementById('m-desc').value.trim());
+  fd.append('specs',       collectSpecs('m-specs'));
+
+  const imgFile = document.getElementById('m-img').files[0];
+  if (imgFile) fd.append('image', imgFile);
+
+  await submitForm('/api/add-machine', fd, 'm-submit', 'Add Machine to Catalog',
+    id => {
+      showSuccess(`Machine added to "${findLine(lineId)?.name}"`, id, `product.html?id=${id}`);
+      resetMachineForm();
+      refreshCatalog();
+    }
+  );
+});
+
+// ─── Part form submit ─────────────────────────────────────────────────────────
+document.getElementById('form-part').addEventListener('submit', async e => {
+  e.preventDefault();
+
+  const machineId = document.getElementById('p-machine').value;
+  const name      = document.getElementById('p-name').value.trim();
+
+  if (!machineId) return showToast('Please select a machine.');
+  if (!name)      return showToast('Part name is required.');
+
+  const fd = new FormData();
+  fd.append('machineId',   machineId);
+  fd.append('name',        name);
+  fd.append('type',        document.querySelector('input[name="p-type"]:checked').value);
+  fd.append('description', document.getElementById('p-desc').value.trim());
+  fd.append('specs',       collectSpecs('p-specs'));
+
+  const imgFile = document.getElementById('p-img').files[0];
+  if (imgFile) fd.append('image', imgFile);
+
+  await submitForm('/api/add-part', fd, 'p-submit', 'Add Part to Catalog',
+    id => {
+      showSuccess(`Part added to "${findMachine(machineId)?.name}"`, id, `product.html?id=${id}`);
+      resetPartForm();
+      refreshCatalog();
+    }
+  );
+});
+
+// ─── Generic submit helper ────────────────────────────────────────────────────
+async function submitForm(endpoint, fd, btnId, btnLabel, onSuccess) {
+  const btn = document.getElementById(btnId);
+  btn.disabled    = true;
+  btn.textContent = 'Saving…';
+
+  try {
+    const res  = await fetch(endpoint, { method: 'POST', body: fd });
+    const data = await res.json();
+    if (data.success) {
+      onSuccess(data.id);
+    } else {
+      showToast('Error: ' + data.error);
+    }
+  } catch (err) {
+    showToast('Network error: ' + err.message);
+  } finally {
+    btn.disabled    = false;
+    btn.textContent = btnLabel;
+  }
+}
+
+// ─── Refresh catalog from server after save ───────────────────────────────────
+async function refreshCatalog() {
+  try {
+    const res = await fetch('/api/catalog');
+    catalog = await res.json();
+    // Rebuild category dropdowns fresh
+    const mCat = document.getElementById('m-cat').value;
+    const pCat = document.getElementById('p-cat').value;
+    document.getElementById('m-cat').innerHTML = '<option value="">Select…</option>';
+    document.getElementById('p-cat').innerHTML = '<option value="">Select…</option>';
+    populateCatDropdown('m-cat');
+    populateCatDropdown('p-cat');
+    // Restore selected category and repopulate lines
+    if (mCat) { document.getElementById('m-cat').value = mCat; onMCatChange(); }
+    if (pCat) { document.getElementById('p-cat').value = pCat; onPCatChange(); }
+  } catch { /* ignore */ }
+}
+
+// ─── Success banner ───────────────────────────────────────────────────────────
+function showSuccess(title, id, viewHref) {
+  document.getElementById('success-title').textContent    = title;
+  document.getElementById('success-id').textContent       = id;
+  document.getElementById('success-view-link').href       = `/${viewHref}`;
+  document.getElementById('success-banner').classList.remove('hidden');
+  document.getElementById('success-banner').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+}
+
+function dismissSuccess() {
+  document.getElementById('success-banner').classList.add('hidden');
+}
+
+// ─── Toast ────────────────────────────────────────────────────────────────────
+function showToast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.remove('hidden');
+  clearTimeout(t._timer);
+  t._timer = setTimeout(() => t.classList.add('hidden'), 4500);
+}
+
+// ─── Reset helpers ────────────────────────────────────────────────────────────
+function resetMachineForm() {
+  document.getElementById('form-machine').reset();
+  document.getElementById('m-line').innerHTML = '<option value="">Select…</option>';
+  document.getElementById('m-line-info').classList.add('hidden');
+  document.getElementById('m-specs').innerHTML = '';
+  document.getElementById('m-preview-wrap').classList.add('hidden');
+}
+
+function resetPartForm() {
+  document.getElementById('form-part').reset();
+  document.getElementById('p-line').innerHTML    = '<option value="">Select…</option>';
+  document.getElementById('p-machine').innerHTML = '<option value="">Select…</option>';
+  document.getElementById('p-machine-info').classList.add('hidden');
+  document.getElementById('p-specs').innerHTML   = '';
+  document.getElementById('p-preview-wrap').classList.add('hidden');
+}
+
+// ─── Delete tab ───────────────────────────────────────────────────────────────
+
+function onDCatChange() {
+  const catId  = document.getElementById('d-cat').value;
+  const lineSel = document.getElementById('d-line');
+  lineSel.innerHTML = '<option value="">All lines</option>';
+  if (catId) {
+    const cat = catalog.categories.find(c => c.id === catId);
+    if (cat) cat.lines.forEach(l => lineSel.add(new Option(`${l.lineNumber} — ${l.name}`, l.id)));
+  }
+  renderDeleteList();
+}
+
+function renderDeleteList() {
+  const catId  = document.getElementById('d-cat').value;
+  const lineId = document.getElementById('d-line').value;
+  const container = document.getElementById('delete-list');
+
+  // Collect machines to show
+  let machines = [];
+  for (const cat of catalog.categories) {
+    if (catId && cat.id !== catId) continue;
+    for (const line of cat.lines) {
+      if (lineId && line.id !== lineId) continue;
+      line.machines.forEach(m => machines.push({ ...m, _lineId: line.id, _lineName: line.name, _catLabel: cat.label }));
+    }
+  }
+
+  if (!machines.length) {
+    container.innerHTML = '<p class="text-sm text-slate-400 text-center py-6">No machines found for this selection.</p>';
+    return;
+  }
+
+  container.innerHTML = machines.map(m => {
+    const parts = (m.diesAndParts || []);
+    const partsHtml = parts.length ? `
+      <div class="mt-2 ml-4 space-y-1 border-l-2 border-slate-100 pl-3">
+        ${parts.map(p => `
+          <div class="flex items-center justify-between py-1">
+            <div>
+              <span class="text-xs font-mono text-slate-400">${p.partNumber || p.id}</span>
+              <span class="text-xs text-slate-600 ml-2">${p.name}</span>
+              <span class="text-xs bg-slate-100 text-slate-400 px-1.5 py-0.5 rounded ml-1">${p.type || 'part'}</span>
+            </div>
+            <div class="flex items-center gap-1 shrink-0">
+              <button onclick="openEdit('part','${p.id}')"
+                class="text-xs text-accent hover:bg-blue-50 px-2 py-1 rounded transition-colors font-medium">Edit</button>
+              <button onclick="confirmDelete('part','${p.id}','${escQ(p.name)}')"
+                class="text-xs text-red-400 hover:text-red-600 hover:bg-red-50 px-2 py-1 rounded transition-colors font-medium">Delete</button>
+            </div>
+          </div>`).join('')}
+      </div>` : '';
+
+    return `
+      <div class="border border-slate-200 rounded-xl overflow-hidden" id="row-${m.id}">
+        <div class="flex items-center justify-between px-4 py-3 bg-slate-50">
+          <div class="flex items-center gap-2 min-w-0">
+            <span class="badge shrink-0">${m.machineNumber}</span>
+            <span class="text-sm font-semibold text-slate-700 truncate">${m.name}</span>
+            <span class="text-xs text-slate-400 shrink-0">${parts.length} part${parts.length !== 1 ? 's' : ''}</span>
+          </div>
+          <div class="flex items-center gap-2 shrink-0 ml-3">
+            <button onclick="openEdit('machine','${m.id}')"
+              class="text-xs text-accent hover:text-white hover:bg-accent border border-blue-200 hover:border-accent px-3 py-1.5 rounded-lg transition-colors font-semibold">
+              Edit
+            </button>
+            <button onclick="confirmDelete('machine','${m.id}','${escQ(m.name)}')"
+              class="text-xs text-red-500 hover:text-white hover:bg-red-500 border border-red-200 hover:border-red-500 px-3 py-1.5 rounded-lg transition-colors font-semibold">
+              Delete
+            </button>
+          </div>
+        </div>
+        ${partsHtml}
+      </div>`;
+  }).join('');
+}
+
+function escQ(str) {
+  return (str || '').replace(/'/g, "\\'").replace(/"/g, '&quot;');
+}
+
+async function confirmDelete(type, id, name) {
+  const label = type === 'machine' ? `machine "${name}" and ALL its parts` : `part "${name}"`;
+  if (!confirm(`Delete ${label}?\n\nThis cannot be undone.`)) return;
+
+  try {
+    const res  = await fetch(`/api/${type}/${encodeURIComponent(id)}`, { method: 'DELETE' });
+    const data = await res.json();
+    if (data.success) {
+      // Remove the row from the UI immediately
+      if (type === 'machine') {
+        document.getElementById(`row-${id}`)?.remove();
+      } else {
+        // Re-render the whole list to reflect the removed part
+        await refreshCatalog();
+        renderDeleteList();
+      }
+      // Also refresh catalog data so add-forms stay in sync
+      await refreshCatalog();
+      showToastGreen(`Deleted: ${name}`);
+    } else {
+      showToast('Error: ' + data.error);
+    }
+  } catch (e) {
+    showToast('Network error: ' + e.message);
+  }
+}
+
+// ─── Edit ─────────────────────────────────────────────────────────────────────
+let editing = null; // { type, id }
+
+function findPart(id) {
+  for (const cat of catalog.categories)
+    for (const line of cat.lines)
+      for (const m of line.machines) {
+        const p = (m.diesAndParts || []).find(p => p.id === id);
+        if (p) return p;
+      }
+  return null;
+}
+
+function escAttr(s) {
+  return String(s ?? '').replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/</g, '&lt;');
+}
+
+function makeSpecRow(key = '', val = '') {
+  return `<div class="spec-row flex gap-2 items-center">
+    <input type="text" placeholder="Key (e.g. Capacity)" class="spec-key" value="${escAttr(key)}"/>
+    <input type="text" placeholder="Value (e.g. 300 L)" class="spec-val" value="${escAttr(val)}"/>
+    <button type="button" onclick="this.closest('.spec-row').remove()"
+      class="w-6 h-6 flex items-center justify-center rounded-full text-slate-300 hover:bg-red-50 hover:text-red-400 transition-colors text-lg leading-none font-bold shrink-0">×</button>
+  </div>`;
+}
+
+function openEdit(type, id) {
+  const isM = type === 'machine';
+  const item = isM ? findMachine(id) : findPart(id);
+  if (!item) return showToast('Item not found — refresh and try again.');
+  editing = { type, id };
+
+  document.getElementById('e-kind').textContent = isM ? 'Machine' : 'Die / Part';
+  document.getElementById('e-id').textContent   = isM ? item.machineNumber : (item.partNumber || item.id);
+  document.getElementById('e-name').value        = item.name || '';
+  document.getElementById('e-fn-wrap').classList.toggle('hidden', !isM);
+  document.getElementById('e-fn').value          = item.function || '';
+  document.getElementById('e-type-wrap').classList.toggle('hidden', isM);
+  if (!isM) {
+    const t = item.type || 'part';
+    document.querySelectorAll('input[name="e-type"]').forEach(r => { r.checked = (r.value === t); });
+  }
+  document.getElementById('e-desc').value = item.description || '';
+
+  const cur = document.getElementById('e-current-img');
+  cur.innerHTML = item.image
+    ? `<img src="/${item.image}" class="h-32 rounded-lg border border-slate-200 object-contain bg-white p-1" alt="" onerror="this.outerHTML='<p class=&quot;text-xs text-slate-400&quot;>Current image not found.</p>'"/>`
+    : '<p class="text-xs text-slate-400">No image yet.</p>';
+  document.getElementById('e-img').value = '';
+  document.getElementById('e-preview-wrap').classList.add('hidden');
+
+  const specs = item.specs || {};
+  document.getElementById('e-specs').innerHTML =
+    Object.keys(specs).length ? Object.entries(specs).map(([k, v]) => makeSpecRow(k, v)).join('') : '';
+
+  document.getElementById('edit-overlay').classList.remove('hidden');
+}
+
+function closeEdit() {
+  document.getElementById('edit-overlay').classList.add('hidden');
+  editing = null;
+}
+
+document.getElementById('form-edit').addEventListener('submit', async e => {
+  e.preventDefault();
+  if (!editing) return;
+  const { type, id } = editing;
+  const isM = type === 'machine';
+
+  const name = document.getElementById('e-name').value.trim();
+  if (!name) return showToast('Name is required.');
+
+  const fd = new FormData();
+  fd.append('name',        name);
+  fd.append('description', document.getElementById('e-desc').value.trim());
+  fd.append('specs',       collectSpecs('e-specs'));
+  if (isM) fd.append('fn',   document.getElementById('e-fn').value.trim());
+  else     fd.append('type', document.querySelector('input[name="e-type"]:checked').value);
+
+  const imgFile = document.getElementById('e-img').files[0];
+  if (imgFile) fd.append('image', imgFile);
+
+  const btn = document.getElementById('e-submit');
+  btn.disabled = true; btn.textContent = 'Saving…';
+  try {
+    const res  = await fetch(`/api/${type}/${encodeURIComponent(id)}`, { method: 'PUT', body: fd });
+    const data = await res.json();
+    if (data.success) {
+      closeEdit();
+      await refreshCatalog();
+      renderDeleteList();
+      showToastGreen(`Updated: ${name}`);
+    } else {
+      showToast('Error: ' + data.error);
+    }
+  } catch (err) {
+    showToast('Network error: ' + err.message);
+  } finally {
+    btn.disabled = false; btn.textContent = 'Save Changes';
+  }
+});
+
+function showToastGreen(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.className = 'fixed bottom-6 right-6 max-w-xs bg-green-600 text-white text-sm font-semibold px-5 py-3 rounded-xl shadow-xl z-50';
+  clearTimeout(t._timer);
+  t._timer = setTimeout(() => { t.className = t.className.replace('bg-green-600','bg-red-600'); t.classList.add('hidden'); }, 3500);
+}
+</script>
+</body>
+</html>

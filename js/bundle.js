@@ -392,7 +392,7 @@ function renderSearchDropdown(results, dropdown) {
   dropdown.innerHTML = results.map(r => {
     const typeLabel = r.type === 'line' ? 'Line' : r.type === 'machine' ? 'Machine' : 'Die / Part';
     const num = r.item.lineNumber || r.item.machineNumber || r.item.partNumber || r.item.id;
-    const model = r.type === 'line' ? '' : (r.item.model || 'SEW-XYZ');
+    const model = r.type === 'line' ? '' : (r.item.model || '');
     return `<a href="${resultHref(r)}" class="search-result-item">
       <span class="result-type type-${r.type === 'die-part' ? 'die-part' : r.type}">${typeLabel}</span>
       <span class="result-number">${num}${model ? `<span class="result-model"> · ${model}</span>` : ''}</span>
@@ -562,8 +562,8 @@ function buildHomeCategoryCard(cat, i = 0) {
 // Home hero intro, themed on how candy is made: the first two headline lines
 // come in like rope through a rope sizer (stretched, then squeezed to size),
 // and "Custom Parts." fills like a candy mould (outline first, then the colour
-// rises from the bottom). The text, buttons and stats follow and the stats
-// count up. Plays once; without JS or with reduced motion the hero is static.
+// rises from the bottom). The text and buttons follow. Plays once; without JS
+// or with reduced motion the hero is static.
 function initHeroMotion() {
   const hero = document.getElementById('hero');
   if (!hero || matchMedia('(prefers-reduced-motion: reduce)').matches) return;
@@ -591,28 +591,10 @@ function initHeroMotion() {
     [hero.querySelector('.hero-lead'), after - 0.6],
     [hero.querySelector('.hero-typing-badge'), after - 0.45],
     [hero.querySelector('.flex.flex-wrap.gap-4'), after - 0.3],
-    [hero.querySelector('.hero-stats'), after - 0.15],
   ];
   seq.forEach(([el, d]) => { if (el) { el.classList.add('hero-in'); el.style.setProperty('--d', Math.max(0, d) + 's'); } });
   hero.classList.add('hero-motion');
 
-  // stats count up once they are in
-  setTimeout(() => {
-    hero.querySelectorAll('.hero-stats .text-3xl').forEach(el => {
-      const t = el.firstChild;
-      if (!t || t.nodeType !== 3) return;
-      const to = parseInt(t.textContent.replace(/[^0-9]/g, ''), 10);
-      if (!to) return;
-      const t0 = performance.now(), dur = 1400;
-      const step = now => {
-        const p = Math.min(1, (now - t0) / dur), e = 1 - Math.pow(1 - p, 3);
-        t.textContent = Math.round(to * e).toLocaleString('en-US');
-        if (p < 1) requestAnimationFrame(step);
-      };
-      t.textContent = '0';
-      requestAnimationFrame(step);
-    });
-  }, after * 1000);
 }
 
 // Hero buttons: tag them for their CSS. They never move; attention comes from
@@ -861,7 +843,7 @@ function initCatalogPage(catalog) {
     catGrid.innerHTML = getCategories(catalog).map((cat, i) => `
       <button class="cat-photo-btn" data-cat-id="${cat.id}" style="--i:${i}">
         <div class="cat-photo-btn-inner">
-          <img src="${CAT_IMAGES[cat.id] || ''}" alt="" loading="lazy" onerror="this.style.opacity='0'"/>
+          <img src="${CAT_IMAGES[cat.id] || ''}" alt="" aria-hidden="true" loading="lazy" onerror="this.style.opacity='0'"/>
           <span class="cat-photo-btn-shine" aria-hidden="true"></span>
           <div class="cat-photo-btn-overlay" style="background:linear-gradient(to top, ${cat.color}cc 0%, ${cat.color}59 46%, ${cat.color}00 80%), linear-gradient(to top, rgba(8,15,30,0.82) 0%, rgba(8,15,30,0.22) 42%, transparent 72%)"></div>
           <div class="cat-photo-btn-label">
@@ -1000,7 +982,7 @@ function buildMachineCard(machine, cat) {
     <div class="p-5">
       <div class="flex items-center gap-2 mb-2 flex-wrap">
         <span class="font-mono text-xs bg-blue-50 text-blue-600 px-2 py-0.5 rounded font-bold">${machine.machineNumber}</span>
-        <span class="font-mono text-xs bg-slate-100 text-slate-600 px-2 py-0.5 rounded font-bold">${machine.model || 'SEW-XYZ'}</span>
+        ${machine.model ? `<span class="font-mono text-xs bg-slate-100 text-slate-600 px-2 py-0.5 rounded font-bold">${machine.model}</span>` : ''}
         ${inCart ? '<span class="text-xs text-green-600 font-semibold">✓ In Quote</span>' : ''}
       </div>
       <h3 class="font-bold text-slate-800 text-sm mb-3 leading-snug">${machine.name}</h3>
@@ -1167,6 +1149,26 @@ function initLinePage(catalog) {
   notFound?.classList.add('hidden'); wrapper?.classList.remove('hidden');
   const cat = getCategoryById(catalog, line.categoryId);
   document.title = `${line.name} — Starmer Global`;
+  {
+    const ms = (line.machines || []).slice().sort((a, b) => a.orderInLine - b.orderInLine);
+    const desc = line.description ||
+      `${line.name} by Starmer Global: ${ms.length} machines from ${ms[0]?.name || 'cooking'} to ${ms[ms.length - 1]?.name || 'wrapping'}.`;
+    setPageSEO({
+      title: `${line.name}${/\d/.test(line.productionRate || '') && !/kg/i.test(line.name) ? ` (${line.productionRate})` : ''} | ${cat?.label || 'Confectionery'} | Starmer Global`,
+      description: desc,
+      path: `/line.html?id=${encodeURIComponent(line.id)}`,
+      image: `/assets/images/lines/${line.id}.jpg`,
+      crumbs: [['Home', '/'], [cat?.label || 'Equipment', `/catalog.html?category=${line.categoryId}`], [line.name]],
+      product: {
+        name: line.name, description: desc, sku: line.lineNumber || line.id,
+        category: cat?.label,
+        additionalProperty: [
+          line.productionRate && { '@type': 'PropertyValue', name: 'Production rate', value: line.productionRate },
+          { '@type': 'PropertyValue', name: 'Machines in line', value: String(ms.length) },
+        ].filter(Boolean),
+      },
+    });
+  }
   setEl('bc-category', cat?.label || '');
   setEl('bc-line', line.name);
   setAttr('bc-cat-link', 'href', `catalog.html?category=${line.categoryId}`);
@@ -1275,7 +1277,7 @@ function renderPipeline(catalog, line, cat) {
       <div class="pipeline-machine-img"><img src="${img}" alt="${m.name}" loading="lazy"/></div>
       <div class="pipeline-machine-body">
         <div class="pipeline-order">Step ${m.orderInLine}</div>
-        <div class="pipeline-machine-num">${m.machineNumber} · ${m.model || 'SEW-XYZ'}</div>
+        <div class="pipeline-machine-num">${m.machineNumber}${m.model ? ` · ${m.model}` : ''}</div>
         <div class="pipeline-machine-name">${m.name}</div>
         <div class="pipeline-machine-actions">
           <a href="product.html?id=${m.id}" class="text-xs font-semibold text-blue-600 border border-blue-500 px-2 py-1 rounded-md hover:bg-blue-600 hover:text-white transition-colors">Details</a>
@@ -1310,6 +1312,57 @@ function startPipelineMotion(track) {
   io.observe(scroller);
 }
 
+// ── Page SEO for catalog-driven pages ─────────────────────────────────────────
+// line.html and product.html are one template each, filled from the catalog,
+// so their SEO is set here per line / machine: title, description, canonical,
+// link-preview tags and structured data (Product + breadcrumbs) that Google
+// reads after running the page. Static pages get theirs from
+// scripts/build_seo.py.
+const SEO_SITE = 'https://www.starmerglobal.com';
+function setPageSEO({ title, description, path, image, crumbs, product }) {
+  const abs = p => (/^https?:/.test(p) ? p : SEO_SITE + (p.startsWith('/') ? '' : '/') + p);
+  const meta = (attr, key, value) => {
+    if (!value) return;
+    let el = document.head.querySelector(`meta[${attr}="${key}"]`);
+    if (!el) { el = document.createElement('meta'); el.setAttribute(attr, key); document.head.append(el); }
+    el.setAttribute('content', value);
+  };
+  const desc = String(description || '').replace(/\s+/g, ' ').trim();
+  const short = desc.length > 158 ? desc.slice(0, 155).replace(/\s+\S*$/, '') + '…' : desc;
+  const url = abs(path);
+  const img = image ? abs(encodeURI(image)) : abs('/assets/images/og-image.jpg');
+  if (title) document.title = title;
+  meta('name', 'description', short);
+  meta('property', 'og:title', title);
+  meta('property', 'og:description', short);
+  meta('property', 'og:url', url);
+  meta('property', 'og:image', img);
+  meta('property', 'og:type', product ? 'product' : 'website');
+  meta('name', 'twitter:title', title);
+  meta('name', 'twitter:description', short);
+  meta('name', 'twitter:image', img);
+  let canon = document.head.querySelector('link[rel="canonical"]');
+  if (!canon) { canon = document.createElement('link'); canon.rel = 'canonical'; document.head.append(canon); }
+  canon.href = url;
+
+  const graph = [];
+  if (product) graph.push({
+    '@type': 'Product', ...product, url, image: img,
+    brand: { '@type': 'Brand', name: 'Starmer Global' },
+    manufacturer: { '@type': 'Organization', name: 'Starmer Global', url: SEO_SITE + '/' },
+  });
+  if (crumbs?.length) graph.push({
+    '@type': 'BreadcrumbList',
+    itemListElement: crumbs.map(([name, href], i) => ({
+      '@type': 'ListItem', position: i + 1, name, ...(href ? { item: abs(href) } : { item: url }),
+    })),
+  });
+  if (!graph.length) return;
+  let ld = document.getElementById('page-jsonld');
+  if (!ld) { ld = document.createElement('script'); ld.type = 'application/ld+json'; ld.id = 'page-jsonld'; document.head.append(ld); }
+  ld.textContent = JSON.stringify({ '@context': 'https://schema.org', '@graph': graph });
+}
+
 // ── Product / Machine detail ──────────────────────────────────────────────────
 function initProductPage(catalog) {
   const params = new URLSearchParams(window.location.search);
@@ -1323,6 +1376,28 @@ function initProductPage(catalog) {
   notFound?.classList.add('hidden'); wrapper?.classList.remove('hidden');
   const cat = getCategoryById(catalog, item.categoryId);
   document.title = `${item.name} — Starmer Global`;
+  {
+    const parentLine = machine ? getLineById(catalog, machine.lineId) : null;
+    const specs = Object.entries(item.specs || {}).filter(([k]) => k !== 'modelNumber');
+    const desc = (item.description || item.function ||
+      `${item.name} by Starmer Global with full technical specifications.`).slice(0, 300);
+    setPageSEO({
+      title: `${item.name}${item.model ? ` ${item.model}` : ''}${parentLine ? ` | ${parentLine.name}` : ''} | Starmer Global`,
+      description: desc,
+      path: `/product.html?id=${encodeURIComponent(item.id)}`,
+      image: item.image && !/coming-soon/.test(item.image) ? '/' + item.image : null,
+      crumbs: [['Home', '/'], [cat?.label || 'Equipment', `/catalog.html?category=${item.categoryId}`],
+               ...(parentLine ? [[parentLine.name, `/line.html?id=${parentLine.id}`]] : []), [item.name]],
+      product: {
+        name: item.name, description: desc,
+        sku: item.machineNumber || item.partNumber || item.id,
+        mpn: item.model || undefined,
+        category: cat?.label,
+        additionalProperty: specs.slice(0, 12).map(([k, v]) =>
+          ({ '@type': 'PropertyValue', name: formatSpecKey(k), value: String(v) })),
+      },
+    });
+  }
 
   // Hero banner
   const heroBanner = document.getElementById('product-hero-banner');
@@ -1333,7 +1408,7 @@ function initProductPage(catalog) {
     heroBanner.classList.remove('hidden');
     heroBanner.innerHTML = `
       <div style="background:${bgGrad};padding:5.5rem 0 2rem;position:relative;overflow:hidden;">
-        ${bgImg ? `<img src="${bgImg}" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0.12;" loading="lazy" onerror="this.style.display='none'"/>` : ''}
+        ${bgImg ? `<img src="${bgImg}" alt="" aria-hidden="true" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0.12;" loading="lazy" onerror="this.style.display='none'"/>` : ''}
         <div style="position:absolute;inset:0;background:linear-gradient(to right,rgba(0,0,0,0.3) 0%,transparent 70%);"></div>
         <div class="max-w-7xl mx-auto px-6" style="position:relative;">
           <div style="color:rgba(255,255,255,0.5);font-size:0.68rem;font-family:monospace;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;margin-bottom:0.5rem;">${machine ? machine.machineNumber : (diePart?.partNumber || '')} &nbsp;&middot;&nbsp; ${cat?.label || ''}</div>
@@ -1363,11 +1438,15 @@ function initProductPage(catalog) {
     imgContainer.innerHTML = `<img src="${src}" alt="${item.name}" class="w-full h-full object-contain rounded-2xl"/>`;
   }
   const pNum = machine ? machine.machineNumber : diePart?.partNumber;
-  const modelNum = (machine ? machine.model : diePart?.model) || 'SEW-XYZ';
+  const modelNum = (machine ? machine.model : diePart?.model) || '';
   setEl('detail-part-number', pNum);
   setEl('chip-part-num', pNum);
   setEl('detail-model', modelNum);
   setEl('chip-model', modelNum);
+  // no model number: hide its badges rather than show a placeholder
+  if (!modelNum) ['detail-model', 'chip-model'].forEach(id => {
+    const el = document.getElementById(id); if (el) el.style.display = 'none';
+  });
   setEl('detail-name', item.name);
   setEl('detail-function', machine ? machine.function : (diePart ? `Type: ${diePart.type}` : ''));
   setEl('detail-description', item.description);
@@ -1592,7 +1671,7 @@ function buildDiePartCard(dp, cat) {
     <div class="p-4">
       <div class="flex items-center gap-2 mb-2">
         <span class="font-mono text-xs text-blue-600 bg-blue-50 px-2 py-0.5 rounded font-bold">${dp.partNumber}</span>
-        <span class="font-mono text-xs bg-slate-100 text-slate-600 px-2 py-0.5 rounded font-bold">${dp.model || 'SEW-XYZ'}</span>
+        ${dp.model ? `<span class="font-mono text-xs bg-slate-100 text-slate-600 px-2 py-0.5 rounded font-bold">${dp.model}</span>` : ''}
         <span class="part-type-badge type-${dp.type}">${dp.type === 'die' ? 'Die' : 'Part'}</span>
       </div>
       <p class="text-sm font-semibold text-slate-700 mb-3 leading-snug">${dp.name}</p>
@@ -1650,7 +1729,7 @@ function initDiesPage(catalog) {
         <div class="p-5">
           <div class="flex items-center gap-2 mb-2 flex-wrap">
             <span class="font-mono text-xs bg-blue-50 text-blue-600 px-2 py-0.5 rounded font-bold">${dp.partNumber}</span>
-            <span class="font-mono text-xs bg-slate-100 text-slate-600 px-2 py-0.5 rounded font-bold">${dp.model || 'SEW-XYZ'}</span>
+            ${dp.model ? `<span class="font-mono text-xs bg-slate-100 text-slate-600 px-2 py-0.5 rounded font-bold">${dp.model}</span>` : ''}
             <span class="part-type-badge type-${dp.type}">${dp.type === 'die' ? 'Die' : 'Part'}</span>
           </div>
           <h3 class="font-bold text-slate-800 text-sm mb-3 leading-snug">${dp.name}</h3>
