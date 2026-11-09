@@ -1,15 +1,9 @@
 #!/usr/bin/env python3
 """
-Build the "complete line" header image for every production line.
+Makes the header image for each line page: the machines of the line side by side.
+Saved as assets/images/lines/<line-id>.jpg
 
-For each line in data/catalog.json this lines up the line's main process
-machines (cooker -> forming -> cooling -> wrapping) from their own photos,
-side by side on a light studio background, and writes
-assets/images/lines/<line-id>.jpg. The line page shows it blurred and faded
-behind the title, so each page reads as "this whole line".
-
-Utility units (tanks, steam, AC, dies, stands, pumps) are left out so the
-main machines stay large enough to recognise.
+Dies, stands, AC units and small pumps are left out.
 
     python scripts/build_line_headers.py
 """
@@ -23,22 +17,23 @@ from PIL import Image
 
 CATALOG = Path("data/catalog.json")
 OUT = Path("assets/images/lines")
-W, H = 2400, 600            # 4:1, close to the header's shape on desktop
-SIDE = 70                   # left/right margin
-GAP = 12                    # space between machines (they read as one line)
+W, H = 2400, 600            # image size
+SIDE = 70                   # left/right space
+GAP = 12                    # space between machines
 
-# Not drawn: supporting units that would shrink the main machines.
+# machines we don't show
 SKIP = re.compile(
-    r"glucose|steam|\bac\b|ac unit|cooling ac|vacuum pump|die stand|rotary|"
+    r"\bac\b|ac unit|cooling ac|vacuum pump|die stand|rotary|"
     r"\bdie\b|dies\b|trolly|filling (liquid )?pump|liquid filling|powder|"
-    r"storage tank|rest table|header|reference mold|small candy die|plungers",
+    r"storage tank|rest table|reference mold|small candy die|plungers",
     re.I)
 
-# Rough real-world height of each machine type, relative to the tallest.
+# rough height of each machine (1.0 = tallest)
 HEIGHT = [
     (r"cooker", 1.0), (r"uniplast|forming|former|plant", 0.95),
     (r"wrap|packing", 0.9), (r"mixer|heating cabinet|grinder", 0.85),
-    (r"pulling|kneading|coating", 0.8), (r"dissolving|tank", 0.9),
+    (r"pulling|kneading|coating", 0.8), (r"glucose", 1.0),
+    (r"steam generator", 0.85), (r"steam header", 0.4), (r"dissolving|tank", 0.9),
     (r"batch roller", 0.72), (r"extruder", 0.7), (r"rope sizer", 0.66),
     (r"tunnel|conveyor", 0.6), (r"table", 0.6), (r"vibrat", 0.55),
 ]
@@ -52,16 +47,15 @@ def rel_height(name: str) -> float:
 
 
 def clean(a: np.ndarray, frame: bool) -> np.ndarray:
-    """White-out the photo backdrop and the thin frame lines baked into it."""
-    a = np.clip(a.astype(np.float32) * (255 / 238), 0, 255)   # light grey -> white
+    """make the background white and remove the thin frame lines in the photos"""
+    a = np.clip(a.astype(np.float32) * (255 / 238), 0, 255)   # grey to white
     if frame:
         dark = a.min(axis=2) < 215
         row, col = dark.mean(axis=1), dark.mean(axis=0)
         for frac, axis in ((row, 0), (col, 1)):
             n = len(frac)
             for i in range(6, n - 6):
-                # long AND thin: much darker than 6px either side (a machine
-                # body is dark on its neighbours too, so it is kept)
+                # a thin dark line = frame line, remove it
                 if frac[i] > 0.35 and frac[i] - max(frac[i - 6], frac[i + 6]) > 0.3:
                     sl = slice(max(0, i - 2), i + 3)
                     if axis == 0:
@@ -72,7 +66,7 @@ def clean(a: np.ndarray, frame: bool) -> np.ndarray:
 
 
 def content_box(a: np.ndarray, frame: bool):
-    """Bounding box of the machine, ignoring the nameplate badge (top right)."""
+    """box around the machine (without the nameplate)"""
     h, w = a.shape[:2]
     mask = a.min(axis=2) < 228
     if frame:
@@ -99,18 +93,19 @@ def tile(path: str, height_px: int) -> Image.Image:
 def build(line) -> Image.Image | None:
     picks = [m for m in line["machines"]
              if m.get("image") and Path(m["image"]).is_file()
+             and Path(m["image"]).suffix.lower() != ".svg"      # skip coming-soon image
              and not SKIP.search(m["name"])]
     if len(picks) < 3:
         return None
     ref = 400
     tiles = [tile(m["image"], round(ref * rel_height(m["name"]))) for m in picks]
     row_w = sum(t.width for t in tiles) + GAP * (len(tiles) - 1)
-    k = min((W - 2 * SIDE) / row_w, (H * 0.78) / ref)        # fit width and height
+    k = min((W - 2 * SIDE) / row_w, (H * 0.78) / ref)        # fit in the image
     tiles = [t.resize((max(1, round(t.width * k)), max(1, round(t.height * k))),
                       Image.LANCZOS) for t in tiles]
     row_w = sum(t.width for t in tiles) + round(GAP * k) * (len(tiles) - 1)
 
-    # light studio grey, a touch lighter at the top
+    # light grey background
     grad = np.linspace(238, 216, H, dtype=np.float32)[:, None, None]
     canvas = np.broadcast_to(grad, (H, W, 3)).copy()
     tallest = max(t.height for t in tiles)
@@ -118,7 +113,7 @@ def build(line) -> Image.Image | None:
     x = (W - row_w) // 2
     for t in tiles:
         y = base - t.height
-        # multiply blend: the photo's white backdrop vanishes, shadows stay
+        # multiply so the white background of the photo disappears
         canvas[y:y + t.height, x:x + t.width] *= np.asarray(t, np.float32) / 255
         x += t.width + round(GAP * k)
     return Image.fromarray(canvas.clip(0, 255).astype(np.uint8))

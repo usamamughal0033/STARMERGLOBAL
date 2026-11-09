@@ -299,8 +299,7 @@ machines:
     spreader and spreader-box drives, Teflon-coated food-grade belt, grease
     lubrication, D2 pressure cams, S.G.R iron reverse cams and high-carbon-steel
     sizer sets and gears; up to 1000 kg/hr.
-  # Uniplast photo (the old "Uniplast 160-C.jpg" showed a different machine)
-  image: assets/STARMER/_ready/HARD CANDY/Complete Candy line 450Kg_Hr/Uniplast 160-A.jpg
+  image: assets/STARMER/_ready/HARD CANDY/Complete Candy Line 1000kg_hr/Uniplast 160-C.jpg
   specs:
     # tallied with the Toffee 800 kg/hr Uniplast (client), except speed
     capacity: Up to 1000 kg/hr
@@ -375,7 +374,7 @@ machines:
     controls: Electric panel with all new features, variable-speed inverter
     dimension: 20 ft x 3 ft x 8 ft   # CHECK (handwritten)
     powerLoad: 6 hp   # CHECK (handwritten)
-- name: Cooling AC Unit
+- name: AC Unit (20 Ton)
   model: SEW-220
   function: >-
     Roof-type air-conditioning unit (20 ton / 25 HP) for cooling the tunnel

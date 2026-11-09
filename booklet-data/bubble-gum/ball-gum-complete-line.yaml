@@ -113,8 +113,8 @@ machines:
   description: >-
     White food-grade belt on a heavy 14 gauge M.S pipe structure, fully covered with
     stainless steel sheet, with 3-fan air system and variable inverter speed control.
-  # single-step cooling conveyor photo (the rest-conveyor photo was the wrong machine)
-  image: assets/STARMER/_ready/BUBBLE GUM/Bazuka Bubble Gum Line_/Bazooka Bubble Conveyor .jpg
+  # no correct photo yet: placeholder until the client supplies one
+  image: assets/images/coming-soon.svg
   specs:
     function: All types of bubble gum
     beltSize: 660 mm x 4875 mm (W x L)

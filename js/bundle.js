@@ -1,4 +1,4 @@
-// ── Cart ─────────────────────────────────────────────────────────────────────
+// cart
 const CART_KEY = 'sg-rfq-cart';
 
 function _readCart() {
@@ -27,6 +27,18 @@ function updateQuantity(id, quantity) {
   if (idx >= 0) { cart[idx].quantity = Math.max(1, quantity); _writeCart(cart); syncBadge(); _dispatch(); }
 }
 function clearCart() { _writeCart([]); syncBadge(); _dispatch(); }
+
+// after add to quote: save the current page and go to the quote page
+const QUOTE_RETURN_KEY = 'sg-quote-return';
+function goToQuote() {
+  try { sessionStorage.setItem(QUOTE_RETURN_KEY, location.pathname.split('/').pop() + location.search + location.hash); } catch {}
+  setTimeout(() => { location.href = 'quote.html'; }, 600);   // small delay so the button shows Added
+}
+function quoteReturnUrl() {
+  let u = '';
+  try { u = sessionStorage.getItem(QUOTE_RETURN_KEY) || ''; } catch {}
+  return /^[\w-]+\.html(\?[^#]*)?(#.*)?$/.test(u) && !/^quote\.html/.test(u) ? u : 'catalog.html';
+}
 function syncBadge() {
   const count = _readCart().length;
   document.querySelectorAll('[data-rfq-badge]').forEach(el => {
@@ -35,7 +47,7 @@ function syncBadge() {
   });
 }
 
-// ── Data Loader ───────────────────────────────────────────────────────────────
+// data
 let _catalog = null;
 
 async function loadCatalog() {
@@ -110,7 +122,7 @@ function scoreItem(q, fields) {
   return s;
 }
 
-// ── Image pools (real industrial photos from Unsplash) ────────────────────
+// image pools
 const MACHINE_IMG_POOL = [
   'https://images.unsplash.com/photo-1565514928093-9ea92a2ae1c7?w=520&auto=format&q=78',
   'https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=520&auto=format&q=78',
@@ -144,23 +156,21 @@ function getImageSrc(imagePath, fallbackColor, label, type) {
   return pool[_simpleHash(label || type || 'x') % pool.length];
 }
 
-// ── Category gallery ──────────────────────────────────────────────────────────
-// A 3-up coverflow above the line picker: centre focused, flanks dimmed, auto-
-// advancing. Images come from the category's OWN machine photos (spread across
-// its lines) so it stays in sync with the catalog and needs no extra assets.
-const GALLERY_MS = 3000;   // one step every 3s (1.1s glide + rest)
+// category gallery (3 images, middle one big, moves every 3s)
+const GALLERY_MS = 3000;
 const GALLERY_BASE = 'assets/images/gallery/';
-const GALLERY_MIN_RING = 5; // short lists repeat so the ring always rolls one way
+const GALLERY_MIN_RING = 5; // repeat short lists so it can keep going round
 
-// The confectionery each category produces — product renders from
-// "assets/images/NEW RENDERS", cropped to 16:9 JPGs. Each gallery opens with
-// the category's MAIN render (the same shot as its category card).
+// product images for each category (first one is the main image)
 const CATEGORY_GALLERY = {
-  // client: no multi-colour swirl or grape-shaped candy in this set
+  // client asked to remove swirl and grape candy images
   'hard-candy': [
     ['render-10-main.jpg', 'Hard Boiled Candy'],
     ['render-11.jpg', 'Assorted Hard Candy'],
     ['render-12.jpg', 'Fruit-Shaped Hard Candy'],
+    ['03-liquid-centre-filled-candy.jpg', 'Liquid Centre-Filled Candy'],
+    ['05-powder-centre-filled-candy.jpg', 'Powder Centre-Filled Candy'],
+    ['06-bubble-gum-filled-candy.jpg', 'Bubble Gum-Filled Candy'],
   ],
   'lollipop': [
     ['render-00-main.jpg', 'Assorted Lollipops'],
@@ -169,11 +179,10 @@ const CATEGORY_GALLERY = {
     ['render-03.jpg', 'Ball Lollipops'],
   ],
   'bubble-gum': [
-    ['render-10-main.jpg', 'Stick & Pellet Gum'],
     ['render-01.jpg', 'Ball Gum'],
     ['render-02.jpg', 'Bazooka Bubble Gum'],
     ['render-03.jpg', 'Centre-Filled Bubble Gum'],
-    ['render-04.jpg', 'Trigum'],
+    ['render-04.jpg', 'Pop Bubble'],
     ['render-05.jpg', 'Coated Pellet Gum'],
   ],
   'chew-toffee': [
@@ -203,9 +212,7 @@ function buildCategoryGallery(mount, cat) {
   if (!mount) return;
   const items = galleryItems(cat);
   if (items.length < 3) { mount.innerHTML = ''; return; }
-  // The ring needs spare slides parked off-stage on both sides, otherwise a
-  // slide has to jump across the centre. Repeat short lists to fill it; the
-  // dots still show only the real images.
+  // need extra slides on both sides so the loop works, so repeat short lists
   let ring = items;
   while (ring.length < GALLERY_MIN_RING) ring = ring.concat(items);
 
@@ -213,8 +220,7 @@ function buildCategoryGallery(mount, cat) {
     stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
     <path d="${d}"/></svg>`;
 
-  // Tint the panel and controls with the category's own colour. 8-digit hex
-  // alpha keeps it a faint wash over the page rather than a solid block.
+  // light category colour for the background
   const c = cat.color || '#334155';
   const tint = `--gal-c:${c};--gal-bg1:${c}08;--gal-bg2:${c}14;` +
                `--gal-bd:${c}24;--gal-nav-bd:${c}33;--gal-dot:${c}40;`;
@@ -245,13 +251,13 @@ function buildCategoryGallery(mount, cat) {
 
   function render() {
     slides.forEach((el, i) => {
-      // shortest signed distance around the ring
+      // distance from the current slide (going round)
       let d = (i - active + n) % n;
       if (d > n / 2) d -= n;
       el.classList.toggle('is-active', d === 0);
       el.classList.toggle('is-prev', d === -1);
       el.classList.toggle('is-next', d === 1);
-      // everything else waits off-stage on the side it will leave / enter from
+      // others wait at the side
       el.classList.toggle('is-gone', d < -1);
     });
     dots.forEach((el, i) => el.classList.toggle('is-on', i === active % real));
@@ -260,7 +266,7 @@ function buildCategoryGallery(mount, cat) {
   const go = i => { active = ((i % n) + n) % n; render(); };
   const start = () => { stop(); timer = setInterval(() => go(active + 1), GALLERY_MS); };
   const stop = () => { if (timer) { clearInterval(timer); timer = null; } };
-  // jump to the nearest ring copy of a real image, so a dot click glides
+  // dot click: go to the closest copy of that image
   const goReal = r => {
     let best = active, bestD = Infinity;
     for (let i = r; i < n; i += real) {
@@ -275,37 +281,114 @@ function buildCategoryGallery(mount, cat) {
   dots.forEach(d => d.addEventListener('click', () => { goReal(+d.dataset.i); start(); }));
   slides.forEach(s => s.addEventListener('click', () => { go(+s.dataset.i); start(); }));
 
-  // pause only while the tab is hidden; no hover pause, because the gallery
-  // opens right under the pointer that clicked the category and would sit still
+  // pause when the tab is hidden
   const onVis = () => document.hidden ? stop() : start();
   document.addEventListener('visibilitychange', onVis);
 
-  render();                      // place slides without animating (is-init)…
+  render();
   requestAnimationFrame(() => requestAnimationFrame(() => root.classList.remove('is-init')));
-  start();                       // …then roll from the moment the page shows
+  start();
 
-  // tear down cleanly when another category is picked, or the listener and
-  // its timer leak and several galleries end up fighting over the same mount
+  // stop the old timer when another category is opened
   mount._stopGallery = () => {
     stop();
     document.removeEventListener('visibilitychange', onVis);
   };
 }
 
-// ── App ───────────────────────────────────────────────────────────────────────
+// app
 const PAGE = document.body.dataset.page;
 
-// Every page opens at the top. Browsers otherwise restore the last scroll
-// position on reload/back, which lands mid-page once the JS content renders.
-// Links to a section (#about) still jump to that section.
+// scroll position: new page opens at top, back/forward goes to where you were.
+// pages are built with JS so we save and restore the position ourselves.
 if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
-if (!location.hash) window.scrollTo(0, 0);
+const NAV_TYPE = performance.getEntriesByType?.('navigation')?.[0]?.type || 'navigate';
+const SCROLL_KEY = () => 'sg-scroll:' + location.pathname + location.search;
+if (!location.hash && NAV_TYPE !== 'back_forward') window.scrollTo(0, 0);
+window.addEventListener('pagehide', () => {
+  try { sessionStorage.setItem(SCROLL_KEY(), String(Math.round(window.scrollY))); } catch {}
+});
+function restoreScrollOnReturn() {
+  if (NAV_TYPE !== 'back_forward' || location.hash) return;
+  let y = 0;
+  try { y = +sessionStorage.getItem(SCROLL_KEY()) || 0; } catch {}
+  if (!y) return;
+  // run twice because images can still change the height
+  requestAnimationFrame(() => window.scrollTo(0, y));
+  setTimeout(() => window.scrollTo(0, y), 350);
+}
+
+// back button (all pages except home)
+// goes back in history if we came from our own site, otherwise to the parent page
+function backParentUrl(catalog) {
+  const q = new URLSearchParams(location.search);
+  const id = q.get('id') || '';
+  const catOfLine = lineId => catalog.categories.find(c => c.lines.some(l => l.id === lineId));
+  switch (PAGE) {
+    case 'product': {
+      const m = getMachineById(catalog, id);
+      if (m) return `line.html?id=${encodeURIComponent(m.lineId)}`;
+      const d = getDieOrPartById(catalog, id);
+      if (d) return `product.html?id=${encodeURIComponent(d.machineId)}`;
+      return 'catalog.html';
+    }
+    case 'line': {
+      const c = catOfLine(id);
+      return c ? `catalog.html?category=${encodeURIComponent(c.id)}` : 'catalog.html';
+    }
+    case 'catalog': {
+      if (q.get('line')) return `catalog.html?category=${encodeURIComponent(q.get('category') || '')}`;
+      if (q.get('category')) return 'catalog.html';
+      return 'index.html';
+    }
+    case 'quote': return quoteReturnUrl();
+    default: return 'index.html';
+  }
+}
+
+function initBackButton(catalog) {
+  if (PAGE === 'home') return;
+  const nav = document.getElementById('site-nav');
+  const logo = nav?.querySelector('a[href="index.html"]');
+  if (!logo || nav.querySelector('.nav-back')) return;
+  const wrap = document.createElement('div');
+  wrap.className = 'flex items-center gap-2 sm:gap-3 shrink-0';
+  logo.replaceWith(wrap);
+  const btn = document.createElement('button');
+  btn.type = 'button';
+  btn.className = 'nav-back';
+  btn.setAttribute('aria-label', 'Go back');
+  btn.innerHTML = `<svg fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" d="M15 19l-7-7 7-7"/></svg><span>Back</span>`;
+  wrap.append(btn, logo);
+  // also add it at the start of the breadcrumb
+  document.querySelectorAll('nav.flex.items-center.text-sm:not(#site-nav)').forEach(crumb => {
+    const b = btn.cloneNode(true);
+    b.classList.add('nav-back--crumb');
+    b.addEventListener('click', goBack);
+    crumb.prepend(b);
+  });
+  btn.addEventListener('click', goBack);
+  function goBack() {
+    // catalog steps have their own history entries
+    if (history.state?.sgCatalog && history.state.parent) { history.back(); return; }
+    let fromSite = false;
+    try { fromSite = !!document.referrer && new URL(document.referrer).origin === location.origin; } catch {}
+    try { fromSite = fromSite || !!sessionStorage.getItem(LAST_PAGE_KEY); } catch {}
+    if (fromSite && history.length > 1) { history.back(); return; }
+    // opened from a link or bookmark, so go one level up
+    location.href = backParentUrl(catalog);
+  }
+}
+// remember we were on the site (some browsers don't send the referrer)
+const LAST_PAGE_KEY = 'sg-last-page';
+window.addEventListener('pagehide', () => { try { sessionStorage.setItem(LAST_PAGE_KEY, location.href); } catch {} });
 
 document.addEventListener('DOMContentLoaded', async () => {
   let catalog = null;
   try { catalog = await loadCatalog(); }
   catch (e) { console.error('Catalog load failed:', e); showLoadError(); return; }
   initGlobalNav(catalog);
+  initBackButton(catalog);
   syncBadge();
   switch (PAGE) {
     case 'home':    initHomePage(catalog);    break;
@@ -315,7 +398,9 @@ document.addEventListener('DOMContentLoaded', async () => {
     case 'dies':    initDiesPage(catalog);    break;
     case 'search':  initSearchPage(catalog);  break;
     case 'quote':   initQuotePage(catalog);   break;
+    case 'enquiry': initEnquiryPage(catalog); break;
   }
+  restoreScrollOnReturn();
 });
 
 function showLoadError() { document.getElementById('load-error')?.classList.remove('hidden'); }
@@ -402,7 +487,7 @@ function renderSearchDropdown(results, dropdown) {
   }).join('');
 }
 
-// ── Home ──────────────────────────────────────────────────────────────────────
+// home
 function initHomePage(catalog) {
   initCandyCanvas();
 
@@ -457,7 +542,7 @@ function initHomePage(catalog) {
   document.querySelectorAll('[data-reveal]').forEach(el => revealObs.observe(el));
 }
 
-// ── Category real photos (using confirmed-working industrial IDs from machine pool) ──
+// category photos
 const CAT_IMAGES = {
   'hard-candy':  'assets/images/categories/hard-candy-render2.jpg',
   'lollipop':    'assets/images/categories/lollipop-render.jpg',
@@ -468,7 +553,7 @@ const CAT_IMAGES = {
 
 const CAT_VISUAL = {
   'hard-candy': {
-    rate: '200 – 1,200 kg/hr',
+    rate: '200 – 1,000 kg/hr',
     tagline: 'Deposited, Stamped & Drop-Rolled',
     bg: 'linear-gradient(135deg,#EF4444 0%,#B91C1C 100%)',
     icon: `<svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -481,7 +566,7 @@ const CAT_VISUAL = {
     </svg>`
   },
   'lollipop': {
-    rate: '100 – 600 kg/hr',
+    rate: '200 – 450 kg/hr',
     tagline: 'Stick, Flat & Novelty Shapes',
     bg: 'linear-gradient(135deg,#8B5CF6 0%,#6D28D9 100%)',
     icon: `<svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -492,7 +577,7 @@ const CAT_VISUAL = {
     </svg>`
   },
   'chew-toffee': {
-    rate: '200 – 800 kg/hr',
+    rate: '400 – 800 kg/hr',
     tagline: 'Chew, Toffee & Caramel Lines',
     bg: 'linear-gradient(135deg,#D97706 0%,#92400E 100%)',
     icon: `<svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -504,8 +589,8 @@ const CAT_VISUAL = {
     </svg>`
   },
   'bubble-gum': {
-    rate: '100 – 500 kg/hr',
-    tagline: 'Gum Ball, Stick & Coated Gum',
+    rate: '300 – 600 kg/hr',
+    tagline: 'Ball, Bazooka & Centre-Filled Gum',
     bg: 'linear-gradient(135deg,#EC4899 0%,#BE185D 100%)',
     icon: `<svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
       <circle cx="40" cy="44" r="16" fill="rgba(255,255,255,0.22)" stroke="rgba(255,255,255,0.5)" stroke-width="2"/>
@@ -517,7 +602,7 @@ const CAT_VISUAL = {
     </svg>`
   },
   'pharma': {
-    rate: '50K – 500K tabs/hr',
+    rate: '450 kg/hr',
     tagline: 'Pharmaceutical Production Lines',
     bg: 'linear-gradient(135deg,#14B8A6 0%,#0F766E 100%)',
     icon: `<svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -559,18 +644,15 @@ function buildHomeCategoryCard(cat, i = 0) {
     </article>`;
 }
 
-// Home hero intro, themed on how candy is made: the first two headline lines
-// come in like rope through a rope sizer (stretched, then squeezed to size),
-// and "Custom Parts." fills like a candy mould (outline first, then the colour
-// rises from the bottom). The text and buttons follow. Plays once; without JS
-// or with reduced motion the hero is static.
+// home hero animation: first lines come in like a rope through the rope sizer,
+// "Custom Parts." fills up like a mould. Plays once.
 function initHeroMotion() {
   const hero = document.getElementById('hero');
   if (!hero || matchMedia('(prefers-reduced-motion: reduce)').matches) return;
   const h1 = hero.querySelector('h1');
   if (!h1) return;
 
-  // wrap each headline line (text between <br>s) in its own span
+  // put each line of the heading in its own span
   let line = 0;
   [...h1.childNodes].forEach(n => {
     if (n.nodeType === 3 && n.textContent.trim()) {
@@ -585,7 +667,7 @@ function initHeroMotion() {
     }
   });
 
-  const after = 0.2 + line * 0.28 + 0.9;      // once the mould has filled
+  const after = 0.2 + line * 0.28 + 0.9;
   const seq = [
     [hero.querySelector('span.inline-flex'), 0],
     [hero.querySelector('.hero-lead'), after - 0.6],
@@ -597,8 +679,7 @@ function initHeroMotion() {
 
 }
 
-// Hero buttons: tag them for their CSS. They never move; attention comes from
-// a text sheen (Browse) and a slowly shifting glowing fill (Custom Parts).
+// hero buttons (no movement, just a shine on the text and a glow)
 function initHeroButtons() {
   const hero = document.getElementById('hero');
   if (!hero) return;
@@ -610,7 +691,7 @@ function initHeroButtons() {
     el.classList.add('hero-cta', mod);
     const label = document.createElement('span');
     label.className = 'hero-cta-label';
-    // the words get their own span so the sheen paints only the text
+    // span around the text so the shine is only on the text
     [...el.childNodes].forEach(n => {
       if (n.nodeType === 3 && n.textContent.trim()) {
         const w = document.createElement('span');
@@ -619,13 +700,13 @@ function initHeroButtons() {
         label.append(w);
       } else if (n.nodeType === 1) label.append(n);
     });
-    // Custom Parts gets a trailing arrow too, so both read as "go somewhere"
+    // add an arrow to Custom Parts too
     if (mod === 'hero-cta--custom' && !label.querySelector('.cta-go')) {
       label.insertAdjacentHTML('beforeend', '<svg class="cta-go w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"/></svg>');
     }
     el.textContent = '';
     el.append(label);
-    // a ripple spreads from where the button was pressed
+    // ripple on click
     el.addEventListener('pointerdown', ev => {
       if (matchMedia('(prefers-reduced-motion: reduce)').matches) return;
       const r = el.getBoundingClientRect();
@@ -639,9 +720,8 @@ function initHeroButtons() {
   });
 }
 
-// Home category cards: rise in (blur to sharp) and count their numbers up the
-// first time they scroll into view; on desktop they tilt toward the pointer
-// with a slight photo parallax. Nothing moves on its own.
+// home category cards: fade in and count up when they come into view,
+// tilt on mouse hover (desktop only)
 function initHomeCardMotion(grid) {
   if (matchMedia('(prefers-reduced-motion: reduce)').matches) return;
   const cards = [...grid.querySelectorAll('.home-cat-card')];
@@ -667,7 +747,7 @@ function initHomeCardMotion(grid) {
       io.unobserve(card);
       setTimeout(() => card.querySelectorAll('[data-count]').forEach(countUp),
                  200 + (+card.style.getPropertyValue('--i') || 0) * 110);
-      // drop the stagger once it has landed, so hover reacts instantly
+      // remove the delay after they appear so hover is quick
       setTimeout(() => card.classList.add('is-settled'), 1400);
     }), { threshold: 0.25 });
     cards.forEach(c => io.observe(c));
@@ -676,9 +756,7 @@ function initHomeCardMotion(grid) {
   addPointerTilt(cards);
 }
 
-// 3D tilt toward the pointer with a slight photo parallax: the card sets
-// --rx/--ry (tilt) and --px/--py (photo drift) for its CSS to use. Real mice
-// only, not touch screens.
+// tilt card toward the mouse (not on touch screens)
 function addPointerTilt(cards) {
   if (!matchMedia('(hover: hover) and (pointer: fine)').matches) return;
   if (matchMedia('(prefers-reduced-motion: reduce)').matches) return;
@@ -826,7 +904,7 @@ function countUp(el, target, duration) {
   requestAnimationFrame(frame);
 }
 
-// ── Catalog ───────────────────────────────────────────────────────────────────
+// catalog
 function initCatalogPage(catalog) {
   const params = new URLSearchParams(window.location.search);
   const preCategory = params.get('category');
@@ -854,7 +932,7 @@ function initCatalogPage(catalog) {
           <div class="cat-photo-btn-check">✓</div>
         </div>
       </button>`).join('');
-    // rise in one by one (blur to sharp) as the page opens, then tilt on hover
+    // fade in one by one, tilt on hover
     if (!matchMedia('(prefers-reduced-motion: reduce)').matches) {
       catGrid.classList.add('is-armed');
       requestAnimationFrame(() => requestAnimationFrame(() => catGrid.classList.add('is-in')));
@@ -862,18 +940,15 @@ function initCatalogPage(catalog) {
     }
     addPointerTilt([...catGrid.querySelectorAll('.cat-photo-btn')]);
     catGrid.querySelectorAll('.cat-photo-btn').forEach(btn => {
-      btn.addEventListener('click', () => {
-        selectedCategory = getCategoryById(catalog, btn.dataset.catId);
-        catGrid.querySelectorAll('.cat-photo-btn').forEach(b => b.classList.remove('selected'));
-        btn.classList.add('selected');
-        showStep(2); buildStep2(selectedCategory);
-      });
+      btn.addEventListener('click', () => go({ category: btn.dataset.catId }));
     });
   }
 
   function buildStep2(cat) {
     const gal = document.getElementById('step2-gallery');
     if (gal) { gal._stopGallery?.(); buildCategoryGallery(gal, cat); }
+    setAttr('step2-enquire', 'href', `enquiry.html?category=${encodeURIComponent(cat.id)}`);
+    setEl('step2-enquire-cat', cat.label.toLowerCase().replace(/\s*production$/, '') + ' line');
     const lineGrid = document.getElementById('line-select-grid');
     if (!lineGrid) return;
     const vis = CAT_VISUAL[cat.id];
@@ -897,18 +972,13 @@ function initCatalogPage(catalog) {
         </div>
       </button>`).join('');
     lineGrid.querySelectorAll('.rate-btn').forEach(btn => {
-      btn.addEventListener('click', () => {
-        selectedLine = getLineById(catalog, btn.dataset.lineId);
-        lineGrid.querySelectorAll('.rate-btn').forEach(b => b.classList.remove('selected'));
-        btn.classList.add('selected');
-        showStep(3); buildStep3(selectedLine, cat);
-      });
+      btn.addEventListener('click', () => go({ category: cat.id, line: btn.dataset.lineId }));
     });
     const backBtn2 = document.getElementById('step2-back');
-    if (backBtn2) backBtn2.onclick = () => showStep(1);
+    if (backBtn2) backBtn2.onclick = () => goUp({});
     const lbl = document.getElementById('step2-cat-label');
     if (lbl) lbl.textContent = cat.label;
-    // colour the eyebrow + underline rule to match the selected category
+    // use the category colour
     const eyebrow = document.getElementById('step2-eyebrow');
     if (eyebrow) eyebrow.style.color = cat.color;
     const rule = document.getElementById('step2-rule');
@@ -934,15 +1004,13 @@ function initCatalogPage(catalog) {
     const machineGrid = document.getElementById('step3-machine-grid');
     if (machineGrid) machineGrid.innerHTML = line.machines.sort((a, b) => a.orderInLine - b.orderInLine).map(m => buildMachineCard(m, cat)).join('');
     const backBtn3 = document.getElementById('step3-back');
-    if (backBtn3) backBtn3.onclick = () => showStep(2);
+    if (backBtn3) backBtn3.onclick = () => goUp({ category: cat.id });
   }
 
   function showStep(n) {
     step1Panel?.classList.toggle('hidden', n !== 1);
     step2Panel?.classList.toggle('hidden', n !== 2);
     step3Panel?.classList.toggle('hidden', n !== 3);
-    // each step replaces the page content, so start it from the top
-    window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
     if (stepIndicator) {
       stepIndicator.querySelectorAll('.step-indicator-item').forEach((el, i) => {
         el.classList.remove('active', 'done');
@@ -952,13 +1020,56 @@ function initCatalogPage(catalog) {
     }
   }
 
-  if (preCategory) {
-    const cat = getCategoryById(catalog, preCategory);
-    if (cat) {
+  // each step has its own url (catalog.html, ?category=, ?category=&line=)
+  // so the browser back button goes to the previous step and keeps the scroll
+  const urlFor = st => {
+    const p = new URLSearchParams();
+    if (st.category) p.set('category', st.category);
+    if (st.line) p.set('line', st.line);
+    return 'catalog.html' + (p.toString() ? '?' + p : '');
+  };
+  const stateFromUrl = () => {
+    const p = new URLSearchParams(location.search);
+    return { category: p.get('category') || '', line: p.get('line') || '' };
+  };
+  function render(st, scrollY) {
+    const cat = st.category ? getCategoryById(catalog, st.category) : null;
+    catGrid?.querySelectorAll('.cat-photo-btn').forEach(b => b.classList.toggle('selected', !!cat && b.dataset.catId === cat.id));
+    if (!cat) { selectedCategory = selectedLine = null; showStep(1); }
+    else {
       selectedCategory = cat;
-      catGrid?.querySelectorAll('.cat-photo-btn').forEach(btn => { if (btn.dataset.catId === preCategory) btn.classList.add('selected'); });
-      showStep(2); buildStep2(cat);
+      buildStep2(cat);
+      const line = st.line ? cat.lines.find(l => l.id === st.line) : null;
+      if (line) {
+        selectedLine = getLineById(catalog, line.id);
+        document.querySelectorAll('#line-select-grid .rate-btn').forEach(b => b.classList.toggle('selected', b.dataset.lineId === line.id));
+        buildStep3(selectedLine, cat);
+        showStep(3);
+      } else { selectedLine = null; showStep(2); }
     }
+    if (scrollY != null) window.scrollTo({ top: scrollY, left: 0, behavior: 'instant' });
+  }
+  // go to a step (adds a history entry)
+  function go(st) {
+    history.replaceState({ ...(history.state || {}), sgCatalog: true, y: Math.round(scrollY) }, '', location.href);
+    history.pushState({ sgCatalog: true, parent: location.pathname.split('/').pop() + location.search, y: 0 }, '', urlFor(st));
+    render(st, 0);
+  }
+  // in-page back links
+  function goUp(parent) {
+    const target = urlFor(parent);
+    if (history.state?.sgCatalog && history.state.parent === target) { history.back(); return; }
+    history.replaceState({ sgCatalog: true, y: 0 }, '', target);
+    render(parent, 0);
+  }
+  window.addEventListener('popstate', e => {
+    if (PAGE !== 'catalog') return;
+    render(stateFromUrl(), e.state?.y ?? 0);
+  });
+
+  if (preType !== 'machine') {
+    const start = stateFromUrl();
+    if (start.category || start.line) render(start, null);
   }
 
   if (preType === 'machine') {
@@ -999,18 +1110,17 @@ window.quickAddToCart = function(id, partNumber, name, btn) {
   addToCart({ id, partNumber, name, quantity: 1, selectedVoltage: 'To be confirmed', selectedFinish: 'Standard' });
   showToast(`${name} added to quote.`);
   if (btn) { btn.textContent = '✓ Added'; }
+  goToQuote();
 };
 
-// ── Line page ─────────────────────────────────────────────────────────────────
-// ── Line process flow ─────────────────────────────────────────────────────────
-// Every line runs through the same three stages, in booklet order. Machines are
-// placed by what they do; a stage never mixes in work from another stage.
+// line page
+// line flow: 3 stages, machines kept in booklet order
 const FLOW_ICONS = {
   batching: 'M4 7h16M4 12h16M4 17h10',
   cooking: 'M12 3v3m0 12v3M5.6 5.6l2.1 2.1m8.6 8.6l2.1 2.1M3 12h3m12 0h3M5.6 18.4l2.1-2.1m8.6-8.6l2.1-2.1',
   packing: 'M4 7l8-4 8 4v10l-8 4-8-4V7zm8-4v18M4 7l8 4 8-4',
 };
-// [title, blurb] per stage; bubble gum is mixed and extruded, not cooked
+// stage title and text (bubble gum is mixed, not cooked)
 const FLOW_TEXT = {
   candy: {
     batching: ['Batching &amp; Mixing', 'Glucose is stored and sugar is dissolved into syrup, with steam supplied to the tanks and cooker.'],
@@ -1039,20 +1149,19 @@ function flowFamily(catId) {
   return { 'bubble-gum': 'gum', 'chew-toffee': 'toffee', lollipop: 'lollipop' }[catId] || 'candy';
 }
 
-// What each machine does, matched by name (first match wins).
+// which stage a machine goes in, by name
 const FORMER = /uniplast|forming|former|plant/i;
 function flowStageOf(m, family, machines) {
   const n = m.name;
-  // a cooling conveyor that feeds a forming machine cools the rope, not the
-  // finished pieces (Ball Gum: extruder -> single-step conveyor -> ball former)
+  // cooling conveyor before a forming machine cools the rope (ball gum line)
   if (/cooling conveyor/i.test(n) &&
       machines.some(x => x.orderInLine > m.orderInLine && FORMER.test(x.name))) return 'cooking';
   if (/wrap|pillow|cut *&|twist|pack|ac unit|air condition|cooling tunnel|close body|open body|cooling conveyor|vibrat|coating pan|running ball/i.test(n)) return 'packing';
-  // gum lines: grinding, softening, mixing and moving the mass is batching
+  // gum lines
   if (family === 'gum' && /grinder|heating cabinet|mixer|rest table|trolly|trolley/i.test(n)) return 'batching';
-  // candy/lollipop lines: the gum mixer + extruder make the centre filling
+  // candy / lollipop lines
   if (/glucose|steam|dissolv|storage tank|grinder|heating cabinet/i.test(n)) return 'batching';
-  return 'cooking';                 // cooker through forming dies and stands
+  return 'cooking';
 }
 
 function buildLineFlow(mount, line, cat) {
@@ -1063,10 +1172,19 @@ function buildLineFlow(mount, line, cat) {
 
   const c = cat?.color || '#334155';
   const family = flowFamily(cat?.id || line.categoryId);
-  const groups = FLOW_ORDER.map(key => ({
+  // keep booklet order: a machine can't go back to an earlier stage.
+  // dies, stands and molds stay with forming.
+  let reached = 0;
+  const stageIdx = new Map(machines.map(m => {
+    const raw = FLOW_ORDER.indexOf(flowStageOf(m, family, machines));
+    if (/\bdies?\b|stand|mold|plunger/i.test(m.name)) return [m, raw];
+    reached = Math.max(reached, raw);
+    return [m, reached];
+  }));
+  const groups = FLOW_ORDER.map((key, i) => ({
     key, icon: FLOW_ICONS[key],
     title: FLOW_TEXT[family][key][0], blurb: FLOW_TEXT[family][key][1],
-    items: machines.filter(m => flowStageOf(m, family, machines) === key),
+    items: machines.filter(m => stageIdx.get(m) === i),
   })).filter(g => g.items.length);
 
   const chip = m => `
@@ -1111,10 +1229,7 @@ function buildLineFlow(mount, line, cat) {
     </div>`;
 }
 
-// The machine strip is ONE element whose background repeats the line image
-// sideways; it slides left by exactly one tile and loops. A single painted
-// surface with a whole-pixel tile width has no join between copies, so no
-// hairline appears where the line starts again.
+// machine strip in the line header: one background image repeated, moves left and loops
 function startLineBelt(track, sources) {
   if (!track) return;
   const belt = track.querySelector('.lh__belt');
@@ -1128,7 +1243,7 @@ function startLineBelt(track, sources) {
         const h = track.clientHeight || 1;
         const tile = Math.max(1, Math.round(h * probe.naturalWidth / probe.naturalHeight));
         belt.style.setProperty('--tile', tile + 'px');
-        belt.style.setProperty('--dur', (tile / 16).toFixed(1) + 's');  // ~16px/s glide
+        belt.style.setProperty('--dur', (tile / 16).toFixed(1) + 's');  // about 16px per second
       };
       belt.style.backgroundImage = `url("${src}")`;
       size();
@@ -1178,19 +1293,16 @@ function initLinePage(catalog) {
   setEl('line-description', line.description);
   buildLineFlow(document.getElementById('line-flow'), line, cat);
 
-  // Hero banner (full-width, matches machine page layout)
+  // hero banner
   const bannerEl = document.getElementById('line-banner');
   if (bannerEl) {
     const vis = CAT_VISUAL[line.categoryId];
     const bgGrad = vis?.bg || `linear-gradient(135deg,${cat?.color || '#1A3A5C'},#0D2035)`;
-    // This line's own machines side by side (scripts/build_line_headers.py),
-    // blurred behind the title; the category photo is the fallback.
+    // line image made by scripts/build_line_headers.py, category photo if missing
     const lineImg = `assets/images/lines/${line.id}.jpg`;
     const catImg = CAT_IMAGES[line.categoryId] || '';
     const mCount = line.machines?.length || 0;
-    // Motion header: the line's machines glide past like a running line, the
-    // text sharpens in (blur reveal) and a light sweep passes once. All CSS
-    // (.lh-*); it all stops under prefers-reduced-motion.
+    // header animation (css .lh-*), off for reduced motion
     bannerEl.innerHTML = `
       <div class="lh" style="background:${bgGrad};">
         <div class="lh__track" aria-hidden="true">
@@ -1212,7 +1324,7 @@ function initLinePage(catalog) {
     startLineBelt(bannerEl.querySelector('.lh__track'), [lineImg, catImg]);
   }
 
-  // Overview + key specs
+  // overview + specs
   const overviewEl = document.getElementById('line-overview');
   if (overviewEl) {
     overviewEl.classList.remove('hidden');
@@ -1261,6 +1373,7 @@ function initLinePage(catalog) {
     });
     showToast('Complete Line added to quote.');
     addLineBtn.textContent = '✓ Complete Line Added';
+    goToQuote();
   });
   renderPipeline(catalog, line, cat);
 }
@@ -1292,32 +1405,25 @@ function renderPipeline(catalog, line, cat) {
   startPipelineMotion(track);
 }
 
-// Pipeline reveal: the machine cards rise in one by one (blur to sharp) the
-// first time the section scrolls into view. Nothing moves on its own after
-// that; reduced-motion users and old browsers just get the static strip.
+// machine cards fade in one by one when the section comes into view
 function startPipelineMotion(track) {
   const scroller = track.closest('.pipeline-scroll');
   if (!scroller || track.classList.contains('is-armed')) return;
   if (matchMedia('(prefers-reduced-motion: reduce)').matches) return;
   if (!('IntersectionObserver' in window)) return;
 
-  track.classList.add('is-armed');           // cards wait hidden until in view
+  track.classList.add('is-armed');
   const io = new IntersectionObserver(([e]) => {
     if (!e.isIntersecting) return;
     track.classList.add('is-in');
     io.disconnect();
-    // once every card has landed, drop the stagger so hover reacts instantly
+    // remove the delay after they appear
     setTimeout(() => track.classList.add('is-settled'), 1600);
   }, { threshold: 0.2 });
   io.observe(scroller);
 }
 
-// ── Page SEO for catalog-driven pages ─────────────────────────────────────────
-// line.html and product.html are one template each, filled from the catalog,
-// so their SEO is set here per line / machine: title, description, canonical,
-// link-preview tags and structured data (Product + breadcrumbs) that Google
-// reads after running the page. Static pages get theirs from
-// scripts/build_seo.py.
+// seo for line and product pages (other pages get it from scripts/build_seo.py)
 const SEO_SITE = 'https://www.starmerglobal.com';
 function setPageSEO({ title, description, path, image, crumbs, product }) {
   const abs = p => (/^https?:/.test(p) ? p : SEO_SITE + (p.startsWith('/') ? '' : '/') + p);
@@ -1363,7 +1469,7 @@ function setPageSEO({ title, description, path, image, crumbs, product }) {
   ld.textContent = JSON.stringify({ '@context': 'https://schema.org', '@graph': graph });
 }
 
-// ── Product / Machine detail ──────────────────────────────────────────────────
+// product / machine page
 function initProductPage(catalog) {
   const params = new URLSearchParams(window.location.search);
   const id = params.get('id');
@@ -1399,7 +1505,7 @@ function initProductPage(catalog) {
     });
   }
 
-  // Hero banner
+  // hero banner
   const heroBanner = document.getElementById('product-hero-banner');
   if (heroBanner) {
     const vis = CAT_VISUAL[item.categoryId];
@@ -1443,7 +1549,7 @@ function initProductPage(catalog) {
   setEl('chip-part-num', pNum);
   setEl('detail-model', modelNum);
   setEl('chip-model', modelNum);
-  // no model number: hide its badges rather than show a placeholder
+  // hide model badges if there is no model number
   if (!modelNum) ['detail-model', 'chip-model'].forEach(id => {
     const el = document.getElementById(id); if (el) el.style.display = 'none';
   });
@@ -1465,6 +1571,7 @@ function initProductPage(catalog) {
       addToCart({ id: item.id, partNumber: machine?.machineNumber || diePart?.partNumber, name: item.name, quantity: 1, selectedVoltage: 'To be confirmed', selectedFinish: 'Standard' });
       showToast('Added to quote request.');
       addBtn.textContent = '✓ Update Quote';
+      goToQuote();
     });
   }
   const dpsSection = document.getElementById('dies-parts-section');
@@ -1480,11 +1587,8 @@ function initProductPage(catalog) {
   if (machine) buildCompareUI(catalog, machine);
 }
 
-// ── Machine comparison (same type/operation, same category, across lines) ─────
-// Two machines are the "same type" if their names map to the same canonical
-// type. Rules are ordered most-specific first so e.g. all cookers group together
-// ("Batch Type Cooker" == "Candy Continuous Cooker") while the three tank types
-// stay distinct.
+// compare machines: same type of machine in the same category, from other lines.
+// rules go from most specific to least (all cookers together, tanks separate)
 const COMPARE_TYPE_RULES = [
   [/chain die forming|forming plant/, 'Chain Die Forming Plant'],
   [/chain die/, 'Chain Die'],
@@ -1515,12 +1619,12 @@ const COMPARE_TYPE_RULES = [
 
 function machineTypeKey(name) {
   const s = (name || '').toLowerCase()
-    .replace(/\(.*?\)/g, ' ')            // drop "(4 Stages)", "(5 Ton)" etc.
-    .replace(/\bsew[-\s]?\d+\b/g, ' ')   // drop SEW codes
+    .replace(/\(.*?\)/g, ' ')            // remove (4 Stages), (5 Ton) etc
+    .replace(/\bsew[-\s]?\d+\b/g, ' ')   // remove SEW codes
     .replace(/[^a-z0-9 ]/g, ' ')
     .replace(/\s+/g, ' ').trim();
   for (const [re, key] of COMPARE_TYPE_RULES) if (re.test(s)) return key;
-  return s;                              // fallback: cleaned name
+  return s;
 }
 
 function buildCompareUI(catalog, machine) {
@@ -1596,7 +1700,7 @@ function buildCompareUI(catalog, machine) {
     const cand = candidates[currentIdx] || candidates[0];
     const aSpecs = machine.specs || {}, bSpecs = cand.specs || {};
     const keys = [...new Set([...Object.keys(aSpecs), ...Object.keys(bSpecs)])];
-    const dl = 'border-l border-slate-200';                 // continuous divider between the two machines
+    const dl = 'border-l border-slate-200';
     const specRows = keys.map(k => {
       const a = aSpecs[k] != null && aSpecs[k] !== '' ? aSpecs[k] : '—';
       const b = bSpecs[k] != null && bSpecs[k] !== '' ? bSpecs[k] : '—';
@@ -1622,7 +1726,7 @@ function buildCompareUI(catalog, machine) {
 
         <div class="overflow-x-auto rounded-xl border border-slate-200">
           <div class="compare-grid">
-            <!-- Control row: label on the left machine, "Compare with" selector above the right (changing) machine -->
+            <!-- controls -->
             <div class="px-4 pt-4"></div>
             <div class="px-4 pt-4 flex items-end">
               <span class="text-[11px] font-bold text-blue-700 uppercase tracking-widest">This machine</span>
@@ -1633,7 +1737,7 @@ function buildCompareUI(catalog, machine) {
                 ${candidates.map((c, i) => `<option value="${i}" ${i === currentIdx ? 'selected' : ''}>${c.name} — ${c.lineName}</option>`).join('')}
               </select>
             </div>
-            <!-- Image row (comparison symbol fills the otherwise-empty left column) -->
+            <!-- images -->
             <div class="p-4 flex flex-col items-center justify-center text-center">
               <span class="inline-flex items-center justify-center w-12 h-12 rounded-full bg-slate-100 text-slate-400 mb-2">
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7h12m0 0l-4-4m4 4l-4 4M16 17H4m0 0l4 4m-4-4l4-4"/></svg>
@@ -1642,13 +1746,13 @@ function buildCompareUI(catalog, machine) {
             </div>
             <div class="p-4 pr-5">${imageCell(machine)}</div>
             <div class="p-4 pl-5 ${dl}">${imageCell(cand)}</div>
-            <!-- Names header row -->
+            <!-- names -->
             <div class="px-4 py-3 bg-slate-50 border-t border-slate-200 flex items-end"><span class="text-xs font-bold text-slate-500 uppercase tracking-wide">Specification</span></div>
             <div class="px-4 py-3 bg-blue-50/40 border-t border-slate-200">${nameCell(machine, true)}</div>
             <div class="px-4 py-3 bg-slate-50 border-t border-slate-200 ${dl}">${nameCell(cand, false)}</div>
-            <!-- Spec rows -->
+            <!-- specs -->
             ${specRows}
-            <!-- Add to quote row -->
+            <!-- add to quote -->
             <div class="p-4 border-t border-slate-200"></div>
             <div class="p-4 border-t border-slate-200">${quoteBtn(machine)}</div>
             <div class="p-4 border-t border-slate-200 ${dl}">${quoteBtn(cand)}</div>
@@ -1684,7 +1788,7 @@ function buildDiePartCard(dp, cat) {
   </article>`;
 }
 
-// ── Dies page ─────────────────────────────────────────────────────────────────
+// dies page
 function initDiesPage(catalog) {
   const params = new URLSearchParams(window.location.search);
   let activeCat = params.get('category') || 'all';
@@ -1745,7 +1849,7 @@ function initDiesPage(catalog) {
   renderDies();
 }
 
-// ── Search page ───────────────────────────────────────────────────────────────
+// search page
 function initSearchPage(catalog) {
   const params = new URLSearchParams(window.location.search);
   const q = params.get('q') || '';
@@ -1787,8 +1891,18 @@ function runSearch(catalog, q) {
   }).join('');
 }
 
-// ── Quote page ────────────────────────────────────────────────────────────────
+// quote page
 function initQuotePage(catalog) {
+  // continue browsing: go back to the page we came from
+  const back = quoteReturnUrl();
+  document.querySelectorAll('[data-continue-browsing]').forEach(a => {
+    a.setAttribute('href', back);
+    a.addEventListener('click', e => {
+      let ref = '';
+      try { const r = new URL(document.referrer); if (r.origin === location.origin) ref = r.pathname.split('/').pop() + r.search + r.hash; } catch {}
+      if (ref && ref === back && history.length > 1) { e.preventDefault(); history.back(); }
+    });
+  });
   renderQuoteTable();
   window.addEventListener('cart:updated', renderQuoteTable);
   const form = document.getElementById('rfq-form');
@@ -1801,14 +1915,76 @@ function initQuotePage(catalog) {
   });
 }
 
-// ── RFQ submit ────────────────────────────────────────────────────────────────
-// Sends the RFQ (and any file attachments) to Forminit, which stores the files
-// and emails a notification to the business inbox. The Forminit form endpoint is
-// configured per page as window.RFQ_ENDPOINT. Used by quote.html + custom-quote.html.
-const RFQ_MAX_BYTES = 10 * 1024 * 1024;   // 10 MB total attachment safety cap
+// enquiry page (talk to an expert). ?category=id selects the category
+function initEnquiryPage(catalog) {
+  const form = document.getElementById('enquiry-form');
+  const grid = document.getElementById('enquiry-cats');
+  if (!form || !grid) return;
+  const pre = new URLSearchParams(location.search).get('category') || '';
+  const opts = [
+    ...catalog.categories.map(c => ({ id: c.id, label: c.label, img: CAT_IMAGES[c.id], rate: CAT_VISUAL[c.id]?.rate || '' })),
+    { id: 'not-sure', label: 'Not sure yet', img: '', rate: 'General advice' },
+  ];
+  grid.innerHTML = opts.map(o => `
+    <label class="enq-cat">
+      <input type="radio" name="category" value="${o.id}" class="sr-only" ${o.id === pre ? 'checked' : ''}/>
+      <span class="enq-cat__img">${o.img
+        ? `<img src="${o.img}" alt="" loading="lazy"/>`
+        : `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path stroke-linecap="round" stroke-linejoin="round" d="M8.2 9a3.8 3.8 0 117.4 1.2c-.6 1.5-2.4 2-3.1 3.3-.2.4-.3.8-.3 1.5M12 18h.01"/></svg>`}</span>
+      <span class="enq-cat__text"><b>${o.label}</b><small>${o.rate}</small></span>
+    </label>`).join('');
+  grid.addEventListener('change', () => grid.classList.remove('field-error'));
 
-// Map our field names to Forminit "block keys". Phone goes through a plain text
-// block (fi-text-*) on purpose — fi-sender-phone enforces strict E.164 format.
+  form.addEventListener('submit', e => {
+    e.preventDefault();
+    let valid = true;
+    const picked = form.querySelector('input[name="category"]:checked');
+    if (!picked) { grid.classList.add('field-error'); valid = false; }
+    ['contact', 'email', 'country', 'notes'].forEach(name => {
+      const input = form[name], wrap = input?.closest('.form-field');
+      const ok = !!input?.value.trim() && (name !== 'email' || /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(input.value));
+      wrap?.classList.toggle('field-error', !ok);
+      if (!ok) valid = false;
+    });
+    if (!valid) { showFormError('Please choose a category and fill in the required fields.'); return; }
+    hideFormError();
+
+    const catLabel = opts.find(o => o.id === picked.value)?.label || picked.value;
+    const date = new Date().toLocaleDateString('en-GB', { day: '2-digit', month: 'long', year: 'numeric' });
+    const company = form.company.value.trim();
+    const fields = {
+      from_company: company || 'N/A',
+      from_contact: form.contact.value.trim(),
+      from_email:   form.email.value.trim(),
+      from_phone:   form.phone.value.trim() || 'N/A',
+      from_country: form.country.value.trim(),
+      notes:        form.notes.value.trim(),
+      item_list:    `CATEGORY ENQUIRY: ${catLabel}\nNeed: ${form.topic.value}\nTarget output: ${form.capacity.value}`,
+      date,
+    };
+    const subject = `Enquiry — ${catLabel} — ${company || fields.from_contact} — ${date}`;
+    const btn = form.querySelector('[type="submit"]');
+    const label = btn?.innerHTML;
+    if (btn) { btn.disabled = true; btn.textContent = 'Sending…'; }
+    postRFQ({ subject, fields }).then(() => {
+      form.classList.add('hidden');
+      document.getElementById('enquiry-success')?.classList.remove('hidden');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }).catch(() => {
+      const body = [`ENQUIRY: ${catLabel}`, `Date: ${date}`, '', `Name: ${fields.from_contact}`, `Company: ${fields.from_company}`,
+        `Email: ${fields.from_email}`, `Phone: ${fields.from_phone}`, `Country: ${fields.from_country}`, '',
+        `Need: ${form.topic.value}`, `Target output: ${form.capacity.value}`, '', fields.notes].join('\n');
+      location.href = `mailto:info@starmerglobal.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    }).finally(() => { if (btn) { btn.disabled = false; btn.innerHTML = label; } });
+  });
+}
+
+// send quote request to Forminit (it saves the files and emails us).
+// endpoint is window.RFQ_ENDPOINT on each page
+const RFQ_MAX_BYTES = 10 * 1024 * 1024;   // max 10 MB of attachments
+
+// our field names -> Forminit names. phone is a normal text field because
+// fi-sender-phone only accepts a strict format
 const FORMINIT_KEYS = {
   from_email:   'fi-sender-email',
   from_contact: 'fi-sender-fullName',
@@ -1873,7 +2049,7 @@ function renderQuoteTable() {
   if (!cart.length) { wrapper?.classList.add('hidden'); empty?.classList.remove('hidden'); return; }
   empty?.classList.add('hidden'); wrapper?.classList.remove('hidden');
 
-  // Phone layout: one card per item so the qty stepper is always reachable.
+  // on phones show cards instead of a table
   if (cards) {
     cards.innerHTML = cart.map(item => `
       <div class="p-4" data-item-id="${item.id}">

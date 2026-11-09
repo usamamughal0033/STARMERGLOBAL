@@ -305,7 +305,7 @@ machines:
     outdoorBaseFrame: Channel and angle iron
     panelBox: 12" x 24"
     powerLoad: 7.5 HP
-- name: Wrapping Machine
+- name: Double Twist Wrapping Machine
   model: ''
   function: >-
     This double-twist wrapping machine is built to wrap individual candies quickly,

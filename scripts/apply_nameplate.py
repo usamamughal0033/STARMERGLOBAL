@@ -1,12 +1,9 @@
 #!/usr/bin/env python3
 """
-Stamp the STARMER GLOBAL name plate into the top-right corner of every machine
-photo in the catalog.
+Puts the Starmer Global nameplate on the top right corner of the machine photos.
 
-Originals are never modified: plated copies are written to
-assets/STARMER/_plated/... mirroring assets/STARMER/_ready/..., and
-scripts/templates_to_catalog.py prefers a plated twin when one exists. Deleting
-the _plated folder and rebuilding reverts the whole site to unbranded photos.
+Photos from assets/STARMER/_ready/ are saved with the plate into
+assets/STARMER/_plated/ (same folders). The originals are not changed.
 
     python scripts/apply_nameplate.py --image "<path>" --out preview.jpg
     python scripts/apply_nameplate.py --all
@@ -18,11 +15,11 @@ from pathlib import Path
 
 from PIL import Image, ImageFilter
 
-PLATE = Path("assets/images/nameplate.png")   # RGBA, rounded corners
+PLATE = Path("assets/images/nameplate.png")
 READY = Path("assets/STARMER/_ready")
 
-PLATE_FRAC = 0.12       # plate width as a fraction of the image width (visiting-card scale)
-MARGIN_FRAC = 0.035     # gap from the top and right edges
+PLATE_FRAC = 0.12       # plate width compared to photo width
+MARGIN_FRAC = 0.035     # space from top and right edge
 SHADOW_BLUR_FRAC = 0.05
 SHADOW_OFFSET_FRAC = 0.04
 
@@ -39,7 +36,7 @@ def apply(img_path: Path, out_path: Path) -> bool:
     m = int(W * MARGIN_FRAC)
     x, y = W - pw - m, m
 
-    # soft drop shadow so the badge lifts off the backdrop
+    # small shadow under the plate
     sh = Image.new("RGBA", base.size, (0, 0, 0, 0))
     sil = Image.new("RGBA", plate.size, (0, 0, 0, 150))
     sil.putalpha(plate.getchannel("A").point(lambda v: int(v * 0.55)))
@@ -74,9 +71,7 @@ def main():
     if not a.all:
         ap.error("pass --image <path> or --all")
 
-    # Walk the _ready tree rather than the catalog: once the catalog has been
-    # rebuilt it already points at _plated paths, so reading it back would skip
-    # everything on a re-run.
+    # go through the _ready folder (the catalog already points to _plated)
     exts = {".jpg", ".jpeg", ".png", ".webp"}
     srcs = sorted(p for p in READY.rglob("*")
                   if p.is_file() and p.suffix.lower() in exts)

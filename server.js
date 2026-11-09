@@ -10,13 +10,13 @@ const ROOT = __dirname;
 app.use(express.json());
 app.use(express.static(ROOT));
 
-// Store uploads in memory so we control the final destination
+// keep uploads in memory, we save them ourselves
 const upload = multer({
   storage: multer.memoryStorage(),
   limits: { fileSize: 30 * 1024 * 1024 }
 });
 
-// ── Helpers ───────────────────────────────────────────────────────────────────
+// Helpers
 
 function loadCatalog() {
   let raw = fs.readFileSync(path.join(ROOT, 'data/catalog.json'), 'utf8');
@@ -26,7 +26,7 @@ function loadCatalog() {
 
 function saveCatalog(catalog) {
   const json = JSON.stringify(catalog, null, 2);
-  // Write as Buffer to guarantee no BOM
+  // write as buffer so there is no BOM
   fs.writeFileSync(path.join(ROOT, 'data/catalog.json'), Buffer.from(json, 'utf8'));
   fs.writeFileSync(path.join(ROOT, 'js/catalog-data.js'), Buffer.from(`window.CATALOG_DATA = ${json};`, 'utf8'));
 }
@@ -35,14 +35,14 @@ function saveImage(file, subfolder) {
   if (!file) return '';
   const dir  = path.join(ROOT, 'assets/images', subfolder);
   if (!fs.existsSync(dir)) fs.mkdirSync(dir, { recursive: true });
-  // prefix with timestamp to avoid name collisions
+  // add time in front so names don't clash
   const safe = file.originalname.replace(/\s+/g, '-').replace(/[^a-zA-Z0-9.\-_]/g, '');
   const name = `${Date.now()}-${safe}`;
   fs.writeFileSync(path.join(dir, name), file.buffer);
   return `assets/images/${subfolder}/${name}`;
 }
 
-// Convert lineId  "HC-L-001"  →  base  "HC-L001"  used in machine IDs
+// "HC-L-001" -> "HC-L001" (used in machine ids)
 function lineBase(lineId) {
   return lineId.replace(/-L-(\d+)$/, '-L$1');
 }
@@ -66,9 +66,9 @@ function nextPartId(machine) {
   return `${machine.id}-P${n}`;
 }
 
-// ── API ───────────────────────────────────────────────────────────────────────
+// API
 
-// Return full catalog (used by admin panel to populate dropdowns)
+// full catalog (for the dropdowns)
 app.get('/api/catalog', (_req, res) => {
   res.json(loadCatalog());
 });
@@ -156,7 +156,7 @@ app.post('/api/add-part', upload.single('image'), (req, res) => {
   }
 });
 
-// Edit an existing machine (image optional — only replaced if a new file is sent)
+// Edit a machine (new image is optional)
 app.put('/api/machine/:id', upload.single('image'), (req, res) => {
   try {
     const { name, fn, description, specs } = req.body;
@@ -259,7 +259,7 @@ function parseSpecs(raw) {
   try { return JSON.parse(raw); } catch { return {}; }
 }
 
-// ── Start ─────────────────────────────────────────────────────────────────────
+// Start
 
 const server = app.listen(PORT, () => {
   console.log('\n  ✓ Server running');
@@ -268,7 +268,7 @@ const server = app.listen(PORT, () => {
   console.log('\n  (Close this terminal or press Ctrl+C to stop the server.)\n');
 });
 
-// If the port is still held by an old instance, say so clearly instead of crashing.
+// port already in use (old server still running)
 server.on('error', err => {
   if (err.code === 'EADDRINUSE') {
     console.error(`\n  ✗ Port ${PORT} is already in use — an old server is still running.`);
@@ -278,23 +278,23 @@ server.on('error', err => {
   throw err;
 });
 
-// ── Shut down cleanly so port 3333 is freed when the terminal closes ──────────
+// close the server properly so port 3333 is free again
 let shuttingDown = false;
 function shutdown(reason) {
   if (shuttingDown) return;
   shuttingDown = true;
   console.log(`\n  Stopping server (${reason}) — port ${PORT} released.`);
   server.close(() => process.exit(0));
-  // Safety net: force-exit if close hangs on an open connection
+  // force exit if it takes too long
   setTimeout(() => process.exit(0), 800).unref();
 }
 
-// Ctrl+C, kill, and — on Windows — closing the console window all land here.
+// Ctrl+C, kill or closing the window
 ['SIGINT', 'SIGTERM', 'SIGHUP', 'SIGBREAK'].forEach(sig => {
   try { process.on(sig, () => shutdown(sig)); } catch { /* signal not supported */ }
 });
 
-// Fallback: if the controlling terminal goes away, stdin ends — stop too.
+// also stop when the terminal is closed
 if (process.stdin.isTTY) {
   process.stdin.on('end',   () => shutdown('terminal closed'));
   process.stdin.on('close', () => shutdown('terminal closed'));

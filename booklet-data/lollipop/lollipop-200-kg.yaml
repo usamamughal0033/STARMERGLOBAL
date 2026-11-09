@@ -2,7 +2,7 @@
 category: LOLLIPOP
 category_slug: lollipop
 line:
-  name: Lollipop Complete Line 200 kg/hr
+  name: Lollipop Standard Speed Line 200 kg/hr
   productionRate: 200 kg/hr
   description: >-
     A complete round-lollipop production line with vacuum batch cooking, bubble-gum
@@ -314,7 +314,7 @@ machines:
     belt: Food grade T belt in elevator
     dimension: 8 ft x 11.5 ft x 6.5 ft (H x W x L)
     powerLoad: 6 hp
-- name: Wrapping Machine
+- name: Single Twist Lollipop Wrapping Machine
   model: SEW-414
   function: >-
     Single-twist wrapping machine that individually wraps round lollipops in a

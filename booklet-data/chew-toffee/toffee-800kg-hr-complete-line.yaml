@@ -219,8 +219,7 @@ machines:
     spreader and spreader-box drives, Teflon-coated food-grade belt, grease
     lubrication, D2 pressure cams, S.G.R iron reverse cams and high-carbon-steel
     sizer sets and gears; up to 800 kg/hr.
-  # Uniplast photo (the old "Uniplast 160-C.jpg" showed a different machine)
-  image: assets/STARMER/_ready/CHEW & TOFFEE/Toffee 400kg_hr Complete line_/Uniplast 160-A.jpg
+  image: assets/STARMER/_ready/CHEW & TOFFEE/Toffee 800kg_hr Complete line_/Uniplast 160-C.jpg
   specs:
     # per approved booklet page (TOFFEE 800 KG.pdf, page 13-14)
     capacity: Up to 800 kg/hr
@@ -325,7 +324,7 @@ machines:
     insulation: Double jacketed, insulated with thermopore
     dimension: 20 ft x 4 ft (H x W x L)
     powerLoad: 6 hp
-- name: Wrapping Machine
+- name: Double Twist Wrapping Machine
   model: ''
   function: >-
     This double-twist wrapping machine is built to wrap individual candies quickly,

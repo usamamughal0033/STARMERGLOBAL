@@ -310,7 +310,7 @@ machines:
     gearMotor: 3 hp (1 hp each, 3 Nos), SEW brand
     dimension: 18 ft x 3 ft (H x W x L)
     powerLoad: 3 hp
-- name: Wrapping Machine
+- name: Double Twist Wrapping Machine
   model: ''
   function: >-
     This double-twist wrapping machine is built to wrap individual candies quickly,

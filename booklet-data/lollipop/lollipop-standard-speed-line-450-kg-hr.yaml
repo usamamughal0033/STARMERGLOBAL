@@ -2,7 +2,7 @@
 category: LOLLIPOP
 category_slug: lollipop
 line:
-  name: Lollipop Standard Speed Line 450 kg/hr
+  name: Lollipop High Speed Line 450 kg/hr
   productionRate: 450 kg/hr
   description: >-
     A high-output round-lollipop line with continuous vacuum cooking, bubble-gum
@@ -344,7 +344,7 @@ machines:
     refrigerant: R-22 (Honeywell, USA)
     inverter: 7.5 KVA (INVT)
     powerLoad: 6.5 hp
-- name: Wrapping Machine
+- name: Single Twist Lollipop Wrapping Machine
   model: SEW-320
   function: >-
     Single-twist wrapping machine that individually wraps round lollipops in a

@@ -215,7 +215,7 @@ machines:
     gearMotor: SEW brand, Germany
     dimension: 4' x 2' x 3'   # CHECK (handwritten)
     powerLoad: 4.68 hp   # CHECK (handwritten)
-- name: Rope Sizer
+- name: Rope Sizer (4 Stages)
   model: SEW-115
   function: >-
     Accurately reduces and calibrates the candy/toffee rope diameter for uniform
@@ -302,7 +302,7 @@ machines:
     inverter: 2 HP
     dimension: 3 ft x 16 ft
     powerLoad: 3 hp
-- name: AC Unit
+- name: AC Unit (5 Ton)
   model: SEW-122
   function: >-
     Floor-standing air-conditioning unit (5 ton / 6.5 HP) for cooling the conveyor

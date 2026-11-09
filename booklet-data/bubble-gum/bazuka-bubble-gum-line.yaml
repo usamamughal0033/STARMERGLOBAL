@@ -112,7 +112,8 @@ machines:
   description: >-
     White food-grade belt on a heavy 14g M.S pipe structure with double-jacketed
     duct, thermopore insulation, 2 hp motor and inverter.
-  image: assets/STARMER/_ready/BUBBLE GUM/Bazuka Bubble Gum Line_/Bazooka Bubble Conveyor .jpg
+  # no correct photo yet: placeholder until the client supplies one
+  image: assets/images/coming-soon.svg
   specs:
     conveyor: 3 ft x 20 ft
     function: All types of bubble gum

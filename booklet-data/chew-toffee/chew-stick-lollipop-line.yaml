@@ -193,7 +193,8 @@ machines:
   description: >-
     Cut & fold stick wrapper with double reel system, advanced photocell sensor,
     2 HP inverter drive and 2 HP HECO main motor on a heavy-duty industrial frame.
-  image: assets/STARMER/_ready/CHEW & TOFFEE/Chew Stick Lollipop Line_/Cut & Double Twist _ Cut & Twist.jpg
+  # the cut & twist photo was the wrong machine; placeholder until the client supplies one
+  image: assets/images/coming-soon.svg
   specs:
     output: Up to 300 pieces per minute
     wrappingTechnology: Cut & fold
